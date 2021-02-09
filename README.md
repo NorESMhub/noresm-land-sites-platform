@@ -1,6 +1,6 @@
 ![NorESM logo](doc/img/NORESM-logo.png)
-![EMERALD logo](doc/img/NORESM-logo.png)
-![LATICE logo](doc/img/UiO_LATICE_logo_black.png)
+![EMERALD logo](doc/img/Emerald_darktext_whiteBG.png)
+![LATICE logo](doc/img/UiO_LATICE_logo_black.png){:height="50%" width="30%"}
 
 # Platform for NorESM site-level simulation over land
 
@@ -12,7 +12,7 @@ The platform aims to facilitate the site-level simulations over land using [NorE
 The platform aims to bridge the gaps between observation and model, and **promote the usage of site-level observations to test, validate and improve the NorESM** and its land component on the one hand, and **promote the usage of the NorESM and its land model component by non-modellers** on the other hand. 
 
 The [observation sites]() currently included in the platform
-![sites](Observation_sites.png)
+![sites](doc/img/Observation_sites.png)
 
 For more information on the platform, please see our [wiki]() and [technical documentation]().
 
@@ -27,31 +27,30 @@ For more information on the platform, please see our [wiki]() and [technical doc
   - Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
    
 ## Code development team
-[Hui Tang](https://github.com/huitang-earth)
-[Anne Fouilloux](https://github.com/annefou)
-[Elin Aas](https://github.com/ecaas)
-[Lasse Torben Keetz](https://github.com/lasseke)
-[Yeliz Yilmaz](https://github.com/yelizy/)
-Eva Lieungh
-Peter Horvath
-[Kjetil Aas](https://github.com/kjetilaas)
-[Sunniva Indrehus](https://github.com/sunnivin)
-[Devaraju Narayanappa](https://github.com/devarajun)
+* [Hui Tang](https://github.com/huitang-earth)
+* [Anne Fouilloux](https://github.com/annefou)
+* [Elin Aas](https://github.com/ecaas)
+* [Lasse Torben Keetz](https://github.com/lasseke)
+* [Yeliz Yilmaz](https://github.com/yelizy/)
+* Eva Lieungh
+* Peter Horvath
+* [Kjetil Aas](https://github.com/kjetilaas)
+* [Sunniva Indrehus](https://github.com/sunnivin)
+* [Devaraju Narayanappa](https://github.com/devarajun)
 
 ## Data contributors
-[Sonya Geange](https://github.com/srg101)
-Inge Althuizen
+* [Sonya Geange](https://github.com/srg101)
+* Inge Althuizen
 
 ## Supporting projects
-[EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
-[LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/)
-[SeedClim](https://www.uib.no/en/rg/EECRG/55395/seedclim)
-[LandPress](https://www.uib.no/en/rg/EECRG/95156/landpress)
-[THREE-D](https://www.uib.no/en/rg/EECRG/126712/three-d)
-[INES](https://www.ines.noresm.org/)
-[EOSC-Nordic](https://www.eosc-nordic.eu/)
+* [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
+* [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/)
+* [SeedClim](https://www.uib.no/en/rg/EECRG/55395/seedclim)
+* [LandPress](https://www.uib.no/en/rg/EECRG/95156/landpress)
+* [THREE-D](https://www.uib.no/en/rg/EECRG/126712/three-d)
+* [INES](https://www.ines.noresm.org/)
+* [EOSC-Nordic](https://www.eosc-nordic.eu/)
 
 ## How to cite
 
 ## Acknowledgement
-
