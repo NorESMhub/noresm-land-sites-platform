@@ -1,6 +1,6 @@
 ![NorESM logo](doc/img/NORESM-logo.png)
 ![EMERALD logo](doc/img/Emerald_darktext_whiteBG_small.png)
-![LATICE logo](doc/img/UiO_LATICE_logo_black_small.png){:height="50%" width="30%"}
+![LATICE logo](doc/img/UiO_LATICE_logo_black_small.png)
 
 # Platform for NorESM site-level simulation over land
 
