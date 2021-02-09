@@ -12,6 +12,7 @@ The platform aims to facilitate the site-level simulations over land using [NorE
 The platform aims to bridge the gaps between observation and model, and **promote the usage of site-level observations to test, validate and improve the NorESM** and its land component on the one hand, and **promote the usage of the NorESM and its land model component by non-modellers** on the other hand. 
 
 The [observation sites]() currently included in the platform
+
 ![sites](doc/img/Observation_sites.png)
 
 For more information on the platform, please see our [wiki]() and [technical documentation]().
