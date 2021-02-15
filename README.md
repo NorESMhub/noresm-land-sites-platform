@@ -7,9 +7,9 @@
 ###### doi:
 
 ## Overview and documentation
-The platform aims to facilitate the site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions without techincal obstacles. 
+The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions with minimal techincal obstacles. 
 
-The platform aims to bridge the gaps between observation and model, and **promote the usage of site-level observations to test, validate and improve the NorESM** and its land component on the one hand, and **promote the usage of the NorESM and its land model component by non-modellers** on the other hand. 
+The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand. 
 
 The [observation sites]() currently included in the platform
 
