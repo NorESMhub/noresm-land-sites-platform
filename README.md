@@ -20,10 +20,10 @@ For more information on the platform, please see our [wiki]() and [technical doc
 
 ## Quick guides for using the platform
 
-* ### Modeller: *Workflows for developing and using the platform*
+* ### Developer: *Workflows for developing and using the platform*
   - See [documentation]()
 
-* ### Non-Modeller: *GALAXY tools, workflows and tutorials*
+* ### User: *GALAXY tools, workflows and tutorials*
   - A graphic user interface for running site-level simulation is available on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html) and [workflows]() for its usage. 
   - Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
    
