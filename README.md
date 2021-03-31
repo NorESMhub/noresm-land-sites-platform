@@ -29,12 +29,14 @@ For more information on the platform, please see our [wiki]() and [technical doc
    
 ## Code development team
 * [Hui Tang](https://github.com/huitang-earth)
-* [Anne Fouilloux](https://github.com/annefou)
-* [Elin Aas](https://github.com/ecaas)
 * [Lasse Torben Keetz](https://github.com/lasseke)
+* [Stefanie Falk](https://github.com/ziu1986)
+* [Emiliano Gelati](https://github.com/emiliano-gelati)
+* [Elin Aas](https://github.com/ecaas)
+* [Anne Fouilloux](https://github.com/annefou)
 * [Yeliz Yilmaz](https://github.com/yelizy/)
 * Eva Lieungh
-* Peter Horvath
+* [Peter Horvath](https://github.com/peterhor)
 * [Kjetil Aas](https://github.com/kjetilaas)
 * [Sunniva Indrehus](https://github.com/sunnivin)
 * [Devaraju Narayanappa](https://github.com/devarajun)
