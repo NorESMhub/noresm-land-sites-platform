@@ -7,9 +7,9 @@
 ###### doi:
 
 ## Overview and documentation
-The platform aims to facilitate the site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It privdes **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions without techincal obstacles. 
+The platform aims to facilitate the site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It privdes **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions without techincal obstacles.
 
-The platform aims to bridge the gaps between observation and model, and **promote the usage of site-level observations to test, validate and improve the NorESM** and its land component on the one hand, and **promote the usage of the NorESM and its land model component by non-modellers** on the other hand. 
+The platform aims to bridge the gaps between observation and model, and **promote the usage of site-level observations to test, validate and improve the NorESM** and its land component on the one hand, and **promote the usage of the NorESM and its land model component by non-modellers** on the other hand.
 
 The [observation sites]() currently included in the platform
 
@@ -24,24 +24,26 @@ For more information on the platform, please see our [wiki]() and [technical doc
   - See [documentation]()
 
 * ### User: *GALAXY tools, workflows and tutorials*
-  - A graphic user interface for running site-level simulation is available on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html) and [workflows]() for its usage. 
+  - A graphic user interface for running site-level simulation is available on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html) and [workflows]() for its usage.
   - Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
-   
+
 ## Code development team
 * [Hui Tang](https://github.com/huitang-earth)
-* [Anne Fouilloux](https://github.com/annefou)
-* [Elin Aas](https://github.com/ecaas)
 * [Lasse Torben Keetz](https://github.com/lasseke)
+* [Stefanie Falk](https://github.com/ziu1986)
+* [Emiliano Gelati](https://github.com/emiliano-gelati)
+* [Elin Aas](https://github.com/ecaas)
+* [Anne Fouilloux](https://github.com/annefou)
 * [Yeliz Yilmaz](https://github.com/yelizy/)
 * Eva Lieungh
-* Peter Horvath
+* [Peter Horvath](https://github.com/peterhor)
 * [Kjetil Aas](https://github.com/kjetilaas)
 * [Sunniva Indrehus](https://github.com/sunnivin)
 * [Devaraju Narayanappa](https://github.com/devarajun)
 
 ## Data contributors
 * [Sonya Geange](https://github.com/srg101)
-* Inge Althuizen
+* [Inge Althuizen](https://github.com/ingealthuizen)
 
 ## Supporting projects
 * [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
