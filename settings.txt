@@ -1,14 +1,15 @@
-[paths]
-dir_platform = ~/NorESM_LandSites_Platform
-dir_ctsm = ~/ctsm
-sites_table = ${dir_platform}/config/sites.csv
-input_raw = /cluster/shared/noresm/inputdata
-input_dir = /cluster/shared/noresm/test_inputdata_fates_platform
-
 [user]
 sites2run = ALP1, ALP2
 version = 2.0.0
-branch_ctsm = master
+
+[paths]
+dir_platform = ~/NorESM_LandSites_Platform
+sites_table = ${dir_platform}/config/sites.csv
+input_raw = /cluster/shared/noresm/inputdata
+input_dir = /cluster/shared/noresm/test_inputdata_fates_platform
+dir_noresm = ${dir_platform}/noresm2
+url_noresm = https://github.com/NorESMhub/NorESM.git
+branch_noresm = noresm_landsites
 
 [switches]
 creat_script = True      # create script grid or not
@@ -26,3 +27,7 @@ run_case_first = False   # create, build and submit short test runs
 run_case_second = False  # run long experiments
 run_archive = True       # archive experiments. 
 merge_hist = True        # merge history experiments. 
+
+[scripts]
+dir_clm_tools = ${paths:dir_noresm}/components/clm/tools
+mknoocnmap = ${dir_clm_tools}/mkmapdata/mknoocnmap.pl

@@ -6,8 +6,8 @@
 #SBATCH --ntasks=1
 #SBATCH --time=07:00:00
 
-# 1. Directory (relative path) of this script
-dir_script=`dirname "${BASH_SOURCE[0]}"`
+# 1. Directory of this script
+dir_script=$PWD/$(dirname "${BASH_SOURCE[0]}")
 
 # 2. Load conda module
 module purge && module load Anaconda3/2019.07

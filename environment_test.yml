@@ -3,6 +3,8 @@ channels:
   - conda-forge
 
 dependencies:
+  - vim=8.2
+  - cmake
   - compilers
   - gdal
   - cdo>=1.9.7

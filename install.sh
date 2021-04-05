@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# 1. Directory (relative path) of this script
-dir_script=`dirname "${BASH_SOURCE[0]}"`
+# 1. Directories of this script; and NorESM (from settings file)
+dir_script=$PWD/$(dirname "${BASH_SOURCE[0]}")
+path_settings=$dir_script/settings.txt
+dir_platform=$(grep -oP 'dir_platform\s*[=:]\s*\K(.+)' $path_settings)
+dir_platform="${dir_platform/#~/$HOME}" # needed to get dir_noresm
+dir_noresm=$(grep -oP 'dir_noresm\s*[=:]\s*\K(.+)' $path_settings)
+dir_noresm=`eval echo $dir_noresm` # evaluate $dir_platform
 
-# 2. Ctsm directory and branch name (from settings.txt)
-dir_ctsm=$(grep -oP 'dir_ctsm\s*[=:]\s*\K(.+)' $dir_script/settings.txt)
-dir_ctsm="${dir_ctsm/#~/$HOME}" # expand ~ to user home, if needed
-branch_ctsm=$(grep -oP 'branch_ctsm\s*[=:]\s*\K(.+)' $dir_script/settings.txt)
-
-# 3. Install conda virtual environment
+# 2. Install conda virtual environment
 module purge && module load Anaconda3/2019.07
 dir_env=$dir_script/env
 if ! [ -d $dir_env ]; then
@@ -19,16 +19,17 @@ fi;
 module purge
 # (run "conda clean -all" to avoid large number of cached files in ~/.conda/pkgs)
 
-# 4. Clone/update ctsm (master) from NorESMhub
-mkdir -p $dir_ctsm
-cd $dir_ctsm
-if ! [ -d $dir_ctsm/.git ]; then
-    git clone git@github.com:NorESMhub/CTSM.git $dir_ctsm
-    echo "ctsm cloned into $dir_ctsm"
-elif [ $(basename `git rev-parse --show-toplevel`) = ctsm ]; then
-    git checkout $branch_ctsm && git pull && cd -
-    echo "ctsm already exists in $dir_ctsm: $branch_ctsm branch up to date"
+# 3. Clone/update NorESM and get external tools
+url_noresm=$(grep -oP 'url_noresm\s*[=:]\s*\K(.+)' $path_settings)
+branch_noresm=$(grep -oP 'branch_noresm\s*[=:]\s*\K(.+)' $path_settings)
+mkdir -p $dir_noresm
+cd $dir_noresm
+if ! [ -d $dir_noresm/.git ]; then
+    git clone -b $branch_noresm $url_noresm $dir_noresm
+    echo "NorESM cloned into $dir_noresm: on branch $branch_noresm"
 else
-    echo "ERROR: $dir_ctsm already hosts another repository than CTSM!"
-    exit 1
+    git checkout $branch_noresm && git pull
+    echo "NorESM already exists in $dir_noresm: $branch_noresm branch up to date"
 fi;
+python2 manage_externals/checkout_externals # TO CHECK: not working with Python3
+# TO DO: run $dir_platform/LandsitesTools/ctsm_patching.ipynb ?
