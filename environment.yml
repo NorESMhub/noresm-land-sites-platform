@@ -2,6 +2,7 @@
 name: sites_platform
 channels:
   - conda-forge
+  - nesii # for ESMPy -> https://earthsystemmodeling.org/esmpy_doc/release/ESMF_8_0_1/html/install.html
 
 dependencies:
   # Python packages that cannot be installed from PyPI:
@@ -19,6 +20,7 @@ dependencies:
   - mpich<3.4  # avoid 3.4.1 external_2 from conda-forge like the plague
   - nco
   - scikit-learn  # may hit hw-specific issue if from pypi https://github.com/scikit-learn/scikit-learn/issues/14485
+  - ESMF # re-gridding operations
 
   # Multi language support:
   - ncl>=6.5.0  # this should always install 6.6.0 though
