@@ -1,11 +1,13 @@
 [user]                      
 # basic setting for the user
-sites2run = ALP1, ALP2
-start_date = 2010-01-01h00:00
-end_date = 2010-12-31h59:00
-vegetation_type=                # separate file 
-atm_forcing=
-machine   =
+sites2run       = ALP1, ALP2
+start_date      = 2010-01-01h00:00
+end_date        = 2010-12-31h59:00
+run_type        =
+vegetation_type =                        # separate file 
+atm_forcing     =
+archive_dir     =
+machine         =
 version = 2.0.0
 
 # Setting for advanced users 
