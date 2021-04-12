@@ -1,3 +1,4 @@
+import socket
 import os
 import sys
 import shutil
@@ -14,9 +15,16 @@ class SurfaceData:
 
     def createGrid(self, name_site):
         """Create site grid for a land site"""
+        # THIS MODULE SELECTION IS A HARD-CODED WORKAROUND: SHOULD WE HAVE
+        # INSTEAD A JSON FILE WITH THE MODULES TO BE LOADED ON EACH MACHINE?
+        if "fram.sigma2.no" in socket.gethostname():
+            ncl_module = "NCL/6.6.2-intel-2018b"
+        elif "saga.sigma2.no" in socket.gethostname():
+            ncl_module = "NCL/6.6.2-intel-2019b"
+        else:
+            raise NotImplementedError
         # Load NCL module
-#       subprocess.run("module purge && module load NCL/6.6.2-intel-2019b",
-        subprocess.run("module purge && module load NCL/6.6.2-intel-2018b",
+        subprocess.run(f"module purge --silent && module load {ncl_module}",
                        shell=True, check=True)
         # Create destination folder
         dir_scripgrid = self.settings.input_dir / f"share/scripgrids/{name_site}"
