@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# 1. Directories of this script; and NorESM (from settings file)
+# 1. Directory of this script (and of the platform)
 dir_script=$PWD/$(dirname "${BASH_SOURCE[0]}")
-path_settings=$dir_script/settings.txt
-dir_platform=$(grep -oP 'dir_platform\s*[=:]\s*\K(.+)' $path_settings)
-dir_platform="${dir_platform/#~/$HOME}" # needed to get dir_noresm
-dir_noresm=$(grep -oP 'dir_noresm\s*[=:]\s*\K(.+)' $path_settings)
-dir_noresm=`eval echo $dir_noresm` # evaluate $dir_platform
 
 # 2. Install conda virtual environment
 module purge && module load Anaconda3/2019.07
@@ -20,8 +15,9 @@ module purge
 # (run "conda clean -all" to avoid large number of cached files in ~/.conda/pkgs)
 
 # 3. Clone/update NorESM and get external tools
-url_noresm=$(grep -oP 'url_noresm\s*[=:]\s*\K(.+)' $path_settings)
-branch_noresm=$(grep -oP 'branch_noresm\s*[=:]\s*\K(.+)' $path_settings)
+dir_noresm=$dir_script/noresm2
+url_noresm=https://github.com/NorESMhub/NorESM.git
+branch_noresm=noresm_landsites
 mkdir -p $dir_noresm
 cd $dir_noresm
 if ! [ -d $dir_noresm/.git ]; then

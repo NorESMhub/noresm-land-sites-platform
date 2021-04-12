@@ -17,4 +17,4 @@ source $(conda info --base)/etc/profile.d/conda.sh
 conda activate $dir_script/../env
 
 # 4. Run input preparation Python script
-python $dir_script/prepare_input.py $dir_script/../settings.txt
+python $dir_script/surface_data.py $dir_script/../settings.txt
