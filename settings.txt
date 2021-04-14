@@ -23,7 +23,7 @@ input_dir = /cluster/shared/noresm/test_inputdata_fates_platform
 #####################################################################
 
 [paths_advanced]
-sites_table = ${paths_basic:dir_platform}/config/sites.csv
+sites_table = ${paths_basic:dir_platform}/config/sites.json
 input_raw = /cluster/shared/noresm/inputdata
 
 [switches_input]   

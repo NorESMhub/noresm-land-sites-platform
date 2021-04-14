@@ -1,4 +1,3 @@
-import socket
 import os
 import sys
 import shutil
@@ -13,13 +12,13 @@ class SurfaceData:
         # Initialise settings interface
         self.settings = InterfaceSettings(pathsettings)
 
-    def createGrid(self, name_site):
+    def create_grid(self, name_site):
         """Create site grid for a land site"""
         # Create destination folder
         dir_scripgrid = self.settings.input_dir / f"share/scripgrids/{name_site}"
         dir_scripgrid.mkdir(parents=True, exist_ok=True)
         # Run mknoocnmap.pl using site's coordinates
-        yx = self.settings.coordinate_sites.loc[name_site]
+        yx = self.settings.info_all_sites.loc[name_site]
         cmd = f"{self.settings.path_mknoocnmap} -dx 0.01 -dy 0.01 " +\
               f"-centerpoint {yx.latitude},{yx.longitude} -name {name_site}"
         subprocess.run(cmd, shell=True, check=True)
@@ -36,8 +35,8 @@ if __name__ == "__main__":
     # 2. Loop through sites to be simulated
     print(f"Input will be prepared for sites {processor.settings.sites2run}")
     for name_site in processor.settings.sites2run:
-        case_name = processor.settings.caseName(name_site)
+        case_name = processor.settings.case_name(name_site)
         # 2.1 Create script grid files
         if processor.settings.switches_input["creat_script"]:
-            processor.createGrid(name_site)
+            processor.create_grid(name_site)
     import pdb; pdb.set_trace()
