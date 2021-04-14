@@ -1,2 +1,4 @@
 env/
 noresm2/
+__pycache__/
+.*.swp

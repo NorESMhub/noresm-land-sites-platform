@@ -1158,7 +1158,18 @@ lnd/clm2/surfdata_map/LIAH/surfdata_LIAH_simyr2000.nc</fsurdat>
 lnd/clm2/surfdata_map/FINN/surfdata_FINN_simyr2000.nc</fsurdat>
 <fsurdat hgrid="1x1_FNS"    sim_year="2000" use_crop=".false." irrigate=".true.">
 lnd/clm2/surfdata_map/FNS/surfdata_FNS_simyr2000.nc</fsurdat>
-
+<fsurdat hgrid="1x1_BYV"    sim_year="2000" use_crop=".false." irrigate=".true.">
+lnd/clm2/surfdata_map/BYV/surfdata_BYV_simyr2000.nc</fsurdat>
+<fsurdat hgrid="1x1_ISK"    sim_year="2000" use_crop=".false." irrigate=".true.">
+lnd/clm2/surfdata_map/ISK/surfdata_ISK_simyr2000.nc</fsurdat>
+<fsurdat hgrid="1x1_HIS1"    sim_year="2000" use_crop=".false." irrigate=".true.">
+lnd/clm2/surfdata_map/HIS1/surfdata_HIS1_simyr2000.nc</fsurdat>
+<fsurdat hgrid="1x1_HIS2"    sim_year="2000" use_crop=".false." irrigate=".true.">
+lnd/clm2/surfdata_map/HIS2/surfdata_HIS2_simyr2000.nc</fsurdat>
+<fsurdat hgrid="1x1_ADVN"    sim_year="2000" use_crop=".false." irrigate=".true.">
+lnd/clm2/surfdata_map/ADVN/surfdata_ADVN_simyr2000.nc</fsurdat>
+<fsurdat hgrid="1x1_SVN"    sim_year="2000" use_crop=".false." irrigate=".true.">
+lnd/clm2/surfdata_map/SVN/surfdata_SVN_simyr2000.nc</fsurdat>
 
 <!-- for pre-industrial simulations - year 1850 without crop -->
 <fsurdat hgrid="48x96"        sim_year="1850" use_crop=".false." irrigate=".true.">
@@ -1591,6 +1602,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <ndepmapalgo use_cn=".true."   hgrid="1x1_LIAH"            >nn</ndepmapalgo>
 <ndepmapalgo use_cn=".true."   hgrid="1x1_FINN"            >nn</ndepmapalgo>
 <ndepmapalgo use_cn=".true."   hgrid="1x1_FNS"             >nn</ndepmapalgo>
+<ndepmapalgo use_cn=".true."   hgrid="1x1_BYV"             >nn</ndepmapalgo>
+<ndepmapalgo use_cn=".true."   hgrid="1x1_ISK"             >nn</ndepmapalgo>
+<ndepmapalgo use_cn=".true."   hgrid="1x1_HIS1"            >nn</ndepmapalgo>
+<ndepmapalgo use_cn=".true."   hgrid="1x1_HIS2"            >nn</ndepmapalgo>
+<ndepmapalgo use_cn=".true."   hgrid="1x1_ADVN"            >nn</ndepmapalgo>
+<ndepmapalgo use_cn=".true."   hgrid="1x1_SVN"             >nn</ndepmapalgo>
 
 <!-- Soilm moisture streams namelist defaults -->
 <!-- This is if you want to prescribe the soil moisture from input datasets rather than model it -->
@@ -1649,6 +1666,13 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <lai_mapalgo  hgrid="1x1_LIAH"            >nn</lai_mapalgo>
 <lai_mapalgo  hgrid="1x1_FINN"            >nn</lai_mapalgo>
 <lai_mapalgo  hgrid="1x1_FNS"            >nn</lai_mapalgo>
+<lai_mapalgo  hgrid="1x1_BYV"            >nn</lai_mapalgo>
+<lai_mapalgo  hgrid="1x1_ISK"            >nn</lai_mapalgo>
+<lai_mapalgo  hgrid="1x1_HIS1"            >nn</lai_mapalgo>
+<lai_mapalgo  hgrid="1x1_HIS2"            >nn</lai_mapalgo>
+<lai_mapalgo  hgrid="1x1_ADVN"            >nn</lai_mapalgo>
+<lai_mapalgo  hgrid="1x1_SVN"            >nn</lai_mapalgo>
+
 
 <!-- lightning streams namelist defaults -->
 
@@ -1703,7 +1727,13 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <stream_fldfilename_lightng use_fates=".true." hgrid="1x1_JOAS" >atm/datm7/NASA_LIS/JOAS/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_JOAS.nc</stream_fldfilename_lightng>
 <stream_fldfilename_lightng use_fates=".true." hgrid="1x1_LIAH" >atm/datm7/NASA_LIS/LIAH/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_LIAH.nc</stream_fldfilename_lightng>
 <stream_fldfilename_lightng use_fates=".true." hgrid="1x1_FINN" >atm/datm7/NASA_LIS/FINN/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_FINN.nc</stream_fldfilename_lightng>
-<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_FNS"  >atm/datm7/NASA_LIS/FNS/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_FNS.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_FNS" >atm/datm7/NASA_LIS/FNS/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_FNS.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_BYV" >atm/datm7/NASA_LIS/BYV/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_BYV.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_ISK" >atm/datm7/NASA_LIS/ISK/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_ISK.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_HIS1" >atm/datm7/NASA_LIS/HIS1/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_HIS1.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_HIS2" >atm/datm7/NASA_LIS/HIS2/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_HIS2.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_ADVN" >atm/datm7/NASA_LIS/ADVN/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_ADVN.nc</stream_fldfilename_lightng>
+<stream_fldfilename_lightng use_fates=".true." hgrid="1x1_SVN" >atm/datm7/NASA_LIS/SVN/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825_SVN.nc</stream_fldfilename_lightng>
 <stream_fldfilename_lightng use_fates=".true."   >atm/datm7/NASA_LIS/clmforc.Li_2016_climo1995-2013.360x720.lnfm_Total_c160825.nc</stream_fldfilename_lightng>
 <lightngmapalgo use_cn=".true."   hgrid="1x1_ALP1"            >nn</lightngmapalgo>
 <lightngmapalgo use_cn=".true."   hgrid="1x1_ALP2"            >nn</lightngmapalgo>
@@ -1726,6 +1756,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <lightngmapalgo use_cn=".true."   hgrid="1x1_LIAH"            >nn</lightngmapalgo>
 <lightngmapalgo use_cn=".true."   hgrid="1x1_FINN"            >nn</lightngmapalgo>
 <lightngmapalgo use_cn=".true."   hgrid="1x1_FNS"             >nn</lightngmapalgo>
+<lightngmapalgo use_cn=".true."   hgrid="1x1_BYV"            >nn</lightngmapalgo>
+<lightngmapalgo use_cn=".true."   hgrid="1x1_ISK"            >nn</lightngmapalgo>
+<lightngmapalgo use_cn=".true."   hgrid="1x1_HIS1"            >nn</lightngmapalgo>
+<lightngmapalgo use_cn=".true."   hgrid="1x1_HIS2"            >nn</lightngmapalgo>
+<lightngmapalgo use_cn=".true."   hgrid="1x1_ADVN"            >nn</lightngmapalgo>
+<lightngmapalgo use_cn=".true."   hgrid="1x1_SVN"            >nn</lightngmapalgo>
 
 <lightngmapalgo use_fates=".true."   hgrid="1x1_ALP1"            >nn</lightngmapalgo>
 <lightngmapalgo use_fates=".true."   hgrid="1x1_ALP2"            >nn</lightngmapalgo>
@@ -1748,6 +1784,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <lightngmapalgo use_fates=".true."   hgrid="1x1_LIAH"            >nn</lightngmapalgo>
 <lightngmapalgo use_fates=".true."   hgrid="1x1_FINN"            >nn</lightngmapalgo>
 <lightngmapalgo use_fates=".true."   hgrid="1x1_FNS"             >nn</lightngmapalgo>
+<lightngmapalgo use_fates=".true."   hgrid="1x1_BYV"            >nn</lightngmapalgo>
+<lightngmapalgo use_fates=".true."   hgrid="1x1_ISK"            >nn</lightngmapalgo>
+<lightngmapalgo use_fates=".true."   hgrid="1x1_HIS1"            >nn</lightngmapalgo>
+<lightngmapalgo use_fates=".true."   hgrid="1x1_HIS2"            >nn</lightngmapalgo>
+<lightngmapalgo use_fates=".true."   hgrid="1x1_ADVN"            >nn</lightngmapalgo>
+<lightngmapalgo use_fates=".true."   hgrid="1x1_SVN"            >nn</lightngmapalgo>
 
 <!-- Population density streams namelist defaults -->
 <stream_year_first_popdens phys="clm4_5"  cnfireson=".true." sim_year_range="1850-2100"  >2015</stream_year_first_popdens>
@@ -1837,6 +1879,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <stream_fldfilename_popdens use_fates=".true." hgrid="1x1_LIAH" >lnd/clm2/firedata/LIAH/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_LIAH.nc</stream_fldfilename_popdens>
 <stream_fldfilename_popdens use_fates=".true." hgrid="1x1_FINN" >lnd/clm2/firedata/FINN/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_FINN.nc</stream_fldfilename_popdens>
 <stream_fldfilename_popdens use_fates=".true." hgrid="1x1_FNS" >lnd/clm2/firedata/FNS/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_FNS.nc</stream_fldfilename_popdens>
+<stream_fldfilename_popdens use_fates=".true." hgrid="1x1_BYV" >lnd/clm2/firedata/BYV/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_BYV.nc</stream_fldfilename_popdens>
+<stream_fldfilename_popdens use_fates=".true." hgrid="1x1_ISK" >lnd/clm2/firedata/ISK/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_ISK.nc</stream_fldfilename_popdens>
+<stream_fldfilename_popdens use_fates=".true." hgrid="1x1_HIS1" >lnd/clm2/firedata/HIS1/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_HIS1.nc</stream_fldfilename_popdens>
+<stream_fldfilename_popdens use_fates=".true." hgrid="1x1_HIS2" >lnd/clm2/firedata/HIS2/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_HIS2.nc</stream_fldfilename_popdens>
+<stream_fldfilename_popdens use_fates=".true." hgrid="1x1_ADVN" >lnd/clm2/firedata/ADVN/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_ADVN.nc</stream_fldfilename_popdens>
+<stream_fldfilename_popdens use_fates=".true." hgrid="1x1_SVN" >lnd/clm2/firedata/SVN/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_SVN.nc</stream_fldfilename_popdens>
 
 <stream_fldfilename_popdens hgrid="0.5x0.5"   use_fates=".true." >lnd/clm2/firedata/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202.nc</stream_fldfilename_popdens>
 <stream_fldfilename_popdens hgrid="0.5x0.5"   use_fates=".true." ssp_rcp="SSP1-1.9" >lnd/clm2/firedata/clmforc.Li_2018_SSP1_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2100_c181205.nc
@@ -1886,6 +1934,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <popdensmapalgo use_cn=".true."   hgrid="1x1_LIAH"            >nn</popdensmapalgo>
 <popdensmapalgo use_cn=".true."   hgrid="1x1_FINN"            >nn</popdensmapalgo>
 <popdensmapalgo use_cn=".true."   hgrid="1x1_FNS"             >nn</popdensmapalgo>
+<popdensmapalgo use_cn=".true."   hgrid="1x1_BYV"            >nn</popdensmapalgo>
+<popdensmapalgo use_cn=".true."   hgrid="1x1_ISK"            >nn</popdensmapalgo>
+<popdensmapalgo use_cn=".true."   hgrid="1x1_HIS1"            >nn</popdensmapalgo>
+<popdensmapalgo use_cn=".true."   hgrid="1x1_HIS2"            >nn</popdensmapalgo>
+<popdensmapalgo use_cn=".true."   hgrid="1x1_ADVN"            >nn</popdensmapalgo>
+<popdensmapalgo use_cn=".true."   hgrid="1x1_SVN"            >nn</popdensmapalgo>
 
 <popdensmapalgo use_fates=".true."                    >bilinear</popdensmapalgo>
 
@@ -1917,6 +1971,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <popdensmapalgo use_fates=".true."   hgrid="1x1_LIAH"            >nn</popdensmapalgo>
 <popdensmapalgo use_fates=".true."   hgrid="1x1_FINN"            >nn</popdensmapalgo>
 <popdensmapalgo use_fates=".true."   hgrid="1x1_FNS"             >nn</popdensmapalgo>
+<popdensmapalgo use_fates=".true."   hgrid="1x1_BYV"            >nn</popdensmapalgo>
+<popdensmapalgo use_fates=".true."   hgrid="1x1_ISK"            >nn</popdensmapalgo>
+<popdensmapalgo use_fates=".true."   hgrid="1x1_HIS1"            >nn</popdensmapalgo>
+<popdensmapalgo use_fates=".true."   hgrid="1x1_HIS2"            >nn</popdensmapalgo>
+<popdensmapalgo use_fates=".true."   hgrid="1x1_ADVN"            >nn</popdensmapalgo>
+<popdensmapalgo use_fates=".true."   hgrid="1x1_SVN"            >nn</popdensmapalgo>
 
 <!-- Urban time varying streams namelist defaults -->
 <stream_year_first_urbantv phys="clm5_1"  sim_year_range="1850-2100" >2015</stream_year_first_urbantv>
@@ -1979,6 +2039,12 @@ lnd/clm2/surfdata_map/release-clm5.0.30/surfdata_ne0np4.CONUS.ne30x8_hist_78pfts
 <stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_LIAH" >lnd/clm2/urbandata/LIAH/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_LIAH.nc</stream_fldfilename_urbantv>
 <stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_FINN" >lnd/clm2/urbandata/FINN/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_FINN.nc</stream_fldfilename_urbantv>
 <stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_FNS" >lnd/clm2/urbandata/FNS/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_FNS.nc</stream_fldfilename_urbantv>
+<stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_BYV" >lnd/clm2/urbandata/BYV/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_BYV.nc</stream_fldfilename_urbantv>
+<stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_ISK" >lnd/clm2/urbandata/ISK/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_ISK.nc</stream_fldfilename_urbantv>
+<stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_HIS1" >lnd/clm2/urbandata/HIS1/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_HIS1.nc</stream_fldfilename_urbantv>
+<stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_HIS2" >lnd/clm2/urbandata/HIS2/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_HIS2.nc</stream_fldfilename_urbantv>
+<stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_ADVN" >lnd/clm2/urbandata/ADVN/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_ADVN.nc</stream_fldfilename_urbantv>
+<stream_fldfilename_urbantv phys="clm5_0" hgrid="1x1_SVN" >lnd/clm2/urbandata/SVN/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_SVN.nc</stream_fldfilename_urbantv>
 
 <urbantvmapalgo >nn</urbantvmapalgo>
 
