@@ -12,7 +12,7 @@ elif [[ $HOSTNAME == *"saga.sigma2.no" ]]; then
 fi # HARD-CODED WORKAROUND -> JSON FILE WITH MODULES FOR EACH MACHINE?
 dir_env=$dir_script/env
 if ! [ -d $dir_env ]; then
-    conda env create --prefix $dir_env --file $dir_script/environment_test.yml
+    conda env create --prefix $dir_env --file $dir_script/environment_dev.yml
 else
     echo "$dir_env exists: make sure it is the required conda environment!"
 fi;
