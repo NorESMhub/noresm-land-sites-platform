@@ -1,0 +1,88 @@
+{
+    "forcing" : "ERA5",
+    "version" : 1.0,
+    "source" : "www.cds.com",
+    "time_range":
+    {
+        "start" : "1950-01-01",
+        "end" : "2019-12-31",
+    }
+    "variables" :
+    {
+        "solar_radiation" :
+        {
+            "name" : "test"
+            "unit" : "Wm^2"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+
+        "precipitation" :
+        {
+            "name" : "test"
+            "unit" : "mm"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+
+        "temperature" :
+        {
+            "name" : "test"
+            "unit" : "K"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+        "pressure" :
+        {
+            "name" : "test"
+            "unit" : "Pa"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+        "humidity" :
+        {
+            "name" : "test"
+            "unit" : "%"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+
+        "longwave_radiation":
+        {
+            "name" : "test"
+            "unit" : "Wm^2"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+
+       "wind":
+        {
+            "name" : "test"
+            "unit" : "ms^-1"
+            "time_step" :
+            {
+                "value" : 1
+                "unit" : "h"
+            }
+        }
+    }
+
+}
