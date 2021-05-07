@@ -6,6 +6,7 @@ dependencies:
   - vim=8.2
   - cmake
   - compilers
+  - gcc_linux-64
   - gdal
   - cdo>=1.9.7
   - eccodes!=2.19.0  # cdo dependency; something messed up with libeccodes.so
@@ -14,4 +15,5 @@ dependencies:
   - ncl>=6.5.0  # this should always install 6.6.0 though
   - python=3.8
   - pip
+  - ipdb=0.13
   - pandas=1.2

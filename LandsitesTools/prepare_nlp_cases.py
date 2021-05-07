@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import argparse
 import sys
 import os
@@ -97,3 +98,6 @@ if build == "y":
     print("Okay!")
 else:
     sys.exit("Exit by user.")
+=======
+### Coming soon.
+>>>>>>> platform_dev

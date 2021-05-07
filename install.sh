@@ -34,5 +34,31 @@ else
     git checkout $branch_noresm && git pull
     echo "NorESM already exists in $dir_noresm: $branch_noresm branch up to date"
 fi;
-python2 manage_externals/checkout_externals # TO CHECK: not working with Python3
-# TO DO: run $dir_platform/LandsitesTools/ctsm_patching.ipynb ?
+
+### check cime and ctsm folders
+cd $dir_noresm
+if ! [ -d $dir_noresm/components ]; then
+    python2 manage_externals/checkout_externals # TO CHECK: not working with Python3
+else
+    for cur_component in clm ../cime
+    do
+        cd $dir_noresm/components/$cur_component/ && git checkout -- . 
+    done
+fi;
+
+### Fix patching
+cd $dir_script
+cp config/ctsm/config_component_ctsm.xml noresm2/components/clm/cime_config/config_component.xml
+cp config/ctsm/namelist_defaults_ctsm.xml noresm2/components/clm/bld/namelist_files/
+cp config/ctsm/CLMBuildNamelist.pm noresm2/components/clm/bld/
+cp config/ctsm/bug_fix/clmfates_interfaceMod.F90 noresm2/components/clm/src/utils/clmfates_interfaceMod.F90
+ 
+# copy configuration files into noresm/cime component
+cp config/cime/config_batch.xml noresm2/cime/config/cesm/machines/
+cp config/cime/config_compilers.xml noresm2/cime/config/cesm/machines/
+cp config/cime/config_machines.xml noresm2/cime/config/cesm/machines/
+cp config/cime/config_grids.xml noresm2/cime/config/cesm/
+cp config/cime/config_component_datm.xml noresm2/cime/src/components/data_comps_mct/datm/cime_config/config_component.xml
+cp config/cime/namelist_definition_datm.xml noresm2/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
+cp config/cime/configure noresm2/cime/src/externals/mct/configure
+
