@@ -7,6 +7,7 @@ import subprocess
 from pathlib import Path
 from interface_settings import InterfaceSettings
 import pandas as pd
+pd.set_option('display.max_colwidth', None)
 
 ########################################################################################################
 ######################################### Argument parser setup ########################################
@@ -186,9 +187,9 @@ else:
         raise
     
     ### Save values
-    compset_str = str(machine_cfgs_df.loc[machine_idx_int,"compset"])
-    machine_str = str(machine_cfgs_df.loc[machine_idx_int,"machine"])
-    project_str = str(machine_cfgs_df.loc[machine_idx_int,"project"])
+    compset_str = str(machine_cfgs_df.loc[machine_idx_int,"compset"].to_string(index=False))
+    machine_str = str(machine_cfgs_df.loc[machine_idx_int,"machine"].to_string(index=False))
+    project_str = str(machine_cfgs_df.loc[machine_idx_int,"project"].to_string(index=False))
         
     
     ###############################################
@@ -236,25 +237,22 @@ for case_str in cases_to_build:
     if project_str != "":
         
         ### Store path to cur folder
-        case_folders.append[path + case_str + suffix]
+        case_folders.append(str(path + case_str + suffix))
         #print(f"{path + case_str + args.case_name_suffix}")
         
         ### bash cmd string
         bashCommand = \
-        f"~/NorESM/cime/scripts/create_newcase --case {path + case_str + suffix}" \
-        + f"--compset {compset_str} --res {res+case_str} --machine {machine_str} --run-unsupported" \
-        + f"--project {project_str}"
+        f"../noresm2/cime/scripts/create_newcase --case {path + case_str + suffix} --compset {compset_str} --res {res+case_str} --machine {machine_str} --run-unsupported --project {project_str}"
         
         process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
         
     else:
         
-        case_folders.append[path + case_str + suffix]
+        case_folders.append(str(path + case_str + suffix))
         
         bashCommand = \
-        f"~/NorESM/cime/scripts/create_newcase --case {path + case_str + suffix}" \
-        + f"--compset {compset_str} --res {res+case_str} --machine {machine_str} --run-unsupported"
+        f"../noresm2/cime/scripts/create_newcase --case {path + case_str + suffix} --compset {compset_str} --res {res+case_str} --machine {machine_str} --run-unsupported"
         
         process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
@@ -267,16 +265,18 @@ print("\nStart building cases...\n")
 ### Create and build cases
 for case_dir in case_folders:
     
-        bashCommand = f"cd {case_dir}"
+        bashCommand = f"cd {case_dir} ; ./case.setup ; ./case.build"
         process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
         
-        bashCommand = "./case.setup"
-        process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE)
-        output, error = process.communicate()
+	
+        #bashCommand = "./case.setup"
+        #process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE)
+        #output, error = process.communicate()
         
-        bashCommand = "./case.build"
-        process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE)
-        output, error = process.communicate()
+        #bashCommand = "./case.build"
+        #process = subprocess.Popen(bashCommand, stdout=subprocess.PIPE)
+        #output, error = process.communicate()
         
+
 print("\nCases built succesfully.\n")
