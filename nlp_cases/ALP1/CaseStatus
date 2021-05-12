@@ -1,9 +1,0 @@
-2021-05-10 15:27:09: case.setup starting 
- ---------------------------------------------------
-2021-05-10 15:27:12: case.setup success 
- ---------------------------------------------------
-2021-05-10 15:27:24: case.build starting 
- ---------------------------------------------------
-2021-05-10 15:27:29: case.build error 
-ERROR: /cluster/home/lassetk/NorESM_LandSites_Platform/noresm2/cime/src/build_scripts/buildlib.gptl FAILED, cat /cluster/work/users/lassetk/ctsm/ALP1/bld/gptl.bldlog.210510-152724
- ---------------------------------------------------
