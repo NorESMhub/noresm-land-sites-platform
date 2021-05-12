@@ -1,0 +1,48 @@
+2021-05-10 15:25:46: ../noresm2/cime/scripts/create_newcase --case ../nlp_cases/ALP1 --compset 2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV --res 1x1_ALP1 --machine saga --run-unsupported --project nn2806k
+ ---------------------------------------------------
+2021-05-10 15:25:46: Compset longname is 2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV_SIAC_SESP
+ ---------------------------------------------------
+2021-05-10 15:25:46: Compset specification file is /cluster/home/lassetk/NorESM_LandSites_Platform/noresm2/components/clm//cime_config/config_compsets.xml
+ ---------------------------------------------------
+2021-05-10 15:25:46: Pes     specification file is /cluster/home/lassetk/NorESM_LandSites_Platform/noresm2/components/clm//cime_config/config_pes.xml
+ ---------------------------------------------------
+2021-05-10 15:25:46: Forcing is 1972-2004
+ ---------------------------------------------------
+2021-05-10 15:25:46: Using None coupler instances
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component ATM is  Data driven ATM single point tower site data set 
+ ---------------------------------------------------
+2021-05-10 15:25:46: ATM_GRID is 1x1_ALP1
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component LND is clm5.0:FATES (Functionally Assembled Terrestrial Ecosystem Simulator) Ecosystem Demography model: (experimental)
+ ---------------------------------------------------
+2021-05-10 15:25:46: LND_GRID is 1x1_ALP1
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component ICE is Stub ice component
+ ---------------------------------------------------
+2021-05-10 15:25:46: ICE_GRID is null
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component OCN is Stub ocn component
+ ---------------------------------------------------
+2021-05-10 15:25:46: OCN_GRID is null
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component ROF is MOSART: MOdel for Scale Adaptive River Transport
+ ---------------------------------------------------
+2021-05-10 15:25:46: ROF_GRID is null
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component GLC is Stub glacier (land ice) component
+ ---------------------------------------------------
+2021-05-10 15:25:46: GLC_GRID is null
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component WAV is Stub wave component
+ ---------------------------------------------------
+2021-05-10 15:25:46: WAV_GRID is null
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component IAC is Stub iac component
+ ---------------------------------------------------
+2021-05-10 15:25:46: IAC_GRID is null
+ ---------------------------------------------------
+2021-05-10 15:25:46: Component ESP is Stub external system processing (ESP) component
+ ---------------------------------------------------
+2021-05-10 15:25:46: ESP_GRID is None
+ ---------------------------------------------------

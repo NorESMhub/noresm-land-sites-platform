@@ -1,0 +1,6 @@
+
+<?xml version="1.0"?>
+<config_definition>
+<commandline></commandline>
+<entry id="phys" value="clm5_0" list="" valid_values="clm4_5,clm5_0,clm5_1">Specifies CTSM physics</entry>
+</config_definition>

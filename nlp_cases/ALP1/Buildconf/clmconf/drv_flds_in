@@ -1,0 +1,14 @@
+&drydep_inparm
+/
+&megan_emis_nl
+/
+&fire_emis_nl
+/
+&carma_inparm
+/
+!#--------------------------------------------------------------------------------------------------------------------------
+!# drv_flds_in:: Comment:
+!# This namelist was created using the following command-line:
+!#     /cluster/home/lassetk/NorESM_LandSites_Platform/noresm2/components/clm/bld/CLM build-namelist -cimeroot /cluster/home/lassetk/NorESM_LandSites_Platform/noresm2/cime/scripts/Tools/../.. -infile /cluster/home/lassetk/NorESM_LandSites_Platform/nlp_cases/ALP1/Buildconf/clmconf/namelist -csmdata /cluster/work/users/lassetk/inputdata -inputdata /cluster/home/lassetk/NorESM_LandSites_Platform/nlp_cases/ALP1/Buildconf/ctsm.input_data_list -ignore_ic_year -namelist &clm_inparm  start_ymd=20000101 /  -use_case 2000_control -res 1x1_ALP1 -clm_start_type default -envxml_dir /cluster/home/lassetk/NorESM_LandSites_Platform/nlp_cases/ALP1 -configuration clm -structure standard -lnd_frac /cluster/work/users/lassetk/inputdata/share/domains/ALP1/domain.lnd.ALP1.200422.nc -glc_nec 10 -co2_ppmv 367.0 -co2_type constant -config /cluster/home/lassetk/NorESM_LandSites_Platform/nlp_cases/ALP1/Buildconf/clmconf/config_cache.xml -bgc fates -no-megan -clm_accelerated_spinup off -lnd_tuning_mode clm5_0_GSWP3v1
+!# For help on options use: /cluster/home/lassetk/NorESM_LandSites_Platform/noresm2/components/clm/bld/CLM build-namelist -help
+!#--------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+stream_fldfilename_popdens = /cluster/work/users/lassetk/inputdata/lnd/clm2/firedata/ALP1/clmforc.Li_2017_HYDEv3.2_CMIP6_hdm_0.5x0.5_AVHRR_simyr1850-2016_c180202_ALP1.nc
+stream_fldfilename_urbantv = /cluster/work/users/lassetk/inputdata/lnd/clm2/urbandata/ALP1/CLM50_tbuildmax_Oleson_2016_0.9x1.25_simyr1849-2106_c160923_ALP1.nc
+fsnowoptics = /cluster/work/users/lassetk/inputdata/lnd/clm2/snicardata/snicar_optics_5bnd_c090915.nc
+paramfile = /cluster/work/users/lassetk/inputdata/lnd/clm2/paramdata/clm50_params.c210208.nc
+fsurdat = /cluster/work/users/lassetk/inputdata/lnd/clm2/surfdata_map/ALP1/surfdata_ALP1_simyr2000.nc
+fatmlndfrc = /cluster/work/users/lassetk/inputdata/share/domains/ALP1/domain.lnd.ALP1.200422.nc
+fates_paramfile = /cluster/work/users/lassetk/inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc
+finidat =  
+fsnowaging = /cluster/work/users/lassetk/inputdata/lnd/clm2/snicardata/snicar_drdt_bst_fit_60_c070416.nc
