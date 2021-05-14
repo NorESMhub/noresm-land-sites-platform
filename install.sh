@@ -12,7 +12,7 @@ elif [[ $HOSTNAME == *"saga.sigma2.no" ]]; then
 fi # HARD-CODED WORKAROUND -> JSON FILE WITH MODULES FOR EACH MACHINE?
 dir_env=$dir_script/env
 if ! [ -d $dir_env ]; then
-    conda env create --prefix $dir_env --file $dir_script/environment_dev.yml
+    conda env create --prefix $dir_env --file $dir_script/environment.yml
 else
     echo "$dir_env exists: make sure it is the required conda environment!"
 fi;
@@ -42,7 +42,7 @@ if ! [ -d $dir_noresm/components ]; then
 else
     for cur_component in clm ../cime
     do
-        cd $dir_noresm/components/$cur_component/ && git checkout -- . 
+        cd $dir_noresm/components/$cur_component/ && git checkout -- .
     done
 fi;
 
@@ -52,7 +52,7 @@ cp config/ctsm/config_component_ctsm.xml noresm2/components/clm/cime_config/conf
 cp config/ctsm/namelist_defaults_ctsm.xml noresm2/components/clm/bld/namelist_files/
 cp config/ctsm/CLMBuildNamelist.pm noresm2/components/clm/bld/
 cp config/ctsm/bug_fix/clmfates_interfaceMod.F90 noresm2/components/clm/src/utils/clmfates_interfaceMod.F90
- 
+
 # copy configuration files into noresm/cime component
 cp config/cime/config_batch.xml noresm2/cime/config/cesm/machines/
 cp config/cime/config_compilers.xml noresm2/cime/config/cesm/machines/
@@ -61,4 +61,3 @@ cp config/cime/config_grids.xml noresm2/cime/config/cesm/
 cp config/cime/config_component_datm.xml noresm2/cime/src/components/data_comps_mct/datm/cime_config/config_component.xml
 cp config/cime/namelist_definition_datm.xml noresm2/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
 cp config/cime/configure noresm2/cime/src/externals/mct/configure
-

@@ -1,8 +1,0 @@
----
-name: sites_platform
-channels:
-  - conda-forge
-
-dependencies:
-  - pandas
-  - matplotlib
