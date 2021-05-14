@@ -32,12 +32,26 @@ class InterfaceSettings:
         self.parser = ConfigParser(interpolation=ExtendedInterpolation(),
                                       inline_comment_prefixes='#')
         self.parser.read(self.path_original_settings)
+
         # Platform directory
-        self.dir_platform = self.read_path('paths_basic', 'dir_platform')
+        self.dir_platform = Path(__file__).absolute().parent.parent
+
         # Names and coordinates of all available sites
-        self.path_sites_table = self.read_path('paths_advanced', 'sites_table')
-        #self.info_all_sites = pd.read_json(self.path_sites_table,
-        #                                   orient='index')
+        self.path_sites_table = self.dir_platform / \
+        self.read_path('paths_advanced', 'sites_table')
+
+        try:
+            with open(self.path_sites_table, "r") as sites_json:
+                self.info_all_sites = pd.read_json(sites_json,
+                                                   orient='index')
+        except Exception as error:
+            print("\nError when reading specified site info .json file!\n")
+            raise error
+
+        self.info_all_sites = pd.read_json(self.path_sites_table,
+                                           orient='index')
+        print(self.info_all_sites)
+
         # Directory of raw NorESM input data
         self.input_raw = self.read_path('paths_advanced', 'input_raw')
         # Directory of NorESM code and script paths
@@ -48,7 +62,7 @@ class InterfaceSettings:
     def sites2run(self):
         """Sites to be simulated"""
         return split_sequence(self.parser['user']['sites2run'])
-    
+
     @property
     def start_date(self):
         """Start date of the simulation"""
@@ -68,6 +82,16 @@ class InterfaceSettings:
     def input_dir(self):
         """Root directory of data to be created"""
         return self.read_path('paths_basic', 'input_dir')
+
+    @property
+    def sites_df(self):
+        """Input-related flow control switches"""
+        return self.info_all_sites
+
+    @property
+    def platform_dir(self):
+        """Input-related flow control switches"""
+        return self.dir_platform
 
     @property
     def switches_input(self):
