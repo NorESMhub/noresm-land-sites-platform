@@ -1,4 +1,4 @@
-name: ./env
+name: nlp-env
 channels:
   - conda-forge
   - defaults
