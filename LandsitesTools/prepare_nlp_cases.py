@@ -66,7 +66,14 @@ if not args.interactive:
     print(f"\nTrying to prepare sites specified in cfg file " + \
     f"'{args.cfg_file}'...\n{def_settings.sites2run}")
 
+    ### Load site information from settings file
     cases_to_build = def_settings.sites2run
+    cases_df = def_settings.sites_df
+
+    for cur_case in cases_to_build:
+        if cur_case not in cased_df["name"]:
+            raise ValueError(f"Case '{cur_case}' is not valid! Valid cases:\n"+\
+            f"{cases_df["name"]}")
 
 ################################################################################
 ############################### Interactive mode ###############################
@@ -104,9 +111,9 @@ else:
 
     ##### Get user input #####
     # Variable to evaluate user input
-    build_in = "o"
+    build_cases_user_input = "o"
     ### Repeat until choice is correct
-    while(build_in == "o"):
+    while(build_cases_user_input == "o"):
 
         case_indices_str = \
         input("Enter the indices of the cases to build "+\
@@ -130,35 +137,44 @@ else:
 
         case_idx = cases_df.index[case_indices_int]
         ### Make sure input is correct
-        build_in = ""
-        while build_in not in ["y", "o", "a"]:
-            build_in = input("Prepare the following cases: " \
+        build_cases_user_input = ""
+        while build_cases_user_input not in ["y", "o", "a"]:
+            build_cases_user_input = input("Prepare the following cases: " \
             +", ".join(cases_df.loc[case_idx,"name"])\
             + "? ([y]es/[o]ther/[a]bort)")
     ### Exit if entered
-    if build_in == "a":
+    if build_cases_user_input == "a":
         sys.exit("Exit by user.")
 
     ### Store names of cases
     cases_to_build = cases_df.loc[case_idx,"name"]
 
 
-    ################################### Machine configs ###################################
+    ############################################################################
+    ############################### Machine configs ############################
+    ############################################################################
 
-    ### Should also be stored in an external file!
-    machine_cfgs_df = pd.DataFrame(columns=["name","machine","compset","project"])
-    saga = pd.Series(data={"name":"SAGA",
-                           "machine":"saga",
-                           "compset":"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-                           "project":"nn2806k"}, name="saga")
-    fram = pd.Series(data={"name":"Fram",
-                           "machine":"fram",
-                           "compset":"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-                           "project":"nn2806k"}, name="fram")
-    galaxy = pd.Series(data={"name":"GALAXY",
-                             "machine":"espresso",
-                             "compset":"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-                             "project":""}, name="galaxy")
+    ### THIS NEEDS TO BE SOLVED DIFFERENTLY!
+    machine_cfgs_df = \
+    pd.DataFrame(columns=["name","machine","compset","project"])
+
+    saga = pd.Series(data = {
+    "name":"SAGA",
+    "machine":"saga",
+    "compset":"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+    "project":"nn2806k"}, name="saga")
+
+    fram = pd.Series(data = {
+    "name":"Fram",
+    "machine":"fram",
+    "compset":"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+    "project":"nn2806k"}, name="fram")
+
+    galaxy = pd.Series(data = {
+    "name":"GALAXY",
+    "machine":"espresso",
+    "compset":"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+    "project":""}, name="galaxy")
 
     machine_cfgs_df = machine_cfgs_df.append(saga, ignore_index=True)
     machine_cfgs_df = machine_cfgs_df.append(fram, ignore_index=True)
@@ -170,7 +186,9 @@ else:
 
     ### Turn into list, remove duplicates, check for valid input
     try:
-        machine_idx_int = [int(idx) for idx in re.split('[ ,;]+', machine_idx_str)]
+        machine_idx_int = \
+        [int(idx) for idx in re.split('[ ,;]+', machine_idx_str)]
+
         machine_idx_int = sorted(list(set(machine_idx_int)))
 
         ### Any value out of array range?
@@ -185,9 +203,14 @@ else:
         raise
 
     ### Save values
-    compset_str = str(machine_cfgs_df.loc[machine_idx_int,"compset"].to_string(index=False))
-    machine_str = str(machine_cfgs_df.loc[machine_idx_int,"machine"].to_string(index=False))
-    project_str = str(machine_cfgs_df.loc[machine_idx_int,"project"].to_string(index=False))
+    compset_str = str(machine_cfgs_df.loc[machine_idx_int,"compset"] \
+    .to_string(index=False))
+
+    machine_str = str(machine_cfgs_df.loc[machine_idx_int,"machine"] \
+    .to_string(index=False))
+
+    project_str = str(machine_cfgs_df.loc[machine_idx_int,"project"] \
+    .to_string(index=False))
 
 
     ###############################################
@@ -239,47 +262,33 @@ else:
 case_names = []
 platform_path = Path(def_settings.platform_dir)
 
+### Loop through chosen cases
 for case_str in cases_to_build:
 
-    ### Different syntax w and without project given
+    ### Store path to cur folder
+    case_names.append(case_str + suffix)
+
+    cur_path = Path(nlp_cases_path / (case_str + suffix))
+
+    print(cur_path)
+    ### bash cmd string
+    bashCommand = \
+    f"{platform_path}/noresm2/cime/scripts/create_newcase "+\
+    f"--case {cur_path} --compset {compset_str} "+\
+    f"--res 1x1_{case_str} --machine {machine_str} --run-unsupported "
+
+    ### If project is given, add to bash cmd string
     if project_str != "":
+        bashCommand += f"--project {project_str}"
 
-        ### Store path to cur folder
-        case_names.append(case_str + suffix)
-
-        cur_path = Path(nlp_cases_path / (case_str + suffix))
-
-        print(cur_path)
-        ### bash cmd string
-        bashCommand = \
-        f"{platform_path}/noresm2/cime/scripts/create_newcase "+\
-        f"--case {cur_path} --compset {compset_str} "+\
-        f"--res 1x1_{case_str} --machine {machine_str} --run-unsupported "+\
-        f"--project {project_str}"
-
-        subprocess.run(bashCommand, shell=True, check=True)
-        #process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-        #output, error = process.communicate()
-
-    else:
-
-        case_names.append(case_str + suffix)
-
-        cur_path = Path(nlp_cases_path / (case_str + suffix))
-
-        ### bash cmd string
-        bashCommand = \
-        f"{platform_path}/noresm2/cime/scripts/create_newcase "+\
-        f"--case {cur_path} --compset {compset_str} "+\
-        f"--res 1x1_{case_str} --machine {machine_str} --run-unsupported"
-
-        subprocess.run(bashCommand, shell=True, check=True)
-        #process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-        #output, error = process.communicate()
+    subprocess.run(bashCommand, shell=True, check=True)
+    #process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    #output, error = process.communicate()
 
 print("\nCases created succesfully.\n")
 
-##############################################
+################################################################################
+
 print("\nStart building cases...\n")
 
 ### Create and build cases
