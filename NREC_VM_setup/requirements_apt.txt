@@ -1,0 +1,5 @@
+python2.7
+python3-pip
+sshfs
+vim
+cmake
