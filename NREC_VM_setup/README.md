@@ -20,8 +20,7 @@ To create and configure a virtual machine on NREC
 4. Login information is printed at the end of `setup_VM_NREC.sh` execution.
 
 To do list (in `setup_VM_NREC.sh`):
-- CLM dependencies (see [CTSM Dockerfile](https://github.com/sunnivin/docker-
-local-build-run-CTSM/blob/main/docker/baseos/centos/centos7.6/Dockerfile))
+- CLM dependencies (see [CTSM Dockerfile](https://github.com/sunnivin/docker-local-build-run-CTSM/blob/1774e7aa6c49cfbe10dae18ceb7dc2739e099d7c/docker/baseos/centos/centos7.6/Dockerfile))
 - Create, attach and mount storage volume
 - Mount cluster storage via sshfs (needed to create data for new sites?)
 - Use shell arguments in to set machine parameters nowhard-coded under
