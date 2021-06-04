@@ -70,10 +70,18 @@ if not args.interactive:
     cases_to_build = def_settings.sites2run
     cases_df = def_settings.sites_df
 
+    ### All available cases
+    nlp_cases = cases_df["name"].values
+
     for cur_case in cases_to_build:
-        if cur_case not in cased_df["name"]:
+        if cur_case not in cases_df["name"]:
             raise ValueError(f"Case '{cur_case}' is not valid! Valid cases:\n"+\
-            f"{cases_df["name"]}")
+            f"{nlp_cases}")
+
+    ### SET CASE CMD STRINGS HARDCODED FOR TESTING, REMOVE WITH NEW SETUP
+    compset_str = "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV"
+    machine_str = "saga"
+    project_str = "nn2806k"
 
 ################################################################################
 ############################### Interactive mode ###############################
