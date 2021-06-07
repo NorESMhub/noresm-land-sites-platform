@@ -22,8 +22,11 @@ def download_input_data(case_name, version, url, home_dir):
             print(f"Input data folder {file_path} already in place.")
 
         else:
+            # Create directory
+            file_path.mkdir(parents=True, exist_ok=True)
+
             ### Download the tar file from `url` and save it under `fname`:
-            fname = file_path + file_name + ".tar"
+            fname = file_path / (file_name + ".tar")
             with urllib.request.urlopen(url) as response, open(fname, 'wb') \
             as out_file:
                 shutil.copyfileobj(response, out_file)

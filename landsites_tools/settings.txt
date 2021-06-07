@@ -23,7 +23,7 @@ input_dir = /cluster/shared/noresm/test_inputdata_fates_platform
 #####################################################################
 
 [paths_advanced]
-sites_table = config/sites.json
+sites_table = data/nlp_sites.json
 input_raw = /cluster/shared/noresm/inputdata
 
 [switches_input]

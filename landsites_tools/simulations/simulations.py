@@ -254,15 +254,12 @@ else:
 
 print("\nStart preparing input data...\n")
 
-#### HOW TO DEAL WITH VERSIONING? ####
-nlp_version = "2.0.0"
-
 ### Loop through chosen cases
 for case_str in cases_to_build:
     ### Test if input data already there, if not, download
     cur_url = cases_df.loc[case_str,"url"]
 
-    hlp.download_input_data(case_str, nlp_version,
+    hlp.download_input_data(case_str, def_settings.version,
     cur_url, def_settings.platform_dir)
 
 sys.exit("Just a test.")

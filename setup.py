@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """NorESM land sites platform installation script."""
+from pathlib import Path
 from setuptools import Command, find_packages, setup
 from landsites_tools import __version__
 
