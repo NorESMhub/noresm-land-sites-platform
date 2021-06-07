@@ -5,7 +5,7 @@ import json
 import re
 import subprocess
 from pathlib import Path, PurePosixPath
-from interface_settings import InterfaceSettings
+from landsites_tools.interface_settings import InterfaceSettings
 import pandas as pd
 pd.set_option('display.max_colwidth', None)
 
@@ -18,7 +18,7 @@ import helpers as hlp
 
 # Describe command line tool
 description = "This tool creates, builds, and sets up CTSM cases for " + \
-"predefined or custom sites (see README). It is either using the site " + \
+"predefined or custom sites (see README.md). It is either using the site " + \
 "names specified in a 'settings.txt' file or interactive command line input."
 
 # Initiate the parser
