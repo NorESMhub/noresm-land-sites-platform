@@ -32,7 +32,7 @@ if ! openstack server list | grep -q $name_server; then
 fi
 
 # Get virtual machine's IP address and add it to SSH known hosts
-address=`openstack server list | grep "$name_server" | grep -oP 'dualStack=\K([0-9\.]+)'`
+address=`openstack server list | grep "$name_server" | grep -oP '\K([0-9\.]{10,})'`
 ssh-keyscan -H $address >> ~/.ssh/known_hosts
 
 # Install dependencies and clone repositories on virtual machine
