@@ -17,9 +17,10 @@ import helpers as hlp
 ################################################################################
 
 # Describe command line tool
-description = "This tool creates, builds, and sets up CTSM cases for " + \
-"predefined or custom sites (see README.md). It is either using the site " + \
-"names specified in a 'settings.txt' file or interactive command line input."
+description = "This tool creates, builds, and sets up CTSM cases for " \
++ "predefined or custom site locations (see README.md). It is either using " \
++ "the site names specified in a 'settings.txt' file or interactive command "
++ "line input."
 
 # Initiate the parser
 parser = argparse.ArgumentParser(description=description)
@@ -66,16 +67,18 @@ if not args.interactive:
 
     ### Load settings file
     def_settings = InterfaceSettings(cfg_file_path)
-    print(f"\nTrying to prepare sites specified in cfg file " + \
-    f"'{args.cfg_file}'...\n{def_settings.sites2run}")
+    print(f"\nTrying to prepare sites specified in cfg file " \
+    + f"'{args.cfg_file}'...\n{def_settings.sites2run}")
 
     ### Load site information from settings file
     cases_to_build = def_settings.sites2run
     cases_df = def_settings.sites_df
+    platform_path = Path(def_settings.platform_dir)
 
     ### All available cases
     nlp_cases = cases_df["name"].values
 
+    ### Check if specified cases are available
     for cur_case in cases_to_build:
         if cur_case not in cases_df["name"]:
             raise ValueError(f"Case '{cur_case}' is not valid! Valid cases:\n"+\
@@ -96,29 +99,11 @@ else:
     .parent.parent.parent / "settings.txt")
     ### Load case DataFrame
     cases_df = def_settings.sites_df
+    # Store path to top-level directory
+    platform_path = Path(def_settings.platform_dir)
 
     ### Print cases
-    print("\n")
-    print("*********************** Available cases ***********************")
-
-    ### Function to print site info in table format
-    def print_table_row(ind, name, res, lat, lon):
-        print('|','%-7s' % str(ind), '|', '%-10s' % str(name), '|',
-         '%-10s' % str(res), '|', '%-10s' % str(lat), '|',
-         '%-10s' % str(lon),'|')
-
-    ### Print table header...
-    print('---------------------------------------------------------------')
-    print_table_row("Index", "Name", "Resolution", "Lat.", "Lon.")
-    print('---------------------------------------------------------------')
-
-    ### Loop through keys in site dictionary...
-    for idx,(_,case) in enumerate(cases_df.iterrows()):
-        print_table_row(idx, case["name"], case["res"],
-        case["lat"], case["lon"])
-
-    print('---------------------------------------------------------------')
-
+    hlp.print_cases(cases_df)
 
     ##### Get user input #####
     # Variable to evaluate user input
@@ -127,14 +112,15 @@ else:
     while(build_cases_user_input == "o"):
 
         case_indices_str = \
-        input("Enter the indices of the cases to build "+\
-        "(seperated by space or comma if more than one): ")
+        input("Enter the indices of the cases to build " \
+        + "(seperated by space or comma if more than one): ")
 
         ### Turn into list, remove duplicates, check for valid input
         try:
-
+            # Split input by comma/semicolon/space, cast to int, store in list
             case_indices_int = [int(idx) for idx in re.split('[ ,;]+',
              case_indices_str)]
+            # Sort int indices and remove duplicates
             case_indices_int = sorted(list(set(case_indices_int)))
 
             ### Any value out of array range?
@@ -153,9 +139,10 @@ else:
             build_cases_user_input = input("Prepare the following cases: " \
             +", ".join(cases_df.loc[case_idx,"name"])\
             + "? ([y]es/[o]ther/[a]bort)")
+
     ### Exit if entered
     if build_cases_user_input == "a":
-        sys.exit("Exit by user.")
+        sys.exit("Aborting.")
 
     ### Store names of cases
     cases_to_build = cases_df.loc[case_idx,"name"]
@@ -236,7 +223,7 @@ else:
     ### Write the modified settings to a new file
     # Create/use 'custom_settings' directory
     try:
-        cust_settings_dir = def_settings.platform_dir / "data"/"custom_settings"
+        cust_settings_dir = platform_path /"data"/"custom_settings"
 
         if not cust_settings_dir.is_dir():
             cust_settings_dir.mkdir(parents=True, exist_ok=True)
@@ -260,9 +247,7 @@ for case_str in cases_to_build:
     cur_url = cases_df.loc[case_str,"url"]
 
     hlp.download_input_data(case_str, def_settings.version,
-    cur_url, def_settings.platform_dir)
-
-sys.exit("Just a test.")
+    cur_url, platform_path)
 
 
 ################################################################################
@@ -273,13 +258,14 @@ print("\nStart creating cases...\n")
 
 ### Check if cases folder exists, otherwise create it
 try:
-    nlp_cases_path = def_settings.platform_dir / "data" / "nlp_cases"
+    nlp_cases_path = platform_path / "data" / "nlp_cases"
     if not nlp_cases_path.is_dir():
         nlp_cases_path.mkdir(parents=True, exist_ok=True)
 except:
     print("Error when creating case folder!")
     raise
 
+### Check if a naming suffix was provided and add to case name
 if args.case_name_suffix != "":
     suffix = "_" + args.case_name_suffix
 else:
@@ -287,7 +273,6 @@ else:
 
 ### store names of case folders
 case_names = []
-platform_path = Path(def_settings.platform_dir)
 
 ### Loop through chosen cases
 for case_str in cases_to_build:
@@ -300,9 +285,9 @@ for case_str in cases_to_build:
     print(cur_path)
     ### bash cmd string
     bashCommand = \
-    f"{platform_path}/noresm2/cime/scripts/create_newcase "+\
-    f"--case {cur_path} --compset {compset_str} "+\
-    f"--res 1x1_{case_str} --machine {machine_str} --run-unsupported "
+    f"{platform_path}/noresm2/cime/scripts/create_newcase " \
+    + f"--case {cur_path} --compset {compset_str} " \
+    + f"--res 1x1_{case_str} --machine {machine_str} --run-unsupported "
 
     ### If project is given, add to bash cmd string
     if project_str != "":
@@ -313,6 +298,8 @@ for case_str in cases_to_build:
     #output, error = process.communicate()
 
 print("\nCases created succesfully.\n")
+
+sys.exit("Break for testing.")
 
 ################################################################################
 

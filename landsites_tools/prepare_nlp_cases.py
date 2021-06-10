@@ -254,7 +254,7 @@ print("\nStart creating cases...\n")
 
 ### Check if cases folder exists, otherwise create it
 try:
-    nlp_cases_path = def_settings.platform_dir / "nlp_cases"
+    nlp_cases_path = def_settings.platform_dir / "data" / "nlp_cases"
     if not nlp_cases_path.is_dir():
         nlp_cases_path.mkdir(parents=True, exist_ok=True)
 except:
