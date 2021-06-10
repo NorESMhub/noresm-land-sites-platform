@@ -1,6 +1,6 @@
 #! /usr/bin/bash
-set -e # Exit if any command fails
-unalias grep # only needed if grep is aliased .bashrc or similar
+#set -e # Exit if any command fails
+#unalias grep # only needed if grep is aliased .bashrc or similar
 
 # Default names and paths (TO DO: use command line arguments)
 name_server=test_vm # name of virtual machine
@@ -33,6 +33,7 @@ fi
 
 # Get virtual machine's IP address and add it to SSH known hosts
 address=`openstack server list | grep "$name_server" | grep -oP '\K([0-9\.]{10,})'`
+echo "NREC machine IP address: $address"
 ssh-keyscan -H $address >> ~/.ssh/known_hosts
 
 # Install dependencies and clone repositories on virtual machine
@@ -48,5 +49,4 @@ ssh ubuntu@$address ./install_platform.sh
 # TO DO
 
 # Print login information
-echo "NREC machine IP address: $address"
 echo "To login, type: ssh ubuntu@$address"

@@ -8,8 +8,11 @@ To create and configure a virtual machine on NREC
    (https://docs.nrec.no/api.html#openstack-command-line-interface-cli)
    and create a `keystone_rc.sh` file in your local home folder
    (https://docs.nrec.no/api.html#using-the-cli-tools)
-3. On your local Linux machine run the script `setup_VM_NREC.sh`, which will
-   set up the remote virtual machine and install the dependencies.
+3. On your local Linux machine run the steps in `source setup_VM_NREC.sh`
+   one by one, to set up the remote virtual machine and install the
+   dependencies.
+   Manual execution is recommended to avoid problems due to delays or
+   connection errors when calling `openstack` commands.
    The following parameters are set at the beginning of the script under
    "Default names and paths" (virtual machine name, SSH key path and
    name, and security group name).
@@ -21,7 +24,8 @@ To create and configure a virtual machine on NREC
 
 To do list (in `setup_VM_NREC.sh`):
 - CLM dependencies (see [CTSM Dockerfile](https://github.com/sunnivin/docker-local-build-run-CTSM/blob/1774e7aa6c49cfbe10dae18ceb7dc2739e099d7c/docker/baseos/centos/centos7.6/Dockerfile))
+  and consider using CentOS instead of Ubuntu as base image if necessary.
 - Create, attach and mount storage volume
 - Mount cluster storage via sshfs (needed to create data for new sites?)
-- Use shell arguments in to set machine parameters nowhard-coded under
+- Use shell arguments in to set machine parameters now hard-coded under
   "Default names and paths".

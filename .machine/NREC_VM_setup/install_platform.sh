@@ -10,7 +10,9 @@ branch_platform=platform_dev
 branch_noresm=noresm_landsites
 
 # Clone NorESM Land Sites Platform: platform_dev branch
-git clone -b $branch_platform $url_plaform $dir_platform
+if ! [ -d $dir_platform ]; then
+    git clone -b $branch_platform $url_plaform $dir_platform
+fi;
 
 # Clone/update NorESM and get external tools
 mkdir -p $dir_noresm
@@ -24,8 +26,8 @@ else
 fi;
 
 ## Check cime and ctsm folders
-cd $dir_noresm
 if ! [ -d $dir_noresm/components ]; then
+    cd $dir_noresm
     python2.7 manage_externals/checkout_externals # TO CHECK: not working with Python3
 else
     for cur_component in clm ../cime; do
