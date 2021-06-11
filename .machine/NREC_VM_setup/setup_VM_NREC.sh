@@ -1,5 +1,5 @@
 #! /usr/bin/bash
-#set -e # Exit if any command fails
+set -e # Exit if any command fails
 #unalias grep # only needed if grep is aliased .bashrc or similar
 
 # Default names and paths (TO DO: use command line arguments)
@@ -23,8 +23,8 @@ fi
 
 # Instance creation (https://docs.nrec.no/create-virtual-machine.html)
 if ! openstack server list | grep -q $name_server; then
-    openstack server create --image "GOLD Ubuntu 20.04 LTS" \
-                            --flavor m1.small \
+    openstack server create --image "GOLD Ubuntu 21.04 LTS" \
+                            --flavor m1.medium \
                             --security-group $security_group \
                             --security-group default \
                             --key-name $name_key \
@@ -32,6 +32,8 @@ if ! openstack server list | grep -q $name_server; then
 fi
 
 # Get virtual machine's IP address and add it to SSH known hosts
+echo "Wait for NREC to sync..."
+sleep 1m
 address=`openstack server list | grep "$name_server" | grep -oP '\K([0-9\.]{10,})'`
 echo "NREC machine IP address: $address"
 ssh-keyscan -H $address >> ~/.ssh/known_hosts

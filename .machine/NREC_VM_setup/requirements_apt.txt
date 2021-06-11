@@ -1,5 +1,39 @@
+# From CTSM Dockerfile
+make
+cmake
+git
+subversion
+bzip2
+gcc
+g++
+gfortran
+linux-libc-dev
+libgmp-dev
+libmpfr-dev
+libmpc-dev
+m4
+wget
+libcurl4-gnutls-dev
+libghc-zlib-dev
+xml2
+libxml2-dev
+csh
+liblapack-dev
+libblas-dev
+libffi-dev
+libxml-libxml-perl
+
+# Replacements for manually compiled libraries in CTSM Dockerfile?
+openmpi-bin
+libexpat1-dev
+libudunits2-dev
+libhdf5-dev
+libnetcdf-dev
+libnetcdff-dev
+
+# NorESM Land Sites Platform
 python2.7
 python3-pip
+build-essential
 sshfs
 vim
-cmake

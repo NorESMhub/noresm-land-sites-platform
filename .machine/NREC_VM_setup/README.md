@@ -13,19 +13,25 @@ To create and configure a virtual machine on NREC
    dependencies.
    Manual execution is recommended to avoid problems due to delays or
    connection errors when calling `openstack` commands.
-   The following parameters are set at the beginning of the script under
-   "Default names and paths" (virtual machine name, SSH key path and
-   name, and security group name).
-   Several steps (Create security group and rules, Upload public SSH key,
-   Instance creation) can be done manually on the
-   [NREC dashboard](https://dashboard.nrec.no): links to the documentation are
-   provided in `setup_VM_NREC.sh`.
 4. Login information is printed at the end of `setup_VM_NREC.sh` execution.
 
+Notes:
+- The following parameters are set at the beginning of the `setup_VM_NREC.sh`
+  under "Default names and paths": virtual machine name, SSH key path and
+  name, and security group name.
+- Several steps (Create security group and rules, Upload public SSH key,
+  Instance creation) can be done manually on the
+  [NREC dashboard](https://dashboard.nrec.no): links to the documentation are
+  provided in `setup_VM_NREC.sh`.
+- Source for CLM dependencies: [CTSM Dockerfile](https://github.com/sunnivin/docker-local-build-run-CTSM/blob/1774e7aa6c49cfbe10dae18ceb7dc2739e099d7c/docker/baseos/centos/centos7.6/Dockerfile))
+- To check for Ubuntu package dependencies: `apt-cache depends <package>`
+
 To do list (in `setup_VM_NREC.sh`):
-- CLM dependencies (see [CTSM Dockerfile](https://github.com/sunnivin/docker-local-build-run-CTSM/blob/1774e7aa6c49cfbe10dae18ceb7dc2739e099d7c/docker/baseos/centos/centos7.6/Dockerfile))
-  and consider using CentOS instead of Ubuntu as base image if necessary.
 - Create, attach and mount storage volume
 - Mount cluster storage via sshfs (needed to create data for new sites?)
+- Create a [snapshot](https://docs.nrec.no/create-snapshot.html) and use it as
+  the base for new instances.
 - Use shell arguments in to set machine parameters now hard-coded under
   "Default names and paths".
+- Consider using CentOS instead of Ubuntu as base image if necessary for CLM
+  dependencies.
