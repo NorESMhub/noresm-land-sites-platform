@@ -1,7 +1,14 @@
 ### Project specific
-nlp_cases/
-custom_settings/
-interactive_settings.txt
+# ignore...
+cases/*
+input/*
+output/*
+simulation_settings/
+
+# keep...
+!cases/.gitkeep
+!input/.gitkeep
+!output/.gitkeep
 
 ### Environment
 env/

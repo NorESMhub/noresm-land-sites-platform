@@ -4,8 +4,6 @@
 
 [user]
 sites2run       = ALP1, ALP2, BOR1
-start_date      = 2010-01-01 00:00 # YYYY-MM-DD hh:mm
-end_date        = 2010-12-31 00:00 # YYYY-MM-DD hh:mm
 run_type        =
 vegetation_type =                        # separate file
 atm_forcing     =
@@ -16,6 +14,17 @@ version = 2.0.0
 [paths_basic]
 dir_platform = ~/NorESM_LandSites_Platform
 input_dir = /cluster/shared/noresm/test_inputdata_fates_platform
+
+[model_params]
+start_date = 2010-01-01 00:00 # YYYY-MM-DD hh:mm
+end_date = 2010-12-31 00:00 # YYYY-MM-DD hh:mm
+continue_from_restart_file = FALSE
+n_years = 5
+n_resubmit = 1
+atm_forcing_start_date = 1901
+atm_forcing_end_date = 1930
+job_time_hpc = 10:00:00
+
 
 
 #####################################################################

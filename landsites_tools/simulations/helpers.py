@@ -14,7 +14,7 @@ def download_input_data(case_name, version, url, home_dir):
     import tarfile
 
     file_name = case_name + "_" + str(version)
-    file_path = home_dir / "data" / "nlp_input" / file_name
+    file_path = home_dir / "data" / "input" / file_name
 
     ### Check if input directory already exists
     try:
@@ -57,13 +57,13 @@ def print_cases(cases_df):
     '''
     Prints available NLP cases to the console.
     '''
-    
+
     ### Print cases
     print("\n")
     print("*********************** Available cases ***********************")
     ### Print table header...
     print('---------------------------------------------------------------')
-    print_table_row("Index", "Name", "Resolution", "Lat.", "Lon.")
+    _print_table_row("Index", "Name", "Resolution", "Lat.", "Lon.")
     print('---------------------------------------------------------------')
 
     ### Loop through keys in site dictionary...

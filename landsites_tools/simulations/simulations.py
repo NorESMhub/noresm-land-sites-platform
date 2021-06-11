@@ -5,12 +5,15 @@ import json
 import re
 import subprocess
 from pathlib import Path, PurePosixPath
-from landsites_tools.interface_settings import InterfaceSettings
 import pandas as pd
-pd.set_option('display.max_colwidth', None)
+import time
 
 ### Import helper functions
 import helpers as hlp
+from landsites_tools.interface_settings import InterfaceSettings
+
+### General settings
+pd.set_option('display.max_colwidth', None)
 
 ################################################################################
 ############################ Argument parser setup #############################
@@ -19,7 +22,7 @@ import helpers as hlp
 # Describe command line tool
 description = "This tool creates, builds, and sets up CTSM cases for " \
 + "predefined or custom site locations (see README.md). It is either using " \
-+ "the site names specified in a 'settings.txt' file or interactive command "
++ "the site names specified in a 'settings.txt' file or interactive command " \
 + "line input."
 
 # Initiate the parser
@@ -40,7 +43,7 @@ parser.add_argument("-i","--interactive",
                     action="store_true")
 parser.add_argument("-n","--name_output_file",
                     help="name of output settings file (interactive only)",
-                    default="interactive_settings.txt")
+                    default="")
 
 args = parser.parse_args()
 
@@ -54,12 +57,12 @@ if not args.interactive:
     ### Check if the provided config path and file exist
     try:
         if not Path(args.cfg_path).is_dir():
-            raise ValueError("Path does not exist.")
+            raise ValueError("Path to settings file does not exist.")
 
         ### Save full path to cfg file
         cfg_file_path = Path(args.cfg_path) / args.cfg_file
         if not cfg_file_path.is_file():
-            raise ValueError("File does not exist at specified path.")
+            raise ValueError("Settings file does not exist at specified path.")
 
     except ValueError:
         print("Error in command line input!")
@@ -140,7 +143,7 @@ else:
             +", ".join(cases_df.loc[case_idx,"name"])\
             + "? ([y]es/[o]ther/[a]bort)")
 
-    ### Exit if entered
+    ### Exit if requested by user
     if build_cases_user_input == "a":
         sys.exit("Aborting.")
 
@@ -223,12 +226,23 @@ else:
     ### Write the modified settings to a new file
     # Create/use 'custom_settings' directory
     try:
-        cust_settings_dir = platform_path /"data"/"custom_settings"
+        cust_settings_dir = platform_path / "data" / "output" / \
+        "simulation_settings"
 
         if not cust_settings_dir.is_dir():
             cust_settings_dir.mkdir(parents=True, exist_ok=True)
 
-        def_settings.write_file(f"{cust_settings_dir}/{args.name_output_file}")
+        ### Write settings into txt file
+        if args.name_output_file == "":
+            # Append timestamp in seconds if no name provided
+            def_settings.write_file(
+            f"{cust_settings_dir}/settings_{int(time.time())}.txt")
+        elif args.name_output_file.endswith(".txt"):
+            def_settings.write_file(
+            f"{cust_settings_dir}/{args.name_output_file}")
+        else:
+            def_settings.write_file(
+            f"{cust_settings_dir}/{args.name_output_file}.txt")
 
     except:
         print("\nError when creating new settings file!\n")
@@ -258,7 +272,7 @@ print("\nStart creating cases...\n")
 
 ### Check if cases folder exists, otherwise create it
 try:
-    nlp_cases_path = platform_path / "data" / "nlp_cases"
+    nlp_cases_path = platform_path / "data" / "cases"
     if not nlp_cases_path.is_dir():
         nlp_cases_path.mkdir(parents=True, exist_ok=True)
 except:
@@ -275,32 +289,91 @@ else:
 case_names = []
 
 ### Loop through chosen cases
-for case_str in cases_to_build:
+for case_name in cases_to_build:
 
     ### Store path to cur folder
-    case_names.append(case_str + suffix)
+    case_names.append(case_name + suffix)
 
-    cur_path = Path(nlp_cases_path / (case_str + suffix))
+    cur_path = Path(nlp_cases_path / (case_name + suffix))
 
     print(cur_path)
     ### bash cmd string
-    bashCommand = \
+    bash_command = \
     f"{platform_path}/noresm2/cime/scripts/create_newcase " \
     + f"--case {cur_path} --compset {compset_str} " \
-    + f"--res 1x1_{case_str} --machine {machine_str} --run-unsupported "
+    + f"--res 1x1_{case_name} --machine {machine_str} --run-unsupported "
 
     ### If project is given, add to bash cmd string
     if project_str != "":
-        bashCommand += f"--project {project_str}"
+        bash_command += f"--project {project_str}"
 
-    subprocess.run(bashCommand, shell=True, check=True)
-    #process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    subprocess.run(bash_command, shell=True, check=True)
+    #process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
     #output, error = process.communicate()
 
 print("\nCases created succesfully.\n")
 
 sys.exit("Break for testing.")
 
+################################################################################
+############################### Change CLM config ##############################
+################################################################################
+
+print("\nChanging CLM-FATES parameters...\n")
+
+### Suggestion, will need to be moved outside main
+param_dict = {
+    "env_run.xml": {
+        "STOP_OPTION": "nyears",
+        "STOP_N": def_settings.n_years,
+        "CONTINUE_RUN": def_settings.continue_from_restart_file,
+        "RESUBMIT": def_settings.n_resubmit,
+        "DATM_CLMNCEP_YR_START": def_settings.atm_forcing_start_date,
+        "DATM_CLMNCEP_YR_END": def_settings.atm_forcing_end_date
+        },
+    "env_workflow.xml": {
+        "JOB_WALLCLOCK_TIME": def_settings.job_time_hpc,
+        "JOB_QUEUE": "normal"
+    },
+    "env_run.xml": {
+        "DIN_LOC_ROOT": PurePosixPath(platform_path / "data" / "input")
+    }
+}
+
+for case_name in case_names:
+
+    cur_path = PurePosixPath(nlp_cases_path / case_name)
+
+    ### Initialize bash command to change settings in current case folder
+    bash_command = f"cd {cur_path};"
+
+    ### Loop through all desired parameter changes
+    for file in param_dict.keys():
+        cur_cmds = ";".join(
+        [f"./xmlchange --file {file} --id {param} --val {value}" \
+        for param,value in param_dict[file].items()]
+        )
+
+        bash_command += cur_cmds
+
+    ### Special case: change individual case path to input data
+    cur_input_path = \
+    PurePosixPath(platform_path / "data" / "input" \
+    / (case_name.split("_")[0] + "_" + str(def_settings.version)) \
+    / "inputdata" / "atm" / "datm7" / "GSWP3v1")
+
+    cur_cmds += ";./xmlchange --file env_run.xml --id DIN_LOC_ROOT_CLMFORC"\
+    + f" --val {cur_input_path}"
+
+    bash_command += cur_cmds
+
+    subprocess.run(bash_command, shell=True, check=True)
+
+print("Done!")
+
+
+################################################################################
+################################ Build the cases ###############################
 ################################################################################
 
 print("\nStart building cases...\n")
@@ -312,9 +385,9 @@ for case_name in case_names:
 
     cur_path = PurePosixPath(nlp_cases_path / case_name)
 
-    bashCommand = f"cd {cur_path} ; ./case.setup ; ./case.build"
-    subprocess.run(bashCommand, shell=True, check=True)
-    #process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    bash_command = f"cd {cur_path} ; ./case.setup ; ./case.build"
+    subprocess.run(bash_command, shell=True, check=True)
+    #process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
     #output, error = process.communicate()
 
     print("Done!")
