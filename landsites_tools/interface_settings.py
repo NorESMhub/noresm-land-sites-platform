@@ -64,16 +64,6 @@ class InterfaceSettings:
         return split_sequence(self.parser['user']['sites2run'])
 
     @property
-    def start_date(self):
-        """Start date of the simulation"""
-        return parsetime(self.parser['user']['start_date'])
-
-    @property
-    def end_date(self):
-        """End date of the simulation"""
-        return parsetime(self.parser['user']['end_date'])
-
-    @property
     def version(self):
         """Version of data to be created"""
         return self.parser['user']['version']
@@ -132,6 +122,56 @@ class InterfaceSettings:
     def machine(self):
         """TO DO: machine description and implementation (if needed)"""
         return self.parser['user']['machine']
+
+    ############################################################################
+    '''
+    Model run parameters
+    '''
+
+    @property
+    def start_date(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['start_date']
+
+    @property
+    def end_date(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['end_date']
+
+    @property
+    def continue_from_restart_file(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['continue_from_restart_file']
+
+    @property
+    def n_years(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['n_years']
+
+    @property
+    def n_resubmit(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['n_resubmit']
+
+    @property
+    def atm_forcing_start_date(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['atm_forcing_start_date']
+
+    @property
+    def atm_forcing_end_date(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['atm_forcing_end_date']
+
+    @property
+    def job_time_hpc(self):
+        """Sites to be simulated"""
+        return self.parser['model_params']['job_time_hpc']
+
+    ############################################################################
+    '''
+    Helper functions.
+    '''
 
     def read_path(self, section, parameter):
         """Read and parse path from settings (configparser.ConfigParser format)

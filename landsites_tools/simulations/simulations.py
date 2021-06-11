@@ -99,7 +99,7 @@ if not args.interactive:
 else:
     ### Read default settings file
     def_settings = InterfaceSettings(Path(__file__).absolute() \
-    .parent.parent.parent / "settings.txt")
+    .parent.parent / "settings.txt")
     ### Load case DataFrame
     cases_df = def_settings.sites_df
     # Store path to top-level directory
@@ -312,8 +312,6 @@ for case_name in cases_to_build:
     #output, error = process.communicate()
 
 print("\nCases created succesfully.\n")
-
-sys.exit("Break for testing.")
 
 ################################################################################
 ############################### Change CLM config ##############################

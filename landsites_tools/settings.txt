@@ -3,7 +3,7 @@
 #####################################################################
 
 [user]
-sites2run       = ALP1, ALP2, BOR1
+sites2run       = ALP1, SUB1
 run_type        =
 vegetation_type =                        # separate file
 atm_forcing     =
