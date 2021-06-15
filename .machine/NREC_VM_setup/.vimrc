@@ -27,10 +27,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'jpalardy/vim-slime'
-Plugin 'JuliaEditorSupport/julia-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

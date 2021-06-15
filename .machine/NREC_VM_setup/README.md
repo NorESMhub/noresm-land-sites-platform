@@ -9,8 +9,7 @@ To create and configure a virtual machine on NREC
    and create a `keystone_rc.sh` file in your local home folder
    (https://docs.nrec.no/api.html#using-the-cli-tools)
 3. On your local Linux machine run the steps in `source setup_VM_NREC.sh`
-   one by one, to set up the remote virtual machine and install the
-   dependencies.
+   to set up the remote virtual machine and install the dependencies.
    Manual execution is recommended to avoid problems due to delays or
    connection errors when calling `openstack` commands.
 4. Login information is printed at the end of `setup_VM_NREC.sh` execution.
@@ -33,5 +32,3 @@ To do list (in `setup_VM_NREC.sh`):
   the base for new instances.
 - Use shell arguments in to set machine parameters now hard-coded under
   "Default names and paths".
-- Consider using CentOS instead of Ubuntu as base image if necessary for CLM
-  dependencies.

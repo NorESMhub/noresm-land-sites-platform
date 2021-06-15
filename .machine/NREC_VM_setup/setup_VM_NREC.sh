@@ -23,7 +23,7 @@ fi
 
 # Instance creation (https://docs.nrec.no/create-virtual-machine.html)
 if ! openstack server list | grep -q $name_server; then
-    openstack server create --image "GOLD Ubuntu 21.04 LTS" \
+    openstack server create --image "GOLD CentOS 7" \
                             --flavor m1.medium \
                             --security-group $security_group \
                             --security-group default \
@@ -32,17 +32,17 @@ if ! openstack server list | grep -q $name_server; then
 fi
 
 # Get virtual machine's IP address and add it to SSH known hosts
-echo "Wait for NREC to sync..."
+echo "Wait 1 min for the virtual machine to build..."
 sleep 1m
 address=`openstack server list | grep "$name_server" | grep -oP '\K([0-9\.]{10,})'`
 echo "NREC machine IP address: $address"
 ssh-keyscan -H $address >> ~/.ssh/known_hosts
 
 # Install dependencies and clone repositories on virtual machine
-scp {install_*.sh,requirements_*.txt,.vimrc} ubuntu@$address:~/
-ssh ubuntu@$address chmod 700 install_*.sh
-ssh ubuntu@$address ./install_dependencies.sh
-ssh ubuntu@$address ./install_platform.sh
+scp {install_*.sh,requirements_*.txt,.vimrc,.tmux.conf} centos@$address:~/
+ssh centos@$address chmod 700 install_*.sh
+ssh centos@$address ./install_dependencies.sh
+ssh centos@$address ./install_platform.sh
 
 # Create, attach and mount storage volume
 # TO DO
@@ -51,4 +51,4 @@ ssh ubuntu@$address ./install_platform.sh
 # TO DO
 
 # Print login information
-echo "To login, type: ssh ubuntu@$address"
+echo "To login, type: ssh centos@$address"

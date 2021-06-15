@@ -1,0 +1,32 @@
+# From CTSM Dockerfile
+which
+make
+cmake
+git
+svn
+bzip2
+gcc
+gcc-c++
+gcc-gfortran
+kernel-devel
+gmp-devel
+mpfr-devel
+libmpc-devel
+m4
+wget
+libcurl-devel
+zlib-devel
+libxml2
+libxml2-devel
+csh
+lapack-devel
+blas-devel
+libffi-devel
+
+# Platform dependencies
+openssl-devel
+bzip2-devel
+sqlite-devel
+tmux
+vim-common
+vim-enhanced
