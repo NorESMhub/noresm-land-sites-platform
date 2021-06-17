@@ -10,6 +10,8 @@ To create and configure a virtual machine on NREC
    (https://docs.nrec.no/api.html#using-the-cli-tools)
 3. On your local Linux machine run the steps in `source setup_VM_NREC.sh`
    to set up the remote virtual machine and install the dependencies.
+   Set the `image` variable in `setup_VM_NREC.sh` to decide from which
+   image (snapshot) your virtual machine will be created.
    Manual execution is recommended to avoid problems due to delays or
    connection errors when calling `openstack` commands.
 4. Login information is printed at the end of `setup_VM_NREC.sh` execution.
