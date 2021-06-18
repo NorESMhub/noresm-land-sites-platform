@@ -3,8 +3,8 @@
 ################################################################################
 
 [paths_basic]
-input_dir = data/input
-output_dir = data/output
+input_dir = data/input/
+output_dir = data/output/
 
 ############################### Case run options ###############################
 [case_run_params]

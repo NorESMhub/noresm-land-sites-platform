@@ -80,6 +80,7 @@ class InterfaceSettings:
         """Root directory of data to be created"""
         return self.input_dir
 
+    @property
     def output_dir(self):
         """Root directory of data to be created"""
         return self.output_dir
