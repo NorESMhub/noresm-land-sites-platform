@@ -10,10 +10,10 @@
 <OS>LINUX</OS>
 <COMPILERS>gnu</COMPILERS>
 <MPILIBS>openmpi, mpi-serial</MPILIBS>
-<CIME_OUTPUT_ROOT>$HOME/NorESM_LandSites_Platform/data/output</CIME_OUTPUT_ROOT>
-<DIN_LOC_ROOT>$HOME/NorESM_LandSites_Platform/data/input/inputdata</DIN_LOC_ROOT>
-<DIN_LOC_ROOT_CLMFORC>$HOME/NorESM_LandSites_Platform/data/input/inputdata/atm/datm7/GSWP3v1</DIN_LOC_ROOT_CLMFORC>
-<DOUT_S_ROOT>$HOME/NorESM_LandSites_Platform/data/archive/$CASE</DOUT_S_ROOT>
+<CIME_OUTPUT_ROOT>$ENV{HOME}/NorESM_LandSites_Platform/data/output</CIME_OUTPUT_ROOT>
+<DIN_LOC_ROOT>$ENV{HOME}/NorESM_LandSites_Platform/data/input/inputdata</DIN_LOC_ROOT>
+<DIN_LOC_ROOT_CLMFORC>$ENV{HOME}/NorESM_LandSites_Platform/data/input/inputdata/atm/datm7/GSWP3v1</DIN_LOC_ROOT_CLMFORC>
+<DOUT_S_ROOT>$ENV{HOME}/NorESM_LandSites_Platform/data/archive/$CASE</DOUT_S_ROOT>
 <BASELINE_ROOT>UNSET</BASELINE_ROOT>
 <CCSM_CPRNC>UNSET</CCSM_CPRNC>
 <GMAKE>make</GMAKE>

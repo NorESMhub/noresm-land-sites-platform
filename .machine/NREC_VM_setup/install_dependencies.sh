@@ -4,6 +4,7 @@ set -e # Exit if any command fails
 # CentOS (yum) packages
 sudo yum update -y
 sed 's/#.*//' requirements_yum.txt | xargs sudo yum install -y
+sudo yum install "perl(XML::LibXML)" -y
 
 # Vim plugins
 mkdir -p .vim/bundle

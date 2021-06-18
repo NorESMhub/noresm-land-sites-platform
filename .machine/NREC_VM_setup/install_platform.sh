@@ -14,7 +14,7 @@ if ! [ -d $dir_platform ]; then
     git clone -b $branch_platform $url_plaform $dir_platform
 fi;
 
-# Clone/update NorESM and get external tools
+# Clone/update NorESM
 mkdir -p $dir_noresm
 cd $dir_noresm
 if ! [ -d $dir_noresm/.git ]; then
@@ -25,7 +25,7 @@ else
     echo "NorESM already exists in $dir_noresm: $branch_noresm branch up to date"
 fi;
 
-## Check cime and ctsm folders
+## Get externals
 if ! [ -d $dir_noresm/components ]; then
     cd $dir_noresm
     python2.7 manage_externals/checkout_externals # TO CHECK: not working with Python3
