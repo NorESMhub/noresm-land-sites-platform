@@ -19,7 +19,8 @@ def download_input_data(case_name, version, url, home_dir):
     ### Check if input directory already exists
     try:
         if file_path.is_dir():
-            print(f"Input data folder {file_path} already in place.")
+            print(f"Input data folder {file_path} already in place. "\
+            + "Make sure that it contains all the necessary forcing files!")
 
         else:
             # Create directory
@@ -72,3 +73,23 @@ def print_cases(cases_df):
         case["lat"], case["lon"])
 
     print('---------------------------------------------------------------')
+
+
+def check_dir(dir):
+    '''
+    Check if a given directory exists. Returns False if the input is an empty
+    string, True if it is a valid directory, and raises an exception if given
+    path is not valid.
+    '''
+
+    if dir == "":
+        return False
+
+    ### If not empty string, check Path
+    try:
+        if not Path(dir).is_dir():
+            raise ValueError(f"Directory {dir} does not exist!")
+        else:
+            return True
+        except:
+            raise

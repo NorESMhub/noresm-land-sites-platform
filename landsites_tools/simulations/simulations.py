@@ -38,6 +38,9 @@ parser.add_argument("-p","--cfg_path", help="path to configuration file",
 parser.add_argument("-f","--cfg_file",
                     help="configuration file to use, default is 'settings.txt'",
                     default="settings.txt")
+parser.add_argument("-id","--input_dir",
+                    help="path to the input (forcing) data directory",
+                    default="")
 parser.add_argument("-i","--interactive",
                     help="display and prepare cases interactively",
                     action="store_true")
@@ -64,6 +67,9 @@ if not args.interactive:
         if not cfg_file_path.is_file():
             raise ValueError("Settings file does not exist at specified path.")
 
+        ### Also check if given input dir throws an Exception
+        hlp.check_input_data(args.input_dir)
+
     except ValueError:
         print("Error in command line input!")
         raise
@@ -76,7 +82,25 @@ if not args.interactive:
     ### Load site information from settings file
     cases_to_build = def_settings.sites2run
     cases_df = def_settings.sites_df
+
+    # Store path to top-level directory
     platform_path = Path(def_settings.platform_dir)
+    platform_path = platform_path if hlp.check_dir(platform_path) else \
+    Path(__file__).absolute().parent.parent
+
+    # Store path to input directory
+    input_dir = Path(def_settings.input_dir)
+    input_dir = input_dir if hlp.check_dir(input_dir) else \
+    Path(__file__).absolute().parent.parent / "data" / "input"
+    if not input_dir.is_dir():
+        input_dir.mkdir(parents=True, exist_ok=True)
+
+    # Store path to output directory
+    output_dir = Path(def_settings.output_dir)
+    output_dir = output_dir if hlp.check_dir(output_dir) else \
+    Path(__file__).absolute().parent.parent / "data" / "input"
+    if not output_dir.is_dir():
+        output_dir.mkdir(parents=True, exist_ok=True)
 
     ### All available cases
     nlp_cases = cases_df["name"].values
@@ -87,7 +111,7 @@ if not args.interactive:
             raise ValueError(f"Case '{cur_case}' is not valid! Valid cases:\n"+\
             f"{nlp_cases}")
 
-    ### SET CASE CMD STRINGS HARDCODED FOR TESTING, REMOVE WITH NEW SETUP
+    ### TO DO: SET CASE CMD STRINGS HARDCODED FOR TESTING, REMOVE WITH NEW SETUP
     compset_str = "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV"
     machine_str = "saga"
     project_str = "nn2806k"
@@ -97,13 +121,32 @@ if not args.interactive:
 ################################################################################
 
 else:
-    ### Read default settings file
+    ### Read default settings file ###
     def_settings = InterfaceSettings(Path(__file__).absolute() \
     .parent.parent / "settings.txt")
-    ### Load case DataFrame
+
+    # Load case DataFrame
     cases_df = def_settings.sites_df
+
     # Store path to top-level directory
     platform_path = Path(def_settings.platform_dir)
+    platform_path = platform_path if hlp.check_dir(platform_path) else \
+    Path(__file__).absolute().parent.parent
+
+    # Store path to input directory
+    input_dir = Path(def_settings.input_dir)
+    input_dir = input_dir if hlp.check_dir(input_dir) else \
+    Path(__file__).absolute().parent.parent / "data" / "input"
+    if not input_dir.is_dir():
+        input_dir.mkdir(parents=True, exist_ok=True)
+
+    # Store path to output directory
+    output_dir = Path(def_settings.output_dir)
+    output_dir = output_dir if hlp.check_dir(output_dir) else \
+    Path(__file__).absolute().parent.parent / "data" / "input"
+    if not output_dir.is_dir():
+        output_dir.mkdir(parents=True, exist_ok=True)
+
 
     ### Print cases
     hlp.print_cases(cases_df)
@@ -226,8 +269,7 @@ else:
     ### Write the modified settings to a new file
     # Create/use 'custom_settings' directory
     try:
-        cust_settings_dir = platform_path / "data" / "output" / \
-        "simulation_settings"
+        cust_settings_dir = platform_path / "data" / "custom_settings_files"
 
         if not cust_settings_dir.is_dir():
             cust_settings_dir.mkdir(parents=True, exist_ok=True)
@@ -260,6 +302,7 @@ for case_str in cases_to_build:
     ### Test if input data already there, if not, download
     cur_url = cases_df.loc[case_str,"url"]
 
+    ### If it does not exist, try to download from predifined links
     hlp.download_input_data(case_str, def_settings.version,
     cur_url, platform_path)
 
@@ -317,24 +360,37 @@ print("\nCases created succesfully.\n")
 ############################### Change CLM config ##############################
 ################################################################################
 
-print("\nChanging CLM-FATES parameters...\n")
+print("\nChanging CLM parameters...\n")
 
-### Suggestion, will need to be moved outside main
+### Suggestion, will need to be moved outside main!
 param_dict = {
     "env_run.xml": {
         "STOP_OPTION": "nyears",
-        "STOP_N": def_settings.n_years,
-        "CONTINUE_RUN": def_settings.continue_from_restart_file,
-        "RESUBMIT": def_settings.n_resubmit,
-        "DATM_CLMNCEP_YR_START": def_settings.atm_forcing_start_date,
-        "DATM_CLMNCEP_YR_END": def_settings.atm_forcing_end_date
+        "STOP_N": def_settings.get_param_value('case_run_params', 'n_years'),
+        "CONTINUE_RUN": def_settings.get_param_value('case_run_params',
+        'continue_from_restart_file'),
+        "RESUBMIT": def_settings.get_param_value('case_run_params',
+        'n_resubmit'),
+        "DATM_CLMNCEP_YR_START": def_settings.get_param_value('case_run_params',
+        'atm_forcing_start_date'),
+        "DATM_CLMNCEP_YR_END": def_settings.get_param_value('case_run_params',
+        'atm_forcing_end_date')
         },
     "env_workflow.xml": {
-        "JOB_WALLCLOCK_TIME": def_settings.job_time_hpc,
-        "JOB_QUEUE": "normal"
+        "JOB_WALLCLOCK_TIME": def_settings.get_param_value('case_run_params',
+        'job_time_hpc')
     },
     "env_run.xml": {
         "DIN_LOC_ROOT": PurePosixPath(platform_path / "data" / "input")
+    },
+    "env_case.xml": {
+        "RUN_TYPE": def_settings.get_param_value('case_run_params', 'run_type'),
+        "RUN_STARTDATE": def_settings.get_param_value('case_run_params',
+        'run_start_date'),
+        "RUN_REFCASE": def_settings.get_param_value('case_run_params',
+        'run_ref_case'),
+        "RUN_REFDATE": def_settings.get_param_value('case_run_params',
+        'run_ref_date')
     }
 }
 
@@ -355,13 +411,14 @@ for case_name in case_names:
         bash_command += cur_cmds
 
     ### Special case: change individual case path to input data
+    ### Will be taken care of by config/cime/config_machines.xml once it's set
     cur_input_path = \
     PurePosixPath(platform_path / "data" / "input" \
     / (case_name.split("_")[0] + "_" + str(def_settings.version)) \
     / "inputdata" / "atm" / "datm7" / "GSWP3v1")
 
-    cur_cmds += ";./xmlchange --file env_run.xml --id DIN_LOC_ROOT_CLMFORC"\
-    + f" --val {cur_input_path}"
+    cur_cmds += ";./xmlchange --file env_run.xml --id DIN_LOC_ROOT_CLMFORC "\
+    + f"--val {cur_input_path}"
 
     bash_command += cur_cmds
 

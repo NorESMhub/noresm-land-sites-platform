@@ -58,25 +58,10 @@ class InterfaceSettings:
         self.dir_clm_tools = self.read_path('scripts', 'dir_clm_tools')
         self.path_mknoocnmap = self.read_path('scripts', 'mknoocnmap')
 
-    @property
-    def sites2run(self):
-        """Sites to be simulated"""
-        return split_sequence(self.parser['user']['sites2run'])
-
-    @property
-    def version(self):
-        """Version of data to be created"""
-        return self.parser['user']['version']
-
-    @property
-    def input_dir(self):
-        """Root directory of data to be created"""
-        return self.read_path('paths_basic', 'input_dir')
-
-    @property
-    def sites_df(self):
-        """Input-related flow control switches"""
-        return self.info_all_sites
+    ############################################################################
+    '''
+    Basic user settings.
+    '''
 
     @property
     def platform_dir(self):
@@ -84,94 +69,114 @@ class InterfaceSettings:
         return self.dir_platform
 
     @property
-    def switches_input(self):
+    def input_dir(self):
+        """Root directory of data to be created"""
+        return self.read_path('paths_basic', 'input_dir')
+
+    def output_dir(self):
+        """Root directory of data to be created"""
+        return self.read_path('paths_basic', 'output_dir')
+
+    @property
+    def sites_df(self):
         """Input-related flow control switches"""
-        return self.read_switches('switches_input')
-
-    @property
-    def switches_model(self):
-        """Model-related flow control switches"""
-        return self.read_switches('switches_model')
-
-    @property
-    def switches_postproc(self):
-        """Postprocessing-related flow control switches"""
-        return self.read_switches('switches_postproc')
-
-    @property
-    def run_type(self):
-        """TO DO: run_type description and implementation (if needed)"""
-        return self.parser['user']['run_type']
-
-    @property
-    def vegetation_type(self):
-        """TO DO: vegetation_type description and implementation (if needed)"""
-        return self.parser['user']['vegetation_type']
-
-    @property
-    def atm_forcing(self):
-        """TO DO: atm_forcing description and implementation (if needed)"""
-        return self.parser['user']['atm_forcing']
-
-    @property
-    def archive_dir(self):
-        """TO DO: archive_dir description and implementation (if needed)"""
-        return self.parser['user']['archive_dir']
-
-    @property
-    def machine(self):
-        """TO DO: machine description and implementation (if needed)"""
-        return self.parser['user']['machine']
+        return self.info_all_sites
 
     ############################################################################
     '''
-    Model run parameters
+    Case run options. Needed?
     '''
+    '''
+    ### Sites and version of input data ###
+    @property
+    def sites2run(self):
+        """Sites to be simulated"""
+        return split_sequence(self.parser['case_run_params']['sites2run'])
 
     @property
-    def start_date(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['start_date']
+    def version(self):
+        """Version of data to be used or created."""
+        return self.parser['case_run_params']['version']
 
+    ### Simulation mode ###
     @property
-    def end_date(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['end_date']
+    def run_type(self):
+        """Defines the mode to run (e.g. from existing restart file)."""
+        return self.parser['case_run_params']['run_type']
 
     @property
     def continue_from_restart_file(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['continue_from_restart_file']
+        """Switch to start the simulation from an existing restart file."""
+        return self.parser['case_run_params']['continue_from_restart_file']
+
+    @property
+    def run_ref_case(self):
+        """Name of the reference case (for restart and branch runs)."""
+        return self.parser['case_run_params']['run_ref_case']
+
+    ### Simulation period ###
+    @property
+    def run_start_date(self):
+        """Start date for simulation period."""
+        return self.parser['case_run_params']['run_start_date']
 
     @property
     def n_years(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['n_years']
+        """Number of years to simulate per resubmit."""
+        return self.parser['case_run_params']['n_years']
 
     @property
     def n_resubmit(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['n_resubmit']
+        """Number of resubmits.
+        Total years = n_years + (n_years*n_resubmit)."""
+        return self.parser['case_run_params']['n_resubmit']
 
     @property
-    def atm_forcing_start_date(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['atm_forcing_start_date']
+    def end_date(self):
+        """End date for simulation period (in conjunction with n_years and
+        n_resubmit)."""
+        return self.parser['case_run_params']['end_date']
 
     @property
-    def atm_forcing_end_date(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['atm_forcing_end_date']
+    def calendar(self):
+        """Calendar setting to use (includes or excludes leap years)."""
+        return self.parser['case_run_params']['calendar']
 
+    ### High Performance Computing (HPC) settings ###
     @property
     def job_time_hpc(self):
-        """Sites to be simulated"""
-        return self.parser['model_params']['job_time_hpc']
+        """Job wallclock time for hpc simulations. Choose carefully!"""
+        return self.parser['case_run_params']['job_time_hpc']
 
+    @property
+    def machine_hpc(self):
+        """Name representing the HPC machine settings."""
+        return self.parser['case_run_params']['machine_hpc']
+
+    @property
+    def project_hpc(self):
+        """Name of the project associated with a simulation run."""
+        return self.parser['case_run_params']['project_hpc']
+    '''
+
+    ############################################################################
+    '''
+    FATES parameters.
+    '''
+    '''
+    @property
+    def exclude_pft_indices(self):
+        """Sites to be simulated"""
+        return self.parser['fates_params']['exclude_pft_indices']
+    '''
     ############################################################################
     '''
     Helper functions.
     '''
+
+    def get_param_value(self, section_name, param_name):
+        '''Returns the value for a requested parameter string.'''
+        return self.parser[section_name][param_name]
 
     def read_path(self, section, parameter):
         """Read and parse path from settings (configparser.ConfigParser format)

@@ -1,2 +1,1 @@
-"""LandsitesTools package."""
-__version__ = '2.2.0'
+"""Sub-package to post-process the model output."""

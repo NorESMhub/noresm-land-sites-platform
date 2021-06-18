@@ -1,35 +1,50 @@
-#####################################################################
-# Basic user settings
-#####################################################################
-
-[user]
-sites2run       = ALP1, SUB1
-run_type        =
-vegetation_type =                        # separate file
-atm_forcing     =
-archive_dir     =
-machine         =
-version = 2.0.0
+################################################################################
+############################# Basic user settings ##############################
+################################################################################
 
 [paths_basic]
 dir_platform = ~/NorESM_LandSites_Platform
-input_dir = /cluster/shared/noresm/test_inputdata_fates_platform
+input_dir = ${paths_basic:dir_platform}/data/input
+output_dir = ${paths_basic:dir_platform}/data/output
 
-[model_params]
-start_date = 2010-01-01 00:00 # YYYY-MM-DD hh:mm
-end_date = 2010-12-31 00:00 # YYYY-MM-DD hh:mm
-continue_from_restart_file = FALSE
-n_years = 5
-n_resubmit = 1
+############################### Case run options ###############################
+[case_run_params]
+
+### Sites and version of input data ###
+sites2run = ALP1, SUB1     # Names of landsites, seperated by comma
+version = 2.0.0            # NEEDS A MORE CLARIFYING NAME
+
+#### Simulation mode ###
+run_type = startup                   # startup, hybrid, or branch
+continue_from_restart_file = FALSE   # TRUE or FALSE
+run_ref_case = case.std              # Reference case for hybrid and branch runs
+
+### Simulation period ###
+run_start_date = 0001-01-01   # yyyy-mm-dd
+n_years = 5                   # Number of years to simulate, per resubmit (!)
+n_resubmit = 1                # Number of resubmits (-> "repeat" n_years)
+end_date = -999               # Required format: yyyymmdd ; if negative, ignored
+calendar = NO_LEAP            # NO_LEAP or GREGORIAN (-> includes leap years)
+
+### High Performance Computing (HPC) settings ###
+job_time_hpc = 10:00:00
+machine_hpc = saga
+project_hpc = nn2806k
+
+### Forcings for case run ###
 atm_forcing_start_date = 1901
 atm_forcing_end_date = 1930
-job_time_hpc = 10:00:00
 
 
+############################### FATES parameters ###############################
+[fates_params]
 
-#####################################################################
-# Advanced user settings
-#####################################################################
+exclude_pft_indices = 1,2,3   # Indices of Plant Functional Types to disable
+
+
+################################################################################
+############################ Advanced user settings ############################
+################################################################################
 
 [paths_advanced]
 sites_table = data/nlp_sites.json
