@@ -36,6 +36,12 @@ else
 fi;
 
 ## Fix patching
+mkdir $HOME/.cime
+cp $dir_platform/config/cime/config_compilers.xml \
+   $HOME/.cime
+cp $dir_platform/config/cime/config_machines.xml \
+   $HOME/.cime
+
 cp $dir_platform/config/ctsm/config_component_ctsm.xml \
    $dir_noresm/components/clm/cime_config/config_component.xml
 cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
@@ -48,10 +54,10 @@ cp $dir_platform/config/ctsm/bug_fix/clmfates_interfaceMod.F90 \
 ## Copy configuration files into noresm/cime component
 cp $dir_platform/config/cime/config_batch.xml \
    $dir_noresm/cime/config/cesm/machines/
-cp $dir_platform/config/cime/config_compilers.xml \
-   $dir_noresm/cime/config/cesm/machines/
-cp $dir_platform/config/cime/config_machines.xml \
-   $dir_noresm/cime/config/cesm/machines/
+#cp $dir_platform/config/cime/config_compilers.xml \
+#   $dir_noresm/cime/config/cesm/machines/
+#cp $dir_platform/config/cime/config_machines.xml \
+#   $dir_noresm/cime/config/cesm/machines/
 cp $dir_platform/config/cime/config_grids.xml \
    $dir_noresm/cime/config/cesm/
 cp $dir_platform/config/cime/config_component_datm.xml \
