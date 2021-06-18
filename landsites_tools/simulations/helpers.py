@@ -91,5 +91,5 @@ def check_dir(dir):
             raise ValueError(f"Directory {dir} does not exist!")
         else:
             return True
-        except:
-            raise
+    except:
+        raise

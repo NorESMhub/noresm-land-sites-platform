@@ -3,9 +3,8 @@
 ################################################################################
 
 [paths_basic]
-dir_platform = ~/NorESM_LandSites_Platform
-input_dir = ${paths_basic:dir_platform}/data/input
-output_dir = ${paths_basic:dir_platform}/data/output
+input_dir = data/input
+output_dir = data/output
 
 ############################### Case run options ###############################
 [case_run_params]

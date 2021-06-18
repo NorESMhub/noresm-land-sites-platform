@@ -36,9 +36,16 @@ class InterfaceSettings:
         # Platform directory
         self.dir_platform = Path(__file__).absolute().parent.parent
 
+        self.input_dir = self.dir_platform / \
+        self.read_path('paths_basic', 'input_dir')
+
+        self.output_dir = self.dir_platform / \
+        self.read_path('paths_basic', 'output_dir')
+
         # Names and coordinates of all available sites
         self.path_sites_table = self.dir_platform / \
         self.read_path('paths_advanced', 'sites_table')
+
 
         try:
             with open(self.path_sites_table, "r") as sites_json:
@@ -71,11 +78,11 @@ class InterfaceSettings:
     @property
     def input_dir(self):
         """Root directory of data to be created"""
-        return self.read_path('paths_basic', 'input_dir')
+        return self.input_dir
 
     def output_dir(self):
         """Root directory of data to be created"""
-        return self.read_path('paths_basic', 'output_dir')
+        return self.output_dir
 
     @property
     def sites_df(self):
