@@ -44,7 +44,7 @@ echo "NREC machine IP address: $address"
 ssh-keyscan -H $address >> ~/.ssh/known_hosts
 
 # Install dependencies and clone repositories on virtual machine
-scp {install_*.sh,requirements_*.txt,.vimrc,.tmux.conf} centos@$address:~/
+scp {install_*.sh,requirements_*.txt,.bashrc,.vimrc,.tmux.conf} centos@$address:~/
 ssh centos@$address chmod 700 install_*.sh
 ssh centos@$address ./install_dependencies.sh
 ssh centos@$address ./install_platform.sh
