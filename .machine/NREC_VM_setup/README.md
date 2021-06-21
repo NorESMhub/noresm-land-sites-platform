@@ -37,7 +37,7 @@ In `setup_VM_NREC.sh`:
 - Use shell arguments in to set machine parameters now hard-coded under
   "Default names and paths".
 
-## Remote development with Jupyter Lab
+## 2. Remote development with Jupyter Lab
 To edit files and run programs on the remote VM from the web browser on
 your local Linux machine (Ubuntu under Windows needs testing):
 1. On the VM run `jlremote` (alias defined in the `.bashrc` that is copied to
