@@ -45,7 +45,7 @@ export HDF5_VERSION=1.10.4
 export NETCDF_VERSION=4.6.2
 export NETCDF_FORTRAN_VERSION=4.4.4
 export PATH=/usr/local/netcdf/bin:/usr/local/hdf5/bin:/usr/local/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/hdf5/lib:/usr/local/netcdf/lib
+export LD_LIBRARY_PATH=/lib64:/usr/local/lib64:/usr/local/hdf5/lib:/usr/local/netcdf/lib
 
 # gcc/gfortran (from CTSM Dockerfile)
 echo "*** Compiling GCC " ${GCC_VERSION}
@@ -97,14 +97,14 @@ sudo make check
 sudo make install
 cd && sudo rm -r /udunits-2.2.*
 
-# HDF5 (from CTSM Dockerfile): disabled parallel
+# HDF5 (from CTSM Dockerfile)
 echo "*** Compiling HDF5 " ${HDF5_VERSION}
 cd /
 sudo mkdir -p /usr/local/hdf5
 sudo wget https://s3.amazonaws.com/hdf-wordpress-1/wp-content/uploads/manual/HDF5/HDF5_1_10_4/hdf5-${HDF5_VERSION}.tar.gz
 sudo tar -zxvf hdf5-${HDF5_VERSION}.tar.gz
 cd hdf5-${HDF5_VERSION}
-sudo CC=/usr/bin/cc ./configure --enable-fortran --prefix=/usr/local/hdf5
+sudo CC=/usr/local/bin/mpicc FC=/usr/local/bin/mpif90 ./configure --enable-fortran --enable-parallel --prefix=/usr/local/hdf5
 sudo make
 sudo make install
 export H5DIR=/usr/local/hdf5
@@ -120,7 +120,7 @@ sudo wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-${NETCDF_VE
 sudo tar -zxvf netcdf-c-${NETCDF_VERSION}.tar.gz
 cd netcdf-c-${NETCDF_VERSION}
 export NCDIR=/usr/local/netcdf
-sudo CC=/usr/bin/cc CPPFLAGS=-I${H5DIR}/include LDFLAGS=-L${H5DIR}/lib ./configure --prefix=${NCDIR}
+sudo CC=/usr/local/bin/mpicc CPPFLAGS=-I${H5DIR}/include LDFLAGS=-L${H5DIR}/lib ./configure --enable-parallel-tests --prefix=${NCDIR}
 sudo make
 sudo make install
 export PATH=/usr/local/netcdf/bin:$PATH
@@ -133,7 +133,8 @@ cd /
 sudo wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-fortran-${NETCDF_FORTRAN_VERSION}.tar.gz
 sudo tar -zxvf netcdf-fortran-${NETCDF_FORTRAN_VERSION}.tar.gz
 cd netcdf-fortran-${NETCDF_FORTRAN_VERSION}
-sudo CPPFLAGS=-I${NCDIR}/include ./configure --prefix=$NCDIR
+sudo ldconfig ${NCDIR}/lib
+sudo CPPFLAGS=-I${NCDIR}/include LDFLAGS=-L${NCDIR}/lib ./configure --prefix=$NCDIR --enable-parallel-tests
 sudo make
 sudo make install
 cd && sudo rm -r /netcdf-fortran-*
