@@ -48,6 +48,7 @@ scp {install_*.sh,requirements_*.txt,.bashrc,.vimrc,.tmux.conf} centos@$address:
 ssh centos@$address chmod 700 install_*.sh
 ssh centos@$address ./install_dependencies.sh
 ssh centos@$address ./install_platform.sh
+ssh centos@$address rm {install_*.sh,requirements_*.txt}
 
 # Create, attach and mount storage volume
 # TO DO

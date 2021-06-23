@@ -69,7 +69,7 @@ sudo tar -zxvf openmpi-${OPENMPI_VERSION}.tar.gz
 cd openmpi-${OPENMPI_VERSION}
 export PATH=/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
-sudo ./configure --enable-static
+sudo CC=/usr/local/bin/gcc FC=/usr/local/bin/gfortran ./configure --enable-static
 sudo make
 sudo make install
 cd && sudo rm -r /openmpi-*
