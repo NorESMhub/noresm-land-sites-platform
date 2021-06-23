@@ -11,15 +11,28 @@ xmllint --noout --schema ~/NorESM_LandSites_Platform/noresm2/cime/config/xml_sch
 xmllint --noout --schema ~/NorESM_LandSites_Platform/noresm2/cime/config/xml_schemas/config_compilers_v2.xsd \
     $HOME/.cime/config_compilers.xml
 
+# Env
+sudo ldconfig /usr/local/hdf5/lib /usr/local/netcdf/lib
+
 # Create case
 cd ~/NorESM_LandSites_Platform/noresm2/cime/scripts/
-./create_newcase --case ~/ctsm_cases/test_1 \
-    --compset 2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV \
+./create_newcase --case ~/ctsm_cases/test_sp \
+    --compset 2000_DATM%1PTGSWP3_CLM50%SP_SICE_SOCN_MOSART_SGLC_SWAV \
     --res 1x1_ALP1 --machine centos7-nrec --run-unsupported --compiler gnu 
+#cd ~/NorESM_LandSites_Platform/noresm2/cime/scripts/
+#./create_newcase --case ~/ctsm_cases/test_1 \
+#    --compset 2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV \
+#    --res 1x1_ALP1 --machine centos7-nrec --run-unsupported --compiler gnu 
 
 # Setup case
-cd ~/ctsm_cases/test_1
+cd ~/ctsm_cases/test_sp
 python2 case.setup
+
+# Force cold start
+./xmlchange CLM_FORCE_COLDSTART="on"
 
 # Build case
 python2 case.build
+
+# Run case
+python2 case.submit --no-batch

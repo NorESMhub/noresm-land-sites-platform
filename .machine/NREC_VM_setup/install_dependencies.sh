@@ -69,9 +69,9 @@ sudo tar -zxvf openmpi-${OPENMPI_VERSION}.tar.gz
 cd openmpi-${OPENMPI_VERSION}
 export PATH=/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
-sudo CC=/usr/local/bin/gcc FC=/usr/local/bin/gfortran ./configure --enable-static
-sudo make
-sudo make install
+sudo CC=/usr/local/bin/gcc FC=/usr/local/bin/gfortran CXX=/usr/local/bin/g++ ./configure --enable-static
+sudo make -j 4
+sudo make install -j 4
 cd && sudo rm -r /openmpi-*
 
 # Expat XML parser (from CTSM Dockerfile)
@@ -104,15 +104,15 @@ sudo mkdir -p /usr/local/hdf5
 sudo wget https://s3.amazonaws.com/hdf-wordpress-1/wp-content/uploads/manual/HDF5/HDF5_1_10_4/hdf5-${HDF5_VERSION}.tar.gz
 sudo tar -zxvf hdf5-${HDF5_VERSION}.tar.gz
 cd hdf5-${HDF5_VERSION}
-sudo CC=/usr/local/bin/mpicc FC=/usr/local/bin/mpif90 ./configure --enable-fortran --enable-parallel --prefix=/usr/local/hdf5
-sudo make
-sudo make install
+sudo CC=/usr/local/bin/mpicc FC=/usr/local/bin/mpif90 CXX=/usr/local/bin/g++ ./configure --enable-fortran --enable-parallel --prefix=/usr/local/hdf5
+sudo make -j 4
+sudo make install -j 4
 export H5DIR=/usr/local/hdf5
 export PATH=$H5DIR/bin:$PATH
 export LD_LIBRARY_PATH=$H5DIR/lib:$H5DIR/lib/libhdf5:$LD_LIBRARY_PATH
 cd && sudo rm -r /hdf5-*
 
-# netCDF (from CTSM Dockerfile): no mpi
+# netCDF-C (from CTSM Dockerfile): no mpi
 echo "*** Compiling netCDF " ${NETCDF_VERSION}
 cd /
 sudo mkdir -p /usr/local/netcdf
@@ -121,8 +121,8 @@ sudo tar -zxvf netcdf-c-${NETCDF_VERSION}.tar.gz
 cd netcdf-c-${NETCDF_VERSION}
 export NCDIR=/usr/local/netcdf
 sudo CC=/usr/local/bin/mpicc CPPFLAGS=-I${H5DIR}/include LDFLAGS=-L${H5DIR}/lib ./configure --enable-parallel-tests --prefix=${NCDIR}
-sudo make
-sudo make install
+sudo make -j 4
+sudo make install -j 4
 export PATH=/usr/local/netcdf/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/netcdf/lib:$LD_LIBRARY_PATH
 cd && sudo rm -r /netcdf-c-*
@@ -134,7 +134,7 @@ sudo wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-fortran-${NET
 sudo tar -zxvf netcdf-fortran-${NETCDF_FORTRAN_VERSION}.tar.gz
 cd netcdf-fortran-${NETCDF_FORTRAN_VERSION}
 sudo ldconfig ${NCDIR}/lib
-sudo CPPFLAGS=-I${NCDIR}/include LDFLAGS=-L${NCDIR}/lib ./configure --prefix=$NCDIR --enable-parallel-tests
-sudo make
-sudo make install
+sudo CC=/usr/local/bin/mpicc FC=/usr/local/bin/mpif90 CPPFLAGS=-I${NCDIR}/include LDFLAGS=-L${NCDIR}/lib ./configure --prefix=$NCDIR --enable-parallel-tests
+sudo make -j 4
+sudo make install -j 4
 cd && sudo rm -r /netcdf-fortran-*
