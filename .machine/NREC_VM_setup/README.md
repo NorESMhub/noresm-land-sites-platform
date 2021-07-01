@@ -1,5 +1,10 @@
 # Tools to set up a NREC virtual machine for development
 
+The latest image on NREC is [NorESM_platform_0.3](https://dashboard.nrec.no/dashboard/ngdetails/OS::Glance::Image/67fe568b-bebc-4c53-b41c-efeab523755b).
+Instances can be created from this image by setting `image=NorESM_platform_0.3`
+when executing the [`openstack server create` command](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/27_NREC_VM_CentOs8/.machine/NREC_VM_setup/setup_VM_NREC.sh#L30-L35).
+To build an instance from the base CentOS 8 image follow the steps in Sect. 1.
+
 ## 1. Create and configure a virtual machine on NREC
 Execute these steps according to the
 [NREC documentation](https://docs.nrec.no/index.html):
@@ -25,8 +30,9 @@ Execute these steps according to the
   Instance creation) can be done manually on the
   [NREC dashboard](https://dashboard.nrec.no): links to the documentation are
   provided in `setup_VM_NREC.sh`.
-- Source for CLM dependencies: [CTSM Dockerfile](https://github.com/sunnivin/docker-local-build-run-CTSM/blob/1774e7aa6c49cfbe10dae18ceb7dc2739e099d7c/docker/baseos/centos/centos7.6/Dockerfile))
-- To check for Ubuntu package dependencies: `apt-cache depends <package>`
+- Sources for CLM dependencies and configuration are the CESM Dockerfiles:
+  * https://github.com/ESCOMP/ESCOMP-Containers/blob/master/base/centos8/Dockerfile
+  * https://github.com/ESCOMP/ESCOMP-Containers/blob/master/CESM/2.2/Dockerfile
 
 ### 1.2 To do
 In `setup_VM_NREC.sh`:
