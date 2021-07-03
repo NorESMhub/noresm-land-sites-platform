@@ -4,7 +4,7 @@
         system. Examples are prodived for Mac OS X systems with
         homebrew and macports. -->
 
-   <compiler COMPILER="gnu" MACH="centos7-nrec">
+<compiler COMPILER="gnu" MACH="centos7-nrec">
      <SUPPORTS_CXX>TRUE</SUPPORTS_CXX>
      <CPPDEFS>
        <append MODEL="gptl"> -DHAVE_VPRINTF -DHAVE_GETTIMEOFDAY -DHAVE_BACKTRACE </append>
@@ -19,7 +19,21 @@
      </SLIBS>  
      <SCC MPILIB="mpi-serial">gcc</SCC>
      <SFC MPILIB="mpi-serial">gfortran</SFC>
-   </compiler>
+</compiler>
+   
+<compiler MACH="container">
+  <CPPDEFS>
+    <!-- these flags enable nano timers -->
+    <append MODEL="gptl"> -DHAVE_NANOTIME -DBIT64 -DHAVE_VPRINTF -DHAVE_BACKTRACE -DHAVE_SLASHPROC -DHAVE_COMM_F2C -DHAVE_TIMES -DHAVE_GETTIMEOFDAY </append>
+  </CPPDEFS>
+  <NETCDF_PATH>/usr/local</NETCDF_PATH>
+  <PNETCDF_PATH>/usr/local</PNETCDF_PATH>
+  <LDFLAGS>
+  </LDFLAGS>
+  <SLIBS>
+    <append> -lnetcdf -lnetcdff -llapack -lblas </append>
+  </SLIBS>
+</compiler>
    
    <compiler MACH="fram">
   <CPPDEFS>
