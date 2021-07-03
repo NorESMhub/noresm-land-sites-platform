@@ -54,12 +54,12 @@ cp config_inputdata.xml $dir_noresm/cime/config/cesm/
 cp case_setup.py $dir_noresm/cime/scripts/lib/CIME/case/case_setup.py
 ## Add the container changes to the XML files (to be included in stock CIME soon):
 cp config_compsets.xml $dir_noresm/cime_config/
-cp config_pes.xml $dir_noresm/cime_config/
-cp configs/cam/config_pes.xml $dir_noresm/components/cam/cime_config/
-cp configs/cice/config_pes.xml $dir_noresm/components/cice/cime_config/
+#cp config_pes.xml $dir_noresm/cime_config/
+#cp configs/cam/config_pes.xml $dir_noresm/components/cam/cime_config/
+#cp configs/cice/config_pes.xml $dir_noresm/components/cice/cime_config/
 #cp configs/cism/config_pes.xml $dir_noresm/components/cism/cime_config/
 #cp configs/pop/config_pes.xml $dir_noresm/components/pop/cime_config/
-cp configs/clm/config_pes.xml $dir_noresm/components/clm/cime_config/
+#p configs/clm/config_pes.xml $dir_noresm/components/clm/cime_config/
 ### Fix for SCAM with GNU in DEBUG mode (ESCOMP/CAM issue #257)
 #cp micro_mg3_0.F90 $dir_noresm/components/cam/src/physics/pumas/micro_mg3_0.F90
 ## Fix for issue with mpi-serial:
@@ -98,3 +98,13 @@ cp $dir_platform/config/cime/namelist_definition_datm.xml \
    $dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
 cp $dir_platform/config/cime/configure \
    $dir_noresm/cime/src/externals/mct/configure
+   
+#Download inputdata and add the missing dataset
+#Hui: This part needs to be improved. Current inputdata and its folder structure needs to be revised
+#cd ${CESMDATAROOT}
+#wget https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar
+#tar xvf inputdata_version2.0.0_ALP1.tar
+#cd inputdata/lnd/clm2/paramdata/
+#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/paramdata/clm50_params.c210208.nc
+#cd inputdata/atm/cam/chem/trop_mozart/emis/
+#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_78pft_c20161108.nc
