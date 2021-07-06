@@ -1,8 +1,8 @@
 # Download input data
-mkdir -p ~/NorESM_LandSites_Platform/data/input
-cd ~/NorESM_LandSites_Platform/data/input
+#mkdir -p ~/inputdata
+cd ${CESMDATAROOT}
 wget https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar \
-    ~/NorESM_LandSites_Platform/data/input/
+    ${CESMDATAROOT}
 tar xvf inputdata_version2.0.0_ALP1.tar && rm inputdata_version2.0.0_ALP1.tar
 
 #Download inputdata and add the missing dataset
@@ -10,10 +10,10 @@ tar xvf inputdata_version2.0.0_ALP1.tar && rm inputdata_version2.0.0_ALP1.tar
 #cd ${CESMDATAROOT}
 #wget https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar
 #tar xvf inputdata_version2.0.0_ALP1.tar
-#cd inputdata/lnd/clm2/paramdata/
-#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/paramdata/clm50_params.c210208.nc
-#cd inputdata/atm/cam/chem/trop_mozart/emis/
-#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_78pft_c20161108.nc
+cd ${CESMDATAROOT}/inputdata/lnd/clm2/paramdata/
+svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/paramdata/clm50_params.c210208.nc
+cd ${CESMDATAROOT}/inputdata/atm/cam/chem/trop_mozart/emis/
+svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_78pft_c20161108.nc
 
 
 # Validate XMLs
