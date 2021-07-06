@@ -29,7 +29,7 @@ sudo ldconfig /usr/local/lib
 cd ~/NorESM_LandSites_Platform/noresm2/cime/scripts/
 ./create_newcase --case ~/ctsm_cases/test_sp \
     --compset 2000_DATM%1PTGSWP3_CLM50%SP_SICE_SOCN_MOSART_SGLC_SWAV \
-    --res 1x1_ALP1 --machine container --run-unsupported
+    --res 1x1_ALP1 --machine container-nlp --run-unsupported
 
 # Setup case
 cd ~/ctsm_cases/test_sp

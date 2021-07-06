@@ -48,8 +48,8 @@ cd && git clone https://github.com/ESCOMP/ESCOMP-Containers.git
 cd ~/ESCOMP-Containers/CESM/2.2/Files
 git fetch origin 502ca4a974122accc32aba5a5f3b4665dfa0691f
 ## Add the container versions of the config_machines & config_compilers settings - later, integrate these into CIME
-cp config_compilers.xml $dir_noresm/cime/config/cesm/machines/
-cp config_machines.xml $dir_noresm/cime/config/cesm/machines/
+#cp config_compilers.xml $dir_noresm/cime/config/cesm/machines/   # use .cime option instead
+#cp config_machines.xml $dir_noresm/cime/config/cesm/machines/    # use .cime option instead
 cp config_inputdata.xml $dir_noresm/cime/config/cesm/
 cp case_setup.py $dir_noresm/cime/scripts/lib/CIME/case/case_setup.py
 ## Add the container changes to the XML files (to be included in stock CIME soon):
@@ -73,8 +73,7 @@ cd && rm -rf ESCOMP-Containers
 export CESMROOT=$dir_noresm
 
 # Platform patching
-#mkdir $HOME/.cime
-# Hui: we can turn this on again after we copy the container options from CESM container.
+mkdir $HOME/.cime
 cp $dir_platform/config/cime/config_compilers.xml \
    $HOME/.cime
 cp $dir_platform/config/cime/config_machines.xml \

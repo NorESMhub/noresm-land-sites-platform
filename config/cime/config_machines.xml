@@ -39,7 +39,7 @@
     </environment_variables>
 </machine>
 
-<machine MACH="container">
+<machine MACH="container-nlp">
   <DESC>
     Containerized development environment (Docker/Singularity) for CESM
   </DESC>
