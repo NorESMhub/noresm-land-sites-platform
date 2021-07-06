@@ -1,0 +1,6 @@
+{
+    "type_run": ["startup", "hybrid", "branch", "restart"],
+    "type_model": ["CLM-SP", "CLM-SP", "CLM-BGC", "CLM-FATES", "FATES-SP", "FATES-nocomp", "FATES-hydro"],
+    "frequency_output": ["daily", "monthly", "hourly"],
+    "frequency_plot": ["daily", "monthly", "hourly"]
+}

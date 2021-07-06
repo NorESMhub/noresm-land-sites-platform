@@ -1,7 +1,7 @@
 # Tools to set up a NREC virtual machine for development
 
-The latest image on NREC is [NorESM_platform_0.3](https://dashboard.nrec.no/dashboard/ngdetails/OS::Glance::Image/67fe568b-bebc-4c53-b41c-efeab523755b).
-Instances can be created from this image by setting `image=NorESM_platform_0.3`
+The latest image on NREC is [NorESM_platform_0.4](https://dashboard.nrec.no/dashboard/ngdetails/OS::Glance::Image/c8b7b6fd-4497-41bb-9a9d-51d9b21b5789).
+Instances can be created from this image by setting `image=NorESM_platform_0.4`
 when executing the [`openstack server create` command](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/27_NREC_VM_CentOs8/.machine/NREC_VM_setup/setup_VM_NREC.sh#L30-L35).
 To build an instance from the base CentOS 8 image follow the steps in Sect. 1.
 

@@ -1,75 +1,22 @@
-################################################################################
-############################# Basic user settings ##############################
-################################################################################
+[path]
+dir_cases = ~/ctsm_cases # cases root folder
+dir_input = ~/input      # input root folder
+dir_output = ~/output    # output root folder
 
-[paths_basic]
-input_dir = data/input/
-output_dir = data/output/
+[run]
+start_time = 2000-01-01 00:00 # yyyy-mm-dd hh:mm
+end_time = 2009-12-31 00:00   # yyyy-mm-dd hh:mm
+sites2run = ALP1, ALP2        # data/sites.json
+type_run = startup            # startup, hybrid, branch, restart
+type_model = CLM-SP           # CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro
+initial_file =                # initial conditions (empty: cold start)
+frequency_output = daily      # monthly, daily, hourly
+variables_output = H2OSOI, H2OSNO  # https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
 
-############################### Case run options ###############################
-[case_run_params]
+[postprocess]
+variables_plot = H2OSOI, H2OSNO
+frequency_plot = daily
 
-### Sites and version of input data ###
-sites2run = ALP1, SUB1     # Names of landsites, seperated by comma
-version = 2.0.0            # NEEDS A MORE CLARIFYING NAME
-
-#### Simulation mode ###
-run_type = startup                   # startup, hybrid, or branch
-continue_from_restart_file = FALSE   # TRUE or FALSE
-run_ref_case = case.std              # Reference case for hybrid and branch runs
-
-### Simulation period ###
-run_start_date = 0001-01-01   # yyyy-mm-dd
-n_years = 5                   # Number of years to simulate, per resubmit (!)
-n_resubmit = 1                # Number of resubmits (-> "repeat" n_years)
-end_date = -999               # Required format: yyyymmdd ; if negative, ignored
-calendar = NO_LEAP            # NO_LEAP or GREGORIAN (-> includes leap years)
-
-### High Performance Computing (HPC) settings ###
-job_time_hpc = 10:00:00
-machine_hpc = saga
-project_hpc = nn2806k
-
-### Forcings for case run ###
-atm_forcing_start_date = 1901
-atm_forcing_end_date = 1930
-
-
-############################### FATES parameters ###############################
-[fates_params]
-
-exclude_pft_indices = 1,2,3   # Indices of Plant Functional Types to disable
-
-
-################################################################################
-############################ Advanced user settings ############################
-################################################################################
-
-[paths_advanced]
-sites_table = data/nlp_sites.json
-input_raw = /cluster/shared/noresm/inputdata
-
-[switches_input]
-creat_script = True      # create script grid or not
-creat_domain = False     # create domain file
-creat_mapping = False    # create mapping file
-creat_surfdat = False    # create surface data file
-creat_aero = False       # create aerosol depostion file for each site. If False, model will use global data as input.
-creat_topo = False       # create topography file for each site. If False, model will use global data as input.
-creat_urb = False        # create urban data file for each site. If False, model will use global data as input.
-creat_fire = False       # create fire data file for each site. If False, model will use global data as input.
-creat_atm = False        # create atmospheric forcing.
-tar_input = False        # tar all the input data required for each site.
-
-[switches_model]
-run_case = False         # run site simulations automatically. True can only be used when all the inputdata are ready!!!!
-run_case_first = False   # create, build and submit short test runs
-run_case_second = False  # run long experiments
-run_archive = True       # archive experiments.
-
-[switches_postproc]
-merge_hist = True        # merge history experiments.
-
-[scripts]
-dir_clm_tools = ${paths_basic:dir_platform}/noresm2/components/clm/tools
-mknoocnmap = ${dir_clm_tools}/mkmapdata/mknoocnmap.pl
+[future]
+vegetation_types_FATES =  # to be implemented
+output_groups =           # to be implemented
