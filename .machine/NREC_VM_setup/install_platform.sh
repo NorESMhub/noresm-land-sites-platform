@@ -48,18 +48,18 @@ cd && git clone https://github.com/ESCOMP/ESCOMP-Containers.git
 cd ~/ESCOMP-Containers/CESM/2.2/Files
 git fetch origin 502ca4a974122accc32aba5a5f3b4665dfa0691f
 ## Add the container versions of the config_machines & config_compilers settings - later, integrate these into CIME
-cp config_compilers.xml $dir_noresm/cime/config/cesm/machines/
-cp config_machines.xml $dir_noresm/cime/config/cesm/machines/
+#cp config_compilers.xml $dir_noresm/cime/config/cesm/machines/   # use .cime option instead
+#cp config_machines.xml $dir_noresm/cime/config/cesm/machines/    # use .cime option instead
 cp config_inputdata.xml $dir_noresm/cime/config/cesm/
 cp case_setup.py $dir_noresm/cime/scripts/lib/CIME/case/case_setup.py
 ## Add the container changes to the XML files (to be included in stock CIME soon):
 cp config_compsets.xml $dir_noresm/cime_config/
-cp config_pes.xml $dir_noresm/cime_config/
-cp configs/cam/config_pes.xml $dir_noresm/components/cam/cime_config/
-cp configs/cice/config_pes.xml $dir_noresm/components/cice/cime_config/
+#cp config_pes.xml $dir_noresm/cime_config/
+#cp configs/cam/config_pes.xml $dir_noresm/components/cam/cime_config/
+#cp configs/cice/config_pes.xml $dir_noresm/components/cice/cime_config/
 #cp configs/cism/config_pes.xml $dir_noresm/components/cism/cime_config/
 #cp configs/pop/config_pes.xml $dir_noresm/components/pop/cime_config/
-cp configs/clm/config_pes.xml $dir_noresm/components/clm/cime_config/
+#p configs/clm/config_pes.xml $dir_noresm/components/clm/cime_config/
 ### Fix for SCAM with GNU in DEBUG mode (ESCOMP/CAM issue #257)
 #cp micro_mg3_0.F90 $dir_noresm/components/cam/src/physics/pumas/micro_mg3_0.F90
 ## Fix for issue with mpi-serial:
@@ -73,11 +73,11 @@ cd && rm -rf ESCOMP-Containers
 export CESMROOT=$dir_noresm
 
 # Platform patching
-#mkdir $HOME/.cime
-#cp $dir_platform/config/cime/config_compilers.xml \
-#   $HOME/.cime
-#cp $dir_platform/config/cime/config_machines.xml \
-#   $HOME/.cime
+mkdir $HOME/.cime
+cp $dir_platform/config/cime/config_compilers.xml \
+   $HOME/.cime
+cp $dir_platform/config/cime/config_machines.xml \
+   $HOME/.cime
 cp $dir_platform/config/ctsm/config_component_ctsm.xml \
    $dir_noresm/components/clm/cime_config/config_component.xml
 cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \

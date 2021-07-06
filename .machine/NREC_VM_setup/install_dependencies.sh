@@ -66,7 +66,7 @@ cd /tmp/sources
 sudo wget -q https://parallel-netcdf.github.io/Release/pnetcdf-1.12.1.tar.gz
 sudo tar zxf pnetcdf-1.12.1.tar.gz
 cd pnetcdf-1.12.1
-sudo ./configure --prefix=/usr/local
+sudo ./configure MPIF77=/usr/local/bin/mpif77 MPIF90=/usr/local/bin/mpif90 MPICXX=/usr/local/bin/mpicxx MPICC=/user/local/bin/mpicc
 sudo make -j 4 install
 sudo ldconfig
 
