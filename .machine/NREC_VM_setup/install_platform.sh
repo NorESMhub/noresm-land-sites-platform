@@ -75,10 +75,10 @@ export CESMROOT=$dir_noresm
 # Platform patching
 #mkdir $HOME/.cime
 # Hui: we can turn this on again after we copy the container options from CESM container.
-#cp $dir_platform/config/cime/config_compilers.xml \
-#   $HOME/.cime
-#cp $dir_platform/config/cime/config_machines.xml \
-#   $HOME/.cime
+cp $dir_platform/config/cime/config_compilers.xml \
+   $HOME/.cime
+cp $dir_platform/config/cime/config_machines.xml \
+   $HOME/.cime
 cp $dir_platform/config/ctsm/config_component_ctsm.xml \
    $dir_noresm/components/clm/cime_config/config_component.xml
 cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
