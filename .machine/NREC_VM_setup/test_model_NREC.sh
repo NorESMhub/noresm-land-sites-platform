@@ -5,6 +5,17 @@ wget https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_pla
     ~/NorESM_LandSites_Platform/data/input/
 tar xvf inputdata_version2.0.0_ALP1.tar && rm inputdata_version2.0.0_ALP1.tar
 
+#Download inputdata and add the missing dataset
+#Hui: This part needs to be improved. Current inputdata and its folder structure needs to be revised
+#cd ${CESMDATAROOT}
+#wget https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar
+#tar xvf inputdata_version2.0.0_ALP1.tar
+#cd inputdata/lnd/clm2/paramdata/
+#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/paramdata/clm50_params.c210208.nc
+#cd inputdata/atm/cam/chem/trop_mozart/emis/
+#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_78pft_c20161108.nc
+
+
 # Validate XMLs
 xmllint --noout --schema ~/NorESM_LandSites_Platform/noresm2/cime/config/xml_schemas/config_machines.xsd \
     $HOME/.cime/config_machines.xml

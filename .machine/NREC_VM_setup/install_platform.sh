@@ -99,13 +99,3 @@ cp $dir_platform/config/cime/namelist_definition_datm.xml \
    $dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
 cp $dir_platform/config/cime/configure \
    $dir_noresm/cime/src/externals/mct/configure
-   
-#Download inputdata and add the missing dataset
-#Hui: This part needs to be improved. Current inputdata and its folder structure needs to be revised
-#cd ${CESMDATAROOT}
-#wget https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar
-#tar xvf inputdata_version2.0.0_ALP1.tar
-#cd inputdata/lnd/clm2/paramdata/
-#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/lnd/clm2/paramdata/clm50_params.c210208.nc
-#cd inputdata/atm/cam/chem/trop_mozart/emis/
-#svn export https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_78pft_c20161108.nc
