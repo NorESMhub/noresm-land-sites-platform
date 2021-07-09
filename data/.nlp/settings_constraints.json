@@ -1,0 +1,33 @@
+{
+  "type_run": {
+    "type": "str",
+    "valid_in_txt_file": 0,
+    "valid_values": ["startup", "hybrid", "branch", "restart"]
+  },
+  "type_model": {
+    "type": "str",
+    "valid_in_txt_file": 0,
+    "valid_values": ["CLM-SP", "CLM-BGC", "CLM-FATES", "FATES-SP",
+      "FATES-nocomp", "FATES-hydro"]
+  },
+  "frequency_output": {
+    "type": "str",
+    "valid_in_txt_file": 0,
+    "valid_values": ["monthly", "daily", "hourly"]
+  },
+  "variables_output": {
+    "type": "list",
+    "valid_in_txt_file": 1,
+    "valid_values": "clm_history_vars.txt"
+  },
+  "variables_plot": {
+    "type": "list",
+    "valid_in_txt_file": 1,
+    "valid_values": "clm_history_vars.txt"
+  },
+  "frequency_plot": {
+    "type": "str",
+    "valid_in_txt_file": 0,
+    "valid_values": ["daily"]
+  }
+}

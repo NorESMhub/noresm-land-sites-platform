@@ -1,16 +1,16 @@
 [path]
-dir_cases = ~/ctsm_cases # cases root folder
-dir_input = ~/input      # input root folder
-dir_output = ~/output    # output root folder
+dir_cases = data/cases      # cases root folder
+dir_input = data/input      # input root folder
+dir_output = data/output    # output root folder
 
 [run]
-start_time = 2000-01-01 00:00 # yyyy-mm-dd hh:mm
-end_time = 2009-12-31 00:00   # yyyy-mm-dd hh:mm
-sites2run = ALP1, ALP2        # data/sites.json
+start_time = 2000-01-01       # yyyy-mm-dd hh:mm
+end_time = 2001-01-01         # yyyy-mm-dd
+sites2run = ALP1, ALP2        # data/.dicts/sites.json
 type_run = startup            # startup, hybrid, branch, restart
 type_model = CLM-SP           # CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro
 initial_file =                # initial conditions (empty: cold start)
-frequency_output = daily      # monthly, daily, hourly
+frequency_output = monthly      # monthly, daily, hourly --> monthly gives all vars
 variables_output = H2OSOI, H2OSNO  # https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
 
 [postprocess]
