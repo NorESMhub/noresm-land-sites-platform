@@ -1,14 +1,15 @@
 ### Project specific
 # ignore...
-cases/*
-input/*
-output/*
-simulation_settings/
+data/cases/*
+data/input/*
+data/output/*
+landsites_tools/custom_settings/*
 
-# keep...
+# keep... (don't track user files, but make sure folders are in place)
 !cases/.gitkeep
 !input/.gitkeep
 !output/.gitkeep
+!landsites_tools/custom_settings/.gitkeep
 
 ### Environment
 env/
