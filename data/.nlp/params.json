@@ -1,16 +1,17 @@
 {
+  "paths":
+  {
+    "DIN_LOC_ROOT": {
+      "xml_file": "env_run.xml",
+      "default": "$ENV{CESMDATAROOT}/inputdata"
+    },
+    "DIN_LOC_ROOT_CLMFORC": {
+      "xml_file": "env_run.xml",
+      "default": "$DIN_LOC_ROOT/atm/datm7/GSWP3v1"
+    }
+  },
   "user":
   {
-    "dir_input": {
-      "ctsm_param" : "DIN_LOC_ROOT",
-      "xml_file" : "env_run.xml",
-      "default" : "$ENV{CESMDATAROOT}/inputdata"
-    },
-    "dir_input_clmforc": {
-      "ctsm_param" : "DIN_LOC_ROOT_CLMFORC",
-      "xml_file" : "env_run.xml",
-      "default" : "$DIN_LOC_ROOT/atm/datm7/GSWP3v1"
-    },
     "dir_output": {
       "ctsm_param" : "DOUT_S_ROOT",
       "xml_file" : "env_run.xml",
@@ -28,7 +29,7 @@
     },
     "type_run": {
       "ctsm_param" : "RUN_TYPE",
-      "xml_file" : "env_case.xml",
+      "xml_file" : "env_run.xml",
       "default" : "startup"
     }
   },

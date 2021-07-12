@@ -1,33 +1,46 @@
 ### Imports
 from pathlib import Path
+import subprocess
 
 ################################################################################
 
-def change_case_parameters(case_path, interface_settings, param_dict):
+def change_case_parameters(case_path, case_input_path, interface_settings,
+ param_dict):
 
     ### Initialize bash command to change settings in current case folder
     bash_command = f"cd {case_path};"
 
     try:
+        ### Add general settings
+        bash_command += \
+        ";".join(
+            [f"./xmlchange --file {vals['xml_file']} {ctsm_param}=" \
+            + f"{vals['value']}" \
+            for ctsm_param,vals in param_dict['nlp_general'].items()]
+        )
+
+        ### Change dynamic input paths
+        bash_command += \
+        f'''./xmlchange --file env_run.xml DIN_LOC_ROOT="{case_input_path}";'''
+
+        clm_input_path = \
+        Path(case_input_path / 'inputdata' / 'atm' / 'datm7' / 'GSWP3v1')
+
+        bash_command += \
+        f"./xmlchange --file env_run.xml DIN_LOC_ROOT_CLMFORC=" \
+        + f"{clm_input_path};"
+
 
         ### Loop through parameter keys and add value change to bash cmd
         # If no parameter stored in interface object, use default value
         bash_command += \
         ";".join(
-            [f"./xmlchange --file {vals['xml_file']} --id {vals['ctsm_param']}"\
-            + f" --val {interface_settings.get_parameter(nlp_param)}" \
+            [f"./xmlchange --file {vals['xml_file']} {vals['ctsm_param']}=" \
+            + f"{interface_settings.get_parameter(nlp_param)}" \
             if interface_settings.get_parameter(nlp_param) is not None else \
-            f"./xmlchange --file {vals['xml_file']} --id {vals['ctsm_param']}"\
-            + f" --val {vals['default']}" \
+            f"./xmlchange --file {vals['xml_file']} {vals['ctsm_param']}=" \
+            + f"{vals['default']}" \
             for nlp_param,vals in param_dict['user'].items()]
-        )
-
-        ### Also add general settings
-        bash_command += \
-        ";".join(
-            [f"./xmlchange --file {vals['xml_file']} --id {ctsm_param} " \
-            + f"--val {vals['value']}" \
-            for ctsm_param,vals in param_dict['nlp_general'].items()]
         )
 
         ### Execute bash
@@ -132,7 +145,7 @@ def download_input_data(case_name, version, url, input_dir):
 
             print(f"Done!")
 
-            return(case_input_dir_path)
+            return case_input_dir_path
 
     except:
         print("\nError when downloading input data.\n")

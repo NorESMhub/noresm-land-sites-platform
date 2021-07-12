@@ -6,6 +6,10 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 from dateutil.parser import parse as parsetime
+from datetime import *
+
+# Custom
+import landsites_tools
 
 
 def interactive_settings():
@@ -39,6 +43,7 @@ class SettingsParser:
         self.interface.read(self.path_settings)
 
         ### Default information
+        self.version = landsites_tools.__version__
         self.dir_platform = Path(__file__).absolute().parents[1]
         self.dir_info = self.dir_platform / 'data' / '.nlp'
         self.path_sites_table = self.dir_info / 'sites.json'
@@ -52,15 +57,16 @@ class SettingsParser:
 
         ### Parse user settings to convenient types
         # Paths
-        self.dir_cases = self.get_path('path', 'dir_cases', 'dir')
-        self.dir_input = self.get_path('path', 'dir_input', 'dir')
-        self.dir_input_clmforc = \
-        self.dir_input / "inputdata" / "atm" / "datm7" / "GSWP3v1" # TO-DO
-        self.dir_output = self.get_path('path', 'dir_output', 'dir')
+        self.dir_cases = self.dir_platform / self.get_path('path', 'dir_cases',
+         'dir')
+        self.dir_input = self.dir_platform / self.get_path('path', 'dir_input',
+         'dir')
+        self.dir_output = self.dir_platform / self.get_path('path',
+        'dir_output', 'dir')
         # Dates
         self.start_time = self.get_time('run', 'start_time')
-        self.end_time = self.get_time('run', 'end_time')
-        self.n_simulation_days = self.get_n_days(self.start_time, self.end_time)
+        self._end_time = self.get_time('run', 'end_time')
+        self.end_time = self.get_n_days(self.start_time, self._end_time)
         # Sites
         self.sites2run = self.get_sites('run', 'sites2run')
         self._check_sites()
@@ -74,8 +80,10 @@ class SettingsParser:
         self.initial_file = self.read_parameter('run', 'initial_file')
         self.frequency_output = self.read_parameter('run', 'frequency_output')
         self.variables_output = self.read_parameter('run', 'variables_output')
-        self.variables_plot = self.read_parameter('postprocess', 'variables_plot')
-        self.frequency_plot = self.read_parameter('postprocess', 'frequency_plot')
+        self.variables_plot = self.read_parameter('postprocess',
+        'variables_plot')
+        self.frequency_plot = self.read_parameter('postprocess',
+        'frequency_plot')
 
 
     def write_file(self, path):
@@ -126,7 +134,13 @@ class SettingsParser:
         '''
         Returns the requested parameter.
         '''
-        return getattr(self, param_name)
+        param = getattr(self, param_name)
+
+        ### Format datetime objects to necessary format here?
+        if isinstance(param, datetime):
+            return param.strftime('%Y-%m-%d')
+
+        return param
 
     def set_parameter(self, param_name, value):
         """
@@ -198,7 +212,7 @@ class SettingsParser:
         Returns:
             Simulation length in days as int.
         """
-        return (end_date-start_date).days
+        return int((end_date-start_date).days)
 
 
     ############################################################################

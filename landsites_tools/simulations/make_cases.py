@@ -43,9 +43,6 @@ parser.add_argument("-f", "--settings_file",
                     help="configuration file to use, default is " \
                     + "'settings.txt'",
                     default="")
-parser.add_argument("-id", "--dir_input",
-                    help="path to the input (forcing) data directory",
-                    default="")
 parser.add_argument("-i", "--interactive",
                     help="display options and make cases interactively",
                     action="store_true")
@@ -127,8 +124,8 @@ dir_info = interface_settings.get_parameter("dir_info")
 ############################## Prepare input data ##############################
 ################################################################################
 
-print("Checking input data...\n")
-time.sleep(0.3)
+print("\nChecking input data...\n")
+time.sleep(0.5)
 
 case_input_paths = []
 
@@ -138,13 +135,13 @@ for case_str in cases_to_build:
     ### Check if input data already in place, if not, download
     cur_url = cases_df.loc[case_str,"url"]
 
-    case_input_paths.extend(
+    case_input_paths.append(
         hlp.download_input_data(case_str, nlp_version, cur_url, dir_input)
     )
 
 
-print("Input data is ready.")
-
+print("\nInput data is ready.\n")
+time.sleep(0.5)
 
 
 ################################################################################
@@ -152,7 +149,7 @@ print("Input data is ready.")
 ################################################################################
 
 print("\nStart creating cases...\n")
-time.sleep(0.3)
+time.sleep(0.5)
 
 ### Check if a suffix was provided that would be added to case dir names
 if args.case_name_suffix != "":
@@ -169,15 +166,15 @@ for case_dir_name, nlp_case_name in zip(case_dir_names, cases_to_build):
     hlp.create_case(case_dir_name, nlp_case_name, dir_platform,
                     dir_cases, compset_str, machine_str)
 
-print("Done creating cases.\n")
-
+print("\nDone creating cases.\n")
+time.sleep(0.5)
 
 ################################################################################
 ############################### Change CLM config ##############################
 ################################################################################
 
 print("\nChanging specified CLM parameters within each case...\n")
-time.sleep(0.3)
+time.sleep(0.5)
 
 ### Import parameter dictionary
 with open(dir_info / "params.json", 'r') as param_file:
@@ -188,30 +185,31 @@ for case_dir_name,case_input_path in zip(case_dir_names, case_input_paths):
 
     cur_case_path = PurePosixPath(dir_cases / case_dir_name)
 
-    hlp.change_case_parameters(cur_case_path, interface_settings, param_dict)
+    hlp.change_case_parameters(cur_case_path, case_input_path,
+    interface_settings, param_dict)
 
-print("Done changing parameters.\n")
+print("\nDone changing parameters.\n")
 
 ################################################################################
 ############################### Build the cases ################################
 ################################################################################
 
-print("\nStart building cases...\n")
-time.sleep(0.3)
+print("Start building cases...\n")
+time.sleep(0.5)
 
 ### Create and build cases
 for case_dir_name in case_dir_names:
 
     print(f"Building {case_dir_name}... ", end="")
 
-    cur_path = PurePosixPath(nlp_cases_path / case_dir_name)
+    cur_case_path = PurePosixPath(dir_cases / case_dir_name)
 
-    bash_command = f"cd {cur_path} ; ./case.setup ; ./case.build"
+    bash_command = f"cd {cur_case_path} ; ./case.setup ; ./case.build"
     subprocess.run(bash_command, shell=True, check=True)
     #process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
     #output, error = process.communicate()
 
-    print("Done!")
+    print("\nDone!\n")
 
 print("\nAll cases were built succesfully. "\
 + "Execute 'run_cases.py' to start the simulations.\n")

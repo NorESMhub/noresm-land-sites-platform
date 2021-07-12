@@ -3,6 +3,7 @@ from pathlib import Path, PurePosixPath
 import pandas as pd
 import time
 import re
+import subprocess
 
 # Custom
 from landsites_tools.interface_settings import SettingsParser
