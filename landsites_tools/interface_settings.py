@@ -1,27 +1,20 @@
+#!/usr/bin/env python
+
+"""interface_settings.py: custom ConfigParser class to read and handle NLP
+settings files."""
+
 import re
 import json
 import csv
+import datetime as dt
 from configparser import ConfigParser, ExtendedInterpolation
 from pathlib import Path
 import pandas as pd
+import geopandas as gpd
 import numpy as np
 from dateutil.parser import parse as parsetime
-from datetime import *
-
-# Custom
+from landsites_tools.utils import paths as pth
 import landsites_tools
-
-
-def interactive_settings():
-    """
-    Example workflow:
-    1. get settings from command-line user input
-    2. create ConfigParser instance with settings formatted as
-       in the default settings file
-    3. write settings file
-    (https://docs.python.org/3.6/library/configparser.html#configparser-objects)
-    """
-    raise NotImplementedError
 
 
 class SettingsParser:
@@ -46,9 +39,17 @@ class SettingsParser:
         self.version = landsites_tools.__version__
         self.dir_platform = Path(__file__).absolute().parents[1]
         self.dir_info = self.dir_platform / 'data' / '.nlp'
-        self.path_sites_table = self.dir_info / 'sites.json'
-        self.info_all_sites = pd.read_json(self.path_sites_table,
-                                           orient='index')
+
+        ### Keep until succesful debugging ###
+        #self.path_sites_table = self.dir_info / 'sites.json'
+        #self.nlp_sites_gdf = pd.read_json(self.path_sites_table,
+        #                                   orient='index')
+        self.path_sites_table = self.dir_info / 'site_info.geojson'
+        self.nlp_sites_gdf = gpd.read_file(self.path_sites_table)
+        # Extract site names
+        self.valid_site_names = \
+        [row["name"] for _,row in self.nlp_sites_gdf.iterrows()]
+
         self.path_constraints = self.dir_info / 'settings_constraints.json'
 
         ### Read parameter dictionary
@@ -57,23 +58,26 @@ class SettingsParser:
 
         ### Parse user settings to convenient types
         # Paths
-        self.dir_cases = self.dir_platform / self.get_path('path', 'dir_cases',
+        self.dir_cases = self.dir_platform / self._get_path('path', 'dir_cases',
          'dir')
-        self.dir_input = self.dir_platform / self.get_path('path', 'dir_input',
+        self.dir_input = self.dir_platform / self._get_path('path', 'dir_input',
          'dir')
-        self.dir_output = self.dir_platform / self.get_path('path',
+        self.dir_output = self.dir_platform / self._get_path('path',
         'dir_output', 'dir')
+
         # Dates
-        self.start_time = self.get_time('run', 'start_time')
-        self._end_time = self.get_time('run', 'end_time')
-        self.end_time = self.get_n_days(self.start_time, self._end_time)
+        self.start_time = self._get_datetime('run', 'start_time')
+        self.end_time = self._get_datetime('run', 'end_time')
+        self.n_days = self._get_n_days(self.start_time, self.end_time)
+
         # Sites
-        self.sites2run = self.get_sites('run', 'sites2run')
+        self.sites2run = self._get_sites('run', 'sites2run')
         self._check_sites()
-        # COMPSET
-        self.compset_str = self._generate_compset_string() # TO-DO
+
+        # COMPSET - To-do! Should be specifiable in config file
+        self.compset_str = self._generate_compset_string() # TO-DO!
         # MACHINE
-        self.machine_str = "container-nlp" # TO-DO, SHOULDN'T BE HARD-CODED!
+        self.mapthe_str = "container-nlp" # TO-DO, SHOULDN'T BE HARD-CODED!
         # Other
         self.type_run = self.read_parameter('run', 'type_run')
         self.type_model = self.read_parameter('run', 'type_model')
@@ -85,12 +89,15 @@ class SettingsParser:
         self.frequency_plot = self.read_parameter('postprocess',
         'frequency_plot')
 
+    ############################################################################
+    """Public functions"""
+    ############################################################################
 
-    def write_file(self, path):
+    def write_settings_file(self, path):
         """
-        Write instance to a new settings file.
+        Public function to write instance to a new settings file.
         """
-        if self._is_valid_path(path, type="file", can_create=True):
+        if pth.is_valid_path(path, type="file", can_create=True):
             self.interface["run"]["sites2run"] = self.get_parameter('sites2run')
             # Writing our configuration file to 'example.cfg'
             with open(path, 'w') as configfile:
@@ -99,7 +106,9 @@ class SettingsParser:
             return True
         else:
             return False
+
     ############################################################################
+
     def read_parameter(self, section_name, param_name):
         '''
         Reads and returns the value for a requested parameter string from the
@@ -137,7 +146,7 @@ class SettingsParser:
         param = getattr(self, param_name)
 
         ### Format datetime objects to necessary format here?
-        if isinstance(param, datetime):
+        if isinstance(param, dt.datetime):
             return param.strftime('%Y-%m-%d')
 
         return param
@@ -157,7 +166,10 @@ class SettingsParser:
 
 
     ############################################################################
-    def get_path(self, section, parameter, type="dir"):
+    """Internal functions"""
+    ############################################################################
+
+    def _get_path(self, section, parameter, type="dir"):
         """
         Read and parse path from settings low-level interface
         Arguments:
@@ -169,7 +181,7 @@ class SettingsParser:
         """
         try:
             path = Path(self.read_parameter(section, parameter)).expanduser()
-            self._is_valid_path(path, type=type)
+            pth.is_valid_path(path, type=type)
 
             return path
         except:
@@ -177,7 +189,8 @@ class SettingsParser:
             raise
 
     ############################################################################
-    def get_sites(self, section, parameter, sep_regex='[ ,;]+'):
+
+    def _get_sites(self, section, parameter, sep_regex='[ ,;]+'):
         """
         Read and parse sequence of values as list
         Arguments:
@@ -192,7 +205,8 @@ class SettingsParser:
         return re.split(sep_regex, sites_raw_str)
 
     ############################################################################
-    def get_time(self, section, parameter):
+
+    def _get_datetime(self, section, parameter):
         """
         Read and parse time information as datetime.datetime
         Arguments:
@@ -203,7 +217,9 @@ class SettingsParser:
         """
         return parsetime(self.read_parameter(section, parameter))
 
-    def get_n_days(self, start_date, end_date):
+    ############################################################################
+
+    def _get_n_days(self, start_date, end_date):
         """
         Calculates the number of days for model run.
         Arguments:
@@ -223,50 +239,30 @@ class SettingsParser:
         '''
         Raise an exception if site names are not valid
         '''
-        invalid = np.setdiff1d(self.sites2run, self.info_all_sites.index)
+        invalid = np.setdiff1d(self.sites2run, self.valid_site_names)
+        # Any invalid sites (length > 0)?
         if invalid.size:
             msg = f"{invalid.tolist()} are invalid sites. " +\
-                  f"Valid sites: {self.info_all_sites.index.tolist()} " +\
+                  f"Valid sites: {self.valid_site_names} " +\
                   f"(see {self.path_sites_table})"
             raise ValueError(msg)
 
     ############################################################################
-    def _is_valid_path(self, path, type="dir", can_create=False):
-        '''
-        Check if a given directory or file exists. Returns False if the input is
-        an empty string, True if it is a valid directory, and raises an
-        exception if given path is not valid.
-        '''
-        if type not in ["dir", "file"]:
-            raise ValueError("'type' must be either 'dir' or 'file'!")
+    ############################################################################
+    ############################################################################
 
-        ### Return False if no string given
-        if path == "":
-            return False
+    def _generate_compset_string(self):
+        """
+        Create and store a compset string based on provided input.
 
-        if not str(path).startswith(str(self.dir_platform)):
-            path = Path(self.dir_platform / path)
-
-        ### If not empty string, check if path is valid
-        try:
-            if type == "dir":
-                if not Path(path).is_dir():
-                    raise ValueError(f"Directory {path} does not exist!")
-            elif type == "file":
-                if can_create:
-                    if Path(path).parent.is_dir():
-                        return True
-                    else:
-                        raise ValueError(f"Directory {Path(path).parent} does not exist!")
-                else:
-                    if not Path(path).is_file():
-                        raise ValueError(f"File {path} does not exist!")
-            ### Return true if no exceptions
-            return True
-        except:
-            raise
+        TO-DO: Implement different modes.
+        """
+        return r"2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV"
 
     ############################################################################
+    ############################################################################
+    ############################################################################
+
     def _is_valid_param_value(self, param_name, value):
         '''
         Validate the paramaters given in the settings file.
@@ -274,7 +270,7 @@ class SettingsParser:
         '''
 
         if param_name not in self.constraints.keys():
-            # TO-DO: smarter way to handle exceptions
+            # TO-DO: smarter way to handle unexpected inputs
             return True
 
         ### Check if the input is in valid entries
@@ -309,15 +305,5 @@ class SettingsParser:
 
             raise ValueError(msg)
 
-        # If no exceptions were raised, return True
+        # If no exceptions were raised (--> valid parameter value), return True
         return True
-
-    ############################################################################
-
-    def _generate_compset_string(self):
-        """
-        Create and store a compset string based on provided input.
-
-        TO-DO: Implement different modes.
-        """
-        return "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV"
