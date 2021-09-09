@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+"""make_cases.py: Create, build, and set up single-point CTSM case directories,
+also automatically download forcing input data for pre-defined land sites."""
+
 import argparse
 import sys
 import os
@@ -9,9 +14,11 @@ import pandas as pd
 import time
 
 ### Import helper functions
-import helpers as hlp
+#import helpers as hlp
 from landsites_tools.interface_settings import SettingsParser
-from landsites_tools import general_helpers as ghlp
+from landsites_tools.utils import paths as pth
+from landsites_tools.utils import parameters as params
+from landsites_tools.utils import input, cases
 
 ### General settings
 pd.set_option('display.max_colwidth', None)
@@ -61,29 +68,36 @@ if args.interactive:
 
     import interactive_settings as iset
 
-    # Store file name
+    # Retrieve file name
     fname = args.name_settings_file
-    # Call module to create settings file
+    if fname == "":
+        fname = f"settings_{time_stamp}.txt"
+
+    ### Call module to create settings file
+    # if no filename provided, use time stamp to create unique name
     interface_settings = iset.create_settings_interactively(
-        file_name = fname if fname != "" else f"settings_{time_stamp}.txt"
+        file_name = fname
     )
 
-    sys.exit("New settings file successfully created. Please change the model "\
-    +"paramters in the file and rerun the script without interactive mode.")
+    sys.exit(
+    f"New settings file successfully created. Please change the model " \
+    + f"paramters in {fname} and rerun 'make_cases.py' without interactive " \
+    + f"mode."
+    )
 
 ### File provided or standard file
 else:
 
     # Check provided file path
     try:
-        if ghlp.is_valid_path(args.settings_path, type="dir"):
+        if pth.is_valid_path(args.settings_path, type="dir"):
             settings_path = args.settings_path
         # Read from root directory otherwise
         else:
             settings_path = Path(__file__).absolute().parent.parent
 
         if args.settings_file != "" and \
-        ghlp.is_valid_path(settings_path / args.settings_file, type="file"):
+        pth.is_valid_path(settings_path / args.settings_file, type="file"):
 
             interface_settings = SettingsParser(
                 args.settings_path / args.settings_file
@@ -106,11 +120,11 @@ else:
 cases_to_build = interface_settings.get_parameter("sites2run")
 
 # General NLP options
-cases_df = interface_settings.get_parameter("info_all_sites")
-available_cases = cases_df["name"].values
+cases_gdf = interface_settings.get_parameter("nlp_sites_gdf")
+available_cases = interface_settings.get_parameter("valid_site_names")
 nlp_version = interface_settings.get_parameter("version")
 compset_str = interface_settings.get_parameter("compset_str")
-machine_str = interface_settings.get_parameter("machine_str")
+mapthe_str = interface_settings.get_parameter("mapthe_str")
 
 # Paths
 dir_platform = interface_settings.get_parameter("dir_platform")
@@ -125,23 +139,22 @@ dir_info = interface_settings.get_parameter("dir_info")
 ################################################################################
 
 print("\nChecking input data...\n")
-time.sleep(0.5)
 
+# Save paths to created input data directories in a list
 case_input_paths = []
 
 ### Loop through chosen cases
 for case_str in cases_to_build:
 
     ### Check if input data already in place, if not, download
-    cur_url = cases_df.loc[case_str,"url"]
+    cur_url = cases_gdf[cases_gdf["name"] == case_str]["url"].array[0]
 
     case_input_paths.append(
-        hlp.download_input_data(case_str, nlp_version, cur_url, dir_input)
+        input.download_input_data(case_str, nlp_version, cur_url, dir_input)
     )
 
 
 print("\nInput data is ready.\n")
-time.sleep(0.5)
 
 
 ################################################################################
@@ -149,7 +162,6 @@ time.sleep(0.5)
 ################################################################################
 
 print("\nStart creating cases...\n")
-time.sleep(0.5)
 
 ### Check if a suffix was provided that would be added to case dir names
 if args.case_name_suffix != "":
@@ -163,18 +175,16 @@ case_dir_names = \
 ### Check if case folders exists, otherwise create them
 for case_dir_name, nlp_case_name in zip(case_dir_names, cases_to_build):
 
-    hlp.create_case(case_dir_name, nlp_case_name, dir_platform,
-                    dir_cases, compset_str, machine_str)
+    cases.create_case(case_dir_name, nlp_case_name, dir_platform,
+                    dir_cases, compset_str, mapthe_str)
 
 print("\nDone creating cases.\n")
-time.sleep(0.5)
 
 ################################################################################
 ############################### Change CLM config ##############################
 ################################################################################
 
 print("\nChanging specified CLM parameters within each case...\n")
-time.sleep(0.5)
 
 ### Import parameter dictionary
 with open(dir_info / "params.json", 'r') as param_file:
@@ -185,7 +195,7 @@ for case_dir_name,case_input_path in zip(case_dir_names, case_input_paths):
 
     cur_case_path = PurePosixPath(dir_cases / case_dir_name)
 
-    hlp.change_case_parameters(cur_case_path, case_input_path,
+    params.change_case_parameters(cur_case_path, case_input_path,
     interface_settings, param_dict)
 
 print("\nDone changing parameters.\n")
@@ -195,7 +205,6 @@ print("\nDone changing parameters.\n")
 ################################################################################
 
 print("Start building cases...\n")
-time.sleep(0.5)
 
 ### Create and build cases
 for case_dir_name in case_dir_names:

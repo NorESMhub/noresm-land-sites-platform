@@ -1,7 +1,7 @@
 [path]
-dir_cases = data/cases      # cases root folder
-dir_input = data/input      # input root folder
-dir_output = data/output    # output root folder
+dir_cases = data/cases      # cases root folder, absolute or relative to project dir
+dir_input = data/input      # input root folder, absolute or relative to project dir
+dir_output = data/output    # output root folder, absolute or relative to project dir
 
 [run]
 start_time = 2000-01-01       # yyyy-mm-dd hh:mm
