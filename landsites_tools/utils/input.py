@@ -42,6 +42,8 @@ def download_input_data(case_name, version, url, input_dir):
             print(f"Input data folder {case_input_dir_path} already in place. "\
             + "Make sure that it contains all the necessary forcing files!")
 
+            return case_input_dir_path
+
         else:
 
             print(f"Downloading and extracting input for {case_input_dir_name}"\

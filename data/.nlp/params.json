@@ -22,7 +22,7 @@
       "xml_file" : "env_run.xml",
       "default" : "2000-01-01"
     },
-    "end_time" : {
+    "n_days" : {
       "ctsm_param" : "STOP_N",
       "xml_file" : "env_run.xml",
       "default" : 365

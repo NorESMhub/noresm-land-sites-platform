@@ -2,7 +2,9 @@
 
 """parameters.py: Utility functions to handle CTSM parameters."""
 
+import subprocess
 from landsites_tools.interface_settings import SettingsParser
+from pathlib import Path
 
 ################################################################################
 """Change parameters"""
@@ -13,12 +15,13 @@ interface_settings: SettingsParser, param_dict: dict):
     """
 
     """
-
-    ### Initialize bash command to change settings in current case folder
+    # Change dir to current case path
     bash_command = f"cd {case_path};"
 
     try:
-        ### Add general settings
+        ########################################################################
+        ### Change NLP specific general settings for CESM parameters
+        ########################################################################
         bash_command += \
         ";".join(
             [f"./xmlchange --file {vals['xml_file']} {ctsm_param}=" \
@@ -26,9 +29,11 @@ interface_settings: SettingsParser, param_dict: dict):
             for ctsm_param,vals in param_dict['nlp_general'].items()]
         )
 
-        ### Change dynamic input paths
+        ########################################################################
+        ### Change input path to case directory
+        ########################################################################
         bash_command += \
-        f'''./xmlchange --file env_run.xml DIN_LOC_ROOT="{case_input_path}";'''
+        f"./xmlchange --file env_run.xml DIN_LOC_ROOT={Path(case_input_path)};"
 
         clm_input_path = \
         Path(case_input_path / 'inputdata' / 'atm' / 'datm7' / 'GSWP3v1')

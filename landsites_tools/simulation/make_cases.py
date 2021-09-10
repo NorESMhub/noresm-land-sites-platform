@@ -53,8 +53,8 @@ parser.add_argument("-f", "--settings_file",
 parser.add_argument("-i", "--interactive",
                     help="display options and make cases interactively",
                     action="store_true")
-parser.add_argument("-n", "--name_settings_file",
-                    help="name of output settings file (interactive only)",
+parser.add_argument("-n", "--name_new_settings_file",
+                    help="name of new settings file (interactive only)",
                     default="")
 
 args = parser.parse_args()
@@ -69,7 +69,7 @@ if args.interactive:
     import interactive_settings as iset
 
     # Retrieve file name
-    fname = args.name_settings_file
+    fname = args.name_new_settings_file
     if fname == "":
         fname = f"settings_{time_stamp}.txt"
 
@@ -79,37 +79,92 @@ if args.interactive:
         file_name = fname
     )
 
+    ### Stop execution
     sys.exit(
-    f"New settings file successfully created. Please change the model " \
-    + f"paramters in {fname} and rerun 'make_cases.py' without interactive " \
-    + f"mode."
+    f"New settings file successfully created. Please adapt the simulation " \
+    + f"paramters in {fname} and rerun 'make_cases.py -f {fname}' to build " \
+    + f"the cases."
     )
 
 ### File provided or standard file
 else:
 
-    # Check provided file path
+    # Check provided settings file input
     try:
-        if pth.is_valid_path(args.settings_path, type="dir"):
-            settings_path = args.settings_path
-        # Read from root directory otherwise
-        else:
-            settings_path = Path(__file__).absolute().parent.parent
+        # Was a settings file path provided? If no...
+        if args.settings_path == "":
 
-        if args.settings_file != "" and \
-        pth.is_valid_path(settings_path / args.settings_file, type="file"):
+            # Was a settings file name provided? If no...
+            if args.settings_file == "":
 
+                # ...set to '~/landsites_tools/' (std settings file location)
+                settings_path = Path(__file__).absolute().parents[1]
+
+                # Create SettingsParser instance from standard file, check if
+                # it's there first
+                if pth.is_valid_path(settings_path / "settings.txt",
+                type="file"):
+
+                    interface_settings = SettingsParser(
+                        settings_path / "settings.txt"
+                    )
+
+                    print("No settings file name or path provided, " \
+                    + "using '~/landsites_tools/settings.txt'...")
+
+                else:
+                    raise RuntimeError(
+                    "The standard 'settings.txt' file is missing in the" \
+                    + "'~/landsites_tools/' directory! Make sure it's there " \
+                    + "and run again."
+                    )
+
+            # Was a settings file name provided but no file path? Then...
+            else:
+                # ...use the '~/landsites_tools/custom_settings/' directory
+                settings_path = \
+                Path(__file__).absolute().parents[1] / "custom_settings"
+
+                # Create SettingsParser instance from given file name in custom
+                # directory, check if it's there first
+                if pth.is_valid_path(settings_path / args.settings_file,
+                type="file"):
+
+                    interface_settings = SettingsParser(
+                        settings_path / args.settings_file
+                    )
+
+                    print(f"Using settings file '{args.settings_file}' in " \
+                    + "'~/landsites_tools/custom_settings/'...")
+
+                else:
+                    raise RuntimeError(
+                    f"The file '{args.settings_file}' does not exist in the " \
+                    + "'~/landsites_tools/custom_settings/' directory! Make " \
+                    + "sure to provide a valid name and run again."
+                    )
+
+        # Was a full settings file path provided? If yes and if it is valid...
+        elif pth.is_valid_path(Path(args.settings_path) / args.settings_file,
+        type="file"):
+
+            # ...use it
+            settings_path = Path(args.settings_path)
             interface_settings = SettingsParser(
-                args.settings_path / args.settings_file
+                settings_path / args.settings_file
             )
 
+            print(f"Using settings file '{args.settings_file}' in " \
+            + f"'{settings_path}'...")
+
+        # If input is wrong
         else:
-            interface_settings = SettingsParser(
-                settings_path / "settings.txt"
-            )
+            raise ValueError(
+            f"There is no '{args.settings_file}' in " \
+            + f"'{args.settings_path}'! Provide a correct absolute path.")
 
     except:
-        print("Input error regarding the provided settings file!")
+        print("\nInput error regarding the provided settings file!\n")
         raise
 
 ################################################################################
@@ -194,6 +249,8 @@ with open(dir_info / "params.json", 'r') as param_file:
 for case_dir_name,case_input_path in zip(case_dir_names, case_input_paths):
 
     cur_case_path = PurePosixPath(dir_cases / case_dir_name)
+
+    print(case_input_path)
 
     params.change_case_parameters(cur_case_path, case_input_path,
     interface_settings, param_dict)
