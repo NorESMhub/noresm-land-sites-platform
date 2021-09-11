@@ -27,7 +27,7 @@ interface_settings: SettingsParser, param_dict: dict):
             [f"./xmlchange --file {vals['xml_file']} {ctsm_param}=" \
             + f"{vals['value']}" \
             for ctsm_param,vals in param_dict['nlp_general'].items()]
-        )
+        ) + ";" # Closing semicolon
 
         ########################################################################
         ### Change input path to case directory

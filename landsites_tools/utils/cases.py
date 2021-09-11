@@ -35,7 +35,7 @@ def create_case(case_dir_name, nlp_case_name, dir_platform,
             print(f"Case '{case_dir_name}' already exists in the specified "\
             + f"cases directory.")
 
-            return False
+            return case_dir_path
 
         else:
             ### Concatenate a bash string to create CTSM case
@@ -49,7 +49,7 @@ def create_case(case_dir_name, nlp_case_name, dir_platform,
 
             print(f"New case '{case_dir_name}' successfully created.")
 
-            return True
+            return case_dir_path
 
     except:
         print("Error when creating cases!\n")

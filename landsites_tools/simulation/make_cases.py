@@ -179,7 +179,7 @@ cases_gdf = interface_settings.get_parameter("nlp_sites_gdf")
 available_cases = interface_settings.get_parameter("valid_site_names")
 nlp_version = interface_settings.get_parameter("version")
 compset_str = interface_settings.get_parameter("compset_str")
-mapthe_str = interface_settings.get_parameter("mapthe_str")
+machine_str = interface_settings.get_parameter("machine_str")
 
 # Paths
 dir_platform = interface_settings.get_parameter("dir_platform")
@@ -208,6 +208,8 @@ for case_str in cases_to_build:
         input.download_input_data(case_str, nlp_version, cur_url, dir_input)
     )
 
+### Save input paths into settings file
+interface_settings.set_parameter("input_paths", case_input_paths)
 
 print("\nInput data is ready.\n")
 
@@ -227,11 +229,18 @@ else:
 case_dir_names = \
 [case + "_" + str(nlp_version) + suffix for case in cases_to_build]
 
+case_dir_paths = []
+
 ### Check if case folders exists, otherwise create them
 for case_dir_name, nlp_case_name in zip(case_dir_names, cases_to_build):
 
+    case_dir_paths.append(
     cases.create_case(case_dir_name, nlp_case_name, dir_platform,
-                    dir_cases, compset_str, mapthe_str)
+    dir_cases, compset_str, machine_str)
+    )
+
+### Save input paths into settings file
+interface_settings.set_parameter("cases_paths", case_dir_paths)
 
 print("\nDone creating cases.\n")
 
@@ -276,6 +285,9 @@ for case_dir_name in case_dir_names:
     #output, error = process.communicate()
 
     print("\nDone!\n")
+
+### Update settings file
+interface_settings.write_settings_file(new_file=False)
 
 print("\nAll cases were built succesfully. "\
 + "Execute 'run_cases.py' to start the simulations.\n")

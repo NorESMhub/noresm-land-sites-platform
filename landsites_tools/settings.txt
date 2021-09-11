@@ -20,3 +20,9 @@ frequency_plot = daily
 [future]
 vegetation_types_FATES =  # to be implemented
 output_groups =           # to be implemented
+
+### Settings in this section will be adjusted automatically, do not edit ###
+[internal]
+input_paths =
+cases_paths =
+output_paths =

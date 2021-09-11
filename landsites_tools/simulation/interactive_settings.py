@@ -67,9 +67,8 @@ def create_settings_interactively(file_name):
         custom_settings_dir.mkdir(parents=True, exist_ok=True)
 
     # Write file
-    interactive_settings.write_settings_file(
-    Path(custom_settings_dir / file_name)
-    )
+    interactive_settings.write_settings_file(new_file=True,
+    path=Path(custom_settings_dir / file_name))
 
     print(f"\nSettings file '{file_name}' successfully created in " \
     + f"{custom_settings_dir}. Remember to edit the file to adjust model " \

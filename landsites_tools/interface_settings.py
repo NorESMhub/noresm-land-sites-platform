@@ -77,7 +77,7 @@ class SettingsParser:
         # COMPSET - To-do! Should be specifiable in config file
         self.compset_str = self._generate_compset_string() # TO-DO!
         # MACHINE
-        self.mapthe_str = "container-nlp" # TO-DO, SHOULDN'T BE HARD-CODED!
+        self.machine_str = "container-nlp" # TO-DO, SHOULDN'T BE HARD-CODED!
         # Other
         self.type_run = self.read_parameter('run', 'type_run')
         self.type_model = self.read_parameter('run', 'type_model')
@@ -89,21 +89,43 @@ class SettingsParser:
         self.frequency_plot = self.read_parameter('postprocess',
         'frequency_plot')
 
+        # Paths after building, will be added/updated automatically
+        self.input_paths = self.read_parameter('internal', 'input_paths')
+        self.cases_paths = self.read_parameter('internal', 'cases_paths')
+        self.output_paths = self.read_parameter('internal', 'output_paths')
+
     ############################################################################
     """Public functions"""
     ############################################################################
 
-    def write_settings_file(self, path):
+    def write_settings_file(self, new_file=True, path=None):
         """
         Public function to write instance to a new settings file.
         """
-        if pth.is_valid_path(path, type="file", can_create=True):
+        if new_file and pth.is_valid_path(path, type="file", can_create=True):
+            # TO-DO: Quick fix, discuss better way
             self.interface["run"]["sites2run"] = self.get_parameter('sites2run')
             # Writing our configuration file to 'example.cfg'
             with open(path, 'w') as configfile:
                 self.interface.write(configfile)
 
             return True
+
+        elif not new_file:
+            # TO-DO: Quick fix, discuss better way
+            self.interface["internal"]["input_paths"] = \
+            ", ".join([str(x) for x in self.get_parameter("input_paths")])
+            self.interface["internal"]["cases_paths"] = \
+            ", ".join([str(x) for x in self.get_parameter("cases_paths")])
+            self.interface["internal"]["output_paths"] = \
+            ", ".join([str(x) for x in self.get_parameter("output_paths")])
+
+            # Writing our configuration file to current settings file
+            with open(self.path_settings, 'w') as configfile:
+                self.interface.write(configfile)
+
+            return True
+
         else:
             return False
 
