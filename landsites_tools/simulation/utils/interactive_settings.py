@@ -11,9 +11,9 @@ import re
 import subprocess
 
 # Custom
-from landsites_tools.interface_settings import SettingsParser
+from landsites_tools.utils.interface_settings import SettingsParser
 from landsites_tools.utils import paths as pth
-from landsites_tools.utils import cases
+from landsites_tools.simulation.utils import cases
 
 ################################################################################
 
@@ -43,7 +43,7 @@ def create_settings_interactively(file_name):
     ### Read default settings file
     try:
         def_settings = SettingsParser(Path(__file__).absolute() \
-        .parents[2] / "data"/ ".nlp" / "default_settings.txt")
+        .parents[3] / "data"/ ".nlp" / "default_settings.txt")
     except:
         print(
         "Something went wrong when creating a SettingsParser object from the " \
@@ -145,10 +145,3 @@ def _case_input(def_settings):
     def_settings.set_parameter('sites2run', cases_formatted_str)
 
     return def_settings
-
-
-if __name__ == "__main__":
-    """
-    Run as main for test purposes.
-    """
-    create_settings_interactively("settings_test.txt")

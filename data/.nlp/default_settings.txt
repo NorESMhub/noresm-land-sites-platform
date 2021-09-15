@@ -1,6 +1,6 @@
 [path]
 dir_cases = data/cases      # cases root folder, absolute or relative to project dir
-dir_input = data/input      # input root folder, absolute or relative to project dir
+dir_clm_input = data/input/clm      # input root folder, absolute or relative to project dir
 dir_output = data/output    # output root folder, absolute or relative to project dir
 
 [run]

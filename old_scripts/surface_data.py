@@ -2,7 +2,7 @@ import os
 import sys
 import shutil
 import subprocess
-from interface_settings import InterfaceSettings
+from landsites_tools.utils.interface_settings import InterfaceSettings
 
 
 class SurfaceData:

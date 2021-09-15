@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""cases.py: Utility functions to handle CTSM cases and NLP cases in
+"""cases.py: Utility functions to handle CTSM cases, and NLP cases in
 particular."""
 
 import geopandas as gpd

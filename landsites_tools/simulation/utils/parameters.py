@@ -3,7 +3,7 @@
 """parameters.py: Utility functions to handle CTSM parameters."""
 
 import subprocess
-from landsites_tools.interface_settings import SettingsParser
+from landsites_tools.utils.interface_settings import SettingsParser
 from pathlib import Path
 
 ################################################################################

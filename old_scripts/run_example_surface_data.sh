@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#SBATCH --account=nn2806k 
+#SBATCH --account=nn2806k
 #SBATCH --job-name=mkmapdata
 #SBATCH --mem-per-cpu=256G --partition=bigmem
 #SBATCH --ntasks=1

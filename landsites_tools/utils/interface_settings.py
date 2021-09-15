@@ -37,7 +37,7 @@ class SettingsParser:
 
         ### Default information
         self.version = landsites_tools.__version__
-        self.dir_platform = Path(__file__).absolute().parents[1]
+        self.dir_platform = Path(__file__).absolute().parents[2]
         self.dir_info = self.dir_platform / 'data' / '.nlp'
 
         ### Keep until succesful debugging ###
@@ -60,8 +60,8 @@ class SettingsParser:
         # Paths
         self.dir_cases = self.dir_platform / self._get_path('path', 'dir_cases',
          'dir')
-        self.dir_input = self.dir_platform / self._get_path('path', 'dir_input',
-         'dir')
+        self.dir_clm_input = self.dir_platform / self._get_path('path',
+        'dir_clm_input', 'dir')
         self.dir_output = self.dir_platform / self._get_path('path',
         'dir_output', 'dir')
 

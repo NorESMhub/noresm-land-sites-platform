@@ -5,7 +5,7 @@ read input
 
 if [ $input = y ]
 then
-  rm -rf ../data/input/*/
+  rm -rf ../data/input/clm/*/
 fi
 
 echo -n "Delete cases [y/n]?"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""input.py: Utility functions to handle input data."""
+"""input.py: Utility functions to handle input data across sub-packages."""
 
 from pathlib import Path
 

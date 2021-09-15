@@ -15,10 +15,11 @@ import time
 
 ### Import helper functions
 #import helpers as hlp
-from landsites_tools.interface_settings import SettingsParser
+from landsites_tools.utils.interface_settings import SettingsParser
 from landsites_tools.utils import paths as pth
-from landsites_tools.utils import parameters as params
-from landsites_tools.utils import input, cases
+from landsites_tools.utils import input
+from landsites_tools.simulation.utils import parameters as params
+from landsites_tools.simulation.utils import cases
 
 ### General settings
 pd.set_option('display.max_colwidth', None)
@@ -66,7 +67,7 @@ args = parser.parse_args()
 ### Interactive mode
 if args.interactive:
 
-    import interactive_settings as iset
+    import landsites_tools.simulation.utils.interactive_settings as iset
 
     # Retrieve file name
     fname = args.name_new_settings_file
@@ -183,7 +184,7 @@ machine_str = interface_settings.get_parameter("machine_str")
 
 # Paths
 dir_platform = interface_settings.get_parameter("dir_platform")
-dir_input = interface_settings.get_parameter("dir_input")
+dir_clm_input = interface_settings.get_parameter("dir_clm_input")
 dir_output = interface_settings.get_parameter("dir_output")
 dir_cases = interface_settings.get_parameter("dir_cases")
 dir_info = interface_settings.get_parameter("dir_info")
@@ -205,7 +206,7 @@ for case_str in cases_to_build:
     cur_url = cases_gdf[cases_gdf["name"] == case_str]["url"].array[0]
 
     case_input_paths.append(
-        input.download_input_data(case_str, nlp_version, cur_url, dir_input)
+        input.download_input_data(case_str, nlp_version, cur_url, dir_clm_input)
     )
 
 ### Save input paths into settings file
