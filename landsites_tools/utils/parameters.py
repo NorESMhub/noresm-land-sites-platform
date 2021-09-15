@@ -33,7 +33,7 @@ interface_settings: SettingsParser, param_dict: dict):
         ### Change input path to case directory
         ########################################################################
         bash_command += \
-        f"./xmlchange --file env_run.xml DIN_LOC_ROOT={Path(case_input_path)};"
+        f"./xmlchange --file env_run.xml DIN_LOC_ROOT={Path(case_input_path) / 'inputdata'};"
 
         clm_input_path = \
         Path(case_input_path / 'inputdata' / 'atm' / 'datm7' / 'GSWP3v1')
