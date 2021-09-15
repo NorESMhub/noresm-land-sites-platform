@@ -1,1 +1,3 @@
-"""Sub-package to post-process the model output."""
+#!/usr/bin/env python
+
+"""Sub-package to post-process the CTSM simulation results."""

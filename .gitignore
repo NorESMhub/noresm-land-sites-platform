@@ -1,14 +1,22 @@
 ### Project specific
 # ignore...
-cases/*
-input/*
-output/*
-simulation_settings/
+data/cases/*
+data/input/clm/*
+data/input/user_observations/atmosphere/*
+data/input/user_observations/soil/*
+data/output/*
+landsites_tools/custom_settings/*
+*.remote-sync.json
+*test.py
 
-# keep...
+# keep... (don't track user files, but make sure folders are in place)
 !cases/.gitkeep
-!input/.gitkeep
+!data/input/clm/.gitkeep
+!data/input/user_observations/.gitkeep
+!data/input/user_observations/atmosphere/example.csv
+!data/input/user_observations/soil/example.csv
 !output/.gitkeep
+!landsites_tools/custom_settings/.gitkeep
 
 ### Environment
 env/
