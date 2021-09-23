@@ -16,5 +16,10 @@ then
   rm -rf ../data/cases/*/
 fi
 
-# Delete cases
-# cd ../data
+echo -n "Delete output [y/n]?"
+read input3
+
+if [ $input3 = y ]
+then
+  rm -rf ../data/output/*/
+fi
