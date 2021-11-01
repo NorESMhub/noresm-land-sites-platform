@@ -1,0 +1,98 @@
+"""
+a list of output variables from CLM, called by the settings file,
+to be available for plotting.
+See https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
+for a full list of possible output variables.
+"""
+
+variables_output_subset = [
+"AGDD", # growing degree-days base 5C,	K
+"AGNPP", #	aboveground NPP, gC/m^2/s
+"ALBD", # surface albedo (direct), proportion
+"ALBI", # surface albedo (indirect), proportion
+"ANNAVG_T2M", # annual average 2m air temperature, K (There is also "CANNAVG_T2M" - what is the difference?)
+"AR", # autotrophic respiration (MR + GR),	gC/m^2/s
+"BGNPP", #	belowground NPP, gC/m^2/s
+"CPOOL_LEAF_GR" #	leaf growth respiration, gC/m^2/s
+"CPOOL_LIVECROOT_GR" # live coarse root growth respiration, gC/m^2/s
+"CPOOL_LIVESTEM_GR" #live stem growth respiration, gC/m^2/s
+"CPOOL_TO_DEADSTEMC" # allocation to dead stem C, gC/m^2/s
+"CPOOL_TO_FROOTC" #	allocation to fine root C, gC/m^2/s
+"CPOOL_TO_LEAFC" # allocation to leaf C, gC/m^2/s
+"CPOOL_TO_LIVECROOTC" # allocation to live coarse root C, gC/m^2/s
+"CPOOL_TO_LIVESTEMC" # allocation to live stem C, gC/m^2/s
+"DAYL" # daylength, s
+"DAYS_ACTIVE" # number of days since last dormancy, days
+# any 'dead [plantPart] C/N storage/shiftStorageToTransfer/transfer/growthFromStorage'?
+"DECL" # solar declination angle, radians
+"DISPLA" # displacement height, m ------- zero plane displacement height of a vegetated surface—usually indicated with d —is the height at which the wind speed would go to zero if the logarithmic wind profile was maintained from the outer flow all the way down to the surface (that is, in the absence of the vegetation)
+# displayed vegetation nitrogen/carbon???
+"DORMANT_FLAG" # dormancy flag, none
+# any land cover change variables? e.g. DWT_CLOSS 	total carbon loss from land cover conversion 	gC/m^2/s
+"EFLX_GNET" # net heat flux into ground, W/m^2
+"EFLX_LH_TOT" # total latent heat flux [+ to atm], W/m^2
+"ELAI" # exposed one-sided leaf area index, m^2/m^2
+"EMV" # vegetation emissivity, proportion
+"ER" # total ecosystem respiration, autotrophic + heterotrophic, gC/m^2/s
+FAREA_BURNED 	timestep fractional area burned 	proportion
+FCEV 	canopy evaporation 	W/m^2
+FCTR 	canopy transpiration 	W/m^2
+FGEV 	ground evaporation 	W/m^2
+FGR 	heat flux into soil/snow including snow melt 	W/m^2
+FIRA 	net infrared (longwave) radiation 	W/m^2
+FIRE 	emitted infrared (longwave) radiation 	W/m^2
+FPSN 	photosynthesis 	umol/m2s
+FSA 	absorbed solar radiation 	W/m^2
+FSAT 	fractional area with water table at surface 	unitless
+FSH 	sensible heat 	W/m^2
+FSH_G 	sensible heat from ground 	W/m^2
+FSH_V 	sensible heat from veg 	W/m^2
+FSNO 	fraction of ground covered by snow 	unitless
+FSR 	reflected solar radiation 	W/m^2
+GC_HEAT1 	initial gridcell total heat content 	J/m^2
+GDD0 	Growing degree days base 0C from planting 	ddays -------alt. 8 or 10 degrees
+GPP 	gross primary production 	gC/m^2/s
+GR 	total growth respiration 	gC/m^2/s
+H2OCAN 	intercepted water 	mm
+H2OSNO 	snow depth (liquid water) 	mm
+HC 	heat content of soil/snow/lake 	MJ/m2
+HCSOI 	soil heat content 	MJ/m2
+HK 	hydraulic conductivity (vegetated landunits only) 	mm/s
+HR 	total heterotrophic respiration 	gC/m^2/s
+HTOP 	canopy top 	m
+LAISHA 	shaded projected leaf area index 	none
+LAISUN 	sunlit projected leaf area index 	none
+LEAFC 	leaf C 	gC/m^2
+LEAFN 	leaf N 	gN/m^2
+LEAF_MR 	leaf maintenance respiration 	gC/m^2/s
+LWdown 	atmospheric longwave radiation 	W/m^2
+LWup 	upwelling longwave radiation 	W/m^2
+MR 	maintenance respiration 	gC/m^2/s
+NBP 	net biome production, includes fire, landuse, and harvest flux, positive for sink 	gC/m^2/s
+NEE 	net ecosystem exchange of carbon, includes fire, landuse, harvest, and hrv_xsmrpool flux, positive for source 	gC/m^2/s
+NEP 	net ecosystem production, excludes fire, landuse, and harvest flux, positive for sink 	gC/m^2/s
+NPP 	net primary production 	gC/m^2/s
+ONSET_FDD 	onset freezing degree days counter 	C degree-days
+PAR_shade 	shade PAR 	umol/m2/s
+PAR_sun 	sunlit PAR 	umol/m2/s -------- photosynthetic active radiation (PAR; 𝜇𝑚𝑜𝑙 electron / m 2/s)
+PBOT 	atmospheric pressure 	Pa
+PCO2 	atmospheric partial pressure of CO2 	Pa
+PSNSHA 	shaded leaf photosynthesis 	umolCO2/m^2/s
+PSurf 	surface pressure 	Pa
+Q2M 	2m specific humidity 	kg/kg
+QFLX_EVAP_VEG 	vegetation evaporation 	mm H2O/s
+Qh 	sensible heat 	W/m^2
+Rnet 	net radiation 	W/m^2
+SABV 	solar rad absorbed by veg 	W/m^2
+SNOWDP 	snow height 	m
+SOILC 	soil C 	gC/m^2
+SR 	total soil respiration (HR + root resp) 	gC/m^2/s
+TDA 	daily average 2-m temperature 	K
+TLAI 	total projected leaf area index 	none
+TOTECOSYSC 	total ecosystem carbon, incl veg but excl cpool 	gC/m^2
+TOTECOSYSN 	total ecosystem N 	gN/m^2
+TSA 	2m air temperature 	K
+U10 	10-m wind 	m/s
+VCMXSHA 	shaded leaf Vcmax 	umolCO2/m^2/s
+VCMXSUN 	sunlit leaf Vcmax 	umolCO2/m^2/s
+]
