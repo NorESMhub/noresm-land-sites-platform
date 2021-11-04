@@ -1,0 +1,59 @@
+"""
+a list of output variables from CLM to be called by the settings file,
+to be available for plotting.
+See https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
+for a full list of possible output variables.
+"""
+
+output_variables_subset = {
+  "variables_output" : [
+    "AGDD", #growing degree-days base 5C,	K
+    "AGNPP", #aboveground NPP, gC/m^2/s
+    "ALBD", #surface albedo (direct), proportion
+    "ALBI", #surface albedo (indirect), proportion
+    "ANNAVG_T2M", #annual average 2m air temperature, K (There is also "CANNAVG_T2M" - what is the difference?)
+    "AR", #autotrophic respiration (MR + GR),	gC/m^2/s
+    "DORMANT_FLAG", #dormancy flag, none
+    "EFLX_GNET", #net heat flux into ground, W/m^2
+    "EFLX_LH_TOT", #total latent heat flux [+ to atm], W/m^2
+    "ELAI", #exposed one-sided leaf area index, m^2/m^2
+    "ER", #total ecosystem respiration, autotrophic + heterotrophic, gC/m^2/s
+    "FCEV", #canopy evaporation, W/m^2
+    "FCTR", #canopy transpiration, W/m^2
+    "FPSN", #photosynthesis, umol/m2s
+    "FSH", #sensible heat, W/m^2
+    "FSH_V", #sensible heat from veg, W/m^2
+    "FSNO", #fraction of ground covered by snow, unitless
+    "FSR", #reflected solar radiation, W/m^2
+    "GC_HEAT1", #initial gridcell total heat content, J/m^2
+    "GPP", #gross primary production, gC/m^2/s
+    "GR", #total growth respiration, gC/m^2/s
+    "H2OCAN", #intercepted water, mm
+    "H2OSNO", #snow depth (liquid water), mm
+    "HR", #total heterotrophic respiration, gC/m^2/s
+    "HTOP", #canopy top, m
+    "LAISHA", #shaded projected leaf area index, none
+    "LAISUN", #sunlit projected leaf area index, none
+    "LEAFC", #leaf C, gC/m^2
+    "LEAFN", #leaf N, gN/m^2
+    "MR", #maintenance respiration, gC/m^2/s
+    "NBP", #net biome production, includes fire, landuse, and harvest flux, positive for sink, gC/m^2/s
+    "NEE", #net ecosystem exchange of carbon, includes fire, landuse, harvest, and hrv_xsmrpool flux, positive for source, gC/m^2/s
+    "NEP", #net ecosystem production, excludes fire, landuse, and harvest flux, positive for sink, gC/m^2/s
+    "NPP", #net primary production, gC/m^2/s
+    "PSNSHA", #shaded leaf photosynthesis, umolCO2/m^2/s
+    "Q2M", #2m specific humidity, kg/kg
+    "QFLX_EVAP_VEG", #vegetation evaporation, mm H2O/s
+    "SABV", #solar rad absorbed by veg, W/m^2
+    "SNOWDP", #snow height, m
+    "SOILC", #soil C, gC/m^2
+    "SR", #total soil respiration (HR + root resp), gC/m^2/s
+    "TDA", #daily average 2-m temperature, K
+    "TLAI", #total projected leaf area index, none
+    "TOTECOSYSC", #total ecosystem carbon, incl veg but excl cpool, gC/m^2
+    "TOTECOSYSN", #total ecosystem N, gN/m^2
+    "TSA", #2m air temperature, K
+    "U10", #10-m wind, m/s
+    "VCMXSHA", #shaded leaf Vcmax, umolCO2/m^2/s
+    "VCMXSUN", #sunlit leaf Vcmax, umolCO2/m^2/s]
+}
