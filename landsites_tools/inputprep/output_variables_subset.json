@@ -6,54 +6,215 @@ for a full list of possible output variables.
 """
 
 output_variables_subset = {
-  "variables_output" : [
-    "AGDD", #growing degree-days base 5C,	K
-    "AGNPP", #aboveground NPP, gC/m^2/s
-    "ALBD", #surface albedo (direct), proportion
-    "ALBI", #surface albedo (indirect), proportion
-    "ANNAVG_T2M", #annual average 2m air temperature, K (There is also "CANNAVG_T2M" - what is the difference?)
-    "AR", #autotrophic respiration (MR + GR),	gC/m^2/s
-    "DORMANT_FLAG", #dormancy flag, none
-    "EFLX_GNET", #net heat flux into ground, W/m^2
-    "EFLX_LH_TOT", #total latent heat flux [+ to atm], W/m^2
-    "ELAI", #exposed one-sided leaf area index, m^2/m^2
-    "ER", #total ecosystem respiration, autotrophic + heterotrophic, gC/m^2/s
-    "FCEV", #canopy evaporation, W/m^2
-    "FCTR", #canopy transpiration, W/m^2
-    "FPSN", #photosynthesis, umol/m2s
-    "FSH", #sensible heat, W/m^2
-    "FSH_V", #sensible heat from veg, W/m^2
-    "FSNO", #fraction of ground covered by snow, unitless
-    "FSR", #reflected solar radiation, W/m^2
-    "GC_HEAT1", #initial gridcell total heat content, J/m^2
-    "GPP", #gross primary production, gC/m^2/s
-    "GR", #total growth respiration, gC/m^2/s
-    "H2OCAN", #intercepted water, mm
-    "H2OSNO", #snow depth (liquid water), mm
-    "HR", #total heterotrophic respiration, gC/m^2/s
-    "HTOP", #canopy top, m
-    "LAISHA", #shaded projected leaf area index, none
-    "LAISUN", #sunlit projected leaf area index, none
-    "LEAFC", #leaf C, gC/m^2
-    "LEAFN", #leaf N, gN/m^2
-    "MR", #maintenance respiration, gC/m^2/s
-    "NBP", #net biome production, includes fire, landuse, and harvest flux, positive for sink, gC/m^2/s
-    "NEE", #net ecosystem exchange of carbon, includes fire, landuse, harvest, and hrv_xsmrpool flux, positive for source, gC/m^2/s
-    "NEP", #net ecosystem production, excludes fire, landuse, and harvest flux, positive for sink, gC/m^2/s
-    "NPP", #net primary production, gC/m^2/s
-    "PSNSHA", #shaded leaf photosynthesis, umolCO2/m^2/s
-    "Q2M", #2m specific humidity, kg/kg
-    "QFLX_EVAP_VEG", #vegetation evaporation, mm H2O/s
-    "SABV", #solar rad absorbed by veg, W/m^2
-    "SNOWDP", #snow height, m
-    "SOILC", #soil C, gC/m^2
-    "SR", #total soil respiration (HR + root resp), gC/m^2/s
-    "TDA", #daily average 2-m temperature, K
-    "TLAI", #total projected leaf area index, none
-    "TOTECOSYSC", #total ecosystem carbon, incl veg but excl cpool, gC/m^2
-    "TOTECOSYSN", #total ecosystem N, gN/m^2
-    "TSA", #2m air temperature, K
-    "U10", #10-m wind, m/s
-    "VCMXSHA", #shaded leaf Vcmax, umolCO2/m^2/s
-    "VCMXSUN", #sunlit leaf Vcmax, umolCO2/m^2/s]
+  "clm_output" : [
+    "AGDD" : {
+      "description": "growing degree-days base 5C, K",
+      "unit": "K"
+    },
+    "AGNPP" : {
+      "description": "aboveground NPP",
+      "unit": "gC/m^2/s"
+    },
+    "ALBD": {
+      "description": "surface albedo (direct)",
+      "unit": "proportion"
+    },
+    "ALBI": {
+      "description": "surface albedo (indirect)",
+      "unit": "proportion"
+    },
+    "ANNAVG_T2M": {
+      "description": "annual average 2m air temperature, (There is also CANNAVG_T2M - what is the difference?)",
+      "unit": "K"
+    },
+    "AR": {
+      "description": "autotrophic respiration (MR + GR)",
+      "unit": "gC/m^2/s"
+    },
+    "DORMANT_FLAG": {
+      "description": "dormancy flag",
+      "unit": "none"
+    },
+    "EFLX_GNET": {
+      "description": "net heat flux into ground",
+      "unit": "W/m^2"
+    },
+    "EFLX_LH_TOT": {
+       "description": "total latent heat flux [+ to atm]",
+      "unit": "W/m^2"
+    },
+    "ELAI": {
+      "description": "exposed one-sided leaf area index",
+      "unit": "m^2/m^2"
+    },
+    "ER": {
+      "description": "total ecosystem respiration, autotrophic + heterotrophic",
+      "unit": "gC/m^2/s"
+    },
+    "FCEV": {
+      "description": "canopy evaporation",
+      "unit": "W/m^2"
+    },
+    "FCTR": {
+      "description": "canopy transpiration",
+      "unit": "W/m^2"
+    },
+    "FPSN": {
+     "description": "photosynthesis",
+     "unit": "umol/m2s"
+    },
+    "FSH": {
+     "description": "sensible heat",
+     "unit": "W/m^2"
+    },
+    "FSH_V": {
+     "description": "sensible heat from veg",
+     "unit": "W/m^2"
+    },
+    "FSNO": {
+     "description": "fraction of ground covered by snow",
+     "unit": "unitless"
+    },
+    "FSR": {
+     "description": "reflected solar radiation",
+     "unit": "W/m^2"
+    },
+    "GC_HEAT1": {
+     "description": "initial gridcell total heat content",
+     "unit": "J/m^2"
+    },
+    "GPP": {
+     "description": "gross primary production",
+     "unit": "gC/m^2/s"
+    },
+    "GR": {
+     "description": "total growth respiration",
+     "unit": "gC/m^2/s"
+    },
+    "H2OCAN": {
+     "description": "intercepted water",
+     "unit": "mm"
+    },
+    "H2OSNO": {
+     "description": "snow depth (liquid water)",
+     "unit": "mm"
+    },
+    "HR": {
+     "description": "total heterotrophic respiration",
+     "unit": " gC/m^2/s"
+    },
+    "HTOP": {
+     "description": "canopy top",
+     "unit": "m"
+    },
+    "LAISHA": {
+     "description": "shaded projected leaf area index",
+     "unit": "none"
+    },
+    "LAISUN": {
+     "description": "sunlit projected leaf area index",
+     "unit": "none"
+    },
+    "LEAFC": {
+     "description": "leaf C",
+     "unit": "gC/m^2"
+    },
+    "LEAFN": {
+     "description": "leaf N",
+     "unit": "gN/m^2"
+    },
+    "MR": {
+     "description": "maintenance respiration",
+     "unit": "gC/m^2/s"
+    },
+    "NBP": {
+     "description": "net biome production, includes fire, landuse, and harvest flux, positive for sink",
+     "unit": "gC/m^2/s"
+    },
+    "NEE": {
+     "description": "net ecosystem exchange of carbon, includes fire, landuse, harvest, and hrv_xsmrpool flux, positive for source",
+     "unit": "gC/m^2/s"
+    },
+    "NEP": {
+     "description": "net ecosystem production, excludes fire, landuse, and harvest flux, positive for sink",
+     "unit": "gC/m^2/s"
+    },
+    "NPP": {
+     "description": "net primary production",
+     "unit": "gC/m^2/s"
+    },
+    "PSNSHA": {
+     "description": "shaded leaf photosynthesis",
+     "unit": "umolCO2/m^2/s"
+    },
+    "Q2M": {
+     "description": "2m specific humidity",
+     "unit": "kg/kg"
+    },
+    "QFLX_EVAP_VEG": {
+     "description": "vegetation evaporation",
+     "unit": "mm H2O/s"
+    },
+    "SABV": {
+     "description": "solar rad absorbed by veg",
+     "unit": "W/m^2"
+    },
+    "SNOWDP": {
+     "description": "snow height",
+     "unit": "m"
+    },
+    "SOILC": {
+     "description": "soil C",
+     "unit": "gC/m^2"
+    },
+    "SR": {
+     "description": "total soil respiration (heterotrophic + root resp)",
+     "unit": "gC/m^2/s"
+    },
+    "TDA": {
+     "description": "daily average 2-m temperature",
+     "unit": "K"
+    },
+    "TLAI": {
+     "description": "total projected leaf area index",
+     "unit": "none"
+    },
+    "TOTECOSYSC": {
+     "description": "total ecosystem carbon, incl veg but excl cpool",
+     "unit": "gC/m^2"
+    },
+    "TOTECOSYSN": {
+     "description": "total ecosystem N",
+     "unit": "gN/m^2"
+    },
+    "TSA": {
+     "description": "2m air temperature",
+     "unit": "K"
+    },
+    "U10": {
+     "description": "10-m wind",
+     "unit": "m/s"
+    },
+    "VCMXSHA": {
+     "description": "shaded leaf Vcmax",
+     "unit": "umolCO2/m^2/s"
+    },
+    "VCMXSUN": {
+     "description": "sunlit leaf Vcmax",
+     "unit": "umolCO2/m^2/s"
+    }],
+  "fates_output" : [
+    "": {
+     "description": "",
+     "unit": ""
+    },
+    "": {
+     "description": "",
+     "unit": ""
+    },
+    "": {
+     "description": "",
+     "unit": ""
+    },
+  ]
 }
