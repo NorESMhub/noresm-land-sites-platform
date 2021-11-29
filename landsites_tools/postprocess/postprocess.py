@@ -22,15 +22,12 @@ dset
 
 # plot a subset of the model output variables
 #-----------------------------------------------
-"""add code for automatic plotting off/on.
-if settings.txt/variables_plot = TRUE, run all plotting code,
-else print 'automated output plotting is OFF because settings.txt/variables_plot = FALSE' """
-
-from settings.txt import variables_plot
+from settings.txt import variables_plot # To plot or not? That is the question.
 if variables_plot == TRUE :
     #Read in which output variables to plot from the settings file]
     sys.path.append('~/landsites_tools/inputprep/output_variables_subset.json')
-    import output_variables_subset.json as vars
+    import output_variables_subset.json as output
+    vars = ['variables_output']
 
     for var in vars:
         dset[var].plot(aspect=3, size=6)
