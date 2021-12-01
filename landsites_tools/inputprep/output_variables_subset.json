@@ -1,8 +1,13 @@
 """
-a list of output variables from CLM to be called by the settings file,
+a list of output variables from CLM and FATES to be called by the settings file,
 to be available for plotting.
 See https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
-for a full list of possible output variables.
+for a full list of possible CLM output variables.
+
+NB! The Fates variables use the new, standardised names made by Adrianna Foster,
+pull request #802 merged Nov 29 2021.
+https://github.com/NGEET/fates/files/7541133/FATES_historyvar_changes.csv
+The longnames for FATES history variables are mostly guessed by Eva
 """
 
 output_variables_subset = {
@@ -204,17 +209,116 @@ output_variables_subset = {
      "unit": "umolCO2/m^2/s"
     }],
   "fates_output" : [
-    "": {
-     "description": "",
-     "unit": ""
+    "FATES_VEGC_PF": {
+     "description": "PFT biomass",
+     "unit": "kg m-2"
     },
-    "": {
-     "description": "",
-     "unit": ""
+    "FATES_GPP_PF": {
+     "description": "gross primary production in Carbon",
+     "unit": "kg m-2 s-1"
     },
-    "": {
-     "description": "",
-     "unit": ""
+    "FATES_NPP_PF": {
+     "description": "net primary production in Carbon",
+     "unit": "kg m-2 s-1"
     },
-  ]
+    "FATES_NPLANT_PF": {
+     "description": "number of individuals per PFT",
+     "unit": "m-2"
+    },
+    "FATES_RECRUITMENT_PF": {
+     "description": "number of recruited individuals per m^2 per year",
+     "unit": "m-2 yr-1"
+    },
+    "FATES_MORTALITY_PF": {
+     "description": "number of individuals that died per m^2 per year",
+     "unit": "m-2 yr-1"
+    },
+    "FATES_PATCHAREA_AP": {
+     "description": "patch area by age",
+     "unit": "m2 m-2"
+    },
+    "FATES_CANOPYAREA_HT": {
+     "description": "canopy height distribution",
+     "unit": "m2 m-2"
+    },
+    "FATES_SEED_BANK": {
+     "description": "",
+     "unit": "kg m-2"
+    },
+    "FATES_SEEDS_IN": {
+     "description": "",
+     "unit": "kg m-2 s-1"
+    },
+    "FATES_STOREC": {
+     "description": "",
+     "unit": "kg m-2"
+    },
+    "FATES_VEGC": {
+     "description": "",
+     "unit": "kg m-2"
+    },
+    "FATES_VEGN": {
+     "description": "",
+     "unit": "kg m-2"
+    },
+    "FATES_VEGC_ABOVEGROUND": {
+     "description": "aboveground vegetation carbon",
+     "unit": "kg m-2"
+    },
+    "FATES_STOMATAL_COND": {
+     "description": "stomatal conductance",
+     "unit": "mol m-2 s-1"
+    },
+    "FATES_NPP": {
+     "description": "net primary production",
+     "unit": "kg m-2 s-1"
+    },
+    "FATES_GPP": {
+     "description": "gross primary production",
+     "unit": "kg m-2 s-1"
+    },
+    "FATES_LAISUN_TOP_CL": {
+     "description": "Leaf Area Index at top of sunlit canopy",
+     "unit": "m2 m-2"
+    },
+    "FATES_NPLANT_SZAP": {
+     "description": "number of individuals/plants per size class and patch age",
+     "unit": "m-2"
+    },
+    "FATES_NPLANT_CANOPY_SZAP": {
+     "description": "number of individuals/plants in canopy, per size and age",
+     "unit": "m-2"
+    },
+    "FATES_NPLANT_USTORY_SZAP": {
+     "description": "number of individuals/plants in understory, per size and age",
+     "unit": "m-2"
+    },
+    "FATES_NPLANT_SZAPPF": {
+     "description": "number of individuals/plants per age, size, PFT",
+     "unit": "m-2"
+    },
+    "FATES_SEED_ALLOC_SZPF": {
+     "description": "allocation to seeds per size and PFT",
+     "unit": "kg m-2 s-1"
+    },
+    "FATES_GROWTHFLUX_SZPF": {
+     "description": "growth flux per size class and PFT",
+     "unit": "m-2 yr-1"
+    },
+    "FATES_NPLANT_ACPF": {
+     "description": "number of individuals/plants per cohort age and PFT",
+     "unit": "m-2"
+    },
+    "FATES_MORTALITY_CSTARV_SZPF": {
+     "description": "mortality from carbon starvation, per size and PFT",
+     "unit": "m-2 yr-1"
+    },
+    "FATES_NEP": {
+     "description": "net ecosystem productivity",
+     "unit": "kg m-2 s-1"
+    },
+    "FATES_VEGC_SZPF": {
+     "description": "vegetation carbon per size and PFT",
+     "unit": "kg m-2"
+    }]
 }
