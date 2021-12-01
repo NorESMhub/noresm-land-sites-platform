@@ -27,9 +27,12 @@ if variables_plot == TRUE :
     #Read in which output variables to plot from the settings file]
     sys.path.append('~/landsites_tools/inputprep/output_variables_subset.json')
     import output_variables_subset.json as output
-    vars = ['variables_output']
+    clmvars = ['clm_output']
+    fatesvars = ['fates_output']
 
-    for var in vars:
+    for var in clmvars:
+        dset[var].plot(aspect=3, size=6)
+    for var in fatesvars:
         dset[var].plot(aspect=3, size=6)
 else :
     print('automated output plotting is OFF because settings.txt/variables_plot = FALSE')
