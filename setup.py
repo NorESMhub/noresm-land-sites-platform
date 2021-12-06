@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """NorESM land sites platform installation script."""
 from pathlib import Path
 from setuptools import Command, find_packages, setup
@@ -21,9 +21,9 @@ setup(
     packages=find_packages(include=['landsites_tools','landsites_tools.*']),
     python_requires=[">=3.6.8"],
     install_requires=[
-        'numpy==1.19.5',
-        'pandas==1.1.5',
-        'geopandas==0.9.0'
+        'numpy>=1.19.5',
+        'pandas>=1.1.5',
+        'geopandas>=0.9.0'
     ],
     classifiers=[
         'Development Status :: 1 - Planning',

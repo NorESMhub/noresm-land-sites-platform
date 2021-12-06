@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """interface_settings.py: custom ConfigParser class to read and handle NLP
 settings files."""

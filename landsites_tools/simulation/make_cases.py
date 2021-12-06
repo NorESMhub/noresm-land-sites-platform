@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """make_cases.py: Create, build, and set up single-point CTSM case directories,
 also automatically download forcing input data for pre-defined land sites."""
@@ -39,25 +39,37 @@ description = "This module creates, builds, and sets up CTSM cases for " \
 # Initiate the parser
 parser = argparse.ArgumentParser(description=description)
 
-## Define arguments that need to be provided
-#parser.add_argument("--version", help="show tool version", action="store_true")
-parser.add_argument("-s", "--case_name_suffix",
-                    help="optional suffixes for created case folder names",
-                    default="")
-parser.add_argument("-p", "--settings_path",
-                    help="path to settings file if not stored in std. folder",
-                    default="")
-parser.add_argument("-f", "--settings_file",
-                    help="configuration file to use, default is " \
-                    + "'settings.txt'",
-                    default="")
+''' Define included Parser arguments '''
+### Interactive mode
 parser.add_argument("-i", "--interactive",
-                    help="display options and make cases interactively",
+                    help="display available cases and interactively create " \
+                    + "a new settings file",
                     action="store_true")
 parser.add_argument("-n", "--name_new_settings_file",
                     help="name of new settings file (interactive only)",
                     default="")
+### Suffixes
+parser.add_argument("-sfxc", "--case_dir_suffix",
+                    help="optional suffixes for created case folder names",
+                    default="")
+parser.add_argument("-sfxi", "--input_dir_suffix",
+                    help="suffix to add to input directory names, " \
+                    + "default is '_input'",
+                    default="_input")
+parser.add_argument("-sfxo", "--output_dir_suffix",
+                    help="suffix to add to output directory names, " \
+                    + "default is '_output'",
+                    default="_output")
+### Settings file
+parser.add_argument("-f", "--settings_file",
+                    help="configuration file to use, default is " \
+                    + "'settings.txt'",
+                    default="")
+parser.add_argument("-p", "--settings_path",
+                    help="path to settings file if not stored in default folder",
+                    default="")
 
+### Parse arguments
 args = parser.parse_args()
 
 ################################################################################
@@ -196,6 +208,15 @@ dir_info = interface_settings.get_parameter("dir_info")
 
 print("\nChecking input data...\n")
 
+### Add (optional) suffix to input dir names
+if args.input_dir_suffix != "":
+    if args.input_dir_suffix.startswith("_"):
+        suffix_in = args.input_dir_suffix
+    else:
+        suffix_in = "_" + args.input_dir_suffix
+else:
+    suffix_in = ""
+
 # Save paths to created input data directories in a list
 case_input_paths = []
 
@@ -206,7 +227,8 @@ for case_str in cases_to_build:
     cur_url = cases_gdf[cases_gdf["name"] == case_str]["url"].array[0]
 
     case_input_paths.append(
-        input.download_input_data(case_str, nlp_version, cur_url, dir_clm_input)
+        input.download_input_data(case_str, nlp_version, cur_url,
+        dir_clm_input, suffix_in)
     )
 
 ### Save input paths into settings file
@@ -219,53 +241,70 @@ print("\nInput data is ready.\n")
 ############################### Create the cases ###############################
 ################################################################################
 
-print("\nStart creating cases...\n")
+print("\nStart creating cases and changing CLM parameters...\n")
 
 ### Check if a suffix was provided that would be added to case dir names
-if args.case_name_suffix != "":
-    suffix = "_" + args.case_name_suffix
+if args.case_dir_suffix != "":
+    if args.case_dir_suffix.startswith("_"):
+        suffix = args.case_dir_suffix
+    else:
+        suffix = "_" + args.case_dir_suffix
 else:
     suffix = ""
-# Generate names for case folders (nlp case name + suffix)
-case_dir_names = \
-[case + "_" + str(nlp_version) + suffix for case in cases_to_build]
-
-case_dir_paths = []
-
-### Check if case folders exists, otherwise create them
-for case_dir_name, nlp_case_name in zip(case_dir_names, cases_to_build):
-
-    case_dir_paths.append(
-    cases.create_case(case_dir_name, nlp_case_name, dir_platform,
-    dir_cases, compset_str, machine_str)
-    )
-
-### Save input paths into settings file
-interface_settings.set_parameter("cases_paths", case_dir_paths)
-
-print("\nDone creating cases.\n")
-
-################################################################################
-############################### Change CLM config ##############################
-################################################################################
-
-print("\nChanging specified CLM parameters within each case...\n")
+# Output
+if args.output_dir_suffix != "":
+    if args.output_dir_suffix.startswith("_"):
+        suffix_out = args.output_dir_suffix
+    else:
+        suffix_out = "_" + args.output_dir_suffix
+else:
+    suffix_out = ""
 
 ### Import parameter dictionary
 with open(dir_info / "params.json", 'r') as param_file:
     param_dict = json.load(param_file)
 
+# Generate names for case folders (nlp case name + suffix)
+case_dir_names = \
+[case + "_" + str(nlp_version) + suffix for case in cases_to_build]
 
-for case_dir_name,case_input_path in zip(case_dir_names, case_input_paths):
+### Instantiate empty lists to store paths (-> write to settings file)
+case_dir_paths = []
+case_output_paths = []
+pth.is_valid_path(dir_output)
 
-    cur_case_path = PurePosixPath(dir_cases / case_dir_name)
+### Check if case folders exists, otherwise create them
+for case_dir_name, nlp_case_name, case_input_path in \
+zip(case_dir_names, cases_to_build, case_input_paths):
 
-    print(case_input_path)
+    ### Create case path and add to list
+    cur_case_path = cases.create_case(case_dir_name, nlp_case_name,
+    dir_platform, dir_cases, compset_str, machine_str)
+    case_dir_paths.append(cur_case_path)
 
-    params.change_case_parameters(cur_case_path, case_input_path,
-    interface_settings, param_dict)
+    # Change paramaters specified in settings file
+    params.change_case_clm_params(cur_case_path, interface_settings, param_dict)
 
-print("\nDone changing parameters.\n")
+    # Change input directory in case xml
+    params.change_clm_path_setting(cur_case_path, case_input_path,
+    path_to_change="input")
+
+    ### Create output path and add to list
+    cur_out_path = Path(dir_output) / Path(case_dir_name + suffix_out)
+    # Create directory for case output
+    cur_out_path.mkdir(parents=True, exist_ok=True)
+    # Create output path and add to list
+    case_output_paths.append(cur_out_path)
+    ### Change output path in clm settings xml file
+    params.change_clm_path_setting(case_path=cur_case_path,
+    new_path=cur_out_path, path_to_change="output")
+
+
+### Save paths into settings file
+interface_settings.set_parameter("cases_paths", case_dir_paths)
+interface_settings.set_parameter("output_paths", case_output_paths)
+
+print("\nDone creating cases and changing parameters.\n")
 
 ################################################################################
 ############################### Build the cases ################################
@@ -274,16 +313,14 @@ print("\nDone changing parameters.\n")
 print("Start building cases...\n")
 
 ### Create and build cases
-for case_dir_name in case_dir_names:
+for cur_case_path in case_dir_paths:
 
-    print(f"Building {case_dir_name}... ", end="")
+    print(f"Building {cur_case_path}... ", end="")
 
-    cur_case_path = PurePosixPath(dir_cases / case_dir_name)
+    cur_case_path = PurePosixPath(cur_case_path)
 
     bash_command = f"cd {cur_case_path} ; ./case.setup ; ./case.build"
     subprocess.run(bash_command, shell=True, check=True)
-    #process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
-    #output, error = process.communicate()
 
     print("\nDone!\n")
 
