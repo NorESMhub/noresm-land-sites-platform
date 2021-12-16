@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """input.py: Utility functions to handle input data across sub-packages."""
 
@@ -19,7 +19,7 @@ def _input_exists(input_dir_path):
     return Path(input_dir_path).is_dir()
 
 
-def download_input_data(case_name, version, url, input_dir):
+def download_input_data(case_name, version, url, input_dir, suffix=""):
     '''
     Downloads CLM input data from given URL, for example using pre-defined NLP
     input data URLS from 'data/.nlp/site_info.geojson'.
@@ -33,7 +33,7 @@ def download_input_data(case_name, version, url, input_dir):
     import shutil
     import tarfile
 
-    case_input_dir_name = case_name + "_" + str(version)
+    case_input_dir_name = case_name + "_" + str(version) + suffix
     case_input_dir_path = input_dir / case_input_dir_name
 
     ### Check if input directory already exists

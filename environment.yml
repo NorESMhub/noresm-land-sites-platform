@@ -1,8 +1,0 @@
-name: nlp-env
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - pandas
-  - geopandas
-  - numpy

@@ -7,9 +7,9 @@
 ###### doi:
 
 ## Overview and documentation
-The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions with minimal techincal obstacles. 
+The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions with minimal techincal obstacles.
 
-The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand. 
+The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand.
 
 The [observation sites]() currently included in the platform
 
@@ -23,10 +23,33 @@ For more information on the platform, please see our [wiki]() and [technical doc
 * ### Developer: *Workflows for developing and using the platform*
   - See [documentation]()
 
+### Quick installation for developers
+Clone the repository:
+```
+git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git
+cd NorESM_LandSites_Platform
+```
+*Remember to switch to the correct branch of interest, e.g.:*
+```
+git branch -a # Lists all remote branches
+git checkout -b my_new_branch origin/platform_dev
+```
+To install the NorESM and NREC dependencies:
+```
+cd .machine/NREC_VM_setup
+chmod +x install_platform.sh
+./install_platform.sh
+```
+To install the Python package and its dependencies:
+```
+cd ~/NorESM_LandSites_Platform
+pip install -e . # ATTENTION, note the "."!
+```
+
 * ### User: *GALAXY tools, workflows and tutorials*
-  - A graphic user interface for running site-level simulation is available on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html) and [workflows]() for its usage. 
+  - A graphic user interface for running site-level simulation is available on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html) and [workflows]() for its usage.
   - Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
-   
+
 ## Code development team
 * [Hui Tang](https://github.com/huitang-earth)
 * [Lasse Torben Keetz](https://github.com/lasseke)

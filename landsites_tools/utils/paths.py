@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """paths.py: Utility functions to handle user paths, directories, and files."""
 

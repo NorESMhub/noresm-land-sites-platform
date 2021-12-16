@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """cases.py: Utility functions to handle CTSM cases, and NLP cases in
 particular."""

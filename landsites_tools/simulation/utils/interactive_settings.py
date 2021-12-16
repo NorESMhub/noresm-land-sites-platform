@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """interactive_settings.py: Interactively create settings files for the pre-
 defined NLP sites, which can be used to prepare and reproduce CTSM
