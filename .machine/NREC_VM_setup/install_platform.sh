@@ -4,7 +4,7 @@ set -e # Exit if any command fails
 # Paths and URLs
 dir_platform=~/NorESM_LandSites_Platform
 dir_noresm=$dir_platform/noresm2
-url_plaform=https://github.com/NorESMhub/NorESM_LandSites_Platform.git 
+url_plaform=https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 url_noresm=https://github.com/NorESMhub/NorESM.git
 branch_platform=platform_dev
 branch_noresm=noresm_landsites
@@ -31,7 +31,7 @@ if ! [ -d $dir_noresm/components ]; then
     python2 manage_externals/checkout_externals # TO CHECK: not working with Python3
 else
     for cur_component in clm ../cime; do
-        cd $dir_noresm/components/$cur_component/ && git checkout -- . 
+        cd $dir_noresm/components/$cur_component/ && git checkout -- .
     done
 fi;
 
@@ -73,6 +73,11 @@ cd && rm -rf ESCOMP-Containers
 export CESMROOT=$dir_noresm
 
 # Platform patching
+if [ -d $HOME/.cime ] ; then
+    echo "Warning: Hidden .cime machine configuration folder already exists and will be replaced."
+    rm -rf $HOME/.cime
+fi
+
 mkdir $HOME/.cime
 cp $dir_platform/config/cime/config_compilers.xml \
    $HOME/.cime
@@ -86,7 +91,7 @@ cp $dir_platform/config/ctsm/CLMBuildNamelist.pm \
    $dir_noresm/components/clm/bld/
 cp $dir_platform/config/ctsm/bug_fix/clmfates_interfaceMod.F90 \
    $dir_noresm/components/clm/src/utils/clmfates_interfaceMod.F90
- 
+
 # Copy configuration files into noresm/cime component
 cp $dir_platform/config/cime/config_batch.xml \
    $dir_noresm/cime/config/cesm/machines/
