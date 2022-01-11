@@ -55,6 +55,7 @@ MANIFEST
 *$py.class
 profile_default/
 ipython_config.py
+src/
 
 # Spyder project settings
 .spyderproject
