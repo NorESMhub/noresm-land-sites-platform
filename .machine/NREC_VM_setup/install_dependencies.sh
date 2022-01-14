@@ -70,10 +70,5 @@ sudo ./configure MPIF77=/usr/local/bin/mpif77 MPIF90=/usr/local/bin/mpif90 MPICX
 sudo make -j 4 install
 sudo ldconfig
 
-# Add symbolic link to fix bug related to executing old Python scripts
-# TODO: Find better solution
-cd /usr/bin/
-ln -s python3 python
-
 # Delete sources folder
 cd && sudo rm -rf /tmp/sources
