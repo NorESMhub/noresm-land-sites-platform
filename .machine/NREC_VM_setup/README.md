@@ -8,7 +8,12 @@ Execute these steps according to the
 2. Install OpenStack command line interface tools
    (https://docs.nrec.no/api.html#openstack-command-line-interface-cli).
 3. Create a `keystone_rc.sh` file in your local home folder
-   (https://docs.nrec.no/api.html#using-the-cli-tools).
+   (https://docs.nrec.no/api.html#using-the-cli-tools),
+   where `OS_REGION_NAME` should be set either to `osl` or `bgo`
+   depending on available project resources, which can be checked on
+   [the NREC dashboard](https://dashboard.nrec.no/dashboard/project/)
+   by switching regions in the dialog at the top to the right of the
+   project name.
 
 
 ## 2. Create a NREC virtual machine from the latest image
