@@ -10,7 +10,7 @@ security_group=SSH_ICMP_all # name of project's security group
 machine_size=m1.medium # amount of resources allocated to VM
 
 # Image (snapshot) to build VM from (TO DO: use command line arguments)
-image="GOLD CentOS Stream 8" # to start from scratch from NREC's CentOS 7 image
+image="GOLD CentOS Stream 8" # to start from scratch from NREC's CentOS 8 image
 
 # Create security group and rules (https://docs.nrec.no/security-groups.html)
 if ! openstack security group list | grep -q "$security_group"; then
