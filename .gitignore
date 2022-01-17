@@ -60,3 +60,4 @@ src/
 # Spyder project settings
 .spyderproject
 .spyproject
+site/
