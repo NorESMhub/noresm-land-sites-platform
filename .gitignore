@@ -8,6 +8,7 @@ data/output/*
 landsites_tools/custom_settings/*
 *.remote-sync.json
 *test.py
+site/
 
 # keep... (don't track user files, but make sure folders are in place)
 !cases/.gitkeep
@@ -60,4 +61,4 @@ src/
 # Spyder project settings
 .spyderproject
 .spyproject
-site/
+
