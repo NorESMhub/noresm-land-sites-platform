@@ -1,1 +1,6 @@
-site_name: My Docs
+site_name: NorESM_LandSites_Platform documentation
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - About: about.md
+theme: readthedocs
