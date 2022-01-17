@@ -1,17 +1,45 @@
-# Welcome to MkDocs
+# Welcome to the documentation of the NorESM LandSites Platform
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+See our About page for an introduction to what this is.
 
-## Commands
+The repository is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform).
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+This is a way of using NorESM-CTSM/CLM-FATES. 
 
-## Project layout
+## How to use the platform
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+User guide coming. Customise your model runs with the Settings file. 
+
+# Platform content
+## Input
+- sites
+- compset(s)
+- atmospheric forcing
+- surface data
+- spin-up
+
+## Simulation
+- settings file
+- make_cases
+- run_cases
+
+## Postprocess
+- output files
+- history variables
+- plotting suggestions
+
+
+# Instructions for code developers
+- Will be added here
+
+## Git, Docker, etc.
+- TBD
+
+
+
+
+
+
+
+
+
