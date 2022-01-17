@@ -1,6 +1,6 @@
-![NorESM logo](doc/img/NORESM-logo.png)
-![EMERALD logo](doc/img/Emerald_darktext_whiteBG_small.png)
-![LATICE logo](doc/img/UiO_LATICE_logo_black_small.png)
+![NorESM logo](docs/img/NORESM-logo.png)
+![EMERALD logo](docs/img/Emerald_darktext_whiteBG_small.png)
+![LATICE logo](docs/img/UiO_LATICE_logo_black_small.png)
 
 # Platform for NorESM site-level simulation over land
 
@@ -13,7 +13,7 @@ The platform aims to bridge the gaps between observations and modelling, and **p
 
 The [observation sites]() currently included in the platform
 
-![sites](doc/img/Observation_sites.png)
+![sites](docs/img/Observation_sites.png)
 
 For more information on the platform, please see our [wiki]() and [technical documentation]().
 
