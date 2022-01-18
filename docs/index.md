@@ -8,11 +8,14 @@ This is a way of using NorESM-CTSM/CLM-FATES.
 
 ## How to use the platform
 
-User guide coming. Customise your model runs with the Settings file. 
+User guide coming. Customise your model runs with the Settings file.
+So far the platform is on [NREC](https://nrec.no/), and an outdated prototype is available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). We have plans for making a better solution using Docker, which should be flexible for advanced users and at the same time easy to use for beginners. 
 
 # Platform content
+## Sites
+- list of sites and coordinates
+
 ## Input
-- sites
 - compset(s)
 - atmospheric forcing
 - surface data
