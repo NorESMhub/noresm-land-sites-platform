@@ -15,15 +15,14 @@ The [observation sites]() currently included in the platform
 
 ![sites](docs/img/Observation_sites.png)
 
-For more information on the platform, please see our [wiki]() and [technical documentation]().
+For more information on the platform, please see our [technical documentation](NorESMhub.github.io/NorESM_LandSites_Platform).
 
 
 ## Quick guides for using the platform
 
-* ### Developer: *Workflows for developing and using the platform*
-  - See [documentation]()
+* ### Quick installation for developers
+Note that we are using NREC for development and testing for the time being. In the future, we want a more flexible solution using Docker. To use NREC, you need a user account and to apply for resources, so get in touch if you need this!
 
-### Quick installation for developers
 Clone the repository:
 ```
 git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git
