@@ -66,7 +66,7 @@ pip install -e . # ATTENTION, note the "."!
 
 ## Data contributors
 * [Sonya Geange](https://github.com/srg101)
-* Inge Althuizen
+* [Inge Althuizen](https://github.com/ingealthuizen)
 
 ## Supporting projects
 * [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
