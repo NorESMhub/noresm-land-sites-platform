@@ -57,8 +57,8 @@ pip install -e . # ATTENTION, note the "."!
 * [Emiliano Gelati](https://github.com/emiliano-gelati)
 * [Elin Aas](https://github.com/ecaas)
 * [Anne Fouilloux](https://github.com/annefou)
-* [Yeliz Yilmaz](https://github.com/yelizy/)
-* Eva Lieungh
+* [Yeliz Yilmaz](https://github.com/yelizy)
+* [Eva Lieungh](https://github.com/evalieungh)
 * [Peter Horvath](https://github.com/peterhor)
 * [Kjetil Aas](https://github.com/kjetilaas)
 * [Sunniva Indrehus](https://github.com/sunnivin)
