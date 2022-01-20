@@ -1,4 +1,5 @@
 site_name: NorESM_LandSites_Platform documentation
+site_url: https://noresmhub.github.io/NorESM_LandSites_Platform/
 nav:
     - Home: index.md
     - About: about.md
