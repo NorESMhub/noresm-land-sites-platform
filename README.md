@@ -1,6 +1,6 @@
-![NorESM logo](doc/img/NORESM-logo.png)
-![EMERALD logo](doc/img/Emerald_darktext_whiteBG_small.png)
-![LATICE logo](doc/img/UiO_LATICE_logo_black_small.png)
+![NorESM logo](docs/img/NORESM-logo.png)
+![EMERALD logo](docs/img/Emerald_darktext_whiteBG_small.png)
+![LATICE logo](docs/img/UiO_LATICE_logo_black_small.png)
 
 # Platform for NorESM site-level simulation over land
 
@@ -13,17 +13,16 @@ The platform aims to bridge the gaps between observations and modelling, and **p
 
 The [observation sites]() currently included in the platform
 
-![sites](doc/img/Observation_sites.png)
+![sites](docs/img/Observation_sites.png)
 
-For more information on the platform, please see our [wiki]() and [technical documentation]().
+For more information on the platform, please see our [technical documentation](NorESMhub.github.io/NorESM_LandSites_Platform).
 
 
 ## Quick guides for using the platform
 
-* ### Developer: *Workflows for developing and using the platform*
-  - See [documentation]()
+* ### Quick installation for developers
+Note that we are using NREC for development and testing for the time being. In the future, we want a more flexible solution using Docker. To use NREC, you need a user account and to apply for resources, so get in touch if you need this!
 
-### Quick installation for developers
 Clone the repository:
 ```
 git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git
@@ -57,8 +56,8 @@ pip install -e . # ATTENTION, note the "."!
 * [Emiliano Gelati](https://github.com/emiliano-gelati)
 * [Elin Aas](https://github.com/ecaas)
 * [Anne Fouilloux](https://github.com/annefou)
-* [Yeliz Yilmaz](https://github.com/yelizy/)
-* Eva Lieungh
+* [Yeliz Yilmaz](https://github.com/yelizy)
+* [Eva Lieungh](https://github.com/evalieungh)
 * [Peter Horvath](https://github.com/peterhor)
 * [Kjetil Aas](https://github.com/kjetilaas)
 * [Sunniva Indrehus](https://github.com/sunnivin)
@@ -66,7 +65,7 @@ pip install -e . # ATTENTION, note the "."!
 
 ## Data contributors
 * [Sonya Geange](https://github.com/srg101)
-* Inge Althuizen
+* [Inge Althuizen](https://github.com/ingealthuizen)
 
 ## Supporting projects
 * [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
