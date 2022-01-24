@@ -2,9 +2,9 @@
 
 This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://www.cesm.ucar.edu/models/clm/).
 
-The GitHub repository with the main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform). We also have additional repositories for [preparing new forcing data for our sites]() and [illustrating site locations]()
+The GitHub repository with the main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform). We also have additional repositories for [preparing new forcing data for our sites](https://github.com/huitang-earth/NLP_prep) and [illustrating site locations](https://github.com/evalieungh/map_scripts).
 
-So far, platform development is on [NREC](https://nrec.no/), and an outdated prototype is available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). We have plans for making a better solution using Docker, which should be flexible for advanced users and at the same time easy to use for beginners. 
+So far, platform development is on [NREC](https://nrec.no/), and a prototype is available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). We have plans for making a better solution using Docker and Jupyter notebook, which should be flexible for advanced users and at the same time easy to use for beginners. 
 
 *****************************
 
@@ -59,20 +59,20 @@ Running the model requires specifying compsets, atmospheric forcing, land surfac
 
 Atmospheric forcing data drives the modelled climate using a time series of climatic variables. Downloadable data products exist, but is often on too coarse scales for realistic single-point simulations. Here is a list of atmospheric forcing variables used in CLM:
 - Incident solar radiation (FSDS), 	W/m2
-- Temperature at the lowest atm level (TBOT), degrees K (or can be C)
+- Temperature at the lowest atmospheric level (TBOT), degrees K (or can be C)
 - Precipitation (PRECTmms), mm/s
-- Wind speed at the lowest atm level (WIND), m/s
+- Wind speed at the lowest atmospheric level (WIND), m/s
 
 More variables can be provided, but the above list are the minimum required. Forcing data for our sites are stored here:
 - **under construction**
 
-If you have your own data and want to adjust or replace the
+If you have your own data, you can replace the default input files with your own. ***under construction: Instruction for how to do this***. Make sure the format and units are the same, otherwise the model will not be able to use them. 
 
-For more information, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
+For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
 
 ### Surface data
 
-
+***under construction***
 
 ### Spin-up
 
@@ -82,21 +82,27 @@ To get realistic simulations, the model needs to run for a while to reach a stat
 ## Simulation
 
 
+***under construction***
 
 ### Settings file
 
+
+***under construction***
 
 
 ### make_cases.py
 
 
+***under construction***
 
 ### run_cases.py
 
 
+***under construction***
 
 ## Postprocess
 
+***under construction***
 - output files
 - history variables
 - plotting suggestions
