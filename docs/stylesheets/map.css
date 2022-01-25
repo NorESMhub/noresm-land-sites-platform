@@ -1,0 +1,43 @@
+/* Main map div*/
+#map {
+   height: 500px;
+   margin-bottom: 15px;
+}
+
+/* Info boxes */
+.info {
+	padding: 8px;
+	background-color: white;
+	border: solid 1px black;
+	font: 12pt Arial, Helvetica, sans-serif;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+.site-info {
+	width: 200px;
+	transition: height 1s;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+}
+
+/* Zoom button */
+
+.resetzoom {
+	background: white;
+	color: black !important;
+	padding: 5px;
+	border: solid 1pt black;
+	border-radius: 5px;
+	font: 14pt Arial, Helvetica, sans-serif;
+}
+
+.resetzoom:hover {
+	background-color: rgba(211,211,211, 0.8) !important;
+	cursor: pointer;
+}
