@@ -10,7 +10,7 @@ security_group=SSH_ICMP_all # name of project's security group
 machine_size=m1.medium # amount of resources allocated to VM
 
 # Image (snapshot) to build VM from (TO DO: use command line arguments)
-image="NorESM_platform_0.4" # to start from scratch from NREC's CentOS 7 image
+image="NorESM_platform_0.5"
 
 # Instance creation (https://docs.nrec.no/create-virtual-machine.html)
 if ! openstack server list | grep -q $name_server; then
