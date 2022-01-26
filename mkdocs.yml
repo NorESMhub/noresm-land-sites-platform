@@ -1,6 +1,11 @@
 site_name: NorESM_LandSites_Platform documentation
 nav:
-    - Home: index.md
-    - About: about.md
-    - Contributing: contributing.md
+  - Home: index.md
+  - NorESM land sites: land-sites.md
+  - About: about.md
+  - Contributing: contributing.md
+extra_css:
+  - stylesheets/map.css
+extra_javascript:
+  - javascripts/map.js
 theme: readthedocs
