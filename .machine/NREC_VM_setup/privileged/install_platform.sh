@@ -28,7 +28,8 @@ fi;
 # Get externals
 if ! [ -d $dir_noresm/components ]; then
     cd $dir_noresm
-    python2 manage_externals/checkout_externals # TO CHECK: not working with Python3
+    #TODO this asks for root password. why?
+    manage_externals/checkout_externals # TO CHECK: not working with Python3
 else
     for cur_component in clm ../cime; do
         cd $dir_noresm/components/$cur_component/ && git checkout -- .
@@ -80,26 +81,26 @@ fi
 
 mkdir $HOME/.cime
 cp $dir_platform/config/cime/config_compilers.xml \
-   $HOME/.cime
+$HOME/.cime
 cp $dir_platform/config/cime/config_machines.xml \
-   $HOME/.cime
+$HOME/.cime
 cp $dir_platform/config/ctsm/config_component_ctsm.xml \
-   $dir_noresm/components/clm/cime_config/config_component.xml
+$dir_noresm/components/clm/cime_config/config_component.xml
 cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
-   $dir_noresm/components/clm/bld/namelist_files/
+$dir_noresm/components/clm/bld/namelist_files/
 cp $dir_platform/config/ctsm/CLMBuildNamelist.pm \
-   $dir_noresm/components/clm/bld/
+$dir_noresm/components/clm/bld/
 cp $dir_platform/config/ctsm/bug_fix/clmfates_interfaceMod.F90 \
-   $dir_noresm/components/clm/src/utils/clmfates_interfaceMod.F90
+$dir_noresm/components/clm/src/utils/clmfates_interfaceMod.F90
 
 # Copy configuration files into noresm/cime component
 cp $dir_platform/config/cime/config_batch.xml \
-   $dir_noresm/cime/config/cesm/machines/
+$dir_noresm/cime/config/cesm/machines/
 cp $dir_platform/config/cime/config_grids.xml \
-   $dir_noresm/cime/config/cesm/
+$dir_noresm/cime/config/cesm/
 cp $dir_platform/config/cime/config_component_datm.xml \
-   $dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/config_component.xml
+$dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/config_component.xml
 cp $dir_platform/config/cime/namelist_definition_datm.xml \
-   $dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
+$dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
 cp $dir_platform/config/cime/configure \
-   $dir_noresm/cime/src/externals/mct/configure
+$dir_noresm/cime/src/externals/mct/configure
