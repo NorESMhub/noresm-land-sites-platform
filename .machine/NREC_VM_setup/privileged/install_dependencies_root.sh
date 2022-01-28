@@ -4,6 +4,7 @@ set -e # Exit if any command fails
 # CentOS (yum) packages
 sudo yum update -y
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+# TODO why like this?
 sed 's/#.*//' requirements_yum.txt | xargs sudo yum install -y
 sudo dnf --enablerepo=powertools install -y blas-devel lapack-devel
 sudo ln -s /usr/bin/python3 /usr/bin/python

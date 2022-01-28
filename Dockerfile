@@ -1,6 +1,7 @@
 FROM centos:centos8
 RUN dnf install sudo -y
 ADD ./.machine/NREC_VM_setup/privileged /install
+WORKDIR /install
 RUN chmod a+x /install/install_*.sh
 RUN /install/install_dependencies_root.sh
 RUN adduser user
