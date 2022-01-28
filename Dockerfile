@@ -8,8 +8,8 @@ RUN mkdir /home/user/NorESM_LandSites_Platform
 WORKDIR /home/user/NorESM_LandSites_Platform
 ADD . /home/user/NorESM_LandSites_Platform/
 USER root
-RUN sudo chmod a+x /home/user/NorESM_LandSites_Platform/.machine/NREC_VM_setup/install_*.sh
-WORKDIR /home/user/NorESM_LandSites_Platform/.machine/NREC_VM_setup/
+RUN sudo chmod a+x /home/user/NorESM_LandSites_Platform/.machine/NREC_VM_setup/privileged/install_*.sh
+WORKDIR /home/user/NorESM_LandSites_Platform/.machine/NREC_VM_setup/privileged
 RUN ./install_dependencies_root.sh
 USER user
 ENV PATH=/usr/local/bin:$PATH
