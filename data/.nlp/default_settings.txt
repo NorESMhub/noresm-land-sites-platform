@@ -11,15 +11,14 @@ type_run = startup            # startup, hybrid, branch, restart
 type_model = CLM-SP           # CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro
 initial_file =                # initial conditions (empty: cold start)
 frequency_output = monthly      # monthly, daily, hourly --> monthly gives all vars
-variables_output = H2OSOI, H2OSNO  # https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
+variables_output =
 
 [postprocess]
-variables_plot = H2OSOI, H2OSNO
+variables_plot =
 frequency_plot = daily
 
-[future]
-vegetation_types_FATES =  # to be implemented
-output_groups =           # to be implemented
+[fates]
+included_pft_indices = 1,2,3,4,5,6,7,8,9,10,11,12
 
 ### Settings in this section will be adjusted automatically, do not edit ###
 [internal]

@@ -9,8 +9,9 @@ from pathlib import Path
 from datetime import datetime
 import geopandas as gpd
 
-# Local helper functions
+# Local imports
 import helpers
+from landsites_tools.utils import paths as pth
 
 # Bokeh imports
 from bokeh.io import curdoc
@@ -42,7 +43,7 @@ app_root_dir_path = Path(__file__).parent
 platform_dir_path = Path(__file__).parents[2]
 
 ### Load constraint dictionary
-with open(platform_dir_path / '/data/.nlp/settings_constraints.json', 'r') \
+with open(platform_dir_path / 'data/.nlp/settings_constraints.json', 'r') \
 as constraints_file:
     constraints_dict = json.load(constraints_file)
 
@@ -61,7 +62,7 @@ Site selection
 ################################################################################
 # Read site geojson
 nlp_sites_gdf = gpd.read_file(
-platform_dir_path / '/data/.nlp/site_info.geojson')
+platform_dir_path / 'data/.nlp/site_info.geojson')
 
 site_description_div = Div(
 text="<h2>Pick sites</h2>Select the sites you want to simulate "\
@@ -69,15 +70,15 @@ text="<h2>Pick sites</h2>Select the sites you want to simulate "\
 sizing_mode="stretch_width")
 # Site names
 site_labels = [row["name"] for _, row in nlp_sites_gdf.iterrows()]
-checkbox_group = CheckboxGroup(labels=site_labels, active=[])
+sites_checkbox_group = CheckboxGroup(labels=site_labels, active=[])
 
 # Reset checks if anything changes
-checkbox_group.on_change('active', _input_changed)
+sites_checkbox_group.on_change('active', _input_changed)
 
 def _check_sites():
-    return bool(checkbox_group.active)
+    return bool(sites_checkbox_group.active)
 
-sites_section = column(site_description_div, checkbox_group)
+sites_section = column(site_description_div, sites_checkbox_group)
 
 ################################################################################
 """
@@ -93,17 +94,32 @@ clm_in_div = Div(
 text='''Enter the path for the <a href="https://noresmhub.github.io/NorESM_LandSites_Platform/" target="_blank">CLM input</a>: ''',
 css_classes=['item-description'], sizing_mode='stretch_width')
 clm_input_dir_text_input = TextInput(value="data/input/clm")
+clm_input_dir_text_input.on_change('value', _input_changed)
 
 cases_div = Div(
 text='''Enter the path for the <a href="https://noresmhub.github.io/NorESM_LandSites_Platform/" target="_blank">case folders</a>: ''',
 css_classes=['item-description'], sizing_mode='stretch_width')
 cases_dir_text_input = TextInput(value="data/cases")
+cases_dir_text_input.on_change('value', _input_changed)
 
 output_div = Div(
 text='''Enter the path for the <a href="https://noresmhub.github.io/NorESM_LandSites_Platform/" target="_blank">model output</a>: ''',
 css_classes=['item-description'], sizing_mode='stretch_width')
 output_dir_text_input = TextInput(value="data/output")
+output_dir_text_input.on_change('value', _input_changed)
 
+def _check_paths():
+    for input in [clm_input_dir_text_input, cases_dir_text_input,
+    output_dir_text_input]:
+        try:
+            if pth.is_valid_path(Path(input.value), type="dir"):
+                continue
+            else:
+                print(f"{input.value} does not point to an existing directory!")
+                return False
+        except:
+            return False
+    return True
 # Layout
 path_input_section = column(input_dir_paths_div,
 row(clm_in_div, clm_input_dir_text_input),
@@ -121,9 +137,11 @@ text="<h2>Simulation period</h2>",
 sizing_mode="stretch_width")
 start_date_picker = DatePicker(title='Select simulation start date:',
 value="2000-01-01", min_date="1900-01-01", max_date="2020-12-30")
+start_date_picker.on_change('value', _input_changed)
 
 end_date_picker = DatePicker(title='Select simulation end date:',
 value="2001-01-01", min_date="1900-01-02", max_date="2020-12-31")
+end_date_picker.on_change('value', _input_changed)
 
 dates_section = column(period_div, row(start_date_picker, end_date_picker))
 
@@ -180,8 +198,7 @@ pft_options = constraints_dict['pft_indices']['long_names']
 
 pft_multi_choice = MultiChoice(value=pft_options, options=pft_options)
 
-fates_settings_section = column(fates_div,
-pft_div, pft_multi_choice)
+fates_settings_section = column(fates_div, pft_div, pft_multi_choice)
 
 ################################################################################
 """
@@ -212,7 +229,12 @@ def check_input():
         _input_invalid()
         pass
     elif not _check_dates():
-        output.text = "Simulation end date needs to after the start date."
+        output.text = "Simulation end date needs to be after the start date."
+        _input_invalid()
+        pass
+    elif not _check_paths():
+        output.text = "One of the specified paths does not exist. " \
+        + "See console for details."
         _input_invalid()
         pass
     else:
@@ -228,13 +250,44 @@ def update():
     else:
         file_name = input.value
 
-    # Try to write new file
-    try:
-        helpers.write_settings_file()
-        output.text = f"Created '{file_name}'!"
-    except:
-        output.text = f"Error when creating {file_name}."
-        raise
+    # Check if file already exists
+    save_path = platform_dir_path / 'landsites_tools/custom_settings/'
+    if (save_path / f"{file_name}").is_file():
+        output.text = f"'{file_name}' already exists! Pick a different name."
+    else:
+        # Try to write new file
+        try:
+            output.text = f"Creating '{file_name}', please stand by..."
+
+            # Convert site indices to site names
+            site_names = []
+            for idx in sites_checkbox_group.active:
+                site_names.append(site_labels[idx])
+
+            # Convert pft names to indices
+            pft_indices = []
+            for idx, pft in enumerate(pft_options):
+                if pft in pft_multi_choice.value:
+                    pft_indices.append(idx)
+
+            # Write settings file
+            helpers.write_settings_file(
+            file_name=str(file_name),
+            sites2run=",".join(site_names),
+            dir_cases=str(clm_input_dir_text_input.value),
+            dir_clm_input=str(cases_dir_text_input.value),
+            dir_output=str(output_dir_text_input.value),
+            start_time=str(start_date),
+            end_time=str(end_date),
+            type_run=str(type_run_labels[type_run_radio.active]),
+            type_model=str(type_model_labels[type_model_radio.active]),
+            pft_indices=",".join([str(x) for x in pft_indices])
+            )
+            output.text = f"Created '{file_name}'!"
+
+        except:
+            output.text = f"Error when creating {file_name}."
+            raise
 
 check_input_button.on_click(check_input)
 create_button.on_click(update)
