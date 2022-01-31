@@ -5,6 +5,7 @@ nav:
   - NorESM land sites: land-sites.md
   - About: about.md
   - Contributing: contributing.md
+  - Code of conduct: code_of_conduct.md
 extra_css:
   - stylesheets/map.css
 extra_javascript:
