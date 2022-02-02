@@ -10,17 +10,22 @@ To run model simulations, go to our user guide. Advanced users who want to do de
 
 ## Platform content
 
-You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power"). We provide [18 sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and narrow down the long list of possible output variables into something manageable.
+You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power"). We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and narrow down the long list of possible output variables into something manageable.
 
 **add an illustration here**
 
 ## Input data
 
-Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and spin-up to get realistic simulations.
+Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and spin-up to get realistic simulations. 
+
+The input data files are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file explaining some more. The .tar files are compressed, and can be opened as a folder with e.g. 7zip by right-clicking and choosing 'open archive'. The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). This is the same format the output data is stored in.
+
+The folders contain 'domain' files = information about the gridcell longitude, latitude, area, as well as specific [land (=lnd)](https://noresmhub.github.io/NorESM_LandSites_Platform/#surface-data) and [atmosphere (=atm)](https://noresmhub.github.io/NorESM_LandSites_Platform/#atmospheric-forcing) directories. The input data are site-specific, so you will see one folder for each [site](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/)
 
 ### Compsets
 
-Short for component sets, compsets specify which components of the larger land model (CLM) and earth system model to use. We support the following compsets:
+Short for component sets, compsets specify which components of the larger land model (CLM) and earth system model to use. Compsets have a short name and a longer name with abbreviations denoting the components included. 
+We support the following compsets:
 
 - **under construction**
 - ...
@@ -34,14 +39,37 @@ Atmospheric forcing data drives the modelled climate using a time series of clim
 - Precipitation (PRECTmms), mm/s
 - Wind speed at the lowest atmospheric level (WIND), m/s
 
-More variables can be provided, but the above list are the minimum required. Forcing data for our sites are stored here:
-- **under construction**
+More variables can be provided, but the above list are the minimum required. 
+Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/) and is organised in the following folder structure:
+- CAM/chem/trop_mozart_aero/aero/
+  - aerosol deposition: dust, black carbon, organic carbon
+- datm7
+  - GSWP3v1
+    - ...
 
 If you have your own data, you can replace the default input files with your own. ***under construction: Instruction for how to do this***. Make sure the format and units are the same, otherwise the model will not be able to use them. 
 
 For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
 
 ### Surface data
+
+Surface data contains information the model needs about land use trajectories, soil properties ... ... 
+In the input data directory, there are folders containing files about... 
+
+- firedata
+  - population density 
+- paramdata
+  - CLM5 parameters: 
+  - FATES parameters: 
+- snicardata
+  - snow "growth" parameters
+  - snow "optics"
+- surfdata_map
+  - surface data: fraction of gridcell covered by vegetation, land etc., soil depth and other properties, albedo and thermal conductance of different surface types, etc
+- urbandata
+  - urban classes, building interior temperature
+
+For the Vestland climate grid sites, surface data has been created from raw data sets (which ones, where?), using [this script](https://github.com/huitang-earth/NLP_prep/blob/main/create_inputdata.sh "a script in Hui's repository for preparing input data"). 
 
 ***under construction***
 
