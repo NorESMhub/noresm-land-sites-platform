@@ -1,5 +1,7 @@
 FROM centos:centos8
 RUN dnf install centos-release-stream -y
+RUN dnf swap centos-{linux,stream}-repos -y
+RUN dnf distro-sync -y
 RUN dnf install sudo -y
 ADD ./.machine/NREC_VM_setup/privileged /install
 WORKDIR /install
