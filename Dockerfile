@@ -4,6 +4,7 @@ ADD ./.machine/NREC_VM_setup/privileged /install
 WORKDIR /install
 RUN chmod a+x /install/install_*.sh
 RUN /install/install_dependencies_root.sh
+RUN /install/install_platform_root.sk
 RUN adduser user
 USER user
 RUN mkdir /home/user/NorESM_LandSites_Platform
@@ -11,7 +12,7 @@ WORKDIR /home/user/NorESM_LandSites_Platform
 ADD . /home/user/NorESM_LandSites_Platform/
 ENV PATH=/usr/local/bin:$PATH
 RUN /install/install_dependencies_user.sh
-RUN /install/install_platform.sh
+RUN /install/install_platform_user.sh
 RUN pip install -e .
 # RUN chmod -R a+rwx /home/user/NorESM_LandSites_Platform
 # USER user
