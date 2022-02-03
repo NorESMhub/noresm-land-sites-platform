@@ -9,7 +9,7 @@ ADD ./.machine/NREC_VM_setup/privileged /install
 WORKDIR /install
 RUN chmod a+x /install/install_*.sh
 RUN /install/install_dependencies_root.sh
-RUN /install/install_platform_root.sk
+RUN /install/install_platform_root.sh
 RUN adduser user
 USER user
 RUN mkdir /home/user/NorESM_LandSites_Platform
