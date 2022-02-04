@@ -12,24 +12,38 @@ To run model simulations, go to our user guide. Advanced users who want to do de
 
 You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power"). We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and narrow down the long list of possible output variables into something manageable.
 
-**add an illustration here**
+*add an illustration here*
+
+
+## Compsets
+
+Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. Compsets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
+
+Currently, we only support the following 'compset', with long name:
+>2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
+
+The notation for the compset longname is: TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]
+The compset longname has a specified order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. BGC, for biogeophysics, can also be added
+
+- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial)
+- ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
+- LND: Land, here CLM50%FATES for active Community Land Model version 5.0 and FATES vegetation
+- ICE: Sea-ice, here SICE stub ice
+- OCN: Ocean, here SOCN stub ocean
+- ROF: River runoff, here MOSART the MOdel for Scale Adaptive River Transport
+- GLC: Land Ice, here SGLC stub glacier (land ice) component
+- WAV: Wave, here SWAV stub wave component 
+
+We plan to make more compsets available in future versions.
+
 
 ## Input data
 
 Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and spin-up to get realistic simulations. 
 
-The input data files are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file explaining some more. The .tar files are compressed, and can be opened as a folder with e.g. 7zip by right-clicking and choosing 'open archive'. The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). This is the same format the output data is stored in.
+The input data are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file with further detail. The .tar files are compressed, and can be opened as a folder with e.g. 7zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format.
 
-The folders contain 'domain' files = information about the gridcell longitude, latitude, area, as well as specific [land (=lnd)](https://noresmhub.github.io/NorESM_LandSites_Platform/#surface-data) and [atmosphere (=atm)](https://noresmhub.github.io/NorESM_LandSites_Platform/#atmospheric-forcing) directories. The input data are site-specific, so you will see one folder for each [site](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/)
-
-### Compsets
-
-Short for component sets, compsets specify which components of the larger land model (CLM) and earth system model to use. Compsets have a short name and a longer name with abbreviations denoting the components included. 
-We support the following compsets:
-
-- **under construction**
-- ...
-
+The input data .tar file contains three folders: (1) 'shared' domain files with gridcell longitude, latitude, and area; (2) [land (=lnd)](https://noresmhub.github.io/NorESM_LandSites_Platform/#surface-data) surface data, and (3) [atmosphere (=atm)](https://noresmhub.github.io/NorESM_LandSites_Platform/#atmospheric-forcing) data. The input data are [site](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/)-specific. 
 
 ### Atmospheric forcing
 
@@ -53,25 +67,25 @@ For more information on using custom input to CLM, see the [CLM documentation](h
 
 ### Surface data
 
-Surface data contains information the model needs about land use trajectories, soil properties ... ... 
-In the input data directory, there are folders containing files about... 
+Surface data contains information the model needs about the land surface, such as land use trajectories, soil properties, vegetation parameters, and [albedo](https://en.wikipedia.org/wiki/Albedo). Here are some exaples of what the input data .tar contains: 
 
-- firedata
+- 'firedata'
   - population density 
-- paramdata
-  - CLM5 parameters: 
-  - FATES parameters: 
-- snicardata
+- 'paramdata'
+  - CLM5 parameters: many parameters, covering e.g. Plant Functional Types (PFTs), allocation of carbon, photosynthetic pathway
+  - FATES parameters: many parameters, covering e.g. Plant Functional Types (PFTs), allometry, carbon pools, nitrogen uptake, mortality, recruitment, fuel load for fire module 
+- 'snicardata'
   - snow "growth" parameters
   - snow "optics"
-- surfdata_map
-  - surface data: fraction of gridcell covered by vegetation, land etc., soil depth and other properties, albedo and thermal conductance of different surface types, etc
-- urbandata
+- 'surfdata_map'
+  - surface data:  soil depth & other properties, albedo & thermal conductance of different surface types, and fraction of gridcell covered by vegetation, land, & other land cover types
+- 'urbandata'
   - urban classes, building interior temperature
 
-For the Vestland climate grid sites, surface data has been created from raw data sets (which ones, where?), using [this script](https://github.com/huitang-earth/NLP_prep/blob/main/create_inputdata.sh "a script in Hui's repository for preparing input data"). 
+Note that when CLM is running without FATES, a simpler 'big-leaf'-version of vegetation is used instead. The CLM5 and FATES parameters thus overlap to some degree, with FATES replacing some and adding other parameters when activated. 
 
-***under construction***
+For the [Vestland climate grid sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/), surface data has been created from raw data sets, using [this script](https://github.com/huitang-earth/NLP_prep/blob/main/create_inputdata.sh "a script in Hui's repository for preparing input data"). There are publicly available data products that could be downloaded and extracted for the nearest model gridcell, given points coordinates, that contain all the necessary surface data. We have not used this; our surface data is interpolated from raw data sets of better resolution. This data should be more accurate than the alternative data products. 
+
 
 ### Spin-up
 
