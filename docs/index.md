@@ -47,23 +47,25 @@ The input data .tar file contains three folders: (1) 'shared' domain files with 
 
 ### Atmospheric forcing
 
-Atmospheric forcing data drives the modelled climate using a time series of climatic variables. Downloadable data products exist, but is often on too coarse scales for realistic single-point simulations. Here is a list of atmospheric forcing variables used in CLM:
+Atmospheric forcing data drives the modelled climate using a time series of climatic variables. Downloadable data products exist, but is often on too coarse scales for realistic single-point simulations. Here is a list of the minimum required atmospheric forcing variables used in CLM:
 - Incident solar radiation (FSDS), 	W/m2
 - Temperature at the lowest atmospheric level (TBOT), degrees K (or can be C)
 - Precipitation (PRECTmms), mm/s
 - Wind speed at the lowest atmospheric level (WIND), m/s
 
-More variables can be provided, but the above list are the minimum required. 
-Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/) and is organised in the following folder structure:
+Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/). Here are some exaples of what the input data .tar contains: 
+
 - CAM/chem/trop_mozart_aero/aero/
   - aerosol deposition: dust, black carbon, organic carbon
 - datm7
   - GSWP3v1
-    - ...
+    - monthly atmospheric forcing from the [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) data product. The variables in the above list are stored in these files.
+  - NASA_LIS
+    - lightning frequency
+  - topo_forcing
+    - topography height
 
-If you have your own data, you can replace the default input files with your own. ***under construction: Instruction for how to do this***. Make sure the format and units are the same, otherwise the model will not be able to use them. 
-
-For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
+If you have your own data, you can replace the default input files with your own. ***under construction: Instruction for how to do this***. Make sure the format and units are the exact same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
 
 ### Surface data
 
