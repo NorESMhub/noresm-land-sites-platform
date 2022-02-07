@@ -14,7 +14,7 @@ RUN adduser user
 USER user
 RUN mkdir /home/user/NorESM_LandSites_Platform
 WORKDIR /home/user/NorESM_LandSites_Platform
-ADD . /home/user/NorESM_LandSites_Platform/
+COPY --chown=user . /home/user/NorESM_LandSites_Platform/
 ENV PATH=/usr/local/bin:$PATH
 RUN /install/install_dependencies_user.sh
 RUN /install/install_platform_user.sh
