@@ -29,5 +29,24 @@
     "type": "str",
     "valid_in_txt_file": 0,
     "valid_values": ["daily"]
+  },
+  "pft_indices": {
+    "type": "list",
+    "valid_in_txt_file": 0,
+    "valid_values": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "long_names": [
+      "Broadleaf evergreen tropical tree",
+      "Needleleaf evergreen extratropical tree",
+      "Needleleaf colddecid extratropical tree",
+      "Broadleaf evergreen extratropical tree",
+      "Broadleaf hydrodecid tropical tree",
+      "Broadleaf colddecid extratropical tree",
+      "Broadleaf evergreen extratropical shrub",
+      "Broadleaf hydrodecid extratropical shrub",
+      "Broadleaf colddecid extratropical shrub",
+      "Arctic C3 grass",
+      "Cool C3 grass",
+      "C4 grass"
+    ]
   }
 }
