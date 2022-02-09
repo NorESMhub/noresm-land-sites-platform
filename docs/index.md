@@ -7,10 +7,6 @@ The [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code
 
 To run model simulations, go to our user guide. Advanced users who want to do development, in addition to just running simulations, can request resources on [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
 
-The GitHub repository with the main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform). We also have additional repositories for [preparing new forcing data for our sites](https://github.com/huitang-earth/NLP_prep) and [illustrating site locations](https://github.com/evalieungh/map_scripts).
-
-So far, platform development is on [NREC](https://nrec.no/), and a prototype is available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). We have plans for making a better solution using Docker and Jupyter notebook, which should be flexible for advanced users and at the same time easy to use for beginners. 
-
 
 *****************************
 
@@ -40,7 +36,7 @@ Currently, we only support the following 'compset', with long name:
 >2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
 
 The notation for the compset longname is: TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]
-The compset longname has a specified order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. BGC, for biogeophysics, can also be added
+The compset longname has a specified order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. 
 
 - TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial)
 - ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
