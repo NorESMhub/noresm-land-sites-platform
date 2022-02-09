@@ -2,6 +2,7 @@
 
 # Python 3 packages
 python3 -m pip install --upgrade pip --user
+python3 -m pip install wheel --user
 python3 -m pip install -r requirements_pip.txt --user
 python3 -m pip install git+https://github.com/esmci/sphinx_rtd_theme.git@version-dropdown-with-fixes --user
 
