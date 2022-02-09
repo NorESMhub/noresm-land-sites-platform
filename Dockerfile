@@ -19,6 +19,8 @@ ENV PATH=/usr/local/bin:$PATH
 RUN /install/install_dependencies_user.sh
 RUN /install/install_platform_user.sh
 RUN python -m pip install -e . --user
+EXPOSE 8888
+EXPOSE 5006
 CMD [ "./run_servers.sh" ]
 # RUN chmod -R a+rwx /home/user/NorESM_LandSites_Platform
 # USER user
