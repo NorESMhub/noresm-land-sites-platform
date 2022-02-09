@@ -13,6 +13,8 @@ sudo yum clean all
 
 # Python 3 packages
 sudo pip3 install --upgrade pip
+
+python -m pip install wheel --user
 sudo pip3 install -r requirements_pip.txt
 sudo pip3 install git+https://github.com/esmci/sphinx_rtd_theme.git@version-dropdown-with-fixes
 
