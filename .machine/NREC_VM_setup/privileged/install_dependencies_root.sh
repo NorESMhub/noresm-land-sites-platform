@@ -61,6 +61,6 @@ sudo ldconfig
 # GDAL
 sudo dnf -y install epel-release
 sudo dnf config-manager --set-enabled powertools
-sudo yum install gdal-devel
+sudo dnf -y install gdal-devel
 # Delete sources folder
 cd && sudo rm -rf /tmp/sources
