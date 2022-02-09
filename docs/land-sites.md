@@ -49,7 +49,7 @@ The Vestland climate grid, often called the SeedClim grid after the first major 
 - coming soon
 
 
-
+![Field work at Ulvehaugen = ALP1 site](https://tinyimg.io/i/q5EA7X5.jpg)
 
 
 ## LATICE-MIP sites
