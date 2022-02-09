@@ -103,8 +103,30 @@ class SettingsParser:
         Public function to write instance to a new settings file.
         """
         if new_file and pth.is_valid_path(path, type="file", can_create=True):
+
+            def _convert_list_to_string(param_list):
+                if not param_list:
+                    param_val = ""
+                else:
+                    param_val = ",".join([str(x) for x in param_list])
+                return param_val
+
             # TO-DO: Quick fix, discuss better way
-            self.interface["run"]["sites2run"] = self.get_parameter('sites2run')
+            for section_param in self.interface["path"]:
+                param_val = self.get_parameter(section_param)
+                if isinstance(param_val, list):
+                    param_val = _convert_list_to_string(param_val)
+                self.interface["path"][section_param] = param_val
+            for section_param in self.interface["run"]:
+                param_val = self.get_parameter(section_param)
+                if isinstance(param_val, list):
+                    param_val = _convert_list_to_string(param_val)
+                self.interface["run"][section_param] = param_val
+            for section_param in self.interface["fates"]:
+                param_val = self.get_parameter(section_param)
+                if isinstance(param_val, list):
+                    param_val = _convert_list_to_string(param_val)
+                self.interface["fates"][section_param] = param_val
             # Writing our configuration file to 'example.cfg'
             with open(path, 'w') as configfile:
                 self.interface.write(configfile)
