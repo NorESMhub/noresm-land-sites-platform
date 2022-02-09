@@ -1,0 +1,19 @@
+/*
+Define styles for the bokeh app browser display.
+*/
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.item-description {
+  font-style: italic;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
