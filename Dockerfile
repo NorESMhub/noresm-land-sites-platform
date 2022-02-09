@@ -22,7 +22,7 @@ WORKDIR /home/user/NorESM_LandSites_Platform
 RUN python -m pip install -e . --user
 EXPOSE 8888
 EXPOSE 5006
-# CMD [ "./run_servers.sh" ]
+CMD [ "./run_servers.sh" ]
 # RUN chmod -R a+rwx /home/user/NorESM_LandSites_Platform
 # USER user
 # ENV PATH=/home/user/.local/bin:$PATH
