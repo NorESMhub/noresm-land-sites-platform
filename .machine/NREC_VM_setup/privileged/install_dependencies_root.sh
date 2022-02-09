@@ -58,5 +58,8 @@ sudo ./configure MPIF77=/usr/local/bin/mpif77 MPIF90=/usr/local/bin/mpif90 MPICX
 sudo make -j 4 install
 sudo ldconfig
 
+# GDAL
+sudo yum install gdal
+
 # Delete sources folder
 cd && sudo rm -rf /tmp/sources
