@@ -64,7 +64,7 @@ sudo dnf config-manager --set-enabled powertools
 sudo dnf -y install gdal-devel
 
 # Python headers
-sudo yum install python3-devel
+sudo yum -y install python3-devel
 
 # Delete sources folder
 cd && sudo rm -rf /tmp/sources
