@@ -62,5 +62,9 @@ sudo ldconfig
 sudo dnf -y install epel-release
 sudo dnf config-manager --set-enabled powertools
 sudo dnf -y install gdal-devel
+
+# Python headers
+sudo yum install python3-devel
+
 # Delete sources folder
 cd && sudo rm -rf /tmp/sources
