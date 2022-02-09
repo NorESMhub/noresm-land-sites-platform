@@ -1,6 +1,6 @@
 # How to contribute to the NorESM land sites platform
 
-The NorESM land sites platform is developed by a group of students, postdocs, and software engineers when we have the time or need certain functionalities. We welcome anyone to join us in developing new functionalities, using the platform, add to the documentation, and contribute to making this platform a dynamic and useful research and teaching tool. If you have questions, comments, or suggestions for improvements, please open an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) in the repository. Any contributions and involvement in our community must be in line with our [Code of conduct](https://noresmhub.github.io/NorESM_LandSites_Platform).
+The NorESM land sites platform is developed by a group of students, postdocs, and software engineers when we have the time or need certain functionalities. We welcome anyone to join us in developing new functionalities, using the platform, add to the documentation, and contribute to making this platform a dynamic and useful research and teaching tool. If you have questions, comments, or suggestions for improvements, please open an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) in the repository. Any contributions and involvement in our community must be in line with our [Code of conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/#code-of-conduct).
 
 ## How to contribute to the code
 
