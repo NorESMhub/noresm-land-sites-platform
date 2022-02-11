@@ -1,6 +1,6 @@
 # Welcome to the documentation of the NorESM LandSites Platform
 
-This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://www.cesm.ucar.edu/models/clm/).
+This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://www.cesm.ucar.edu/models/clm/).
 
 
 The [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control") with the main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform). We also have additional repositories for [preparing new forcing data for our sites](https://github.com/huitang-earth/NLP_prep) and [illustrating site locations](https://github.com/evalieungh/map_scripts).
@@ -23,7 +23,7 @@ You can use the platform to run [single-cell model simulations](https://en.wikip
 
 Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and spin-up to get realistic simulations. 
 
-The input data are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file with further detail. The .tar files are compressed, and can be opened as a folder with e.g. 7zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format.
+The input data are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file with further detail. The .tar files are compressed, and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format.
 
 The input data .tar file contains three folders: (1) 'shared' domain files with gridcell longitude, latitude, and area; (2) [land (=lnd)](https://noresmhub.github.io/NorESM_LandSites_Platform/#surface-data) surface data, and (3) [atmosphere (=atm)](https://noresmhub.github.io/NorESM_LandSites_Platform/#atmospheric-forcing) data. The input data are [site](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/)-specific. 
 
@@ -35,7 +35,7 @@ Short for component sets, compsets specify which component models are used as we
 Currently, we only support the following 'compset', with long name:
 >2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
 
-The notation for the compset longname is: TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]
+The notation for the compset longname is: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`
 The compset longname has a specified order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. 
 
 - TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial)
