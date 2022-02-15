@@ -103,7 +103,7 @@ For more information on using custom input to CLM, see the [CLM documentation](h
 
 To get realistic simulations, the model needs to run for a while to reach a state of equilibrium under the applied forcing. Starting the model from "bare ground", the climate is not in equilibrium, there is no or only unrealistic soil, and the model needs time to grow and kill vegetation to get appropriate soil properties and a stable climate. We provide "restart" files for our sites with the following spin-up phase settings:
 
-- **under construction**
+- *under construction*
 
 **************************************
 
@@ -112,13 +112,54 @@ To get realistic simulations, the model needs to run for a while to reach a stat
 To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. The NorESM platform provides a [settings file](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file) that will set some basic information, and scripts to simplify running the case(s). Under `NorESM_LandSites_Platform/landsites_tools/simulation/` there are python scripts `make_cases.py` and `run_cases.py`. These scripts set up a simulation case directory and creates, builds and downloads [input data](https://noresmhub.github.io/NorESM_LandSites_Platform/#input-data "atmospheric forcing, land surface data") for the model. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. The settings file and python scripts combine several of these options and commands to simplify the process of running simulations.
 
 
-***under construction***
 
 ### Settings file
 
 All required information to prepare and run CLM-FATES cases for the available Norwegian land sites is provided via a settings.txt file. A template, which also serves as the default settings if no changes are made, is stored under [~/NorESM_LandSites_Platform/landsites_tools/](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/platform_dev/landsites_tools). 
 
-***under construction***
+The settings file has the following contents:
+
+|setting | description |
+|-------|-------|
+|dir_cases | cases root folder, absolute or relative to project dir|
+|dir_clm_input | clm input root folder, absolute or relative to project dir|
+|dir_output | output root folder, absolute or relative to project dir|
+|start_time   | at what time should simulation start? Format yyyy-mm-dd hh:mm, default 2000-01-01|
+|end_time     | at what time should simulation stop? Format yyyy-mm-dd, default 2001-01-01|
+|sites2run  | which [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) should be simulated? Make sure the names are correct! Fetches from data/.dicts/sites.json. Default is ALP1 and ALP2|
+|type_run  | What type of [model run]() do you want? startup, hybrid, branch, restart. Default is startup|
+|type_model  | CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro. Default is CLM-SP|
+|initial_file | initial conditions (empty: cold start)|
+|frequency_output | At what frequency should output be stored? Monthly/daily/hourly. Default is monthly, which gives all variables|
+|variables_output | which output variables to store. [CLM has many more to choose from](https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml)|
+|variables_plot | Which variables to plot |
+|frequency_plot | Timestep of plotting. Default daily.|
+|vegetation_types_FATES |to be implemented|
+|output_groups |to be implemented|
+
+The last lines (not shown here) also specify some paths that are set automatically and users should not touch. If you are changing the settings file manually, be careful wirh formatting! Upper/lowercase, spaces and symbols need to be correct for it to work.
+
+#### model run types
+
+| model run type | description |
+|----------------|-------------|
+| startup | a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model will not produce realistic output. No [spin-up](https://noresmhub.github.io/NorESM_LandSites_Platform/#spin-up) is included. Use this mode for quick testing, or for making your own spin-up. |
+| hybrid  | the model is initialized similar to a startup run, but uses initialization datasets from a previous case. Suitable when you already have good spin-up files and want a more realistic simulation. |
+| branch  | the model is initialized using a consistent set of restart files from a previous run. The case name is generally changed for a branch run, although it does not have to be. Branch runs are suitable for sensitivity or parameter studies, or when settings for history file output streams need to be modified while still maintaining bit-for-bit reproducibility. |
+| restart | continues running an existing case after it has been stopped. |
+
+#### model types
+
+| model run type | description *under construction* |
+|----------------|-------------|
+| CLM-SP | satellite phenology.|
+| CLM-BCG| biogeochemistry |
+| CLM-FATES | FATES vegetation |
+| FATES-SP| FATES but with satellite phenology|
+| FATES-nocomp| FATES without competition |
+| FATES-hydro| FATES with different hydrology |
+
+
 
 
 ### make_cases.py
@@ -131,13 +172,15 @@ The `make_cases.py` script uses helper scripts stored in the `utils/` folder and
 
 ### run_cases.py
 
-***under construction***
+This python script runs previously built cases made with `make_cases.py`. The respective paths need to be defined in a 'settings.txt' file. The model output files will be created in the `data/output/CASE_NAME` directory by default, but a different path can be specified. Depending on the length of simulation, and computational resources available, this can take some time. The script calls on the `case.submit` command that experienced CLM users will be familiar with. 
+
+
 
 **************************************
 
 ## Postprocess
 
-***under construction***
+*under construction*
 
 - output files
 - history variables
