@@ -8,6 +8,8 @@ We use our [GitHub repository](https://github.com/NorESMhub/NorESM_LandSites_Pla
 
 The current version of the platform is kept in the `main` branch of the repository, and further development happens on the `platform_dev` branch. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `platform_dev` branch when changes are complete. Testing can be done on different machines, such as an image on NREC, or using Saga, Fram, or even a local computer. 
 
+If your work touches the Docker container, see instructions in this [readme file](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md).
+
 If you have questions or comments about the platform, please open an issue [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) in the repository.
 
 
