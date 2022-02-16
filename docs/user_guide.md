@@ -12,11 +12,11 @@ This is the user guide for the [NorESM LandSites Platform](https://noresmhub.git
 4. 
 
 
--------------------------------------------
+***********************************************
 
 # Step by step guide for using the platform
 
-### 0. Prerequisites (first time setup)
+### 0. Prerequisites (first time setup) :seedling:
 
 To use the NorESM LandSites Platform, you need to install 
 
@@ -66,12 +66,12 @@ To stop the container running press Ctrl+c (in Git Bash).
 
 ### 4. Look at your output :chart_with_upwards_trend:
 
+Output is stored ...
 
 
 
 
-
-
+***************************************************
 
 ![NorESM logo](https://tinyimg.io/i/9AdhM6J.png)
 ![EMERALD logo](https://tinyimg.io/i/O6Vkl1F.png)
