@@ -6,7 +6,7 @@ This is the user guide for running point simulations with the [NorESM LandSites 
 
 ***********************************************
 
-## TL;DR quick start :running_woman::runner:
+## TL;DR quick start 🏃‍♀️🏃‍♂️
 
 go to repository: 
     
@@ -24,14 +24,14 @@ open New Terminal and run commands:
     $ python make_cases.py
     $ run_cases.py
  
-access output in data/output :tada:
+access output in data/output 🎉
 
 
 ***********************************************
 
 # Step by step guide for using the platform
 
-### 0. Prerequisites (first time setup) :seedling:
+### 0. Prerequisites (first time setup) 🌱
 
 To use the NorESM LandSites Platform, you need to install 
 
@@ -49,7 +49,7 @@ This will download (= clone) the repository (= folder structure and files) to yo
 
 Once Git, Docker desktop and the repository are in place, you don't have to do this again. If the platform is updated the next time you want to use it, you probably want to update the repository by typing `git pull` into Git Bash from your local clone of the repository. 
 
-### 1. Start the container :toolbox: 
+### 1. Start the container 🧰
 
 In the working directory where you have cloned the repository, open a terminal by right-clicking and choosing "Git Bash here". Make sure you are in the folder containing the `docker-compose.yml` file (type `ls` and hit enter to list the files in the current folder). Then write this command and hit enter to get the container up and running:
 
@@ -61,7 +61,7 @@ or, if you want to skip that step, you can go directly to <localhost:8888> and u
 
 <p style="color:d0d0d0">To stop the container running press Ctrl+c (in Git Bash).</p>
 
-### 2. Set simulation settings :gear:
+### 2. Set simulation settings ⚙️
 
 If you are doing a quick test with [default platform settings](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file), you can skip this step and go straight to [3. running your simulations](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#run-your-simulations).  
 
@@ -69,7 +69,7 @@ To set custom [simulation settings](https://noresmhub.github.io/NorESM_LandSites
 
 (This step can also be done from a terminal by using make_cases.py interactively with the `-i` flag. -- see [this guide](https://github.com/NorESMhub/NorESM_LandSites_Platform/main/landsites_tools/simulation/README.md "how to use make_cases interactively"))
 
-### 3. Run your simulations :man_technologist::woman_technologist:
+### 3. Run your simulations 👨‍💻 👩‍💻
 
 Go to the container in your browser: <localhost:8888> and use the password: pass to enter the container. You will see a lot of files and folders (= the GitHub repository contents). 
 
@@ -78,7 +78,7 @@ Start running simulations by starting a terminal: In the upper right corner, cli
     $ cd landsites_tools/simulation
     $ python make_cases.py
 
-This will take a while, so grab a cup :coffee: and wait until the process stops and the last line ends with $, like `[user@a... simulation]$`, indicating you can enter new commands. You have now set up the cases you want! 
+This will take a while, so grab a cup ☕ and wait until the process stops and the last line ends with $, like `[user@a... simulation]$`, indicating you can enter new commands. You have now set up the cases you want! 
 
 
 If you got an error message, head over to our GitHub and write an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message. 
@@ -86,14 +86,14 @@ Providing everything went OK, you can now start the simulations with:
 
     $ python run_cases.py
 
-You are now running the model! Depending on your settings and machine hardware, the simulations might take some time to complete. :hourglass_flowing_sand:
+You are now running the model! Depending on your settings and machine hardware, the simulations might take some time to complete. ⏳
 As before, you know the model has finished running when you get back the command line ([user@... simulation]$ ) in the terminal, and there are no error messages. 
 
-Output will be stored at time intervals set by the settings file (default = monthly) in the `data/output` folder. :tada: 
+Output will be stored at time intervals set by the settings file (default = monthly) in the `data/output` folder. 🎉
 
 To stop the container running press Ctrl+c (in Git Bash).
 
-### 4. Look at your output :chart_with_upwards_trend:
+### 4. Look at your output 📈
 
 Output is stored in the `data/output` folder. 
 
