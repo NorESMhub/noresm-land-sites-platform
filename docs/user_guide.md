@@ -10,19 +10,19 @@ This is the user guide for running point simulations with the [NorESM LandSites 
 
 go to repository: 
     
-    > cd NorESM_LandSites_platform
+    $ cd NorESM_LandSites_platform
     
 start the Docker container: 
     
-    > docker-compose up
+    $ docker-compose up
     
 go to container: <localhost:8888> password = pass
 
 open New Terminal and run commands:
 
-    > cd landsites_tools/simulation
-    > python make_cases.py
-    > run_cases.py
+    $ cd landsites_tools/simulation
+    $ python make_cases.py
+    $ run_cases.py
  
 access output in data/output :tada:
 
@@ -35,15 +35,15 @@ access output in data/output :tada:
 
 To use the NorESM LandSites Platform, you need to install 
 
-1. [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") and 
-2. [Docker desktop](https://www.docker.com/products/docker-desktop) 
+- [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") and 
+- [Docker desktop](https://www.docker.com/products/docker-desktop) 
 
 before you can clone the [repository](https://github.com/NorESMhub/NorESM_LandSites_Platform "repository for the NorESM LandSites platform") (= download platform scripts) and start working with the Docker container. On your computer, 
 
-3. open file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and ~2(?)GB needed by the platform, as well as your output files (which may take up quite a bit more space!). Your working directory should be somewhere on your C: drive, for instance `C:/Users/yourusername`, and it should *not* be e.g. on OneDrive or shared servers or System32. 
-4. When you are in your chosen working directory, right-click and choose "Git Bash here". In the terminal that pops up, paste in the following line by right-clicking:
+Open file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and ~2(?)GB needed by the platform, as well as your output files (which may take up quite a bit more space!). Your working directory should be somewhere on your C: drive, for instance `C:/Users/yourusername`, and it should *not* be e.g. on OneDrive or shared servers or System32. 
+When you are in your chosen working directory, right-click and choose "Git Bash here". In the terminal that pops up, paste in the following line by right-clicking:
     
-    > git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git
+    $ git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 
 This will download (= clone) the repository (= folder structure and files) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents. 
 
@@ -53,7 +53,7 @@ Once Git, Docker desktop and the repository are in place, you don't have to do t
 
 In the working directory where you have cloned the repository, open a terminal by right-clicking and choosing "Git Bash here". Make sure you are in the folder containing the `docker-compose.yml` file (type `ls` and hit enter to list the files in the current folder). Then write this command and hit enter to get the container up and running:
 
-    > docker-compose up
+    $ docker-compose up
 
 This will download some files and give you this address to access the container through your browser. 
 To set custom simulation settings, start by going to <http://localhost:5006/make_settings>, 
@@ -75,16 +75,16 @@ Go to the container in your browser: <localhost:8888> and use the password: pass
 
 Start running simulations by starting a terminal: In the upper right corner, click the `New` button and choose `Terminal` from the dropdown. There, you write (or copy+paste)...
 
-    > cd landsites_tools/simulation
-    > python make_cases.py
+    $ cd landsites_tools/simulation
+    $ python make_cases.py
 
-This will take a while, so grab a cup :coffee: and wait until the process stops and the last line ends with $ (for example `[user@a23ljnsdf234 simulation]$`), indicating you can enter new commands. You have now set up the cases you want! 
+This will take a while, so grab a cup :coffee: and wait until the process stops and the last line ends with $, like `[user@a... simulation]$`, indicating you can enter new commands. You have now set up the cases you want! 
 
 
 If you got an error message, head over to our GitHub and write an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message. 
 Providing everything went OK, you can now start the simulations with:
 
-    > python run_cases.py
+    $ python run_cases.py
 
 You are now running the model! Depending on your settings and machine hardware, the simulations might take some time to complete. :hourglass_flowing_sand:
 As before, you know the model has finished running when you get back the command line ([user@... simulation]$ ) in the terminal, and there are no error messages. 
@@ -103,7 +103,7 @@ An example of how you can visualize it with python is provided in the `plot_exam
 
 
 
-🌲    🌳    🌲    🌳    🌲    🌳    🌲    🌳    🌲    🌳    🌲    🌳    🌲
+<p style="color:green">🌲____🌳____🌲____🌳____🌲____🌳____🌲____🌳____🌲</p>
 
 ***************************************************
 
