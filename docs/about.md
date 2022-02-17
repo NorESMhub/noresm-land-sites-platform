@@ -1,6 +1,8 @@
-![NorESM logo](https://tinyimg.io/i/9AdhM6J.png)
-![EMERALD logo](https://tinyimg.io/i/O6Vkl1F.png)
-![LATICE logo](https://tinyimg.io/i/4IM1ogh.png)
+
+[![NorESM logo](https://tinyimg.io/i/9AdhM6J.png "the Norwegian Earth System Model")](https://www.noresm.org/)
+[![EMERALD logo](https://tinyimg.io/i/O6Vkl1F.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
+[![LATICE logo](https://tinyimg.io/i/4IM1ogh.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
+
 
 # Platform for NorESM site-level simulation over land
 
