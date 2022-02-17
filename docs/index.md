@@ -7,6 +7,9 @@ The [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code
 
 To run model simulations, go to our user guide. Advanced users who want to do development, in addition to just running simulations, can request resources on [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
 
+🚧
+*NB! This documentation is still under construction. Some parts are missing or may be written for older testing versions. Please let us know if you have suggestions for something to add or explain better in the [issues](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues)*
+🚧
 
 *****************************
 
@@ -180,10 +183,14 @@ This python script runs previously built cases made with `make_cases.py`. The re
 
 ## Postprocess
 
-*under construction*
+### output files
 
-- output files
-- history variables
-- plotting suggestions
+Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html)
 
+### history variables
 
+Each output .nc file contains information for several history variables, such as ...*under construction*
+
+### plotting
+
+Suggestions for plotting output are given in a Jupyter notebook in the repository under the `/notebooks` directory. In future versions, we hope to add more postprocessing and plotting functionality.
