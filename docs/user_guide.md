@@ -8,13 +8,23 @@ This is the user guide for running point simulations with the [NorESM LandSites 
 
 ## TL;DR quick start :running_woman::runner:
 
-1. go to repository: 
+go to repository: 
+    
     > cd NorESM_LandSites_platform
-3. start the Docker container: 
+    
+start the Docker container: 
+    
     > docker-compose up
-5. go to container: <localhost:8888> password = pass
-6. Run through jupyter notebook ...
-7. Access output ... :tada:
+    
+go to container: <localhost:8888> password = pass
+
+open New Terminal and run commands:
+
+    > cd landsites_tools/simulation
+    > python make_cases.py
+    > run_cases.py
+ 
+access output in data/output :tada:
 
 
 ***********************************************
@@ -32,6 +42,7 @@ before you can clone the [repository](https://github.com/NorESMhub/NorESM_LandSi
 
 3. open file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and ~2(?)GB needed by the platform, as well as your output files (which may take up quite a bit more space!). Your working directory should be somewhere on your C: drive, for instance `C:/Users/yourusername`, and it should *not* be e.g. on OneDrive or shared servers or System32. 
 4. When you are in your chosen working directory, right-click and choose "Git Bash here". In the terminal that pops up, paste in the following line by right-clicking:
+    
     > git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 
 This will download (= clone) the repository (= folder structure and files) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents. 
@@ -56,25 +67,43 @@ If you are doing a quick test with [default platform settings](https://noresmhub
 
 To set custom [simulation settings](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file), start by going to <http://localhost:5006/make_settings> in your browser. The page is quite self-explanatory and produces a new settings file that will be used to make [cases](https://noresmhub.github.io/NorESM_LandSites_Platform/#make_casespy "case= an instance of the model") that you can run. The different options are explained further in our [documentation](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file).
 
+(This step can also be done from a terminal by using make_cases.py interactively with the `-i` flag. -- see [this guide](https://github.com/NorESMhub/NorESM_LandSites_Platform/main/landsites_tools/simulation/README.md "how to use make_cases interactively"))
 
 ### 3. Run your simulations :man_technologist::woman_technologist:
 
 Go to the container in your browser: <localhost:8888> and use the password: pass to enter the container. You will see a lot of files and folders (= the GitHub repository contents). 
 
-Start running simulations by opening ... 
+Start running simulations by starting a terminal: In the upper right corner, click the `New` button and choose `Terminal` from the dropdown. There, you write (or copy+paste)...
 
-:tada: You are now running the model! Depending on your settings and machine hardware, the simulations might take some time to complete. :hourglass_flowing_sand:
+    > cd landsites_tools/simulation
+    > python make_cases.py
 
-Output will be stored at time intervals set by the settings file (default = monthly) in the `data/output` folder. When your simulations are finished, ...
+This will take a while, so grab a cup :coffee: and wait until the process stops and the last line ends with $ (for example `[user@a23ljnsdf234 simulation]$`), indicating you can enter new commands. You have now set up the cases you want! 
+
+
+If you got an error message, head over to our GitHub and write an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message. 
+Providing everything went OK, you can now start the simulations with:
+
+    > python run_cases.py
+
+You are now running the model! Depending on your settings and machine hardware, the simulations might take some time to complete. :hourglass_flowing_sand:
+As before, you know the model has finished running when you get back the command line ([user@... simulation]$ ) in the terminal, and there are no error messages. 
+
+Output will be stored at time intervals set by the settings file (default = monthly) in the `data/output` folder. :tada: 
 
 To stop the container running press Ctrl+c (in Git Bash).
 
 ### 4. Look at your output :chart_with_upwards_trend:
 
-Output is stored ... Access it by ...
+Output is stored in the `data/output` folder. 
+
+An example of how you can visualize it with python is provided in the `plot_example.ipynb` Jupyter notebook insite the `notebooks` folder. You can execute this notebook directly in the container. 
+
+[Output files](https://noresmhub.github.io/NorESM_LandSites_Platform/#postprocess) can also be opened in Panoply, R, or using python on your local computer.
 
 
 
+🌲    🌳    🌲    🌳    🌲    🌳    🌲    🌳    🌲    🌳    🌲    🌳    🌲
 
 ***************************************************
 
