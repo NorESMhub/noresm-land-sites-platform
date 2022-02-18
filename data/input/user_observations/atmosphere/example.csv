@@ -1,2 +1,0 @@
-site_name,datetime,incident_solar_radiation,temperature_bottom,precipitation,wind_speed,incident_longwave_radiation,inc_sol_rad_diffuse,inc_sol_rad_direct,relative_humidity,specific_humidity,pressure_bottom,temp_dew_point,observational_height
-ALP1,"""2009-02-01""",950,-8.6,12,12,2000,2000,2000,83,23,1013,3,30

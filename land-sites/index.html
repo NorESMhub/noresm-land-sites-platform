@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>NorESM land sites - NorESM_LandSites_Platform documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../stylesheets/map.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "NorESM land sites";
+    var mkdocs_page_input_path = "land-sites.md";
+    var mkdocs_page_url = "/NorESM_LandSites_Platform/land-sites/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> NorESM_LandSites_Platform documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">NorESM land sites</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vestland-climate-grid-seedclim-sites">Vestland climate grid (SeedClim) sites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#latice-mip-sites">LATICE-MIP sites</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../user_guide/">User guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributing/">Contributing & code of conduct</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">NorESM_LandSites_Platform documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>NorESM land sites</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="noresm-land-sites">NorESM land sites</h1>
+<p>This page will contain descriptions, meta data, and relevant reference hyperlinks
+for the included land sites.</p>
+<h2 id="overview">Overview</h2>
+<p>We currently support 18 sites: 12 <a href="https://betweenthefjords.w.uib.no/vestland-climate-grid/">Vestland climate grid</a> sites and 6 climate station sites of interest to the <a href="https://www.mn.uio.no/geo/english/research/groups/latice/">LATICE</a> group. These are locations where there are climate stations and ecological field experiments that make these sites of particular interest.</p>
+<p><link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></p>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+<hr />
+<h2 id="vestland-climate-grid-seedclim-sites"><a href="https://betweenthefjords.w.uib.no/vestland-climate-grid/">Vestland climate grid</a> (SeedClim) sites</h2>
+<table>
+<thead>
+<tr>
+<th>Site name</th>
+<th>Lon (X)</th>
+<th>Lat (Y)</th>
+<th>Elevation (Z)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALP1</td>
+<td>8.12343</td>
+<td>61.0243</td>
+<td>1208</td>
+</tr>
+<tr>
+<td>ALP2</td>
+<td>7.27596</td>
+<td>60.8231</td>
+<td>1097</td>
+</tr>
+<tr>
+<td>ALP3</td>
+<td>7.17561</td>
+<td>60.8328</td>
+<td>1213</td>
+</tr>
+<tr>
+<td>ALP4</td>
+<td>6.41504</td>
+<td>60.9335</td>
+<td>1088</td>
+</tr>
+<tr>
+<td>SUB1</td>
+<td>8.70466</td>
+<td>60.8203</td>
+<td>815</td>
+</tr>
+<tr>
+<td>SUB2</td>
+<td>7.17666</td>
+<td>60.8760</td>
+<td>700</td>
+</tr>
+<tr>
+<td>SUB3</td>
+<td>6.63028</td>
+<td>61.0866</td>
+<td>769</td>
+</tr>
+<tr>
+<td>SUB4</td>
+<td>6.51468</td>
+<td>60.5445</td>
+<td>797</td>
+</tr>
+<tr>
+<td>BOR1</td>
+<td>9.07876</td>
+<td>61.0355</td>
+<td>589</td>
+</tr>
+<tr>
+<td>BOR2</td>
+<td>7.16982</td>
+<td>60.8803</td>
+<td>474</td>
+</tr>
+<tr>
+<td>BOR3</td>
+<td>6.33738</td>
+<td>60.6652</td>
+<td>431</td>
+</tr>
+<tr>
+<td>BOR4</td>
+<td>5.96487</td>
+<td>60.6901</td>
+<td>346</td>
+</tr>
+</tbody>
+</table>
+<p>The Vestland climate grid, often called the SeedClim grid after the first major project that set it up, is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables: ...</p>
+<p><img alt="Vestland climate grid" src="https://betweenthefjords.w.uib.no/files/2020/08/grid.png" /></p>
+<p><em>Illustration from the SeedClim project: In the first project, turf squares (top soil, roots and whole plants) were cut out and physically transplanted to other sites, as indicated by the arrows in the top left corner. The vegetation in these turfs was carefully monitored over several years in their new locations, to see how and how quickly the plants adapted to a new environment.</em></p>
+<p><strong>Selected papers using the sites:</strong></p>
+<ul>
+<li>coming soon</li>
+</ul>
+<p><img alt="Field work at Ulvehaugen = ALP1 site" src="https://tinyimg.io/i/q5EA7X5.jpg" /></p>
+<h2 id="latice-mip-sites">LATICE-MIP sites</h2>
+<table>
+<thead>
+<tr>
+<th>Site/station name</th>
+<th>Lon (X)</th>
+<th>Lat (Y)</th>
+<th>Elevation (Z)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>finseflux</td>
+<td>7.527008533</td>
+<td>60.59383774</td>
+<td>1210</td>
+</tr>
+<tr>
+<td>hisaasen_upper</td>
+<td>12.25481033</td>
+<td>61.10516357</td>
+<td>680</td>
+</tr>
+<tr>
+<td>hisaasen_lower</td>
+<td>12.25089836</td>
+<td>61.1115036</td>
+<td>640</td>
+</tr>
+<tr>
+<td>iskoras</td>
+<td>25.29547425</td>
+<td>69.3408715</td>
+<td>360</td>
+</tr>
+<tr>
+<td>aas</td>
+<td>10.781667</td>
+<td>59.660278</td>
+<td>93.2</td>
+</tr>
+<tr>
+<td>hurdal</td>
+<td>11.078142</td>
+<td>60.372387</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../user_guide/" class="btn btn-neutral float-right" title="User guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../user_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../javascripts/map.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
