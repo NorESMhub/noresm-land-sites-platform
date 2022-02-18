@@ -3,6 +3,7 @@
 *under construction*
 
 This is the user guide for running point simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/NorESM_LandSites_Platform/) :earth_africa: 
+
 You will need to open two new windows in the process, so it's a good idea to use two screens or make this window narrower so you can see both the user guide and another window next to it.
 
 ***********************************************
@@ -23,6 +24,7 @@ open New Terminal and run commands:
 
     $ cd landsites_tools/simulation
     $ python make_cases.py
+
     $ python run_cases.py
  
 access output in data/output 🎉
@@ -31,6 +33,7 @@ access output in data/output 🎉
 ***********************************************
 
 # Step by step guide for using the platform
+
 
 ### 0. Prerequisites (first time setup) 🌱
 
@@ -50,7 +53,9 @@ This will download (= clone) the repository (= folder structure and files) to yo
 
 Once Git, Docker desktop and the repository are in place, you don't have to do this again. If the platform is updated the next time you want to use it, you probably want to update the repository by typing `git pull` into Git Bash from your local clone of the repository. 
 
+
 ### 1. Start the container 🧰
+
 
 In the working directory where you have cloned the repository, open a terminal by right-clicking and choosing "Git Bash here". Make sure you are in the folder containing the `docker-compose.yml` file (type `ls` and hit enter to list the files in the current folder). Then write this command and hit enter to get the container up and running:
 
@@ -62,6 +67,7 @@ or, if you want to skip that step, you can go directly to <localhost:8888> and u
 
 <p style="color:d0d0d0">To stop the container running press Ctrl+c (in Git Bash).</p>
 
+
 ### 2. Set simulation settings ⚙️
 
 If you are doing a quick test with [default platform settings](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file), you can skip this step and go straight to [3. running your simulations](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#run-your-simulations).  
@@ -69,6 +75,7 @@ If you are doing a quick test with [default platform settings](https://noresmhub
 To set custom [simulation settings](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file), start by going to <http://localhost:5006/make_settings> in your browser. The page is quite self-explanatory and produces a new settings file that will be used to make [cases](https://noresmhub.github.io/NorESM_LandSites_Platform/#make_casespy "case= an instance of the model") that you can run. The different options are explained further in our [documentation](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file).
 
 (This step can also be done from a terminal by using make_cases.py interactively with the `-i` flag. -- see [this guide](https://github.com/NorESMhub/NorESM_LandSites_Platform/main/landsites_tools/simulation/README.md "how to use make_cases interactively"))
+
 
 ### 3. Run your simulations 👨‍💻 👩‍💻
 
@@ -104,6 +111,7 @@ An example of how you can visualize it with python is provided in the `plot_exam
 
 
 <p style="color:green">🌲 ____ 🌳 ____ 🌲 ____ 🌳 ____ 🌲 ____ 🌳 ____ 🌲 ____ 🌳 ____ 🌲</p>
+
 
 ***************************************************
 
