@@ -3,6 +3,7 @@
 *under construction*
 
 This is the user guide for running point simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/NorESM_LandSites_Platform/) :earth_africa: 
+You will need to open two new windows in the process, so it's a good idea to use two screens or make this window narrower so you can see both the user guide and another window next to it.
 
 ***********************************************
 
@@ -22,7 +23,7 @@ open New Terminal and run commands:
 
     $ cd landsites_tools/simulation
     $ python make_cases.py
-    $ run_cases.py
+    $ python run_cases.py
  
 access output in data/output 🎉
 
@@ -71,39 +72,38 @@ To set custom [simulation settings](https://noresmhub.github.io/NorESM_LandSites
 
 ### 3. Run your simulations 👨‍💻 👩‍💻
 
-Go to the container in your browser: <localhost:8888> and use the password: pass to enter the container. You will see a lot of files and folders (= the GitHub repository contents). 
+Go to the container in your browser: <localhost:8888> and use the password: pass to enter the container. You will see a lot of files and folders (= the GitHub repository contents). Navigate to the `notebooks` folder and open the one called `run_simulations`. It's an interactive Jupyter notebook where you can execute code in cells by clicking the  play/run buttons next to them, and see the output directly below the cell. 
 
-Start running simulations by starting a terminal: In the upper right corner, click the `New` button and choose `Terminal` from the dropdown. There, you write (or copy+paste)...
+
+<p style="color:d0d0d0">Alternatively, you can start a terminal in the container and execute these commands there:
 
     $ cd landsites_tools/simulation
     $ python make_cases.py
-
-This will take a while, so grab a cup ☕ and wait until the process stops and the last line ends with $, like `[user@a... simulation]$`, indicating you can enter new commands. You have now set up the cases you want! 
-
-
-If you got an error message, head over to our GitHub and write an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message. 
-Providing everything went OK, you can now start the simulations with:
-
     $ python run_cases.py
+    
+</p>
 
-You are now running the model! Depending on your settings and machine hardware, the simulations might take some time to complete. ⏳
-As before, you know the model has finished running when you get back the command line ([user@... simulation]$ ) in the terminal, and there are no error messages. 
+You are now running the model! Depending on your settings and machine hardware, making the case(s) and running the simulations might take some time to complete. ⏳
+
+
+If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message. 
 
 Output will be stored at time intervals set by the settings file (default = monthly) in the `data/output` folder. 🎉
+From there you can download them to your local computer, or continue working with them inside the container.
 
-To stop the container running press Ctrl+c (in Git Bash).
+To stop the container once the simulations are complete (but not before!), go back to Git Bash and press Ctrl+c.
 
 ### 4. Look at your output 📈
 
 Output is stored in the `data/output` folder. 
 
-An example of how you can visualize it with python is provided in the `plot_example.ipynb` Jupyter notebook insite the `notebooks` folder. You can execute this notebook directly in the container. 
+An example of how you can visualize it with python is provided in the `plot_example.ipynb` Jupyter notebook insite the `notebooks` folder. You can execute this notebook directly in the container in the same way as the `run_simulations` notebook. 
 
-[Output files](https://noresmhub.github.io/NorESM_LandSites_Platform/#postprocess) can also be opened in Panoply, R, or using python on your local computer.
+[Output files](https://noresmhub.github.io/NorESM_LandSites_Platform/#postprocess) can alternatively be opened in Panoply, R, or using python on your local computer.
 
 
 
-<p style="color:green">🌲____🌳____🌲____🌳____🌲____🌳____🌲____🌳____🌲</p>
+<p style="color:green">🌲 ____ 🌳 ____ 🌲 ____ 🌳 ____ 🌲 ____ 🌳 ____ 🌲 ____ 🌳 ____ 🌲</p>
 
 ***************************************************
 
