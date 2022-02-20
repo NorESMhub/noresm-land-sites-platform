@@ -1,0 +1,41 @@
+# From CTSM Dockerfile
+git
+subversion
+which
+sudo
+csh
+make
+m4
+cmake
+wget
+file
+byacc
+curl-devel
+zlib-devel
+perl-XML-LibXML
+gcc-gfortran
+gcc-c++
+dnf-plugins-core
+python3
+perl-core
+ftp
+xmlstarlet
+diffutils
+git-lfs
+#vim
+#emacs-nox
+#latexmk texlive-amscls texlive-anyfontsize texlive-cmap texlive-fancyhdr
+#texlive-fncychap texlive-dvisvgm texlive-metafont texlive-ec texlive-titlesec
+#texlive-babel-english texlive-tabulary texlive-framed texlive-wrapfig
+#texlive-parskip texlive-upquote texlive-capt-of texlive-needspace texlive-times
+#texlive-makeindex texlive-helvetic texlive-courier texlive-gsftopk
+#texlive-dvips texlive-mfware texlive-dvisvgm
+
+# Platform dependencies
+python2
+openssl-devel
+bzip2-devel
+sqlite-devel
+tmux
+vim-common
+vim-enhanced
