@@ -1,13 +1,17 @@
 version: "3.9"
+
 services:
   noresm_land_sites_platform:
-    image: "lassetk/noresm_land_sites_platform:latest"
-    mem_limit: 1024m # Max memory used
-    mem_reservation: 256M # Minimum memory used
-    cpus: 1.5 # Number of CPU cores to be used
+    build:
+      context: ./
+    image: "lassetk/noresm_land_sites_platform:${VERSION:-latest}"
+    mem_limit: ${MEM_LIMIT:-1024M} # Max memory used
+    mem_reservation: ${MEM_RESERVATION:-256M} # Minimum memory used
+    cpus: ${CPUS:-1.5} # Number of CPU cores to be used
     ports:
       - "8888:8888"
       - "5006:5006"
     volumes:
-    - ./data:/home/user/NorESM_LandSites_Platform/data
-    # - ./:/home/user/NorESM_LandSites_Platform/ # Map whole repository
+      - ./data:/home/user/NorESM_LandSites_Platform/data
+      - ./landsites_tools/custom_settings:/home/user/NorESM_LandSites_Platform/landsites_tools/custom_settings
+      - ./notebooks:/home/user/NorESM_LandSites_Platform/notebooks

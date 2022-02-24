@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  noresm_land_sites_platform:
+    extends:
+      file: docker-compose.yml
+      service: noresm_land_sites_platform
+    volumes:
+      - ./:/home/user/NorESM_LandSites_Platform/ # Map whole repository
