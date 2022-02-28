@@ -3,11 +3,14 @@
 ## Prerequisites
  - Install [Docker](https://docs.docker.com/get-docker/) for your operating system.
  - Run `docker pull lassetk/noresm_land_sites_platform:latest` to pull the image to your local storage.
-
+ -- Linux: need to use sudo or change [permission](https://https://docs.docker.com/engine/install/linux-postinstall)
+ -- The image will be kept in a [default location](https://www.freecodecamp.org/news/where-are-docker-images-stored-docker-container-paths-explained/) depending on your system.
+ - git clone [NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform.git) to local computer
+ 
 ## Setup the container
 All the setup we need for running the container are in [docker-compose.yml](../docker-compose.yml). Feel free so edit memory and CPU constrains depending on your available resources.
 
-File mapping between the container and the host is defined in th `volumes:` block. By default, only `data` directory is mapped.
+File mapping between the container and the host is defined in the `volumes:` block. By default, only `data` directory of local 'NorESM_LandSites_Platform' folder is mapped. 
 
 ## Run
 To run the container, first be sure you are in the main directory containing [docker-compose.yml](../docker-compose.yml). Then run following command
