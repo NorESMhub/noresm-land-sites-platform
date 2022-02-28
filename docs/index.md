@@ -52,22 +52,27 @@ The input data .tar file contains three folders: (1) 'shared' domain files with 
 
 Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. Compsets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
 
-Currently, we only support the following compset, with long name:
+Currently, we only support the following three compsets, with long name:
 >2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
+>2000_DATM%1PTGSWP3_CLM50%BGC_SICE_SOCN_MOSART_SGLC_SWAV
+>2000_DATM%1PTGSWP3_CLM50%SP_SICE_SOCN_MOSART_SGLC_SWAV
 
 The notation for the compset longname is: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`
 The compset longname has a specified order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. 
 
-- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial)
+- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm.
 - ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
-- LND: Land, here CLM50%FATES for active Community Land Model version 5.0 and FATES vegetation
+- LND: Land, here CLM50%FATES/BGC/SP for active Community Land Model version 5.0 and one of the following vegetation modes:
+    1. FATES vegetation
+    2. BioGeoChemistry
+    3. Satellite Phenology
 - ICE: Sea-ice, here SICE stub ice
 - OCN: Ocean, here SOCN stub ocean
 - ROF: River runoff, here MOSART the MOdel for Scale Adaptive River Transport
 - GLC: Land Ice, here SGLC stub glacier (land ice) component
 - WAV: Wave, here SWAV stub wave component 
 
-We plan to make more compsets available in future versions.
+More compsets for pre-industrial or future simulations require additional input data and may be included in future versions of the platform. For now, if you need other compsets you need to dig deeper into the CLM technical documentation and provide the necessary input data yourself. 
 
 
 ### Atmospheric forcing
