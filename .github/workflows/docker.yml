@@ -32,7 +32,7 @@ jobs:
 
       # build image
       - name: Build image
-        uses: elgohr/Publish-Docker-Github-Action@3
+        uses: elgohr/Publish-Docker-Github-Action@3.04
         env:
           BRANCH: ${{ env.GITHUB_BRANCH }}
           BUILDNUMBER: ${{ github.run_number }}
