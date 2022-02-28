@@ -9,7 +9,7 @@ from pathlib import Path
 from datetime import datetime
 import geopandas as gpd
 import subprocess
-from subprocess import PIPE
+from subprocess import PIPE, STDOUT
 import glob
 
 # Local imports
@@ -20,8 +20,9 @@ from landsites_tools.utils import paths as pth
 from bokeh.io import curdoc
 from bokeh.layouts import column, row, grid
 from bokeh.models import Div, CheckboxGroup, DatePicker, RadioButtonGroup
-from bokeh.models import MultiChoice, Panel, Tabs, FileInput, MultiSelect
+from bokeh.models import MultiChoice, Panel, Tabs, MultiSelect, CustomJS
 from bokeh.models.widgets import TextInput, Button, Paragraph
+from bokeh.events import ButtonClick
 
 ###############################################################################
 """
@@ -344,7 +345,7 @@ run_header_div = Div(text=run_html_text, sizing_mode="stretch_width")
 
 ###############################################################################
 """
-Build cases
+Make cases
 """
 ###############################################################################
 
@@ -357,20 +358,21 @@ script_path = root_path / 'landsites_tools/simulation/'
 def get_settings_files():
     """Get all settings files in 'landsites_tools/custom_settings' in a list"""
 
+    global settings_file_paths
+    global settings_file_names
+
     file_path_str_list = glob.glob(str(settings_path) + "/*.txt")
 
-    file_paths_list = [Path(fname) for fname in file_path_str_list]
-    file_names_list = [p.name for p in file_paths_list]
-
-    return(file_paths_list, file_names_list)
+    settings_file_paths = [Path(fname) for fname in file_path_str_list]
+    settings_file_names = [p.name for p in settings_file_paths]
 
 
 def retrieve_select_options(settings_file_names):
 
-    make_cases_select_options = \
+    settings_files_select_options = \
         [(str(idx), f_name) for idx, f_name in enumerate(settings_file_names)]
 
-    return(make_cases_select_options)
+    return(settings_files_select_options)
 
 
 make_cases_div = Div(
@@ -383,11 +385,11 @@ make_cases_select_div = Div(text="Select one settings file.",
                             sizing_mode='stretch_width')
 
 # List for picking a file
-settings_file_paths, settings_file_names = get_settings_files()
-make_cases_select_options = retrieve_select_options(settings_file_names)
+get_settings_files()
+settings_files_select_options = retrieve_select_options(settings_file_names)
 
 make_cases_select = MultiSelect(value=[],
-                                options=make_cases_select_options)
+                                options=settings_files_select_options)
 
 # Make cases button
 make_cases_button = Button(label="Make case(s)", button_type='primary',
@@ -395,30 +397,25 @@ make_cases_button = Button(label="Make case(s)", button_type='primary',
 refresh_button = Button(label="Refresh files", button_type='default',
                         disabled=False)
 
-make_cases_output = Div(text="Click the button above to make new cases.",
+make_cases_output = Div(text="Click the button above to create and build "
+                        + "the cases specified in the chosen settings file.",
                         css_classes=["item-description"],
                         style={'overflow': 'auto',
                                'width': '100%',
-                               'height': '250px'}
+                               'height': '200px'}
                         )
 
 """
-JS_scroll_bottom = CustomJS(args={'bokeh_div': make_cases_output}, code='''
-function updateScroll(){
-
-    var element = document.getElementsByClassName("build-log")[0].children[0];
-
-    element.scrollTop = element.scrollHeight;
-    console.log(element.scrollTop)
-}
-updateScroll();
-
+JS_executing_feedback = CustomJS(args={'bokeh_div': make_cases_output,
+                                       'make_button': make_cases_button},
+                                 code='''
+bokeh_div.text="Making cases...<br>This step will take approx. 10 minutes " +
+"per case.<br>Logging information will be printed here when the process " +
+"is finished.";
+make_button.disabled=true;
 ''')
-
-make_cases_output.js_on_change("text", JS_scroll_bottom)
-
-#make_cases_output.js_on_event(X, )
 """
+#make_cases_button.js_on_event(ButtonClick, JS_executing_feedback)
 
 
 def make_cases():
@@ -428,40 +425,50 @@ def make_cases():
             "You must select one single settings file!"
         return
 
-    print(make_cases_select.value)
     file_idx = int(make_cases_select.value[0])
-    print(file_idx)
 
     make_cases_output.text = \
         f"Making cases for {settings_file_names[file_idx]}" \
         + "...<br> This step will take approx. 10 minutes per case. Check " \
         + "your local terminal for progress information."
 
-    make_cases_settings_file = settings_file_paths[file_idx]
+    make_cases_button.disabled = True
 
-    curdoc().hold("combine")
+
+def make_cases_subprocess():
+
+    file_idx = int(make_cases_select.value[0])
+
+    make_cases_settings_file = settings_file_paths[file_idx]
 
     proc = subprocess.run(
         f"python3 {script_path}/make_cases.py -f {make_cases_settings_file}",
-        shell=True, check=True, stdout=PIPE, stderr=PIPE)
+        shell=True, check=True)  # , stdout=PIPE, stderr=STDOUT)
 
-    curdoc().unhold()
-
+    # new_line = '\n'
     make_cases_output.text = \
         f"Finished for {settings_file_names[file_idx]}!<br>" \
-        + "You can find logging information below.<br><br>" \
-        + f"{(proc.stdout).decode('utf-8')}"
+        + "You can find logging information in the terminal."
+    # + f"{(proc.stdout).decode('utf-8').replace(new_line, '<br>')}"
+
+    make_cases_button.disabled = False
 
 
 def refresh_file_list():
-    settings_file_paths, settings_file_names = get_settings_files()
-    make_cases_select_options = retrieve_select_options(settings_file_names)
 
-    make_cases_select.options = make_cases_select_options
+    get_settings_files()
+    settings_files_select_options = retrieve_select_options(
+        settings_file_names)
+
+    make_cases_select.options = settings_files_select_options
     make_cases_select.value = []
+
+    run_cases_select.options = settings_files_select_options
+    run_cases_select.value = []
 
 
 make_cases_button.on_click(make_cases)
+make_cases_button.on_click(make_cases_subprocess)
 refresh_button.on_click(refresh_file_list)
 
 make_cases_section = column(make_cases_div,
@@ -471,6 +478,90 @@ make_cases_section = column(make_cases_div,
                             make_cases_output
                             )
 
+
+###############################################################################
+"""
+Run cases
+"""
+###############################################################################
+
+run_cases_div = Div(
+    text="<h2>Run case(s)</h2>",
+    sizing_mode="stretch_width")
+
+# Settings file picker
+run_cases_select_div = Div(text="Select one settings file.",
+                           css_classes=['item-description'],
+                           sizing_mode='stretch_width')
+
+# List for picking a file
+run_cases_select = MultiSelect(value=[],
+                               options=settings_files_select_options)
+
+# Make cases button
+run_cases_button = Button(label="Run case(s)", button_type='primary',
+                          disabled=False)
+refresh_button_2 = Button(label="Refresh files", button_type='default',
+                          disabled=False)
+
+run_cases_output = Div(text="Click the button above to run the cases "
+                       + "specified in the chosen settings file.",
+                       css_classes=["item-description"],
+                       style={'overflow': 'auto',
+                              'width': '100%',
+                              'height': '200px'}
+                       )
+
+
+def run_cases():
+
+    file_idx = int(run_cases_select.value[0])
+
+    run_cases_output.text = \
+        f"Running cases in {settings_file_names[file_idx]}" \
+        + "...<br><br> This step will take a while. The run time depends on " \
+        + "the model settings, e.g., the simulation period or the computer " \
+        + "resource allocation in docker-compose.yml. Expect roughly 15 min " \
+        + "for each simulation year. Check your local terminal for " \
+        + "additional progress information."
+
+    run_cases_button.disabled = True
+
+
+def run_cases_subprocess():
+
+    if len(run_cases_select.value) != 1:
+        run_cases_output.text = \
+            "You must select one single settings file!"
+        return
+
+    file_idx = int(run_cases_select.value[0])
+
+    run_cases_settings_file = settings_file_paths[file_idx]
+
+    proc = subprocess.run(
+        f"python3 {script_path}/run_cases.py -f {run_cases_settings_file} -q",
+        shell=True, check=True)  # , stdout=PIPE, stderr=STDOUT)
+
+    # new_line = '\n'
+    run_cases_output.text = \
+        f"Finished for {settings_file_names[file_idx]}!<br>" \
+        + "You can find logging information in the terminal."
+    # + f"{(proc.stdout).decode('utf-8').replace(new_line, '<br>')}"
+
+    run_cases_button.disabled = False
+
+
+run_cases_button.on_click(run_cases)
+run_cases_button.on_click(run_cases_subprocess)
+refresh_button_2.on_click(refresh_file_list)
+
+run_cases_section = column(run_cases_div,
+                           run_cases_select_div,
+                           run_cases_select,
+                           row(run_cases_button, refresh_button_2),
+                           run_cases_output
+                           )
 
 ###############################################################################
 """
@@ -492,7 +583,8 @@ layout_settings = grid([
 
 layout_running = grid([
  [run_header_div],
- [make_cases_section]
+ [make_cases_section],
+ [run_cases_section]
  ],
   sizing_mode=None)
 
