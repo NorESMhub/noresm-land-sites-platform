@@ -4,6 +4,7 @@ services:
   noresm_land_sites_platform:
     build:
       context: ./
+      dockerfile: ./docker/Dockerfile
     image: "lassetk/noresm_land_sites_platform:${VERSION:-latest}"
     mem_limit: ${MEM_LIMIT:-1024M} # Max memory used
     mem_reservation: ${MEM_RESERVATION:-256M} # Minimum memory used
@@ -13,5 +14,6 @@ services:
       - "5006:5006"
     volumes:
       - ./data:/home/user/NorESM_LandSites_Platform/data
+      - ./landsites_tools/settings.txt:/home/user/NorESM_LandSites_Platform/landsites_tools/settings.txt
       - ./landsites_tools/custom_settings:/home/user/NorESM_LandSites_Platform/landsites_tools/custom_settings
       - ./notebooks:/home/user/NorESM_LandSites_Platform/notebooks
