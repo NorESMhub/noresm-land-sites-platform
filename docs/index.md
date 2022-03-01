@@ -34,20 +34,6 @@ The platform is built to run the land model (CLM) with the Norwegian Earth Syste
 | CLM |  |
 | FATES |  |
 
-
-
-**************************************
-
-
-## Input data
-
-Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and spin-up to get realistic simulations. 
-
-The input data are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file with further detail. The .tar files are compressed, and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format.
-
-The input data .tar file contains three folders: (1) 'shared' domain files with gridcell longitude, latitude, and area; (2) [land (=lnd)](https://noresmhub.github.io/NorESM_LandSites_Platform/#surface-data) surface data, and (3) [atmosphere (=atm)](https://noresmhub.github.io/NorESM_LandSites_Platform/#atmospheric-forcing) data. The input data are [site](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/)-specific. 
-
-
 ### Compsets
 
 Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. Compsets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
@@ -75,6 +61,16 @@ The compset longname has a specified order: atm, lnd, ice, ocn, river, glc, and 
 More compsets for pre-industrial or future simulations require additional input data and may be included in future versions of the platform. For now, if you need other compsets you need to dig deeper into the CLM technical documentation and provide the necessary input data yourself. 
 
 
+**************************************
+
+## Input data
+
+Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and spin-up to get realistic simulations. 
+
+The input data are [here](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/), with a [readme](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/readme.inpudata_emerald_platform) file with further detail. The .tar files are compressed, and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format.
+
+The input data .tar file contains three folders: (1) 'shared' domain files with gridcell longitude, latitude, and area; (2) [land (=lnd)](https://noresmhub.github.io/NorESM_LandSites_Platform/#surface-data) surface data, and (3) [atmosphere (=atm)](https://noresmhub.github.io/NorESM_LandSites_Platform/#atmospheric-forcing) data. The input data are [site](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/)-specific. 
+
 ### Atmospheric forcing
 
 Atmospheric forcing data drives the modelled climate using a time series of climatic variables. Downloadable data products exist, but is often on too coarse scales for realistic single-point simulations. Here is a list of atmospheric forcing variables used in CLM:
@@ -83,7 +79,6 @@ Atmospheric forcing data drives the modelled climate using a time series of clim
 - Temperature at the lowest atmospheric level (TBOT), degrees K (or can be C)
 - Precipitation (PRECTmms), mm/s
 - Wind speed at the lowest atmospheric level (WIND), m/s
-
 
 Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/). Here are some exaples of what the input data .tar contains: 
 
