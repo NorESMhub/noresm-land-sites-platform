@@ -38,7 +38,7 @@ jobs:
           BUILDNUMBER: ${{ github.run_number }}
           GITSHA1: ${{ github.sha }}
         with:
-          name: noresm/noresm_land_sites_platform
+          name: noresmhub/noresm_land_sites_platform
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io

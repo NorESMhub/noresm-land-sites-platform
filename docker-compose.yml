@@ -2,10 +2,7 @@ version: "3.9"
 
 services:
   noresm_land_sites_platform:
-    build:
-      context: ./
-      dockerfile: ./docker/Dockerfile
-    image: "lassetk/noresm_land_sites_platform:${VERSION:-latest}"
+    image: "ghcr.io/noresmhub/noresm_land_sites_platform:${VERSION:-latest}"
     mem_limit: ${MEM_LIMIT:-1024M} # Max memory used
     mem_reservation: ${MEM_RESERVATION:-256M} # Minimum memory used
     cpus: ${CPUS:-1.5} # Number of CPU cores to be used

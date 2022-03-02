@@ -2,6 +2,9 @@ version: "3.9"
 
 services:
   noresm_land_sites_platform:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
     extends:
       file: docker-compose.yml
       service: noresm_land_sites_platform
