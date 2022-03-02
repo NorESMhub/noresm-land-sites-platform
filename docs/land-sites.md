@@ -17,6 +17,9 @@ We currently support 18 sites: 12 [Vestland climate grid](https://betweenthefjor
    crossorigin=""></script>
    
    
+
+To plot site locations over a background map in R, you can also look at [this repo](https://github.com/evalieungh/map_scripts)
+ 
 -------------------------------
 
 
@@ -52,7 +55,7 @@ The Vestland climate grid, often called the SeedClim grid after the first major 
 ![Field work at Ulvehaugen = ALP1 site](https://tinyimg.io/i/q5EA7X5.jpg)
 
 
-## LATICE-MIP sites
+## LATICE-MIP sites 🚧 NB! These coordinates are approximate and might change soon.
 | Site/station name | Lon (X)     |	Lat (Y)     |	Elevation (Z) |
 |------------------ | ------      |  --------   | -------------- |
 | finseflux         |	7.527008533 | 60.59383774 | 1210  |
