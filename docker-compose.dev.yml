@@ -9,4 +9,7 @@ services:
       file: docker-compose.yml
       service: noresm_land_sites_platform
     volumes:
-      - ./:/home/user/NorESM_LandSites_Platform/ # Map whole repository
+      - ./data:/home/user/NorESM_LandSites_Platform/data
+      - ./bokeh_app:/home/user/NorESM_LandSites_Platform/bokeh_app
+      - ./landsites_tools:/home/user/NorESM_LandSites_Platform/landsites_tools
+      - ./notebooks:/home/user/NorESM_LandSites_Platform/notebooks
