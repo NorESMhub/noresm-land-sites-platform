@@ -15,15 +15,6 @@ The platform aims to bridge the gaps between observations and modelling, and **p
 
 The observation sites currently included in the platform are described in the [Land sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) section. 
 
-## Quick guides for using the platform
-
-* ### Quick installation for developers
-Instructions for installation are found in the [repository](https://github.com/NorESMhub/NorESM_LandSites_Platform). Note that we are using NREC for development and testing for the time being. In the future, we want a more flexible solution using Docker. To use NREC, you need a user account and to apply for resources, so get in touch if you need this!
-
-* ### User: *GALAXY tools, workflows and tutorials*
-  - A graphic user interface for running site-level simulation is available on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html) and [workflows]() for its usage.
-  - Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
-
 ## Code development team
 * [Hui Tang](https://github.com/huitang-earth)
 * [Lasse Torben Keetz](https://github.com/lasseke)
