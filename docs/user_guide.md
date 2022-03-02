@@ -6,6 +6,8 @@ This is the user guide for running point simulations with the [NorESM LandSites 
 
 You will need to open two new windows in the process, so it's a good idea to make this window narrower so you can see both the user guide and another window next to it.
 
+You will need to open two new windows in the process, so it's a good idea to use two screens or make this window narrower so you can see both the user guide and another window next to it.
+
 ***********************************************
 
 ## TL;DR quick start 🏃‍♀️🏃‍♂️
@@ -77,6 +79,7 @@ To set custom [simulation settings](https://noresmhub.github.io/NorESM_LandSites
 (This step can also be done from a terminal by using make_cases.py interactively with the `-i` flag. -- see [this guide](https://github.com/NorESMhub/NorESM_LandSites_Platform/main/landsites_tools/simulation/README.md "how to use make_cases interactively"))
 
 
+
 ### 3. Run your simulations 👩‍💻
 
 Go to the container in your browser: [localhost:8888](http://localhost:8888) and use the password: pass to enter it. You will see a lot of files and folders (= the GitHub repository contents). Navigate to the `notebooks` folder and open the one called `run_simulations.ipynb`. It's an interactive Jupyter notebook where you can execute code in cells by clicking the play/run buttons next to them, and see the output directly below the cell. 
@@ -103,7 +106,8 @@ Output is stored in the `data/output` folder.
 
 An example of how you can visualize it with python is provided in the `plot_example.ipynb` Jupyter notebook insite the `notebooks` folder. You can execute this notebook directly in the container in the same way as the `run_simulations.ipynb` notebook. 
 
-[Output files](https://noresmhub.github.io/NorESM_LandSites_Platform/#postprocess) can also be opened in Panoply, R, or using python on your local computer.
+[Output files](https://noresmhub.github.io/NorESM_LandSites_Platform/#postprocess) can alternatively be opened in Panoply, R, or using python on your local computer.
+
 
 
 
