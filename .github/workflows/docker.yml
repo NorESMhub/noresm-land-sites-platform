@@ -2,7 +2,6 @@ name: Build and publish the docker image on Github Container Registry
 
 on:
   workflow_dispatch:
-  pull_request:
 
 jobs:
   docker:
@@ -43,5 +42,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
+          dockerfile: docker/Dockerfile
           tags: "${{ env.TAGS }}"
           buildargs: BRANCH,BUILDNUMBER,GITSHA1
