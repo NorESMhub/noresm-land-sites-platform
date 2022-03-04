@@ -2,6 +2,7 @@ name: Build and publish the docker image on Github Container Registry
 
 on:
   workflow_dispatch:
+  pull_request:
 
 jobs:
   docker:
