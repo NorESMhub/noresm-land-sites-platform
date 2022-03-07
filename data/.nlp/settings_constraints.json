@@ -7,8 +7,7 @@
   "type_model": {
     "type": "str",
     "valid_in_txt_file": 0,
-    "valid_values": ["CLM-SP", "CLM-BGC", "CLM-FATES", "FATES-SP",
-      "FATES-nocomp", "FATES-hydro"]
+    "valid_values": ["CLM_5.0_FATES", "CLM_5.0_SP", "CLM_5.0_BGC"]
   },
   "frequency_output": {
     "type": "str",
@@ -37,13 +36,13 @@
     "long_names": [
       "Broadleaf evergreen tropical tree",
       "Needleleaf evergreen extratropical tree",
-      "Needleleaf colddecid extratropical tree",
+      "Needleleaf cold-decidious extratropical tree",
       "Broadleaf evergreen extratropical tree",
-      "Broadleaf hydrodecid tropical tree",
-      "Broadleaf colddecid extratropical tree",
+      "Broadleaf hydro-decidious tropical tree",
+      "Broadleaf cold-decidious extratropical tree",
       "Broadleaf evergreen extratropical shrub",
-      "Broadleaf hydrodecid extratropical shrub",
-      "Broadleaf colddecid extratropical shrub",
+      "Broadleaf hydro-decidious extratropical shrub",
+      "Broadleaf cold-decidious extratropical shrub",
       "Arctic C3 grass",
       "Cool C3 grass",
       "C4 grass"

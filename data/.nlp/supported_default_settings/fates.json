@@ -1,0 +1,39 @@
+{
+  "pft_indices": {
+    "type": "list",
+    "valid_in_txt_file": 0,
+    "valid_values": [1,2,3,4,5,6,7,8,9,10,11,12],
+    "long_names": [
+      "Broadleaf evergreen tropical tree",
+      "Needleleaf evergreen extratropical tree",
+      "Needleleaf cold-decidious extratropical tree",
+      "Broadleaf evergreen extratropical tree",
+      "Broadleaf hydro-decidious tropical tree",
+      "Broadleaf cold-decidious extratropical tree",
+      "Broadleaf evergreen extratropical shrub",
+      "Broadleaf hydro-decidious extratropical shrub",
+      "Broadleaf cold-decidious extratropical shrub",
+      "Arctic C3 grass",
+      "Cool C3 grass",
+      "C4 grass"
+    ]
+  },
+  "stomatal_conductance_model": {
+    "type": "int",
+    "valid_in_txt_file": 0,
+    "valid_values": [1,2],
+    "long_names": [
+      "Ball-Berry",
+      "Medlyn"
+    ]
+  },
+  "organ_hydraulic_transfer_model": {
+    "type": "int",
+    "valid_in_txt_file": 0,
+    "valid_values": [1,2],
+    "long_names": [
+      "Christofferson et al. 2016 (TFS)",
+      "Van Genuchten 1980"
+    ]
+  }
+}

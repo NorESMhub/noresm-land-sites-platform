@@ -1,0 +1,76 @@
+{
+  "paths":
+  {
+    "case_input_data_root": {
+      "ctsm_parameter" : "DIN_LOC_ROOT",
+      "xml_file": "env_run.xml",
+      "default": "$ENV{CESMDATAROOT}/inputdata",
+      "description": "Path to a case's input data root directory. The input
+      data file structure and naming should follow the standards specified in
+      https://svn-ccsm-inputdata.cgd.ucar.edu/trunk/inputdata/."
+    },
+    "case_atm_forcing": {
+      "ctsm_parameter" : "DIN_LOC_ROOT_CLMFORC",
+      "xml_file": "env_run.xml",
+      "default": "$DIN_LOC_ROOT/atm/datm7/GSWP3v1",
+      "description": "Path to the directory containing a case's atmospheric
+      forcing NetCDF files, i.e, climate input data. The default is single-point
+      forcing derived from the GSWP3 data set."
+    },
+    "case_output_dir": {
+      "ctsm_parameter" : "DOUT_S_ROOT",
+      "xml_file" : "env_run.xml",
+      "default" : "$ENV{HOME}/archive/$CASE",
+      "description": "Here."
+    },
+  },
+  "simulation":
+  {
+    "start_time" : {
+      "ctsm_parameter" : "RUN_STARTDATE",
+      "xml_file" : "env_run.xml",
+      "default" : "2000-01-01"
+    },
+    "n_days" : {
+      "ctsm_parameter" : "STOP_N",
+      "xml_file" : "env_run.xml",
+      "default" : 365
+    },
+    "type_run": {
+      "ctsm_parameter" : "RUN_TYPE",
+      "xml_file" : "env_run.xml",
+      "default" : "startup"
+    },
+    "compset": {
+      "CLM_5.0_FATES":
+      {
+        "long_name" : "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "description": "CLM version 5.0, using the Functionally Assembled Ecosystem
+        Simulator (FATES) to model demographic vegetation dynamics."
+      },
+      "CLM_5.0_SP":
+      {
+        "long_name" : "2000_DATM%1PTGSWP3_CLM50%SP_SICE_SOCN_MOSART_SGLC_SWAV",
+        "description": "CLM version 5.0, using MODIS satellite measurements
+        (SP = satellite phenology) to prescribe vegetation properties."
+      },
+      "CLM_5.0_BGC":
+      {
+        "long_name" : "2000_DATM%GSWP3v1_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "description": "CLM version 5.0, using Biogeochemistry (BGC) mode to
+        model carbon and nitrogen dynamics."
+      }
+    }
+  },
+  "nlp_general":
+  {
+    "STOP_OPTION": {
+      "xml_file": "env_run.xml",
+      "value": "ndays"
+    },
+    "STOP_DATE": {
+      "xml_file": "env_run.xml",
+      "value": -999
+    }
+  }
+}
