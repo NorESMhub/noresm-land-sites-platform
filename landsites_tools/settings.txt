@@ -6,7 +6,7 @@ dir_output = data/output    # output root folder, absolute or relative to projec
 [run]
 start_time = 2000-01-01       # yyyy-mm-dd hh:mm
 end_time = 2001-01-01         # yyyy-mm-dd
-sites2run = ALP1, ALP2        # data/.dicts/sites.json
+sites2run = ALP1              # data/.dicts/sites.json
 type_run = startup            # startup, hybrid, branch, restart
 type_model = CLM-SP           # CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro
 initial_file =                # initial conditions (empty: cold start)
