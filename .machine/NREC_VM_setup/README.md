@@ -18,7 +18,7 @@ Execute these steps according to the
 
 ## 2. Create a NREC virtual machine from the latest image
 The latest image on NREC is [NorESM_platform_0.5](https://dashboard.nrec.no/dashboard/ngdetails/OS::Glance::Image/e09310ea-1d68-4a9a-9be0-5cec7051f225).
-Instances can be created from this image by executing the script [`create_VM_latest_image.sh`](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/platform_dev/.machine/NREC_VM_setup/create_VM_latest_image.sh),
+Instances can be created from this image by executing the script [`create_VM_latest_image.sh`](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/.machine/NREC_VM_setup/create_VM_latest_image.sh),
 where some parameters, which are set under the "Default names and paths" header,
 can be modified manually if needed (see also Sect. 3.1).
 

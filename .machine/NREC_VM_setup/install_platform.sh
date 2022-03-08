@@ -6,10 +6,10 @@ dir_platform=~/NorESM_LandSites_Platform
 dir_noresm=$dir_platform/noresm2
 url_plaform=https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 url_noresm=https://github.com/NorESMhub/NorESM.git
-branch_platform=platform_dev
+branch_platform=main
 branch_noresm=noresm_landsites
 
-# Clone NorESM Land Sites Platform: platform_dev branch
+# Clone NorESM Land Sites Platform: main branch
 if ! [ -d $dir_platform ]; then
     git clone -b $branch_platform $url_plaform $dir_platform
 fi;
