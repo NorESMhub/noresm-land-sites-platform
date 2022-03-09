@@ -1,6 +1,6 @@
 # Welcome to the documentation of the NorESM LandSites Platform
 
-This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://www.cesm.ucar.edu/models/clm/).
+This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
 
 The main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform) in a [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control").
 
