@@ -1,0 +1,18 @@
+# From CTSM Dockerfile
+rst2pdf==0.99
+Sphinx==4.4.0
+sphinxcontrib-programoutput==0.17
+
+# Platform dependencies
+pandas==1.1.5
+geopandas==0.9.0
+ipdb==0.13.8
+jupyterlab==3.0.16
+matplotlib==3.3.4
+xarray==0.16.2
+dask[dataframe]==2021.3.0
+netCDF4==1.5.6
+cfunits==3.3.3
+pysqlite3==0.4.6
+jupyter==1.0.0
+bokeh==2.3.3

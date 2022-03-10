@@ -1,0 +1,47 @@
+name: Build and publish the docker image on Github Container Registry
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout source code
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      # Calculate some variables that are used later
+      - name: Version information
+        run: |
+          if [ "${{ github.event.release.target_commitish }}" != "" ]; then
+            BRANCH="${{ github.event.release.target_commitish }}"
+          elif [[ $GITHUB_REF =~ pull ]]; then
+            BRANCH="$(echo $GITHUB_REF | sed 's#refs/pull/\([0-9]*\)/merge#PR-\1#')"
+          else
+            BRANCH=${GITHUB_REF##*/}
+          fi
+          echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
+          if [ "$BRANCH" == "main" ]; then
+            TAGS=latest
+          else
+            TAGS=${BRANCH}
+          fi
+          echo "TAGS=${TAGS}" >> $GITHUB_ENV
+
+      # build image
+      - name: Build image
+        uses: elgohr/Publish-Docker-Github-Action@3.04
+        env:
+          BRANCH: ${{ env.GITHUB_BRANCH }}
+          BUILDNUMBER: ${{ github.run_number }}
+          GITSHA1: ${{ github.sha }}
+        with:
+          name: noresmhub/noresm_land_sites_platform
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          dockerfile: docker/Dockerfile
+          tags: "${{ env.TAGS }}"
+          buildargs: BRANCH,BUILDNUMBER,GITSHA1

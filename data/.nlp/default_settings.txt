@@ -1,0 +1,27 @@
+[path]
+dir_cases = data/cases      # cases root folder, absolute or relative to project dir
+dir_clm_input = data/input/clm      # input root folder, absolute or relative to project dir
+dir_output = data/output    # output root folder, absolute or relative to project dir
+
+[run]
+start_time = 2000-01-01       # yyyy-mm-dd hh:mm
+end_time = 2001-01-01         # yyyy-mm-dd
+sites2run = ALP1              # data/.dicts/sites.json
+type_run = startup            # startup, hybrid, branch, restart
+type_model = CLM-SP           # CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro
+initial_file =                # initial conditions (empty: cold start)
+frequency_output = monthly      # monthly, daily, hourly --> monthly gives all vars
+variables_output =
+
+[postprocess]
+variables_plot =
+frequency_plot = daily
+
+[fates]
+included_pft_indices = 1,2,3,4,5,6,7,8,9,10,11,12
+
+### Settings in this section will be adjusted automatically, do not edit ###
+[internal]
+input_paths =
+cases_paths =
+output_paths =

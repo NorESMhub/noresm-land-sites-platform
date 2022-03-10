@@ -230,6 +230,48 @@
       <grid name="rof">null</grid>
     </model_grid>
 
+    <model_grid alias="1x1_FNS" compset="DATM.+CLM">
+      <grid name="atm">1x1_FNS</grid>
+      <grid name="lnd">1x1_FNS</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_BYV" compset="DATM.+CLM">
+      <grid name="atm">1x1_BVV</grid>
+      <grid name="lnd">1x1_BYV</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_ISK" compset="DATM.+CLM">
+      <grid name="atm">1x1_ISK</grid>
+      <grid name="lnd">1x1_ISK</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_HIS1" compset="DATM.+CLM">
+      <grid name="atm">1x1_HIS1</grid>
+      <grid name="lnd">1x1_HIS1</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_HIS2" compset="DATM.+CLM">
+      <grid name="atm">1x1_HIS2</grid>
+      <grid name="lnd">1x1_HIS2</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_ADVN" compset="DATM.+CLM">
+      <grid name="atm">1x1_ADVN</grid>
+      <grid name="lnd">1x1_ADVN</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_SVN" compset="DATM.+CLM">
+      <grid name="atm">1x1_SVN</grid>
+      <grid name="lnd">1x1_SVN</grid>
+      <grid name="rof">null</grid>
+    </model_grid>
+
     <model_grid alias="1x1_urbanc_alpha" compset="DATM.+CLM">
       <grid name="atm">1x1_urbanc_alpha</grid>
       <grid name="lnd">1x1_urbanc_alpha</grid>
@@ -1548,6 +1590,48 @@
       <nx>1</nx> <ny>1</ny>
       <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/FINN/domain.lnd.FINN.200927.nc</file>
       <desc>1x1 Finnmark site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_FNS">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/FNS/domain.lnd.FNS.210121.nc</file>
+      <desc>1x1 LATICE MIP Finse site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_BYV">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/BYV/domain.lnd.BYV.210121.nc</file>
+      <desc>1x1 LATICE MIP Bayelva site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_ISK">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/ISK/domain.lnd.ISK.210121.nc</file>
+      <desc>1x1 LATICE MIP Iskoras site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_HIS1">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/HIS1/domain.lnd.HIS1.210121.nc</file>
+      <desc>1x1 LATICE MIP Hisasen1 site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_HIS2">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/HIS2/domain.lnd.HIS2.210121.nc</file>
+      <desc>1x1 LATICE MIP Hisasen2 site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_ADVN">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/ADVN/domain.lnd.ADVN.210121.nc</file>
+      <desc>1x1 Adventhalen site -- only valid for DATM/CLM compset</desc>
+    </domain>
+
+    <domain name="1x1_SVN">
+      <nx>1</nx> <ny>1</ny>
+      <file grid="atm|lnd">$DIN_LOC_ROOT/share/domains/SVN/domain.lnd.SVN.210121.nc</file>
+      <desc>1x1 Svanhovd site -- only valid for DATM/CLM compset</desc>
     </domain>
 
     <domain name="1x1_urbanc_alpha">

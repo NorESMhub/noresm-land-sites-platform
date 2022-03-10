@@ -1,0 +1,26 @@
+<link rel='stylesheet' type='text/css' href='make_settings/static/css/style.css'>
+
+<h1>Build and run cases from existing settings files</h1>
+<div>
+The NorESM landsites platform uses settings files to build and run customized
+single-point NorESM model experiments for selected locations. In this section,
+you can specify a previously created settings file to
+<a href="https://noresmhub.github.io/NorESM_LandSites_Platform/" target="_blank">
+make cases</a>, i.e., automatically download the input data and create and
+adapt directories that contain the files required by the underlying model. In
+addition, you can subsequently
+<a href="https://noresmhub.github.io/NorESM_LandSites_Platform/" target="_blank">
+run cases</a>, i.e., start the actual model simulation.<br><br>
+
+<span style="color:red;">Attention!</span> There are two important constraints
+you need to be aware of:
+<ul>
+  <li>You can only run cases that have previously been built. If you try to
+    run an experiment from a settings file that has not been used as input
+    for the 'build' step before, an error will occur.</li>
+  <li>If you make any changes to a previously built case (e.g., change
+    parameter values in a settings file <b>after</b> creating the case
+    directory), you need to rebuild the case, i.e., reexecute the 'build' step
+    to apply the changes.</li>
+</ul>
+</div>

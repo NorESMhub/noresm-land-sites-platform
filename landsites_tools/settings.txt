@@ -1,0 +1,28 @@
+[path]
+dir_cases = data/cases      # cases root folder, absolute or relative to project dir
+dir_clm_input = data/input/clm  # clm input root folder, absolute or relative to project dir
+dir_output = data/output    # output root folder, absolute or relative to project dir
+
+[run]
+start_time = 2000-01-01       # yyyy-mm-dd hh:mm
+end_time = 2001-01-01         # yyyy-mm-dd
+sites2run = ALP1              # data/.dicts/sites.json
+type_run = startup            # startup, hybrid, branch, restart
+type_model = CLM-SP           # CLM-SP, CLM-BGC, CLM-FATES, FATES-SP, FATES-nocomp, FATES-hydro
+initial_file =                # initial conditions (empty: cold start)
+frequency_output = monthly      # monthly, daily, hourly --> monthly gives all vars
+variables_output = H2OSOI, H2OSNO  # https://www.cesm.ucar.edu/models/cesm1.2/clm/models/lnd/clm/doc/UsersGuide/history_fields_table_40.xhtml
+
+[postprocess]
+variables_plot = H2OSOI, H2OSNO
+frequency_plot = daily
+
+[future]
+vegetation_types_FATES =  # to be implemented
+output_groups =           # to be implemented
+
+### Settings in this section will be adjusted automatically, do not edit ###
+[internal]
+input_paths =
+cases_paths =
+output_paths =

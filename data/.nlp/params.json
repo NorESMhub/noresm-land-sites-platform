@@ -1,0 +1,47 @@
+{
+  "paths":
+  {
+    "DIN_LOC_ROOT": {
+      "xml_file": "env_run.xml",
+      "default": "$ENV{CESMDATAROOT}/inputdata"
+    },
+    "DIN_LOC_ROOT_CLMFORC": {
+      "xml_file": "env_run.xml",
+      "default": "$DIN_LOC_ROOT/atm/datm7/GSWP3v1"
+    }
+  },
+  "user":
+  {
+    "dir_output": {
+      "ctsm_param" : "DOUT_S_ROOT",
+      "xml_file" : "env_run.xml",
+      "default" : "$ENV{HOME}/archive/$CASE"
+    },
+    "start_time" : {
+      "ctsm_param" : "RUN_STARTDATE",
+      "xml_file" : "env_run.xml",
+      "default" : "2000-01-01"
+    },
+    "n_days" : {
+      "ctsm_param" : "STOP_N",
+      "xml_file" : "env_run.xml",
+      "default" : 365
+    },
+    "type_run": {
+      "ctsm_param" : "RUN_TYPE",
+      "xml_file" : "env_run.xml",
+      "default" : "startup"
+    }
+  },
+  "nlp_general":
+  {
+    "STOP_OPTION": {
+      "xml_file": "env_run.xml",
+      "value": "ndays"
+    },
+    "STOP_DATE": {
+      "xml_file": "env_run.xml",
+      "value": -999
+    }
+  }
+}
