@@ -133,7 +133,7 @@ To run a simulation, you need to set up a [case](https://esmci.github.io/cime/ve
 
 ### Settings file
 
-All required information to prepare and run CLM-FATES cases for the available Norwegian land sites is provided via a settings.txt file. A template, which also serves as the default settings if no changes are made, is stored under [~/NorESM_LandSites_Platform/landsites_tools/](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/platform_dev/landsites_tools). 
+All required information to prepare and run CLM-FATES cases for the available Norwegian land sites is provided via a settings.txt file. A template, which also serves as the default settings if no changes are made, is stored under [~/NorESM_LandSites_Platform/landsites_tools/](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/landsites_tools). 
 
 The settings file has the following contents:
 

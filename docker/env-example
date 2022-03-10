@@ -1,0 +1,5 @@
+# Docker environment file example. If you need to change these values, copy it to `.env` in the project root and adjust the variables as needed.
+CPUS=1.5
+MEM_LIMIT=2048M
+MEM_RESERVATION=512M
+VERSION=latest

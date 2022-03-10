@@ -39,7 +39,7 @@ cd NorESM_LandSites_Platform
 *Remember to switch to the correct branch of interest, e.g.:*
 ```
 git branch -a # Lists all remote branches
-git checkout -b my_new_branch origin/platform_dev
+git checkout -b my_new_branch origin/main
 ```
 To install the NorESM and NREC dependencies:
 ```
