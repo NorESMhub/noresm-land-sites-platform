@@ -2,31 +2,31 @@
 
 This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
 
-The main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform) in a [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control").
+The main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform) in a [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control"). The `main` branch stores the latest functioning version, and development is done on `platform_dev`. Older versions can be accessed under [Releases](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and Mkdocs. 
 
 To run model simulations, go to our [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide). Advanced users who want to do development in addition to just running simulations can request resources on e.g. [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
 
 🚧
-*NB! This documentation is still under construction. Links may not work until we pull from `platform_dev` into `main`. Some parts are missing or may be written for older testing versions. Please let us know if you have suggestions for something to add or explain better in the [issues](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues)*
+*NB! This documentation is still under construction. Some parts are missing or may be written for older testing versions. Please let us know if you have suggestions for something to add or explain better in the [issues](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues)*
 🚧
 
 *****************************
 
 ## Platform content
 
-
-You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power"). We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and narrow down the long list of possible output variables into something manageable.
+You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") in a Docker container. We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and narrow down the long list of possible output variables into something manageable.
 
 🚧*add an illustration here*
 
-### Docker file
+### Docker container
 
-A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. For details on the docker file and how to modify or update it, look the [this description on GitHub](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md)
+A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. When we release a new version, we have to build a container using this Docker file. Users can then download the dontainer and run simulations there. The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). For details on the docker file and how to modify or update it, look the [this description on GitHub](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md)
 
 ### Model versions
 
 The platform is built to run the land model (CLM) with the Norwegian Earth System Model (as opposed to e.g. CESM which also uses the same land model). The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is taken in to the platform using the `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). 
 
+#### Release [0.1.0-dev](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases)
 | Model | Version |
 | --- | --- |
 | NorESM |  |
@@ -35,30 +35,28 @@ The platform is built to run the land model (CLM) with the Norwegian Earth Syste
 
 ### Compsets
 
-Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. Compsets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
+Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. NorESM consists of several sub-models (components) for the atmosphere, land, ocean, etc, plus some common infrastructure code that allows the components to pass information back and forth at certain time steps. Component sets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
 
 The compset is specified by combining components in this order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. 
 
 - TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm.
 - ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
 - LND: Land, here CLM50%FATES/BGC/SP for active Community Land Model version 5.0 and one of the following vegetation modes:
-    1. FATES vegetation
-    2. BioGeoChemistry
-    3. Satellite Phenology
+    1. Functionally Assembled Terrestrial Ecosystem Simulator vegetation (FATES)
+    2. FATES with BioGeoChemistry (BGC)
+    3. FATES simplified mode with Satellite Phenology (SP)
 - ICE: Sea-ice, here SICE stub ice
 - OCN: Ocean, here SOCN stub ocean
 - ROF: River runoff, here MOSART the MOdel for Scale Adaptive River Transport
 - GLC: Land Ice, here SGLC stub glacier (land ice) component
 - WAV: Wave, here SWAV stub wave component 
 
-The compset longname defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following three compsets to enable FATES, BGC or SP vegetation:
+The compset longname defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following compsets using FATES:
 
 >2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
->2000_DATM%1PTGSWP3_CLM50%BGC_SICE_SOCN_MOSART_SGLC_SWAV
->2000_DATM%1PTGSWP3_CLM50%SP_SICE_SOCN_MOSART_SGLC_SWAV
 
 
-More compsets for pre-industrial or future simulations require additional input data and may be included in future versions of the platform. For now, if you need other compsets you need to dig deeper into the CLM technical documentation and provide the necessary input data yourself. 
+More compsets for pre-industrial or future simulations require additional input data and may be included in future versions of the platform. For now, if you need other compsets you need to dig deeper into the CLM technical documentation and provide the necessary input data and code changes yourself. 
 
 
 **************************************
@@ -128,7 +126,6 @@ To get realistic simulations, the model needs to run for a while to reach a stat
 ## Running simulations
 
 To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. The NorESM platform provides a [settings file](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file) that will set some basic information, and scripts to simplify running the case(s). Under `NorESM_LandSites_Platform/landsites_tools/simulation/` there are python scripts `make_cases.py` and `run_cases.py`. These scripts set up a simulation case directory and creates, builds and downloads [input data](https://noresmhub.github.io/NorESM_LandSites_Platform/#input-data "atmospheric forcing, land surface data") for the model. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. The settings file and python scripts combine several of these options and commands to simplify the process of running simulations.
-
 
 
 ### Settings file
