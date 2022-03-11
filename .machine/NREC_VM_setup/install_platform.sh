@@ -7,7 +7,7 @@ dir_noresm=$dir_platform/noresm2
 url_plaform=https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 url_noresm=https://github.com/NorESMhub/NorESM.git
 branch_platform=platform_dev
-branch_noresm=noresm_landsites
+branch_noresm=release-nlp0.1.0
 
 # Clone NorESM Land Sites Platform: platform_dev branch
 if ! [ -d $dir_platform ]; then
