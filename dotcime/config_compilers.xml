@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config_compilers version="2.0">
+    <!-- customize these fields as appropriate for your
+         system. Examples are prodived for Mac OS X systems with
+         homebrew and macports. -->
+
+    <compiler MACH="container-nlp">
+        <CPPDEFS>
+            <!-- these flags enable nano timers -->
+            <append MODEL="gptl">-DHAVE_NANOTIME -DBIT64 -DHAVE_VPRINTF -DHAVE_BACKTRACE -DHAVE_SLASHPROC -DHAVE_COMM_F2C -DHAVE_TIMES -DHAVE_GETTIMEOFDAY</append>
+        </CPPDEFS>
+        <NETCDF_PATH>/usr/local</NETCDF_PATH>
+        <PNETCDF_PATH>/usr/local</PNETCDF_PATH>
+        <LDFLAGS>
+        </LDFLAGS>
+        <SLIBS>
+            <append>-lnetcdf -lnetcdff -llapack -lblas</append>
+        </SLIBS>
+    </compiler>
+
+</config_compilers>

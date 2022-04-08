@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config_machines>
+
+    <machine MACH="container-nlp">
+        <DESC>
+            Containerized development environment (Docker/Singularity) for CESM
+        </DESC>
+        <OS>LINUX</OS>
+        <COMPILERS>gnu</COMPILERS>
+        <MPILIBS>mpich</MPILIBS>
+        <CIME_OUTPUT_ROOT>$CASEROOT/</CIME_OUTPUT_ROOT>
+        <DIN_LOC_ROOT>$ENV{CESMDATAROOT}/inputdata</DIN_LOC_ROOT>
+        <DIN_LOC_ROOT_CLMFORC>$DIN_LOC_ROOT/atm/datm7/GSWP3v1</DIN_LOC_ROOT_CLMFORC>
+        <DOUT_S_ROOT>$ENV{HOME}/archive/$CASE</DOUT_S_ROOT>
+        <GMAKE>make</GMAKE>
+        <GMAKE_J>4</GMAKE_J>
+        <BATCH_SYSTEM>none</BATCH_SYSTEM>
+        <SUPPORTED_BY>cgd</SUPPORTED_BY>
+        <MAX_TASKS_PER_NODE>256</MAX_TASKS_PER_NODE>
+        <MAX_MPITASKS_PER_NODE>256</MAX_MPITASKS_PER_NODE>
+        <PROJECT_REQUIRED>FALSE</PROJECT_REQUIRED>
+        <mpirun mpilib="mpich">
+            <executable>mpiexec</executable>
+            <arguments>
+                <arg name="anum_tasks">-n {{ total_tasks }}</arg>
+            </arguments>
+        </mpirun>
+        <module_system type="none">
+        </module_system>
+        <RUNDIR>$CIME_OUTPUT_ROOT/run</RUNDIR>
+        <EXEROOT>$CIME_OUTPUT_ROOT/bld</EXEROOT>
+        <environment_variables>
+            <env name="NETCDF_PATH">/usr/local</env>
+            <env name="PNETCDF_PATH">/usr/local</env>
+            <env name="FPATH">/usr/lib64</env>
+            <env name="CPATH">/usr/lib64</env>
+        </environment_variables>
+        <resource_limits>
+            <resource name="RLIMIT_STACK">-1</resource>
+        </resource_limits>
+    </machine>
+
+</config_machines>
+
