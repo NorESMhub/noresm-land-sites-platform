@@ -3,29 +3,36 @@
     "name": "DIN_LOC_ROOT_CLMFORC",
     "category": "ctsm_xml",
     "type": "char",
-    "description": "CLM-specific directory in the data archive file for CLM type input forcing data. Must be a relative path.",
-    "readonly": true,
-    "default": "atm/datm7/GSWP3v1"
+    "description": {
+      "summary": "CLM-specific directory in the data archive file for CLM type input forcing data. Must be a relative path."
+    },
+    "readonly": true
   },
   {
     "name": "RUN_STARTDATE",
     "category": "ctsm_xml",
     "type": "date",
-    "description": "Run start date (yyyy-mm-dd). Only used for startup or hybrid runs.",
+    "description": {
+      "summary": "Run start date (yyyy-mm-dd). Only used for startup or hybrid runs."
+    },
     "default": "2000-01-01"
   },
   {
     "name": "STOP_N",
     "category": "ctsm_xml",
     "type": "integer",
-    "description": "Provides a numerical count for $STOP_OPTION.",
-    "default": "5"
+    "description": {
+      "summary": "Provides a numerical count for $STOP_OPTION."
+    },
+    "default": 5
   },
   {
     "name": "STOP_OPTION",
     "category": "ctsm_xml",
     "type": "char",
-    "description": "Sets the run length along with STOP_N and STOP_DATE",
+    "description": {
+      "summary": "Sets the run length along with STOP_N and STOP_DATE."
+    },
     "default": "ndays",
     "validation": {
       "choices": [
@@ -55,14 +62,18 @@
     "name": "STOP_DATE",
     "category": "ctsm_xml",
     "type": "integer",
-    "description": "Alternative date yyyymmdd date option, sets the run length with STOP_OPTION and STOP_N negative value implies off",
-    "default": "-999"
+    "description": {
+      "summary": "Alternative date yyyymmdd date option, sets the run length with STOP_OPTION and STOP_N negative value implies off."
+    },
+    "default": -999
   },
   {
     "name": "RUN_TYPE",
     "category": "ctsm_xml",
     "type": "char",
-    "description": "Determines the model run initialization type.",
+    "description": {
+      "summary": "Determines the model run initialization type."
+    },
     "default": "startup",
     "validation": {
       "choices": [
@@ -74,12 +85,114 @@
   },
   {
     "name": "co2_ppmv",
-    "category": "ctsm_nl_lnd",
+    "category": "user_nl_clm",
     "type": "float",
-    "description": "CO2 concentration to use when co2_type is constant",
-    "default": "367.0",
+    "description": {
+      "summary": "CO2 concentration to use when co2_type is constant."
+    },
+    "default": 367.0,
     "validation": {
-      "min": "0.0"
+      "min": 0.0
+    }
+  },
+  {
+    "name": "fates_paramfile",
+    "category": "user_nl_clm",
+    "type": "char",
+    "description": {
+      "summary": "Path to an alternative netcdf fates parameter file."
+    },
+    "readonly": true
+  },
+  {
+    "name": "fsurdat",
+    "category": "user_nl_clm",
+    "type": "char",
+    "description": {
+      "summary": "Full pathname of surface data file."
+    },
+    "readonly": true
+  },
+  {
+    "name": "fates_parteh_mode",
+    "category": "user_nl_clm",
+    "type": "integer",
+    "description": {
+      "summary": "Switch deciding which nutrient model to use in FATES.",
+      "details": "The Plant Allocation and Reactive Transport Extensible Hypotheses (PARTEH) module.",
+      "url": "https://fates-users-guide.readthedocs.io/en/latest/user/PARTEH-Modes.html"
+    },
+    "default": 1,
+    "validation": {
+      "choices": [
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "name": "fates_spitfire_mode",
+    "category": "user_nl_clm",
+    "type": "integer",
+    "description": {
+      "summary": "Fire model",
+      "details": "0 : Simulations of fire are off<br>1 : use a global constant lightning rate found in fates_params.<br>2 : use an external lightning dataset. <br>3 : use an external confirmed ignitions dataset (not available through standard CSEM dataset collection).<br>4 : use external lightning and population datasets to simulate both natural and anthropogenic<br>ignitions.",
+      "url": "https://fates-users-guide.readthedocs.io/en/latest/user/SPITFIRE-Namelist-Options.html"
+    },
+    "default": 0,
+    "validation": {
+      "choices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "name": "hist_avgflag_pertape",
+    "category": "user_nl_clm",
+    "type": "char",
+    "description": {
+      "summary": "Per file averaging flag.",
+      "details": "'A' (average over history period)<br>'I' (instantaneous)<br>'X' (maximum over history period)<br>'M' (minimum over history period)"
+    },
+    "default": "A",
+    "validation": {
+      "choices": [
+        "A",
+        "I",
+        "X",
+        "M"
+      ]
+    }
+  },
+  {
+    "name": "hist_dov2xy",
+    "category": "user_nl_clm",
+    "type": "logical",
+    "description": {
+      "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
+      "details": "Some PFT information only available in this 1D string by setting this to false"
+    },
+    "default": true
+  },
+  {
+    "name": "included_pft_indices",
+    "category": "fates",
+    "type": "char",
+    "description": {
+      "summary": "List of PFT indices to include in the simulation."
+    },
+    "allow_multiple": true
+  },
+  {
+    "name": "fates_leaf_slamax",
+    "category": "fates",
+    "type": "char",
+    "description": {
+      "summary": "Maximum leaf area of a PFT (m2/m2)."
     }
   }
 ]
