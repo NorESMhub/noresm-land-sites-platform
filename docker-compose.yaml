@@ -2,11 +2,9 @@ version: "3.9"
 
 services:
   api:
-    image: ghcr.io/noresmhub/ctsm-api:${API_VERSION:-latest}
+    image: ghcr.io/ka7eh/ctsm-api:${API_VERSION:-latest}
     restart: unless-stopped
     entrypoint: /ctsm-api/docker/entrypoint_api.sh
-    env_file:
-      - .env
     environment:
       - BACKEND_CORS_ORIGINS=["http://localhost:8000", "http://localhost:8080"]
       - CTSM_REPO=https://github.com/NorESMhub/NorESM
@@ -20,14 +18,13 @@ services:
     ports:
       - ${PORT:-8000}:8000
     volumes:
+      - ./entrypoints/api.sh:/ctsm-api/docker/entrypoint_api.sh
       - ./resources:/ctsm-api/resources
 
   tasks:
-    image: ghcr.io/noresmhub/ctsm-api:${API_VERSION:-latest}
+    image: ghcr.io/ka7eh/ctsm-api:${API_VERSION:-latest}
     restart: unless-stopped
     entrypoint: /ctsm-api/docker/entrypoint_tasks.sh
-    env_file:
-      - .env
     environment:
       - BACKEND_CORS_ORIGINS=["http://localhost:8000", "http://localhost:8080"]
       - CTSM_REPO=https://github.com/NorESMhub/NorESM
@@ -51,9 +48,10 @@ services:
       - default
   
   ui:
-    image: ghrc.io/noresmhub/fates-platform:${PLATFORM_VERSION:-latest}
+    image: ghcr.io/ka7eh/fates-platform:${PLATFORM_VERSION:-latest}
+    restart: unless-stopped
     ports:
-      - ${PORT:-8080}:8080
+      - ${PORT:-8080}:80
 
 networks:
   default:
