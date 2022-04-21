@@ -21,12 +21,67 @@
             "value": "atm/datm7/GSWP3v1"
           },
           {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/ALP1/surfdata_ALP1_simyr2000.nc"
+          },
+          {
             "name": "fates_paramfile",
             "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
-            "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/ALP1/surfdata_ALP1_simyr2000.nc"
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
           }
         ],
         "group": "SeedClim"

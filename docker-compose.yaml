@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  api:
+    image: ghcr.io/noresmhub/ctsm-api:${API_VERSION:-latest}
+    restart: unless-stopped
+    entrypoint: /ctsm-api/docker/entrypoint_api.sh
+    env_file:
+      - .env
+    environment:
+      - BACKEND_CORS_ORIGINS=["http://localhost:8000", "http://localhost:8080"]
+      - CTSM_REPO=https://github.com/NorESMhub/NorESM
+      - CTSM_TAG=release-nlp0.1.0
+      - HOST_USER=${HOST_USER}
+      - HOST_UID=${HOST_UID}
+      - CELERY_BROKER_URL=amqp://${RABBITMQ_DEFAULT_USER:-admin}:${RABBITMQ_DEFAULT_PASS:-admin}@rabbitmq:5672/
+      - MACHINE_NAME=${MACHINE_NAME:-container-nlp}
+    networks:
+      - default
+    ports:
+      - ${PORT:-8000}:8000
+    volumes:
+      - ./resources:/ctsm-api/resources
+
+  tasks:
+    image: ghcr.io/noresmhub/ctsm-api:${API_VERSION:-latest}
+    restart: unless-stopped
+    entrypoint: /ctsm-api/docker/entrypoint_tasks.sh
+    env_file:
+      - .env
+    environment:
+      - BACKEND_CORS_ORIGINS=["http://localhost:8000", "http://localhost:8080"]
+      - CTSM_REPO=https://github.com/NorESMhub/NorESM
+      - CTSM_TAG=release-nlp0.1.0
+      - HOST_USER=${HOST_USER}
+      - HOST_UID=${HOST_UID}
+      - CELERY_BROKER_URL=amqp://${RABBITMQ_DEFAULT_USER:-admin}:${RABBITMQ_DEFAULT_PASS:-admin}@rabbitmq:5672/
+      - MACHINE_NAME=${MACHINE_NAME:-container}
+    networks:
+      - default
+    volumes:
+      - ./resources:/ctsm-api/resources
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER:-admin}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS:-admin}
+    networks:
+      - default
+  
+  ui:
+    image: ghrc.io/noresmhub/fates-platform:${PLATFORM_VERSION:-latest}
+    ports:
+      - ${PORT:-8080}:8080
+
+networks:
+  default:

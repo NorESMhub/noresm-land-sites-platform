@@ -6,7 +6,8 @@
     "description": {
       "summary": "CLM-specific directory in the data archive file for CLM type input forcing data. Must be a relative path."
     },
-    "readonly": true
+    "readonly": true,
+    "append_input_path": true
   },
   {
     "name": "RUN_STARTDATE",
@@ -102,7 +103,8 @@
     "description": {
       "summary": "Path to an alternative netcdf fates parameter file."
     },
-    "readonly": true
+    "readonly": true,
+    "append_input_path": true
   },
   {
     "name": "fsurdat",
@@ -111,7 +113,8 @@
     "description": {
       "summary": "Full pathname of surface data file."
     },
-    "readonly": true
+    "readonly": true,
+    "append_input_path": true
   },
   {
     "name": "fates_parteh_mode",
@@ -179,6 +182,15 @@
     "default": true
   },
   {
+    "name": "pft_index_count",
+    "category": "fates",
+    "type": "integer",
+    "description": {
+      "summary": "Number of FATES PFT dimensions in the fates_paramfile."
+    },
+    "readonly": true
+  },
+  {
     "name": "included_pft_indices",
     "category": "fates",
     "type": "char",
@@ -189,10 +201,14 @@
   },
   {
     "name": "fates_leaf_slamax",
-    "category": "fates",
-    "type": "char",
-    "description": {
-      "summary": "Maximum leaf area of a PFT (m2/m2)."
-    }
+    "category": "fates_param",
+    "type": "float",
+    "allow_multiple": true
+  },
+  {
+    "name": "fates_leaf_slatop",
+    "category": "fates_param",
+    "type": "float",
+    "allow_multiple": true
   }
 ]

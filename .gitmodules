@@ -1,0 +1,6 @@
+[submodule "resrouces/ctsm"]
+	path = resources/ctsm
+	url = https://github.com/NorESMhub/NorESM
+[submodule "resources/ctsm"]
+	path = resources/ctsm
+	url = https://github.com/NorESMhub/NorESM
