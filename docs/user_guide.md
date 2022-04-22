@@ -10,23 +10,14 @@ You will need to open two new windows in the process, so it's a good idea to use
 
 ## TL;DR quick start 🏃‍♀️🏃‍♂️
 
-go to repository: 
+go to repository and start the Docker container: 
     
-    $ cd NorESM_LandSites_platform
-    
-start the Docker container: 
-    
+    $ cd NorESM_LandSites_platform 
     $ docker-compose up
     
-go to container: [localhost:8888](http://localhost:8888) password = pass
+go to container GUI: [localhost:8080](http://localhost:8080) and push buttons
 
-open New Terminal and run commands:
-
-    $ cd landsites_tools/simulation
-    $ python make_cases.py
-    $ python run_cases.py
- 
-access output in data/output 🎉
+access output in data/output and notebooks in ´notebooks´ folder on [localhost:8888](http://localhost:8888) password: pass 🎉
 
 
 ***********************************************
