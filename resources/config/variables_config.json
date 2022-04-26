@@ -1,5 +1,13 @@
 [
   {
+    "name": "DOUT_S_SAVE_INTERIM_RESTART_FILES",
+    "category": "ctsm_xml",
+    "type": "logical",
+    "readonly": true,
+    "default": true,
+    "hidden": true
+  },
+  {
     "name": "DIN_LOC_ROOT_CLMFORC",
     "category": "ctsm_xml",
     "type": "char",
@@ -7,7 +15,8 @@
       "summary": "CLM-specific directory in the data archive file for CLM type input forcing data. Must be a relative path."
     },
     "readonly": true,
-    "append_input_path": true
+    "append_input_path": true,
+    "hidden": true
   },
   {
     "name": "RUN_STARTDATE",
@@ -104,7 +113,8 @@
       "summary": "Path to an alternative netcdf fates parameter file."
     },
     "readonly": true,
-    "append_input_path": true
+    "append_input_path": true,
+    "hidden": true
   },
   {
     "name": "fsurdat",
@@ -114,7 +124,8 @@
       "summary": "Full pathname of surface data file."
     },
     "readonly": true,
-    "append_input_path": true
+    "append_input_path": true,
+    "hidden": true
   },
   {
     "name": "fates_parteh_mode",
