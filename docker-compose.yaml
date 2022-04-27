@@ -13,8 +13,8 @@ services:
     ports:
       - ${PORT:-8000}:8000
     volumes:
-      - ./docker/entrypoint_api.sh:/ctsm-api/docker/entrypoint_api.sh
-      - ./docker/.env:/ctsm-api/.env
+      - ./docker/api/entrypoint_api.sh:/ctsm-api/docker/entrypoint_api.sh
+      - ./docker/api/.env:/ctsm-api/.env
       - ./resources:/ctsm-api/resources
 
   tasks:
@@ -27,7 +27,7 @@ services:
     networks:
       - default
     volumes:
-      - ./docker/.env:/ctsm-api/.env
+      - ./docker/api/.env:/ctsm-api/.env
       - ./resources:/ctsm-api/resources
 
   rabbitmq:
@@ -44,6 +44,18 @@ services:
     restart: unless-stopped
     ports:
       - ${PORT:-8080}:80
+  
+  jupyter:
+    build:
+      context: docker/jupyter
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - ${PORT:-8888}:8888
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./resources/cases:/home/jovyan/cases
+      - ./resources/data:/home/jovyan/data
 
 networks:
   default:
