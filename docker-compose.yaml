@@ -8,12 +8,13 @@ services:
     environment:
       - HOST_USER=${HOST_USER}
       - HOST_UID=${HOST_UID}
-      - SKIP_CTSM_CHECKS=1
+      - SKIP_CTSM_CHECKS=0
     networks:
       - default
     ports:
       - ${PORT:-8000}:8000
     volumes:
+      - ./docker/api/entrypoint_api.sh:/ctsm-api/docker/entrypoint_api.sh
       - ./docker/api/.env:/ctsm-api/.env
       - ./resources:/ctsm-api/resources
 

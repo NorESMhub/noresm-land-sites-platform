@@ -1,4 +1,0 @@
-#!/bin/bash
-
-./xmlchange RTM_MODE="ACTIVE"
-./xmlchange RTM_FLOOD_MODE="NULL"

@@ -1,4 +1,0 @@
-For the sake of testing exact restart, we want to test the case where restart
-happens in the middle of an isostasy update period. We can accomplish this with
-an isostasy update period of 4 years and an ERS_Ly5 test.
-

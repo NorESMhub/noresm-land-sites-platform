@@ -1,4 +1,0 @@
-For the sake of testing exact restart, we want to test the case where restart
-aligns with the isostasy update period. Setting the isostasy update period to 1
-year facilitates this.
-

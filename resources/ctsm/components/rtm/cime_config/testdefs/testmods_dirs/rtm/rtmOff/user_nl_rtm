@@ -1,4 +1,0 @@
-&rtm_inparm
-  rtm_effvel  = 'NULL'
-  ice_runoff  = .false. 
-/

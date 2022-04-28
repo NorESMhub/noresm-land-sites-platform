@@ -1,9 +1,0 @@
-#!/bin/csh
-
-set exenam=../campp
-set objdir=OBJ
-
-rm -f $exenam
-rm -f $objdir/*
-
-gmake USER_FC=pgf95 DEBUG=TRUE EXENAME=$exenam

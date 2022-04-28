@@ -1,2 +1,0 @@
-  do_rtm = .false.
-  ice_runoff  = .false. 
