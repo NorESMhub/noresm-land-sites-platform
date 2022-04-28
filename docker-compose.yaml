@@ -13,7 +13,6 @@ services:
     ports:
       - ${PORT:-8000}:8000
     volumes:
-      - ./docker/api/entrypoint_api.sh:/ctsm-api/docker/entrypoint_api.sh
       - ./docker/api/.env:/ctsm-api/.env
       - ./resources:/ctsm-api/resources
 
