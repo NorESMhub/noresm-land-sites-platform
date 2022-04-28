@@ -19,6 +19,42 @@
     "hidden": true
   },
   {
+    "name": "CALENDAR",
+    "category": "ctsm_xml",
+    "type": "char",
+    "validation": {
+      "choices": [
+        "NO_LEAP",
+        "GREGORIAN"
+      ]
+    },
+    "default": "GREGORIAN"
+  },
+  {
+    "name": "DATM_CLMNCEP_YR_START",
+    "category": "ctsm_xml",
+    "type": "integer",
+    "description": {
+      "summary": "Starting year to loop data over"
+    }
+  },
+  {
+    "name": "DATM_CLMNCEP_YR_ALIGN",
+    "category": "ctsm_xml",
+    "type": "integer",
+    "description": {
+      "summary": "Year align"
+    }
+  },
+  {
+    "name": "DATM_CLMNCEP_YR_END",
+    "category": "ctsm_xml",
+    "type": "integer",
+    "description": {
+      "summary": "Ending year to loop data over"
+    }
+  },
+  {
     "name": "RUN_STARTDATE",
     "category": "ctsm_xml",
     "type": "date",
@@ -90,6 +126,25 @@
     }
   },
   {
+    "name": "LND_TUNING_MODE",
+    "category": "ctsm_xml",
+    "type": "char",
+    "description": {
+      "summary": "Tuning parameters and initial conditions for a CLM model version and meteorological forcing combination."
+    },
+    "validation": {
+      "choices": [
+        "clm5_0_cam6.0",
+        "clm5_0_GSWP3v1",
+        "clm5_0_CRUv7",
+        "clm4_5_CRUv7",
+        "clm4_5_GSWP3v1",
+        "clm4_5_cam6.0",
+        "clm5_1_GSWP3v1"
+      ]
+    }
+  },
+  {
     "name": "co2_ppmv",
     "category": "user_nl_clm",
     "type": "float",
@@ -99,6 +154,16 @@
     "validation": {
       "min": 0.0
     }
+  },
+  {
+    "name": "use_bedrock",
+    "category": "user_nl_clm",
+    "type": "logical",
+    "description": {
+      "summary": "If selected, use variable soil depth.",
+      "details": "If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi)."
+    },
+    "default": false
   },
   {
     "name": "fates_paramfile",
@@ -158,6 +223,21 @@
     }
   },
   {
+    "name": "hist_fincl2",
+    "category": "user_nl_clm",
+    "type": "char",
+    "description": {
+      "summary": "Fields to add to history tape series 2."
+    },
+    "allow_multiple": true,
+    "validation": {
+      "choices": [
+        "GPP_SCPF",
+        "PFTcrownarea"
+      ]
+    }
+  },
+  {
     "name": "hist_avgflag_pertape",
     "category": "user_nl_clm",
     "type": "char",
@@ -183,6 +263,22 @@
       "details": "Some PFT information only available in this 1D string by setting this to false"
     },
     "default": true
+  },
+  {
+    "name": "hist_mfilt",
+    "category": "user_nl_clm",
+    "type": "integer",
+    "description": {
+      "summary": "Per tape series  maximum number of time samples."
+    }
+  },
+  {
+    "name": "hist_nhtfrq",
+    "category": "user_nl_clm",
+    "type": "integer",
+    "description": {
+      "summary": "Per tape series history write frequency.<br>positive means in time steps<br>0=monthly<br>negative means hours<br>(i.e. 5 means every 24 time-steps and -24 means every day)"
+    }
   },
   {
     "name": "pft_index_count",

@@ -8,6 +8,7 @@ services:
     environment:
       - HOST_USER=${HOST_USER}
       - HOST_UID=${HOST_UID}
+      - SKIP_CTSM_CHECKS=1
     networks:
       - default
     ports:
