@@ -273,6 +273,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP4.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/ALP4/surfdata_ALP4_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -290,6 +359,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB1.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/SUB1/surfdata_SUB1_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -307,6 +445,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB2.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/SUB2/surfdata_SUB2_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -324,6 +531,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB3.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/SUB3/surfdata_SUB3_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -341,6 +617,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB4.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/SUB4/surfdata_SUB4_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -358,6 +703,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR1.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/BOR1/surfdata_BOR1_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -375,6 +789,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR2.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/BOR2/surfdata_BOR2_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -392,6 +875,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR3.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/BOR3/surfdata_BOR3_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     },
@@ -409,6 +961,75 @@
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR4.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "lnd/clm2/surfdata_map/BOR4/surfdata_BOR4_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_leaf_slamax",
+            "value": [
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.0954,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          }
+        ],
         "group": "SeedClim"
       }
     }
