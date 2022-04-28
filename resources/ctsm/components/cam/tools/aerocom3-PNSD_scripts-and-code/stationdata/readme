@@ -1,0 +1,21 @@
+
+Required software: NCL (http://www.ncl.ucar.edu/) 
+
+create_latlon.ncl : create latlon information file latlon.nc 
+
+sample.ncl : sample grid-box mean model data at given lat/lon 
+             all variables in the history file will be sampled at given locations 
+
+             the output variables will have dimensions like [time, station_index] or [time, lev, station_index] 
+
+             the station index is put into the rightest dimension so that we can use CDO (https://code.zmaw.de/projects/cdo) to process the data (e.g. temporal averaging).  
+
+
+### 2015-10-23 ### 
+
+added two new sites: 
+
+1. WLG - Mt Waliguan, CHINA,        lat=36.2879 long=100.8964 elev=3810 masl
+2. OPE - Obs. Per. d'Envi., FRANCE, lat=48.5622 long=  5.5056 elev= 395 masl
+
+

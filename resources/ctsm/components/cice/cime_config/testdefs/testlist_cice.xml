@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<testlist version="2.0">
+  <test name="ERI" grid="T62_g17" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+      <machine name="cheyenne" compiler="intel" category="aux_cime_baselines"/>
+    </machines>
+  </test>
+  <test name="ERI" grid="f19_g17_rx1" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="hobart" compiler="intel" category="prealpha"/>
+      <machine name="cheyenne" compiler="gnu" category="prebeta"/>
+    </machines>
+  </test>
+  <test name="ERP" grid="f19_g17_rx1" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="ERS_D_Ld5" grid="T62_g17" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+      <machine name="cheyenne" compiler="intel" category="aux_cime_baselines"/>
+    </machines>
+  </test>
+  <test name="ERS_IOP_Ld5" grid="f19_g17_rx1" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="janus" compiler="intel" category="prebeta"/>
+      <machine name="cheyenne" compiler="intel" category="prebeta"/>
+    </machines>
+  </test>
+  <test name="ERS_Ld5" grid="T62_g17" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="edison" compiler="intel" category="prebeta"/>
+      <machine name="hopper" compiler="pgi" category="prebeta"/>
+    </machines>
+  </test>
+  <test name="ERS_Ld5" grid="T62_g37" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="eastwind" compiler="pgi" category="aux_rasm"/>
+      <machine name="evergreen" compiler="intel" category="aux_rasm"/>
+      <machine name="olympus" compiler="pgi" category="aux_rasm"/>
+      <machine name="cheyenne" compiler="intel" category="aux_rasm"/>
+    </machines>
+  </test>
+  <test name="ERS_Ld5" grid="T62_s11" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="hobart" compiler="intel" category="prebeta"/>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="ERS_Ld5" grid="f09_g17" compset="ETEST" testmods="cice/default">
+    <machines>
+      <machine name="mira" compiler="ibm" category="prebeta"/>
+    </machines>
+  </test>
+  <test name="ERS_Ld5" grid="f19_g17" compset="ETEST" testmods="cice/default">
+    <machines>
+      <machine name="edison" compiler="intel" category="prebeta"/>
+      <machine name="hobart" compiler="nag" category="prealpha"/>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="ERS_Ld7" grid="f19_g17" compset="B1850" testmods="cice/pop">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="PET" grid="f19_g17" compset="ETEST" testmods="cice/default">
+    <machines>
+      <machine name="bluewaters" compiler="pgi" category="prebeta"/>
+      <machine name="eos" compiler="intel" category="prebeta"/>
+      <machine name="hopper" compiler="pgi" category="prebeta"/>
+    </machines>
+  </test>
+  <test name="PET_Ld2" grid="T62_g17" compset="DTEST" testmods="cice/default">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="ERS_Lm3" grid="T62_g37" compset="G" testmods="pop/cice">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="ERI" grid="f19_g17_rx1" compset="G" testmods="pop/cice">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="ERS" grid="f19_g17_rx1" compset="G1850ECO" testmods="pop/cice">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+  <test name="PET" grid="f19_g17_rx1" compset="G" testmods="pop/cice">
+    <machines>
+      <machine name="cheyenne" compiler="intel" category="aux_cice"/>
+    </machines>
+  </test>
+</testlist>

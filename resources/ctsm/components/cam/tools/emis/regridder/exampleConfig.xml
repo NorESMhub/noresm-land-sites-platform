@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='us-ascii'?> 
+
+<!-- SAMPLE INPUT SPECIFICATION FOR CAM-OSLO  --> 
+
+<CamOsloInputConfiguration>
+
+	<inputDataPath name="/disk1/alfg/linkToNorstoreEmissions"/>
+	<outputDataPath name="/disk1/alfg/camOsloEmis"/>
+
+	<outputfiles>
+		<!--THIS MERGES EMISSIONS FOR ANTHROPOGENIS AND SHIPS IN SAME FILES.. RECORDS ON SAME DATES WILL BE MERGED -->
+		<!--NOTE: PROBLEM WITH DATES IN CURRENT SHIPPING FILE MAKES THIS OUTPUT QUITE STRANGE.. NEED TO FIX THAT -->
+		<outputfile
+			name="BC_ff_1850-2005_ff.nc"
+			field="emis_bc_ff"
+			component="BC"
+			source = "ff"
+			levels="6"
+         levelValues="0.29e3 , 0.48e3 , 0.84e3 , 1.4e3 , 2.2e3 , 3.2e3, 4.3e3"
+			provider="IPCC"
+			scenario="historical">
+			<inputfile 
+                        name="cmipemis/IPCC_emissions_BC_anthropogenic_$year$_0.5x0.5_v1_21_05_2009.nc"
+                        year="1850,1860">
+                <fields>
+                    <field name="emiss_dom" sector="domestic"/>
+                    <field name="emiss_ene" sector="energy"/>
+                    <field name="emiss_ind" sector="industry"/>
+                    <field name="emiss_tra" sector="traffic"/>
+                    <field name="emiss_wst" sector="wasteburning"/>
+                    <field name="emiss_awb" sector="agriculturalwaste"/>
+                </fields>
+				<conversions>
+					<conversion type="createLevelFractions" levelFractionsFile="cmipemis/levelFractionFiles/GFED_levelfractions_POM_2000.nc"/>
+				</conversions>
+            </inputfile>
+
+			<inputfile 
+	    	  			name="cmipemis/IPCC_emissions_BC_ships_$year$_0.5x0.5_v1_20_04_2009.nc"
+		      			year="1850,1860">
+				<fields>
+					<field name="emiss_shp" sector="ships"/>
+		  		</fields>
+			</inputfile>
+		</outputfile>
+
+
+  </outputfiles>
+
+
+</CamOsloInputConfiguration>

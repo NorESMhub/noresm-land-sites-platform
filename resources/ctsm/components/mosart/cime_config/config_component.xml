@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<entry_id version="3.0">
+
+  <!-- modifier_mode allowed values are
+       '*' 0 or more modifiers (default)
+       '1' exactly 1 modifier
+       '?' 0 or 1 modifiers
+       '+' 1 or more modifiers
+       This file may have lnd desc entries.
+  -->
+  <description modifier_mode="*">
+    <desc rof="MOSART[%FLOOD]">MOSART: MOdel for Scale Adaptive River Transport</desc>
+    <desc option="FLOOD">MOSART model with flood:</desc>
+  </description>
+
+  <entry id="COMP_ROF"> 
+     <type>char</type>
+     <valid_values>mosart</valid_values>
+     <default_value>mosart</default_value>
+     <group>case_comp</group>
+     <file>env_case.xml</file>
+     <desc>Name of river component</desc>
+  </entry>
+
+  <entry id="MOSART_MODE">
+    <type>char</type>
+    <valid_values>ACTIVE,NULL</valid_values>
+    <default_value>ACTIVE</default_value>
+    <values>
+      <value grid="r%null">NULL</value>
+    </values>
+    <group>build_component_mosart</group>
+    <file>env_build.xml</file>
+    <desc>mode for mosart model, NULL means mosart is turned off</desc>
+  </entry>
+
+  <entry id="MOSART_FLOOD_MODE">
+    <type>char</type>
+    <valid_values>ACTIVE,NULL</valid_values>
+    <default_value>NULL</default_value>
+    <values>
+      <value compset="_MOSART%FLOOD">ACTIVE</value>
+    </values>
+    <group>build_component_mosart</group>
+    <file>env_build.xml</file>
+    <desc>mode for mosart flood feature, NULL means mosart flood is turned off</desc>
+  </entry>
+
+  <entry id="MOSART_SIMYR">
+    <type>char</type>
+    <valid_values></valid_values>
+    <default_value>-simyr 2000</default_value>
+    <values>
+      <value compset="1850.*_MOSART">1850</value>
+      <value compset="HIST.*_MOSART">1850</value>
+      <value compset="PIPD.*_MOSART">1850</value>
+      <value compset="2000.*_MOSART">2000</value>
+    </values>
+    <group>run_component_mosart</group>
+    <file>env_run.xml</file>
+    <desc>MOSART build-namelist options</desc>
+  </entry>
+  <help>
+    =========================================
+    MOSART naming conventions
+    =========================================
+  </help>
+
+</entry_id>

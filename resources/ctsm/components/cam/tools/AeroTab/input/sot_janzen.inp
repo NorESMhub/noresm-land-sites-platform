@@ -1,0 +1,9 @@
+c     boelgelengde (i um), reell og kompleks brytningsindeks for 
+c     sot i V og IR. Verdiene er fra Janzen, 1979 (0.35-1um egentlig)
+
+c  lambda    nr      ni   
+ 
+   0.2       2.0     1.0        
+ 100.0       2.0     1.0        
+
+ 

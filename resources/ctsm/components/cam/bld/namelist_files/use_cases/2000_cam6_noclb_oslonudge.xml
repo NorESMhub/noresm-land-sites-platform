@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<micro_do_sb_physics>   .true.   </micro_do_sb_physics>
+<do_tms>                .false.  </do_tms>
+<do_beljaars>           .true.   </do_beljaars>  
+<bnd_topo>     atm/cam/topo/fv_0.9x1.25_nc3000_Nsw042_Nrs008_Co060_Fi001_ZR_160505.nc  </bnd_topo>
+
+<tracer_cnst_cycle_yr>   2000                                                 </tracer_cnst_cycle_yr>
+<tracer_cnst_datapath>   atm/cam/ozone                                        </tracer_cnst_datapath>
+<tracer_cnst_file>       oxid_ozone_WACCM_CCMI_REFC1_2000_cycle_3D_monthly.nc </tracer_cnst_file>
+<tracer_cnst_filelist>                                                        </tracer_cnst_filelist>
+<tracer_cnst_specifier>  'O3','OH','NO3','HO2'                                </tracer_cnst_specifier>
+<tracer_cnst_type>       'CYCLICAL'                                           </tracer_cnst_type>
+
+<prescribed_ozone_cycle_yr>   2000                                                 </prescribed_ozone_cycle_yr>
+<prescribed_ozone_datapath>   atm/cam/ozone                                        </prescribed_ozone_datapath>
+<prescribed_ozone_file>       oxid_ozone_WACCM_CCMI_REFC1_2000_cycle_3D_monthly.nc </prescribed_ozone_file> 
+<prescribed_ozone_name>       'O3'                                                 </prescribed_ozone_name>
+<prescribed_ozone_type>       'CYCLICAL'                                           </prescribed_ozone_type> 
+
+
+<use_gw_oro>                  .false.          </use_gw_oro>
+<use_gw_rdg_beta>             .true.           </use_gw_rdg_beta>
+
+<zmconv_num_cin>              1                </zmconv_num_cin>
+
+<prescribed_strataero_cycle_yr>  2000          </prescribed_strataero_cycle_yr>
+<!--Options for megan -->
+<megan_specifier>'isoprene = isoprene','monoterp = myrcene + sabinene + limonene + carene_3 + ocimene_t_b + pinene_b + pinene_a'</megan_specifier>
+
+<!--set SOA emissions since reading emissions from MEGAN -->
+<isoprene_oslo_emis_file>noresm-only/atm/cam/chem/trop_mozart_aero/emis/soanucl/bvocgcmFV19_isopr_1850_2000_zero.nc </isoprene_oslo_emis_file>
+<monoterp_oslo_emis_file>noresm-only/atm/cam/chem/trop_mozart_aero/emis/soanucl/bvocgcmFV19_monoterp_1850_2000_zero.nc </monoterp_oslo_emis_file>
+
+<!--Options for megan -->
+<megan_specifier>'isoprene = isoprene','monoterp = myrcene + sabinene + limonene + carene_3 + ocimene_t_b + pinene_b + pinene_a'</megan_specifier>
+
+<!--set SOA emissions since reading emissions from MEGAN -->
+<isoprene_oslo_emis_file>noresm-only/atm/cam/chem/trop_mozart_aero/emis/soanucl/bvocgcmFV19_isopr_1850_2000_zero.nc </isoprene_oslo_emis_file>
+<monoterp_oslo_emis_file>noresm-only/atm/cam/chem/trop_mozart_aero/emis/soanucl/bvocgcmFV19_monoterp_1850_2000_zero.nc </monoterp_oslo_emis_file>
+
+<met_data_file>/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/2010-01-01.nc</met_data_file>
+<met_filenames_list>/work/shared/noresm/inputdata/noresm-only/inputForNudging/ERA_f09f09_32L_days/fileList2001-2015.txt</met_filenames_list>
+
+<drydep_method>'xactive_atm'</drydep_method>
+
+</namelist_defaults>

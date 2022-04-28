@@ -1,0 +1,10 @@
+This directory contains shared code from CCSM.
+
+When CICE is coupled to CCSM, the modules in this directory are
+ not compiled, because identical modules from the csm_share
+ directory are compiled.
+
+When CICE is not coupled to CCSM, the modules in this directory
+ are compiled because they are used by some of the CICE modules.
+ For example, the orbital module is used by the delta-Eddington
+ shortwave scheme.

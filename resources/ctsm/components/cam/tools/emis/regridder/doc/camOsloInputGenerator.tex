@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+\usepackage{listings}
+\usepackage{url}
+
+\begin{document}
+\lstset{language=Python}
+
+\tableofcontents
+\newpage
+
+\section{Installation}
+
+You need the following installed
+\begin{itemize}
+\item python from ubuntu installer
+\item python-lxml from ubuntu installer
+\item nco from ubuntu installer
+\item cdo from ubuntu installer
+\item python-pip from ubuntu installer
+\item python-progressbar from ubuntu installer
+\item cdo-python (see below)
+\end{itemize}
+Install cdo-python using the follwing commands which are valid if you are using python2.7
+\begin{verbatim}
+mkdir /home/user/pythonPackages
+pip install --install-option="--prefix=/home/user/pythonPackages/" cdo
+export PYTHONPATH
+  =$PYTHONPATH:/home/user/pythonPackages/lib/python2.7/site-packages
+\end{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%$ DOLLAR SIGN NEEDED TO GET VIM COLORS WORKING 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Functionality}
+
+The program is used to interpolate fields at some resolution to another resolution. 
+It also adds different fields together.
+
+The main purpose can be explained as shown in Figure \ref{fgr:synopsis}
+
+\begin{figure}[htb]
+\begin{lstlisting}
+for outputFile in outputFilesToCreate:
+	for inputFiles in inputFiles:
+		regridInputFile()
+		for field in Fields:
+			createListOfFieldsWithSameDates()
+
+	for date in foundDates:
+		sumFieldWithSameDate()
+		writeSumToOutputFile()
+\end{lstlisting}
+\caption{Synopsis of program. This only gives a very simplified impression of what the program does \label{fgr:synopsis}}
+\end{figure}
+
+
+
+\section{Required input}
+
+The program will read input data from a catalogue with emissions data.
+
+Currently that directory is on the norstore machine (ssh user@login.norstore.uio.no)
+
+You can mount that directory to your machine using the following commands:
+\begin{verbatim}
+mkdir linkToEmissionData
+sshfs user@login.norstore.uio.no:/projects/NS2345K/noresm/emissiondata 
+    linkToEmissionData
+\end{verbatim}
+When you don't need the directory anymore, remove the link using the command
+\begin{verbatim}
+fusermount -u linkToEmissionData
+\end{verbatim}
+
+Note that when linking the directory this way, you will get write-access to the directory at the remote machine.
+If you do not need to write to the remote machine, use \begin{verbatim}sshfs -r \end{verbatim} which mounts the 
+directory "read-only".
+
+If you don't have access to the emission data, ask your administrator.
+
+\section{Usages}
+
+The program will collect input files from some emission provider (default IPCC) and merge them to 
+input emission files at the right resolution. 
+
+\subsection{Allowed conversions}
+
+The output fields can be converted by some allowed conversions:
+\begin{enumerate}
+\item \bf{factor}: The output field will be multiplied by this factor
+\item \bf{multiplyByLayerHeight}: If this type is given, the field will be multiplied by layer height. This is useful if a 
+field is given as tendency ($m^{-3}$) and we need to convert to flux ($m^{-2}$). This can be the case for aircraft emissions.
+Note that the unit of the z-axix is used as "layer height", so if z-axis is in pressure, the value will be multiplied by a $\Delta P$.
+\item \bf{convertToLayerMidpoints}: Values are calculated at output grid mid points. The user input "levelValues" are at top of layers. If
+this conversion is given, the values are interpolated to values at mid-points.
+\item \bf{divideByArea}. If this conversion is given, the values will be divided by cell area given. This is useful is input data is given
+as $kg/cell$. The \it{dividebyArea}-conversion converts this to $kg/m2$.
+\end{enumerate}
+
+\subsection{Config files syntax}
+
+The config files are written in xml syntax. 
+The hierarchy is: An output files is created from a set of input file. 
+An input file has a set of fields. 
+
+It is allowed to specify year as \begin{verbatim}$year$\end{verbatim} in the input file 
+file-name. 
+
+\subsubsection{Output files}
+
+The following attributes are required
+\begin{enumerate}
+\item name : name of output file
+\item field : field to create in output file
+\item component: component in question
+\item provider: Emission set provider
+\item scenario : Emission set scenario
+\end{enumerate}
+
+The following attributes are optional
+\begin{enumerate}
+\item levels: Number of levels in output file
+\item levelValues: Comma separated list of 
+\end{enumerate}
+
+\subsubsection{Input files}
+
+The following attributes are required:
+\begin{enumerate}
+\item name: File name
+\end{enumerate}
+
+\subsubsection{Fields}
+
+The following attributes are required
+\begin{enumerate}
+\item name: Field name in netcdf file
+\item sector: Emission sector (any sector)
+\end{enumerate}
+
+The following attributes are optional
+\begin{enumerate}
+\item level: Place this emission sector in a level other than the first level
+\end{enumerate}
+
+\section{Resolution and grids}
+
+\subsection{Output resolution}
+Output resolution is given by cdo grid syntax. This is explained in the cdo manual \url{https://code.zmaw.de/embedded/cdo/1.6.1/cdo.html}
+in the chapter about horizontal grids. An example grid definition file is given together with the code base. It's file name is camRegularGrid144x72.
+
+A user can define a new grid file using keywords such as "gridtype", "gridsize", "xfirst", "xinc". See the cdo manual for details. There
+are even examples of unstructured grids in the cdo manual. Look for "unstructured" in the manual.
+
+The program assumes that the input files know their own grid, so they are interpolated from their own, known grid to the grid specification file
+given with the "-r" argument.
+
+The interpolation inside the program using the "cdo remapbil" command which does a bilinear interpolation.
+
+It is possible to give input files at diffent horizontal resolution. Each file is interpolated individually before it is merged with other input files
+
+\subsection{Vertical levels}
+
+If the output files has vertical levels, the value atribute "levels" must be given to a value different from the default value "1".
+There are two ways to get an output file with levels:
+\begin{enumerate}
+\item The input file is 3d and already contains levels.
+\item A specific model level is assigned to the input value.
+\end{enumerate}
+
+\section{Time interpolation}
+
+The program will NOT interpolate in time. It will add all fields which go into same date and same outputfield/outputfile.
+Therefore it is important that the command. The program internally uses the command 
+\begin{verbatim}
+cdo showdate inputfile
+\end{verbatim}
+to find the dates in an input file. It then searches for same date in other input files and adds the emissions.
+
+This is {\bf the most important task for any user: Make sure the dates are correct}. If the program finds two different
+dates, it will create different time-steps in the output file instead of summing the input-fields.
+
+For example: If a file has given sulphur emissions from industry on the dates 1996-01-01 and 1996-02-01, and a second file
+has given sulphur emission from energy use on 1996-01-15 and 1996-02-15, the output file will contain 4 time steps where 
+time step 1 and 3 will be industry emissions and time step 2 and 4 will be energy emissions.
+
+This is {\bf particularly important if a user wants to add new files to the emission inputs}
+
+The command "cdo settaxis" is helpful to transform the dates. For example: 
+\begin{verbatim}
+cdo settaxis,1987-01-16,12:00:00,1mon ifile ofile
+\end{verbatim}
+will set the first time step to 16th of January, 1987 and increament of 1 month.
+
+\section{Examples}
+
+\begin{verbatim}
+python main.py --help
+python main.py -x exampleConfig.xml
+python main.py --sourcetype=ff
+python main.py --provider=IPCC
+python main.py -c SO2 -t bb -x ipccConfig.xml -y 1850,1880
+\end{verbatim}
+
+
+\end{document}

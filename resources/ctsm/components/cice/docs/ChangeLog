@@ -1,0 +1,2517 @@
+===============================================================
+cice5_20181109
+Originator: dbailey
+Date:  09 Nov 2018
+Version: 5.0
+One-line: Remove print statement.
+
+        modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20181108
+Originator: dbailey
+Date:  08 Nov 2018
+Version: 5.0
+One-line: Fix bug with aicen in history.
+
+        modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20181107
+Originator: dbailey
+Date:  07 Nov 2018
+Version: 5.0
+One-line: Broadcast f_CMIP.
+
+        modified:   ice_history.F90
+
+===============================================================
+cice5_20181104
+Originator: dbailey
+Date:  04 Nov 2018
+Version: 5.0
+One-line: Fix threading with dfresh and dfsalt.
+
+        modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20181022
+Originator: sacks
+Date:  22 Oct 2018
+Version: 5.0
+One-line: Add %CMIP6 qualifier.
+
+        modified:   cime_config/config_component.xml
+
+===============================================================
+cice5_20181008
+Originator: dbailey
+Date:  08 Oct 2018
+Version: 5.0
+One-line: Remove some print statements.
+
+        modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20180913
+Originator: dbailey
+Date:  13 Sep 2018
+Version: 5.0
+One-line: Fix hobart NAG and CMIP variable changes.
+
+I changed the nodes for the hobart tests to 4 so the 
+NAG compiler tests would pass.
+I also made some updates for CMIP variables. (BFB)
+
+        modified:   cime_config/config_pes.xml
+        modified:   src/source/ice_flux.F90
+        modified:   src/source/ice_history.F90
+        modified:   src/source/ice_step_mod.F90
+        modified:   src/source/ice_therm_vertical.F90
+
+===============================================================
+cice5_20180808
+Originator: dbailey
+Date:  08 Aug 2018
+Version: 5.0
+One-line: Fix config_compsets.xml
+
+	modified:   cime_config/config_compsets.xml
+
+===============================================================
+cice5_20180807
+Originator: dbailey
+Date:  07 Aug 2018
+Version: 5.0
+One-line: Additional history fixes.
+
+	modified:   cime_config/namelist_definition_cice.xml
+	modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20180803
+Originator: dbailey
+Date:  03 Aug 2018
+Version: 5.0
+One-line: Additional history fixes.
+
+	modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20180724
+Originator: dbailey
+Date:  23 July 2018
+Version: 5.0
+One-line: Additional CMIP variable fixes.
+
+	modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20180723
+Originator: dbailey
+Date:  23 July 2018
+Version: 5.0
+One-line: History variable fixes.
+
+	modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20180530
+Originator: dbailey
+Date:  30 May 2018
+Version: 5.0
+One-line: Inputdata fix.
+
+	modified:   cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20180424
+Originator: dbailey
+Date:  24 Apr 2018
+Version: 5.0
+One-line: Merge Youngsung's halo changes.
+
+	modified:   cime_config/testdefs/testlist_cice.xml
+	modified:   src/mpi/ice_boundary.F90
+
+===============================================================
+cice5_20180418
+Originator: dbailey
+Date: 17 Apr 2018
+Version: 5.0
+One-line: Fix attributes for sicompstren.
+
+        modified:   src/source/ice_history.F90
+
+===============================================================
+cice5_20180417
+Originator: dbailey
+Date: 17 Apr 2018
+Version: 5.0
+One-line: Fix some python issues.
+
+	modified:   cime_config/buildcpp
+	modified:   cime_config/buildnml
+
+===============================================================
+cice5_20180416
+Originator: dbailey
+Date: 16 Apr 2018
+Version: 5.0
+One-line: Add model_doi_url.
+
+	modified:   src/drivers/cesm/ice_comp_mct.F90
+	modified:   src/io_pio/ice_history_write.F90
+	modified:   src/source/ice_history_shared.F90
+
+===============================================================
+cice5_20180403
+Originator: dbailey
+Date: 03 Apr 2018
+Version: 5.0
+One-line: Change default r_snw.
+
+        modified:   cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20180213
+Originator: dbailey
+Date: 13 Feb 2018
+Version: 5.0
+One-line: 
+
+        modified:   cime_config/testdefs/testlist_cice.xml
+
+===============================================================
+cice5_20180130
+Originator: jedwards
+Date: 30 Jan 2018
+Version: 5.0
+One-line: Add double precision history option.
+
+	modified:   cime_config/namelist_definition_cice.xml
+        modified:   cime_config/testdefs/testmods_dirs/cice/default/user_nl_cice
+        modified:   cime_config/testdefs/testmods_dirs/cice/pop/user_nl_cice
+        modified:   cime_config/testdefs/testmods_dirs/cice/step/user_nl_cice
+        modified:   src/io_pio/ice_history_write.F90
+        modified:   src/io_pio/ice_pio.F90
+        modified:   src/source/ice_grid.F90
+        modified:   src/source/ice_history_shared.F90
+        modified:   src/source/ice_init.F90
+
+===============================================================
+cice5_20180124
+Originator: jedwards
+Date: 24 Jan 2018
+Version: 5.0
+One-line: Bug fix in ITD.
+
+	modified:   src/source/ice_itd.F90
+
+===============================================================
+cice5_20180122
+Originator: jedwards
+Date: 22 Jan 2018
+Version: 5.0
+One-line: Bug fix in thermo.
+
+	modified:   src/source/ice_therm_vertical.F90
+
+===============================================================
+cice5_20180118
+Originator: jedwards
+Date: 18 Jan 2018
+Version: 5.0
+One-line: Correction to flux convergence to atmice flux
+
+M       src/source/ice_atmo.F90
+
+===============================================================
+cice5_20180116
+Originator: jedwards
+Date: 16 Jan 2018
+Version: 5.0
+One-line: Add flux convergence to atmice flux
+
+M       cime_config/buildcpp
+M       src/drivers/cesm/ice_comp_mct.F90
+M       src/source/ice_atmo.F90
+
+===============================================================
+cice5_20171220
+Originator: dbailey
+Date: 20 December 2017
+Version: 5.0
+One-line: Add new tx0.1v3 settings
+
+M       cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20171218
+Originator: dbailey
+Date: 18 December 2017
+Version: 5.0
+One-line: Remove initial barrier in ice_comp_mct
+
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20171208
+Originator: dbailey
+Date: 08 December 2017
+Version: 5.0
+One-line: Update hobart PE counts.
+
+Also delete PDFs and grid information.
+
+M       cime_config/config_pes.xml
+D       src/doc
+D       src/doc/cicedoc.pdf
+D       src/doc/PDF
+D       src/doc/PDF/HHL_OceMod2013.pdf
+D       src/doc/PDF/TFW_JGR2013.pdf
+D       src/doc/PDF/Hunke_JCP2001.pdf
+D       src/doc/PDF/BL_NCAR2007.pdf
+D       src/doc/PDF/BFLM_OceMod2013.pdf
+D       src/doc/PDF/Lipscomb_JGR2001.pdf
+D       src/doc/PDF/LAUR-03-2219.pdf
+D       src/doc/PDF/DB_JCP2000.pdf
+D       src/doc/PDF/HD_MWR2002.pdf
+D       src/doc/PDF/THB_JGR2013.pdf
+D       src/doc/PDF/BL_JGR1999.pdf
+D       src/doc/PDF/CGHM_JPO2004.pdf
+D       src/doc/PDF/HD_JPO1997.pdf
+D       src/doc/PDF/FSFH_JGR2012.pdf
+D       src/doc/PDF/LH_MWR2004.pdf
+D       src/doc/PDF/CMHB_IJHPCA2014.pdf
+D       src/doc/PDF/HZ_MWR1999.pdf
+D       src/doc/PDF/HBBLH_JClim2012.pdf
+D       src/doc/PDF/LHMJ_JGR07.pdf
+D       src/doc/PDF/Elliot_etal_JGR2012.pdf
+D       src/input_templates/gx1
+D       src/input_templates/gx3
+
+===============================================================
+cice5_20170927
+Originator: dbailey
+Date: 27 September 2017
+Version: 5.0
+One-line: Fix  NTASKS_PER_INST_ICE.
+
+M       cime_config/buildcpp
+
+===============================================================
+cice5_20170920
+Originator: dbailey
+Date: 20 September 2017
+Version: 5.0
+One-line: Add NTASKS_PER_INST_ICE.
+
+M       cime_config/buildcpp
+
+===============================================================
+cice5_20170912
+Originator: dbailey
+Date: 11 September 2017
+Version: 5.0
+One-line: Add CMIP6 usermods.
+
+A       cime_config/usermods_dirs
+A       cime_config/usermods_dirs/cmip6
+A       cime_config/usermods_dirs/cmip6/user_nl_cice
+
+===============================================================
+cice5_20170911
+Originator: dbailey
+Date: 11 September 2017
+Version: 5.0
+One-line: Updated SIMIP variables.
+
+Hopefully the last iteration of SIMIP variable updates. Also
+remove f45 tests.
+
+M       cime_config/testdefs/testlist_cice.xml
+M       src/source/ice_flux.F90
+M       src/source/ice_history.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_therm_vertical.F90
+
+===============================================================
+cice5_20170825
+Originator: dbailey
+Date: 25 August 2017
+Version: 5.0
+One-line: Fix ice_ic.
+
+Fix ice_ic behaviour for startup runs.
+PIO related changes from jedwards.
+
+M       cime_config/config_component.xml
+M       cime_config/namelist_definition_cice.xml
+M       cime_config/testdefs/testlist_cice.xml
+M       src/drivers/cesm/ice_comp_mct.F90
+M       src/drivers/cesm/ice_prescribed_mod.F90
+M       src/io_pio/ice_history_write.F90
+M       src/io_pio/ice_pio.F90
+M       src/io_pio/ice_restart.F90
+
+===============================================================
+cice5_20170727
+Originator: dbailey
+Date: 27 July 2017
+Version: 5.0
+One-line: Change default albedos.
+
+Keep options for -phys cam4 and cam5.
+
+M       cime_config/buildnml
+M       cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20170724
+Originator: dbailey
+Date: 24 July 2017
+Version: 5.0
+One-line: Add workaround for shortwave.
+
+M       src/source/ice_therm_mushy.F90
+
+===============================================================
+cice5_20170713
+Originator: dbailey
+Date: 13 July 2017
+Version: 5.0
+One-line: Fix handling of tracers in buildnml.
+
+M       cime_config/buildnml
+M       cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20170627
+Originator: dbailey
+Date: 26 Jun 2017
+Version: 5.0
+One-line: Remove ESMF driver.
+
+D       src/drivers/cesm/ice_comp_esmf.F90
+
+===============================================================
+cice5_20170626
+Originator: dbailey
+Date: 26 Jun 2017
+Version: 5.0
+One-line: Bug fix for lcdf64.
+
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20170607
+Originator: dbailey
+Date: 07 Jun 2017
+Version: 5.0
+One-line: Better fix for DECOMPSETTING.
+
+M       bld/generate_cice_decomp.pl
+M       cime_config/buildcpp
+M       cime_config/buildnml
+
+===============================================================
+cice5_20170606
+Originator: dbailey
+Date: 06 Jun 2017
+Version: 5.0
+One-line: Fix DECOMPSETTING.
+
+Fix CICE_DECOMPSETTING and processor_shape. Also, force
+prescribed ice mode to use the roundrobin distribution.
+
+M       cime_config/buildcpp
+M       cime_config/buildnml
+M       cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20170602
+Originator: dbailey
+Date: 01 Jun 2017
+Version: 5.0
+One-line: CMIP variable changes
+
+M       cime_config/namelist_definition_cice.xml
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20170601
+Originator: dbailey
+Date: 01 Jun 2017
+Version: 5.0
+One-line: Add one to maxblocks.
+
+M       bld/generate_cice_decomp.pl
+
+===============================================================
+cice5_20170522
+Originator: jedwards
+Date: 22 May 2017
+Version: 5.0
+One-line config_compsets.xml update (align with cime schema)
+
+M cime_config/config_compsets.xml
+
+===============================================================
+cice5_20170519
+Originator: dbailey
+Date: 19 May 2017
+Version: 5.0
+One-line History updates.
+
+This tag contains changes to history variables as well
+as some test changes and buildcpp change for SCAM mode.
+
+M       cime_config/testdefs/testlist_cice.xml
+M       cime_config/buildcpp
+M       cime_config/namelist_definition_cice.xml
+M       cime_config/config_pes.xml
+M       src/source/ice_history_shared.F90
+M       src/source/ice_history.F90
+M       src/drivers/cesm/CICE_InitMod.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20170516
+Originator: dbailey
+Date: 16 May 2017
+Version: 5.0
+One-line Fix cice-pop test.
+
+ M      cime_config
+ A       cime_config/testdefs/testmods_dirs/cice/pop/user_nl_pop
+ D       cime_config/testdefs/testmods_dirs/cice/pop/user_nl_pop2
+ M       cime_config/testdefs/testlist_cice.xml
+
+===============================================================
+cice5_20170515
+Originator: dbailey
+Date: 15 May 2017
+Version: 5.0
+One-line Fix coupled CPP flag.
+
+Fixed bug where the CPP flag, coupled was not activated.
+Also changed CCSMCOUPLED to CESMCOUPLED.
+
+M       cime_config/buildcpp
+M       cime_config/namelist_definition_cice.xml
+M       src/mpi/ice_timers.F90
+M       src/mpi/ice_exit.F90
+M       src/io_netcdf/ice_restart.F90
+M       src/io_netcdf/ice_history_write.F90
+M       src/source/ice_init.F90
+M       src/source/ice_domain.F90
+M       src/source/ice_calendar.F90
+M       src/source/ice_dyn_shared.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_fileunits.F90
+M       src/source/ice_diagnostics.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_bl99.F90
+M       src/source/ice_grid.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_orbital.F90
+M       src/source/ice_restart_driver.F90
+M       src/io_binary/ice_history_write.F90
+M       src/drivers/cesm/CICE_InitMod.F90
+M       src/drivers/cesm/CICE_RunMod.F90
+M       src/drivers/cesm/CICE_FinalMod.F90
+M       src/io_pio/ice_restart.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20170503
+Originator: dbailey
+Date: 3 May 2017
+Version: 5.0
+One-line Added isotope code and fixed buildcpp.
+
+This update should not be answer changing as the
+isotopes are off by default. When CESM is ready,
+the code in ice_cpl_indicies.F90 needs to be
+updated. Look for ISOTOPE.
+
+Also, the buildcpp script is fixed to allow users
+to change CPP options vi CICE_CONFIG_OPTS.
+
+Deleted the old Latex User Guide. This is now on
+github.
+
+M       cime_config/buildcpp
+M       cime_config/buildnml
+M       cime_config/namelist_definition_cice.xml
+M       src/source/ice_init.F90
+M       src/source/ice_history_bgc.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_fileunits.F90
+M       src/source/ice_mechred.F90
+M       src/source/ice_diagnostics.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_itd.F90
+M       src/source/ice_state.F90
+A       src/source/ice_isotope.F90
+M       src/source/ice_atmo.F90
+M       src/source/ice_domain_size.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_cpl_indices.F90
+D       docs/UsersGuide
+D       docs/UsersGuide/ice_setup.tex
+D       docs/UsersGuide/ice_usrdoc
+D       docs/UsersGuide/ice_usrdoc/node7.html
+D       docs/UsersGuide/ice_usrdoc/node9.html
+D       docs/UsersGuide/ice_usrdoc/WARNINGS
+D       docs/UsersGuide/ice_usrdoc/node10.html
+D       docs/UsersGuide/ice_usrdoc/node20.html
+D       docs/UsersGuide/ice_usrdoc/node12.html
+D       docs/UsersGuide/ice_usrdoc/node30.html
+D       docs/UsersGuide/ice_usrdoc/node22.html
+D       docs/UsersGuide/ice_usrdoc/node40.html
+D       docs/UsersGuide/ice_usrdoc/node14.html
+D       docs/UsersGuide/ice_usrdoc/node32.html
+D       docs/UsersGuide/ice_usrdoc/node24.html
+D       docs/UsersGuide/ice_usrdoc/node42.html
+D       docs/UsersGuide/ice_usrdoc/node16.html
+D       docs/UsersGuide/ice_usrdoc/node34.html
+D       docs/UsersGuide/ice_usrdoc/node26.html
+D       docs/UsersGuide/ice_usrdoc/node18.html
+D       docs/UsersGuide/ice_usrdoc/node36.html
+D       docs/UsersGuide/ice_usrdoc/node28.html
+D       docs/UsersGuide/ice_usrdoc/node38.html
+D       docs/UsersGuide/ice_usrdoc/node2.html
+D       docs/UsersGuide/ice_usrdoc/node4.html
+D       docs/UsersGuide/ice_usrdoc/labels.pl
+D       docs/UsersGuide/ice_usrdoc/node6.html
+D       docs/UsersGuide/ice_usrdoc/images.pl
+D       docs/UsersGuide/ice_usrdoc/node8.html
+D       docs/UsersGuide/ice_usrdoc/ice_usrdoc.html
+D       docs/UsersGuide/ice_usrdoc/images.log
+D       docs/UsersGuide/ice_usrdoc/node11.html
+D       docs/UsersGuide/ice_usrdoc/node21.html
+D       docs/UsersGuide/ice_usrdoc/node13.html
+D       docs/UsersGuide/ice_usrdoc/node31.html
+D       docs/UsersGuide/ice_usrdoc/node23.html
+D       docs/UsersGuide/ice_usrdoc/node41.html
+D       docs/UsersGuide/ice_usrdoc/node15.html
+D       docs/UsersGuide/ice_usrdoc/node33.html
+D       docs/UsersGuide/ice_usrdoc/node25.html
+D       docs/UsersGuide/ice_usrdoc/node17.html
+D       docs/UsersGuide/ice_usrdoc/node35.html
+D       docs/UsersGuide/ice_usrdoc/images.aux
+D       docs/UsersGuide/ice_usrdoc/node27.html
+D       docs/UsersGuide/ice_usrdoc/node19.html
+D       docs/UsersGuide/ice_usrdoc/node37.html
+D       docs/UsersGuide/ice_usrdoc/images.bbl
+D       docs/UsersGuide/ice_usrdoc/node29.html
+D       docs/UsersGuide/ice_usrdoc/images.tex
+D       docs/UsersGuide/ice_usrdoc/node39.html
+D       docs/UsersGuide/ice_usrdoc/ice_usrdoc.css
+D       docs/UsersGuide/ice_usrdoc/internals.pl
+D       docs/UsersGuide/ice_usrdoc/node1.html
+D       docs/UsersGuide/ice_usrdoc/index.html
+D       docs/UsersGuide/ice_usrdoc/images.out
+D       docs/UsersGuide/ice_usrdoc/node3.html
+D       docs/UsersGuide/ice_usrdoc/images.pdf
+D       docs/UsersGuide/ice_usrdoc/node5.html
+D       docs/UsersGuide/ice_history.tex
+D       docs/UsersGuide/ice_nml_example.tex
+D       docs/UsersGuide/master_list.bib
+D       docs/UsersGuide/ice_what_is_cice4.tex
+D       docs/UsersGuide/README_USR
+D       docs/UsersGuide/ice_usrdoc.pdf
+D       docs/UsersGuide/supertabular.sty
+D       docs/UsersGuide/ice_stdout.tex
+D       docs/UsersGuide/ice_restart.tex
+D       docs/UsersGuide/jas.bst
+D       docs/UsersGuide/ice_input_data.tex
+D       docs/UsersGuide/ice_runtypes.tex
+D       docs/UsersGuide/ice_troubleshoot.tex
+D       docs/UsersGuide/ice_change_ncat.tex
+D       docs/UsersGuide/index.html
+D       docs/UsersGuide/ice_nml_var.tex
+D       docs/UsersGuide/Makefile
+D       docs/UsersGuide/natbib.sty
+D       docs/UsersGuide/ice_usrdoc.tex
+D       docs/UsersGuide/ice_build.tex
+
+===============================================================
+cice5_20170424
+Originator: jedwards
+Date: 24 April 2017
+Version: 5.0
+One-line Fixed an OMP issue and efficiency changes.
+
+M       src/drivers/cesm/ice_import_export.F90
+
+===============================================================
+cice5_20170313
+Originator: dbailey
+Date: 13 Mar 2017
+Version: 5.0
+One-line Added freeboard history variable.
+
+
+M       src/source/ice_therm_mushy.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20170309
+Originator: dbailey
+Date: 09 Mar 2017
+Version: 5.0
+One-line Fixed a couple SIMIP variables.
+
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20170216
+Originator: dbailey
+Date: 15 Feb 2017
+Version: 5.0
+One-line Fixed some uninitialized variables.
+
+M       src/drivers/cesm/ice_import_export.F90
+M       src/source/ice_grid.F90
+M       src/source/ice_meltpond_lvl.F90
+
+===============================================================
+cice5_20170214
+Originator: dbailey
+Date: 14 Feb 2017
+Version: 5.0
+One-line Fixed testlist and component defs.
+
+Also, fixed the mass transport variables. Bfb except history
+file changes.
+
+M       cime_config/testdefs/testlist_cice.xml
+M       cime_config/config_component.xml
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20170126
+Originator: mvertens
+Date: 13 Jan 2017
+Version: 5.0
+One-line Added cartesian to possible decomptypes
+
+M       cime_config/config_component.xml
+
+===============================================================
+cice5_20170113
+Originator: mvertens
+Date: 13 Jan 2017
+Version: 5.0
+One-line Added roundrobin to possible decomptypes
+
+M       cime_config/config_component.xml
+
+===============================================================
+cice5_20170106
+Originator: mvertens
+Date: 06 Jan 2017
+Version: 5.0
+One-line Fixed problem in setting ice_ic for hybrid/branch runs
+
+M       cime_config/buildnml
+M       cime_config/namelist_definition_cice.xml
+
+===============================================================
+cice5_20170104
+Originator: mvertens
+Date: 04 Jan 2017
+Version: 5.0
+One-line Pythonization of namelist generation
+
+Removed the following perl based files - no longer needed
+D       bld/build-namelist
+D       bld/config_files
+D       bld/config_files/definition.xml
+D       bld/configure
+D       bld/namelist_files
+D       bld/namelist_files/namelist_defaults_cice.xml
+D       bld/namelist_files/namelist_definition.xml
+
+Changed the name of the following file for clarity
+D       bld/cice_decomp.xml
+A       bld/generate_cice_decomp.xml
+M       bld/generate_cice_decomp.pl
+
+Added new  file buildcpp which creates the cppdefs and  Filepath
+This is primarily called from buildlib now - but can be called from
+buildnml when only namelist generation is needed (and it depends on the
+cppdefs that are created)
+A       cime_config/buildcpp
+
+New python base namelist generation
+M       cime_config/buildnml
+M       cime_config/config_component.xml
+A       cime_config/namelist_definition_cice.xml
+
+New python based library generation
+M       cime_config/buildlib
+
+Changed the way namelists are read to permit not reading in a namelist that
+is not present - this uses share code - but is the way all CIME namelist reads
+are done
+M       src/drivers/cesm/ice_prescribed_mod.F90
+
+===============================================================
+
+cice5_20161118
+Originator: dbailey
+Date: 18 Nov 2016
+Version: 5.0
+One-line Summary: Fix for new CMIP fields.
+
+
+M       src/source/ice_history_mechred.F90
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20161021
+Originator: dbailey
+Date: 21 Oct 2016
+Version: 5.0
+One-line Summary: Turn off CMIP fields by default.
+
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20161006
+Originator: dbailey
+Date: 6 Oct 2016
+Version: 5.0
+One-line Summary: New testlist format.
+
+Also change some more m^2 to m2.
+
+M       cime_config/testdefs/testlist_cice.xml
+M       src/io_netcdf/ice_history_write.F90
+M       src/io_binary/ice_history_write.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20160926
+Originator: dbailey
+Date: 26 Sep 2016
+Version: 5.0
+One-line Summary: Remaining CMIP variables (bfb).
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/io_netcdf/ice_history_write.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_history_drag.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_atmo.F90
+M       src/source/ice_history.F90
+M       src/io_binary/ice_history_write.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20160915
+Originator: dbailey
+Date: 14 Sep 2016
+Version: 5.0
+One-line Summary: Passing BC and dust to coupler.
+
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_cpl_indices.F90
+
+===============================================================
+cice5_20160914
+Originator: dbailey
+Date: 14 Sep 2016
+Version: 5.0
+One-line Summary: Revert gx3v7 initialization.
+
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20160825
+Originator: dbailey
+Date: 25 Aug 2016
+Version: 5.0
+One-line Summary: Default initialization and bug fixes.
+
+The gx3v7 and tx0.1v2 grids are now initialization with
+'default' ice. Also, fixed this so it looks for cold air
+temperature rather than cold sst.
+
+Added some bug fixes for cell-padding and masked halo updates
+in the dynamics.
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/mpi/ice_boundary.F90
+M       src/mpi/ice_gather_scatter.F90
+M       src/source/ice_init.F90
+M       src/source/ice_dyn_evp.F90
+M       src/source/ice_dyn_eap.F90
+
+===============================================================
+cice5_20160825
+Originator: dbailey
+Date: 25 Aug 2016
+Version: 5.0
+One-line Summary: Move ESMCI branch to head of trunk.
+
+
+M       bld/build-namelist
+D       cime_config/testdefs/testmods_dirs/cice/default/shell_commands
+D       cime_config/testdefs/testmods_dirs/cice/pop/shell_commands
+M       cime_config/testdefs/testlist_cice.xml
+M       cime_config/buildlib
+M       cime_config/buildnml
+
+===============================================================
+cice5_20160622
+Originator: dbailey
+Date: 22 Jun 2016
+Version: 5.0
+One-line Summary: Change NoLeap to noleap.
+
+M       src/io_netcdf/ice_history_write.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20160614
+Originator: dbailey
+Date: 14 Jun 2016
+Version: 5.0
+One-line Summary: Fix RUN_REFCASE logic.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20160613
+Originator: dbailey
+Date: 13 Jun 2016
+Version: 5.0
+One-line Summary: Make cice5 physics the default in prescribed
+ mode.
+
+M       bld/configure
+
+===============================================================
+cice5_20160520
+Originator: dbailey
+Date: 19 May 2016
+Version: 5.0
+One-line Summary: Update aux_cice test list.
+
+M       cime_config/testdefs/testlist_cice.xml
+
+===============================================================
+cice5_20160519
+Originator: dbailey
+Date: 18 May 2016
+Version: 5.0
+One-line Summary: Modifications for standalone CAM.
+
+M       bld/configure
+
+===============================================================
+cice5_20160518
+Originator: dbailey
+Date: 18 May 2016
+Version: 5.0
+One-line Summary: Modifications for standalone CAM.
+
+M       bld/configure
+M       src/source/ice_history.F90
+M       src/io_pio/ice_restart.F90
+M       src/io_pio/ice_pio.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20160401
+Originator: dbailey
+Date: 01 Apr 2016
+Version: 5.0
+One-line Summary: Default initial file for gx1v6.
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20160321
+Originator: dbailey
+Date: 21 Mar 2016
+Version: 5.0
+One-line Summary: New CMIP variables.
+
+M        bld/build-namelist
+M        bld/namelist_files/namelist_defaults_cice.xml
+M        bld/namelist_files/namelist_definition.xml
+M        src/source/ice_flux.F90
+M        src/source/ice_history.F90
+M        src/source/ice_history_shared.F90
+M        src/source/ice_step_mod.F90
+M        src/source/ice_therm_vertical.F90
+
+===============================================================
+cice5_20160309
+Originator: dbailey
+Date: 09 Mar 2016
+Version: 5.0
+One-line Summary: New CIME bld changes.
+
+M       bld/configure
+M       cime_config/buildlib
+M       cime_config/buildnml
+M       cime_config/config_component.xml
+
+===============================================================
+cice5_20160304
+Originator: dbailey
+Date: 04 Mar 2016
+Version: 5.0
+One-line Summary: Move tfreeze_option to driver.
+
+In this tag, there is a new csm_share function for the
+freezing point calculation and the option is set by the
+driver. We are going back to a default of 'minus1p8' for now.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       cime_config/config_component.xml
+M       src/source/ice_init.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20160220
+Originator: dbailey
+Date: 19 Feb 2016
+Version: 5.0
+One-line Summary: Change default tfrz_option to linear_salt.
+
+This relies on POP also changing this.
+
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20160219
+Originator: dbailey
+Date: 19 Feb 2016
+Version: 5.0
+One-line Summary: Bug fix in shortwave budgets.
+
+Fix a shortwave bug and add an internal shortwave diagnostic.
+
+M       src/source/ice_shortwave.F90
+M       src/source/ice_diagnostics.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+
+===============================================================
+cice5_20160208
+Originator: dbailey
+Date: 08 Feb 2016
+Version: 5.0
+One-line Summary: Change NAG test to intel.
+
+M       cime_config/testdefs/testlist_cice.xml
+
+===============================================================
+cice5_20160107
+Originator: dbailey
+Date: 07 Jan 2016
+Version: 5.0
+One-line Summary: Hack for standalone CAM.
+
+M       bld/configure
+
+===============================================================
+cice5_20160106
+Originator: dbailey
+Date: 06 Jan 2016
+Version: 5.0
+One-line Summary: Add back in REFCASE usage.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20151218
+Originator: jedwards
+Date: 18 Dec 2015
+Version: 5.0
+One-line Summary: Add cice timers to cesm timing output
+
+M src/mpi/ice_timers.F90
+
+
+===============================================================
+cice5_20151209
+Originator: jedwards
+Date: 09 Dec 2015
+Version: 5.0
+One-line Summary: New PIO calls.
+
+M       src/io_pio/ice_restart.F90
+M       src/io_pio/ice_pio.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20151113
+Originator: klindsay
+Date: 13 Nov, 2015
+Version: 5.0
+One-line Summary: Optionally pass aicen_init and fswthrun_ai, for each
+thickness category, to CESM coupler
+
+Variables passed to coupler, aicen_init and fswthrun_ai=fswthrun*aicen_init,
+are passed to be consistent with merged fswthru that is passed.
+
+Fields are passed if seq_flds_i2o_per_cat from seq_flds_mod is .true.
+
+Set env_build.xml variable ICE_NCAT to ncat so that other components know it.
+
+Requires CIME 4.1.8, for seq_flds_i2o_per_cat and ICE_NCAT to be defined.
+
+M       bld/configure
+M       cime_config/buildnml
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_cpl_indices.F90
+M       src/source/ice_init.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+
+===============================================================
+cice5_20151110
+Originator: dbailey
+Date: 10 Nov, 2015
+Version: 5.0
+One-line Summary: Fix for extra frazil from mushy-layer.
+
+
+M       src/source/ice_diagnostics.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_itd.F90
+
+===============================================================
+cice5_20151105
+Originator: dbailey
+Date: 5 Nov, 2015
+Version: 5.0
+One-line Summary: Use perf_mod t_stampf for wall clock time.
+
+M       src/mpi/ice_timers.F90
+M       src/source/ice_zbgc.F90
+M       src/source/ice_step_mod.F90
+M       src/drivers/cesm/CICE_RunMod.F90
+
+===============================================================
+cice5_20151026
+Originator: jedwards
+Date: Oct 26, 2015
+Version: 5.0
+One-line Summary: Add compset definitions for CICE4 and CICE4%PRES
+
+M cime_config/config_component.xml
+
+
+===============================================================
+cice5_20151023
+Originator: dbailey
+Date: Oct 23, 2015
+Version: 5.0
+One-line Summary: Reset POP salinity to zero when negative.
+
+Also, change the Tref and Qref history output to be multiplied
+by aice.
+
+M       src/source/ice_history.F90
+M       src/drivers/cesm/ice_import_export.F90
+
+===============================================================
+cice5_20151013
+Originator: dbailey
+Date: Oct 13, 2015
+Version: 5.0
+One-line Summary: One-line PIO change.
+
+
+M       src/io_pio/ice_history_write.F90
+===============================================================
+cice5_20151012
+Originator: dbailey
+Date: Oct 12, 2015
+Version: 5.0
+One-line Summary: Temporary hack to ignore refcases.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20151009
+Originator: dbailey
+Date: Oct 09, 2015
+Version: 5.0
+One-line Summary: Add -phys option to configure.
+
+-phys cice5 is the default
+-phys cice4 turns on the CICE4 physics options
+Also fix a threading bug in ice_zbgc.F90 (not used).
+
+M       bld/configure
+M       bld/config_files/definition.xml
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_zbgc.F90
+
+===============================================================
+cice5_20151008
+Originator: dbailey
+Date: Oct 08, 2015
+Version: 5.0
+One-line Summary: Change to CICE5 physics by default.
+
+M       bld/configure
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20150926
+Originator: dbailey
+Date: Sep 24, 2015
+Version: 5.0
+One-line Summary: Deal with year 0000.
+
+Second try.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20150925
+Originator: dbailey
+Date: Sep 24, 2015
+Version: 5.0
+One-line Summary: Deal with year 0000.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20150924
+Originator: dbailey
+Date: Sep 23, 2015
+Version: 5.0
+One-line Summary: Add year_init default for prescribed mode.
+
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20150923
+Originator: dbailey
+Date: Sep 23, 2015
+Version: 5.0
+One-line Summary: Fix diagnostic threading bug.
+
+M       src/source/ice_diagnostics.F90
+
+===============================================================
+cice5_20150921
+Originator: dbailey
+Date: Sep 21, 2015
+Version: 5.0
+One-line Summary: CIME Refactor
+
+D       bld/cice.buildlib
+D       bld/cice.buildnml
+M       bld/build-namelist
+D       bld/user_nl_cice
+A  +    cime_config
+A  +    cime_config/config_compsets.xml
+A  +    cime_config/testdefs
+A  +    cime_config/testdefs/testmods_dirs
+A  +    cime_config/testdefs/testmods_dirs/cice
+A  +    cime_config/testdefs/testmods_dirs/cice/default
+A  +    cime_config/testdefs/testmods_dirs/cice/default/shell_commands
+A  +    cime_config/testdefs/testmods_dirs/cice/default/user_nl_cice
+A  +    cime_config/testdefs/testmods_dirs/cice/pop
+A  +    cime_config/testdefs/testmods_dirs/cice/pop/user_nl_pop2
+A  +    cime_config/testdefs/testmods_dirs/cice/pop/shell_commands
+A  +    cime_config/testdefs/testmods_dirs/cice/pop/user_nl_cice
+A  +    cime_config/testdefs/testlist_cice.xml
+A  +    cime_config/buildlib
+A  +    cime_config/buildnml
+A  +    cime_config/config_component.xml
+A  +    cime_config/user_nl_cice
+A  +    cime_config/config_pes.xml
+D       cimetest
+D       cimetest/testmods_dirs
+D       cimetest/testmods_dirs/cice
+D       cimetest/testmods_dirs/cice/default
+D       cimetest/testmods_dirs/cice/default/shell_commands
+D       cimetest/testmods_dirs/cice/default/user_nl_cice
+D       cimetest/testmods_dirs/cice/pop
+D       cimetest/testmods_dirs/cice/pop/user_nl_pop2
+D       cimetest/testmods_dirs/cice/pop/shell_commands
+D       cimetest/testmods_dirs/cice/pop/user_nl_cice
+D       cimetest/testlist_cice.xml
+
+===============================================================
+cice5_20150917
+Originator: dbailey
+Date: Sep 17, 2015
+Version: 5.0
+One-line Summary: New leap year changes.
+
+These changes should now work with arbitrary year_init. The only
+constraint is that year_init must be greater than 0 for Gregorian
+calendars while 0 is fine for noleap calendars.
+
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_init.F90
+M       src/drivers/cesm/ice_comp_esmf.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20150914
+Originator: dbailey
+Date: Sep 14, 2015
+Version: 5.0
+One-line Summary: Back out leap year changes for this tag.
+
+===============================================================
+cice5_20150911
+Originator: dbailey
+Date: Sep 11, 2015
+Version: 5.0
+One-line Summary: Set idate0 to ref_ymd all the time.
+
+Also, fixed history_file length.
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_init.F90
+M       src/source/ice_diagnostics.F90
+M       src/source/ice_history_shared.F90
+M       src/drivers/cesm/ice_comp_esmf.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20150908
+Originator: dbailey
+Date: Sep 8, 2015
+Version: 5.0
+One-line Summary: Remove module save statements and fix one
+ OMP PRIVATE variable netsw.
+
+D       src/input_templates/gx1/iced_gx1_v5.nc
+D       src/input_templates/gx3/iced_gx3_v5.nc
+M       src/source/ice_init.F90
+M       src/source/ice_dyn_evp.F90
+M       src/source/ice_transport_driver.F90
+M       src/source/ice_restoring.F90
+M       src/source/ice_history_bgc.F90
+M       src/source/ice_dyn_eap.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_transport_remap.F90
+M       src/source/ice_dyn_shared.F90
+M       src/source/ice_history_pond.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_history_mechred.F90
+M       src/source/ice_history_drag.F90
+M       src/source/ice_fileunits.F90
+M       src/source/ice_therm_shared.F90
+M       src/source/ice_mechred.F90
+M       src/source/ice_kinds_mod.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_itd.F90
+M       src/source/ice_state.F90
+M       src/source/ice_grid.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_forcing.F90
+M       src/source/ice_orbital.F90
+M       src/source/ice_spacecurve.F90
+M       src/source/ice_history.F90
+M       src/source/ice_domain_size.F90
+M       src/drivers/cesm/ice_scam.F90
+M       src/drivers/cesm/CICE_InitMod.F90
+M       src/drivers/cesm/CICE_RunMod.F90
+M       src/drivers/cesm/CICE_FinalMod.F90
+M       src/drivers/cesm/ice_prescribed_mod.F90
+
+===============================================================
+cice5_20150801
+Originator: dbailey
+Date: July 31, 2015
+Version: 5.0
+One-line Summary: Remove some old documentation and restarts.
+
+D       src/input_templates/gx1/iced_gx1_v5.nc
+D       src/input_templates/gx3/iced_gx3_v5.nc
+D       docs/UsersGuide/cicedoc.pdf
+D       docs/Copyright
+D       docs/RefGuide
+D       docs/SciGuide
+D       docs/README
+
+===============================================================
+cice5_20150731
+Originator: dbailey
+Date: July 31, 2015
+Version: 5.0
+One-line Summary: Inialize blocks_ice to null.
+
+Also some fixes for snowfrac.
+
+M        src/drivers/cice/CICE_RunMod.F90
+M        src/source/ice_domain.F90
+M        src/source/ice_history_shared.F90
+
+===============================================================
+cice5_20150728
+Originator: dbailey
+Date: July 28, 2015
+Version: 5.0
+One-line Summary: Change -s to -noecho for xmlchange.
+
+M       bld/cice.buildnml
+
+===============================================================
+cice5_20150721
+Originator: dbailey
+Date: July 21, 2015
+Version: 5.0
+One-line Summary: Update spectral band albedos for history.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_history_shared.F90
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20150720
+Originator: dbailey
+Date: July 20, 2015
+Version: 5.0
+One-line Summary: Revert albsni changes.
+
+M       src/source/ice_history_shared.F90
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20150716
+Originator: dbailey
+Date: July 16, 2015
+Version: 5.0
+One-line Summary: Add snowfrac history variable.
+
+Also, fix a bug with albcnt and add a few new default history
+variables.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_history_pond.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_history.F90
+M       src/drivers/cesm/CICE_RunMod.F90
+
+===============================================================
+cice5_20150713
+Originator: dbailey
+Date: July 13, 2015
+Version: 5.0
+One-line Summary: Change goldbach to hobart.
+
+M       cimetest/testlist_cice.xml
+
+===============================================================
+cice5_20150630
+Originator: dbailey
+Date: June 30, 2015
+Version: 5.0
+One-line Summary: Fix aerosol bug.
+
+M       src/source/ice_aerosol.F90
+
+===============================================================
+cice5_20150629
+Originator: dbailey
+Date: June 29, 2015
+Version: 5.0
+One-line Summary: Fix snow history, current_time, and quiet
+   build-namelist.
+
+
+M       bld/cice.buildnml
+M       src/source/ice_init.F90
+M       src/source/ice_history.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20150619
+Originator: dbailey
+Date: June 19, 2015
+Version: 5.0
+One-line Summary: Fix stream naming and add time_period_freq.
+
+M       src/source/ice_history_shared.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20150605
+Originator: dbailey
+Date: June 3, 2015
+Version: 5.0
+One-line Summary: Namelist additions
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+
+===============================================================
+cice5_20150604
+Originator: dbailey
+Date: June 3, 2015
+Version: 5.0
+One-line Summary: Resync with LANL trunk.
+
+M       src/ice.log.Linux.LANL.conejo
+A       src/ice.log.Linux.NCAR.yellowstone
+D       src/ice.log.Linux.ORNL.lens
+M       src/doc/cicedoc.pdf
+D       src/README_v5.0
+D       src/ice.log.Linux.ORNL.titan
+A       src/README_v5.1
+D       src/ice.log.Linux.SIO.uhu
+M       src/input_templates/run_ice.Linux.LANL.conejo
+M       src/comp_ice
+M       src/io_pio/ice_history_write.F90
+M       src/drivers/cice/CICE_InitMod.F90
+M       src/drivers/cice/CICE_RunMod.F90
+M       src/drivers/cice/CICE_FinalMod.F90
+M       src/drivers/cice/ice_constants.F90
+M       src/drivers/cice/CICE_RunMod.F90_debug
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20150603
+Originator: dbailey
+Date: June 3, 2015
+Version: 5.0
+One-line Summary: Wrap things in CCSMCOUPLED.
+
+M       src/source/ice_itd.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_bl99.F90
+
+===============================================================
+cice5_20150601
+Originator: dbailey
+Date: June 1, 2015
+Version: 5.0
+One-line Summary: Update to latest LANL changes.
+
+M       src/source/ice_therm_mushy.F90
+M       src/source/ice_calendar.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_history_drag.F90
+M       src/source/ice_mechred.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_bl99.F90
+M       src/source/ice_read_write.F90
+M       src/source/ice_forcing.F90
+M       src/source/ice_atmo.F90
+
+===============================================================
+cice5_20150513
+Originator: dbailey
+Date: May 13, 2015
+Version: 5.0
+One-line Summary: Branch fixes for mpi and history variables.
+
+M       src/mpi/ice_boundary.F90
+M       src/mpi/ice_global_reductions.F90
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_history_shared.F90
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20150504
+Originator: dbailey
+Date: May 04, 2015
+Version: 5.0
+One-line Summary: Branch fixes for time and distribution.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_domain.F90
+M       src/drivers/cesm/ice_comp_esmf.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20150403
+Originator: dbailey
+Date: Apr 03, 2015
+Version: 5.0
+One-line Summary: More calendar fixes and shortwave fix.
+
+We now use the incoming shortwave from the atmosphere to
+determine if the sun is up rather than coszen computed in
+the CICE.
+
+M       src/source/ice_calendar.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_diagnostics.F90
+
+===============================================================
+cice5_20150402
+Originator: dbailey
+Date: Apr 02, 2015
+Version: 5.0
+One-line Summary: Let driver handle the restarts.
+
+Add dumpfreq = 'x' to the namelist to let the driver handle
+the restarts.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20150401
+Originator: dbailey
+Date: Apr 01, 2015
+Version: 5.0
+One-line Summary: New default decomps.
+
+M       bld/cice_decomp.xml
+
+===============================================================
+cice5_20150331
+Originator: dbailey
+Date: Mar 30, 2015
+Version: 5.0
+One-line Summary: Add default initial files for all resolutions.
+
+Also, change the physics defaults for tx0.1v2 so they are the
+same as gx1v6.
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20150330
+Originator: dbailey
+Date: Mar 30, 2015
+Version: 5.0
+One-line Summary: Standalone CAM fixes and change default
+   initial file.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20150326
+Originator: dbailey
+Date: Mar 26, 2015
+Version: 5.0
+One-line Summary: Fix filename length for restarts.
+
+M       src/source/ice_restart_shared.F90
+
+===============================================================
+cice5_20150323
+Originator: dbailey
+Date: Mar 23, 2015
+Version: 5.0
+One-line Summary: Fix the testlist area.
+
+D       cesmtest
+A  +    cimetest
+A       cimetest/testmods_dirs/cice/pop
+A       cimetest/testmods_dirs/cice/pop/user_nl_pop2
+A       cimetest/testmods_dirs/cice/pop/shell_commands
+A       cimetest/testmods_dirs/cice/pop/user_nl_cice
+M  +    cimetest/testlist_cice.xml
+
+===============================================================
+cice5_20150320
+Originator: dbailey
+Date: Mar 20, 2015
+Version: 5.0
+One-line Summary: Fix some namelist choices.
+
+During one of the commits, ntr_aero and kalg were not set
+properly. These are fixes for that. Also, the behavior when
+kdyn = 0 was fixed.
+
+M       bld/configure
+M       bld/build-namelist
+M       src/drivers/cesm/CICE_RunMod.F90
+
+===============================================================
+cice5_20150312
+Originator: mvertens
+Date: Mar 12, 2015
+Version: 5.0
+One-line Brought cice5 up to date with cime directory structure
+
+M       bld/build-namelist
+D       bld/cice.buildexe.csh
+A       bld/cice.buildlib
+A       bld/cice.buildnml
+D       bld/cice.buildnml.csh
+D       bld/cice.cpl7.template
+
+M       bld/cice_decomp.xml
+M       bld/configure
+M       bld/generate_cice_decomp.pl
+
+A       cesmtest
+A       cesmtest/testlist_cice.xml
+A       cesmtest/testmods_dirs
+A       cesmtest/testmods_dirs/cice
+A       cesmtest/testmods_dirs/cice/default
+A       cesmtest/testmods_dirs/cice/default/shell_commands
+A       cesmtest/testmods_dirs/cice/default/user_nl_cice
+
+===============================================================
+cice5_20150311
+Originator: dbailey
+Date: Mar 11, 2015
+Version: 5.0
+One-line Summary: l_mpond_fresh code
+
+Code that uses the new l_mpond_fresh flag.
+
+M       src/drivers/cesm/CICE_RunMod.F90
+
+===============================================================
+cice5_20150304
+Originator: dbailey
+Date: Mar 4, 2015
+Version: 5.0
+One-line Summary: Resync with LANL/RASM repos.
+
+This brings in a number of new physics options from RASM and the
+LANL version. By default, the physics options are still the same
+as CICE4.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/mpi/ice_boundary.F90
+M       src/mpi/ice_timers.F90
+M       src/mpi/ice_communicate.F90
+M       src/mpi/ice_gather_scatter.F90
+M       src/source/ice_init.F90
+M       src/source/ice_domain.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_meltpond_topo.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_age.F90
+M       src/source/ice_lvl.F90
+M       src/source/ice_brine.F90
+M       src/source/ice_meltpond_lvl.F90
+M       src/source/ice_mechred.F90
+M       src/source/ice_firstyear.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_algae.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_bl99.F90
+M       src/source/ice_therm_itd.F90
+M       src/source/ice_grid.F90
+M       src/source/ice_read_write.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_forcing.F90
+M       src/source/ice_meltpond_cesm.F90
+M       src/source/ice_atmo.F90
+M       src/source/ice_history.F90
+M       src/bld/Macros.Linux.LANL.conejo
+M       src/io_binary/ice_restart.F90
+M       src/input_templates/gx1/ice_in
+M       src/input_templates/gx3/ice_in
+M       src/input_templates/col/ice_in
+M       src/io_pio/ice_history_write.F90
+M       src/drivers/cice/CICE_RunMod.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/hadgem3/CICE_RunMod.F90
+
+===============================================================
+cice5_20150211
+Originator: dbailey
+Date: Feb 11, 2015
+Version: 5.0
+One-line Summary: Mask halo issue with tripole grids.
+
+M       src/mpi/ice_boundary.F90
+
+===============================================================
+cice5_20150131
+Originator: jedwards
+Date: Jan 31, 2015
+Version: 5.0
+One-line Summary: fix history write bug
+
+M  io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20150130
+Originator: dbailey
+Date: Jan 30, 2015
+Version: 5.0
+One-line Summary: Fixes to CICE4 physics options.
+
+1. Change default conduct to MU71 and mu_rdg to 4.
+2. Change hi_min
+3. Change kalg to 0.
+4. Set l_winter to .false.
+5. Reset frac and dTemp in Iswabs and Sswabs correction.
+6. Prescribed ice fixes.
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_itd.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_bl99.F90
+M       src/drivers/cesm/ice_prescribed_mod.F90
+
+===============================================================
+cice5_20150129
+Originator: tcraig
+Date: Jan 29, 2015
+Version: 5.0
+One-line Summary: Merge with RASM and LANL repos
+- remove snowinfil option
+- some new logic in ice_therm_vertical in "Compute h*q for new layers (k2) given overlap with old layers (k1)"
+- fix restart bug in tr_pond_lvl code in run_dEdd.
+- add new output fields uatm, vatm, fsensn_ai
+- add tfrz namelist to be able to switch between different freezing temperature equations.
+  add linear_salt and mushy_layer freezing equations to the default minus1point8 version.
+- add support for year_init values of 1 (cice default is still zero, but CESM and RASM are going
+  to move to 1 as the default).
+- add missing coordinate attributes to history files for CF compliance
+- add check and abort in neutral_drag_coeffs for hkeel<hdraft
+- minor fix to dhlid default setting (changed from 0 to c0)
+- modification in bl99 for Tsf setting
+- update ar9 namelist defaults
+- add io_flavor attribute to history files (io_pio, io_netcdf)
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/io_netcdf/ice_history_write.F90
+M       src/source/ice_init.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_meltpond_lvl.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_bl99.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_atmo.F90
+M       src/source/ice_history.F90
+M       src/input_templates/gx1/ice_in
+M       src/input_templates/gx3/ice_in
+M       src/input_templates/run_ice.Linux.NCAR.yellowstone
+M       src/input_templates/col/ice_in
+M       src/io_pio/ice_history_write.F90
+M       src/drivers/cesm/ice_comp_esmf.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20150128
+Originator: jedwards
+Date: Jan 28, 2015
+Version: 5.0
+One-line Summary:pio interface fix
+
+M       src/io_pio/ice_restart.F90
+
+===============================================================
+cice5_20150127
+Originator: jedwards
+Date: Jan 27, 2015
+Version: 5.0
+One-line Summary: pio interface cleanup
+
+M            src/source/ice_grid.F90
+M            src/io_pio/ice_restart.F90
+M            src/io_pio/ice_pio.F90
+M            src/io_pio/ice_history_write.F90
+M            src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20150124
+Originator: dbailey
+Date: Jan 21, 2015
+Version: 5.0
+One-line Summary: iblk needs to be passed to ice_timers
+
+In threaded regions, the call to ice_timer_start and ice_timer_stop
+needs the block index iblk.
+
+M       src/mpi/ice_timers.F90
+M       src/source/ice_step_mod.F90
+M       src/drivers/cesm/CICE_RunMod.F90
+
+===============================================================
+cice5_20150123
+Originator: dbailey
+Date: Jan 21, 2015
+Version: 5.0
+One-line Summary: Handling of initial files and MPI_WTIME fix.
+
+M       bld/build-namelist
+M       src/mpi/ice_timers.F90
+M       src/io_pio/ice_restart.F90
+
+===============================================================
+cice5_20150122
+Originator: dbailey
+Date: Jan 20, 2015
+Version: 5.0
+One-line Summary: Handling of initial files and RASM default.
+
+Back to original handling of CICE5 initial files. Looks for file
+named cice5.r and if it cannot find one, uses cice.r file. Will
+abort gracefully if this is CICE4 initial file format.
+
+RASM needed the bubbly conduction instead of MU71.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/io_pio/ice_restart.F90
+
+===============================================================
+cice5_20150121
+Originator: dbailey
+Date: Jan 20, 2015
+Version: 5.0
+One-line Summary: Need CICE4 conduction scheme.
+
+conduct = 'MU71'
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_20150120
+Originator: dbailey
+Date: Jan 20, 2015
+Version: 5.0
+One-line Summary: Workaround for Intel and namelist default fix.
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_grid.F90
+
+===============================================================
+cice5_20150113
+Originator: dbailey
+Date: Jan 13, 2015
+Version: 5.0
+One-line Summary: Various NAG fixes.
+
+M       src/mpi/ice_exit.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_brine.F90
+M       src/source/ice_fileunits.F90
+
+===============================================================
+cice5_20150112
+Originator: jedwards
+Date: Jan 12, 2015
+Version: 5.0
+One-line Summary: Port to pio2.0
+
+M   src/io_pio/ice_restart.F90
+M   src/io_pio/ice_pio.F90
+M   src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_20141210
+Originator: dbailey
+Date: Dec 10, 2014
+Version: 5.0
+One-line Summary: Use new CICE5 initial files.
+
+M       src/mpi/ice_exit.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_brine.F90
+M       src/source/ice_fileunits.F90
+
+===============================================================
+cice5_20141210
+Originator: dbailey
+Date: Dec 10, 2014
+Version: 5.0
+One-line Summary: Use new CICE5 initial files.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20141209
+Originator: dbailey
+Date: Dec 9, 2014
+Version: 5.0
+One-line Summary: Use new CICE5 initial files.
+
+M       bld/build-namelist
+
+===============================================================
+cice5_20141208
+Originator: dbailey
+Date: Dec 8, 2014
+Version: 5.0
+One-line Summary: Workaround for out-of-bounds problem.
+
+M       src/source/ice_itd.F90
+
+===============================================================
+cice5_20141204
+Originator: dbailey
+Date: Dec 4, 2014
+Version: 5.0
+One-line Summary: NAG compiler changes.
+
+M       bld/build-namelist
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_mushy.F90
+M       src/source/ice_zbgc.F90
+M       src/source/ice_fileunits.F90
+
+===============================================================
+cice5_20141203
+Originator: dbailey
+Date: Dec 3, 2014
+Version: 5.0
+One-line Summary: One more cam5 to cam4.
+
+M       bld/namelist_files/namelist_definition.xml
+
+===============================================================
+cice5_20141105
+Originator: dbailey
+Date: Nov 5, 2014
+Version: 5.0
+One-line Summary: Add nicelyr, nsnwlyr, and tracers to configure.
+
+These configure variables are set through CICE_CONFIG_OPTS in
+env_build.xml. Also, a small typo where the sice history variable has "U"
+netCDF attributes instead of the "T".
+
+M       bld/configure
+M       bld/config_files/definition.xml
+M       src/source/ice_history.F90
+
+===============================================================
+cice5_20141104
+Originator: tcraig
+Date: Nov 4, 2014
+Version: 5.0
+One-line Summary: Merge in latest rasm changes, initialization of Cdn_atm
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_flux.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/io_pio/ice_history_write.F90
+===============================================================
+cice5_20141103
+Originator: dbailey
+Date: Nov3, 2014
+Version: 5.0
+One-line Summary: Fix blkmask changes.
+
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_27_cice5.0.4
+Originator: dbailey
+Date: Oct 31, 2014
+Version: 5.0
+One-line Summary: Change cam5 to cam4 for albedos.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_defaults_cice.xml
+
+===============================================================
+cice5_26_cice5.0.4
+Originator: dbailey
+Date: Oct 31, 2014
+Version: 5.0
+One-line Summary: Fix 4D variables for PIO.
+
+M       src/io_pio/ice_pio.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_25_cice5.0.4
+Originator: tcraig
+Date: Oct 22, 2014
+Version: 5.0
+One-line Summary: Merge LANL (r864) and RASM (r945) mods
+  includes new namiter and f_blkmask namelist.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/io_netcdf/ice_history_write.F90
+M       src/source/ice_init.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_transport_remap.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_fileunits.F90
+M       src/source/ice_therm_itd.F90
+M       src/source/ice_grid.F90
+M       src/source/ice_read_write.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_atmo.F90
+M       src/source/ice_history.F90
+M       src/bld/Macros.Linux.LANL.conejo
+M       src/input_templates/gx1/ice_in
+M       src/input_templates/gx3/ice_in
+M       src/input_templates/col/ice_in
+M       src/io_pio/ice_history_write.F90
+M       src/drivers/cesm/ice_import_export.F90
+===============================================================
+cice5_24_cice5.0.4
+Originator: tcraig
+Date: Sep 30, 2014
+Version: 5.0
+One-line Summary: Update ar9 namelist, reduce RASM_MODS cpps,
+  add regional grid_type option
+
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/source/ice_init.F90
+M       src/source/ice_grid.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_cpl_indices.F90
+===============================================================
+cice5_23_cice5.0.4
+Originator: tcraig
+Date: Sep 28, 2014
+Version: 5.0
+One-line Summary: Merge lanl r839 trunk mods
+
+M       src/source/ice_init.F90
+M       src/source/ice_mechred.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_therm_bl99.F90
+
+===============================================================
+cice5_22_cice5.0.4
+Originator: tcraig
+Date: Sep 28, 2014
+Version: 5.0
+One-line Summary: fix branching and refcase stuff, fix minor
+  DEBUG failures
+
+M       bld/cice.buildnml.csh
+M       bld/build-namelist
+M       src/source/ice_init.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_therm_itd.F90
+M       src/drivers/cesm/ice_comp_esmf.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_21_cice5.0.4
+Originator: tcraig
+Date: Sep 22, 2014
+Version: 5.0
+One-line Summary: Add esmf layer, force ice_ic to 'none' for
+  hybrid startups from reference conditions
+
+M       bld/build-namelist
+A       src/drivers/cesm/ice_comp_esmf.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_20_cice5.0.4
+Originator: tcraig
+Date: Sep 11, 2014
+Version: 5.0
+One-line Summary: Merge LANL trunk r835 changes
+ Identical to lanl cesm branch r836 and nps cice5_15_cesm1_1_rasm27
+
+M       src/mpi/ice_global_reductions.F90
+M       src/source/ice_init.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_step_mod.F90
+M       src/doc/cicedoc.pdf
+A       src/doc/PDF/CMHB_IJHPCA2014.pdf
+M       src/input_templates/gx1/ice_in
+M       src/input_templates/gx3/ice_in
+M       src/input_templates/col/ice_in
+M       src/comp_ice
+===============================================================
+cice5_19_cice5.0.4
+Originator: tcraig
+Date: Sep 11, 2014
+Version: 5.0
+One-line Summary: Fix tripole exact restart, add asum diagnostic
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/mpi/ice_boundary.F90
+M       src/source/ice_dyn_evp.F90
+M       src/source/ice_read_write.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_restart_driver.F90
+M       src/io_pio/ice_restart.F90
+
+===============================================================
+cice5_18_cice5.0.4
+Originator: dbailey
+Date: Sep 5, 2014
+Version: 5.0
+One-line Summary: Fix uninitialized array mraftn.
+
+M       src/source/ice_mechred.F90
+
+===============================================================
+cice5_17_cice5.0.4
+Originator: tcraig
+Date: Sept 4, 2014
+Version: 5.0
+One-line Summary: fix eap threading, bfb global sum
+- identical to rasm cice5_13_cesm1_1_rasm27
+
+M       src/source/ice_dyn_eap.F90
+M       src/mpi/ice_global_reductions.F90
+
+===============================================================
+cice5_16_cice5.0.4
+Originator: tcraig
+Date: Sept 4, 2014
+Version: 5.0
+One-line Summary: merge rasm mods to branch, fix threading, tested
+- identical to rasm cice5_12_cesm1_1_rasm27
+
+M       bld/configure
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/io_netcdf/ice_history_write.F90
+M       src/source/ice_init.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_history_drag.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_atmo.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/drivers/cesm/ice_constants.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_15_cice5.0.4
+Originator: tcraig
+Date: Aug 27, 2014
+Version: 5.0
+One-line Summary: Update to LANL trunk revision 820
+
+M       src/mpi/ice_communicate.F90
+M       src/source/ice_init.F90
+M       src/source/ice_therm_mushy.F90
+M       src/source/ice_itd.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_meltpond_topo.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_meltpond_lvl.F90
+M       src/source/ice_mechred.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_read_write.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_restart_driver.F90
+M       src/source/ice_history.F90
+M       src/input_templates/gx1/ice_in
+M       src/input_templates/gx3/ice_in
+M       src/input_templates/col/ice_in
+M       src/drivers/cice/CICE_InitMod.F90
+M       src/drivers/cesm/CICE_InitMod.F90
+M       src/drivers/hadgem3/CICE_InitMod.F90
+M       src/drivers/hadgem3/CICE_RunMod.F90
+M       src/io_pio/ice_pio.F90
+
+===============================================================
+cice5_14_cice5.0.4
+Originator: dbailey
+Date: Aug 27, 2014
+Version: 5.0
+One-line Summary: fix prescribed ice
+
+M       src/drivers/cesm/ice_prescribed_mod.F90
+===============================================================
+cice5_13_cice5.0.4
+Originator: tcraig
+Date: Aug 25, 2014
+Version: 5.0
+One-line Summary: fix shortwave bug, fix threading, update prescribed
+  ice (still needs work), fix spacecurve, fix write_ice, add blkmask,
+  add bfbflag.
+
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/mpi/ice_global_reductions.F90
+M       src/io_netcdf/ice_history_write.F90
+M       src/source/ice_init.F90
+M       src/source/ice_dyn_evp.F90
+M       src/source/ice_transport_driver.F90
+M       src/source/ice_restoring.F90
+M       src/source/ice_dyn_eap.F90
+M       src/source/ice_transport_remap.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_fileunits.F90
+M       src/source/ice_diagnostics.F90
+M       src/source/ice_therm_vertical.F90
+M       src/source/ice_distribution.F90
+M       src/source/ice_state.F90
+M       src/source/ice_grid.F90
+M       src/source/ice_forcing.F90
+M       src/source/ice_history_shared.F90
+M       src/source/ice_spacecurve.F90
+M       src/drivers/cice/CICE_InitMod.F90
+M       src/drivers/cesm/CICE_InitMod.F90
+M       src/drivers/cesm/CICE_RunMod.F90
+M       src/drivers/cesm/ice_comp_mct.F90
+M       src/drivers/cesm/ice_prescribed_mod.F90
+M       src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_12_cice5.0.4
+Originator: tcraig
+Date: July 14, 2014
+Version: 5.0
+One-line Summary: merge latest rasm changes; pio restarts
+
+M       bld/configure
+M       bld/build-namelist
+M       bld/namelist_files/namelist_definition.xml
+M       bld/namelist_files/namelist_defaults_cice.xml
+M       src/mpi/ice_timers.F90
+M       src/source/ice_init.F90
+M       src/source/ice_shortwave.F90
+M       src/source/ice_meltpond_topo.F90
+M       src/source/ice_ocean.F90
+M       src/source/ice_meltpond_lvl.F90
+M       src/source/ice_aerosol.F90
+M       src/source/ice_step_mod.F90
+M       src/source/ice_flux.F90
+M       src/source/ice_restart_driver.F90
+M       src/source/ice_atmo.F90
+M       src/drivers/cesm/ice_import_export.F90
+M       src/io_pio/ice_restart.F90
+
+===============================================================
+cice5_11_cice5.0.4
+Originator: dbailey
+Date: July 14, 2014
+Version: 5.0
+One-line Summary: latest ncar changes; save, omp
+
+M      bld/namelist_files/namelist_defaults_cice.xml
+M      src/mpi/ice_timers.F90
+M      src/source/ice_transport_driver.F90
+M      src/source/ice_transport_remap.F90
+M      src/source/ice_shortwave.F90
+M      src/source/ice_zbgc.F90
+M      src/source/ice_ocean.F90
+M      src/source/ice_aerosol.F90
+M      src/source/ice_step_mod.F90
+M      src/source/ice_flux.F90
+M      src/source/ice_grid.F90
+M      src/source/ice_restart_driver.F90
+M      src/source/ice_history.F90
+
+===============================================================
+cice5_10_cice5.0.4
+Originator: tcraig
+Date: June 24, 2014
+Version: 5.0
+One-line Summary: fix pio history files
+
+M      bld/namelist_files/namelist_definition.xml
+M      src/io_pio/ice_pio.F90
+M      src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_09_cice5.0.4
+Originator: tcraig
+Date: June 14, 2014
+Version: 5.0
+One-line Summary: fix coszen in io_netcdf
+
+M      src/io_netcdf/ice_restart.F90
+===============================================================
+cice5_08_cice5.0.4
+Originator: tcraig
+Date: June 12, 2014
+Version: 5.0
+One-line Summary: get pio working and fix coszen restart bug
+
+M       bld/configure
+M       src/source/ice_restart_driver.F90
+M       src/io_pio/ice_restart.F90
+M       src/io_pio/ice_pio.F90
+===============================================================
+cice5_07_cice5.0.4
+Originator: tcraig
+Date: June 12, 2014
+Version: 5.0
+One-line Summary: add RASM_MODS cpp for rasm specific code mods
+
+M      bld/configure
+M      src/source/ice_domain.F90
+M      src/source/ice_ocean.F90
+M      src/source/ice_step_mod.F90
+M      src/source/ice_flux.F90
+M      src/source/ice_grid.F90
+M      src/source/ice_atmo.F90
+M      src/drivers/cesm/ice_import_export.F90
+M      src/drivers/cesm/ice_cpl_indices.F90
+===============================================================
+cice5_06_cice5.0.4
+Originator: tcraig
+Date: June 10, 2014
+Version: 5.0
+One-line Summary: update for cesm1.1 (rasm) and ar9v4 grid
+  update error checking for too small max_blocks in decomps
+
+M      bld/configure
+M      bld/cice_decomp.xml
+M      bld/namelist_files/namelist_defaults_cice.xml
+M      src/source/ice_distribution.F90
+M      src/drivers/cesm/ice_comp_mct.F90
+M      bld/cice_decomp.xml
+
+===============================================================
+cice5_05_cice5.0.4
+Originator: tcraig
+Date:
+Version: 5.0
+One-line Summary: fix missing values on history files
+
+M      src/io_netcdf/ice_history_write.F90
+M      src/io_pio/ice_history_write.F90
+
+===============================================================
+cice5_04_cice5.0.4
+Originator: tcraig
+Date:
+Version: 5.0
+One-line Summary: cice5 working in cesm1_3_beta07
+
+M      bld/config_files/definition.xml
+M      bld/generate_cice_decomp.pl
+M      bld/namelist_files/namelist_definition.xml
+M      src/mpi/ice_exit.F90
+M      src/source/ice_init.F90
+M      src/source/ice_orbital.F90
+
+===============================================================
+cice5_03_cice5.0.4
+Originator: tcraig
+Date:
+Version: 5.0
+One-line Summary: minor bug fixes
+
+M      src/source/ice_fileunits.F90
+M      src/input_templates/run_ice.Linux.NCAR.yellowstone
+
+===============================================================
+cice5_02_cice5.0.4
+Originator: tcraig
+Date:
+Version: 5.0
+One-line Summary: Update capability to run with CESM
+
+M      bld/configure
+M      bld/build-namelist
+M      bld/namelist_files/namelist_definition.xml
+M      bld/namelist_files/namelist_defaults_cice.xml
+M      src/source/ice_calendar.F90
+M      src/source/ice_history_shared.F90
+M      src/source/ice_restart_driver.F90
+M      src/source/ice_history.F90
+M      src/drivers/cesm/CICE_InitMod.F90
+M      src/drivers/cesm/CICE_RunMod.F90
+M      src/drivers/cesm/ice_comp_mct.F90
+
+===============================================================
+cice5_01_cice5.0.4
+Originator: tcraig
+Date:
+Version: 5.0
+One-line Summary: Initial capability to run with CESM
+
+A      bld/configure
+A      bld/config_files/definition.xml
+A      bld/build-namelist
+A      bld/namelist_files/namelist_definition.xml
+A      bld/namelist_files/namelist_defaults_cice.xml
+M      src/mpi/ice_timers.F90
+M      src/mpi/ice_communicate.F90
+M      src/mpi/ice_exit.F90
+M      src/source/ice_init.F90
+M      src/source/ice_domain.F90
+M      src/source/ice_calendar.F90
+M      src/source/ice_ocean.F90
+M      src/source/ice_fileunits.F90
+M      src/source/ice_diagnostics.F90
+M      src/source/ice_step_mod.F90
+M      src/source/ice_flux.F90
+M      src/source/ice_grid.F90
+M      src/source/ice_orbital.F90
+M      src/source/ice_restart_driver.F90
+M      src/source/ice_atmo.F90
+M      src/bld/Macros.Linux.NCAR.yellowstone
+M      src/input_templates/gx3/ice_in
+M      src/input_templates/run_ice.Linux.NCAR.yellowstone
+M      src/io_pio/ice_restart.F90
+A      src/drivers/cesm/ice_scam.F90
+A      src/drivers/cesm/CICE_InitMod.F90
+A      src/drivers/cesm/CICE_RunMod.F90
+A      src/drivers/cesm/ice_import_export.F90
+A      src/drivers/cesm/CICE_FinalMod.F90
+A      src/drivers/cesm/ice_constants.F90
+A      src/drivers/cesm/ice_cpl_indices.F90
+A      src/drivers/cesm/ice_comp_mct.F90
+A      src/drivers/cesm/ice_prescribed_mod.F90
+M      src/comp_ice
+
+===============================================================
+cice5_00_cice5.0.4
+Originator: tcraig
+Date:
+Version: 5.0
+One-line Summary: Original import of cice5.0.4
+===============================================================

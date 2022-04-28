@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<micro_do_sb_physics>   .true.   </micro_do_sb_physics>
+<do_tms>                .false.  </do_tms>
+<do_beljaars>           .true.   </do_beljaars>  
+
+
+<tracer_cnst_cycle_yr>   2000                                                 </tracer_cnst_cycle_yr>
+<tracer_cnst_datapath>   atm/cam/ozone                                        </tracer_cnst_datapath>
+<tracer_cnst_file>       oxid_ozone_WACCM_CCMI_REFC1_2000_cycle_3D_monthly.nc </tracer_cnst_file>
+<tracer_cnst_filelist>                                                        </tracer_cnst_filelist>
+<tracer_cnst_specifier>  'O3','OH','NO3','HO2'                                </tracer_cnst_specifier>
+<tracer_cnst_type>       'CYCLICAL'                                           </tracer_cnst_type>
+
+<prescribed_ozone_cycle_yr>   2000                                                 </prescribed_ozone_cycle_yr>
+<prescribed_ozone_datapath>   atm/cam/ozone                                        </prescribed_ozone_datapath>
+<prescribed_ozone_file>       oxid_ozone_WACCM_CCMI_REFC1_2000_cycle_3D_monthly.nc </prescribed_ozone_file> 
+<prescribed_ozone_name>       'O3'                                                 </prescribed_ozone_name>
+<prescribed_ozone_type>       'CYCLICAL'                                           </prescribed_ozone_type> 
+
+<use_gw_oro>                  .false.          </use_gw_oro>
+<use_gw_rdg_beta>             .true.           </use_gw_rdg_beta>
+
+<zmconv_num_cin>              1                </zmconv_num_cin>
+
+<prescribed_strataero_cycle_yr>  2000          </prescribed_strataero_cycle_yr>
+
+<srf_emis_specifier>
+   'DMS   ->   $INPUTDATA_ROOT/atm/cam/chem/emis/ccmi_1950_2100_rcp6/IPCC_emissions_DMS_surface_1850-2100_1.9x2.5_c130814.nc',
+   'SO2   ->   $INPUTDATA_ROOT/atm/cam/chem/emis/ccmi_1950_2100_rcp6/IPCC_emissions_SO2_surface_1850-2100_1.9x2.5_c130814.nc',
+   'SOAG  ->   $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_soag_1.5_surf_1850-2005_c130424.nc',
+   'bc_a4 ->   $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_bc_surf_1850-2005_c090804.nc',
+   'num_a1 ->  $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam4_num_a1_surf_1850-2005_c150205.nc',
+   'num_a2 ->  $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_num_a2_surf_1850-2005_c090804.nc',
+   'num_a4 ->  $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam4_num_a4_surf_1850-2005_c150205.nc',
+   'pom_a4 ->  $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_pom_surf_1850-2005_c130424.nc',
+   'so4_a1 ->  $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a1_surf_1850-2005_c090804.nc',
+   'so4_a2 ->  $INPUTDATA_ROOT/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a2_surf_1850-2005_c090804.nc'
+</srf_emis_specifier>
+
+
+</namelist_defaults>

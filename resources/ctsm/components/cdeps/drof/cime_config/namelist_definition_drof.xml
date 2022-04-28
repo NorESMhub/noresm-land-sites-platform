@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="namelist_definition.xsl"?>
+
+<entry_id version="2.0">
+
+  <entry id="streamslist">
+    <type>char(100)</type>
+    <category>streams</category>
+    <group>streams_file</group>
+    <desc>List of streams used for the given drof_mode.</desc>
+    <values>
+      <value drof_mode="CPLHIST">rof.cplhist</value>
+      <value drof_mode="DIATREN_ANN_RX1"      >rof.diatren_ann_rx1</value>
+      <value drof_mode="DIATREN_ANN_AIS00_RX1">rof.diatren_ann_ais00_rx1</value>
+      <value drof_mode="DIATREN_ANN_AIS45_RX1">rof.diatren_ann_ais45_rx1</value>
+      <value drof_mode="DIATREN_ANN_AIS55_RX1">rof.diatren_ann_ais55_rx1</value>
+      <value drof_mode="DIATREN_IAF_AIS00_RX1">rof.diatren_iaf_ais00_rx1</value>
+      <value drof_mode="DIATREN_IAF_RX1"      >rof.diatren_iaf_rx1</value>
+      <value drof_mode="DIATREN_IAF_AIS45_RX1">rof.diatren_iaf_ais45_rx1</value>
+      <value drof_mode="DIATREN_IAF_AIS55_RX1">rof.diatren_iaf_ais55_rx1</value>
+      <value drof_mode="IAF_JRA_1p4_2018"     >rof.iaf_jra_1p4_2018</value>
+      <value drof_mode="IAF_JRA"              >rof.iaf_jra</value>
+    </values>
+  </entry>
+
+  <entry id="datamode">
+    <type>char</type>
+    <category>drof</category>
+    <group>drof_nml</group>
+    <valid_values>copyall</valid_values>
+    <desc>
+      The runoff data is associated with the river model.
+      Copies all fields directly from the input data streams Any required
+      fields not found on an input stream will be set to zero.
+      The only datamode is copyall - the streams are determined by the xml variable $DROF_MODE
+      dataMode = "copyall"
+    </desc>
+    <values>
+      <value>copyall</value>
+    </values>
+  </entry>
+
+  <entry id="model_meshfile"> 
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>drof_nml</group>
+    <desc>
+      file specifying model mesh
+    </desc>
+    <values>
+      <value>$ROF_DOMAIN_MESH</value>
+      <value create_mesh='true'>null</value>
+    </values>
+  </entry>
+
+  <entry id="model_maskfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>drof_nml</group>
+    <desc>
+      file specifying model mask if not obtained from input model mesh
+    </desc>
+    <values>
+      <value>$ROF_DOMAIN_MESH</value>
+    </values>
+  </entry>
+
+  <entry id="model_createmesh_fromfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>drof_nml</group>
+    <desc>
+      file specifying model mesh
+    </desc>
+    <values>
+      <value>null</value>
+      <value create_mesh='true'>$ROF_DOMAIN_PATH/$ROF_DOMAIN_FILE</value>
+    </values>
+  </entry>
+
+  <entry id="nx_global" modify_via_xml="ROF_NX">
+    <type>integer</type>
+    <category>streams</category>
+    <group>drof_nml</group>
+    <desc>
+      global size of nx
+    </desc>
+    <values>
+      <value>$ROF_NX</value>
+    </values>
+  </entry>
+
+  <entry id="ny_global" modify_via_xml="ROF_NY">
+    <type>integer</type>
+    <category>streams</category>
+    <group>drof_nml</group>
+    <desc>
+      global size of ny
+    </desc>
+    <values>
+      <value>$ROF_NY</value>
+    </values>
+  </entry>
+
+  <entry id="restfilm">
+    <type>char</type>
+    <category>drof</category>
+    <group>drof_nml</group>
+    <desc>Master restart file name for drof model</desc>
+    <values>
+      <value>null</value>
+    </values>
+  </entry>
+
+</entry_id>

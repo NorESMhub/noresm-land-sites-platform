@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config_definition>
+
+<!--
+
+Sample env_run.xml file that allows build-namelist to be run for testing in this directory.
+
+-->
+<entry id="CASE"                 value="MYCASE"  /> 
+<entry id="CALENDAR"             value="NO_LEAP"  /> 
+<entry id="DIN_LOC_ROOT"         value="MYDINLOCROOT"  /> 
+<entry id="RUN_TYPE"             value="startup"  /> 
+<entry id="RUN_STARTDATE"        value="1850-01-01"  /> 
+<entry id="RUN_REFCASE"          value="case.std"  /> 
+<entry id="RUN_REFDATE"          value="1850-01-01"  /> 
+<entry id="CONTINUE_RUN"         value="FALSE"  /> 
+<entry id="RUNDIR"               value="."  /> 
+<entry id="NCPL_BASE_PERIOD"     value="year"  /> 
+<entry id="GLC_NCPL"             value="1"    /> 
+<entry id="GLC_TWO_WAY_COUPLING" value="TRUE"  /> 
+<entry id="CISM_EVOLVE"          value="TRUE"  /> 
+<entry id="CISM_USE_TRILINOS"    value="FALSE"  /> 
+<entry id="CISM_OBSERVED_IC"     value="FALSE"  /> 
+</config_definition>

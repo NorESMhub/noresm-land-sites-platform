@@ -1,0 +1,31 @@
+ISSUES REMAINING:
+
+NEEDED BEFORE PRODUCT IS FINISHED
+********************************************
+
+*) Include config-files for aerocom emissions
+
+*) Create historical, RCP60 and RCP85 for all fields BC/OC/SO2 (finish ipccConfig.xml)
+
+*) Allow reading of old ascii files. SOA.1x1 , check readpom.f under aerocomemis.
+The files aerocom.soxbb.fv19.asciiflat go into the cam program. Do this on netcdf format.
+
+*) Allow input-file for hight-scaling of emissions. Do this outside of program. All input-files must be 
+   on right grid when input to this program. Explain in manual how to do this.
+
+*) Correct OH in stratosphere. This is only special files which contain OH-concentration
+
+
+NICE TO DO / IMPROVEMENTS
+********************************************
+
+*) Same point as above, but for transforming yearly data to monthly data. Possibly this should also go 
+   outside program in stand-alone script.
+
+*) Allow scale-factor per sector to increase or increase sector emissions
+
+*) Speed up initial scanning of possible output files (this command is for example REALLY slow: python main.py -x ipccConfig.xml -s RCP85)
+
+*) Code clean up
+
+*) Create xml schema validator to validate configuration files (allowed sectors, allowed conversions etc)

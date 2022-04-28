@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<!-- Solar constant -->
+<solar_irrad_data_file    >   'atm/cam/solar/SolarForcingCMIP6_18491230-22991231_c171031.nc'</solar_irrad_data_file>
+
+<!-- GHG values -->
+<scenario_ghg            >    'CHEM_LBC_FILE'   </scenario_ghg>
+<!-- use waccm LBC file -->  
+<flbc_file>noresm-only/atm/cam/lb/cmip6_ghg_version20200717/ghg_cmip6_hist_ScenarioMIP_UoM-MESSAGE-GLOBIOM-ssp245-1-2-1-covid-version4.0-Base_2014-2051_annual_0p5degLat_version20200717.nc</flbc_file>
+<flbc_type>'SERIAL'</flbc_type>
+<flbc_list>'CO2','CH4','N2O','CFC11eq','CFC12'</flbc_list>
+
+<!-- ozone data -->
+<prescribed_ozone_datapath>   'atm/cam/ozone_strataero'                                                    </prescribed_ozone_datapath>
+<prescribed_ozone_file    >   'ozone_strataero_WACCM_L70_zm5day_18500101-21010201_CMIP6histEnsAvg_SSP245_c190403.nc' </prescribed_ozone_file>
+<prescribed_ozone_name    >   'O3'                                                                         </prescribed_ozone_name>
+<prescribed_ozone_type    >   'SERIAL'                                                                     </prescribed_ozone_type>
+
+<!-- Prescribed oxidants for aerosol chemistry -->
+<tracer_cnst_datapath     >   'atm/cam/tracer_cnst'                                        </tracer_cnst_datapath>
+<tracer_cnst_file         >   'tracer_cnst_halons_3D_L70_1849-2101_CMIP6ensAvg_SSP2-4.5_c190403.nc' </tracer_cnst_file>
+<tracer_cnst_specifier    >   'O3','OH','NO3','HO2'                                        </tracer_cnst_specifier>
+<tracer_cnst_type         >   'INTERP_MISSING_MONTHS'                                      </tracer_cnst_type>
+<tracer_cnst_filelist     >   ''                                                           </tracer_cnst_filelist>
+
+<!-- Surface emissions for MAMOslo -->
+<srf_emis_type> INTERP_MISSING_MONTHS </srf_emis_type>
+
+<!-- External forcing for MAMOslo -->
+<ext_frc_type>  INTERP_MISSING_MONTHS </ext_frc_type>
+
+<!-- surface emissions -->
+<srf_emis_specifier hgrid="0.9x1.25">
+  'BC_AX  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_AX_all_surface_2014-2051_0.9x1.25_version20200716.nc',
+  'BC_N   ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_N_all_surface_2014-2051_0.9x1.25_version20200716.nc',
+  'OM_NI  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_OM_NI_all_surface_2014-2051_0.9x1.25_version20200716.nc',
+  'SO2    ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO2_all_surface_2014-2051_0.9x1.25_version20200716.nc',
+  'SO4_PR ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO4_PR_all_surface_2014-2051_0.9x1.25_version20200716.nc'
+</srf_emis_specifier>
+<srf_emis_specifier hgrid="1.9x2.5">
+  'BC_AX  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_AX_all_surface_2014-2051_1.9x2.5_version20200716.nc',
+  'BC_N   ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_N_all_surface_2014-2051_1.9x2.5_version20200716.nc',
+  'OM_NI  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_OM_NI_all_surface_2014-2051_1.9x2.5_version20200716.nc',
+  'SO2    ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO2_all_surface_2014-2051_1.9x2.5_version20200716.nc',
+  'SO4_PR ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO4_PR_all_surface_2014-2051_1.9x2.5_version20200716.nc'
+</srf_emis_specifier>
+
+<!-- 3D emissions -->
+<ext_frc_specifier hgrid="0.9x1.25">
+  'H2O ->  $INPUTDATA_ROOT/atm/cam/chem/emis/elev/H2OemissionCH4oxidationx2_3D_L70_1849-2101_CMIP6ensAvg_SSP2-4.5_c190403.nc',
+  'BC_AX  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_AX_all_vertical_2014-2051_0.9x1.25_version20200716.nc',
+  'BC_N   ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_N_all_vertical_2014-2051_0.9x1.25_version20200716.nc',
+  'BC_NI  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_NI_all_vertical_2014-2051_0.9x1.25_version20200716.nc',
+  'OM_NI  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_OM_NI_all_vertical_2014-2051_0.9x1.25_version20200716.nc',
+  'SO2    ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO2_all_vertical_2014-2051_0.9x1.25_version20200716.nc',
+  'SO4_PR ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO4_PR_all_vertical_2014-2051_0.9x1.25_version20200716.nc'
+</ext_frc_specifier>
+<ext_frc_specifier hgrid="1.9x2.5">
+  'H2O ->  $INPUTDATA_ROOT/atm/cam/chem/emis/elev/H2OemissionCH4oxidationx2_3D_L70_1849-2101_CMIP6ensAvg_SSP2-4.5_c190403.nc',
+  'BC_AX  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_AX_all_vertical_2014-2051_1.9x2.5_version20200716.nc',
+  'BC_N   ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_N_all_vertical_2014-2051_1.9x2.5_version20200716.nc',
+  'BC_NI  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_BC_NI_all_vertical_2014-2051_1.9x2.5_version20200716.nc',
+  'OM_NI  ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_OM_NI_all_vertical_2014-2051_1.9x2.5_version20200716.nc',
+  'SO2    ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO2_all_vertical_2014-2051_1.9x2.5_version20200716.nc',
+  'SO4_PR ->  $INPUTDATA_ROOT/atm/cam/chem/emis/cmip6_emissions_version20200716/emissions_cmip6_noresm2_ScenarioMIP_IAMC-MESSAGE-GLOBIOM-ssp245-1-1-covid-version4.0-baseline_SO4_PR_all_vertical_2014-2051_1.9x2.5_version20200716.nc'
+</ext_frc_specifier>
+
+
+<clubb_gamma_coef hgrid="0.9x1.25">0.286</clubb_gamma_coef>
+<clubb_gamma_coef hgrid="1.9x2.5" >0.264</clubb_gamma_coef>
+
+<!-- dyn_fv-->
+<fv_high_order_top> .false. </fv_high_order_top>
+<fv_am_geom_crrct> .true. </fv_am_geom_crrct>
+<fv_am_correction> .true. </fv_am_correction>
+<fv_am_fixer>      .true. </fv_am_fixer>
+<fv_am_fix_lbl>    .true. </fv_am_fix_lbl>
+<fv_am_diag>       .true. </fv_am_diag>
+
+<!--diagnostics-->
+<do_circulation_diags> .true. </do_circulation_diags>
+
+<!--phys_ctl_nl-->
+<dme_energy_adjust> .true. </dme_energy_adjust>
+  
+<!--zmconv_nl-->
+<zmconv_c0_lnd> 0.0200D0 </zmconv_c0_lnd>
+<zmconv_c0_ocn> 0.0200D0 </zmconv_c0_ocn>
+
+<zmconv_ke>     8.0E-6 </zmconv_ke>
+<zmconv_ke_lnd> 8.0E-6 </zmconv_ke_lnd>
+
+
+<!--micro_mg_nl-->
+<micro_mg_dcs hgrid="0.9x1.25">5.5e-4</micro_mg_dcs>
+<micro_mg_dcs hgrid="1.9x2.5" >5.0e-4</micro_mg_dcs>
+
+<!--gw_drag_nl-->
+<tau_0_ubc>  .true.   </tau_0_ubc>
+
+<!--cldfrc_nl-->
+<cldfrc_iceopt hgrid="1.9x2.5"> 4 </cldfrc_iceopt>
+
+<!--cldfrc2m_nl-->
+<cldfrc2m_rhmini hgrid="0.9x1.25">0.90D0</cldfrc2m_rhmini>
+
+<!--Options for megan -->
+<megan_specifier>'isoprene = isoprene','monoterp = myrcene + sabinene + limonene+ carene_3 + ocimene_t_b + pinene_b + pinene_a'</megan_specifier>
+
+<!--set SOA emissions since reading emissions from MEGAN -->
+<isoprene_oslo_emis_file>noresm-only/atm/cam/chem/trop_mozart_aero/emis/soanucl/bvocgcmFV19_isopr_1850_2000_zero.nc </isoprene_oslo_emis_file>
+<monoterp_oslo_emis_file>noresm-only/atm/cam/chem/trop_mozart_aero/emis/soanucl/bvocgcmFV19_monoterp_1850_2000_zero.nc </monoterp_oslo_emis_file>
+
+<!-- sim_year used for CLM datasets and SSTs forcings -->
+<sim_year>1850</sim_year>
+
+<!-- CMIP6 climatological volcanic background forcing -->
+<!--prescribed_strataero_file>' '</prescribed_strataero_file-->
+<prescribed_volcaero_type>'INTERP_MISSING_MONTHS'</prescribed_volcaero_type>
+<prescribed_volcaero_datapath>atm/cam/volc</prescribed_volcaero_datapath>
+<prescribed_volcaero_file>CMIP_CAM6_radiation_v3_reformatted.nc</prescribed_volcaero_file>
+<rad_climate>'A:Q:H2O','N:O2:O2','N:CO2:CO2','N:ozone:O3','N:N2O:N2O','N:CH4:CH4','N:CFC11:CFC11','N:CFC12:CFC12'</rad_climate>
+
+</namelist_defaults>

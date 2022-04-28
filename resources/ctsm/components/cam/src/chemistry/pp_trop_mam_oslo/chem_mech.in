@@ -1,0 +1,109 @@
+BEGSIM 
+  SPECIES
+
+      Solution
+ SO2, H2SO4
+ DMS -> CH3SCH3, H2O2
+ SO4_NA->H2SO4, SO4_A1->H2SO4, SO4_A2->NH4HSO4
+ SO4_AC->H2SO4, SO4_PR->H2SO4, BC_N->C
+ BC_AX->C, BC_NI->C, BC_A->C, BC_AI->C 
+ BC_AC->C, OM_NI->C, OM_AI->C, OM_AC->C
+ DST_A2->AlSiO5, DST_A3->AlSiO5
+ SS_A1->NaCl, SS_A2->NaCl, SS_A3->NaCl
+* Approximate soa species with those of monoterpene oxidation products
+* based on Paasonen et al. (2010); Taipale et al. (2008). 
+ SOA_NA->C10H16O2, SOA_A1->C10H16O2
+ SOA_LV ->C10H16O2, SOA_SV->C10H16O2
+ monoterp -> C10H16, isoprene -> C5H8
+ H2O
+   End Solution
+
+      Fixed
+ M, N2, O2, O3, OH, NO3, HO2
+      End Fixed
+
+      Col-int
+ O3 = 0.
+ O2 = 0.
+      End Col-int
+
+   End SPECIES
+
+   Solution Classes
+      Explicit
+      End Explicit
+      Implicit
+        DMS, SO2, H2O2
+        SO4_NA, SO4_A1, SO4_A2
+        SO4_AC, SO4_PR, BC_N
+        BC_AX, BC_NI, BC_A, BC_AI 
+        BC_AC, OM_NI, OM_AI, OM_AC
+        DST_A2, DST_A3
+        SS_A1, SS_A2, SS_A3 , H2SO4
+        SOA_NA, SOA_A1
+	SOA_LV,SOA_SV, monoterp, isoprene
+        H2O
+      End Implicit
+   End Solution Classes
+
+ CHEMISTRY
+      Photolysis
+ [jh2o2]    H2O2 + hv ->
+      End Photolysis
+
+      Reactions
+ [usr_HO2_HO2] HO2 + HO2 -> H2O2
+               H2O2 + OH -> H2O + HO2                                           ; 2.9e-12, -160
+               DMS + OH -> SO2                                                  ; 9.6e-12, -234.
+               DMS + NO3 -> SO2 + HNO3                                          ; 1.9e-13,  520.
+               SO2 + OH + M -> H2SO4 + M                                      ; 3.0e-31, 3.3, 1.5e-12, 0.0, 0.6
+* SOA has MW=168, and MSA=96, so to get correct MSA mass ==> factor of 96/168 = 0.57
+* Then account for 0.25 which is 0.25 MSA molec per DMS molec (the other 0.75 goes to SO2)
+* Then 0.2 assumed yield for SOA_LV and 0.8 assumed  yield for SOA_SV gives the coefficients below
+* reaction rate from Chin et al 1996, JGR, vol 101, no D13
+* 
+ [usr_DMS_OH]  DMS + OH -> .75 * SO2 + .5 * HO2 + 0.029*SOA_LV + 0.114*SOA_SV
+*
+*cka: added organic vapor oxidation with constants from IUPAC below
+*     Assume a  yield of 15% for SOA LV production from these reactions
+*     Assume a  yield of 15 % for monoterpene and 5% for isoprene SOA SV production reactions
+*     SOA_LV: very low volatility, can nucleate or grow small particles (oxidation products from O3+monoterp)
+*     SOA_SV: rest of SOA formed
+	       monoterp + O3 -> .15*SOA_LV 			; 8.05e-16, -640.
+	       monoterp + OH -> .15*SOA_SV			; 1.2e-11, 440.
+	       monoterp + NO3 -> .15*SOA_SV			; 1.2e-12, 490.
+	       isoprene + O3 -> .05*SOA_SV			; 1.03e-14, -1995.
+	       isoprene + OH -> .05*SOA_SV 			; 2.7e-11, 390.
+	       isoprene + NO3 -> .05*SOA_SV 			; 3.15e-12, -450.
+      End Reactions
+
+      Heterogeneous
+          H2O2, SO2
+      End Heterogeneous
+
+      Ext Forcing
+          SO2 <- dataset
+          BC_NI <-dataset
+          BC_AX <-dataset
+          BC_N <-dataset
+          OM_NI <-dataset
+          SO4_PR <-dataset
+          H2O <- dataset
+      End Ext Forcing
+
+   END CHEMISTRY
+
+   SIMULATION PARAMETERS
+
+     Version Options
+        model   = cam
+        machine = intel
+        architecture = hybrid
+        vec_ftns  = on
+        multitask = on
+        namemod = on
+        modules = on
+     End Version Options
+
+   END SIMULATION PARAMETERS
+ENDSIM

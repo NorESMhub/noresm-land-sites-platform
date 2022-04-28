@@ -1,0 +1,47 @@
+# directories checked out by manage_externals, and other files created
+# by manage_externals
+manage_externals.log
+source_cism/
+cime/
+components/
+
+# ignore svn directories
+**/.svn/**
+.svn/
+
+# binary files
+*.nc
+
+# editor files
+*.swp
+*~
+
+# build-namelist files
+cism.input_data_list
+cism.config
+cism_in
+config_cache.xml
+
+# mac files
+.DS_Store
+
+# cmake generated files
+build/
+CMakeFiles/
+
+# build output
+*.o
+*.mod
+core.*
+*.gz
+*.log !run.log
+
+
+# unit test:
+test/unit/time_management/Depends
+test/unit/time_management/dtypes.h
+test/unit/time_management/shr_infnan_mod.F90
+test/unit/time_management/time_management_test
+test/unit/time_management/time_management_test_in
+
+

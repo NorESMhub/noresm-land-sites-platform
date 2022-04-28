@@ -1,0 +1,7 @@
+c     boelgelengde (i um), reell og kompleks brytningsindeks for 
+c     OC i synlig lys. Verdiene er fra Ghan et al. (2001).
+
+c  lambda    nr      ni   
+ 
+   0.2       1.55    0.0        
+   5.0       1.55    0.0        

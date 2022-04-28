@@ -1,0 +1,2 @@
+! This includes the default list (given first) as well as some extra variables needed for cmip6 runs with an evolving ice sheet
+cesm_history_vars = 'smb artm thk usurf topg uvel vvel temp bmlt bwat beta_internal floating_mask grounded_mask bpmp acab_applied bmlt_applied calving_rate iareaf iareag imass imass_above_flotation total_smb_flux total_bmb_flux total_calving_flux total_gl_flux bheatflx basal_mbal_flux calving_flux btemp sfc_mbal_flux cell_area tempstag ice_mask btract ubas uvel_mean usfc vbas vvel_mean vsfc wbas wsfc'

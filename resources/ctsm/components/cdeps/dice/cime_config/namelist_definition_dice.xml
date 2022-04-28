@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="namelist_definition.xsl"?>
+
+<entry_id version="2.0">
+
+  <!-- Values to use by default for creation of DICE model namelists.
+       NOTE: In the value matches below, regular expressions are used ****
+       If two matches are equivalent, the FIRST one will be used, so need to make sure
+       that matches are not equivalent if possible
+	 As an example, say dice_mode=SSMI_IAF
+         the following order would result in an incorrect setting of streams for this dice_mode
+              <value dice_mode="ssmi"    >ssmi</value>
+              <value dice_mode="ssmi_iaf">ssmi_iaf</value>
+         the following order would result in an correct setting of streams for this dice_mode
+              <value dice_mode="ssmi$"   >ssmi</value>
+              <value dice_mode="ssmi_iaf">ssmi_iaf</value>
+  -->
+
+  <entry id="streamslist">
+    <type>char(100)</type>
+    <category>streams</category>
+    <group>streams_file</group>
+    <desc>List of streams used for the given dice_mode.</desc>
+    <values>
+      <value dice_mode="ssmi_iaf">ssmi_iaf</value>
+      <value dice_mode="ssmi">ssmi_nyf</value>
+    </values>
+  </entry>
+
+  <entry id="datamode">
+    <type>char</type>
+    <category>streams</category>
+    <group>dice_nml</group>
+    <valid_values>ssmi,ssmi_iaf</valid_values>
+    <desc>
+      general method that operates on the data.
+      Is a prognostic mode. It requires data be sent to the ice  model.
+      Ice fraction (extent) data is read from an input stream,
+      atmosphere state variables are received from the mediator, and then
+      atmosphere-ice surface fluxes are computed and sent to the mediator.
+    </desc>
+    <values>
+      <value dice_mode="ssmi_iaf">ssmi_iaf</value>
+      <value dice_mode="ssmi">ssmi</value>
+    </values>
+  </entry>
+
+  <entry id="model_meshfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>dice_nml</group>
+    <desc>file specifying model mesh</desc>
+    <values>
+      <value>$ICE_DOMAIN_MESH</value>
+      <value scol_mode='true'>null</value>
+      <value create_mesh='true'>null</value>
+    </values>
+  </entry>
+
+  <entry id="model_maskfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>dice_nml</group>
+    <desc>
+      file specifying model mask if not obtained from input model mesh
+    </desc>
+    <values>
+      <value>$ICE_DOMAIN_MESH</value>
+      <value scol_mode='true'>$ICE_DOMAIN_PATH/$ICE_DOMAIN_FILE</value>
+      <value create_mesh='true'>$ICE_DOMAIN_PATH/$ICE_DOMAIN_FILE</value>
+      <value set_model_maskfile='true'>$ICE_DOMAIN_PATH/$ICE_DOMAIN_FILE</value>
+    </values>
+  </entry>
+
+  <entry id="model_createmesh_fromfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>dice_nml</group>
+    <desc>file specifying if model mesh is to be created at runtime</desc>
+    <values>
+      <value>null</value>
+      <value scol_mode='true'>$ICE_DOMAIN_PATH/$ICE_DOMAIN_FILE</value>
+      <value create_mesh='true'>$ICE_DOMAIN_PATH/$ICE_DOMAIN_FILE</value>
+    </values>
+  </entry>
+
+  <entry id="nx_global" modify_via_xml="ICE_NX">
+    <type>integer</type>
+    <category>streams</category>
+    <group>dice_nml</group>
+    <desc>
+      global size of nx
+    </desc>
+    <values>
+      <value>$ICE_NX</value>
+    </values>
+  </entry>
+
+  <entry id="ny_global" modify_via_xml="ICE_NY">
+    <type>integer</type>
+    <category>streams</category>
+    <group>dice_nml</group>
+    <desc>
+      global size of ny
+    </desc>
+    <values>
+      <value>$ICE_NY</value>
+    </values>
+  </entry>
+
+  <entry id="flux_qacc">
+    <type>logical</type>
+    <category>dice</category>
+    <group>dice_nml</group>
+    <desc>
+      activates water accumulation/melt wrt Q
+    </desc>
+    <values>
+      <value>.true.</value>
+    </values>
+  </entry>
+
+  <entry id="flux_qacc0">
+    <type>real</type>
+    <category>dice</category>
+    <group>dice_nml</group>
+    <desc>
+      initial water accumulation value
+    </desc>
+    <values>
+      <value>0.</value>
+    </values>
+  </entry>
+
+  <entry id="flux_qmin">
+    <type>real</type>
+    <category>dice</category>
+    <group>dice_nml</group>
+    <desc>
+      bound on melt rate
+    </desc>
+    <values>
+      <value>-300.e0</value>
+    </values>
+  </entry>
+
+  <entry id="flux_swpf">
+    <type>real</type>
+    <category>dice</category>
+    <group>dice_nml</group>
+    <desc>
+      short-wave penatration factor
+    </desc>
+    <values>
+      <value>0.</value>
+    </values>
+  </entry>
+
+  <entry id="restfilm">
+    <type>char</type>
+    <category>dice</category>
+    <group>dice_nml</group>
+    <desc>
+      Model restart filename for the data ice model data.  This is optional.
+      If restfilm is null, the restart filename will
+      be read from the ICE restart pointer file (or files for multiple instances).
+    </desc>
+    <values>
+      <value>null</value>
+    </values>
+  </entry>
+
+</entry_id>

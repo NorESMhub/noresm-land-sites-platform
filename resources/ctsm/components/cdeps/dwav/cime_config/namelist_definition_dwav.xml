@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="namelist_definition.xsl"?>
+
+<entry_id version="2.0">
+
+  <!-- Values to use by default for creation of DWAV model dwav namelists. -->
+
+  <entry id="streamslist">
+    <type>char(100)</type>
+    <category>streams</category>
+    <group>streams_file</group>
+    <desc>List of streams used for the given dwav_mode.</desc>
+    <values>
+      <value dwav_mode="CLIMO">climo</value>
+    </values>
+  </entry>
+
+  <entry id="datamode">
+    <type>char</type>
+    <category>dwav</category>
+    <group>dwav_nml</group>
+    <valid_values>copyall</valid_values>
+    <desc>
+      The wave data is associated with the wave model
+      and is normally on a different grid than the ocean data.
+      datamode = "copyall"
+      Copies all fields directly from the input data streams Any required
+      fields not found on an input stream will be set to zero.
+      Set by the following xml variables in env_run.xml DWAV_MODE
+      specifies values for wav mode: copyall
+    </desc>
+    <values>
+      <value>copyall</value>
+    </values>
+  </entry>
+
+  <entry id="model_meshfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>dwav_nml</group>
+    <desc>
+      file specifying model mesh
+    </desc>
+    <values>
+      <value>$WAV_DOMAIN_MESH</value>
+      <value create_mesh='true'>null</value>
+    </values>
+  </entry>
+
+  <entry id="model_maskfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>dwav_nml</group>
+    <desc>
+      file specifying model mask if not obtained from input model mesh
+    </desc>
+    <values>
+      <value>$WAV_DOMAIN_MESH</value>
+    </values>
+  </entry>
+
+  <entry id="model_createmesh_fromfile">
+    <type>char</type>
+    <category>streams</category>
+    <input_pathname>abs</input_pathname>
+    <group>dwav_nml</group>
+    <desc>
+      file specifying model mesh
+    </desc>
+    <values>
+      <value>null</value>
+      <value create_mesh='true'>$WAV_DOMAIN_PATH/$WAV_DOMAIN_FILE</value>
+    </values>
+  </entry>
+
+  <entry id="nx_global" modify_via_xml="WAV_NX">
+    <type>integer</type>
+    <category>streams</category>
+    <group>dwav_nml</group>
+    <desc>
+      global size of nx
+    </desc>
+    <values>
+      <value>$WAV_NX</value>
+    </values>
+  </entry>
+
+  <entry id="ny_global" modify_via_xml="WAV_NY">
+    <type>integer</type>
+    <category>streams</category>
+    <group>dwav_nml</group>
+    <desc>
+      global size of ny
+    </desc>
+    <values>
+      <value>$WAV_NY</value>
+    </values>
+  </entry>
+
+  <entry id="restfilm">
+    <type>char</type>
+    <category>dwav</category>
+    <group>dwav_nml</group>
+    <desc>
+      Master restart file name for dwav model
+    </desc>
+    <values>
+      <value>null</value>
+    </values>
+  </entry>
+
+</entry_id>

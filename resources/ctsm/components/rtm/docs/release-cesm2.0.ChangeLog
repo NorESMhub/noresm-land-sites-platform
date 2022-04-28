@@ -1,0 +1,111 @@
+===============================================================
+Tag name:  release-cesm2.0.02
+Originator(s): erik
+Date: Oct 19, 2018
+One-line Summary: Fix some issues with nag compiler, remove rtmhist_ndens==2 option
+
+basetype wasn't declared and needed to be. Also add more "implicit none"
+statements in. Remove the deletion of "rtm.input_data_list" file, as cime
+now does this. Remove the option of setting single-precision
+history output, as it sometimes has numerical conversion issues. The
+real solution for it should be to keep a single-precision history
+buffer that then outputs at the same precision as stored, rather than
+converting just before. This would trigger issues with the conversion
+earlier.
+
+RTM Master Tag This Corresponds To: rtm1_0_66 (with changes)
+
+Software Changes since last release: release-cesm2.0.01
+  * Fix issues with nag compiler
+  * Remove single precision output option
+
+Science Changes since last release: release-cesm2.0.00
+  * None
+
+Changes to User Interface since: release-cesm2.0.00
+  * rtmhist_ndens can no longer equal 2.
+
+Pull Requests that document the changes (include PR ids):
+   #10 -- Fix some issues with nag compiler
+
+Testing:
+   rtm testlist on hobart and cheyenne (PASS)
+
+
+===============================================================
+Tag name:  release-cesm2.0.01
+Originator(s): erik
+Date: Oct 10, 2018
+One-line Summary: pylint cleanup, and fill value changes for pio2
+
+Changes ported from mosart/#15 to rtm. Run pylint through buildlib/buildnml,
+changes for fill value needed for pio2. Also use the floor operator
+for a specific integer divide as python3 turns it into reals.
+
+RTM Master Tag This Corresponds To: rtm1_0_66 (with changes)
+
+Purpose:
+
+Software Changes since last release: release-cesm2.0.00
+  * pylint on buildlib/buildnml
+  * fill value changes needed for pio2 from the mosart changes
+  * Use floor operator in buildnml for an integer division
+
+Science Changes since last release: release-cesm2.0.00
+  * None
+
+Changes to User Interface since: release-cesm2.0.00
+  * None
+
+Pull Requests that document the changes (include PR ids):
+   #9 -- Same changes on mosart fill-value and pylint cleanup on rtm enhancement
+
+Testing:
+   rtm testlist on hobart and cheyenne (PASS)
+
+===============================================================
+Tag name:  release-cesm2.0.00
+Originator(s): erik
+Date: May 21, 2018
+One-line Summary: First CESM2.0 release version, identical to rtm1_0_66
+
+Purpose:
+
+First RTM version for the CESM2.0 release. This tag is identical to rtm1_0_66
+
+RTM Master Tag This Corresponds To: rtm1_0_66
+
+Software Changes since last release: rtm1_0_30
+
+  * Add in model_doi_url read in from infodata from coupler.
+  * RTM own's version of config_archive.xml
+  * Remove old rof_comp_esmf
+  * Remove revision_id from output files
+  * Convert testlist format to version 2, and use new Clm5 compset names.
+  * Remove yellowstone tests.
+  * Update config_component.xml to version 3 format.
+  * if NINST_RTM > 1, will check if REFCASE has instance name and use it, otherwise without it.
+  * I/O fixes from Jim Edwards
+  * Update buildnamelist to cime5 python namelist infrastructure
+  * Add time period frequency to output history file
+  * Remove ESMF top level coupler interface and tests
+  * Have RTM react to CLM_ACCELERATED_SPINUP setting from CLM and turn itself off
+  * Update to newer cime versions
+  * Move tests from goldbach to hobart
+  * Don't assume that direction files are global
+  * NAG6.0 requires additional pointers to be nullified
+  * readnamelist on mastertask only
+  * PIO2 Compatibility changes
+  * address valgrind errors
+  * add SHR_ASSERT macros
+  * migration of cpl_share/, cpl_esmf/ and cpl_mct code into new cpl/ and introduction of rof_import_export.F90
+
+Science Changes since last release: rtm1_0_30
+
+  * Treat irrigation as a seperate flux
+  * Remove directo to ocean runnoff
+  * fix fthresh bug and refactor RtmFloodInit
+  * convert volr coupling field from state to flux
+  * RTM Master Tag this corresponds to: rtm1_0_66
+
+===============================================================

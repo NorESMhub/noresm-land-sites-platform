@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='us-ascii'?> 
+
+<!-- SAMPLE INPUT SPECIFICATION FOR CAM-OSLO  --> 
+
+<CamOsloInputConfiguration>
+
+	<inputDataPath name="/disk1/alfg/linkToNorstoreEmissions/"/>
+	<outputDataPath name="/disk1/alfg/camOsloEmis"/>
+
+	<outputfiles>
+
+		<!-- HISTORICAL EVOLUTION OF BC FOSSIL FUEL EMISSIONS  -->
+		<outputfile
+					name="BC_ff_1850_2005.nc"
+               levels="6"
+               levelValues="150,500,600,1600,3000,6000"
+               >
+			<inputfile 
+						path=""
+	    	  			name="cmipemis/IPCC_emissions_BC_anthropogenic_$year$_0.5x0.5_v1_21_05_2009.nc"
+		  	  			provider="IPCC"
+                  levelValues="150,500,600,1600,3000,6000"
+		      		year="1850,1860">
+				<fields>
+		  			<!-- possible fields are emissionLevel=n, output=override.nc"-->
+					<field name="emiss_dom" sector="domestic"/>
+					<field name="emiss_ene" sector="energy"/>
+					<field name="emiss_ind" sector="industry" level="3"/>
+					<field name="emiss_tra" sector="traffic"/>
+					<field name="emiss_wst" sector="wasteburning"/>
+					<field name="emiss_awb" sector="agriculturalwaste"/>
+		  		</fields>
+			</inputfile>
+		</outputfile>
+
+  </outputfiles>
+</CamOsloInputConfiguration>

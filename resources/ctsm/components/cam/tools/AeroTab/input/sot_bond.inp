@@ -1,0 +1,9 @@
+c     boelgelengde (i um), reell og kompleks brytningsindeks for 
+c     sot i V og IR. Verdiene er fra Scarnato et al. (2013), (0.2-1um egentlig)
+
+c  lambda    nr      ni   
+ 
+   0.2       1.95     0.79        
+ 100.0       1.95     0.79        
+
+ 

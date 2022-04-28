@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='us-ascii'?> 
+
+<!-- SAMPLE INPUT SPECIFICATION FOR CAM-OSLO  --> 
+
+<CamOsloInputConfiguration>
+
+	<inputDataPath name="/disk1/alfg/linkToNorstoreEmissions"/>
+	<outputDataPath name="/disk1/alfg/camOsloEmis"/>
+
+	<outputfiles>
+
+		<!--START COMPONENT BLACK CARBON -->
+
+		<!-- HISTORICAL EVOLUTION OF BC FOSSIL FUEL EMISSIONS  -->
+		<outputfile
+					name="OH_CTM2.nc"
+					field="Ozone"
+					component="O3"
+					source = "oxidants"
+		  	  		provider="OsloCTM2"
+					scenario="historical"
+					levels="26"
+					bottomLevel="1000"
+					levelValues="992 , 970 , 930 , 867 , 787 , 696 , 600 , 510 , 433 , 368 , 313 , 266, 226 , 192 , 163, 139 , 118 , 100 , 85 , 70 , 53 , 37 , 23 , 13 , 7 , 3.5"
+					>
+			<inputfile 
+	    	  			name="oxidants/OXI_$year$.nc"
+		      			year="JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC">
+				<fields>
+					<field name="O3" sector="oxidant"/>
+		  		</fields>
+			</inputfile>
+		</outputfile>
+
+		<outputfile
+					name="H2O2_CTM2.nc"
+					field="H2O2"
+					component="H2O2"
+					source = "oxidants"
+		  	  		provider="OsloCTM2"
+					scenario="historical"
+					levels="26"
+					bottomLevel="1000"
+					levelValues="992 , 970 , 930 , 867 , 787 , 696 , 600 , 510 , 433 , 368 , 313 , 266, 226 , 192 , 163, 139 , 118 , 100 , 85 , 70 , 53 , 37 , 23 , 13 , 7 , 3.5"
+					>
+			<inputfile 
+	    	  			name="oxidants/OXI_$year$.nc"
+		      			year="JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC">
+				<fields>
+					<field name="OH" sector="oxidant"/>
+		  		</fields>
+			</inputfile>
+		</outputfile>
+
+		<outputfile
+					name="OH_CTM2.nc"
+					field="OH"
+					component="OH"
+					source = "oxidants"
+		  	  		provider="OsloCTM2"
+					scenario="historical"
+					levels="26"
+					bottomLevel="1000"
+					levelValues="992 , 970 , 930 , 867 , 787 , 696 , 600 , 510 , 433 , 368 , 313 , 266, 226 , 192 , 163, 139 , 118 , 100 , 85 , 70 , 53 , 37 , 23 , 13 , 7 , 3.5"
+					>
+			<inputfile 
+	    	  			name="oxidants/OXI_$year$.nc"
+		      			year="JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC">
+				<fields>
+					<field name="H2O2" sector="oxidant"/>
+		  		</fields>
+			</inputfile>
+		</outputfile>
+  </outputfiles>
+
+
+</CamOsloInputConfiguration>

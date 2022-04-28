@@ -1,0 +1,119 @@
+======================================================================
+Tag: vendor_clubb_r8099_n02
+Tag creator: cacraig, vlarson
+Date created: Oct 4, 2017
+
+Comment: 
+   This tag was created to bring in the changes to saturation.F90 (rev 8471) from Vince Larson.  Vince's comment follows:
+
+     "I clipped temperature within the Goff-Gratch functions for saturation over liquid and ice.
+     The goal was to avoid the creation of NaNs that caused CAM to crash over the Himalayas.
+     The result of applying a minimal threshold on temperature is to set saturation to the same small
+     value in all cold areas.
+
+     To test the code change, I ran the priority single-column cases and determined that the new code
+     produces bin-diff identical results for these cases. That just means that these cases are not cold.
+     However, the code change might increase
+     saturation in cold areas in CAM, thereby diminishing condensation in the upper atmosphere.
+     It would be prudent to check a WACCM simulation for degradation. If there is degradation,
+     the minimum temperatures could be set to smaller values."
+
+Command(s) issued:
+   svn co http://carson.math.uwm.edu/repos/clubb_repos/trunk/src/CLUBB_core  (revision # at UWM was 8471)
+   replace saturation.F90
+
+Status:
+M       saturation.F90
+M       ChangeLog
+
+======================================================================
+Tag: clubb_r8099
+Tag creator: bogensch
+Date created: May 17, 2016
+Command(s) issued:
+   svn co https://svn-ccsm-models.cgd.ucar.edu/clubb_core/vendor_trunk
+   cd vendor_trunk
+   svn merge -r8029:8099 http://carson.math.uwm.edu/repos/clubb_repos/trunk/src/CLUBB_core
+
+Status:
+M       ChangeLog
+M       advance_clubb_core_module.F90
+M       advance_helper_module.F90
+M       advance_windm_edsclrm_module.F90
+M       advance_wp2_wp3_module.F90
+M       advance_xm_wpxp_module.F90
+M       clubb_api_module.F90
+M       model_flags.F90
+M       parameter_indices.F90
+M       parameters_tunable.F90
+M       stats_variables.F90
+M       stats_zm_module.F90
+M       stats_zt_module.F90
+
+======================================================================
+Tag: clubb_r8029
+Tag creator: cacraig
+Date created: April 7, 2016
+Command(s) issued:
+   svn co https://svn-ccsm-models.cgd.ucar.edu/clubb_core/vendor_trunk clubb_r8029-TRUNK
+   cd clubb_r8029-TRUNK
+   svn merge -r7416:8029 http://carson.math.uwm.edu/repos/clubb_repos/trunk/src/CLUBB_core
+   svn resolve --accept=working Skw_module.F90
+   svn delete Skw_module.F90
+
+Status:
+M       ChangeLog
+A       Skx_module.F90
+D       Skw_module.F90
+M       advance_clubb_core_module.F90
+M       advance_helper_module.F90
+M       advance_xm_wpxp_module.F90
+A       calc_roots.F90
+M       clubb_api_module.F90
+A       code_timer_module.F90
+M       constants_clubb.F90
+M       corr_varnce_module.F90
+M       csr_matrix_module.F90
+M       endian.F90
+M       file_functions.F90
+M       gmres_cache.F90
+M       grid_class.F90
+M       hydromet_pdf_parameter_module.F90
+M       input_reader.F90
+M       interpolation.F90
+M       matrix_operations.F90
+M       model_flags.F90
+M       mt95.f90
+M       output_grads.F90
+M       output_netcdf.F90
+M       parameter_indices.F90
+M       parameters_model.F90
+M       parameters_tunable.F90
+M       pdf_closure_module.F90
+M       pdf_parameter_module.F90
+M       pdf_utilities.F90
+A       precipitation_fraction.F90
+M       saturation.F90
+M       setup_clubb_pdf_params.F90
+M       sponge_layer_damping.F90
+M       stat_file_module.F90
+M       stats_clubb_utilities.F90
+M       stats_lh_zt_module.F90
+M       stats_sfc_module.F90
+M       stats_type.F90
+M       stats_type_utilities.F90
+M       stats_variables.F90
+M       stats_zm_module.F90
+M       stats_zt_module.F90
+M       variables_diagnostic_module.F90
+M       variables_prognostic_module.F90
+
+======================================================================
+Tag: clubb_r7416
+Tag creator: cacraig
+Date created: April 7, 2016
+Command(s) issued:
+   svn co -r7416 http://carson.math.uwm.edu/repos/clubb_repos/trunk/src/CLUBB_core clubb_r7416
+   svn import clubb_r7416 http://svn-ccsm-models.cgd.ucar.edu/clubb_core_vendor_trunk -m"Initial checkout of revision 7416
+
+======================================================================
