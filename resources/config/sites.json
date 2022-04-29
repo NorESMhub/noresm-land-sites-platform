@@ -18,15 +18,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/ALP1/surfdata_ALP1_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/ALP1/surfdata_ALP1_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -104,15 +104,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/ALP2/surfdata_ALP2_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/ALP2/surfdata_ALP2_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -190,15 +190,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/ALP3/surfdata_ALP3_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/ALP3/surfdata_ALP3_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -276,15 +276,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/ALP4/surfdata_ALP4_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/ALP4/surfdata_ALP4_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -362,15 +362,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/SUB1/surfdata_SUB1_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/SUB1/surfdata_SUB1_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -448,15 +448,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/SUB2/surfdata_SUB2_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/SUB2/surfdata_SUB2_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -534,15 +534,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/SUB3/surfdata_SUB3_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/SUB3/surfdata_SUB3_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -620,15 +620,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/SUB4/surfdata_SUB4_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/SUB4/surfdata_SUB4_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -706,15 +706,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/BOR1/surfdata_BOR1_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/BOR1/surfdata_BOR1_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -792,15 +792,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/BOR2/surfdata_BOR2_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/BOR2/surfdata_BOR2_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -878,15 +878,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/BOR3/surfdata_BOR3_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/BOR3/surfdata_BOR3_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",
@@ -964,15 +964,15 @@
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "atm/datm7/GSWP3v1"
+            "value": "inputdata/atm/datm7/GSWP3v1"
           },
           {
             "name": "fsurdat",
-            "value": "lnd/clm2/surfdata_map/BOR4/surfdata_BOR4_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/BOR4/surfdata_BOR4_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",
-            "value": "lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.14.0.0_12pft_c200921.nc"
           },
           {
             "name": "pft_index_count",

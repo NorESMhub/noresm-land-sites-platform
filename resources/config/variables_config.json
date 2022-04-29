@@ -27,8 +27,7 @@
         "NO_LEAP",
         "GREGORIAN"
       ]
-    },
-    "default": "GREGORIAN"
+    }
   },
   {
     "name": "DATM_CLMNCEP_YR_START",
@@ -156,16 +155,6 @@
     }
   },
   {
-    "name": "use_bedrock",
-    "category": "user_nl_clm",
-    "type": "logical",
-    "description": {
-      "summary": "If selected, use variable soil depth.",
-      "details": "If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi)."
-    },
-    "default": false
-  },
-  {
     "name": "fates_paramfile",
     "category": "user_nl_clm",
     "type": "char",
@@ -223,6 +212,26 @@
     }
   },
   {
+    "name": "use_bedrock",
+    "category": "user_nl_clm",
+    "type": "logical",
+    "description": {
+      "summary": "If selected, use variable soil depth.",
+      "details": "If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi)."
+    },
+    "default": false
+  },
+  {
+    "name": "hist_dov2xy",
+    "category": "user_nl_clm",
+    "type": "logical",
+    "description": {
+      "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
+      "details": "Some PFT information only available in this 1D string by setting this to false"
+    },
+    "default": true
+  },
+  {
     "name": "hist_fincl2",
     "category": "user_nl_clm",
     "type": "char",
@@ -245,6 +254,8 @@
       "summary": "Per file averaging flag.",
       "details": "'A' (average over history period)<br>'I' (instantaneous)<br>'X' (maximum over history period)<br>'M' (minimum over history period)"
     },
+    "allow_multiple": true,
+    "count_depends_on": "hist_fincl2",
     "validation": {
       "choices": [
         "A",
@@ -255,22 +266,14 @@
     }
   },
   {
-    "name": "hist_dov2xy",
-    "category": "user_nl_clm",
-    "type": "logical",
-    "description": {
-      "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
-      "details": "Some PFT information only available in this 1D string by setting this to false"
-    },
-    "default": true
-  },
-  {
     "name": "hist_mfilt",
     "category": "user_nl_clm",
     "type": "integer",
     "description": {
       "summary": "Per tape series  maximum number of time samples."
-    }
+    },
+    "allow_multiple": true,
+    "count_depends_on": "hist_fincl2"
   },
   {
     "name": "hist_nhtfrq",
@@ -278,7 +281,9 @@
     "type": "integer",
     "description": {
       "summary": "Per tape series history write frequency.<br>positive means in time steps<br>0=monthly<br>negative means hours<br>(i.e. 5 means every 24 time-steps and -24 means every day)"
-    }
+    },
+    "allow_multiple": true,
+    "count_depends_on": "hist_fincl2"
   },
   {
     "name": "pft_index_count",
