@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   api:
-    image: ghcr.io/ka7eh/ctsm-api:${API_VERSION:-latest}
+    image: ghcr.io/noresmhub/ctsm-api:${API_VERSION:-latest}
     restart: unless-stopped
     entrypoint: /ctsm-api/docker/entrypoint_api.sh
     environment:
@@ -19,7 +19,7 @@ services:
       - ./resources:/ctsm-api/resources
 
   tasks:
-    image: ghcr.io/ka7eh/ctsm-api:${API_VERSION:-latest}
+    image: ghcr.io/noresmhub/ctsm-api:${API_VERSION:-latest}
     restart: unless-stopped
     entrypoint: /ctsm-api/docker/entrypoint_tasks.sh
     environment:
@@ -41,7 +41,7 @@ services:
       - default
   
   ui:
-    image: ghcr.io/ka7eh/fates-platform:${PLATFORM_VERSION:-latest}
+    image: ghcr.io/noresmhub/fates-platform:${PLATFORM_VERSION:-latest}
     restart: unless-stopped
     ports:
       - ${PORT:-8080}:80
