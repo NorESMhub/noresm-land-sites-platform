@@ -60,7 +60,7 @@
   <mpirun mpilib="mpich">
     <executable>mpiexec</executable>
     <arguments>
-<arg name="anum_tasks"> -n {{ total_tasks }}</arg>
+    <arg name="anum_tasks"> -n {{ total_tasks }}</arg>
     </arguments>
   </mpirun>
   <module_system type="none">
@@ -72,6 +72,7 @@
     <env name="PNETCDF_PATH">/usr/local</env>
     <env name="FPATH">/usr/lib64</env>
     <env name="CPATH">/usr/lib64</env>
+    <env name="ESMFMKFILE">/usr/local/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</env>
   </environment_variables>
   <resource_limits>
     <resource name="RLIMIT_STACK">-1</resource>
