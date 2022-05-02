@@ -24,12 +24,12 @@ For more information on the platform, please see our [technical documentation](N
 
 
 - ### [User guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide)
-  - Out [main user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) relies on jupyter notebooks and a docker container to run the newest platform version. 
-  - An older version i also available on Galaxy: a graphic user interface for running site-level simulation on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
+  - Our [main user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) uses a graphical user interface, jupyter notebooks and a docker container to run the newest platform versions. 
+  - An older version is also available on Galaxy: a graphic user interface for running site-level simulation on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
 
 
 - ### Installation on NREC for developers
-Note that we are using NREC for development and testing for the time being. Docker can also be used, but has the drawback of requiring the docker image to be re-built before changes take place. To use NREC, you need a user account and to apply for resources, so get in touch if you need this!
+Note that we are using NREC for development and testing for the time being. Docker can also be used, but has the drawback of requiring the docker image to be re-built before changes take place. To use NREC, you need a user account and to apply for resources.
 
 Clone the repository:
 ```
@@ -54,6 +54,7 @@ pip install -e . # ATTENTION, note the "."!
 ```
 
 ## Code development team
+* [Kaveh Karimi](https://github.com/ka7eh)
 * [Hui Tang](https://github.com/huitang-earth)
 * [Lasse Torben Keetz](https://github.com/lasseke)
 * [Stefanie Falk](https://github.com/ziu1986)
