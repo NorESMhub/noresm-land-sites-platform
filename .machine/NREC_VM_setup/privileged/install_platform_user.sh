@@ -2,7 +2,7 @@
 set -e # Exit if any command fails
 
 # Paths and URLs
-dir_platform=/home/user/NorESM_LandSites_Platform_test
+dir_platform=/home/user/NorESM_LandSites_Platform
 dir_noresm=$dir_platform/noresm2
 url_plaform=https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 url_noresm=https://github.com/NorESMhub/NorESM.git
@@ -36,39 +36,12 @@ else
     done
 fi;
 
-
-
-# Configuration files
 # Hui: Copy setting files for the containers
 # Hui: need a if statement to judge if this is need to be rerun or not
 
 #---cd && git clone https://github.com/ESCOMP/ESCOMP-Containers.git
 #--cd ~/ESCOMP-Containers/CESM/2.2/Files
 #--git fetch origin 502ca4a974122accc32aba5a5f3b4665dfa0691f
-## Add the container versions of the config_machines & config_compilers settings - later, integrate these into CIME
-#cp config_compilers.xml $dir_noresm/cime/config/cesm/machines/   # use .cime option instead
-#cp config_machines.xml $dir_noresm/cime/config/cesm/machines/    # use .cime option instead
-
-# Hui: no need to do the following, and it is currently kept in: $dir_noresm/ccs_config/ 
-# cp config_inputdata.xml $dir_noresm/cime/config/cesm/        # only related to where you will download the data, our own platform will take care of this, so no need to use
-# 
-# This can be relevant because it contains something related to container
-# cp case_setup.py $dir_noresm/cime/scripts/lib/CIME/case/case_setup.py
-
-
-## Add the container changes to the XML files (to be included in stock CIME soon):
-# Hui: This is not really necessary either
-#cp config_compsets.xml $dir_noresm/cime_config/
-
-#cp config_pes.xml $dir_noresm/cime_config/
-#cp configs/cam/config_pes.xml $dir_noresm/components/cam/cime_config/
-#cp configs/cice/config_pes.xml $dir_noresm/components/cice/cime_config/
-#cp configs/cism/config_pes.xml $dir_noresm/components/cism/cime_config/
-#cp configs/pop/config_pes.xml $dir_noresm/components/pop/cime_config/
-#p configs/clm/config_pes.xml $dir_noresm/components/clm/cime_config/
-### Fix for SCAM with GNU in DEBUG mode (ESCOMP/CAM issue #257)
-#cp micro_mg3_0.F90 $dir_noresm/components/cam/src/physics/pumas/micro_mg3_0.F90
-
 
 #### Hui: The following settings are relevant
 ## Fix for issue with mpi-serial:
@@ -94,23 +67,23 @@ cp $dir_platform/config/cime/config_machines.xml \
 $HOME/.cime
 
 # Hui: For the new versions, all the following updates need to be retested (turned off) first
-#-- cp $dir_platform/config/ctsm/config_component_ctsm.xml \
-#-- $dir_noresm/components/clm/cime_config/config_component.xml
-#-- cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
-#-- $dir_noresm/components/clm/bld/namelist_files/
-#-- cp $dir_platform/config/ctsm/CLMBuildNamelist.pm \
-#-- $dir_noresm/components/clm/bld/
-#-- cp $dir_platform/config/ctsm/bug_fix/clmfates_interfaceMod.F90 \
-#-- $dir_noresm/components/clm/src/utils/clmfates_interfaceMod.F90
+cp $dir_platform/config/ctsm/config_component_ctsm.xml \
+$dir_noresm/components/clm/cime_config/config_component.xml
+cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
+$dir_noresm/components/clm/bld/namelist_files/
 
 # Copy configuration files into noresm/cime component
-#cp $dir_platform/config/cime/config_batch.xml \
-#$dir_noresm/cime/config/cesm/machines/
-cp $dir_platform/config/cime/config_grids.xml \
-$dir_noresm/ccs_config/config_grids_mct.xml
+cp $dir_platform/config/cime/component_grids_nuopc.xml \
+$dir_noresm/ccs_config/component_grids_nuopc.xml
+cp $dir_platform/config/cime/modelgrid_aliases_nuopc.xml \
+$dir_noresm/ccs_config/modelgrid_aliases_nuopc.xml
+
 cp $dir_platform/config/cime/config_component_datm.xml \
 $dir_noresm/components/cdeps/datm/cime_config/config_component.xml
 cp $dir_platform/config/cime/namelist_definition_datm.xml \
 $dir_noresm/components/cdeps/datm/cime_config/namelist_definition_datm.xml
-#cp $dir_platform/config/cime/configure \
-#$dir_noresm/libraries/mct/configure
+cp $dir_platform/config/cime/stream_definition_datm.xml \
+$dir_noresm/components/cdeps/datm/cime_config/stream_definition_datm.xml
+
+cp $dir_platform/config/ctsm/namelist_definition_mosart.xml \
+$dir_noresm/components/mosart/cime_config/namelist_definition_mosart.xml

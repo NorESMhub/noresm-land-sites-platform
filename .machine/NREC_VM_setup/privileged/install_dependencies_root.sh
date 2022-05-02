@@ -58,6 +58,21 @@ sudo ./configure MPIF77=/usr/local/bin/mpif77 MPIF90=/usr/local/bin/mpif90 MPICX
 sudo make -j 4 install
 sudo ldconfig
 
+# ESMF 8.2.0
+cd /tmp/sources
+sudo wget -q https://github.com/esmf-org/esmf/archive/refs/tags/ESMF_8_2_0.tar.gz
+sudo tar zxf ESMF_8_2_0.tar.gz
+cd /tmp/source/esmf-ESMF_8_2_0
+export ESMF_DIR='/tmp/source/esmf-ESMF_8_2_0'
+export ESMF_INSTALL_PREFIX='/usr/local'
+export ESMF_LAPACK="netlib"                      # need to specify LAPACK library
+export ESMF_LAPACK_LIBS="-llapack -lblas"
+export ESMF_LAPACK_LIBPATH="/usr/lib64"
+export ESMF_NETCDF="nc-config"                   # need to specify netcdf library
+sudo gmake -f Makefile
+sudo gmake install
+sudo ldconfig
+
 # GDAL
 sudo dnf -y install epel-release
 sudo dnf config-manager --set-enabled powertools
