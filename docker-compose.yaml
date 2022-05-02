@@ -51,12 +51,20 @@ services:
       context: docker/jupyter
       dockerfile: Dockerfile
     restart: unless-stopped
+    user: root
+    environment:
+      - NB_USER=${HOST_USER:-jovyan}
+      - NB_UID=${HOST_UID:-1000}
+      - NB_GID=${HOST_GID:-100}
+      - CHOWN_HOME=yes
+      - CHOWN_HOME_OPTS=-R
+    working_dir: /home/${HOST_USER:-jovyan}
     ports:
       - ${PORT:-8888}:8888
     volumes:
-      - ./notebooks:/home/jovyan/notebooks
-      - ./resources/cases:/home/jovyan/cases
-      - ./resources/data:/home/jovyan/data
+      - ./notebooks:/home/${HOST_USER:-jovyan}/notebooks
+      - ./resources/cases:/home/${HOST_USER:-jovyan}/cases
+      - ./resources/data:/home/${HOST_USER:-jovyan}/data
 
 networks:
   default:
