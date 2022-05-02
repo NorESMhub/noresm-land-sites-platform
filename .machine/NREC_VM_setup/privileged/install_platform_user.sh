@@ -2,7 +2,7 @@
 set -e # Exit if any command fails
 
 # Paths and URLs
-dir_platform=~/NorESM_LandSites_Platform
+dir_platform=/home/user/NorESM_LandSites_Platform_test
 dir_noresm=$dir_platform/noresm2
 url_plaform=https://github.com/NorESMhub/NorESM_LandSites_Platform.git
 url_noresm=https://github.com/NorESMhub/NorESM.git
@@ -39,16 +39,27 @@ fi;
 
 
 # Configuration files
-cd && git clone https://github.com/ESCOMP/ESCOMP-Containers.git
-cd ~/ESCOMP-Containers/CESM/2.2/Files
-git fetch origin 502ca4a974122accc32aba5a5f3b4665dfa0691f
+# Hui: Copy setting files for the containers
+# Hui: need a if statement to judge if this is need to be rerun or not
+
+#---cd && git clone https://github.com/ESCOMP/ESCOMP-Containers.git
+#--cd ~/ESCOMP-Containers/CESM/2.2/Files
+#--git fetch origin 502ca4a974122accc32aba5a5f3b4665dfa0691f
 ## Add the container versions of the config_machines & config_compilers settings - later, integrate these into CIME
 #cp config_compilers.xml $dir_noresm/cime/config/cesm/machines/   # use .cime option instead
 #cp config_machines.xml $dir_noresm/cime/config/cesm/machines/    # use .cime option instead
-cp config_inputdata.xml $dir_noresm/cime/config/cesm/
-cp case_setup.py $dir_noresm/cime/scripts/lib/CIME/case/case_setup.py
+
+# Hui: no need to do the following, and it is currently kept in: $dir_noresm/ccs_config/ 
+# cp config_inputdata.xml $dir_noresm/cime/config/cesm/        # only related to where you will download the data, our own platform will take care of this, so no need to use
+# 
+# This can be relevant because it contains something related to container
+# cp case_setup.py $dir_noresm/cime/scripts/lib/CIME/case/case_setup.py
+
+
 ## Add the container changes to the XML files (to be included in stock CIME soon):
-cp config_compsets.xml $dir_noresm/cime_config/
+# Hui: This is not really necessary either
+#cp config_compsets.xml $dir_noresm/cime_config/
+
 #cp config_pes.xml $dir_noresm/cime_config/
 #cp configs/cam/config_pes.xml $dir_noresm/components/cam/cime_config/
 #cp configs/cice/config_pes.xml $dir_noresm/components/cice/cime_config/
@@ -57,12 +68,15 @@ cp config_compsets.xml $dir_noresm/cime_config/
 #p configs/clm/config_pes.xml $dir_noresm/components/clm/cime_config/
 ### Fix for SCAM with GNU in DEBUG mode (ESCOMP/CAM issue #257)
 #cp micro_mg3_0.F90 $dir_noresm/components/cam/src/physics/pumas/micro_mg3_0.F90
+
+
+#### Hui: The following settings are relevant
 ## Fix for issue with mpi-serial:
-cp scam_shell_commands $dir_noresm/components/cam/cime_config/usermods_dirs/scam_mandatory/shell_commands
+#--- cp scam_shell_commands $dir_noresm/components/cam/cime_config/usermods_dirs/scam_mandatory/shell_commands
 ## And add the fixed 'create_scam6_iop' script for SCAM:
-cp create_scam6_iop $dir_noresm/components/cam/bld/scripts
+#--- cp create_scam6_iop $dir_noresm/components/cam/bld/scripts
 # Delete ESCOMP-Containers folder
-cd && rm -rf ESCOMP-Containers
+#--- cd && rm -rf ESCOMP-Containers
 
 # CESMROOT
 export CESMROOT=$dir_noresm
@@ -78,23 +92,25 @@ cp $dir_platform/config/cime/config_compilers.xml \
 $HOME/.cime
 cp $dir_platform/config/cime/config_machines.xml \
 $HOME/.cime
-cp $dir_platform/config/ctsm/config_component_ctsm.xml \
-$dir_noresm/components/clm/cime_config/config_component.xml
-cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
-$dir_noresm/components/clm/bld/namelist_files/
-cp $dir_platform/config/ctsm/CLMBuildNamelist.pm \
-$dir_noresm/components/clm/bld/
-cp $dir_platform/config/ctsm/bug_fix/clmfates_interfaceMod.F90 \
-$dir_noresm/components/clm/src/utils/clmfates_interfaceMod.F90
+
+# Hui: For the new versions, all the following updates need to be retested (turned off) first
+#-- cp $dir_platform/config/ctsm/config_component_ctsm.xml \
+#-- $dir_noresm/components/clm/cime_config/config_component.xml
+#-- cp $dir_platform/config/ctsm/namelist_defaults_ctsm.xml \
+#-- $dir_noresm/components/clm/bld/namelist_files/
+#-- cp $dir_platform/config/ctsm/CLMBuildNamelist.pm \
+#-- $dir_noresm/components/clm/bld/
+#-- cp $dir_platform/config/ctsm/bug_fix/clmfates_interfaceMod.F90 \
+#-- $dir_noresm/components/clm/src/utils/clmfates_interfaceMod.F90
 
 # Copy configuration files into noresm/cime component
-cp $dir_platform/config/cime/config_batch.xml \
-$dir_noresm/cime/config/cesm/machines/
+#cp $dir_platform/config/cime/config_batch.xml \
+#$dir_noresm/cime/config/cesm/machines/
 cp $dir_platform/config/cime/config_grids.xml \
-$dir_noresm/cime/config/cesm/
+$dir_noresm/ccs_config/config_grids_mct.xml
 cp $dir_platform/config/cime/config_component_datm.xml \
-$dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/config_component.xml
+$dir_noresm/components/cdeps/datm/cime_config/config_component.xml
 cp $dir_platform/config/cime/namelist_definition_datm.xml \
-$dir_noresm/cime/src/components/data_comps_mct/datm/cime_config/namelist_definition_datm.xml
-cp $dir_platform/config/cime/configure \
-$dir_noresm/cime/src/externals/mct/configure
+$dir_noresm/components/cdeps/datm/cime_config/namelist_definition_datm.xml
+#cp $dir_platform/config/cime/configure \
+#$dir_noresm/libraries/mct/configure
