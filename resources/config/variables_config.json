@@ -236,9 +236,12 @@
     "category": "user_nl_clm",
     "type": "char",
     "description": {
-      "summary": "Fields to add to history tape series 2."
+      "summary": "Fields to add to history tape series 2.",
+      "details": "You can add any variable from the list in the link, if it is not already in the options. Just type tha variable name and press enter. Note that the entered variable name must exactly match the name in the list.",
+      "url": "https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html"
     },
     "allow_multiple": true,
+    "allow_custom": true,
     "validation": {
       "choices": [
         "GPP_SCPF",
