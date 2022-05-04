@@ -232,6 +232,23 @@
     "default": true
   },
   {
+    "name": "hist_avgflag_pertape",
+    "category": "user_nl_clm",
+    "type": "char",
+    "description": {
+      "summary": "Per file averaging flag.",
+      "details": "'A' (average over history period)<br>'I' (instantaneous)<br>'X' (maximum over history period)<br>'M' (minimum over history period)"
+    },
+    "validation": {
+      "choices": [
+        "A",
+        "I",
+        "X",
+        "M"
+      ]
+    }
+  },
+  {
     "name": "hist_fincl2",
     "category": "user_nl_clm",
     "type": "char",
@@ -246,25 +263,6 @@
       "choices": [
         "GPP_SCPF",
         "PFTcrownarea"
-      ]
-    }
-  },
-  {
-    "name": "hist_avgflag_pertape",
-    "category": "user_nl_clm",
-    "type": "char",
-    "description": {
-      "summary": "Per file averaging flag.",
-      "details": "'A' (average over history period)<br>'I' (instantaneous)<br>'X' (maximum over history period)<br>'M' (minimum over history period)"
-    },
-    "allow_multiple": true,
-    "count_depends_on": "hist_fincl2",
-    "validation": {
-      "choices": [
-        "A",
-        "I",
-        "X",
-        "M"
       ]
     }
   },
