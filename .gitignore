@@ -1,6 +1,11 @@
-.env
+notebooks/*
+!notebooks/tutorials/
+
 resources/archives
 resources/cases
 resources/ctsm
 resources/data
 resources/cases.sqlite
+
+.env
+.ipynb_checkpoints
