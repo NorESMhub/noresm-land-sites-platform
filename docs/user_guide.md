@@ -50,14 +50,12 @@ In the working directory where you have cloned the repository, open a terminal b
 
     $ docker-compose up
 
-This will download some files and give you the following address to access the container through your browser: [localhost:8080](http://localhost:8080)
-
-(To stop the container running press ´Ctrl+c´ (in Git Bash). NB! Only do this after you have finished this tutorial.)
+The first time you execute this, a lot of files will be downloaded. When the container is up and running, you will get the following address to access the container through your browser: [localhost:8080](http://localhost:8080)
 
 
 ### 2. Inside GUI: Set simulation settings ⚙️
 
-You should now be looking at the graphical user interface (=GUI) for setting up and running simulations. This interface has access to the Docker container you started in step 1.
+You should now be looking at the graphical user interface (=GUI, at [localhost:8080](http://localhost:8080)) for setting up and running simulations. This interface has access to the Docker container you started in step 1.
 
 (If you are doing a quick test with [default platform settings](https://noresmhub.github.io/NorESM_LandSites_Platform/#settings-file), just pick a site and click  ´create case´ and then ´run´.)
 
@@ -69,17 +67,18 @@ The ´download site data´ button gives you the input data for your selected sit
 
 With the ´create case´ button, you can look at and edit some model settings and parameters as you create a new case. This is not an exhaustive list of possible changes (by far), but give you easy access to some options. All the boxes have default values for a quick but not especially realistic simulation.
 
-The box that pops up with settings has three tabs:
+The box that pops up with settings has four tabs:
 
 - **CTSM** (=Community Terrestrial Systems Model) settings for general options like simulation period
-- **CLM / Namelist** settings where you can change CO2 concentration, switch some modules of/off, and modify how some model output is stored.
+- **CLM / Namelist** settings where you can change CO2 concentration, switch some modules of/off.
+- **CLM / Namelist / history** settings where advanced users can set how and when the simulation output is stored.
 - **FATES** parameters where you can disable some Plant Functional Types (PFTs) and change some vegetation parameters.
 
 Once you have created your case with the desired settings, it will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the Status, which will transition from pending to ready when the case has been built. 
 
 ### 3. Run your simulations 👩‍💻
 
-Once the case is ready, you can start the simulation with ´run´, ´download´ the output when the run is finished, ´edit´ the settings and create a new case, or ´delete´ the case. Depending of how long you asked the model to run for (default is 1 year), and your hardware, this can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. Make sure your computer is not running other heavy programs simultaneously (like GIS, Photoshop or 1000 open browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. Advanced users may also use the container on an HPC cluster to speed up long simulations.
+Once the case is ready, you can start the simulation with ´run´. There is a button to ´download´ the output when the run is finished, and to ´edit´ the settings and create a new case, or ´delete´ the case. Depending of how long you asked the model to run for (default is 1 year), and your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. Make sure your computer is not running other heavy programs simultaneously (like GIS, Photoshop or 1000 open browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. Advanced users may also use the container on an HPC cluster to speed up long simulations.
 
 > While you wait for the simulation to finish, you may like to inspect the model input data more closely. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the ´notebooks´ folder and open the ´input_visualization.ipynb´ notebook. It will guide you through some of the input data for the model. 
 
