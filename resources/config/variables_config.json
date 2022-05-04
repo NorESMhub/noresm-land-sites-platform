@@ -222,16 +222,6 @@
     "default": false
   },
   {
-    "name": "hist_dov2xy",
-    "category": "user_nl_clm",
-    "type": "logical",
-    "description": {
-      "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
-      "details": "Some PFT information only available in this 1D string by setting this to false"
-    },
-    "default": true
-  },
-  {
     "name": "hist_avgflag_pertape",
     "category": "user_nl_clm",
     "type": "char",
@@ -249,8 +239,26 @@
     }
   },
   {
+    "name": "hist_fincl1",
+    "category": "user_nl_clm_history_file",
+    "type": "char",
+    "description": {
+      "summary": "Fields to add to history tape series 1.",
+      "details": "You can add any variable from the list in the link, if it is not already in the options. Just type tha variable name and press enter. Note that the entered variable name must exactly match the name in the list.",
+      "url": "https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html"
+    },
+    "allow_multiple": true,
+    "allow_custom": true,
+    "validation": {
+      "choices": [
+        "GPP_SCPF",
+        "PFTcrownarea"
+      ]
+    }
+  },
+  {
     "name": "hist_fincl2",
-    "category": "user_nl_clm",
+    "category": "user_nl_clm_history_file",
     "type": "char",
     "description": {
       "summary": "Fields to add to history tape series 2.",
@@ -267,25 +275,108 @@
     }
   },
   {
-    "name": "hist_mfilt",
-    "category": "user_nl_clm",
-    "type": "integer",
+    "name": "hist_fincl3",
+    "category": "user_nl_clm_history_file",
+    "type": "char",
     "description": {
-      "summary": "Per tape series  maximum number of time samples."
+      "summary": "Fields to add to history tape series 2.",
+      "details": "You can add any variable from the list in the link, if it is not already in the options. Just type tha variable name and press enter. Note that the entered variable name must exactly match the name in the list.",
+      "url": "https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html"
     },
     "allow_multiple": true,
-    "count_depends_on": "hist_fincl2"
+    "allow_custom": true,
+    "validation": {
+      "choices": [
+        "GPP_SCPF",
+        "PFTcrownarea"
+      ]
+    }
+  },
+  {
+    "name": "hist_fincl4",
+    "category": "user_nl_clm_history_file",
+    "type": "char",
+    "description": {
+      "summary": "Fields to add to history tape series 2.",
+      "details": "You can add any variable from the list in the link, if it is not already in the options. Just type tha variable name and press enter. Note that the entered variable name must exactly match the name in the list.",
+      "url": "https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html"
+    },
+    "allow_multiple": true,
+    "allow_custom": true,
+    "validation": {
+      "choices": [
+        "GPP_SCPF",
+        "PFTcrownarea"
+      ]
+    }
+  },
+  {
+    "name": "hist_fincl5",
+    "category": "user_nl_clm_history_file",
+    "type": "char",
+    "description": {
+      "summary": "Fields to add to history tape series 2.",
+      "details": "You can add any variable from the list in the link, if it is not already in the options. Just type tha variable name and press enter. Note that the entered variable name must exactly match the name in the list.",
+      "url": "https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html"
+    },
+    "allow_multiple": true,
+    "allow_custom": true,
+    "validation": {
+      "choices": [
+        "GPP_SCPF",
+        "PFTcrownarea"
+      ]
+    }
+  },
+  {
+    "name": "hist_fincl6",
+    "category": "user_nl_clm_history_file",
+    "type": "char",
+    "description": {
+      "summary": "Fields to add to history tape series 2.",
+      "details": "You can add any variable from the list in the link, if it is not already in the options. Just type tha variable name and press enter. Note that the entered variable name must exactly match the name in the list.",
+      "url": "https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html"
+    },
+    "allow_multiple": true,
+    "allow_custom": true,
+    "validation": {
+      "choices": [
+        "GPP_SCPF",
+        "PFTcrownarea"
+      ]
+    }
+  },
+  {
+    "name": "hist_dov2xy",
+    "category": "user_nl_clm_history_file",
+    "type": "logical",
+    "description": {
+      "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
+      "details": "Some PFT information only available in this 1D string by setting this to false"
+    },
+    "default": [true, true, true, true, true, true],
+    "allow_multiple": true
   },
   {
     "name": "hist_nhtfrq",
-    "category": "user_nl_clm",
+    "category": "user_nl_clm_history_file",
     "type": "integer",
     "description": {
       "summary": "Per tape series history write frequency.",
       "details": "positive means in time steps<br>0=monthly<br>negative means hours<br>(i.e. 5 means every 24 time-steps and -24 means every day)"
     },
-    "allow_multiple": true,
-    "count_depends_on": "hist_fincl2"
+    "default": [0, 0, 0, 0, 0, 0],
+    "allow_multiple": true
+  },
+  {
+    "name": "hist_mfilt",
+    "category": "user_nl_clm_history_file",
+    "type": "integer",
+    "description": {
+      "summary": "Per tape series maximum number of time samples."
+    },
+    "default": [0, 0, 0, 0, 0, 0],
+    "allow_multiple": true
   },
   {
     "name": "pft_index_count",
