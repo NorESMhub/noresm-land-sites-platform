@@ -24,10 +24,11 @@
     "type": "char",
     "validation": {
       "choices": [
-        "NO_LEAP",
-        "GREGORIAN"
+        { "value":  "NO_LEAP", "label": "No Leap" },
+        { "value":  "GREGORIAN", "label": "Gregorian" }
       ]
-    }
+    },
+    "placeholder": "NO_LEAP"
   },
   {
     "name": "DATM_CLMNCEP_YR_START",
@@ -35,7 +36,8 @@
     "type": "integer",
     "description": {
       "summary": "Starting year to loop data over"
-    }
+    },
+    "placeholder": 1901
   },
   {
     "name": "DATM_CLMNCEP_YR_ALIGN",
@@ -43,7 +45,8 @@
     "type": "integer",
     "description": {
       "summary": "Year align"
-    }
+    },
+    "placeholder": 1901
   },
   {
     "name": "DATM_CLMNCEP_YR_END",
@@ -51,7 +54,8 @@
     "type": "integer",
     "description": {
       "summary": "Ending year to loop data over"
-    }
+    },
+    "placeholder": 1950
   },
   {
     "name": "RUN_STARTDATE",
@@ -60,7 +64,7 @@
     "description": {
       "summary": "Run start date (yyyy-mm-dd). Only used for startup or hybrid runs."
     },
-    "default": "2000-01-01"
+    "placeholder": "2000-01-01"
   },
   {
     "name": "STOP_N",
@@ -68,7 +72,8 @@
     "type": "integer",
     "description": {
       "summary": "Provides a numerical count for $STOP_OPTION."
-    }
+    },
+    "placeholder": 5
   },
   {
     "name": "STOP_OPTION",
@@ -79,27 +84,28 @@
     },
     "validation": {
       "choices": [
-        "none",
-        "never",
-        "nsteps",
-        "nstep",
-        "nseconds",
-        "nsecond",
-        "nminutes",
-        "nminute",
-        "nhours",
-        "nhour",
-        "ndays",
-        "nday",
-        "nmonths",
-        "nmonth",
-        "nyears",
-        "nyear",
-        "date",
-        "ifdays0",
-        "end"
+        { "value": "none", "label": "None" },
+        { "value": "never", "label": "Never" },
+        { "value": "nsteps", "label": "nsteps" },
+        { "value": "nstep", "label": "nstep" },
+        { "value": "nseconds", "label": "nseconds" },
+        { "value": "nsecond", "label": "nsecond" },
+        { "value": "nminutes", "label": "nminutes" },
+        { "value": "nminute", "label": "nminute" },
+        { "value": "nhours", "label": "nhours" },
+        { "value": "nhour", "label": "nhour" },
+        { "value": "ndays", "label": "ndays" },
+        { "value": "nday", "label": "nday" },
+        { "value": "nmonths", "label": "nmonths" },
+        { "value": "nmonth", "label": "nmonth" },
+        { "value": "nyears", "label": "nyears" },
+        { "value": "nyear", "label": "nyear" },
+        { "value": "date", "label": "date" },
+        { "value": "ifdays0", "label": "ifdays0" },
+        { "value": "end", "label": "end" }
       ]
-    }
+    },
+    "placeholder": "ndays"
   },
   {
     "name": "STOP_DATE",
@@ -107,7 +113,8 @@
     "type": "integer",
     "description": {
       "summary": "Alternative date yyyymmdd date option, sets the run length with STOP_OPTION and STOP_N negative value implies off."
-    }
+    },
+    "placeholder": -999
   },
   {
     "name": "RUN_TYPE",
@@ -118,11 +125,12 @@
     },
     "validation": {
       "choices": [
-        "startup",
-        "hybrid",
-        "branch"
+        { "value": "startup", "label": "Startup" },
+        { "value": "hybrid", "label": "Hybrid" },
+        { "value": "branch", "label": "Branch" }
       ]
-    }
+    },
+    "placeholder": "startup"
   },
   {
     "name": "LND_TUNING_MODE",
@@ -133,15 +141,16 @@
     },
     "validation": {
       "choices": [
-        "clm5_0_cam6.0",
-        "clm5_0_GSWP3v1",
-        "clm5_0_CRUv7",
-        "clm4_5_CRUv7",
-        "clm4_5_GSWP3v1",
-        "clm4_5_cam6.0",
-        "clm5_1_GSWP3v1"
+        { "value": "clm5_0_cam6.0", "label": "clm5_0_cam6.0" },
+        { "value": "clm5_0_GSWP3v1", "label": "clm5_0_GSWP3v1" },
+        { "value": "clm5_0_CRUv7", "label": "clm5_0_CRUv7" },
+        { "value": "clm4_5_CRUv7", "label": "clm4_5_CRUv7" },
+        { "value": "clm4_5_GSWP3v1", "label": "clm4_5_GSWP3v1" },
+        { "value": "clm4_5_cam6.0", "label": "clm4_5_cam6.0" },
+        { "value": "clm5_1_GSWP3v1", "label": "clm5_1_GSWP3v1" }
       ]
-    }
+    },
+    "placeholder": "clm5_0_GSWP3v1"
   },
   {
     "name": "co2_ppmv",
@@ -152,7 +161,8 @@
     },
     "validation": {
       "min": 0.0
-    }
+    },
+    "placeholder": 367.0
   },
   {
     "name": "fates_paramfile",
@@ -177,22 +187,6 @@
     "hidden": true
   },
   {
-    "name": "fates_parteh_mode",
-    "category": "user_nl_clm",
-    "type": "integer",
-    "description": {
-      "summary": "Switch deciding which nutrient model to use in FATES.",
-      "details": "The Plant Allocation and Reactive Transport Extensible Hypotheses (PARTEH) module.",
-      "url": "https://fates-users-guide.readthedocs.io/en/latest/user/PARTEH-Modes.html"
-    },
-    "validation": {
-      "choices": [
-        0,
-        1
-      ]
-    }
-  },
-  {
     "name": "fates_spitfire_mode",
     "category": "user_nl_clm",
     "type": "integer",
@@ -203,11 +197,26 @@
     },
     "validation": {
       "choices": [
-        0,
-        1,
-        2,
-        3,
-        4
+        {
+          "value": 0,
+          "label": "Simulations of fire are off"
+        },
+        {
+          "value": 1,
+          "label": "Use a global constant lightning rate"
+        },
+        {
+          "value": 2,
+          "label": "Use an external lightning dataset"
+        },
+        {
+          "value": 3,
+          "label": "Use an external confirmed ignitions dataset"
+        },
+        {
+          "value": 4,
+          "label": "Use external lightning and population datasets"
+        }
       ]
     }
   },
@@ -231,10 +240,10 @@
     },
     "validation": {
       "choices": [
-        "A",
-        "I",
-        "X",
-        "M"
+        { "value": "A", "label": "Average over history period" },
+        { "value": "I", "label": "Instantaneous" },
+        { "value": "X", "label": "Maximum over history period" },
+        { "value": "M", "label": "Minimum over history period" }
       ]
     }
   },
@@ -251,8 +260,8 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        "GPP_SCPF",
-        "PFTcrownarea"
+        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
+        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
       ]
     }
   },
@@ -269,8 +278,8 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        "GPP_SCPF",
-        "PFTcrownarea"
+        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
+        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
       ]
     }
   },
@@ -287,8 +296,8 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        "GPP_SCPF",
-        "PFTcrownarea"
+        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
+        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
       ]
     }
   },
@@ -305,8 +314,8 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        "GPP_SCPF",
-        "PFTcrownarea"
+        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
+        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
       ]
     }
   },
@@ -323,8 +332,8 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        "GPP_SCPF",
-        "PFTcrownarea"
+        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
+        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
       ]
     }
   },
@@ -341,8 +350,8 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        "GPP_SCPF",
-        "PFTcrownarea"
+        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
+        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
       ]
     }
   },
