@@ -28,7 +28,7 @@
         { "value":  "GREGORIAN", "label": "Gregorian" }
       ]
     },
-    "placeholder": "NO_LEAP"
+    "placeholder": "No Leap"
   },
   {
     "name": "DATM_CLMNCEP_YR_START",
@@ -130,7 +130,7 @@
         { "value": "branch", "label": "Branch" }
       ]
     },
-    "placeholder": "startup"
+    "placeholder": "Startup"
   },
   {
     "name": "LND_TUNING_MODE",
@@ -218,7 +218,8 @@
           "label": "Use external lightning and population datasets"
         }
       ]
-    }
+    },
+    "placeholder": "Simulations of fire are off"
   },
   {
     "name": "use_bedrock",
@@ -229,23 +230,6 @@
       "details": "If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi)."
     },
     "default": false
-  },
-  {
-    "name": "hist_avgflag_pertape",
-    "category": "user_nl_clm",
-    "type": "char",
-    "description": {
-      "summary": "Per file averaging flag.",
-      "details": "'A' (average over history period)<br>'I' (instantaneous)<br>'X' (maximum over history period)<br>'M' (minimum over history period)"
-    },
-    "validation": {
-      "choices": [
-        { "value": "A", "label": "Average over history period" },
-        { "value": "I", "label": "Instantaneous" },
-        { "value": "X", "label": "Maximum over history period" },
-        { "value": "M", "label": "Minimum over history period" }
-      ]
-    }
   },
   {
     "name": "hist_fincl1",
@@ -364,6 +348,25 @@
       "details": "Some PFT information only available in this 1D string by setting this to false"
     },
     "default": [true, true, true, true, true, true],
+    "allow_multiple": true
+  },
+  {
+    "name": "hist_avgflag_pertape",
+    "category": "user_nl_clm_history_file",
+    "type": "char",
+    "description": {
+      "summary": "Per file averaging flag.",
+      "details": "'A' (average over history period)<br>'I' (instantaneous)<br>'X' (maximum over history period)<br>'M' (minimum over history period)"
+    },
+    "validation": {
+      "choices": [
+        { "value": "A", "label": "Average over history period" },
+        { "value": "I", "label": "Instantaneous" },
+        { "value": "X", "label": "Maximum over history period" },
+        { "value": "M", "label": "Minimum over history period" }
+      ]
+    },
+    "default": ["A", "A", "A", "A", "A", "A"],
     "allow_multiple": true
   },
   {
