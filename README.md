@@ -17,7 +17,7 @@ The observation sites currently included in the platform:
 
 ![sites](https://tinyimg.io/i/cOVIgv4.png)
 
-For more information on the platform, please see our [technical documentation](NorESMhub.github.io/NorESM_LandSites_Platform).
+For more information on the platform, please see our [technical documentation](https://NorESMhub.github.io/NorESM_LandSites_Platform).
 
 
 ## Quick guides for using the platform
