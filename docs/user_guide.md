@@ -60,11 +60,15 @@ Now you can open the graphical user interface (=GUI) at [localhost:8080](http://
 
 ![https://tinyimg.io/i/7iQiTKP.JPG](https://tinyimg.io/i/7iQiTKP.JPG)
 
-#### 2.1 Download site data button (optional)
+#### 2.1 Choose a site 
+
+by clicking either a button or a point on the map!
+
+#### 2.2 Download site data button (optional)
 
 The `download site data` button allows you to download the input data for your selected site. The data is already available in the container, so you don't need to do this. We provide a notebook called `input_visualization.ipynb` which you can open in Jupyterlab on [localhost:8888](localhost:8888) to explore some of the data that goes in to a simulation. This is a good thing to do while your case is running (which might take some time).
 
-#### 2.2 Create case button
+#### 2.3 Create case
 
 With the `create case` button, you can look at and edit some model settings and parameters as you create a new case. This is not an exhaustive list of possible changes (by far), but give you easy access to some options. All the boxes have default values for a quick but not especially realistic simulation.
 
