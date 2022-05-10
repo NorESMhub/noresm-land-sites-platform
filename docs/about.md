@@ -16,6 +16,7 @@ The platform aims to bridge the gaps between observations and modelling, and **p
 The observation sites currently included in the platform are described in the [Land sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) section. 
 
 ## Code development team
+* [Kaveh Karimi](https://github.com/ka7eh)
 * [Hui Tang](https://github.com/huitang-earth)
 * [Lasse Torben Keetz](https://github.com/lasseke)
 * [Stefanie Falk](https://github.com/ziu1986)
