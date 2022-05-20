@@ -120,7 +120,7 @@
     </model_grid>
 
     <!-- Regional NLDAS-2 grid over the U.S. (0.125 degree resolution;
-       25-53N, 235-293E), with mask from NLDAS-2 atmospheric drivers -->
+         25-53N, 235-293E), with mask from NLDAS-2 atmospheric drivers -->
     <model_grid alias="nldas2_rnldas2_mnldas2" compset="DATM.+CLM">
         <grid name="atm">0.125nldas2</grid>
         <grid name="lnd">0.125nldas2</grid>

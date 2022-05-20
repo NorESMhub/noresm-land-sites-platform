@@ -11,7 +11,7 @@
         <nx>0</nx>
         <ny>0</ny>
         <file>unset</file>
-        <desc>null is no grid: </desc>
+        <desc>null is no grid:</desc>
     </domain>
 
     <!-- ======================================================== -->
@@ -51,7 +51,7 @@
         <!-- This is needed for PTS_MODE - it specifies the xml variable PTS_DOMAINFILE -->
         <file>$DIN_LOC_ROOT/share/domains/domain.lnd.fv1.9x2.5_gx1v7.181205.nc</file>
         <!-- TODO: the lats for the gx1v7 and gx1v6 mask are different at
-         the poles- the 141008 should be used for both but would change answers -->
+             the poles- the 141008 should be used for both but would change answers -->
         <mesh>$DIN_LOC_ROOT/share/meshes/fv1.9x2.5_141008_ESMFmesh.nc</mesh>
         <desc>1.9x2.5 is FV 2-deg grid:</desc>
     </domain>
@@ -427,15 +427,16 @@
         <nx>816</nx>
         <ny>1</ny>
         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/r05_amazon_c110308_ctrcrd_cdf5_ESMFmesh_c20200624.nc</mesh>
-        <desc>r05_amazon is the regular 1/2 degree river routing grid, but over a region in the Amazon 
-    (corresponds to the 5x5_amazon region for CTSM) </desc>
+        <desc>r05_amazon is the regular 1/2 degree river routing grid, but over a region in the Amazon
+            (corresponds to the 5x5_amazon region for CTSM)
+        </desc>
     </domain>
     <domain name="HDMAmz">
         <nx>295335</nx>
         <ny>1</ny>
         <!-- This is the actual full mesh, but it's complex and takes hours to read
-         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/HDMA_global_ctrcrd_cdf5_ESMFmesh_c20200831.nc</mesh>
-    -->
+             <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/HDMA_global_ctrcrd_cdf5_ESMFmesh_c20200831.nc</mesh>
+        -->
         <!-- This is a simplified mesh that only includes the polygon centers, so requires a mapping file with it -->
         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/polygon_centroid/HDMAmz_global_ctrcrd_sqr_cdf5_ESMFmesh_c20201005.nc</mesh>
         <desc>HDMAmz is a medium resolution global river routing grid for mizuRoute:</desc>
@@ -458,8 +459,8 @@
         <nx>20924</nx>
         <ny>1</ny>
         <!-- This is the actual full mesh, but it's complex and takes hours to read
-         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes//HDMAmz_global_ctrcrd_cdf5_ESMFmesh_c20201005.nc</mesh>
-    -->
+             <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes//HDMAmz_global_ctrcrd_cdf5_ESMFmesh_c20201005.nc</mesh>
+        -->
         <!-- This is a simplified mesh that only includes the polygon centers, so requires a mapping file with it -->
         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/polygon_centroid/HDMAmz_0.125nldas2_ctrcrd_sqr_cdf5_ESMFmesh_c20201005.nc</mesh>
         <desc>HDMAmz_CONUS is a medium resolution river routing grid just over the Continental US (CONUS) area for mizuRoute:</desc>
@@ -476,8 +477,8 @@
         <nx>110572</nx>
         <ny>1</ny>
         <!-- This is the actual full mesh, but it's complex and takes hours to read
-         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/USGS-GFmz_global_ctrcrd_cdf5_ESMFmesh_c20200831.nc</mesh>
-    -->
+             <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/USGS-GFmz_global_ctrcrd_cdf5_ESMFmesh_c20200831.nc</mesh>
+        -->
         <!-- This is a simplified mesh that only includes the polygon centers, so requires a mapping file with it -->
         <mesh>$DIN_LOC_ROOT/rof/mizuRoute/meshes/polygon_centroid/USGS-GFmz_conus_ctrcrd_sqr_cdf5_ESMFmesh_c20201006.nc</mesh>
         <desc>USGS_GFmz (USGS Geospatial Fabric) is a low resolution river routing CONUS grid just over continental US for mizuRoute:</desc>

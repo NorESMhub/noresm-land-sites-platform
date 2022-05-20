@@ -11,8 +11,6 @@ if [[ ! -d /ctsm-api/resources/ctsm ]]; then
 
     git checkout 1728491743cc572981863764c13bad4949025590
 
-    cp -r ../overwrites/manage_externals .
-
     ./manage_externals/checkout_externals
 
     rsync -rv ../overwrites/ .
