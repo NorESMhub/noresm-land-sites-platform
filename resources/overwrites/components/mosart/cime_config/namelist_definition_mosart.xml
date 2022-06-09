@@ -13,12 +13,12 @@
         <category>mosart</category>
         <group>mosart_inparm</group>
         <desc>
-            If .true., turn on mosart river routing
-            If the value of the xml variable ROF GRID in env_build.xml is set to 'null', then
-            the MOSART build-namelist will set do_mosart to .false.
-            If do_mosart is set to .false., then MOSART will send a flag of rof_prognostic = .false.
-            back to the coupler on initialization.
-        </desc>
+      If .true., turn on mosart river routing
+      If the value of the xml variable ROF GRID in env_build.xml is set to 'null', then
+      the MOSART build-namelist will set do_mosart to .false.
+      If do_mosart is set to .false., then MOSART will send a flag of rof_prognostic = .false.
+      back to the coupler on initialization.
+    </desc>
         <values>
             <value>.true.</value>
             <value mosart_mode="ACTIVE" clm_accelerated_spinup="off">.true.</value>
@@ -37,9 +37,9 @@
             <value mosart_flood_mode="NULL">.false.</value>
         </values>
         <desc>
-            If .true., turn on mosart flooding back to clm
-            Note that mosart flood is not supported in CESM1.1
-        </desc>
+      If .true., turn on mosart flooding back to clm
+      Note that mosart flood is not supported in CESM1.1
+    </desc>
     </entry>
 
     <entry id="ice_runoff">
@@ -50,11 +50,11 @@
             <value>.true.</value>
         </values>
         <desc>
-            Default: .true.
-            If .true., river runoff will be split up into liquid and ice streams,
-            otherwise ice runoff will be zero and all runoff directed to liquid
-            stream.
-        </desc>
+      Default: .true.
+      If .true., river runoff will be split up into liquid and ice streams,
+      otherwise ice runoff will be zero and all runoff directed to liquid
+      stream.
+    </desc>
     </entry>
 
     <entry id="coupling_period" modify_via_xml="ROF_NCPL" skip_default_entry="true">
@@ -62,9 +62,9 @@
         <category>mosart</category>
         <group>mosart_inparm</group>
         <desc>
-            MOSART coupling period to driver (sec).
-            Can ONLY be set by modifying the value of the xml variable ROF_NCPL in env_run.xml.
-        </desc>
+      MOSART coupling period to driver (sec).
+      Can ONLY be set by modifying the value of the xml variable ROF_NCPL in env_run.xml.
+    </desc>
     </entry>
 
     <entry id="delt_mosart">
@@ -75,10 +75,10 @@
             <value>3600</value>
         </values>
         <desc>
-            MOSART time step (sec). Default: 3600 Internal mosart timestep,
-            will be adjusted down to be integer multiple of coupling_period if
-            necessary
-        </desc>
+      MOSART time step (sec). Default: 3600 Internal mosart timestep,
+      will be adjusted down to be integer multiple of coupling_period if
+      necessary
+    </desc>
     </entry>
 
     <entry id="smat_option">
@@ -90,9 +90,9 @@
             <value>Xonly</value>
         </values>
         <desc>
-            sparse matrix mct setting. Xonly is bfb on different pe counts,
-            opt and Yonly might involve partial sums
-        </desc>
+      sparse matrix mct setting.  Xonly is bfb on different pe counts,
+      opt and Yonly might involve partial sums
+    </desc>
     </entry>
 
     <entry id="decomp_option">
@@ -104,8 +104,8 @@
             <value>roundrobin</value>
         </values>
         <desc>
-            Decomposition Option for mosart
-        </desc>
+      Decomposition Option for mosart
+    </desc>
     </entry>
 
     <entry id="bypass_routing_option">
@@ -117,8 +117,8 @@
             <value>direct_in_place</value>
         </values>
         <desc>
-            Method for bypassing routing model.
-        </desc>
+      Method for bypassing routing model.
+    </desc>
     </entry>
 
     <entry id="qgwl_runoff_option">
@@ -130,8 +130,8 @@
             <value>threshold</value>
         </values>
         <desc>
-            Method for handling of qgwl runoff inputs.
-        </desc>
+      Method for handling of qgwl runoff inputs.
+    </desc>
     </entry>
 
     <entry id="finidat_rtm" skip_default_entry="true">
@@ -143,8 +143,8 @@
             <value>UNSET</value>
         </values>
         <desc>
-            Full pathname of initial rtm file
-        </desc>
+      Full pathname of initial rtm file
+    </desc>
     </entry>
 
     <entry id="nrevsn_rtm" skip_default_entry="true">
@@ -155,8 +155,8 @@
             <value>''</value>
         </values>
         <desc>
-            Name of master restart file for a branch run. (only used if RUN_TYPE is branch)
-        </desc>
+      Name of master restart file for a branch run. (only used if RUN_TYPE is branch)
+    </desc>
     </entry>
 
     <entry id="frivinp_rtm">
@@ -171,8 +171,8 @@
             <value rof_grid="null"></value>
         </values>
         <desc>
-            Full pathname of input datafile for RTM.
-        </desc>
+      Full pathname of input datafile for RTM.
+    </desc>
     </entry>
 
     <entry id="rtmhist_fexcl1">
@@ -183,8 +183,8 @@
             <value>''</value>
         </values>
         <desc>
-            Fields to exclude from history tape series 1.
-        </desc>
+      Fields to exclude from history tape series 1.
+    </desc>
     </entry>
 
     <entry id="rtmhist_fexcl2">
@@ -195,8 +195,8 @@
             <value>''</value>
         </values>
         <desc>
-            Fields to exclude from history tape series 2.
-        </desc>
+      Fields to exclude from history tape series  2.
+    </desc>
     </entry>
 
     <entry id="rtmhist_fexcl3">
@@ -207,8 +207,8 @@
             <value>''</value>
         </values>
         <desc>
-            Fields to exclude from history tape series 3.
-        </desc>
+      Fields to exclude from history tape series  3.
+    </desc>
     </entry>
 
     <entry id="rtmhist_fincl1">
@@ -219,8 +219,8 @@
             <value>''</value>
         </values>
         <desc>
-            Fields to add to history tape series 1.
-        </desc>
+      Fields to add to history tape series  1.
+    </desc>
     </entry>
 
     <entry id="rtmhist_fincl2">
@@ -231,8 +231,8 @@
             <value>''</value>
         </values>
         <desc>
-            Fields to add to history tape series 2.
-        </desc>
+      Fields to add to history tape series  2.
+    </desc>
     </entry>
 
     <entry id="rtmhist_fincl3">
@@ -243,8 +243,8 @@
             <value>''</value>
         </values>
         <desc>
-            Fields to add to history tape series 3.
-        </desc>
+      Fields to add to history tape series  3.
+    </desc>
     </entry>
 
     <entry id="rtmhist_mfilt">
@@ -255,8 +255,8 @@
             <value>1</value>
         </values>
         <desc>
-            Per tape series maximum number of time samples.
-        </desc>
+      Per tape series  maximum number of time samples.
+    </desc>
     </entry>
 
     <entry id="rtmhist_ndens">
@@ -268,9 +268,9 @@
             <value>1</value>
         </values>
         <desc>
-            Per tape series history file density (i.e. output precision)
-            1=double precision, 2=single precision (NOT working)
-        </desc>
+      Per tape series  history file density (i.e. output precision)
+      1=double precision, 2=single precision (NOT working)
+    </desc>
     </entry>
 
     <entry id="rtmhist_nhtfrq">
@@ -281,10 +281,10 @@
             <value>0</value>
         </values>
         <desc>
-            Per tape series history write frequency.
-            positive means in time steps, 0=monthly, negative means hours
-            (i.e. 24 means every 24 time-steps and -24 means every day
-        </desc>
+      Per tape series history write frequency.
+      positive means in time steps,  0=monthly, negative means hours
+      (i.e. 24 means every 24 time-steps and -24 means every day
+    </desc>
     </entry>
 
 </entry_id>
