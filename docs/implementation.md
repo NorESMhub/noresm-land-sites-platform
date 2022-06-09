@@ -24,7 +24,7 @@ This includes:
 - A web-based user interface to make interactions with the API more intuitive and user-friendly.
 - A Jupyter Server instance with the commonly used python libraries for analysis of input and output data.
 
-![Architecture](assets/architecture.svg)
+![Architecture](img/architecture.svg)
 
 *Figure [TODO X1]: the architecture and main components of the FATES Platform and their relationship to each other.*
 

@@ -1,0 +1,14 @@
+site_name: NorESM_LandSites_Platform documentation
+site_url: https://noresmhub.github.io/NorESM_LandSites_Platform/
+nav:
+  - Home: index.md
+  - NorESM land sites: land-sites.md
+  - User guide: user_guide.md
+  - Implementation: implementation.md
+  - About: about.md
+  - Contributing & code of conduct: contributing.md
+extra_css:
+  - stylesheets/map.css
+extra_javascript:
+  - javascripts/map.js
+theme: readthedocs
