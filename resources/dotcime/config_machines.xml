@@ -21,7 +21,7 @@
         <PROJECT_REQUIRED>FALSE</PROJECT_REQUIRED>
         <mpirun mpilib="mpich">
             <executable>mpiexec</executable>
-            <arguments>
+            <arguments>                
                 <arg name="anum_tasks">-n {{ total_tasks }}</arg>
             </arguments>
         </mpirun>
@@ -32,8 +32,9 @@
         <environment_variables>
             <env name="NETCDF_PATH">/usr/local</env>
             <env name="PNETCDF_PATH">/usr/local</env>
-            <env name="FPATH">/usr/lib64</env>
-            <env name="CPATH">/usr/lib64</env>
+            <env name="FPATH">/usr/lib</env>
+            <env name="CPATH">/usr/lib</env>
+            <env name="ESMFMKFILE">/usr/local/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</env>
         </environment_variables>
         <resource_limits>
             <resource name="RLIMIT_STACK">-1</resource>
@@ -41,4 +42,3 @@
     </machine>
 
 </config_machines>
-

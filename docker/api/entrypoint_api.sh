@@ -9,9 +9,7 @@ if [[ ! -d /ctsm-api/resources/ctsm ]]; then
 
     cd ctsm
 
-    git checkout 6022f0e07ca4cf66a416f1007e77eed5d634d64e
-
-    cp -r ../overwrites/manage_externals .
+    git checkout 1728491743cc572981863764c13bad4949025590
 
     ./manage_externals/checkout_externals
 
