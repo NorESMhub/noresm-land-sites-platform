@@ -1,65 +1,70 @@
 # Welcome to the documentation of the NorESM LandSites Platform
 
-This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to [this user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
+This page describes what the platform contains, how the input data were made, the main functionalities, and model output. Users should go to the [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) and refer to this documentation for further detail. Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
 
-The main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform) in a [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control"). The `main` branch stores the latest functioning version, and development is done on `platform_dev`. Older versions can be accessed under [Releases](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and Mkdocs. 
+The main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform) in a [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control"). The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and Mkdocs. To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/#code-of-conduct).
 
-To run model simulations, go to our [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide). Advanced users who want to do development in addition to just running simulations can request resources on e.g. [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
+Advanced users who want to do development in addition to just running simulations can request resources on e.g. [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
 
-🚧
-*NB! This documentation is still under construction. Some parts are missing or may be written for older testing versions. Please let us know if you have suggestions for something to add or explain better in the [issues](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues)*
-🚧
+Please let us know if you have suggestions or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) on GitHub.
 
 *****************************
 
 ## Platform content
 
-You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") in a Docker container. We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and narrow down the long list of possible output variables into something manageable.
+You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and provide Jupyter notebooks with example python code to plot some input data and model output.
 
-🚧*add an illustration here*
+![Architecture](img/architecture.svg)
 
-### Docker container
+*Illustration of the software architecture. Colored boxes are folders mounted to the container. The model and the API manage the blue ones, and yellow boxes are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.
+
+### API
+
+> The API code can be found at [https://github.com/NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api).
+
+An Application Programming Interface (API) is a set of tools that enables the end-users to interact with a program. The interaction happens by receiving some commands from the users, performing some actions if necessary, and then sending back some results. We created an HTTP API for the model using FastAPI, a popular high-performance framework for Python. It means the API can be used through any medium that can send and receive HTTP requests, e.g., browsers and libraries like python-requests.
+
+FastAPI generates a REST API based on [OpenAPI specifications](https://github.com/OAI/OpenAPI-Specification). It also automatically generates documentation for the API from the docstrings of the python functions, which includes a description of the inputs and outputs and examples. The documentation is interactive and can be accessed through its web-based user interface.
+
+The Platform API is responsible for:
+
+- Getting a copy of the model code (via version control or by downloading the source code).
+- Setting up the model's external components.
+- Overwriting parts of the model with the specified code in `resources/overwrites` (optional).
+- Defining the machine config, i.e., the Docker container, for the model (see `resources/dotcime`).
+- Creating, configuring, and running cases.
+- Serving inputs and outputs of the created cases.
+
+
+### Docker containers and model dependencies
+
+CTSM and NorESM depend on many external libraries, which can be challenging to install on a personal computer. The difficulties can be due to a lack of cross-platform support, version conflict with existing libraries, or system architecture.
+
+One solution to this is containerization, which is the process of packaging and distributing software in a way that can be run on various platforms. Containers use Operating System-level virtualization. This allows efficient use of resources while isolating the software from other processes running on the host system. All the requirements for packaged software are included in the container.
+
+We used [Docker](https://www.docker.com/) for this purpose. Docker is a widely used and popular containerization tool. The packaged software is called an Image. When a Docker Image is run, it is called a Container, i.e., a running instance of the software.
+
+The main Image created for the Platform is [ctsm-api](https://github.com/NorESMhub/ctsm-api/pkgs/container/ctsm-api). It contains all the dependencies for the model, the scripts to initialize and configure the model, and the API code that provides access to the model. The Image can be configured via an environment file (`.env`), which gives control to users to adjust some initial properties of the model and the Platform, e.g., what version of the model to use and what drivers should be enabled.
+
+In order to allow easier maintenance and better use of resources, some dependencies are not included in the Image. For example, the message queuing broker (RabbitMQ) required by the API, which is needed to manage asynchronous communications between the model and the API, is not included. This service can be added by using the official [RabbitMQ Docker Image](https://hub.docker.com/_/rabbitmq). Keeping this service out of the Image lets more savvy users pick a different message broker for their use cases.
+
+To address the needs of non-technical users, we have taken care of the extra configurations for the containers by using an orchestration tool called [Docker Compose](https://docs.docker.com/compose/overview/). Docker Compose is a wrapper around Docker, which allows configuring and organizing all the containers in a single `YAML` file.
+
+In addition to the previously mentioned Images, we have included an Image for Jupyter Server and one for our Web User Interface (UI) for `ctsm-api`.
 
 A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. When we release a new version, we have to build a container using this Docker file. Users can then download the dontainer and run simulations there. The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). For details on the docker file and how to modify or update it, look the [this description on GitHub](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md)
 
-### Graphical user interface
+### Web User Interface
 
-Users can set up cases, change some model settings, and run simulations via a GUI, which is run from a Docker container. Once the container is correctly up and running, the GUI will be available at [localhost:8080](localhost:8080)
+> The Web User Interface (UI) code can be found at [https://github.com/NorESMhub/fates-platform](https://github.com/NorESMhub/fates-platform).
 
-### Model versions
+Users can set up cases, change some model settings, and run simulations via the Web User Interface. Once the platform is correctly up and running, the UI will be available at [localhost:8080](localhost:8080). The additional web UI is an application that represents the configurable parameters of the model in a user-friendly way. It comes with built-in validations and error handling for the acceptable values of the parameters. Its goal is to streamline the process of editing a case and help users focus on the scientific aspects of their simulations rather than on the technical configuration.
 
-The platform is built to run the land model (CLM) with the Norwegian Earth System Model (as opposed to e.g. CESM which also uses the same land model). The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is taken in to the platform using the `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). 
+The UI is created using [Typescript](https://www.typescriptlang.org/), a superset of JavaScript language, with the [React](https://reactjs.org/) framework.
 
-#### Release [0.1.0-dev](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases)
-| Model | Version |
-| --- | --- |
-| NorESM |  |
-| CLM | ctsm5.1.dev026 |
-| FATES | sci.1.43.2_api.14.2.0 |
+### Jupyter Server
 
-### Compsets
-
-Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. NorESM consists of several sub-models (components) for the atmosphere, land, ocean, etc, plus some common infrastructure code that allows the components to pass information back and forth at certain time steps. Component sets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
-
-The compset is specified by combining components in this order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. 
-
-- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm.
-- ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
-- LND: Land, here CLM50%FATES/BGC/SP for active Community Land Model version 5.0 and one of the following vegetation modes:
-    1. Functionally Assembled Terrestrial Ecosystem Simulator vegetation (FATES)
-    2. FATES with BioGeoChemistry (BGC)
-    3. FATES simplified mode with Satellite Phenology (SP)
-- ICE: Sea-ice, here SICE stub ice
-- OCN: Ocean, here SOCN stub ocean
-- ROF: River runoff, here MOSART the MOdel for Scale Adaptive River Transport
-- GLC: Land Ice, here SGLC stub glacier (land ice) component
-- WAV: Wave, here SWAV stub wave component 
-
-The compset longname defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following compsets using FATES:
-
->2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
-
-More compsets for pre-industrial or future simulations require additional input data and may be included in future versions of the platform. For now, if you need other compsets you need to dig deeper into the CLM technical documentation and provide the necessary input data and code changes yourself. 
+The included Jupyter Server Image comes with some commonly used python libraries for data analysis. The list of bundled libraries is available at https://github.com/MetOs-UiO/fates_platform_ecological_climatology/blob/main/docker/jupyter/Dockerfile#L7.
 
 **************************************
 
@@ -122,6 +127,93 @@ For more information on using custom input to CLM, see the [CLM documentation](h
 To get realistic simulations, the model needs to run for a while to reach a state of equilibrium under the applied forcing. Starting the model from "bare ground", the climate is not in equilibrium, there is no or only unrealistic soil, and the model needs time to grow and kill vegetation to get appropriate soil properties and a stable climate. We provide "restart" files for our sites with the following spin-up phase settings:
 
 - *under construction*
+
+## Data preparation and model parameters and sites configuration
+
+
+
+[TODO: add info on data preparation]
+
+Both model parameters and sites configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`.
+They can be modified by users who are familiar with the model.
+
+The model parameters file contains a list of JSON objects. Attributes of each object are described in table [TODO: X2].
+Note that not all types of variables accepted by the model are supported at this point.
+
+| Attribute         | Type                            | default | Required | Scope      | Description                                                                                                                                              |
+|-------------------|---------------------------------|---------|----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name              | string                          | -       | yes      | Model      | Name of the variable exactly as it should be passed to the model.                                                                                        |
+| label             | string                          | -       | no       | UI         | A human-readable label describing the parameter.                                                                                                         |
+| category          | string                          | -       | yes      | API        | One of the following: `ctsm_xml`, `user_nl_clm`, `user_nl_clm_history_file`, `fates`, `fates_param`.                                                     |
+| type              | string                          | -       | yes      | Model, API | One of the following: `char`, `integer`, `float`, `logical`, `date`.                                                                                     |
+| description       | string                          | -       | no       | UI         | Detailed description of the parameter.                                                                                                                   |
+| readonly          | boolean                         | false   | no       | UI         | Whether the parameter can be edited by the user.                                                                                                         |
+| hidden            | boolean                         | false   | no       | UI         | Whether the parameter should be hidden from the user.                                                                                                    |
+| allow_multiple    | boolean                         | false   | no       | API, UI    | Whether the parameter accepts multiple values.                                                                                                           |
+| allow_custom      | boolean                         | false   | no       | UI         | Whether users can enter values other than the ones provided as choices (only applies to those parameters with `choices` in their `validation` attribute. |
+| validation        | Validation object               | -       | no       | API, UI    | See `Validation` table below ([TODO: X3]).                                                                                                               |
+| default           | integer, float, string, boolean | -       | no       | API        | A default value to use. It must match the type specified by the `type` attribute. If `allow_multiple` is set to `true`, it must be a list of values.     |
+| placeholder       | string                          | -       | no       | UI         | A placeholder value to show to the user. This value is not actually applied if no value is entered by the user.                                          |
+| append_input_path | boolean                         | false   | no       | API        | Whether to adjust a path value based on its relative location in the input folder.                                                                       |
+*Table [TODO: X2] model parameter attributes*
+
+Adjusted values can be validated using the `validation` attribute. Currently, only the validators described in table [TODO: X3] are supported.
+
+| Attribute     | Type                              | Description                                                             |
+|---------------|-----------------------------------|-------------------------------------------------------------------------|
+| min           | float                             | A minimum value for numeric attributes.                                 |
+| max           | float                             | A maximum value for numeric attributes.                                 |
+| pattern       | string                            | A regular expression to match the value against.                        |
+| pattern_error | string                            | A custom error message for values not matching the `pattern` attribute. |
+| choices       | [integer, float, string, boolean] | A list of choices for users to select from.                             |
+*Table [TODO: X3] validation attributes*
+
+Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2).
+Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table [TODO: X4].
+
+| Attribute | Type            | Required | Description                                                                                                                                                                                                                                                                       |
+|-----------|-----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name      | string          | yes      | Name of the site.                                                                                                                                                                                                                                                                 |
+| compset   | string          | yes      | The component set to use with the model.                                                                                                                                                                                                                                          |
+| res       | string          | yes      | The resolution/grid to use with the model.                                                                                                                                                                                                                                        |
+| config    | [Config object] | no       | Config is an object with two keys: `name` and `value`.<br/>The former must point to a parameter in `resources/config/variables_config.json`.<br/>The latter must be a valid value for that parameters.<br/>These are used as default values for the given parameter for the site. |
+*Table [TODO: X4] site geoJSON properties*
+
+
+### Model versions
+
+The platform is built to run the land model (CLM) with the Norwegian Earth System Model (as opposed to e.g. CESM which also uses the same land model). The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is taken in to the platform using the `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). 
+
+| Model | Version |
+| --- | --- |
+| NorESM | https://github.com/NorESMhub/NorESM/tree/release-nlp0.1.0 |
+| CLM | [ctsm5.1.dev038](https://github.com/ESCOMP/CTSM/tree/ctsm5.1.dev038) |
+| FATES | sci.1.43.2_api.14.2.0 |
+
+
+### Compsets
+
+Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. NorESM consists of several sub-models (components) for the atmosphere, land, ocean, etc, plus some common infrastructure code that allows the components to pass information back and forth at certain time steps. Component sets have a short name and a longer name with abbreviations denoting the components included. See more in the [CLM user guide](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/setting-up-and-running-a-case/choosing-a-compset.html).
+
+The compset is specified by combining components in this order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. 
+
+- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm.
+- ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
+- LND: Land, here CLM50%FATES/BGC/SP for active Community Land Model version 5.0 and one of the following vegetation modes:
+    1. Functionally Assembled Terrestrial Ecosystem Simulator vegetation (FATES)
+    2. FATES with BioGeoChemistry (BGC)
+    3. FATES simplified mode with Satellite Phenology (SP)
+- ICE: Sea-ice, here SICE stub ice
+- OCN: Ocean, here SOCN stub ocean
+- ROF: River runoff, here MOSART the MOdel for Scale Adaptive River Transport
+- GLC: Land Ice, here SGLC stub glacier (land ice) component
+- WAV: Wave, here SWAV stub wave component 
+
+The compset longname defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following compsets using FATES:
+
+>2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
+
+More compsets for pre-industrial or future simulations require additional input data and may be included in future versions of the platform. For now, if you need other compsets you need to dig deeper into the CLM technical documentation and provide the necessary input data and code changes yourself. 
 
 **************************************
 
