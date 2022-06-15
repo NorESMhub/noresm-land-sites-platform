@@ -220,12 +220,12 @@ To run a simulation, you need to set up a [case](https://esmci.github.io/cime/ve
 
 In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them like this:
 
-1. [CTSM](https://noresmhub.github.io/NorESM_LandSites_Platform/#ctsm-simulation-settings)
-2. [NAMELIST](https://noresmhub.github.io/NorESM_LandSites_Platform/#namelist-simulation-settings)
+1. [Run environment](https://noresmhub.github.io/NorESM_LandSites_Platform/#run-environment-settings)
+2. [CLM namelist](https://noresmhub.github.io/NorESM_LandSites_Platform/#clm-namelist-simulation-settings)
 3. [History Files](https://noresmhub.github.io/NorESM_LandSites_Platform/#history-files)
 4. [FATES](https://noresmhub.github.io/NorESM_LandSites_Platform/#fates-simulation-settings)
 
-#### CTSM simulation settings
+#### Run environment settings
 
 | parameter | values | explanation |
 | --- | --- | --- |
@@ -235,14 +235,14 @@ In the web UI, once you have chosen a site you get options to download site data
 | RUN_TYPE | startup, hybrid, branch, restart | *startup*: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model will not produce realistic output. No spin-up included. Use this mode for quick testing, or for making your own spin-up. *hybrid*: the model is initialized similar to a startup run, but uses initialization datasets from a previous case. Suitable when you already have good spin-up files and want a more realistic simulation. *branch*: the model is initialized using a consistent set of restart files from a previous run. The case name is generally changed for a branch run, although it does not have to be. Branch runs are suitable for sensitivity or parameter studies, or when settings for history file output streams need to be modified while still maintaining bit-for-bit reproducibility. *restart*: continues running an existing case after it has been stopped. |
 
 
-#### NAMELIST simulation settings
+#### CLM namelist simulation settings
 
 | parameter | values | explanation |
 | --- | --- | --- |
 
 #### History Files
 
-By default, the model records output ... If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns. Each column corresponds to a history tape. 
+By default, the model records output in one tape (hist_fincl1) as one (hist_mfilt=1) average (hist_avgflag_pertape=A) monthly (hist_nhtfrq=0) value, for a subset of variables (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES"), in a long-lat grid (hist_dov2xy=TRUE). If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns. Each column corresponds to a history tape, that is a series of files created for the simulation period. If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns,  you can add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
 
 | parameter | values | explanation |
 | --- | --- | --- |
