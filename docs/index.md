@@ -66,6 +66,8 @@ When the platform is up and running, the Jupyter server is available at [localho
 
 The platform is built to run the land model (CLM) with the Norwegian Earth System Model (as opposed to e.g. CESM which also uses the same land model). The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is taken in to the platform using the `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). 
 
+*Table 1: Model versions*
+
 | Model | Version |
 | --- | --- |
 | NorESM | https://github.com/NorESMhub/NorESM/tree/release-nlp0.1.0 |
@@ -155,9 +157,13 @@ To get realistic simulations, the model needs to run for a while to reach a stat
 
 ## Model parameters and sites configuration
 
-Both model parameters and sites configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`. They can be modified by users who are familiar with the model.
+To be able to set model parameters in the web UI, some configuration files are needed. Both model parameters and sites configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`. They can be modified by users who are familiar with the model. 
 
 The model parameters file contains a list of JSON objects. Attributes of each object are described in table [TODO: X2]. Note that not all types of variables accepted by the model are supported in the user interface at this point.
+
+The tables below describe how these configuration files work and handle the model settings users can change in the UI.
+
+*Table 2: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
 
 | Attribute         | Type                            | default | Required | Scope      | Description                                                                                                                                              |
 |-------------------|---------------------------------|---------|----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -174,9 +180,11 @@ The model parameters file contains a list of JSON objects. Attributes of each ob
 | default           | integer, float, string, boolean | -       | no       | API        | A default value to use. It must match the type specified by the `type` attribute. If `allow_multiple` is set to `true`, it must be a list of values.     |
 | placeholder       | string                          | -       | no       | UI         | A placeholder value to show to the user. This value is not actually applied if no value is entered by the user.                                          |
 | append_input_path | boolean                         | false   | no       | API        | Whether to adjust a path value based on its relative location in the input folder.                                                                       |
-*Table [TODO: X2] model parameter attributes*
 
-Adjusted values can be validated using the `validation` attribute. Currently, only the validators described in table [TODO: X3] are supported.
+
+Adjusted values can be validated using the `validation` attribute. Currently, only the validators described in table 3 are supported.
+
+*Table 3: validation attributes to define which values are accepted for each model parameter*
 
 | Attribute     | Type                              | Description                                                             |
 |---------------|-----------------------------------|-------------------------------------------------------------------------|
@@ -185,10 +193,11 @@ Adjusted values can be validated using the `validation` attribute. Currently, on
 | pattern       | string                            | A regular expression to match the value against.                        |
 | pattern_error | string                            | A custom error message for values not matching the `pattern` attribute. |
 | choices       | [integer, float, string, boolean] | A list of choices for users to select from.                             |
-*Table [TODO: X3] validation attributes*
 
-Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2).
-Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table [TODO: X4].
+
+Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The site map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 4.
+
+*Table 4: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/sites.json) file in `/resources/config`*
 
 | Attribute | Type            | Required | Description                                                                                                                                                                                                                                                                       |
 |-----------|-----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -196,25 +205,25 @@ Their configuration is set in the `properties` attribute of the GeoJSON object, 
 | compset   | string          | yes      | The component set to use with the model.                                                                                                                                                                                                                                          |
 | res       | string          | yes      | The resolution/grid to use with the model.                                                                                                                                                                                                                                        |
 | config    | [Config object] | no       | Config is an object with two keys: `name` and `value`.<br/>The former must point to a parameter in `resources/config/variables_config.json`.<br/>The latter must be a valid value for that parameters.<br/>These are used as default values for the given parameter for the site. |
-*Table [TODO: X4] site geoJSON properties*
+
 
 
 **************************************
 
-## Running simulations
+## Running simulations in the web User Interface
 
-See the [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) for instructions on running simulations.
+See the [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) for instructions on running simulations. Advanced users who want to change additional or different model parameters or settings can do so manually 
 
 ### Create case
 
 To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. 
 
-In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters. There are more customisation options for the models, but for simplicity and explainability we have restricted the options in the UI and grouped them like this:
+In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them like this:
 
-1. CTSM
-2. NAMELIST
-3. History Files
-4. FATES
+1. [CTSM](https://noresmhub.github.io/NorESM_LandSites_Platform/#ctsm-simulation-settings)
+2. [NAMELIST](https://noresmhub.github.io/NorESM_LandSites_Platform/#namelist-simulation-settings)
+3. [History Files](https://noresmhub.github.io/NorESM_LandSites_Platform/#history-files)
+4. [FATES](https://noresmhub.github.io/NorESM_LandSites_Platform/#fates-simulation-settings)
 
 #### CTSM simulation settings
 
@@ -222,15 +231,8 @@ In the web UI, once you have chosen a site you get options to download site data
 | --- | --- | --- |
 | CALENDAR | No Leap, Gregorian | Should the simulation follow the Gregorian (realistic) or simplified calendar without leap years? This option should normally follow the calendar the input data is provided in. |
 | DATM_CLMCEP_YR_START | 
-
-
-
-| model run type | description |
-|----------------|-------------|
-| startup | a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model will not produce realistic output. No [spin-up](https://noresmhub.github.io/NorESM_LandSites_Platform/#spin-up) is included. Use this mode for quick testing, or for making your own spin-up. |
-| hybrid  | the model is initialized similar to a startup run, but uses initialization datasets from a previous case. Suitable when you already have good spin-up files and want a more realistic simulation. |
-| branch  | the model is initialized using a consistent set of restart files from a previous run. The case name is generally changed for a branch run, although it does not have to be. Branch runs are suitable for sensitivity or parameter studies, or when settings for history file output streams need to be modified while still maintaining bit-for-bit reproducibility. |
-| restart | continues running an existing case after it has been stopped. |
+|  |  |  |
+| RUN_TYPE | startup, hybrid, branch, restart | *startup*: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model will not produce realistic output. No spin-up included. Use this mode for quick testing, or for making your own spin-up. *hybrid*: the model is initialized similar to a startup run, but uses initialization datasets from a previous case. Suitable when you already have good spin-up files and want a more realistic simulation. *branch*: the model is initialized using a consistent set of restart files from a previous run. The case name is generally changed for a branch run, although it does not have to be. Branch runs are suitable for sensitivity or parameter studies, or when settings for history file output streams need to be modified while still maintaining bit-for-bit reproducibility. *restart*: continues running an existing case after it has been stopped. |
 
 
 #### NAMELIST simulation settings
