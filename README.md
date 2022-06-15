@@ -2,7 +2,7 @@
 
 Clone the repo with the following command:
 
-`git clone https://github.com/MetOs-UiO/fates_platform_ecological_climatology --config core.autocrlf=input`
+`git clone https://github.com/NorESMhub/NorESM_LandSites_Platform.git --config core.autocrlf=input`
 
 Then run the following from the project root:
 
