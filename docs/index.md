@@ -8,6 +8,8 @@ Advanced users who want to do development in addition to just running simulation
 
 Please let us know if you have suggestions or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) on GitHub.
 
+🚧 NB! This documentation is under construction and contains some outdated and/or missing parts. 🚧
+
 *****************************
 
 ## Platform content
