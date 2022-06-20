@@ -10,10 +10,16 @@ jobs:
   docs:
     runs-on: ubuntu-latest
 
+    container: python:3.10-bullseye
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Deploy MkDocs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@1.24
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install python requirements
+        run: |
+          pip install -U pip
+          pip install mkdocs
+
+      - name: Build and deploy docs
+        run: |
+          mkdocs gh-deploy --clean --message "Update docs"
