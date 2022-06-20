@@ -35,7 +35,7 @@
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
-      "summary": "Starting year to loop data over"
+      "summary": "Starting year to loop data over. Example: If the input data spans 1900-2010, set = 2000 to tell the model to use the input data from 2000 onwards."
     },
     "placeholder": 1901
   },
@@ -53,7 +53,7 @@
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
-      "summary": "Ending year to loop data over"
+      "summary": "Ending year to loop data over. For example: If the input data spans 1900-2010, set this to 2005 to tell the model to use the input data up to 2005. If you run a longer simulation than the span between YR_START and YR_END, the input will be looped."
     },
     "placeholder": 1950
   },
@@ -62,7 +62,7 @@
     "category": "ctsm_xml",
     "type": "date",
     "description": {
-      "summary": "Run start date (yyyy-mm-dd). Only used for startup or hybrid runs."
+      "summary": "Run start date (yyyy-mm-dd); normally at the start of the same year as YR_START. Only used for startup or hybrid run types."
     },
     "placeholder": "2000-01-01"
   },
@@ -71,7 +71,7 @@
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
-      "summary": "Provides a numerical count for $STOP_OPTION."
+      "summary": "Sets the run length together with STOP_OPTION; Number of STOP_OPTION to simulate. E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days."
     },
     "placeholder": 5
   },
@@ -80,7 +80,7 @@
     "category": "ctsm_xml",
     "type": "char",
     "description": {
-      "summary": "Sets the run length along with STOP_N and STOP_DATE."
+      "summary": "Sets the run length together with STOP_N; Time span of simulation (years, months, days, seconds, or model timesteps). E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days."
     },
     "validation": {
       "choices": [
@@ -112,7 +112,7 @@
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
-      "summary": "Alternative date yyyymmdd date option, sets the run length with STOP_OPTION and STOP_N negative value implies off."
+      "summary": "Alternative date yyyymmdd date option; sets the run length with STOP_OPTION and STOP_N. Negative value implies that this alternative is not used."
     },
     "placeholder": -999
   },
@@ -121,13 +121,12 @@
     "category": "ctsm_xml",
     "type": "char",
     "description": {
-      "summary": "Determines the model run initialization type."
+      "summary": "Startup or Restart. Startup: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model may not produce realistic output. No spin-up files used. Use this mode for quick testing, or for making your own spin-up. Restart: continues running an existing case after it has been stopped.” (Without restart files, the RUN_TYPE should not include “branch” etc., but should be replaced with options to manipulate spin-up behavior (simplified C soil pool initialization, etc.)"
     },
     "validation": {
       "choices": [
         { "value": "startup", "label": "Startup" },
-        { "value": "hybrid", "label": "Hybrid" },
-        { "value": "branch", "label": "Branch" }
+        { "value": "restart", "label": "Restart" }
       ]
     },
     "placeholder": "Startup"
@@ -191,7 +190,7 @@
     "category": "user_nl_clm",
     "type": "integer",
     "description": {
-      "summary": "Fire model",
+      "summary": "If or how to use advanced fire behaviour with SPITFIRE module.",
       "details": "0 : Simulations of fire are off<br>1 : use a global constant lightning rate found in fates_params.<br>2 : use an external lightning dataset. <br>3 : use an external confirmed ignitions dataset (not available through standard CSEM dataset collection).<br>4 : use external lightning and population datasets to simulate both natural and anthropogenic<br>ignitions.",
       "url": "https://fates-users-guide.readthedocs.io/en/latest/user/SPITFIRE-Namelist-Options.html"
     },
@@ -226,10 +225,11 @@
     "category": "user_nl_clm",
     "type": "logical",
     "description": {
-      "summary": "If selected, use variable soil depth.",
-      "details": "If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi)."
+      "summary": "Use variable soil depth from depth to bedrock data set.",
+      "details": "If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi).",
+      "url": "https://journals.ametsoc.org/view/journals/clim/29/9/jcli-d-15-0307.1.xml"
     },
-    "default": false
+    "default": true
   },
   {
     "name": "hist_fincl1",
@@ -347,7 +347,7 @@
       "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
       "details": "Some PFT information only available in this 1D string by setting this to false"
     },
-    "default": [true, true, true, true, true, true],
+    "default": [false, false, false, false, false, false],
     "allow_multiple": true
   },
   {
@@ -387,7 +387,7 @@
     "description": {
       "summary": "Per tape series maximum number of time samples."
     },
-    "default": [0, 0, 0, 0, 0, 0],
+    "default": [1, 0, 0, 0, 0, 0],
     "allow_multiple": true
   },
   {
