@@ -22,4 +22,4 @@ jobs:
 
       - name: Build and deploy docs
         run: |
-          mkdocs gh-deploy --clean --message "Update docs"
+          mkdocs gh-deploy --force

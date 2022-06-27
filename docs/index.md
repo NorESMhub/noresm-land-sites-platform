@@ -18,7 +18,10 @@ You can use the platform to run [single-cell model simulations](https://en.wikip
 
 ![Architecture](img/architecture.svg)
 
-*Illustration of the software architecture. Colored boxes are folders mounted to the container. The model and the API manage the blue ones, and yellow boxes are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
+*Illustration of the software architecture.
+Gray boxes are Docker containers. `Model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies.
+`./resources` contains all the folders that are mounted into the containers by `docker-compose`.
+The model and the API manage the blue ones, and yellow folders are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
 
 ### API
 
