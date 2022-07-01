@@ -6,7 +6,7 @@ The NorESM land sites platform is developed by a group of students, postdocs, an
 
 We use our [GitHub repository](https://github.com/NorESMhub/NorESM_LandSites_Platform) for developing code. If you are new to working with Git and GitHub, you might like [this](https://kbroman.org/github_tutorial/ "a minimalist intro") or [this](https://docs.github.com/en/get-started/quickstart/hello-world "GitHub's own tutorial") tutorial. 
 
-The current version of the platform is kept in the `main` branch of the repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch.  Further development happens on new branches and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `platform_dev`.
+The current version of the platform is kept in the `main` branch of the repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch. Further development happens on indivudual forks and the `develop` branch and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything).
 
 If your work touches the Docker container, see instructions in this [readme file](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md).
 
@@ -14,7 +14,7 @@ If you have questions or comments about the platform, please open an issue [issu
 
 ### How to contribute to the documentation
 
-This documentation page is built using GitHub pages and [MkDocs](https://www.mkdocs.org/). To update it, change markdown files in /docs and commit the changes (or open a pull request). When the changes are saved, the page must be built again to fetch the changes by using the `mkdocs build` command in the top folder of the repository where mkdocs.yml tells github pages how to build the markdown files into a static webpage.
+This documentation page is built using GitHub pages and [MkDocs](https://www.mkdocs.org/). To update it, change markdown files in /docs and commit the changes (or open a pull request). When the changes are saved, the page must be built again to fetch the changes. This is done automatically when changes are pushed/committed to `main` by a github Action. Alternatively, you can build the pages by using the `mkdocs gh-deploy` command in the top folder of the repository where mkdocs.yml tells github pages how to build the markdown files into a static webpage. See the [Mkdocs docs](mkdocs gh-deploy) for further info.
 
 
 --------------------------
