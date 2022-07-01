@@ -412,84 +412,134 @@
     "name": "fates_c2b",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Real number; Carbon to biomass multiplier of bulk structural tissues, used in allometry to calculate biomass of several tissues.",
+      "details": "For instance, it is used to calculate plant leaf biomass blmax = (p1*min(d,dbh_maxh)**p2)/c2b where p1 is the slope, d is plant diameter, dbh_maxh is stem diameter at breast height at plant max height, and p2 is the exponent.",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#allometric-relationships"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_grperc",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Growth respiration factor.",
+      "details": "a fixed fraction of the carbon remaining after maintenance respiration has occurred.",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-respiration"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_leaf_long",
     "category": "fates_param",
     "type": "float",
-    "allow_multiple": true
-  },
-  {
-    "name": "fates_leaf_stor_priority",
-    "category": "fates_param",
-    "type": "float",
+    "description": {
+      "summary": "Leaf longevity (ie turnover timescale), in years"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_leaf_slatop",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Specific Leaf Area (SLA) at top of canopy, projected area basis, in m^2/gC",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#control-of-leaf-area-index"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_leaf_vcmax25top",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Maximum carboxylation rate of Rub. at 25C, canopy top, in umol CO2/m^2/s",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#photosynthesis"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_leaf_xl",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Leaf/stem orientation index, important for the absorption, transmittance and reflectance of solar radiation",
+      "details": "Direct radiation is extinguished through the canopy according to a coefficient calculated from the incoming solar angle and the leaf angle distribution parameter.",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#radiation-transfer"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_mort_bmort",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "background mortality rate, per year",
+      "details": "Together with other sources of mortality (fire, hydraulic failure, etc.), background mortality is a ‘rest’ category that ensures the overall mortality rates are reasonable.",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-mortality"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_mort_freezetol",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Minimum temperature tolerance, in degrees C",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-mortality"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_mort_hf_sm_threshold",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Soil moisture (btran units) at which drought mortality begins for non-hydraulic model",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-mortality"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_phen_evergreen",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Binary flag for evergreen leaf habit (0 or 1).",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#phenology"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_phen_season_decid",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Binary flag for cold seasonal-deciduous leaf habit (0 or 1)",
+      "details": "Whether (1) or not (0) the PFT drops its leaves in autumn when it gets colder, and regains them in spring based on temperature thresholds. PFTs can also be drought-deciduous, set by the fates_phen_stress_decid parametr..",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#phenology"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_root_long",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "root longevity (alternatively, turnover time), in years",
+      "details": "Roots that die, become litter that can decompose in the soil.",
+      "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html#litter-inputs"
+    },
     "allow_multiple": true
   },
   {
     "name": "fates_woody",
     "category": "fates_param",
     "type": "float",
+    "description": {
+      "summary": "Binary woody lifeform flag (0 or 1). Tree and shrub PFTs have woody tissues, while grass PFT lack wood."
+    },
     "allow_multiple": true
   }
 ]
