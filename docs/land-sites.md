@@ -34,6 +34,13 @@ To plot site locations over a background map in R, you can also look at [this re
 
 ## [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) (SeedClim) sites
 
+The Vestland climate grid, often called the SeedClim grid after the first major project that set it up, is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
+
+Central data papers:
+
+- [FunCaB](https://zenodo.org/record/6520022)
+- Coming soon: [INCLINE]()
+- Coming soon: [SeedClim]()
 
 | Site name | Name             | Lon (X) | Lat (Y) | Elevation (Z) | Data years | Data types | Description      |
 | --------- | ---------------  | ------- | ------- | ------------- | ---------- | ---------- | ---------------- |   
@@ -49,14 +56,6 @@ To plot site locations over a background map in R, you can also look at [this re
 | BOR2      | Vikesland        | 7.16982 | 60.8803 | 474           | "  | " |
 | BOR3      | Arhelleren       | 6.33738 | 60.6652 | 431           | "  | " |
 | BOR4      | Oevstedal        | 5.96487 | 60.6901 | 346           | "  | " |
-
-The Vestland climate grid, often called the SeedClim grid after the first major project that set it up, is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
-
-Central data papers:
-
-- [FunCaB](https://zenodo.org/record/6520022)
-- Coming soon: [INCLINE]()
-- Coming soon: [SeedClim]()
 
 ![Vestland climate grid](https://betweenthefjords.w.uib.no/files/2020/08/grid.png)
 
