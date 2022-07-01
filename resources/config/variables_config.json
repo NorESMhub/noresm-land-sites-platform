@@ -31,7 +31,7 @@
     "placeholder": "No Leap"
   },
   {
-    "name": "DATM_CLMNCEP_YR_START",
+    "name": "DATM_YR_START",
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
@@ -40,7 +40,7 @@
     "placeholder": 1901
   },
   {
-    "name": "DATM_CLMNCEP_YR_ALIGN",
+    "name": "DATM_YR_ALIGN",
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
@@ -49,7 +49,7 @@
     "placeholder": 1901
   },
   {
-    "name": "DATM_CLMNCEP_YR_END",
+    "name": "DATM_YR_END",
     "category": "ctsm_xml",
     "type": "integer",
     "description": {
