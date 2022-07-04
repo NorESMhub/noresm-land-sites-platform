@@ -1,3 +1,7 @@
+[![NorESM logo](https://tinyimg.io/i/9AdhM6J.png "the Norwegian Earth System Model")](https://www.noresm.org/)
+[![EMERALD logo](https://tinyimg.io/i/O6Vkl1F.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
+[![LATICE logo](https://tinyimg.io/i/4IM1ogh.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
+
 # Welcome to the documentation of the NorESM LandSites Platform
 
 This page describes what the platform contains, how the input data were made, the main functionalities, and model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), [available sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/), [about us](https://noresmhub.github.io/NorESM_LandSites_Platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/). Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
