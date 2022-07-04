@@ -14,7 +14,7 @@
         "name": "ALP1",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ALP1.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -2470,7 +2470,7 @@
         "name": "BOR1",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR1.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BOR1.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",

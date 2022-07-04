@@ -3386,7 +3386,7 @@
             <meshfile>none</meshfile>
         </stream_meshfile>
         <stream_datafiles>
-            <file>$DIN_LOC_ROOT/atm/cam/chem/trop_mozart_aero/aero/ALP1/aerosoldep_WACCM.ensmean_monthly_hist_1849-2015_0.9x1.25_CMIP6_c180926_ALP1.nc</file>
+            <file>$DIN_LOC_ROOT/atm/cam/chem/trop_mozart_aero/aero/aerosoldep_WACCM.ensmean_monthly_hist_1849-2015_0.9x1.25_CMIP6_c180926.nc</file>
         </stream_datafiles>
         <stream_datavars>
             <var>BCDEPWET   Faxa_bcphiwet</var>
@@ -3961,7 +3961,7 @@
             <meshfile>none</meshfile>
         </stream_meshfile>
         <stream_datafiles>
-            <file>$DIN_LOC_ROOT/atm/datm7/topo_forcing/ALP1/topodata_ALP1.nc</file>
+            <file>$DIN_LOC_ROOT/atm/datm7/topo_forcing/topodata_0.9x1.25_USGS_070110_stream_c151201.nc</file>
         </stream_datafiles>
         <stream_datavars>
             <var>TOPO Sa_topo</var>
