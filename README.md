@@ -8,16 +8,14 @@
 
 #### doi:
 
-#### website: [NorESM Land Sites Platform documentation](https://NorESMhub.github.io/NorESM_LandSites_Platform)
+#### website: [NorESM Land Sites Platform documentation and user guide](https://NorESMhub.github.io/NorESM_LandSites_Platform)
 
 ## Overview and documentation
-The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations accross Nordic regions with minimal techincal obstacles.
+The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations in Norway with minimal techincal obstacles.
 
-The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand.
-
+The platform aims to lower the threshold for beginners to use CTSM-FATES, and **promote the usage of site-level observations to test, validate and improve the models**.
 
 For more information on the platform, please see our [technical documentation](https://NorESMhub.github.io/NorESM_LandSites_Platform).
-
 
 ## [User guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide)
   - Our [main user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) uses a graphical user interface, jupyter notebooks and a docker container to run the newest platform versions. 
@@ -34,13 +32,11 @@ Then run the following from the project root:
 
 `docker-compose up`
 
-After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)` in `api` docker logs, you can access the API at `http://localhost:8000/api/v1/docs` and the UI at `http://localhost:8080`.
+After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)` in `api` docker logs, you can access the API at `http://localhost:8000/api/v1/docs` and the UI at `http://localhost:8080`. You can access the Jupyter server at `http://localhost:8888/lab`.
 
-You can access the Jupyter server at `http://localhost:8888/lab`.
-
-> ## Note:
->
-> If you are on Linux, you can run the following command to set the user and id in in a `.env` in the project root:
+> ### Note if you are on Linux, 
+> 
+> you can run the following command to set the user and id in in a `.env` in the project root:
 >
 > ```echo "HOST_USER=$(whoami)\nHOST_UID=$(id -u)\nHOST_GID=$(id -g)" > .env```
 >
