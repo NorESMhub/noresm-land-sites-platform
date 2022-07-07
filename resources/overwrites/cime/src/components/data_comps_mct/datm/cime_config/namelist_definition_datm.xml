@@ -452,7 +452,6 @@
       <value stream="CLM1PT.1x1_ISK">$DIN_LOC_ROOT_CLMFORC/ISK</value>
       <value stream="CLM1PT.1x1_HIS1">$DIN_LOC_ROOT_CLMFORC/HIS1</value>
       <value stream="CLM1PT.1x1_HIS2">$DIN_LOC_ROOT_CLMFORC/HIS2</value>
-      <value stream="CLM1PT.1x1_ADVN">$DIN_LOC_ROOT_CLMFORC/ADVN</value>
       <value stream="CLM1PT.1x1_SVN">$DIN_LOC_ROOT_CLMFORC/SVN</value>
       <value stream="CLM1PT.CLM_USRDAT">$DIN_LOC_ROOT_CLMFORC/$CLM_USRDAT_NAME</value>
       <value stream="CPLHISTForcing">$DATM_CPLHIST_DIR</value>
@@ -550,7 +549,6 @@
       <value  stream="CLM1PT.1x1_ISK">clm1pt_ISK_%ym.nc</value>
       <value  stream="CLM1PT.1x1_HIS1">clm1pt_HIS1_%ym.nc</value>
       <value  stream="CLM1PT.1x1_HIS2">clm1pt_HIS2_%ym.nc</value>
-      <value  stream="CLM1PT.1x1_ADVN">clm1pt_ADVN_%ym.nc</value>
       <value  stream="CLM1PT.1x1_SVN">clm1pt_SVN_%ym.nc</value>
       <value  stream="CLM1PT.CLM_USRDAT">clm1pt_${CLM_USRDAT_NAME}_%ym.nc</value>
       <value  stream="CPLHISTForcing.Solar">$DATM_CPLHIST_CASE.cpl.ha2x1hi.%ym.nc</value>
