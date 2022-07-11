@@ -3991,6 +3991,2155 @@
         ],
         "group": "SeedClim"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.25481033,
+          61.10516357
+        ]
+      },
+      "properties": {
+        "name": "HIS1",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_HIS1",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_HIS1.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/HIS1/surfdata_HIS1_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.25089836,
+          61.1115036
+        ]
+      },
+      "properties": {
+        "name": "HIS2",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_HIS2",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_HIS2.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/HIS2/surfdata_HIS2_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.078142,
+          60.372387
+        ]
+      },
+      "properties": {
+        "name": "HUR",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_HUR",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_HUR.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/HUR/surfdata_HUR_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.527008533,
+          60.59383774
+        ]
+      },
+      "properties": {
+        "name": "FNS",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_FNS",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_FNS.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/FNS/surfdata_FNS_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.83334,
+          78.92094
+        ]
+      },
+      "properties": {
+        "name": "BYV",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_BYV",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BYV.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/BYV/surfdata_BYV_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.91667,
+          78.18333
+        ]
+      },
+      "properties": {
+        "name": "ADV",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_ADV",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ADV.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/ADV/surfdata_ADV_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.781667,
+          59.660278
+        ]
+      },
+      "properties": {
+        "name": "AAS",
+        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "res": "1x1_ISK",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_AAS.tar",
+        "config": [
+          {
+            "name": "DIN_LOC_ROOT_CLMFORC",
+            "value": "inputdata/atm/datm7/GSWP3v1"
+          },
+          {
+            "name": "fsurdat",
+            "value": "inputdata/lnd/clm2/surfdata_map/AAS/surfdata_AAS_simyr2000.nc"
+          },
+          {
+            "name": "fates_paramfile",
+            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
+          },
+          {
+            "name": "pft_index_count",
+            "value": 12
+          },
+          {
+            "name": "included_pft_indices",
+            "value": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
+          },
+          {
+            "name": "fates_c2b",
+            "value": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "name": "fates_grperc",
+            "value": [
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11,
+              0.11
+            ]
+          },
+          {
+            "name": "fates_leaf_long",
+            "value": [
+              1.5,
+              4,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_leaf_stor_priority",
+            "value": [
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ]
+          },
+          {
+            "name": "fates_leaf_slatop",
+            "value": [
+              0.012,
+              0.01,
+              0.024,
+              0.012,
+              0.03,
+              0.03,
+              0.012,
+              0.03,
+              0.03,
+              0.03,
+              0.03,
+              0.03
+            ]
+          },
+          {
+            "name": "fates_leaf_vcmax25top",
+            "value": [
+              50,
+              65,
+              39,
+              62,
+              41,
+              58,
+              62,
+              54,
+              54,
+              78,
+              78,
+              78
+            ]
+          },
+          {
+            "name": "fates_leaf_xl",
+            "value": [
+              0.1,
+              0.01,
+              0.01,
+              0.1,
+              0.01,
+              0.25,
+              0.01,
+              0.25,
+              0.25,
+              -0.3,
+              -0.3,
+              -0.3
+            ]
+          },
+          {
+            "name": "fates_mort_bmort",
+            "value": [
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014,
+              0.014
+            ]
+          },
+          {
+            "name": "fates_mort_freezetol",
+            "value": [
+              2.5,
+              -55,
+              -80,
+              -30,
+              2.5,
+              -30,
+              -60,
+              -10,
+              -80,
+              -80,
+              -20,
+              2.5
+            ]
+          },
+          {
+            "name": "fates_mort_hf_sm_threshold",
+            "value": [
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06,
+              1e-06
+            ]
+          },
+          {
+            "name": "fates_phen_evergreen",
+            "value": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_season_decid",
+            "value": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "fates_phen_stress_decid",
+            "value": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_root_long",
+            "value": [
+              1,
+              2,
+              1,
+              1.5,
+              1,
+              1,
+              1.5,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "fates_woody",
+            "value": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "group": "SeedClim"
+      }
     }
   ]
 }
