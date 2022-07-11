@@ -5846,7 +5846,7 @@
       "properties": {
         "name": "AAS",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-        "res": "1x1_ISK",
+        "res": "1x1_AAS",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_AAS.tar",
         "config": [
           {
