@@ -14,7 +14,7 @@
         "name": "ALP1",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ALP1.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP1.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -321,7 +321,7 @@
         "name": "ALP2",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP2",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ALP2.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP2.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -628,7 +628,7 @@
         "name": "ALP3",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP3",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ALP3.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP3.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -935,7 +935,7 @@
         "name": "ALP4",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP4",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ALP4.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP4.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -1242,7 +1242,7 @@
         "name": "SUB1",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_SUB1.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB1.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -1549,7 +1549,7 @@
         "name": "SUB2",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB2",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_SUB2.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB2.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -1856,7 +1856,7 @@
         "name": "SUB3",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB3",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_SUB3.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB3.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -2163,7 +2163,7 @@
         "name": "SUB4",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB4",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_SUB4.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB4.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -2470,7 +2470,7 @@
         "name": "BOR1",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BOR1.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR1.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -2777,7 +2777,7 @@
         "name": "BOR2",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR2",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BOR2.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR2.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -3084,7 +3084,7 @@
         "name": "BOR3",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR3",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BOR3.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR3.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -3391,7 +3391,7 @@
         "name": "BOR4",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR4",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BOR4.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR4.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -3698,7 +3698,7 @@
         "name": "ISK",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ISK",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ISK.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ISK.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -3989,7 +3989,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
     },
     {
@@ -4005,7 +4005,7 @@
         "name": "HIS1",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_HIS1.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_HIS1.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -4296,7 +4296,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
     },
     {
@@ -4312,7 +4312,7 @@
         "name": "HIS2",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS2",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_HIS2.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_HIS2.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -4603,7 +4603,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
     },
     {
@@ -4619,7 +4619,7 @@
         "name": "HUR",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HUR",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_HUR.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_HUR.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -4910,7 +4910,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
       },
     {
@@ -4926,7 +4926,7 @@
         "name": "FNS",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_FNS",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_FNS.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_FNS.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -5217,7 +5217,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
       },
     {
@@ -5233,7 +5233,7 @@
         "name": "BYV",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BYV",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_BYV.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BYV.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -5524,7 +5524,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
       },
     {
@@ -5540,7 +5540,7 @@
         "name": "ADV",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ADV",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ADV.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ADV.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -5831,7 +5831,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
       },
     {
@@ -5847,7 +5847,7 @@
         "name": "AAS",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_AAS",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_AAS.tar",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_AAS.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -6138,7 +6138,7 @@
             ]
           }
         ],
-        "group": "SeedClim"
+        "group": "LATICE-MIP"
       }
     }
   ]
