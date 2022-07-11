@@ -3690,15 +3690,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.293524,
-          69.341088
+          25.29547425,
+          69.3408715
         ]
       },
       "properties": {
-        "name": "FINN",
+        "name": "ISK",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-        "res": "1x1_FINN",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_FINN.tar",
+        "res": "1x1_ISK",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v0.1/default/inputdata_version2.0.0_ISK.tar",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -3706,7 +3706,7 @@
           },
           {
             "name": "fsurdat",
-            "value": "inputdata/lnd/clm2/surfdata_map/FINN/surfdata_FINN_simyr2000.nc"
+            "value": "inputdata/lnd/clm2/surfdata_map/ISK/surfdata_ISK_simyr2000.nc"
           },
           {
             "name": "fates_paramfile",

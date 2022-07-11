@@ -652,10 +652,10 @@
         <lon>6.51468</lon>
         <desc>1x1 SUB4 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
     </domain>
-    <domain name="1x1_FINN">
-        <lat>60.59383774</lat>
-        <lon>7.527008533</lon>
-        <desc>1x1 FINN from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    <domain name="1x1_ISK">
+        <lat>69.3408715</lat>
+        <lon>25.29547425</lon>
+        <desc>1x1 ISK from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
     </domain>
 
 

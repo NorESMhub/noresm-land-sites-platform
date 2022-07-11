@@ -1442,12 +1442,12 @@
         <stream_readmode>single</stream_readmode>
     </stream_entry>
 
-    <stream_entry name="CLM1PT.1x1_FINN.Solar">
+    <stream_entry name="CLM1PT.1x1_ISK.Solar">
         <stream_meshfile>
             <meshfile>none</meshfile>
         </stream_meshfile>
         <stream_datafiles>
-            <file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/FINN/clm1pt_FINN_%ym.nc</file>
+            <file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/ISK/clm1pt_ISK_%ym.nc</file>
         </stream_datafiles>
         <stream_datavars>
             <var>FSDS Faxa_swdn</var>
@@ -1474,12 +1474,12 @@
         <stream_readmode>single</stream_readmode>
     </stream_entry>
 
-    <stream_entry name="CLM1PT.1x1_FINN.Precip">
+    <stream_entry name="CLM1PT.1x1_ISK.Precip">
         <stream_meshfile>
             <meshfile>none</meshfile>
         </stream_meshfile>
         <stream_datafiles>
-            <file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/FINN/clm1pt_FINN_%ym.nc</file>
+            <file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/ISK/clm1pt_ISK_%ym.nc</file>
         </stream_datafiles>
         <stream_datavars>
             <var>PRECTmms Faxa_precn</var>
@@ -1506,12 +1506,12 @@
         <stream_readmode>single</stream_readmode>
     </stream_entry>
 
-    <stream_entry name="CLM1PT.1x1_FINN.TPQW">
+    <stream_entry name="CLM1PT.1x1_ISK.TPQW">
         <stream_meshfile>
             <meshfile>none</meshfile>
         </stream_meshfile>
         <stream_datafiles>
-            <file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/FINN/clm1pt_FINN_%ym.nc</file>
+            <file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/ISK/clm1pt_ISK_%ym.nc</file>
         </stream_datafiles>
         <stream_datavars>
             <var>TBOT     Sa_tbot</var>

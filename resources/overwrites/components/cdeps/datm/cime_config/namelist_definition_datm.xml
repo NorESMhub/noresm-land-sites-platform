@@ -79,7 +79,7 @@
       <value datm_mode="CLM1PT" model_grid="1x1_SUB4">
         CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
       </value>
-      <value datm_mode="CLM1PT" model_grid="1x1_FINN">
+      <value datm_mode="CLM1PT" model_grid="1x1_ISK">
         CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
       </value>
       <value datm_mode="CORE2_NYF">
