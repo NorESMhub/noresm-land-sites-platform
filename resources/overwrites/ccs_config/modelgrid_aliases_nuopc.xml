@@ -134,6 +134,50 @@
         <grid name="rof">null</grid>
     </model_grid>
 
+    <!-- LATICE-MIP sites -->
+
+    <model_grid alias="1x1_AAS" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_AAS</grid>
+        <grid name="lnd">1x1_AAS</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_ADV" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_ADV</grid>
+        <grid name="lnd">1x1_ADV</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_BYV" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_BYV</grid>
+        <grid name="lnd">1x1_BYV</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_FNS" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_FNS</grid>
+        <grid name="lnd">1x1_FNS</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_HIS1" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_HIS1</grid>
+        <grid name="lnd">1x1_HIS1</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_HIS2" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_HIS2</grid>
+        <grid name="lnd">1x1_HIS2</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_HUR" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_HUR</grid>
+        <grid name="lnd">1x1_HUR</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
     <model_grid alias="1x1_ISK" compset="DATM.+CLM|DATM.+SLND">
         <grid name="atm">1x1_ISK</grid>
         <grid name="lnd">1x1_ISK</grid>

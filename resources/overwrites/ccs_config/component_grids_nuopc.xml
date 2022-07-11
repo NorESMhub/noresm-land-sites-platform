@@ -592,6 +592,7 @@
         <lon>0.0</lon>
         <desc>1x1 Urban C Alpha Test Case -- only valid for DATM/CLM compset</desc>
     </domain>
+    <!-- NorESM-LSP - SeedClim sites -->
     <domain name="1x1_ALP1">
         <lat>61.0243</lat>
         <lon>8.12343</lon>
@@ -652,16 +653,45 @@
         <lon>6.51468</lon>
         <desc>1x1 SUB4 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
     </domain>
-    <domain name="1x1_ISK">
-        <lat>69.3408715</lat>
-        <lon>25.29547425</lon>
-        <desc>1x1 ISK -- only valid for DATM/CLM compset</desc>
+    <!-- NorESM-LSP - LATICE-MIP sites -->
+    <domain name="1x1_AAS">
+        <lat>59.660278</lat>
+        <lon>10.781667</lon>
+        <desc>1x1 AAS from LATICE-MIP -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_ADV">
+        <lat>78.18333</lat>
+        <lon>15.91667</lon>
+        <desc>1x1 ADV from LATICE-MIP -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_BYV">
+        <lat>78.92094</lat>
+        <lon>11.83334</lon>
+        <desc>1x1 BYV from LATICE-MIP -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_FNS">
+        <lat>60.59383774</lat>
+        <lon>7.527008533</lon>
+        <desc>1x1 FNS from LATICE-MIP -- only valid for DATM/CLM compset</desc>
     </domain>
     <domain name="1x1_HIS1">
         <lat>61.10516357</lat>
         <lon>12.25481033</lon>
-        <desc>1x1 HIS1 -- only valid for DATM/CLM compset</desc>
+        <desc>1x1 HIS1 from LATICE-MIP -- only valid for DATM/CLM compset</desc>
     </domain>
-
-
+    <domain name="1x1_HIS2">
+        <lat>61.1115036</lat>
+        <lon>12.25089836</lon>
+        <desc>1x1 HIS2 from LATICE-MIP -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_HUR">
+        <lat>60.372387</lat>
+        <lon>11.078142</lon>
+        <desc>1x1 HUR from LATICE-MIP -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_ISK">
+        <lat>69.3408715</lat>
+        <lon>25.29547425</lon>
+        <desc>1x1 ISK from LATICE-MIP -- only valid for DATM/CLM compset</desc>
+    </domain>
 </domains>
