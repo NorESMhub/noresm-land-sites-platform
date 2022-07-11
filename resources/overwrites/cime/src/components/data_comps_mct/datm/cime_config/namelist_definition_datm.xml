@@ -446,7 +446,6 @@
       <value stream="CLM1PT.1x1_VIKE">$DIN_LOC_ROOT_CLMFORC/VIKE</value>
       <value stream="CLM1PT.1x1_JOAS">$DIN_LOC_ROOT_CLMFORC/JOAS</value>
       <value stream="CLM1PT.1x1_LIAH">$DIN_LOC_ROOT_CLMFORC/LIAH</value>
-      <value stream="CLM1PT.1x1_ISK">$DIN_LOC_ROOT_CLMFORC/ISK</value>
       <value stream="CLM1PT.1x1_FNS">$DIN_LOC_ROOT_CLMFORC/FNS</value>
       <value stream="CLM1PT.1x1_BYV">$DIN_LOC_ROOT_CLMFORC/BYV</value>
       <value stream="CLM1PT.1x1_ISK">$DIN_LOC_ROOT_CLMFORC/ISK</value>
@@ -543,7 +542,6 @@
       <value  stream="CLM1PT.1x1_VIKE">clm1pt_VIKE_%ym.nc</value>
       <value  stream="CLM1PT.1x1_JOAS">clm1pt_JOAS_%ym.nc</value>
       <value  stream="CLM1PT.1x1_LIAH">clm1pt_LIAH_%ym.nc</value>
-      <value  stream="CLM1PT.1x1_ISK">clm1pt_ISK_%ym.nc</value>
       <value  stream="CLM1PT.1x1_FNS">clm1pt_FNS_%ym.nc</value>
       <value  stream="CLM1PT.1x1_BYV">clm1pt_BYV_%ym.nc</value>
       <value  stream="CLM1PT.1x1_ISK">clm1pt_ISK_%ym.nc</value>
@@ -2611,20 +2609,6 @@
         FLDS     lwdn
       </value>
 
-      <value  stream="CLM1PT.1x1_ISK.Solar">
-        FSDS swdn
-      </value>
-      <value  stream="CLM1PT.1x1_ISK.Precip">
-        PRECTmms precn
-      </value>
-      <value  stream="CLM1PT.1x1_ISK.TPQW">
-        TBOT     tbot
-        WIND     wind
-        QBOT     shum
-        PSRF     pbot
-        FLDS     lwdn
-      </value>
-
       <value  stream="CLM1PT.1x1_FNS.Solar">
         FSDS swdn
       </value>
@@ -3263,9 +3247,6 @@
       <value stream="CLM1PT.1x1_LIAH.Solar">0</value>
       <value stream="CLM1PT.1x1_LIAH.Precip">5400</value>
       <value stream="CLM1PT.1x1_LIAH.TPQW">5400</value>
-      <value stream="CLM1PT.1x1_ISK.Solar">0</value>
-      <value stream="CLM1PT.1x1_ISK.Precip">5400</value>
-      <value stream="CLM1PT.1x1_ISK.TPQW">5400</value>
       <value stream="CLM1PT.1x1_FNS.Solar">0</value>
       <value stream="CLM1PT.1x1_FNS.Precip">5400</value>
       <value stream="CLM1PT.1x1_FNS.TPQW">5400</value>
@@ -3663,7 +3644,6 @@
       <value atm_grid="1x1_VIKE">cycle</value>
       <value atm_grid="1x1_JOAS">cycle</value>
       <value atm_grid="1x1_LIAH">cycle</value>
-      <value atm_grid="1x1_ISK">cycle</value>
       <value atm_grid="1x1_FNS">cycle</value>
       <value atm_grid="1x1_BYV">cycle</value>
       <value atm_grid="1x1_ISK">cycle</value>
