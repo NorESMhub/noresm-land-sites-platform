@@ -12,6 +12,7 @@
       },
       "properties": {
         "name": "ALP1",
+        "description": "Ulvehaugen: Alpine vegetation at 1208 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1226 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP1.tar",
@@ -319,6 +320,7 @@
       },
       "properties": {
         "name": "ALP2",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP2.tar",
@@ -626,6 +628,7 @@
       },
       "properties": {
         "name": "ALP3",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP3.tar",
@@ -933,6 +936,7 @@
       },
       "properties": {
         "name": "ALP4",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_ALP4.tar",
@@ -1240,6 +1244,7 @@
       },
       "properties": {
         "name": "SUB1",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB1.tar",
@@ -1547,6 +1552,7 @@
       },
       "properties": {
         "name": "SUB2",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB2.tar",
@@ -1854,6 +1860,7 @@
       },
       "properties": {
         "name": "SUB3",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB3.tar",
@@ -2161,6 +2168,7 @@
       },
       "properties": {
         "name": "SUB4",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_SUB4.tar",
@@ -2468,6 +2476,7 @@
       },
       "properties": {
         "name": "BOR1",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR1.tar",
@@ -2775,6 +2784,7 @@
       },
       "properties": {
         "name": "BOR2",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR2.tar",
@@ -3082,6 +3092,7 @@
       },
       "properties": {
         "name": "BOR3",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR3.tar",
@@ -3389,6 +3400,7 @@
       },
       "properties": {
         "name": "BOR4",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/inputdata_version2.0.0_BOR4.tar",
