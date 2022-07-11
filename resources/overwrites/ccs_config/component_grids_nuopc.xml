@@ -655,7 +655,12 @@
     <domain name="1x1_ISK">
         <lat>69.3408715</lat>
         <lon>25.29547425</lon>
-        <desc>1x1 ISK from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+        <desc>1x1 ISK -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_HIS1">
+        <lat>61.10516357</lat>
+        <lon>12.25481033</lon>
+        <desc>1x1 HIS1 -- only valid for DATM/CLM compset</desc>
     </domain>
 
 
