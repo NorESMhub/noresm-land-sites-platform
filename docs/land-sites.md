@@ -12,25 +12,22 @@ We currently support 20 sites: 8 climate station sites of interest to the [LATIC
    crossorigin=""></script>
    
    
-
 To plot site locations over a background map in R, you can also look at [this repo](https://github.com/evalieungh/map_scripts)
  
 -----------------------------------------------------------------------
 
 ## LATICE-MIP sites
 
-
-| Site name | Station name      | Lon (X)     |	Lat (Y)     |	Elevation, m (Z) | Data years | Data types | Description      |
-| --------- |------------------ | ----------  | ---------   | -------------- | ---------- | ---------- | ---------------- |
-| FNS       | finseflux         | 7.527008533 | 60.59383774 | 1210           | Nov 2016 (?) - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, precipitation, temperature, humidity, pressure, wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. |
-| ADV       | Adventdalen       | 15.91667    | 78.18333    | 21    | ... |  ...   | ...   | 
-| BYV       |   | 11.83334    | 78.92094    | 56   | ... |  ...   | ...   |
-| HIS1      | hisaasen_upper    | 12.25481033 | 61.10516357 | 680   | ... |  ...   | ...   |
-| HIS2      | hisaasen_lower    | 12.25089836 | 61.1115036  | 640   | ... |  ...   | ...   |
-| ISK       | iskoras           | 25.29547425 | 69.3408715  | 360   | ... |  ...   | ...   |
-| AAS       | aas               | 10.781667   | 59.660278   | 93.2  | ... |  ...   | ...   |
-| HUR       | hurdal            | 11.078142   | 60.372387   | NA    | ... |  ...   | ...   |
-
+| Site name | Station name | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data years | Data types | Description      |
+| --------- |------------------ | ----------  | ---------   | -------------- | ---- | -------- | ------------ |
+| FNS       | Finse_fluxtower | 7.527008533 | 60.59383774 | 1210  | Feb 2018 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 10 m air temperature, air pressure, 4.4 m wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. mn.uio.no/latice/infrastructure 
+| HIS1 | Hisaasen_up |  12.25481033 | 61.10516357 | 681 | June 2019 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 2 m air temperature, air pressure, 2.8 m wind speed and direction, rain
+| HIS2 | hisaasen_low | 12.25089836 | 61.1115036  | 642 | " | "
+| ISK | Iskoras_EC | 25.29547425 | 69.3408715  | 357 | March 2019 | "
+| AAS  | Aas | 10.781667 | 59.660278   | 93.2  | NA | Precipitation, temperature, wind, air pressure, snow depth, EC measurements | meteorological data is from MET Norway
+| HUR | Hurdal | 11.078142 | 60.372387   | NA    |
+| BYV  | Bayelva | 11.83334 | 78.92094 | 56  | 1998–2017 | permafrost, active layer and meteorological conditions | https://doi.org/10.5194/essd-10-355-2018
+| ADV | Adventdalen | 15.91667 | 78.18333 | 21 |
 
 -----------------------------------------------------------------------
 

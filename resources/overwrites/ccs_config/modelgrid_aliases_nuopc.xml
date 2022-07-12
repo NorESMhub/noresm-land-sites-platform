@@ -67,6 +67,78 @@
         <grid name="lnd">1x1_ALP1</grid>
         <grid name="rof">null</grid>
     </model_grid>
+    
+    <model_grid alias="1x1_ALP2" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_ALP2</grid>
+        <grid name="lnd">1x1_ALP2</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_ALP3" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_ALP3</grid>
+        <grid name="lnd">1x1_ALP3</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_ALP4" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_ALP4</grid>
+        <grid name="lnd">1x1_ALP4</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_BOR1" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_BOR1</grid>
+        <grid name="lnd">1x1_BOR1</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_BOR2" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_BOR2</grid>
+        <grid name="lnd">1x1_BOR2</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_BOR3" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_BOR3</grid>
+        <grid name="lnd">1x1_BOR3</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_BOR4" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_BOR4</grid>
+        <grid name="lnd">1x1_BOR4</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_SUB1" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_SUB1</grid>
+        <grid name="lnd">1x1_SUB1</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_SUB2" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_SUB2</grid>
+        <grid name="lnd">1x1_SUB2</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_SUB3" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_SUB3</grid>
+        <grid name="lnd">1x1_SUB3</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+    
+    <model_grid alias="1x1_SUB4" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_SUB4</grid>
+        <grid name="lnd">1x1_SUB4</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
+
+    <model_grid alias="1x1_ISK" compset="DATM.+CLM|DATM.+SLND">
+        <grid name="atm">1x1_ISK</grid>
+        <grid name="lnd">1x1_ISK</grid>
+        <grid name="rof">null</grid>
+    </model_grid>
 
     <model_grid alias="1x1_smallvilleIA" compset="DATM.+CLM|DATM.+SLND">
         <grid name="atm">1x1_smallvilleIA</grid>
