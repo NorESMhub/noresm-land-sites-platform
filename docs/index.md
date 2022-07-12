@@ -6,7 +6,14 @@
 
 This page describes what the platform contains, how the input data were made, the main functionalities, and model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), [available sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/), [about us](https://noresmhub.github.io/NorESM_LandSites_Platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/). Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
 
-The main code is stored [here](https://github.com/NorESMhub/NorESM_LandSites_Platform) in a [GitHub repository](https://en.wikipedia.org/wiki/Git "a place to store code with version control"). The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/#code-of-conduct).
+The main code is stored in the [NorESMhub/NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/#code-of-conduct).
+
+#### Quick links to central [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
+
+- [NorESMhub/NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform)
+- [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
+- [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
+- [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
 
 Advanced users who want to do development in addition to just running simulations can request resources on e.g. [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
 
@@ -26,6 +33,10 @@ You can use the platform to run [single-cell model simulations](https://en.wikip
 Gray boxes are Docker containers. `Model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies.
 `./resources` contains all the folders that are mounted into the containers by `docker-compose`.
 The model and the API manage the blue ones, and yellow folders are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
+
+![Repositories and containers](img/repos_and_containers.drawio.svg)
+
+*Illustration of the GitHub repositories and Docker images and containers that make up the NorESM Land Sites Platform.*
 
 ### API
 
