@@ -4,11 +4,16 @@ The NorESM land sites platform is developed by a group of students, postdocs, an
 
 ### How to contribute to the code
 
-We use our [GitHub repository](https://github.com/NorESMhub/NorESM_LandSites_Platform) for developing code. If you are new to working with Git and GitHub, you might like [this](https://kbroman.org/github_tutorial/ "a minimalist intro") or [this](https://docs.github.com/en/get-started/quickstart/hello-world "GitHub's own tutorial") tutorial. 
+We use GitHub for developing code. If you are new to working with Git and GitHub, you might like [this](https://kbroman.org/github_tutorial/ "a minimalist intro") or [this](https://docs.github.com/en/get-started/quickstart/hello-world "GitHub's own tutorial") tutorial. 
 
-The current version of the platform is kept in the `main` branch of the repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch. Further development happens on indivudual forks and the `develop` branch and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything).
+#### Quick links to central [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
 
-If your work touches the Docker container, see instructions in this [readme file](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md).
+- [NorESMhub/NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform)
+- [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
+- [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
+- [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
+
+The current version of the platform is kept in the `main` branch of the NorESM_LandSites_Platform repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch. Further development happens on individual forks and the `develop` branch, and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything).
 
 If you have questions or comments about the platform, please open an issue [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) in the repository.
 
