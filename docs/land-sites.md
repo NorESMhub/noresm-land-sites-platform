@@ -17,17 +17,19 @@ To plot site locations over a background map in R, you can also look at [this re
  
 -----------------------------------------------------------------------
 
-## LATICE-MIP sites 🚧 NB! Which sites to include in published release is uncertain (2022 June 30)
+## LATICE-MIP sites
 
 
-| Site name | Station name | Lon (X)     |	Lat (Y)     |	Elevation (Z) | Data years | Data types | Description      |
-| --------- |------------------ | ----------  | ---------   | -------------- | ---- | -------- | ------------ |
-| FIN       | finseflux         |	7.527008533 | 60.59383774 | 1210  | Nov 2016 (?) - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, precipitation, temperature, humidity, pressure, wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation.
-|  | hisaasen_upper    |	12.25481033 | 61.10516357 | 680   |
-|  | hisaasen_lower    |	12.25089836 | 61.1115036  | 640   |
-|  | iskoras           |	25.29547425 | 69.3408715  | 360   |
-|  | aas               |	10.781667   | 59.660278   | 93.2  |
-|  | hurdal            | 11.078142   | 60.372387   | NA    |
+| Site name | Station name      | Lon (X)     |	Lat (Y)     |	Elevation, m (Z) | Data years | Data types | Description      |
+| --------- |------------------ | ----------  | ---------   | -------------- | ---------- | ---------- | ---------------- |
+| FNS       | finseflux         | 7.527008533 | 60.59383774 | 1210           | Nov 2016 (?) - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, precipitation, temperature, humidity, pressure, wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. |
+| ADV       | Adventdalen       | 15.91667    | 78.18333    | 21    | ... |  ...   | ...   | 
+| BYV       |   | 11.83334    | 78.92094    | 56   | ... |  ...   | ...   |
+| HIS1      | hisaasen_upper    | 12.25481033 | 61.10516357 | 680   | ... |  ...   | ...   |
+| HIS2      | hisaasen_lower    | 12.25089836 | 61.1115036  | 640   | ... |  ...   | ...   |
+| ISK       | iskoras           | 25.29547425 | 69.3408715  | 360   | ... |  ...   | ...   |
+| AAS       | aas               | 10.781667   | 59.660278   | 93.2  | ... |  ...   | ...   |
+| HUR       | hurdal            | 11.078142   | 60.372387   | NA    | ... |  ...   | ...   |
 
 
 -----------------------------------------------------------------------
