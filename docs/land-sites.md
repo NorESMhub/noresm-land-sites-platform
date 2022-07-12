@@ -1,6 +1,6 @@
 # NorESM land sites
 
-We currently support 18 sites: 6 climate station sites of interest to the [LATICE](mn.uio.no/latice) group and 12 [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites. These locations are established study sites with climatic, and/or ecological data available. It is possible to add custom-made sites for somewhat experienced users.
+We currently support 20 sites: 8 climate station sites of interest to the [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/) group and the 12 [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites. These locations are established study sites with climatic, and/or ecological data available. It is possible to add custom-made sites for somewhat experienced users.
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -12,13 +12,11 @@ We currently support 18 sites: 6 climate station sites of interest to the [LATIC
    crossorigin=""></script>
    
    
-
 To plot site locations over a background map in R, you can also look at [this repo](https://github.com/evalieungh/map_scripts)
  
 -----------------------------------------------------------------------
 
 ## LATICE-MIP sites
-
 
 | Site name | Station name | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data years | Data types | Description      |
 | --------- |------------------ | ----------  | ---------   | -------------- | ---- | -------- | ------------ |

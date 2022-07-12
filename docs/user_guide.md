@@ -1,10 +1,11 @@
 # User guide
 
-🚧 *under construction - please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new)*
-
 This is the user guide for running point simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/NorESM_LandSites_Platform/) 🌍
 
 You will need to open two new windows in the process, so it's a good idea to use two screens or to make this window narrower so you can see both the user guide and another window next to it.
+
+![User interaction with the NorESM-LSP](img/User_interaction-Page-1.jpg)
+*After setup, users will typically use this user guide & documentation, the user interface, and the Jupyter lab in different browser tabs. This is supported by code on GitHub, Docker containers creating a virtual computing environment, and input data stored on an external server.*
 
 ***********************************************
 
@@ -110,6 +111,10 @@ Nagivate to the ´notebooks´ folder and open the ´output_visualization.ipynb´
 ### 5. Close the container
 
 NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your Git Bash terminal and press ´Ctrl+c´.
+
+***************************************************
+
+Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new). 
 
 ***************************************************
 
