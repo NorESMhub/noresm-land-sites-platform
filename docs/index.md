@@ -19,8 +19,6 @@ Advanced users who want to do development in addition to just running simulation
 
 Please let us know if you have suggestions or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) on GitHub.
 
-🚧 NB! This documentation is under construction and contains some outdated and/or missing parts. 🚧
-
 *****************************
 
 ## Platform content
@@ -98,7 +96,10 @@ The platform is built to run the land model (CLM) with the Norwegian Earth Syste
 
 Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and sometimes spin-up to get realistic simulations. 
 
-The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/). The .tar files are compressed and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format but in the specific case folder.
+Input data is created using the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. 
+NCAR have developed a nice [tool for subsetting big data sets](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data) which unfortunately doesn't work with the current (July 2022) version of NorESM. 
+
+The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). The .tar files are compressed and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format but in the specific case folder.
 
 #### Component sets (compsets)
 
@@ -238,41 +239,25 @@ See the [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_
 
 To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. 
 
-In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them like this:
+In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them into [General](https://noresmhub.github.io/NorESM_LandSites_Platform/#general-settings), [CLM namelist](https://noresmhub.github.io/NorESM_LandSites_Platform/#clm-namelist-simulation-settings), [History Files](https://noresmhub.github.io/NorESM_LandSites_Platform/#history-files), and [FATES](https://noresmhub.github.io/NorESM_LandSites_Platform/#fates-simulation-settings) settings.
 
-1. [Run environment](https://noresmhub.github.io/NorESM_LandSites_Platform/#run-environment-settings)
-2. [CLM namelist](https://noresmhub.github.io/NorESM_LandSites_Platform/#clm-namelist-simulation-settings)
-3. [History Files](https://noresmhub.github.io/NorESM_LandSites_Platform/#history-files)
-4. [FATES](https://noresmhub.github.io/NorESM_LandSites_Platform/#fates-simulation-settings)
+#### General settings
 
-#### Run environment settings
-
-| parameter | values | explanation |
-| --- | --- | --- |
-| CALENDAR | No Leap, Gregorian | Should the simulation follow the Gregorian (realistic) or simplified calendar without leap years? This option should normally follow the calendar the input data is provided in. |
-| DATM_CLMCEP_YR_START | 
-|  |  |  |
-| RUN_TYPE | startup, hybrid, branch, restart | *startup*: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model will not produce realistic output. No spin-up included. Use this mode for quick testing, or for making your own spin-up. *hybrid*: the model is initialized similar to a startup run, but uses initialization datasets from a previous case. Suitable when you already have good spin-up files and want a more realistic simulation. *branch*: the model is initialized using a consistent set of restart files from a previous run. The case name is generally changed for a branch run, although it does not have to be. Branch runs are suitable for sensitivity or parameter studies, or when settings for history file output streams need to be modified while still maintaining bit-for-bit reproducibility. *restart*: continues running an existing case after it has been stopped. |
 
 
 #### CLM namelist simulation settings
 
-| parameter | values | explanation |
-| --- | --- | --- |
 
-#### History Files
+
+#### History File settings
 
 By default, the model records output in one tape (hist_fincl1) as one (hist_mfilt=1) average (hist_avgflag_pertape=A) monthly (hist_nhtfrq=0) value, for a subset of variables (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES"), in a long-lat grid (hist_dov2xy=TRUE). If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns. Each column corresponds to a history tape, that is a series of files created for the simulation period. If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns,  you can add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
 
-| parameter | values | explanation |
-| --- | --- | --- |
 
 #### FATES simulation settings
 
 Users can remove or modify Plant Functional Types by checking/unchecking PFTs and typing in custom values for a subset of parameters. The full list of parameters is in the [FATES model code](https://github.com/NGEET/fates/blob/master/parameter_files/fates_params_default.cdl).
 
-| parameter | values | explanation |
-| --- | --- | --- |
 
 ### Running and editing simulations
 
