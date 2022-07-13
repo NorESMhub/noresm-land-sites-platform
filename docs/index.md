@@ -2,15 +2,15 @@
 [![EMERALD logo](https://tinyimg.io/i/O6Vkl1F.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
 [![LATICE logo](https://tinyimg.io/i/4IM1ogh.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
-# Welcome to the documentation of the NorESM LandSites Platform
+# Welcome to the documentation of the NorESM Land Sites Platform
 
-This page describes what the platform contains, how the input data were made, the main functionalities, and model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide), [available sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/), [about us](https://noresmhub.github.io/NorESM_LandSites_Platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/). Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
+This page describes what the platform contains, how the input data were made, the main functionalities, and model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide), [available sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), [about us](https://noresmhub.github.io/noresm-land-sites-platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/). Advanced users may also be interested in the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/) and [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html).
 
-The main code is stored in the [NorESMhub/NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/#code-of-conduct).
+The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/noresm-land-sites-platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
 
 #### Quick links to central [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
 
-- [NorESMhub/NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform)
+- [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform)
 - [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
 - [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
 - [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
@@ -18,18 +18,18 @@ The main code is stored in the [NorESMhub/NorESM_LandSites_Platform](https://git
 
 Advanced users who want to do development in addition to just running simulations can request resources on e.g. [NREC](https://nrec.no/ "Norwegian Research and Education Cloud: Fast, standardized servers and storage for the Norwegian higher education sector"). An early version of the platform is also available on [Galaxy](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html "an open, web-based platform for accessible, reproducible, and transparent computational biological research").
 
-Please let us know if you have suggestions or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) on GitHub.
+Please let us know if you have suggestions or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) on GitHub.
 
 *****************************
 
 ## Platform content
 
-You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and provide Jupyter notebooks with example python code to plot some input data and model output.
+You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and provide Jupyter notebooks with example python code to plot some input data and model output.
 
 ![Architecture](img/architecture-Page-1.drawio.svg)
 
 *Illustration of the software architecture.
-Gray boxes are Docker containers. `Model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the blue ones (left), and yellow-green (right) folders are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
+Gray boxes are Docker containers. `Model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the blue ones (left), and yellow-green (right) folders are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
 
 ![Repositories and containers](img/repos_and_containers-MASTER.drawio.svg)
 
@@ -64,7 +64,7 @@ To address the needs of non-technical users, we have taken care of the extra con
 
 In addition to the previously mentioned Images, we have included an Image for Jupyter Server and one for our Web User Interface (UI) for `ctsm-api`.
 
-The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. When we release a new version, we have to build a container using this Docker file. Users can then download the dontainer and run simulations there. For details on the docker file and how to modify or update it, look to [this description on GitHub](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md)
+The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. When we release a new version, we have to build a container using this Docker file. Users can then download the dontainer and run simulations there. 
 
 ### Web User Interface
 
@@ -125,7 +125,7 @@ Atmospheric forcing data drives the modelled climate using a time series of clim
 - Precipitation (PRECTmms), mm/s
 - Wind speed at the lowest atmospheric level (WIND), m/s
 
-Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_fates_platform/). Here are some exaples of what the input data .tar contains: 
+Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). Here are some exaples of what the input data .tar contains: 
 
 - CAM/chem/trop_mozart_aero/aero/
     - aerosol deposition: dust, black carbon, organic carbon
@@ -155,7 +155,7 @@ Surface data contains information the model needs about the land surface, such a
 
 Note that when CLM is running without FATES, a simpler 'big-leaf'-version of vegetation is used instead. The CLM5 and FATES parameters thus overlap to some degree, with FATES replacing some and adding other parameters when activated. 
 
-For the [Vestland climate grid sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/), surface data has been created from raw data sets, using [this script](https://github.com/huitang-earth/NLP_prep/blob/main/create_inputdata.sh "a script in Hui's repository for preparing input data"). There are publicly available data products that could be downloaded and extracted for the nearest model gridcell, given points coordinates, that contain all the necessary surface data. We have not used this; our surface data is interpolated from raw data sets of better resolution. This data should be more accurate than the alternative data products. 
+For the [Vestland climate grid sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), surface data has been created from raw data sets, using [this script](https://github.com/huitang-earth/NLP_prep/blob/main/create_inputdata.sh "a script in Hui's repository for preparing input data"). There are publicly available data products that could be downloaded and extracted for the nearest model gridcell, given points coordinates, that contain all the necessary surface data. We have not used this; our surface data is interpolated from raw data sets of better resolution. This data should be more accurate than the alternative data products. 
 
 If you have your own data, you can replace the default input files with your own. ***under construction: Instruction for how to do this***. Make sure the format and units are the same, otherwise the model will not be able to use them. 
 
@@ -175,7 +175,7 @@ The model parameters file contains a list of JSON objects. Attributes of each ob
 
 The tables below describe how these configuration files work and handle the model settings users can change in the UI.
 
-*Table 2: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
+*Table 2: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
 
 | Attribute         | Type                            | default | Required | Scope      | Description                                                                                                                                              |
 |-------------------|---------------------------------|---------|----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -209,7 +209,7 @@ Adjusted values can be validated using the `validation` attribute. Currently, on
 
 Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The site map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 4.
 
-*Table 4: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/sites.json) file in `/resources/config`*
+*Table 4: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) file in `/resources/config`*
 
 | Attribute | Type            | Required | Description                                                                                                                                                                                                                                                                       |
 |-----------|-----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -224,13 +224,13 @@ Sites in `resources/config/sites.json` are described as [GeoJSON points](https:/
 
 ## Running simulations in the web User Interface
 
-See the [user guide](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide) for instructions on running simulations. Advanced users who want to change additional or different model parameters or settings can do so manually 
+See the [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide) for instructions on running simulations. Advanced users who want to change additional or different model parameters or settings can do so manually 
 
 ### Create case
 
 To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. 
 
-In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/NorESM_LandSites_Platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them into [General](https://noresmhub.github.io/NorESM_LandSites_Platform/#general-settings), [CLM namelist](https://noresmhub.github.io/NorESM_LandSites_Platform/#clm-namelist-simulation-settings), [History Files](https://noresmhub.github.io/NorESM_LandSites_Platform/#history-files), and [FATES](https://noresmhub.github.io/NorESM_LandSites_Platform/#fates-simulation-settings) settings.
+In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them into [General](https://noresmhub.github.io/noresm-land-sites-platform/#general-settings), [CLM namelist](https://noresmhub.github.io/noresm-land-sites-platform/#clm-namelist-simulation-settings), [History Files](https://noresmhub.github.io/noresm-land-sites-platform/#history-files), and [FATES](https://noresmhub.github.io/noresm-land-sites-platform/#fates-simulation-settings) settings.
 
 #### General settings
 
@@ -260,7 +260,7 @@ Once a case had been created and is ready, you can look at the model settings is
 
 ### output files
 
-Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). From the UI, when a case has finished successfully you can open the Jupyter server (at localhost:8888) and work with the output there, using e.g. the provided notebook in the tutorials folder. The model output is stored locally in the NorESM_LandSites_Platform repository under `resources/cases/<case-id>/archive`, and can optionally be downloaded to another location with the Download Data button in the User Interface.
+Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). From the UI, when a case has finished successfully you can open the Jupyter server (at localhost:8888) and work with the output there, using e.g. the provided notebook in the tutorials folder. The model output is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`, and can optionally be downloaded to another location with the Download Data button in the User Interface.
 
 
 
@@ -273,5 +273,5 @@ Platform versions follow standard numbering, and releases below 1 should be cons
 #### List of versions (newest on top):
 
 - [release 1]()
-- [archive tag](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases/tag/archive)
-- [tag 0.1.0-dev](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases/tag/v0.1.0)
+- [archive tag](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/archive)
+- [tag 0.1.0-dev](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/v0.1.0)
