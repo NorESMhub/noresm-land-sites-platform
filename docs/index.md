@@ -25,12 +25,10 @@ Please let us know if you have suggestions or trouble using the platform by open
 
 You can use the platform to run [single-cell model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-cell model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) with high quality input data (atmospheric forcing, land surface data, 'spin-up'), and provide Jupyter notebooks with example python code to plot some input data and model output.
 
-![Architecture](img/architecture.svg)
+![Architecture](img/architecture.jpg)
 
 *Illustration of the software architecture.
-Gray boxes are Docker containers. `Model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies.
-`./resources` contains all the folders that are mounted into the containers by `docker-compose`.
-The model and the API manage the blue ones, and yellow folders are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
+Gray boxes are Docker containers. `Model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the blue ones (left), and yellow-green (right) folders are created by the code maintainers—an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/NorESM_LandSites_Platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and Docker containers.*
 
 ![Repositories and containers](img/repos_and_containers.drawio.svg)
 
@@ -84,13 +82,6 @@ When the platform is up and running, the Jupyter server is available at [localho
 
 The platform is built to run the land model (CLM) with the Norwegian Earth System Model (as opposed to e.g. CESM which also uses the same land model). The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is taken in to the platform using the `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). 
 
-*Table 1: Model versions*
-
-| Model | Version |
-| --- | --- |
-| NorESM | https://github.com/NorESMhub/NorESM/tree/release-nlp0.1.0 |
-| CLM | [ctsm5.1.dev038](https://github.com/ESCOMP/CTSM/tree/ctsm5.1.dev038) |
-| FATES | sci.1.43.2_api.14.2.0 |
 
 ### Input data
 
@@ -269,7 +260,7 @@ Once a case had been created and is ready, you can look at the model settings is
 
 ### output files
 
-Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). From the UI, when a case has finished successfully you can download the output or simply open the Jupyter server (at localhost:8888) and work with the output there, using e.g. the provided notebook in the tutorials folder.
+Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). From the UI, when a case has finished successfully you can open the Jupyter server (at localhost:8888) and work with the output there, using e.g. the provided notebook in the tutorials folder. The model output is stored locally in the NorESM_LandSites_Platform repository under `resources/cases/<case-id>/archive`, and can optionally be downloaded to another location with the Download Data button in the User Interface.
 
 
 
@@ -281,5 +272,6 @@ Platform versions follow standard numbering, and releases below 1 should be cons
 
 #### List of versions (newest on top):
 
-- [release ...]()
-- [tag 0.1.0-dev]()
+- [release 1]()
+- [archive tag](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases/tag/archive)
+- [tag 0.1.0-dev](https://github.com/NorESMhub/NorESM_LandSites_Platform/releases/tag/v0.1.0)
