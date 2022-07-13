@@ -12,6 +12,7 @@ The main code is stored in the [NorESMhub/NorESM_LandSites_Platform](https://git
 
 - [NorESMhub/NorESM_LandSites_Platform](https://github.com/NorESMhub/NorESM_LandSites_Platform)
 - [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
+- [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
 - [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
 - [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
 
