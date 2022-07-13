@@ -35,6 +35,10 @@ Gray boxes are Docker containers. `Model` container is expanded to show the two 
 
 *Illustration of the GitHub repositories and Docker images and containers that make up the NorESM Land Sites Platform.*
 
+![Repositories and containers](img/repos_and_containers.drawio.svg)
+
+*Illustration of the GitHub repositories and Docker images and containers that make up the NorESM Land Sites Platform.*
+
 ### API
 
 An Application Programming Interface (API) is a set of tools that enables the end-users to interact with a program. The interaction happens by receiving some commands from the users, performing some actions if necessary, and then sending back some results. We created an HTTP API for the model using FastAPI, a popular high-performance framework for Python. It means the API can be used through any medium that can send and receive HTTP requests, e.g., browsers and libraries like python-requests. FastAPI generates a REST API based on [OpenAPI specifications](https://github.com/OAI/OpenAPI-Specification). It also automatically generates documentation for the API from the docstrings of the python functions, which includes a description of the inputs and outputs and examples. The documentation is interactive and can be accessed through its web-based user interface.
