@@ -46,6 +46,64 @@
       <value datm_mode="CLM1PT" model_grid="1x1_ALP1">
         CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
       </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_ALP2">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_ALP3">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_ALP4">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_BOR1">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_BOR2">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_BOR3">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_BOR4">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_SUB1">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_SUB2">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_SUB3">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_SUB4">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
+      </value>
+      <!-- LATICE-MIP sites -->
+      <value datm_mode="CLM1PT" model_grid="1x1_AAS">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_ADV">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_BYV">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_FNS">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_HIS1">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_HIS2">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_HUR">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_ISK">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
       <value datm_mode="CORE2_NYF">
         CORE2_NYF.GISS,CORE2_NYF.GXGXS,CORE2_NYF.NCEP
       </value>
