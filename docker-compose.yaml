@@ -65,6 +65,7 @@ services:
       - ./notebooks:/home/${HOST_USER:-jovyan}/notebooks
       - ./resources/cases:/home/${HOST_USER:-jovyan}/cases
       - ./resources/data:/home/${HOST_USER:-jovyan}/data
+      - ./resources/config:/home/${HOST_USER:-jovyan}/config
 
 networks:
   default:
