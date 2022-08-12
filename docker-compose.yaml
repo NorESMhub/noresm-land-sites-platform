@@ -41,7 +41,7 @@ services:
       - default
   
   ui:
-    image: ghcr.io/noresmhub/fates-platform:${PLATFORM_VERSION:-latest}
+    image: ghcr.io/noresmhub/noresm-lsp-ui:${PLATFORM_VERSION:-latest}
     restart: unless-stopped
     ports:
       - ${PORT:-8080}:80

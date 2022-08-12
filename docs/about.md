@@ -13,7 +13,7 @@ The platform aims to facilitate site-level simulations over land using [NorESM](
 
 The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand.
 
-The observation sites currently included in the platform are described in the [Land sites](https://noresmhub.github.io/NorESM_LandSites_Platform/land-sites/) section. 
+The observation sites currently included in the platform are described in the [Land sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) section. 
 
 ## Code development team
 * [Kaveh Karimi](https://github.com/ka7eh)
@@ -45,8 +45,8 @@ The observation sites currently included in the platform are described in the [L
 
 ## How to cite
 
-## Acknowledgement
+## Acknowledgements
 
 ## Contact
 
-For questions about the platform, please [open an issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues/new) on GitHub or get in touch with one of the code developers directly. 
+For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new) on GitHub or get in touch with one of the code developers directly. 

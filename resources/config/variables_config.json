@@ -434,7 +434,9 @@
     "name": "fates_leaf_long",
     "category": "fates_param",
     "type": "float",
-    "description": "Leaf longevity (ie turnover timescale), in years",
+    "description": {
+      "summary": "Leaf longevity (ie turnover timescale), in years"
+    },
     "allow_multiple": true
   },
   {
@@ -535,7 +537,9 @@
     "name": "fates_woody",
     "category": "fates_param",
     "type": "float",
-    "description": "Binary woody lifeform flag (0 or 1). Tree and shrub PFTs have woody tissues, while grass PFT lack wood.",
+    "description": {
+      "summary": "Binary woody lifeform flag (0 or 1). Tree and shrub PFTs have woody tissues, while grass PFT lack wood."
+    },
     "allow_multiple": true
   }
 ]

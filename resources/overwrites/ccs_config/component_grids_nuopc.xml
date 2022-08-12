@@ -597,6 +597,66 @@
         <lon>8.12343</lon>
         <desc>1x1 ALP1 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
     </domain>
+    <domain name="1x1_ALP2">
+        <lat>60.8231</lat>
+        <lon>7.27596</lon>
+        <desc>1x1 ALP2 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_ALP3">
+        <lat>60.8328</lat>
+        <lon>7.17561</lon>
+        <desc>1x1 ALP3 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_ALP4">
+        <lat>60.9335</lat>
+        <lon>6.41504</lon>
+        <desc>1x1 ALP4 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_BOR1">
+        <lat>61.0355</lat>
+        <lon>9.07876</lon>
+        <desc>1x1 BOR1 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_BOR2">
+        <lat>60.8803</lat>
+        <lon>7.16982</lon>
+        <desc>1x1 BOR2 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_BOR3">
+        <lat>60.6652</lat>
+        <lon>6.33738</lon>
+        <desc>1x1 BOR3 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_BOR4">
+        <lat>60.6901</lat>
+        <lon>5.96487</lon>
+        <desc>1x1 BOR4 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_SUB1">
+        <lat>60.8203</lat>
+        <lon>8.70466</lon>
+        <desc>1x1 SUB1 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_SUB2">
+        <lat>60.8760</lat>
+        <lon>7.17666</lon>
+        <desc>1x1 SUB2 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_SUB3">
+        <lat>61.0866</lat>
+        <lon>6.63028</lon>
+        <desc>1x1 SUB3 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_SUB4">
+        <lat>60.5445</lat>
+        <lon>6.51468</lon>
+        <desc>1x1 SUB4 from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
+    <domain name="1x1_ISK">
+        <lat>69.3408715</lat>
+        <lon>25.29547425</lon>
+        <desc>1x1 ISK from Vestland Climate Grids -- only valid for DATM/CLM compset</desc>
+    </domain>
 
 
 </domains>

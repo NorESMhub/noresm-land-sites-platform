@@ -1,20 +1,30 @@
 # How to contribute to the NorESM land sites platform
 
-The NorESM land sites platform is developed by a group of students, postdocs, and software engineers when we have the time or need certain functionalities. We welcome anyone to join us in developing new functionalities, using the platform, add to the documentation, and contribute to making this platform a dynamic and useful research and teaching tool. If you have questions, comments, or suggestions for improvements, please open an [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) in the repository. Any contributions and involvement in our community must be in line with our [Code of conduct](https://noresmhub.github.io/NorESM_LandSites_Platform/contributing/#code-of-conduct).
+The NorESM land sites platform is developed by a group of students, postdocs, and software engineers when we have the time or need certain functionalities. We welcome anyone to join us in developing new functionalities, using the platform, add to the documentation, and contribute to making this platform a dynamic and useful research and teaching tool. If you have questions, comments, or suggestions for improvements, please open an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) in the repository. Any contributions and involvement in our community must be in line with our [Code of conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
 
 ### How to contribute to the code
 
-We use our [GitHub repository](https://github.com/NorESMhub/NorESM_LandSites_Platform) for developing code. If you are new to working with Git and GitHub, you might like [this](https://kbroman.org/github_tutorial/ "a minimalist intro") or [this](https://docs.github.com/en/get-started/quickstart/hello-world "GitHub's own tutorial") tutorial. 
+We use GitHub for developing code. If you are new to working with Git and GitHub, you might like [this](https://kbroman.org/github_tutorial/ "a minimalist intro") or [this](https://docs.github.com/en/get-started/quickstart/hello-world "GitHub's own tutorial") tutorial. 
 
-The current version of the platform is kept in the `main` branch of the repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch.  Further development happens on new branches and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `platform_dev`.
+#### Quick links to central [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
 
-If your work touches the Docker container, see instructions in this [readme file](https://github.com/NorESMhub/NorESM_LandSites_Platform/tree/main/docs/docker.md).
+- [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform)
+- [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
+- [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
+- [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
+- [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
 
-If you have questions or comments about the platform, please open an issue [issue](https://github.com/NorESMhub/NorESM_LandSites_Platform/issues) in the repository.
+The current version of the platform is kept in the `main` branch of the noresm-land-sites-platform repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch. Further development happens on individual forks and the `develop` branch, and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything).
+
+If you have questions or comments about the platform, please open an issue [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) in the repository.
 
 ### How to contribute to the documentation
 
-This documentation page is built using GitHub pages and [MkDocs](https://www.mkdocs.org/). To update it, change markdown files in /docs and commit the changes (or open a pull request). When the changes are saved, the page must be built again to fetch the changes by using the `mkdocs build` command in the top folder of the repository where mkdocs.yml tells github pages how to build the markdown files into a static webpage.
+This documentation page is built using GitHub pages and [MkDocs](https://www.mkdocs.org/). To update it, change markdown files in /docs and commit the changes (or open a pull request). When the changes are saved, the page must be built again to fetch the changes. This is done automatically when changes are pushed/committed to `main` by a github Action. Alternatively, you can build the pages by using the `mkdocs gh-deploy` command in the top folder of the repository where mkdocs.yml tells github pages how to build the markdown files into a static webpage. See the [Mkdocs docs](mkdocs gh-deploy) for further info.
+
+### How to contribute new sites
+
+New sites can be added by copying and modifying some existing code and creating new input data for the site. Currently (v1.0.0), you need to carefully hardcode new sites into different files within the noresm-lsp structure. In other words, you need to copy and modify code in several files in the noresm-land-sites-platform repository, and use a high-performance computer (e.g. [Saga](https://documentation.sigma2.no/hpc_machines/saga.html)) to make new input with the input repository. Detailed instructions for doing this are found in the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository and code examples are in the [Pull Request where the Iškuras (ISK) site was added](https://github.com/NorESMhub/noresm-land-sites-platform/pull/116). 
 
 
 --------------------------
