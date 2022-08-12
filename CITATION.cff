@@ -1,7 +1,9 @@
 cff-version: 1.2.0
 message: "How to cite this repository:"
 authors:
-  - family-names: The NorESM-LSP development team
+  - family-names: NorESM-LSP development team
+    given-names: 
+    orcid:
 title: "NorESM Land Sites Platform"
 version: v1
 date-released: 2022
