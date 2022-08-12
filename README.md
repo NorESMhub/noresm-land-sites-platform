@@ -22,7 +22,6 @@ For more information on the platform, please see our [technical documentation](h
   - Our [main user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide) uses a graphical user interface, jupyter notebooks and a docker container to run the newest platform versions. 
   - An older version is also available on Galaxy: a graphic user interface for running site-level simulation on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
 
-
 ### quick first-time installation steps:
 
 :warning: **Important!** :warning: Clone the repo with the following command (especially important for Windows users):

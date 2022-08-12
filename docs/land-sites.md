@@ -18,6 +18,8 @@ To plot site locations over a background map in R, you can also look at [this re
 
 ## LATICE-MIP sites
 
+LATICE-MIP is a coordinated effort to utilise the field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient (between 60° and 78° N) in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. soon submitted), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO2, and H2O fluxes between the land and the atmosphere.
+
 | Site name | Station name | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data years | Data types | Description      |
 | --------- |------------------ | ----------  | ---------   | -------------- | ---- | -------- | ------------ |
 | FNS       | Finse_fluxtower | 7.527008533 | 60.59383774 | 1210  | Feb 2018 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 10 m air temperature, air pressure, 4.4 m wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. mn.uio.no/latice/infrastructure 
@@ -30,6 +32,7 @@ To plot site locations over a background map in R, you can also look at [this re
 | ADV | Adventdalen | 15.91667 | 78.18333 | 21 |
 
 -----------------------------------------------------------------------
+
 
 ## [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) (SeedClim) sites
 
@@ -55,6 +58,7 @@ Central data papers:
 | BOR2      | Vikesland        | 7.16982 | 60.8803 | 474           | "  | " |
 | BOR3      | Arhelleren       | 6.33738 | 60.6652 | 431           | "  | " |
 | BOR4      | Oevstedal        | 5.96487 | 60.6901 | 346           | "  | " |
+
 
 ![Vestland climate grid](https://betweenthefjords.w.uib.no/files/2020/08/grid.png)
 

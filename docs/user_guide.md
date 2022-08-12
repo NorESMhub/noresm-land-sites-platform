@@ -44,7 +44,7 @@ $ git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config
 
 This will download (= clone) the repository (= folder structure and files) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents.
 
-Once Git, Docker desktop and the repository are in place, you don't have to do this again. When  you are using the platform has been updated the next time you want to use it, you might want to download the updates by typing first `git pull` and then `docker-compose pull` into Git Bash from your local clone of the repository. 
+Once Git, Docker desktop and the repository are in place, you don't have to do this again. If the platform has been updated the next time you want to use it, you might want to download the updates by typing first `git pull` and then `docker-compose pull` into Git Bash from your local clone of the repository. 
 
 ### 1. Start the container 🧰
 
@@ -98,19 +98,27 @@ Soon your simulations will be finished! 🎉 Your screen might look something li
 
 If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. 
 
-Output will be stored at time intervals you set (default is monthly), and can be downloaded from the container with the ´download´ button or viewed in the `data/output` folder in the container. 
+Output will be stored at time intervals you set (default is monthly).
 
 ### 4. Look at your output 📈
 
-Output is stored in the `data/output` folder in the container, accessed on [localhost:8888](http://localhost:8888).
+Model output is most easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), btu is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. Optionally, output data can also be downloaded to another location with the Download Data button in the User Interface. 
 
-Nagivate to the ´notebooks´ folder and open the ´output_visualization.ipynb´ notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available!
+In Jupyter lab, nagivate to the ´notebooks´ folder and open the ´output_visualization.ipynb´ notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available!
 
 [Output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) can alternatively be opened in Panoply, R, or using python on your local computer.
 
 ### 5. Close the container
 
 NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your Git Bash terminal and press ´Ctrl+c´.
+
+
+## Troubleshooting
+
+Have you tried switching it off and on again? Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new). Things you can try yourself include stopping, deleting, and reinstalling everything carefully. 
+
+If the container (or another pocess) is running in your terminal, you can stop it with `Ctrl+C`. In a terminal, you can also delete all the Docker containers, images, volumes etc with `docker system prune -a`. To remove the repository, you can type `rm -r noresm-land-sites-platform` (if it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r) in your working directory. It's also possible to delete everything manually in Docker desktop (check containers, images, and volumes), and to delete the repository manually from your working directory. 
+
 
 ***************************************************
 
