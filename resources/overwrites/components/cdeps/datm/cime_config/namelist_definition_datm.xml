@@ -79,6 +79,28 @@
       <value datm_mode="CLM1PT" model_grid="1x1_SUB4">
         CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW 
       </value>
+      <!-- LATICE-MIP sites -->
+      <value datm_mode="CLM1PT" model_grid="1x1_AAS">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_ADV">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_BYV">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_FNS">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_HIS1">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_HIS2">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
+      <value datm_mode="CLM1PT" model_grid="1x1_HUR">
+        CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
+      </value>
       <value datm_mode="CLM1PT" model_grid="1x1_ISK">
         CLM1PT.$ATM_GRID.Solar,CLM1PT.$ATM_GRID.Precip,CLM1PT.$ATM_GRID.TPQW
       </value>

@@ -1442,6 +1442,712 @@
         <stream_readmode>single</stream_readmode>
     </stream_entry>
 
+    <stream_entry name="CLM1PT.1x1_AAS.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/AAS/clm1pt_AAS_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_AAS.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/AAS/clm1pt_AAS_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_AAS.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/AAS/clm1pt_AAS_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+              
+              
+              <stream_entry name="CLM1PT.1x1_ADV.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/ADV/clm1pt_ADV_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_ADV.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/ADV/clm1pt_ADV_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_ADV.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/ADV/clm1pt_ADV_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+              
+              
+              <stream_entry name="CLM1PT.1x1_BYV.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/BYV/clm1pt_BYV_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_BYV.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/BYV/clm1pt_BYV_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_BYV.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/BYV/clm1pt_BYV_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+              
+              
+              <stream_entry name="CLM1PT.1x1_FNS.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/FNS/clm1pt_FNS_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_FNS.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/FNS/clm1pt_FNS_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_FNS.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/FNS/clm1pt_FNS_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+              
+              
+              <stream_entry name="CLM1PT.1x1_HIS1.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HIS1/clm1pt_HIS1_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_HIS1.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HIS1/clm1pt_HIS1_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_HIS1.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HIS1/clm1pt_HIS1_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+              
+              
+              <stream_entry name="CLM1PT.1x1_HIS2.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HIS2/clm1pt_HIS2_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_HIS2.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HIS2/clm1pt_HIS2_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_HIS2.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HIS2/clm1pt_HIS2_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+              
+              
+              <stream_entry name="CLM1PT.1x1_HUR.Solar">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HUR/clm1pt_HUR_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>FSDS Faxa_swdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>0</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>coszen</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_HUR.Precip">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HUR/clm1pt_HUR_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>PRECTmms Faxa_precn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>nearest</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+    
+    <stream_entry name="CLM1PT.1x1_HUR.TPQW">
+    	<stream_meshfile>
+    		<meshfile>none</meshfile>
+    	</stream_meshfile>
+    	<stream_datafiles>
+    		<file first_year="1901" last_year="2014">$DIN_LOC_ROOT_CLMFORC/HUR/clm1pt_HUR_%ym.nc</file>
+    	</stream_datafiles>
+    	<stream_datavars>
+    		<var>TBOT     Sa_tbot</var>
+    		<var>WIND     Sa_wind</var>
+    		<var>QBOT     Sa_shum</var>
+    		<var>PSRF     Sa_pbot</var>
+    		<var>FLDS     Faxa_lwdn</var>
+    	</stream_datavars>
+    	<stream_lev_dimname>null</stream_lev_dimname>
+    	<stream_mapalgo>
+    		<mapalgo>none</mapalgo>
+    	</stream_mapalgo>
+    	<stream_vectors>null</stream_vectors>
+    	<stream_year_align>$DATM_YR_ALIGN</stream_year_align>
+    	<stream_year_first>$DATM_YR_START</stream_year_first>
+    	<stream_year_last>$DATM_YR_END</stream_year_last>
+    	<stream_offset>5400</stream_offset>
+    	<stream_tintalgo>
+    		<tintalgo>linear</tintalgo>
+    	</stream_tintalgo>
+    	<stream_taxmode>
+    		<taxmode>cycle</taxmode>
+    		<taxmode compset="HIST">limit</taxmode>
+    	</stream_taxmode>
+    	<stream_dtlimit>
+    		<dtlimit>1.5</dtlimit>
+    	</stream_dtlimit>
+    	<stream_readmode>single</stream_readmode>
+    </stream_entry>
+
     <stream_entry name="CLM1PT.1x1_ISK.Solar">
         <stream_meshfile>
             <meshfile>none</meshfile>

@@ -1,5 +1,6 @@
 notebooks/*
 !notebooks/tutorials/
+!notebooks/input_data_setup/
 
 resources/archives
 resources/cases

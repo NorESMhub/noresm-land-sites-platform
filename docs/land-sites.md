@@ -33,6 +33,7 @@ LATICE-MIP is a coordinated effort to utilise the field measurements at differen
 
 -----------------------------------------------------------------------
 
+
 ## [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) (SeedClim) sites
 
 The Vestland climate grid, often called the SeedClim grid after the first major project that set it up, is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
@@ -57,6 +58,7 @@ Central data papers:
 | BOR2      | Vikesland        | 7.16982 | 60.8803 | 474           | "  | " |
 | BOR3      | Arhelleren       | 6.33738 | 60.6652 | 431           | "  | " |
 | BOR4      | Oevstedal        | 5.96487 | 60.6901 | 346           | "  | " |
+
 
 ![Vestland climate grid](https://betweenthefjords.w.uib.no/files/2020/08/grid.png)
 
