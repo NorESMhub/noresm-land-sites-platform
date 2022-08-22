@@ -166,11 +166,11 @@ To get realistic simulations, the model needs to run for a while to reach a stat
 
 To be able to set model parameters in the web UI, some configuration files are needed. Both model parameters and sites configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`. They can be modified by users who are familiar with the model. 
 
-The model parameters file contains a list of JSON objects. Attributes of each object are described in table 2. Note that not all types of variables accepted by the model are supported in the user interface at this point.
+The model parameters file contains a list of JSON objects. Attributes of each object are described in table 1. Note that not all types of variables accepted by the model are supported in the user interface at this point.
 
 The tables below describe how these configuration files work and handle the model settings users can change in the UI.
 
-*Table 2: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
+####*Table 1: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
 
 | Attribute         | Type                            | default | Required | Scope      | Description                                                                                                                                              |
 |-------------------|---------------------------------|---------|----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -189,9 +189,9 @@ The tables below describe how these configuration files work and handle the mode
 | append_input_path | boolean                         | false   | no       | API        | Whether to adjust a path value based on its relative location in the input folder.                                                                       |
 
 
-Adjusted values can be validated using the `validation` attribute. Currently, only the validators described in table 3 are supported.
+Adjusted values can be validated using the `validation` attribute. Currently, only the validators described in table 2 are supported.
 
-*Table 3: validation attributes to define which values are accepted for each model parameter*
+####*Table 2: validation attributes to define which values are accepted for each model parameter*
 
 | Attribute     | Type                              | Description                                                             |
 |---------------|-----------------------------------|-------------------------------------------------------------------------|
@@ -202,9 +202,9 @@ Adjusted values can be validated using the `validation` attribute. Currently, on
 | choices       | [integer, float, string, boolean] | A list of choices for users to select from.                             |
 
 
-Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The site map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 4.
+Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The site map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 3.
 
-*Table 4: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) file in `/resources/config`*
+####*Table 3: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) file in `/resources/config`*
 
 | Attribute | Type            | Required | Description                                                                                                                                                                                                                                                                       |
 |-----------|-----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
