@@ -1,6 +1,6 @@
 # User guide
 
-This is the user guide for running point simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/NorESM_LandSites_Platform/) 🌍
+This is the user guide for running point simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/) 🌍
 
 You will need to open two new windows in the process, so it's a good idea to use two screens or to make this window narrower so you can see both the user guide and another window next to it.
 
@@ -75,16 +75,31 @@ The `download site data` button allows you to download the input data for your s
 
 #### 2.3 Create case
 
-With the `create case` button, you can look at and edit some model settings and parameters as you create a new case. This is not an exhaustive list of possible changes (by far), but give you easy access to some options. All the boxes have default values for a quick but not especially realistic simulation.
+With the `create case` button, you can look at and edit some model settings and parameters as you create a new case. To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. 
 
-The box that pops up with settings has four tabs:
+In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them into [General](https://noresmhub.github.io/noresm-land-sites-platform/#general-settings), [CLM namelist](https://noresmhub.github.io/noresm-land-sites-platform/#clm-namelist-simulation-settings), [History Files](https://noresmhub.github.io/noresm-land-sites-platform/#history-files), and [FATES](https://noresmhub.github.io/noresm-land-sites-platform/#fates-simulation-settings) settings. This is not an exhaustive list of possible changes (by far), but give you easy access to some options in the different tabs. All the boxes have default values for a quick but not especially realistic simulation.
 
-- **CTSM** (=Community Terrestrial Systems Model) settings for general options like simulation period.
-- **CLM / Namelist** settings where you can change CO2 concentration, switch some modules of/off.
-- **CLM / Namelist / history** settings where advanced users can set how and when the simulation output is stored.
-- **FATES** parameters where you can disable some Plant Functional Types (PFTs) and change some vegetation parameters.
+#### General settings
 
-Once you have created your case with the desired settings, it will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the Status, which will transition from pending to ready when the case has been built.
+
+
+#### CLM namelist simulation settings
+
+
+
+#### History File settings
+
+By default, the model records output in one tape (hist_fincl1) as one (hist_mfilt=1) average (hist_avgflag_pertape=A) monthly (hist_nhtfrq=0) value, for a subset of variables (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES"), in a long-lat grid (hist_dov2xy=TRUE). If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns. Each column corresponds to a history tape, that is a series of files created for the simulation period. If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns,  you can add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
+
+
+#### FATES simulation settings
+
+You can remove or modify Plant Functional Types by checking/unchecking PFTs and typing in custom values for a subset of parameters. The full list of parameters is in the [FATES model code](https://github.com/NGEET/fates/blob/master/parameter_files/fates_params_default.cdl).
+
+
+#### Start building your case with the ´SUBMIT´ button
+
+Once you click ´submit´, the case will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the Status, which will transition from pending to ready when the case has been built.
 
 ### 3. Run your simulations 👩‍💻
 
