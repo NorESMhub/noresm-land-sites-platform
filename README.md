@@ -3,7 +3,7 @@
 [![LATICE](docs/img/UiO_LATICE_logo_black_small.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
 
-# Platform for NorESM site-level simulation over land
+# NorESM Land Sites Platform (NorESM-LSP) for site-level simulation over land with CLM-FATES
 
 #### DOI:
 
