@@ -180,7 +180,7 @@ If you end up publishing your model experiments, e.g. in a thesis or scientific 
 ***************************************************
 
 
-Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new). 
+***Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new).***
 
 
 ***************************************************
