@@ -24,9 +24,37 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 
 *****************************
 
+## Glossary
+
+### Software engineering terms
+
+|Term | Definition |
+|-----|------------|
+| API = Application Programming Interface | An interface for computer programs to communicate with each other. It offers a service to other pieces of software. An API specification is a document or standard that describes how to build or use such a connection or interface. A computer system that meets this standard is said to implement or expose an API. The term API may refer either to the specification or to the implementation. [(Wikipedia)](https://en.wikipedia.org/wiki/API)|
+|Container, </br>Container image, </br>Docker | Containers are isolated, virtualized computer environments based on an image, a read-only file with source code, libraries, dependencies, and tools. Docker Inc. provides containers for free personal and educational use. See the [Docker webpage] (https://www.docker.com/resources/what-container/) and e.g. the [CLASSIC model's containerisation description](https://doi.org/10.5194/gmd-13-2825-2020)|
+|Git, </br>GitHub, </br>repository | Git software enables version-control by tracking changes in files. GitHub is an online host of repositories, i.e. data structures of files and their version history.|
+|Graphical User Interface (GUI) | An interface between humans and software or hardware, with clickable icons. The NorESM-LSP GUI is accessed after installation and setup at localhost:8080 in a browser, and lets users set up and run model experiments (simulations)|
+|Terminal | A computer program where users interact with an operating system by typing in commands (as opposed to clicking and seeing programs in windows). Examples are Windows PowerShell and puTTy. [(Wikipedia)](https://en.wikipedia.org/wiki/Terminal_emulator)|
+
+### Earth System Modelling terms
+
+| Term | Definition |
+|------|------------|
+|DGVM, </br>FATES|  |
+|LSM,</br>CLM/CTSM| |
+|ESM,</br>NorESM| |
+|Model coupling, </br>CIME| |
+|Stub,</br>Data model| |
+|PFT = Plant Functional Type| Plant Functional Types are non-phylogenetic groups of plants, defined by a set of parameters. Parameters include e.g. leaf shape, deciduousness, growth form, allometry equation parameters, maximum specific leaf area, and minimum temperature tolerance.|
+|Cohort |A group of individual trees of the same PFT and size.|
+|Patch|Tile with a defined age since some disturbance (fire, logging).|
+|Forcing data| Data that is not impacted by the model but provided as input, generally from observation data sets. Defines the necessary boundary conditions to the model, e.g. temperature and precipitation, throughout its simulation time.|
+
+*****************************
+
 ## Software architecture
 
-You can use the platform to run [single-point model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-point model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with input data (atmospheric forcing, land surface data), and provide Jupyter notebooks with example python code to plot some input and output data.
+You can use the platform to run [single-point model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-point model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with input data (atmospheric forcing, land surface data), and provide Jupyter notebooks with example python code to plot some input and output data. The NorESM-LSP relies on Docker containers and an Applicatino Programming Interface (API).
 
 ![Architecture](img/architecture-Page-1.drawio.svg)
 
