@@ -67,5 +67,17 @@ services:
       - ./resources/data:/home/${HOST_USER:-jovyan}/data
       - ./resources/config:/home/${HOST_USER:-jovyan}/config
 
+  panoply:
+    build:
+      context: docker/panoply
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - ${PANOPLY_PORT:-5800}:5800
+      - ${PANOPLY_PORT:-5900}:5900
+    volumes:
+      - ./resources/cases:/resources/cases
+      - ./resources/data:/resources/data
+
 networks:
   default:

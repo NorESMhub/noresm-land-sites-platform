@@ -1,10 +1,9 @@
+[![NorESM](docs/img/NORESM-logo.png "the Norwegian Earth System Model")](https://www.noresm.org/)
+[![EMERALD](docs/img/Emerald_darktext_whiteBG_small.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
+[![LATICE](docs/img/UiO_LATICE_logo_black_small.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
-[![NorESM logo](https://tinyimg.io/i/9AdhM6J.png "the Norwegian Earth System Model")](https://www.noresm.org/)
-[![EMERALD logo](https://tinyimg.io/i/O6Vkl1F.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
-[![LATICE logo](https://tinyimg.io/i/4IM1ogh.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
-
-# Platform for NorESM site-level simulation over land
+# NorESM Land Sites Platform (NorESM-LSP) for site-level simulation over land with CLM-FATES
 
 #### DOI:
 
@@ -21,7 +20,6 @@ For more information on the platform, please see our [technical documentation](h
 ## [User guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide)
   - Our [main user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide) uses a graphical user interface, jupyter notebooks and a docker container to run the newest platform versions. 
   - An older version is also available on Galaxy: a graphic user interface for running site-level simulation on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
-
 
 ### quick first-time installation steps:
 

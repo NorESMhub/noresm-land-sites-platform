@@ -17,17 +17,17 @@ The observation sites currently included in the platform are described in the [L
 
 ## Code development team
 * [Kaveh Karimi](https://github.com/ka7eh)
-* [Hui Tang](https://github.com/huitang-earth)
 * [Lasse Torben Keetz](https://github.com/lasseke)
-* [Stefanie Falk](https://github.com/ziu1986)
+* [Eva Lieungh](https://github.com/evalieungh)
+* [Hui Tang](https://github.com/huitang-earth)
 * [Emiliano Gelati](https://github.com/emiliano-gelati)
-* [Elin Aas](https://github.com/ecaas)
+* [Stefanie Falk](https://github.com/ziu1986)
+* [Sunniva Indrehus](https://github.com/sunnivin)
 * [Anne Fouilloux](https://github.com/annefou)
 * [Yeliz Yilmaz](https://github.com/yelizy)
-* [Eva Lieungh](https://github.com/evalieungh)
+* [Elin Aas](https://github.com/ecaas)
 * [Peter Horvath](https://github.com/peterhor)
 * [Kjetil Aas](https://github.com/kjetilaas)
-* [Sunniva Indrehus](https://github.com/sunnivin)
 * [Devaraju Narayanappa](https://github.com/devarajun)
 
 ## Data contributors
@@ -36,7 +36,7 @@ The observation sites currently included in the platform are described in the [L
 
 ## Supporting projects
 * [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
-* [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/)
+* [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/) and LATICE-X
 * [SeedClim](https://www.uib.no/en/rg/EECRG/55395/seedclim)
 * [LandPress](https://www.uib.no/en/rg/EECRG/95156/landpress)
 * [THREE-D](https://www.uib.no/en/rg/EECRG/126712/three-d)
@@ -44,9 +44,13 @@ The observation sites currently included in the platform are described in the [L
 * [EOSC-Nordic](https://www.eosc-nordic.eu/)
 
 ## How to cite
+For now, cite the NorESM Land Sites Platform as: NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]
+
+Look for our upcoming technical description paper, which will provide a DOI and better citation practice.
 
 ## Acknowledgements
+The NorESM-LSP has evolved over several years from the needs and visions of a large group of connected through the EMERALD and LATICE projects. Funding has come from the projects listed above. Thanks are due to everyone who participated along the way in discussions, feedback, and testing of early versions.
 
 ## Contact
 
-For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new) on GitHub or get in touch with one of the code developers directly. 
+For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/) on GitHub or get in touch with one of the code developers directly. 
