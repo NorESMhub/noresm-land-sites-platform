@@ -21,9 +21,9 @@ For more information on the platform, please see our [technical documentation](h
   - Our [main user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide) uses a graphical user interface, jupyter notebooks and a docker container to run the newest platform versions. 
   - An older version is also available on Galaxy: a graphic user interface for running site-level simulation on the cloud computing platform [GALAXY](https://galaxyproject.org/) as a tool (CTSM/FATES-EMERALD), with a dedicated [tutorial](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html). Please contact [Anne Fouilloux](https://github.com/annefou) for the development of GALAXY tools related to the platform.
 
-### quick first-time installation steps:
+### Quick first-time installation steps:
 
-:warning: **Important!** :warning: Clone the repo with the following command (especially important for Windows users):
+**Attention!** Clone the repo with the following command (especially important for Windows users):
 
 `git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input`
 
@@ -31,7 +31,7 @@ Then run the following from the project root:
 
 `docker-compose up`
 
-After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)` in `api` docker logs, you can access the API at `http://localhost:8000/api/v1/docs` and the UI at `http://localhost:8080`. You can access the Jupyter server at `http://localhost:8888/lab`.
+After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)` in `api` docker logs, you can access the API at `http://localhost:8000/api/v1/docs` and the UI at `http://localhost:8080`. You can access the Jupyter server at `http://localhost:8888/lab` and Panoply through `http://localhost:5800`.
 
 > ### Note if you are on Linux, 
 > 

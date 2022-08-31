@@ -18,12 +18,14 @@ These locations are established study sites with climatic, and/or ecological dat
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
    
-    
+
+You can use the [site GEOJSON file](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) to conveniently create custom maps. [Here](https://github.com/evalieungh/map_scripts) is an example to plot site locations with a background map in R.
+
 -----------------------------------------------------------------------
 
 ## LATICE-MIP sites
 
-LATICE-MIP is a coordinated effort to utilise the field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient (between 60° and 78° N) in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. soon submitted), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO2, and H2O fluxes between the land and the atmosphere.
+LATICE-MIP is a coordinated effort to utilise field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient (between 60° and 78° N) in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. soon submitted), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO<sub>2<sub>, and H<sub>2<sub>O fluxes between the land and the atmosphere.
 
 | Site name | Station name | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data years | Data types | Description      |
 | --------- |------------------ | ----------  | ---------   | -------------- | ---- | -------- | ------------ |

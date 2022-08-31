@@ -14,7 +14,7 @@
 ![Meadow work](img/DALL-E-2022-meadow-work.png)
 *Model experiments can simulate potential vegetation, e.g. where you work. Images by DALL-E x Eva Lieungh*
 
-This page describes what the platform contains, how the input data were made, the main functionalities, and model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide), [available sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), [about us](https://noresmhub.github.io/noresm-land-sites-platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/). 
+This page describes what the platform contains, how the input data were made, the main functionalities, and the model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide), [available sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), [about us](https://noresmhub.github.io/noresm-land-sites-platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/). 
 
 For more details about the models, see the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/), [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html), and [NorESM](https://noresm-docs.readthedocs.io/en/latest/).
 
@@ -40,11 +40,11 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 
 |Term | Definition |
 |-----|------------|
-| API = Application Programming Interface | An interface for computer programs to communicate with each other. It offers a service to other pieces of software. An API specification is a document or standard that describes how to build or use such a connection or interface. A computer system that meets this standard is said to implement or expose an API. The term API may refer either to the specification or to the implementation. [(Wikipedia)](https://en.wikipedia.org/wiki/API)|
-|Container, </br>Container image, </br>Docker | Containers are isolated, virtualized computer environments based on an image, a read-only file with source code, libraries, dependencies, and tools. Docker Inc. provides containers for free personal and educational use. See the [Docker webpage] (https://www.docker.com/resources/what-container/) and e.g. the [CLASSIC model's containerisation description](https://doi.org/10.5194/gmd-13-2825-2020)|
-|Git, </br>GitHub, </br>repository | Git software enables version-control by tracking changes in files. GitHub is an online host of repositories, i.e. data structures of files and their version history.|
-|Graphical User Interface (GUI) | An interface between humans and software or hardware, with clickable icons. The NorESM-LSP GUI is accessed after installation and setup at localhost:8080 in a browser, and lets users set up and run model experiments (simulations)|
-|Terminal | A computer program where users interact with an operating system by typing in commands (as opposed to clicking and seeing programs in windows). Examples are Windows PowerShell and puTTy. [(Wikipedia)](https://en.wikipedia.org/wiki/Terminal_emulator)|
+| API = Application Programming Interface | An interface for computer programs to communicate with each other. It offers a service to other pieces of software. An API specification is a document or standard that describes how to build or use such a connection or interface. A computer system that meets this standard is said to implement or expose an API. The term API may refer either to the specification or to the implementation. [[Wikipedia]](https://en.wikipedia.org/wiki/API)|
+|Container, </br>Container image, </br>Docker | Containers are isolated, virtualized computer environments based on an image, a read-only file with source code, libraries, dependencies, and tools. Docker Inc. provides containers for free personal and educational use. See the [Docker webpage](https://www.docker.com/resources/what-container/) and e.g. the [CLASSIC model's containerisation description](https://doi.org/10.5194/gmd-13-2825-2020)|
+|Git, </br>GitHub, </br>repository | Git software enables version control by tracking changes in files. GitHub is an online host of repositories, i.e. data structures of files and their version history.|
+|Graphical User Interface (GUI) | An interface between humans and software or hardware, with clickable icons. The NorESM-LSP GUI is accessed after installation and setup at localhost:8080 in a browser, and lets users set up and run model experiments (simulations).|
+|Terminal | A computer program where users interact with an operating system by typing in commands (as opposed to clicking and seeing programs in windows). Examples are Windows PowerShell and puTTy. [[Wikipedia]](https://en.wikipedia.org/wiki/Terminal_emulator)|
 
 ### Earth System Modelling terms
 
@@ -64,11 +64,11 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 
 ## Software architecture
 
-You can use the platform to run [single-point model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-point model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with input data (atmospheric forcing, land surface data), and provide Jupyter notebooks with example python code to plot some input and output data. The NorESM-LSP relies on Docker containers and an Applicatino Programming Interface (API).
+You can use the platform to run [single-point model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-point model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with input data (atmospheric forcing, land surface data), and provide Jupyter notebooks with example python code to plot some input and output data. The NorESM-LSP relies on Docker containers and an Application Programming Interface (API).
 
 ![Architecture](img/architecture-Page-1.drawio.svg)
 
-*Illustration of the software architecture. The `model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the ones on the left, and the folders on the right are created by the code maintainers -- an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses and Application Programming Interface (API) to send commands between the users and containers.*
+*Illustration of the software architecture. The `model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the ones on the left, and the folders on the right are created by the code maintainers -- an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses an Application Programming Interface (API) to send commands between the users and containers.*
 
 ![Repositories and containers](img/repos_and_containers-MASTER.drawio.svg)
 
@@ -103,7 +103,7 @@ To address the needs of non-technical users, we have taken care of the extra con
 
 In addition to the previously mentioned Images, we have included an Image for Jupyter Server and one for our Web User Interface (UI) for `ctsm-api`.
 
-The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. When we release a new version, we have to build a container using this Docker file. Users can then download the dontainer and run simulations there. 
+The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). A [Docker file](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to enable simulations on any machine, such as a laptop or an HPC cluster. When we release a new version, we have to build a container using this Docker file. Users can then download the container and run simulations there.
 
 ### Web User Interface
 
@@ -120,14 +120,14 @@ When the platform is up and running, the Jupyter server is available at [localho
 
 ### Model versions
 
-The platform is built to run the land model (CLM) with the Norwegian Earth System Model (as opposed to e.g. CESM which also uses the same land model). The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is taken in to the platform using the `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). 
+The platform is primarily designed to run the land model (CLM) with the Norwegian Earth System Model. The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is integrated into the platform via a dedicated `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites).
 
 
 ## Model input data
 
 Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and sometimes spin-up to get realistic simulations with stable vegetation. 
 
-Input data is created using the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. To add new sites to the LSP or to make new input data, visit the [input repository](https://github.com/NorESMhub/noresm-lsp-input) and read the instructions there. In future releases, we may transition to using NCAR's newly developed [tool for subsetting big input data sets](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data) which unfortunately doesn't work with the current version of NorESM (July 2022). 
+Input data is created using the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. To add new sites to the LSP or to make new input data, visit the [input repository](https://github.com/NorESMhub/noresm-lsp-input) and read the instructions there. In future releases, we may transition to using NCAR's newly developed [tool for subsetting big input data sets](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data) which unfortunately doesn't work with the current version of NorESM (July 2022).
 
 The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). The .tar files are compressed and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format but in the specific case folder.
 
@@ -135,12 +135,12 @@ The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.w
 
 Short for component sets, compsets specify which component models are used as well as specific settings for forcing scenarios and physics options. NorESM consists of several sub-models (components) for the atmosphere, land, ocean, etc, plus some common infrastructure code that allows the components to pass information back and forth at certain time steps. Component sets have a short name and a longer name with abbreviations denoting the components included. 
 
-The compset is specified by combining components in this order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data, does not need ice, ocn, or glc components to be active and can replace them with stubs. The compset longname defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following compset using FATES:
+The compset is specified by combining components in this order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data does not need ice, ocn, or glc components to be active and can replace them with stubs. The compset long name defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following compset using FATES:
 
 >2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
 
-- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm.
-- ATM: Atmosphere, here DATM%1PTGSWP3 for data driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
+- TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm
+- ATM: Atmosphere, here DATM%1PTGSWP3 for data-driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
 - LND: Land, here CLM50%FATES/BGC/SP for active Community Land Model version 5.0 and one of the following vegetation modes:
     1. Functionally Assembled Terrestrial Ecosystem Simulator vegetation (FATES)
     2. FATES with BioGeoChemistry (BGC)
@@ -155,14 +155,14 @@ More compsets for pre-industrial or future simulations require additional input 
 
 ### Atmospheric forcing
 
-Atmospheric forcing data drives the modelled climate using a time series of climatic variables. Downloadable data products exist, but is often on too coarse scales for realistic single-point simulations. Here is a list of atmospheric forcing variables used in CLM:
+Atmospheric forcing data drives the modelled climate using a time series of climatic variables. Downloadable data products exist but are often on too coarse scales for realistic single-point simulations. Here is a list of atmospheric forcing variables used in CLM:
 
 - Incident solar radiation (FSDS), 	W/m2
 - Temperature at the lowest atmospheric level (TBOT), degrees K (or can be C)
 - Precipitation (PRECTmms), mm/s
 - Wind speed at the lowest atmospheric level (WIND), m/s
 
-Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). Here are some exaples of what the input data .tar contains: 
+Forcing data for our sites are stored with the rest of the [input data](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). Here are some examples of what the input data .tar contains: 
 
 - CAM/chem/trop_mozart_aero/aero/
     - aerosol deposition: dust, black carbon, organic carbon
@@ -171,11 +171,11 @@ Forcing data for our sites are stored with the rest of the [input data](https://
     - NASA_LIS: lightning frequency
     - topo_forcing: topography height
 
-If you have your own data, you can replace the default input files with your own. Make sure the format and units are the exact same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
+If you have your own data, you can replace the default input files with your own. Make sure the format and units are the exact same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html).
 
 ### Surface data
 
-Surface data contains information the model needs about the land surface, such as land use trajectories, soil properties, vegetation parameters, and [albedo](https://en.wikipedia.org/wiki/Albedo). Here are some exaples of what the input data .tar contains: 
+Surface data contains information the model needs about the land surface, such as land use trajectories, soil properties, vegetation parameters, and [albedo](https://en.wikipedia.org/wiki/Albedo). Here are some examples of what the input data .tar contains: 
 
 - 'firedata'
     - population density 
@@ -192,13 +192,11 @@ Surface data contains information the model needs about the land surface, such a
 
 Note that when CLM is running without FATES, a simpler 'big-leaf'-version of vegetation is used instead. The CLM5 and FATES parameters thus overlap to some degree, with FATES replacing some and adding other parameters when activated. 
 
-For the [Vestland climate grid sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), surface data has been created from raw data sets, using [this script](https://github.com/huitang-earth/NLP_prep/blob/main/create_inputdata.sh "a script in Hui's repository for preparing input data"). There are publicly available data products that could be downloaded and extracted for the nearest model gridcell, given points coordinates, that contain all the necessary surface data. We have not used this; our surface data is interpolated from raw data sets of better resolution. This data should be more accurate than the alternative data products. 
-
-If you have your own data, you can replace the default input files with your own. Make sure the format and units are the same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html)
+For the integrated field sites, surface data have been created from raw data sets, using [these scripts](https://github.com/NorESMhub/noresm-lsp-input). If you have your own data, you can replace the default input files with your own. Make sure the format and units are the same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html).
 
 ### Reaching equilibrium (spin-up phase)
 
-To get realistic simulations, the model needs to run for a while, often hundreds to thousands of years, to reach a state of equilibrium under the applied atmospheric forcing. Starting the model from "bare ground" (= startup run type), the model needs time to grow and kill vegetation to get appropriate soil properties and Plant Functional Type distribution. 
+To get realistic simulations, the model needs to run for a while, often hundreds to thousands of years, to reach a state of equilibrium under the applied atmospheric forcing. Starting the model from "bare ground" (= startup run type), the model needs time to grow and kill vegetation - for example, to build up soil carbon storage and to establish stable Plant Functional Type distributions resulting from competitive processes.
 
 **************************************
 
@@ -206,7 +204,7 @@ To get realistic simulations, the model needs to run for a while, often hundreds
 
 For an overview of the model settings and parameters users can change, see the [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/). This section describes how the NorESM-LSP code handles the settings that are displayed in the Graphical User Interface.
 
-To be able to set model parameters in the web UI, some configuration files are needed. Both model parameters and sites configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`. They can be modified by users who are familiar with the model. The model parameters file contains a list of JSON objects. Attributes of each object are described in table 1. Note that not all types of variables accepted by the model are supported in the user interface at this point. The tables below describe how these configuration files work and handle the model settings users can change in the UI.
+To be able to set model parameters in the web UI, some configuration files are needed. Both model parameters and site configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`. They can be modified by users who are familiar with the model. The model parameters file contains a list of JSON objects. Attributes of each object are described in table 1. Note that not all types of variables accepted by the model are supported in the user interface at this point. The tables below describe how these configuration files work and handle the model settings users can change in the UI.
 
 ####*Table 1: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
 
@@ -227,7 +225,7 @@ To be able to set model parameters in the web UI, some configuration files are n
 | append_input_path | boolean                         | false   | no       | API        | Whether to adjust a path value based on its relative location in the input folder.                                                                       |
 
 
-Adjusted values can be validated using the `validation` attribute. Currently, only the validators described in table 2 are supported.
+Entered values are checked for correctness with rules defined in the `validation` attribute. Table 2 describes the currently supported validation rules.
 
 ####*Table 2: validation attributes to define which values are accepted for each model parameter*
 
@@ -240,7 +238,7 @@ Adjusted values can be validated using the `validation` attribute. Currently, on
 | choices       | [integer, float, string, boolean] | A list of choices for users to select from.                             |
 
 
-Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The site map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 3.
+Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The interactive map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 3.
 
 ####*Table 3: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) file in `/resources/config`*
 
@@ -257,14 +255,14 @@ Sites in `resources/config/sites.json` are described as [GeoJSON points](https:/
 
 ## Alternatives to running the NorESM-LSP on your local machine
 
-Containerisation of software like the NorESM-LSP and models (NorESM, CLM, FATES) makes it possible to publish it on other services, e.g. **cloud computing services** where users can sign up and run model experiments remotely. That way, users don't have to install anything on their own computer. For long or multiple experiments, using remote computing resources may be necessary. An early version of the NorESM-LSP exists on Galaxy, a free and open cloud computing service. We also have plans for publishing the NorESM-LSP as a tool (app) on NIRD (only available to users at Norwegian Universities). 
+Containerisation of software like the NorESM-LSP and models (NorESM, CLM, FATES) makes it possible to publish it on other services, e.g. **cloud computing services** where users can sign up and run model experiments remotely. That way, users don't have to install anything on their own computers. For long or multiple experiments, using remote computing resources may be necessary. An early version of the NorESM-LSP exists on Galaxy, a free and open cloud computing service. We also have plans for publishing the NorESM-LSP as a tool (app) on NIRD (only available to users at Norwegian Universities). 
 
 It is also possible to run the NorESM-LSP on a remote computer, like a research-infrastructure computer cluster (e.g. NREC, Saga, Fram for University of Oslo users), via an **[ssh tunnel](https://en.wikipedia.org/wiki/Tunneling_protocol#Secure_Shell_tunneling)**. If you need to run many or long simulations, a remote computer may be beneficial because it doesn't take up your local computer's resources and doesn't require your local computer to be turned on throughout the simulation time.
 
 ### Galaxy Tool for FATES
 Galaxy is free to use and only requires registering as a user. Note that this tool is to be considered a pilot version, and does not include all the functionalities of the NorESM-LSP. It does, on the other hand, include metadata to make it FAIR (Findable, Accessible, Interoperable, Reusable), and has Research Objects on [ROHub](https://reliance.rohub.org/).
 
-- [Tutorial with the CLM-FATES Galaxy tool]https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html
+- [Tutorial with the CLM-FATES Galaxy tool](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html)
 
 
 **************************************

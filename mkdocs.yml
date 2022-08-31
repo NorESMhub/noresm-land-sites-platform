@@ -8,6 +8,7 @@ nav:
   - Contributing & code of conduct: contributing.md
 extra_css:
   - stylesheets/map.css
+  - stylesheets/general.css
 extra_javascript:
   - javascripts/map.js
 theme: readthedocs
