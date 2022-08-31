@@ -6233,7 +6233,7 @@ geojson = L.geoJSON(nlpSites, {
 	style: function(feature) {
         switch (feature.properties.group) {
             case 'SeedClim': return {fillColor: "#50c878"};
-            case 'LaticeMIP': return {fillColor: "#4169E1"};
+            case 'LATICE-MIP': return {fillColor: "#4169E1"};
         }
     },
 	onEachFeature: onEachFeature
@@ -6244,7 +6244,7 @@ geojson = L.geoJSON(nlpSites, {
 
 function getColor(d) {
         return d === 'SeedClim'  ? "#50c878" :
-               d === 'LaticeMIP'  ? "#4169E1" :
+               d === 'LATICE-MIP'  ? "#4169E1" :
                             "#ff7f00"; //Other
     }
 
@@ -6253,7 +6253,7 @@ var legend = L.control({position: 'bottomleft'});
 legend.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'info legend');
     labels = ['<strong>Site family</strong>'],
-    categories = ['SeedClim', 'LaticeMIP'];
+    categories = ['SeedClim', 'LATICE-MIP'];
 
     for (var i = 0; i < categories.length; i++) {
 
