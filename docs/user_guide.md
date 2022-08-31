@@ -137,9 +137,7 @@ Once the case is ready, you can start the simulation with ´run´. There is a bu
 
 > While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `notebooks/` folder and open the `input_visualization.ipynb` notebook. It will guide you through some of the input data for the model.
 
-Soon your simulations will be finished! 🎉 Your screen might look something like this for two similar cases for the BOR1 site that have finished running:
-
-![https://tinyimg.io/i/zTlFuaX.JPG](https://tinyimg.io/i/zTlFuaX.JPG)
+Soon your simulations will be finished! 🎉 
 
 If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. 
 
@@ -167,9 +165,9 @@ If the container (or another process) is running in your terminal, you can stop 
 ## Reproducibility
 To make your simulations reproducible by others, e.g. for a thesis or scientific paper, *note down the version of the NorESM-LSP* and save these three directories that have been created under `resources/` in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform/resources):
 
--the case folder, i.e. ´resources/cases/casename´
--the case input data, i.e. ´resources/data/casename´
--code modifications in overwrites, i.e. ´resources/overwrites´
+- the case folder, i.e. ´resources/cases/casename´
+- the case input data, i.e. ´resources/data/casename´
+- code modifications in overwrites, i.e. ´resources/overwrites´
 
 You could also simply save the whole 'resources' folder (whith some redundant files).
 

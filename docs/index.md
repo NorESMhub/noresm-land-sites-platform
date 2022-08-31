@@ -2,7 +2,17 @@
 [![EMERALD](img/Emerald_darktext_whiteBG_small.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
 [![LATICE](img/UiO_LATICE_logo_black_small.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
-# Welcome to the technical documentation of the NorESM Land Sites Platform
+# Welcome to the NorESM Land Sites Platform
+
+- User guide
+- Technical documentation
+- Sites
+- About us
+- Contributing and Code of Conduct
+
+![Forest work](img/DALL-E-2022-forest-work.png)
+![Meadow work](img/DALL-E-2022-meadow-work.png)
+*Model experiments can simulate potential vegetation, e.g. where you work. Images by DALL-E x Eva Lieungh*
 
 This page describes what the platform contains, how the input data were made, the main functionalities, and the model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide), [available sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), [about us](https://noresmhub.github.io/noresm-land-sites-platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/). 
 
