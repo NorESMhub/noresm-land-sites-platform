@@ -1,8 +1,8 @@
 # User guide
 
-This is the user guide for running point simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/) 🌍
+This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/).
 
-You will need to open two new windows in the process, so it's a good idea to use two screens or to make this window narrower so you can see both the user guide and another window next to it. 
+You will need to open two new windows in the process, so it's a good idea to use two screens or to make this window narrower so you can see both the user guide and another window next to it.
 
 ***********************************************
 
@@ -10,10 +10,10 @@ You will need to open two new windows in the process, so it's a good idea to use
 
 If you have already completed [first-time setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and know what you are doing, here is the extremely quick user guide. In a terminal where you have the repository: 
     
-    $ cd NorESM_LandSites_platform 
+    $ cd noresm-land-sites-platform
     $ docker-compose up
     
-Wait until the terminal messages stop. Open the container GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) 🎉
+Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) 🎉
 
 
 ***********************************************
@@ -23,15 +23,15 @@ Wait until the terminal messages stop. Open the container GUI: [localhost:8080](
 
 ### 0. Prerequisites (first time setup) 🌱
 
-To use the NorESM LandSites Platform, you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download platform scripts) and start working with the Docker container. If you don't want to make a GitHub account, you may try to download and unpack the repository manually instead with the `code` button and ´download zip´. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
+To use the NorESM land sites platform, you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download platform scripts) and start working with the Docker container. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
 
-1. [Create a GitHub account](https://github.com/) (optional, but generally recommended)
+1. [Create a GitHub account](https://github.com/) (optional, but generally recommended to be able to open issues, etc.)
 2. Install Git on your machine. For Windows: https://gitforwindows.org/, other: https://github.com/git-guides/install-git
 3. Install [Docker desktop](https://docs.docker.com/get-docker), might require restart
 4. (Install Docker Compose; should already be included in the Docker installation described above for Mac and Windows: [install docker-compose](https://docs.docker.com/compose/install) )
 5. (Remarks for Windows: You may have to install WSL2 (the 'two' is important here) manually if prompted. Follow the steps described [here](https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10). To open the Windows Command Prompt terminal as an administrator, type `cmd` into the Windows search bar located next to the Start Symbol (lower-left corner of the screen), right-click on 'Command Prompt', and select 'Run as administrator'. Also, note that some steps in the guide are executed in the 'Command Prompt' and some are executed in the 'Windows PowerShell'; to open the latter, type 'PowerShell' into the search bar and open as administrator. If Docker complains about you not belonging to the correct 'user group' after successful installation, follow the steps described [here](https://stackoverflow.com/questions/61530874/docker-how-do-i-add-myself-to-the-docker-users-group-on-windows-10-home)
-6. Open file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and installation files needed by the platform, as well as your output files (which may take up quite a bit of space!). Your working directory should be somewhere on your C: drive, for instance `C:/Users/yourusername` (and not on OneDrive, USB sticks or your overly-cluttered desktop 👀).
-7. When you are in your chosen working directory, right-click and choose "Git Bash here". In the terminal that pops up, paste in the following line by right-clicking:
+6. Open the file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and installation files needed by the platform, as well as your output files (which may take up quite a bit of space!). Your working directory should be easy to find, stable, and have plenty of free space available. For instance `C:/Users/yourusername` (OneDrive, USB sticks or your overly-cluttered desktop not recommended 👀).
+7. When you are in your chosen working directory, right-click and choose "Git Bash here" (Windows); or directly use `cd [path_to_directory]` in a terminal with Git installed. Copy and paste the following line into the terminal (note that in some terminals such as Git Bash, you need to click the right mouse button to paste from the clipboard):
 
 
 ```
@@ -41,11 +41,11 @@ $ git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config
 
 This will download (= clone) the repository (= folder structure and files) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents.
 
-Once Git, Docker desktop and the repository are in place, you don't have to do this again. If the platform has been updated the next time you want to use it, you might want to download the updates by typing first `git pull` and then `docker-compose pull` into Git Bash from your local clone of the repository. 
+Once Git, Docker Desktop and the repository are in place, you don't have to do this again. If the platform has been updated the next time you want to use it, you might want to download the updates by typing first `git pull` and then `docker-compose pull` into Git Bash from your local clone of the repository. 
 
 ### 1. Start the container 🧰
 
-In the working directory where you have cloned the repository, open a terminal by right-clicking and choosing "Git Bash here" (or use the one you already have open if you just did the first time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing ´cd noresm-land-sites-platform´). Then write this command and hit enter to get the container up and running:
+In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing ´cd [local_path]/noresm-land-sites-platform´). Then write this command and hit enter to get the container up and running:
 
     $ docker-compose up
 
@@ -64,7 +64,7 @@ Now you can open the graphical user interface (=GUI) at [localhost:8080](http://
 
 #### 2.1 Choose a site 
 
-by clicking either a button or a point on the map! 
+...by clicking either a button or a point on the map! 
 
 If you need a different site, you can [request one via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A). NB! This requires the developers to do some manual work, so you should have a clear reason to request a new site.
 
@@ -105,7 +105,7 @@ In the web UI, once you have chosen a site you get options to download site data
 
 **History files**
 
-By default, **the model records output in one tape** (hist_fincl1), **as one** (hist_mfilt=1) **average** (hist_avgflag_pertape=A), **monthly** (hist_nhtfrq=0) **value, for a subset of variables** (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES"), **in a long-lat grid** (hist_dov2xy=TRUE). Each column in the History files tab corresponds to a history tape, which is a series of files created for the simulation period. If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns to add history tapes. If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
+By default, **the model records output in one tape** (hist_fincl1), **as one** (hist_mfilt=1) **average** (hist_avgflag_pertape=A), **monthly** (hist_nhtfrq=0) **value, for a subset of variables** (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES")), **in a long-lat grid** (hist_dov2xy=TRUE). Each column in the History files tab corresponds to a history tape, which is a series of files created for the simulation period. If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns to add history tapes. If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
 
 **FATES settings**
 
@@ -129,13 +129,13 @@ You can remove or modify Plant Functional Types (PFTs) by checking/unchecking PF
 
 #### Start building your case with the ´SUBMIT´ button
 
-Once you click ´submit´, the case will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the Status, which will transition from pending to ready when the case has been built.
+Once you click `submit`, the case will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the status, which will transition from pending to ready when the case has been built.
 
 ### 3. Run your simulations 👩‍💻
 
-Once the case is ready, you can start the simulation with ´run´. There is a button to ´download´ the output when the run is finished, and to ´edit´ the settings and create a new case, or ´delete´ the case. Depending of how long you asked the model to run for (default is 1 year), and your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. Make sure your computer is not running other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations]().
+Once the case is ready, you can start the simulation with ´run´. There is a button to ´download´ the output when the run is finished, and to ´edit´ the settings and create a new case, or ´delete´ the case. Depending of how long you asked the model to run for (default is 1 year), and your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
 
-> While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the ´notebooks´ folder and open the ´input_visualization.ipynb´ notebook. It will guide you through some of the input data for the model. 
+> While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `notebooks/` folder and open the `input_visualization.ipynb` notebook. It will guide you through some of the input data for the model.
 
 Soon your simulations will be finished! 🎉 Your screen might look something like this for two similar cases for the BOR1 site that have finished running:
 
@@ -147,25 +147,25 @@ Output will be stored at time intervals you set (default is monthly).
 
 ### 4. Look at your output 📈
 
-Model output is most easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), btu is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. Optionally, output data can also be downloaded to another location with the Download Data button in the User Interface. 
+Model output is most easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), but is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. Optionally, output data can also be downloaded to another location with the Download Data button in the User Interface. 
 
-In Jupyter lab, nagivate to the ´notebooks´ folder and open the ´output_visualization.ipynb´ notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available!
+In JupyterLab, nagivate to the `notebooks/` folder and open the `output_visualization.ipynb` notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available!
 
-[Output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) can alternatively be opened in Panoply, R, or using python on your local computer.
+[Output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) can alternatively be opened in Panoply (included for convenience under http://localhost:5800/ when containers are running), R, or using Python on your local computer.
 
 ### 5. Close the container
 
-NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your Git Bash terminal and press ´Ctrl+c´.
+NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`.
 
 
 ## Troubleshooting
 
-Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. 
+Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully.
 
-If the container (or another process) is running in your terminal, you can stop it with `Ctrl+C`. In a terminal, you can also delete all the Docker containers, images, volumes etc with `docker system prune -a`. To remove the repository, you can type `rm -r noresm-land-sites-platform` (if it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r) in your working directory. It's also possible to delete everything manually in Docker desktop (check containers, images, and volumes), and to delete the repository manually from your working directory. 
+If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`. To remove the repository, you can type `rm -r noresm-land-sites-platform` (if it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r) in your working directory. It's also possible to delete everything manually in Docker desktop (check containers, images, and volumes), and to delete the repository manually from your working directory.
 
 ## Reproducibility
-To make your simulations reproducible by others, e.g. for a thesis or scientific paper, *note down the version of the NorESM-LSP* and save these three directories that have been created under ´/resources´ in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform):
+To make your simulations reproducible by others, e.g. for a thesis or scientific paper, *note down the version of the NorESM-LSP* and save these three directories that have been created under `resources/` in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform/resources):
 
 -the case folder, i.e. ´resources/cases/casename´
 -the case input data, i.e. ´resources/data/casename´
