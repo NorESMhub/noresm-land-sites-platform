@@ -124,6 +124,10 @@ You can remove or modify Plant Functional Types (PFTs) by checking/unchecking PF
 |11| cool_c3_grass|
 |12| c4_grass|
 
+![Screenshot of the Runenvironment settings](img/create-case-screenshot.JPG)
+
+*Screenshot of the pop-up triggered with the Create Case button. Notice the different tabs that give you access to different settings: case, run environment controlling simulations time, CLM namelist settings, history files controlling output files, and FATES parameters.*
+
 
 #### Start building your case with the ´SUBMIT´ button
 
