@@ -6,9 +6,15 @@
 
 This page describes what the platform contains, how the input data were made, the main functionalities, and the model output. See the navigation panel on the left for our [user guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide), [available sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), [about us](https://noresmhub.github.io/noresm-land-sites-platform/about/), and [contribution guidelines and Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/). 
 
-For more details about the models, see the technical documentation of [FATES](https://fates-docs.readthedocs.io/en/stable/), [CLM](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html), and [NorESM](https://noresm-docs.readthedocs.io/en/latest/).
+You can use the platform to run [single-point model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-point model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with input data (atmospheric forcing, land surface data), and analysis tools with example python code to plot some input and output data. 
 
-#### Quick links to central [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
+Please let us know if you have questions, suggestions, or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) on GitHub.
+
+*****************************
+
+## Introduction
+
+### Links to NorESM-LSP [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
 
 - [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform)
 - [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
@@ -17,12 +23,6 @@ For more details about the models, see the technical documentation of [FATES](ht
 - [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
 
 The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/noresm-land-sites-platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
-
-Please let us know if you have questions, suggestions, or trouble using the platform by opening a new [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) on GitHub.
-
-*****************************
-
-## Introduction
 
 ### Links to external resources and tutorials
 
@@ -91,15 +91,15 @@ The platform is primarily designed to run the land model (CLM) with the Norwegia
 
 ## Software architecture
 
-You can use the platform to run [single-point model simulations](https://en.wikipedia.org/wiki/Climate_model#/media/File:Global_Climate_Model.png "the world is divided into a 3-dimensional grid, where equations can be solved within each gridcell, and information passed between gridcells at certain time points. Single-point model 'runs' only simulate model processes for a single gridcell, which takes a lot less computational power") from a browser on your local computer. We provide [sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) with input data (atmospheric forcing, land surface data), and provide Jupyter notebooks with example python code to plot some input and output data. The NorESM-LSP relies on Docker containers and an Application Programming Interface (API).
+The NorESM-LSP relies on Docker containers and an Application Programming Interface (API). The illustrations below show the relationship between containers and folders for case files, model settings and model files (Figure 1), and between all the NorESM GitHub repositories, Docker images, and containers (Figure 2). 
 
 ![Architecture](img/architecture-Page-1.drawio.svg)
 
-*Illustration of the software architecture. The `model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the ones on the left, and the folders on the right are created by the code maintainers -- an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses an Application Programming Interface (API) to send commands between the users and containers.*
+*Figure 1: Illustration of the software architecture. The `model` container is expanded to show the two services running in there (i.e. `API` and `Tasks`) in addition to hosting the model and its dependencies. `./resources` contains all the folders that are mounted into the containers by `docker-compose`. The model and the API manage the ones on the left, and the folders on the right are created by the code maintainers -- an asterisk indicates the folder is optional. After [first-time installation and setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup), users can access the Web User Interface (UI) and Jupyter server. The UI uses an Application Programming Interface (API) to send commands between the users and containers.*
 
 ![Repositories and containers](img/repos_and_containers-MASTER.drawio.svg)
 
-*Illustration of the GitHub repositories and Docker images and containers that make up the NorESM Land Sites Platform.*
+*Figure 2: Illustration of the GitHub repositories and Docker images and containers that make up the NorESM Land Sites Platform. [Dockerfiles](https://doi.org/10.1371/journal.pcbi.1008316) in Github repositories are the basis of static Docker images (read-only files with source code, libraries, dependencies, and tools) that the containers (virtual computer environments where the models can run) can start from. Code in repositories is also sent directly to the containers.*
 
 ### Docker containers and model dependencies
 
@@ -204,12 +204,6 @@ Users can set up cases, change some model settings, and run simulations via the 
 
 The Web User Interface (UI) code can be found at [https://github.com/NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui). The UI is created using [Typescript](https://www.typescriptlang.org/), a superset of JavaScript language, with the [React](https://reactjs.org/) framework.
 
-### Jupyter Server
-
-The included Jupyter Server Image comes with some commonly used python libraries for data analysis. The list of bundled libraries is available in the [Jupyter Dockerfile](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/docker/jupyter/Dockerfile).
-
-When the platform is up and running, the Jupyter server is available at [localhost:8888](localhost:8888). Example and tutorial Jupyter notebooks are stored in  `/notebooks`. 
-
 ### API
 
 An Application Programming Interface (API) is a set of tools that enables the end-users to interact with a program. The interaction happens by receiving some commands from the users, performing some actions if necessary, and then sending back some results. We created an HTTP API for the model using FastAPI, a popular high-performance framework for Python. It means the API can be used through any medium that can send and receive HTTP requests, e.g., browsers and libraries like python-requests. FastAPI generates a REST API based on [OpenAPI specifications](https://github.com/OAI/OpenAPI-Specification). It also automatically generates documentation for the API from the docstrings of the python functions, which includes a description of the inputs and outputs and examples. The documentation is interactive and can be accessed through its web-based user interface.
@@ -230,13 +224,19 @@ The API code can be found at [https://github.com/NorESMhub/ctsm-api](https://git
 
 ## Postprocessing
 
-Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). From the UI, when a case has finished successfully you can open the Jupyter server (at localhost:8888) and work with the output there, using e.g. the provided notebook in the tutorials folder. The model output is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`, and can optionally be downloaded to another location with the Download Data button in the User Interface.
+Output is stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format. The model output is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`, and can optionally be downloaded to another location with the Download Data button in the User Interface. In addition to our notebook and Panoply tools and servers, you can [view NetCDF files](https://en.wikipedia.org/wiki/NetCDF#Applications) using Panoply, or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). 
 
 ### Notebooks
 
+Jupyter notebooks combine text and code, and display results directly below the code boxes. When a case has finished successfully you can open the Jupyter server at [localhost:8888](localhost:8888) and work with the model output there, using the provided notebooks. Example and tutorial Jupyter notebooks are stored in  `/notebooks`. Notebooks can easily be copied and changed with whatever changes or additions you make.
+
+The Jupyter server is available as long as the platform containers are up and running. The Jupyter Server Image comes with some commonly used python libraries for data analysis. The list of bundled libraries is available in the [Jupyter Dockerfile](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/docker/jupyter/Dockerfile).
+
+We can also recommend the NCAR-NEON collaboration tutorials, which also use notebooks and may have additional code inspiration for your analysis: [NCAR-NEON CESM lab](https://ncar.github.io/ncar-neon-books/quick_start_docker.html)
 
 ### Panoply
 
+In addition to a Jupyter server, you can open [Panoply](https://www.giss.nasa.gov/tools/panoply/) on [localhost:5800](localhost:5800) while the containers are running. Panoply is useful for exploring the complete set of output variables, and can also generate plots.
 
 **************************************
 
@@ -297,16 +297,17 @@ Sites in `resources/config/sites.json` are described as [GeoJSON points](https:/
 
 ### Running the NorESM-LSP remotely
 
-Containerisation of software like the NorESM-LSP and models (NorESM, CLM, FATES) makes it possible to publish it on other services, e.g. **cloud computing services** where users can sign up and run model experiments remotely. That way, users don't have to install anything on their own computers. For long or multiple experiments, using remote computing resources may be necessary. An early version of the NorESM-LSP exists on Galaxy, a free and open cloud computing service. We also have plans for publishing the NorESM-LSP as a tool (app) on NIRD (only available to users at Norwegian Universities). 
-
-It is also possible to run the NorESM-LSP on a remote computer, like a research-infrastructure computer cluster (e.g. NREC, Saga, Fram for University of Oslo users), via an **[ssh tunnel](https://en.wikipedia.org/wiki/Tunneling_protocol#Secure_Shell_tunneling)**. If you need to run many or long simulations, a remote computer may be beneficial because it doesn't take up your local computer's resources and doesn't require your local computer to be turned on throughout the simulation time.
+Containerisation of software like the NorESM-LSP and models (NorESM, CLM, FATES) makes it possible to publish it on other services, e.g. **cloud computing services** where users can sign up and run model experiments remotely. That way, users don't have to install anything on their own computers. For long or multiple experiments, using remote computing resources may be necessary. An early version of the NorESM-LSP exists on Galaxy, a free and open cloud computing service. It is also possible to run the NorESM-LSP on a remote computer, like a research-infrastructure computer cluster (e.g. NREC, Saga, Fram for University of Oslo users), via an **[ssh tunnel](https://en.wikipedia.org/wiki/Tunneling_protocol#Secure_Shell_tunneling)**. If you need to run many or long simulations, a remote computer may be beneficial because it doesn't take up your local computer's resources and doesn't require your local computer to be turned on throughout the simulation time.
 
 #### Galaxy Tool for FATES
 Galaxy is free to use and only requires registering as a user. Note that this tool is to be considered a pilot version, and does not include all the functionalities of the NorESM-LSP. It does, on the other hand, include metadata to make it FAIR (Findable, Accessible, Interoperable, Reusable), and has Research Objects on [ROHub](https://reliance.rohub.org/).
 
 - [Tutorial with the CLM-FATES Galaxy tool](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html)
 
+#### SSH tunneling, with example for NREC
+
+
 
 **************************************
 
-
+*This is the end of the technical documentation. Are you missing something? Please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues)*
