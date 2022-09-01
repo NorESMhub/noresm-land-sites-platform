@@ -249,7 +249,7 @@ For an overview of the model settings and parameters users can change, see the [
 
 To be able to set model parameters in the web UI, some configuration files are needed. Both model parameters and site configurations are provided by the maintainers as JSON files in `resources/config/variables_config.json` and `resources/config/sites.json`. They can be modified by users who are familiar with the model. The model parameters file contains a list of JSON objects. Attributes of each object are described in table 1. Note that not all types of variables accepted by the model are supported in the user interface at this point. The tables below describe how these configuration files work and handle the model settings users can change in the UI.
 
-####*Table 1: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
+*Table 1: Model parameter attributes, compare to the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file in `/resources/config`*
 
 | Attribute         | Type                            | default | Required | Scope      | Description                                                                                                                                              |
 |-------------------|---------------------------------|---------|----------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -270,7 +270,7 @@ To be able to set model parameters in the web UI, some configuration files are n
 
 Entered values are checked for correctness with rules defined in the `validation` attribute. Table 2 describes the currently supported validation rules.
 
-####*Table 2: validation attributes to define which values are accepted for each model parameter*
+*Table 2: validation attributes to define which values are accepted for each model parameter*
 
 | Attribute     | Type                              | Description                                                             |
 |---------------|-----------------------------------|-------------------------------------------------------------------------|
@@ -283,7 +283,7 @@ Entered values are checked for correctness with rules defined in the `validation
 
 Sites in `resources/config/sites.json` are described as [GeoJSON points](https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2). The interactive map in the web UI draws on these site definitions. Their configuration is set in the `properties` attribute of the GeoJSON object, as described in table 3.
 
-####*Table 3: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) file in `/resources/config`*
+*Table 3: Site geoJSON properties, compare with the [sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) file in `/resources/config`*
 
 | Attribute | Type            | Required | Description                                                                                                                                                                                                                                                                       |
 |-----------|-----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -305,6 +305,97 @@ Galaxy is free to use and only requires registering as a user. Note that this to
 
 #### SSH tunneling, with example for NREC
 
+These instructions require the remote machine to allow remote access via SSH. If you want to run the NorESM-LSP on a server without this capability, you will need to talk to your local IT department to find a different solution. We describe all required steps from scratch and not all steps might be necessary for all virtual/remote machines (e.g. Docker may already be installed). The instructions are tailored for and tested on [NREC](https://www.nrec.no/) (remote) and Windows with Ubuntu subsystem (local) and might need adaptations on other systems. On NREC, we use a new instance based on the `GOLD Ubuntu 22.04 LTS` base image. The commands to install programs etc. may differ for other distributions and operating systems.
+
+**1 Run the platform remotely**
+
+1. Open a terminal that has the ssh command [installed](https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/) and access the remote machine (e.g. users at the University of Oslo can run a Virtual Machine on [NREC](https://www.uio.no/studier/emner/matnat/ifi/IN3230/h20/oblig/running-your-vm-on-nrec.html)): 
+```
+ssh [user]@[ip] # for example:
+ssh ubuntu@158.37.65.132
+```
+
+2. Install git, clone the [NorESM-LSP repository](https://github.com/NorESMhub/noresm-land-sites-platform): 
+```
+git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input
+```
+and make sure the following lines of code allow users to access its functionalities from the outside. In `/noresm-land-sites-platform/docker/api/.env` (open with an editor or IDE, e.g. `vi .env`), line 2, change to:
+```
+BACKEND_CORS_ORIGINS=["*"]
+```
+
+3. Install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/compose-plugin/#install-using-the-repository). Subsequently, add the current user to the Docker user group if you get an error related to access rights (may require restarting the terminal when finished):
+```
+[sudo] usermod -a -G docker $USER
+newgrp docker
+```
+
+4. Start a new named screen session:
+```
+screen -S lsp
+```
+
+May require sudo/admin rights and the installation of `screen`, e.g. on Debian/Ubuntu:
+```
+[sudo] apt install screen
+```
+
+5. Change into the project directory via `cd noresm-land-sites-platform` and install the NorESM-LSP via `docker-compose up` or `docker compose up` (depends on the Docker installation; also described in the user guide).
+
+6. Once everyting is up and running, detach your current screen session by subsequently pressing `CTRL+a` and `CTRL+d`. The session
+should now appear when you type `[sudo] screen -list`.
+
+7. Open a new local terminal and enable ssh port listening to the relevant NorESM-LSP ports:
+```
+ssh -L 8000:localhost:8000 -N -f [user]@[ip] # API
+ssh -L 8080:localhost:8080 -N -f [user]@[ip] # GUI
+ssh -L 8888:localhost:8888 -N -f [user]@[ip] # JupyterLab
+ssh -L 5800:localhost:5800 -N -f [user]@[ip] # Panoply
+```
+where `[user]@[ip]` must be the same as in step 1. You will probably need to enter your password each time you open a port.
+
+**Attention!** If one or multiple of these ports are already in use, change the number after the second colon or execute step 9 and retry this step.
+
+8. Open your local browser and access the NorESM-LSP tools of your choice. Enter into the address bar (remember to adapt the port numbers if you changed them in step 7.):
+```
+localhost:8000/api/v1/docs # API dashboard
+localhost:8080             # GUI
+localhost:8888             # JupyterLab 
+localhost:5800             # Panoply
+```
+You can now build/run model experiments as usual. Once the models are running, you can close the browser and shut off your computer. If you restart your machine, re-execute step 7 to be able to access the programs again.
+
+9. To stop the port listening described above manually:
+```
+fuser -k 8080/tcp
+fuser -k 8000/tcp
+fuser -k 8888/tcp
+fuser -k 5800/tcp
+```
+where the port numbers must correspond to the numbers you specified in step 7.
+
+10. Once you are ready to shut off the NorESM-LSP, reattach the screen session via:
+```
+screen -r lsp
+```
+and stop the running containers (`CTRL+c`). To kill the screen session, detach (`CTRL+a` and `CTRL+d`) and enter:
+```
+screen -XS lsp quit
+```
+
+**2 Download the results**
+
+To download the results to your local machine, you can either use a dedicated file transfer program such as [WinSCP](https://winscp.net/eng/download.php) or bash commands such as `scp`. To copy a `case` folder from the remote server using `scp`:
+
+```
+scp -r [user]@[ip]:[remote_path_to_lsp]/resources/cases/[case_folder_name] [local_save_path]
+```
+For example:
+```
+# Note the trailing dot, which denotes copying into the current working directory!
+scp -r ubuntu@158.37.65.123:/home/ubuntu/noresm-land-sites-platform/resources/cases/5994e825658b853b95d61feccffd18ad_bor1-1000y .
+```
+Be aware that model outputs for long simulations can result in large file sizes; make sure you have enough space available on your disk.
 
 
 **************************************
