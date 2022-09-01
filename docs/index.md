@@ -13,4 +13,5 @@
 ![Forest work](img/DALL-E-2022-forest-work.png)
 ![Meadow work](img/DALL-E-2022-meadow-work.png)
 
-*Model experiments can simulate potential vegetation, e.g. where you work. Images by DALL-E x Eva Lieungh*
+
+*Model experiments with CLM-FATES simulate potential vegetation. Images by DALL-E x Eva Lieungh*
