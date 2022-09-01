@@ -4,9 +4,9 @@ RUN apt update && apt install -y openjdk-11-jre
 
 ENV JAVA_HOME /opt/jdk
 
-ADD https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-5.1.1.tgz /tmp
+COPY PanoplyJ-5.2.0.tgz /tmp
 
-RUN tar -xvf /tmp/PanoplyJ-5.1.1.tgz --directory /opt
+RUN tar -xvf /tmp/PanoplyJ-5.2.0.tgz --directory /opt
 
 RUN echo "#!/bin/sh\nexec bash /opt/PanoplyJ/panoply.sh" > /startapp.sh
 
