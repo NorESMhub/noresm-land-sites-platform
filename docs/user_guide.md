@@ -10,8 +10,8 @@ You will need to open two new windows in the process, so it's a good idea to use
 
 If you have already completed [first-time setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and know what you are doing, here is the extremely quick user guide. In a terminal where you have the repository: 
     
-    $ cd noresm-land-sites-platform
-    $ docker-compose up
+    cd noresm-land-sites-platform
+    docker-compose up
     
 Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) 🎉
 
@@ -35,7 +35,7 @@ To use the NorESM land sites platform, you need to install [Git](https://git-scm
 
 
 ```
-$ git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input 
+git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input 
 ```
 
 
@@ -47,7 +47,7 @@ Once Git, Docker Desktop and the repository are in place, you don't have to do t
 
 In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing ´cd [local_path]/noresm-land-sites-platform´). Then write this command and hit enter to get the container up and running:
 
-    $ docker-compose up
+    docker-compose up
 
 The first time you execute this command, a lot of files will be downloaded first and it might take some time. When the container is up and running, the bottom messages in your terminal will include ´Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)´ (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with your simulations and analyses). Now you can access the container through your browser by opening this link (right-click and open in new tab or window): [localhost:8080](http://localhost:8080)
 
@@ -56,7 +56,7 @@ You can also see the container in the Docker desktop app under Containers/Apps.
 
 ### 2. Inside GUI: Set simulation settings ⚙️
 
-Now you can open the graphical user interface (=GUI) at [localhost:8080](http://localhost:8080) for setting up and running simulations. This interface has access to the Docker container you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click  `create case` and then `run`. The GUI should look like this once you have chosen a site and have submitted and started to run a case:
+Now you can open the graphical user interface (=GUI) at [localhost:8080](http://localhost:8080) for setting up and running simulations. This interface has access to the Docker container you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click  `create case` and then `run` (a default test case should take ~5-10 mins). The GUI should look like this once you have chosen a site and have submitted and started to run a case:
 
 ![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
@@ -153,7 +153,6 @@ In JupyterLab, nagivate to the `notebooks/` folder and open the `output_visualiz
 
 NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`.
 
-
 ## Troubleshooting
 
 Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully.
@@ -172,12 +171,9 @@ You could also simply save the whole 'resources' folder (whith some redundant fi
 ## When and how to cite the NorESM-LSP
 If you end up publishing your model experiments, e.g. in a thesis or scientific paper, we would like you to acknowledge the NorESM-LSP software and the development team behind it, and to properly cite the software and our upcoming technical description paper. See the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/) section for more information. 
 
-
 ***************************************************
 
-
 ***Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new).***
-
 
 ***************************************************
 
