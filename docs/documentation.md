@@ -190,10 +190,6 @@ Note that when CLM is running without FATES, a simpler 'big-leaf'-version of veg
 
 For the integrated field sites, surface data have been created from raw data sets, using [these scripts](https://github.com/NorESMhub/noresm-lsp-input). If you have your own data, you can replace the default input files with your own. Make sure the format and units are the same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html).
 
-### Reaching equilibrium (spin-up phase)
-
-To get realistic simulations, the model needs to run for a while, often hundreds to thousands of years, to reach a state of equilibrium under the applied atmospheric forcing. Starting the model from "bare ground" (= startup run type), the model needs time to grow and kill vegetation - for example, to build up soil carbon storage and to establish stable Plant Functional Type distributions resulting from competitive processes.
-
 **************************************
 
 ## Running model experiments
@@ -219,6 +215,9 @@ The Platform API is responsible for:
 
 The API code can be found at [https://github.com/NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api).
 
+### Reaching equilibrium (spin-up phase)
+
+To get realistic simulations, the model needs to run for a while, often hundreds to thousands of years, to reach a state of equilibrium under the applied atmospheric forcing. Starting the model from "bare ground" (= startup run type), the model needs time to grow and kill vegetation - for example, to build up soil carbon storage and to establish stable Plant Functional Type distributions resulting from competitive processes.
 
 **************************************
 
