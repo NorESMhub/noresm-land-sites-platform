@@ -49,18 +49,16 @@ In the working directory where you have cloned the repository, open a terminal (
 
     $ docker-compose up
 
-The first time you execute this command, a lot of files will be downloaded first and it might take some time. When the container is up and running, the bottom messages in your terminal will look something like the screenshot below (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with this user guide). Now you can access the container through your browser by opening this link (right-click and open in new tab or window): [localhost:8080](http://localhost:8080)
-
-![Screenshot of terminal when container is up](https://tinyimg.io/i/qk68R7Q.JPG)
+The first time you execute this command, a lot of files will be downloaded first and it might take some time. When the container is up and running, the bottom messages in your terminal will include ´Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)´ (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with your simulations and analyses). Now you can access the container through your browser by opening this link (right-click and open in new tab or window): [localhost:8080](http://localhost:8080)
 
 You can also see the container in the Docker desktop app under Containers/Apps.
 
 
 ### 2. Inside GUI: Set simulation settings ⚙️
 
-Now you can open the graphical user interface (=GUI) at [localhost:8080](http://localhost:8080) for setting up and running simulations. This interface has access to the Docker container you started in step 1. If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click  `create case` and then `run`. The GUI should look like this:
+Now you can open the graphical user interface (=GUI) at [localhost:8080](http://localhost:8080) for setting up and running simulations. This interface has access to the Docker container you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click  `create case` and then `run`. The GUI should look like this once you have chosen a site and have submitted and started to run a case:
 
-![https://tinyimg.io/i/7iQiTKP.JPG](https://tinyimg.io/i/7iQiTKP.JPG)
+![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
 #### 2.1 Choose a site 
 
