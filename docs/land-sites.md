@@ -1,6 +1,10 @@
 # NorESM land sites
 
-NorESM-LSP simulations are at the site level, also called single-point or single-(grid-)cell simulations. To run simulations, it's necessary to subset large data files that are inconvenient to download on a laptop. We therefore offer a set of integrated sites, but open up for requests to include new ones. If you need a new site, e.g. for a thesis or proposed manuscript, we are happy to help you set it up. Go to the Issues page on GitHub and open a new issue with a site description. More experienced coders may look at the input creation repository and add new sites themselves.
+NorESM-LSP simulations are at the site level, also called single-point or single-(grid-)cell simulations.
+
+To run simulations, it's necessary to subset large data files that are inconvenient to download on a laptop. We therefore offer a set of integrated sites, but open up for requests to include new ones. If you need a new site, e.g. for a thesis or proposed manuscript, we are happy to help you set it up. Go to the Issues page on GitHub and open a new issue with a site description. More experienced coders may look at the input creation repository and add new sites themselves.
+
+Note that the default data for the sites are subset by matching site coordinates with a gridcell in the data set. The coordinates could be in the center or periphery of that gridcell. The default data are also quite coarse in resolution, which means that when the landscape around the site is not flat and uniform, the data values may be unrepresentative for the site. The value will instead represent the average of the whole gridcell, which may include deep valleys and tall peaks and everything in between. Keep this in mind when interpreting the results of your simulations. 
 
 We currently support 20 sites that we group according to projects: 
 
@@ -25,31 +29,34 @@ You can use the [site GEOJSON file](https://github.com/NorESMhub/noresm-land-sit
 
 ## LATICE-MIP sites
 
-LATICE-MIP is a coordinated effort to utilise field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient (between 60° and 78° N) in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. soon submitted), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO<sub>2</sub>, and H<sub>2</sub>O fluxes between the land and the atmosphere.
+LATICE-MIP is a coordinated effort to utilise field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient between 60° and 78° N in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. in prep), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO<sub>2</sub>, and H<sub>2</sub>O fluxes between the land and the atmosphere. Site-specific information and links to data sources are provided in the table below.
 
-| Site name | Station name | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data years | Data types | Description      |
-| --------- |------------------ | ----------  | ---------   | -------------- | ---- | -------- | ------------ |
-| FNS       | Finse_fluxtower | 7.527008533 | 60.59383774 | 1210  | Feb 2018 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 10 m air temperature, air pressure, 4.4 m wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. mn.uio.no/latice/infrastructure 
-| HIS1 | Hisaasen_up |  12.25481033 | 61.10516357 | 681 | June 2019 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 2 m air temperature, air pressure, 2.8 m wind speed and direction, rain
-| HIS2 | hisaasen_low | 12.25089836 | 61.1115036  | 642 | " | "
-| ISK | Iskoras_EC | 25.29547425 | 69.3408715  | 357 | March 2019 | "
-| AAS  | Aas | 10.781667 | 59.660278   | 93.2  | NA | Precipitation, temperature, wind, air pressure, snow depth, EC measurements | meteorological data is from MET Norway
-| HUR | Hurdal | 11.078142 | 60.372387   | NA    |
-| BYV  | Bayelva | 11.83334 | 78.92094 | 56  | 1998–2017 | permafrost, active layer and meteorological conditions | https://doi.org/10.5194/essd-10-355-2018
-| ADV | Adventdalen | 15.91667 | 78.18333 | 21 |
+
+| Site name | Station name    | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data | Data years | Data types | Description      |
+| --------- |---------------- | ----------  | -----------   | -------------- | ---- | ---------- | ---------- | ---------------- |
+| FNS       | Finse_fluxtower | 7.527008533 | 60.59383774   | 1210           |      | Feb 2018 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 10 m air temperature, air pressure, 4.4 m wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. mn.uio.no/latice/infrastructure 
+| HIS1      | Hisaasen_up     | 12.25481033 | 61.10516357   | 681            |      | June 2019 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 2 m air temperature, air pressure, 2.8 m wind speed and direction, rain
+| HIS2      | hisaasen_low    | 12.25089836 | 61.1115036    | 642            |      | "           | "
+| ISK       | Iskoras_EC      | 25.29547425 | 69.3408715    | 357            |      | March 2019 | "
+| AAS       | Aas             | 10.781667   | 59.660278     | 93.2           |      |            | | Precipitation, temperature, wind, air pressure, snow depth, EC measurements | meteorological data is from MET Norway
+| HUR       | Hurdal          | 11.078142   | 60.372387     | NA             |      |
+| BYV       | Bayelva         | 11.83334    | 78.92094      | 56             | https://doi.org/10.5194/essd-10-355-2018 | 1998–2017 | permafrost, active layer and meteorological conditions | 
+| ADV       | Adventdalen     | 15.91667    | 78.18333      | 21             | https://fluxnet.org/doi/FLUXNET2015/SJ-Adv  | 2011-2014 |
 
 -----------------------------------------------------------------------
 
 
-## [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) (SeedClim) sites
+## [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites
 
-The Vestland climate grid, often called the SeedClim grid after the first major project that set it up, is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
+The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
 
-Central data papers:
+Central data papers and sources:
 
-- [FunCaB](https://zenodo.org/record/6520022)
-- Coming soon: [INCLINE]()
-- Coming soon: [SeedClim]()
+- [Vandvik *et al.* 2022](https://doi.org/10.1038/s41597-022-01559-0)
+- [Vestland Climate Grid on OSF](https://osf.io/npfa9/)
+- [FunCaB on Zenodo](https://zenodo.org/record/6520022)
+- Coming soon: [INCLINE](https://www.uib.no/en/rg/EECRG/114810/incline)
+
 
 | Site name | Name             | Lon (X) | Lat (Y) | Elevation (Z) | Data years | Data types | Description      |
 | --------- | ---------------  | ------- | ------- | ------------- | ---------- | ---------- | ---------------- |   
@@ -57,11 +64,11 @@ Central data papers:
 | ALP2      | Laavisdalen      | 7.27596 | 60.8231 | 1097          |  " | " |
 | ALP3      | Gudmedalen       | 7.17561 | 60.8328 | 1213          |  " | " |
 | ALP4      | Skjellingahaugen | 6.41504 | 60.9335 | 1088          |  " | " |
-| SUB1      | Aalrust          | 8.70466 | 60.8203 | 815           |   |  | Just below current climatic forest line. |
+| SUB1      | Aalrust          | 8.70466 | 60.8203 | 815           |    |   | Just below current climatic forest line. |
 | SUB2      | Hoegsete         | 7.17666 | 60.8760 | 700           |  " | " |
 | SUB3      | Rambaera         | 6.63028 | 61.0866 | 769           |  " | " |
 | SUB4      | Veskre           | 6.51468 | 60.5445 | 797           |  " | " |
-| BOR1      | Fauske           | 9.07876 | 61.0355 | 589           |   |  | Well below current climatic forest line. |
+| BOR1      | Fauske           | 9.07876 | 61.0355 | 589           |    |   | Well below current climatic forest line. |
 | BOR2      | Vikesland        | 7.16982 | 60.8803 | 474           | "  | " |
 | BOR3      | Arhelleren       | 6.33738 | 60.6652 | 431           | "  | " |
 | BOR4      | Oevstedal        | 5.96487 | 60.6901 | 346           | "  | " |
@@ -72,7 +79,7 @@ Central data papers:
 *Figure 1: Illustration from the first project using the Vestland Climate Grid (SeedClim). Turf squares (top soil, roots and whole plants) were cut out and physically transplanted to other sites, as indicated by the arrows in the top left corner. The vegetation in these turfs was carefully monitored over several years in their new locations, to see how and how quickly the plants adapted to a new environment.*
 
 
-![Field work at Ulvehaugen = ALP1 site](https://tinyimg.io/i/q5EA7X5.jpg)
+![Field work at Ulvehaugen = ALP1 site](img/ulvehaugen-incline-2019-el.jpg)
 
 *Figure 2: Field work at Ulvehaugen (ALP1). Ragnhild Gya and Joachim Töpper doing vegetation analysis in a 25x35cm metal frame. The small, white ([Tomst](https://tomst.com/web/en/systems/tms/tms-4/)) loggers track temperature and soil moisture, and the small weather station (wooden pole to the right) tracks additional weather data. The fence keeps sheep and other animals away from the plots, but the vegetation is semi-natural after decades or centuries of grazing. The clear, hexagonal Open-Top Chambers experimentally heat up the vegetation.*
 
