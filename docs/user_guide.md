@@ -55,32 +55,37 @@ In the working directory where you have cloned the repository, open a terminal (
 docker-compose up
 ```
 
-The first time you execute this command, a lot of files will be downloaded first and it might take some time. When the container is up and running, the bottom messages in your terminal will include ´Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)´ (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with your simulations and analyses). Now you can access the container through your browser by opening this link (right-click and open in new tab or window): [localhost:8080](http://localhost:8080)
+The first time you execute this command, a lot of files will be downloaded first. This might take half an hour or so depending on your internet connection. After this initial download, it will be much faster (<1min). When the container is up and running, the bottom messages in your terminal will include ´Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)´ (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with your simulations and analyses). 
 
-You can also see the container in the Docker desktop app under Containers/Apps.
-
+Now you can access the container through your browser by opening this link (right-click and open in new tab or window): [localhost:8080](http://localhost:8080). You can also see the container in the Docker desktop app under Containers/Apps.
 
 ### 2. Inside GUI: Set simulation settings ⚙️
 
-Now you can open the graphical user interface (=GUI) at [localhost:8080](http://localhost:8080) for setting up and running simulations. This interface has access to the Docker container you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click  `create case` and then `run` (a default test case should take ~5-10 mins). The GUI should look like this once you have chosen a site and have submitted and started to run a case:
+Now you can open the graphical user interface (=GUI) at [localhost:8080](http://localhost:8080) for setting up and running simulations. This interface has access to the Docker container you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click `create case` and then `run` (a default test case should take ~5-10 mins). The GUI should look like this once you have chosen a site and have submitted and started to run a case:
 
 ![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
-#### 2.1 Choose a site 
+*Figure 1: Screenshot from the GUI with a case created for the ALP1 site. Enhanced for readability.*
+
+#### 2.1 Choose a [site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) 
 
 ...by clicking either a button or a point on the map! 
 
-If you need a different site, you can [request one via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A). NB! This requires the developers to do some manual work, so you should have a clear reason to request a new site.
+If you need a different site, you can [request one via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A). This requires the developers to do some manual work, so you should have a clear reason to request a new site.
 
 #### 2.2 Download site data button (optional)
 
-The `download site data` button allows you to download the input data for your selected site. The data is already available in the container, so you don't need to do this. We provide a notebook called `input_visualization.ipynb` which you can open in Jupyterlab on [localhost:8888](localhost:8888) to explore some of the data that goes in to a simulation. This is a good thing to do while your case is running (which might take some time).
+The data is already available in the container, but with the `download site data` button you can download it to somewhere else if you wist. We provide a notebook called `input_visualization.ipynb` which you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation. This is a good thing to do while your case is running.
 
 #### 2.3 Create case
 
 With the `create case` button, you can look at and edit some model settings and parameters as you create a new case. To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. A case can be run several times, or stopped and started again. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly. 
 
-In the web UI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as defined in the [variables_config.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/variables_config.json) file described above. There are more customisation options for the models that advanced users can change manually, but for simplicity and explainability we have restricted the options in the UI and grouped them into Case, General, CLM namelist, History fields, and FATES settings. This is not an exhaustive list of possible changes (by far), but give you easy access to some options in the different tabs. All the boxes have default values for a quick but not especially realistic simulation.
+In the GUI, once you have chosen a site you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as described below. Note that there are five tabs with different types of case and model settings, grouped into Case, Run Environment, CLM namelist, History fields, and FATES settings. This is not an exhaustive list of possible changes (by far), but give you easy access to some options in the different tabs. Under CLM Namelist settings, there is an Advanced box were experienced users can customise the [CLM namelist](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-namelist.html) with code, e.g. `./xmlchange [parameter]=[newvalue]`. All the boxes have default values for a quick but not especially realistic simulation.
+
+![Screenshot of the Runenvironment settings](img/create-case-screenshot.JPG)
+
+*Screenshot of the pop-up triggered with the Create Case button. Notice the different tabs that give you access to different settings: case, run environment controlling simulation time, CLM namelist settings, history files controlling output files, and FATES parameters.*
 
 || Case settings   |
 |-|----------------|
@@ -100,12 +105,12 @@ In the web UI, once you have chosen a site you get options to download site data
 | RUN_TYPE | Dropdown. Startup or Restart. *Startup*: a 'cold' start from bare ground, where the vegetation and climate is not in equilibrium and the model may  produce unrealistic output unless it is run for a very long time (hundreds or thousands of years). Startup mode does not allow using spin-up files (='restart' files of an existing simulation where the vegetation and other conditions have reached a steady state). Use this mode for quick testing, or for making your own spin-up. *Restart*: continues running an existing case after it has been stopped.|
 |LND_TUNING_MODE| Dropdown. Land tuning mode. Tuning parameters and initial conditions for a CLM model version and meteorological forcing combination.|
 
-
 ||CLM namelist simulation settings|
 |-|-------------------------------|
 | co2_ppmv | Atmospheric CO2 concentration to use when co2_type is constant.|
 | fates_spitfire_mode | If or how to use advanced fire behaviour with the SPITFIRE module. 0 : Simulations of fire are off, 1 : use a global constant lightning rate found in fates_params, 2 : use an external lightning dataset, 3 : use an external confirmed ignitions dataset (not available through standard CSEM dataset collection), 4 : use external lightning and population datasets to simulate both natural and anthropogenic ignitions. Read more [in the FATES documentation](https://fates-users-guide.readthedocs.io/en/latest/user/SPITFIRE-Namelist-Options.html)|
 | use_bedrock | True/false. When true (default), a data set overwrites the CLM default soil depth. If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi). Read more in [Brunke et al.2016](https://journals.ametsoc.org/view/journals/clim/29/9/jcli-d-15-0307.1.xml)|
+| Advanced | Box for coding in additional CLM namelist changes. [See the CLM user guide](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-configuration.html#) |
 
 **History files**
 
@@ -130,44 +135,45 @@ You can remove or modify Plant Functional Types (PFTs) by checking/unchecking PF
 |11| cool_c3_grass|
 |12| c4_grass|
 
-![Screenshot of the Runenvironment settings](img/create-case-screenshot.JPG)
-
-*Screenshot of the pop-up triggered with the Create Case button. Notice the different tabs that give you access to different settings: case, run environment controlling simulations time, CLM namelist settings, history files controlling output files, and FATES parameters.*
-
-
 #### Start building your case with the ´SUBMIT´ button
 
 Once you click `submit`, the case will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the status, which will transition from pending to ready when the case has been built.
 
 ### 3. Run your simulations 👩‍💻
 
-Once the case is ready, you can start the simulation with ´run´. There is a button to ´download´ the output when the run is finished, and to ´edit´ the settings and create a new case, or ´delete´ the case. Depending of how long you asked the model to run for (default is 1 year), and your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
+Once the case is ready, you can start the simulation with `run`. There is a button to `download` the output when the run is finished, and to `edit` the settings and create a new case, or `delete` the case. Depending of how long you asked the model to run for, and your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
 
 > While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `notebooks/` folder and open the `input_visualization.ipynb` notebook. It will guide you through some of the input data for the model.
 
 Soon your simulations will be finished! 🎉 
 
-If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. 
+If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. 
 
-Output will be stored at time intervals you set (default is monthly).
+Output will be stored at the time intervals you set. The default is monthly.
 
 ### 4. Look at your output 📈
 
-Model output is most easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), but is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. Optionally, output data can also be downloaded to another location with the Download Data button in the User Interface. 
+[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), but is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
 
-In JupyterLab, nagivate to the `notebooks/` folder and open the `output_visualization.ipynb` notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available!
+In JupyterLab, nagivate to the `notebooks/` folder and open the `output_visualization.ipynb` notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables.
 
-[Output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) can alternatively be opened in Panoply (included for convenience under http://localhost:5800/ when containers are running), R, or using Python on your local computer.
+If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or using Python or R or on your local computer.
 
 ### 5. Close the container
 
-NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`.
+NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`. Alternatively, open Docker desktop, find the containers tab, and stop them with the stop button.
 
 ## Troubleshooting
 
-Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully.
+Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the [setup guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) before you bring the containers up again with `docker-compose up`.
 
-If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`. To remove the repository, you can type `rm -r noresm-land-sites-platform` (if it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r) in your working directory. It's also possible to delete everything manually in Docker desktop (check containers, images, and volumes), and to delete the repository manually from your working directory.
+## Uninstalling
+
+Open a terminal in your working directory (or switch to the already-open one if the NorESM-LSP is already running). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`. To install updates instead of deleting everything, you can use first `git pull` and then `docker-compose pull`.
+
+To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. 
+
+To delete **all** Docker containers, images, and other files, also  ones in use, you can use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes), and to delete the repository manually from your working directory.
 
 ## Reproducibility
 To make your simulations reproducible by others, e.g. for a thesis or scientific paper, *note down the version of the NorESM-LSP* and save these three directories that have been created under `resources/` in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform/resources):
@@ -179,7 +185,7 @@ To make your simulations reproducible by others, e.g. for a thesis or scientific
 You could also simply save the whole 'resources' folder (whith some redundant files).
 
 ## When and how to cite the NorESM-LSP
-If you end up publishing your model experiments, e.g. in a thesis or scientific paper, we would like you to acknowledge the NorESM-LSP software and the development team behind it, and to properly cite the software and our upcoming technical description paper. See the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/) section for more information. 
+If you end up publishing your model experiments, e.g. in a thesis or scientific paper, we would like you to properly cite the NorESM-LSP software. See the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/) section for more information. 
 
 ***************************************************
 
