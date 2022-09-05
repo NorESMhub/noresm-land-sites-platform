@@ -43,6 +43,10 @@ LATICE-MIP is a coordinated effort to utilise field measurements at different si
 | BYV       | Bayelva         | 11.83334    | 78.92094      | 56             | https://doi.org/10.5194/essd-10-355-2018 | 1998–2017 | permafrost, active layer and meteorological conditions | 
 | ADV       | Adventdalen     | 15.91667    | 78.18333      | 21             | https://fluxnet.org/doi/FLUXNET2015/SJ-Adv  | 2011-2014 |
 
+![Finse stationary flux tower](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/bilder/finse_tower_detail_507px.jpg)
+
+*Details from the Finse flux tower. Photo from [Finse EcHO](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/)*
+
 -----------------------------------------------------------------------
 
 
