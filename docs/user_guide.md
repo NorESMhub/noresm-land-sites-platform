@@ -10,9 +10,11 @@ You will need to open two new windows in the process, so it's a good idea to use
 
 If you have already completed [first-time setup](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and know what you are doing, here is the extremely quick user guide. In a terminal where you have the repository: 
     
-    cd noresm-land-sites-platform
-    docker-compose up
-    
+```
+cd noresm-land-sites-platform
+docker-compose up
+```
+
 Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) 🎉
 
 
@@ -20,34 +22,38 @@ Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://loc
 
 ## Step by step guide for using the platform
 
+|Check out our [glossary of technical terms](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms).|
+|---|
 
 ### 0. Prerequisites (first time setup) 🌱
 
-To use the NorESM land sites platform, you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download platform scripts) and start working with the Docker container. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
+To use the NorESM land sites platform, you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working with the Docker container. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
 
 1. [Create a GitHub account](https://github.com/) (optional, but generally recommended to be able to open issues, etc.)
 2. Install Git on your machine. For Windows: https://gitforwindows.org/, other: https://github.com/git-guides/install-git
 3. Install [Docker desktop](https://docs.docker.com/get-docker), might require restart
 4. (Install Docker Compose; should already be included in the Docker installation described above for Mac and Windows: [install docker-compose](https://docs.docker.com/compose/install) )
-5. (Remarks for Windows: You may have to install WSL2 (the 'two' is important here) manually if prompted. Follow the steps described [here](https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10). To open the Windows Command Prompt terminal as an administrator, type `cmd` into the Windows search bar located next to the Start Symbol (lower-left corner of the screen), right-click on 'Command Prompt', and select 'Run as administrator'. Also, note that some steps in the guide are executed in the 'Command Prompt' and some are executed in the 'Windows PowerShell'; to open the latter, type 'PowerShell' into the search bar and open as administrator. If Docker complains about you not belonging to the correct 'user group' after successful installation, follow the steps described [here](https://stackoverflow.com/questions/61530874/docker-how-do-i-add-myself-to-the-docker-users-group-on-windows-10-home)
-6. Open the file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and installation files needed by the platform, as well as your output files (which may take up quite a bit of space!). Your working directory should be easy to find, stable, and have plenty of free space available. For instance `C:/Users/yourusername` (OneDrive, USB sticks or your overly-cluttered desktop not recommended 👀).
-7. When you are in your chosen working directory, right-click and choose "Git Bash here" (Windows); or directly use `cd [path_to_directory]` in a terminal with Git installed. Copy and paste the following line into the terminal (note that in some terminals such as Git Bash, you need to click the right mouse button to paste from the clipboard):
-
+5. (Remarks for Windows: You may have to install WSL2 (the 'two' is important here) manually if prompted. Follow the steps described [here](https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10). To open the Windows Command Prompt terminal as an administrator, type `cmd` into the Windows search bar located next to the Start Symbol (lower-left corner of the screen), right-click on 'Command Prompt', and select 'Run as administrator'. Also, note that some steps in the guide are executed in the 'Command Prompt' and some are executed in the 'Windows PowerShell'; to open the latter, type 'PowerShell' into the search bar and open as administrator. If Docker complains about you not belonging to the correct 'user group' after successful installation, follow the steps described [here](https://stackoverflow.com/questions/61530874/docker-how-do-i-add-myself-to-the-docker-users-group-on-windows-10-home))
+6. Open the file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and installation files needed by the platform, as well as your output files (which may take up quite a bit of space!). Your working directory should be easy to find, stable, and have plenty of free space available. For instance `C:/Users/yourusername` (OneDrive, USB sticks, or your overly-cluttered desktop are not recommended 👀).
+7. When you are in your chosen working directory, right-click and choose "Git Bash here" (Windows). You can also directly use `cd [path_to_working_directory]` in a terminal with Git installed. Copy and paste the following line into the terminal (note that in some terminals such as Git Bash, you need to click the right mouse button to paste from the clipboard):
 
 ```
 git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input 
 ```
 
+This will download (= clone) the repository (= folder structure and files with version history) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents.
 
-This will download (= clone) the repository (= folder structure and files) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents.
+Once Git, Docker Desktop and the repository are in place, you don't have to do this again. 
 
-Once Git, Docker Desktop and the repository are in place, you don't have to do this again. If the platform has been updated the next time you want to use it, you might want to download the updates by typing first `git pull` and then `docker-compose pull` into Git Bash from your local clone of the repository. 
+If the platform has been updated the next time you want to use it, you might want to download the updates by typing first `git pull` and then `docker-compose pull` into Git Bash (or another terminal) from your local clone of the repository. 
 
 ### 1. Start the container 🧰
 
-In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing ´cd [local_path]/noresm-land-sites-platform´). Then write this command and hit enter to get the container up and running:
+In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first-time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing `cd noresm-land-sites-platform`). Then write this command and hit enter to get the container up and running:
 
-    docker-compose up
+```
+docker-compose up
+```
 
 The first time you execute this command, a lot of files will be downloaded first and it might take some time. When the container is up and running, the bottom messages in your terminal will include ´Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)´ (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with your simulations and analyses). Now you can access the container through your browser by opening this link (right-click and open in new tab or window): [localhost:8080](http://localhost:8080)
 
@@ -111,15 +117,15 @@ You can remove or modify Plant Functional Types (PFTs) by checking/unchecking PF
 
 | Index no. | Plant Functional Type |
 |-----------|-----------------------|
-|1| broadleaf_evergreen_tropical_tree|
-|2| needleleaf_evergreen_extratrop_tree|
-|3| needleleaf_colddecid_extratrop_tree|
-|4| broadleaf_evergreen_extratrop_tree|
-|5| broadleaf_hydrodecid_tropical_tree|
-|6| broadleaf_colddecid_extratrop_tree|
-|7| broadleaf_evergreen_extratrop_shrub|
-|8| broadleaf_hydrodecid_extratrop_shrub|
-|9| broadleaf_colddecid_extratrop_shrub|
+|1 | broadleaf_evergreen_tropical_tree|
+|2 | needleleaf_evergreen_extratrop_tree|
+|3 | needleleaf_colddecid_extratrop_tree|
+|4 | broadleaf_evergreen_extratrop_tree|
+|5 | broadleaf_hydrodecid_tropical_tree|
+|6 | broadleaf_colddecid_extratrop_tree|
+|7 | broadleaf_evergreen_extratrop_shrub|
+|8 | broadleaf_hydrodecid_extratrop_shrub|
+|9 | broadleaf_colddecid_extratrop_shrub|
 |10| arctic_c3_grass|
 |11| cool_c3_grass|
 |12| c4_grass|
