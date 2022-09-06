@@ -32,18 +32,22 @@ You can use the [site GEOJSON file](https://github.com/NorESMhub/noresm-land-sit
 LATICE-MIP is a coordinated effort to utilise field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient between 60° and 78° N in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. in prep), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO<sub>2</sub>, and H<sub>2</sub>O fluxes between the land and the atmosphere. Site-specific information and links to data sources are provided in the table below.
 
 
-| Site name | Station name    | Lon (X)     |   Lat (Y)     |  Elevation (Z) | Data | Data years | Data types | Description      |
+| Site name | Station name    | Lon (X)     |   Lat (Y)     |  Elevation, m (Z) | Data | Data years | Data types | Description      |
 | --------- |---------------- | ----------  | -----------   | -------------- | ---- | ---------- | ---------- | ---------------- |
 | FNS       | Finse_fluxtower | 7.527008533 | 60.59383774   | 1210           |      | Feb 2018 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 10 m air temperature, air pressure, 4.4 m wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images | Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. mn.uio.no/latice/infrastructure 
 | HIS1      | Hisaasen_up     | 12.25481033 | 61.10516357   | 681            |      | June 2019 - present | Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 2 m air temperature, air pressure, 2.8 m wind speed and direction, rain
 | HIS2      | hisaasen_low    | 12.25089836 | 61.1115036    | 642            |      | "           | "
-| ISK       | Iskoras_EC      | 25.29547425 | 69.3408715    | 357            |      | March 2019 | "
+| ISK       | Iskoras_EC      | 25.29547425 | 69.3408715    | 357            | Some data in supporting information: [doi.org/10.1029/2018JF004945](https://doi.org/10.1029/2018JF004945) |  | "
 | AAS       | Aas             | 10.781667   | 59.660278     | 93.2           |      |            | | Precipitation, temperature, wind, air pressure, snow depth, EC measurements | meteorological data is from MET Norway
-| HUR       | Hurdal          | 11.078142   | 60.372387     | NA             |      |
-| BYV       | Bayelva         | 11.83334    | 78.92094      | 56             | https://doi.org/10.5194/essd-10-355-2018 | 1998–2017 | permafrost, active layer and meteorological conditions | 
+| HUR       | Hurdal          | 11.078142   | 60.372387     | 270             |      |
+| BYV       | Bayelva         | 11.83334    | 78.92094      | 56             | [https://doi.org/10.5194/essd-10-355-2018](https://doi.org/10.5194/essd-10-355-2018), see also [doi.org/10.1029/2020GL092256](https://doi.org/10.1029/2020GL092256) | 1998–2017 | permafrost, active layer and meteorological conditions | 
 | ADV       | Adventdalen     | 15.91667    | 78.18333      | 21             | https://fluxnet.org/doi/FLUXNET2015/SJ-Adv  | 2011-2014 |
 
-![Finse stationary flux tower](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/bilder/finse_tower_detail_507px.jpg)
+Other relevant papers:
+
+- [Pirk, N., Aalstad, K., Westermann, S., Vatne, A., van Hove, A., Tallaksen, L. M., Cassiani, M., and Katul, G.: Inferring surface energy fluxes using drone data assimilation in large eddy simulations, Atmos. Meas. Tech. Discuss, in review, 2022](https://doi.org/10.5194/amt-2022-219)
+
+![Finse stationary flux tower](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/bilder/finse_tower_detail_507px.jpg)(Hisåsen and Iskoras data used)
 
 *Details from the Finse flux tower. Photo from [Finse EcHO](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/)*
 
@@ -80,10 +84,10 @@ Central data papers and sources:
 
 ![Vestland climate grid](https://betweenthefjords.w.uib.no/files/2020/08/grid.png)
 
-*Figure 1: Illustration from the first project using the Vestland Climate Grid (SeedClim). Turf squares (top soil, roots and whole plants) were cut out and physically transplanted to other sites, as indicated by the arrows in the top left corner. The vegetation in these turfs was carefully monitored over several years in their new locations, to see how and how quickly the plants adapted to a new environment.*
+*Figure 1: Illustration of the Vestland Climate Grid, from the SeedClim project: turf squares (top soil, roots and whole plants) were cut out and physically transplanted to other sites, as indicated by the arrows in the top left corner. The vegetation in these turfs was carefully monitored over several years in their new locations, to see how and how quickly the plants adapted to a new environment. Figure by V. Vandvik et al., betweenthefjords.w.uib.no*
 
 
 ![Field work at Ulvehaugen = ALP1 site](img/ulvehaugen-incline-2019-el.jpg)
 
-*Figure 2: Field work at Ulvehaugen (ALP1). Ragnhild Gya and Joachim Töpper doing vegetation analysis in a 25x35cm metal frame. The small, white ([Tomst](https://tomst.com/web/en/systems/tms/tms-4/)) loggers track temperature and soil moisture, and the small weather station (wooden pole to the right) tracks additional weather data. The fence keeps sheep and other animals away from the plots, but the vegetation is semi-natural after decades or centuries of grazing. The clear, hexagonal Open-Top Chambers experimentally heat up the vegetation.*
+*Figure 2: Field work at Ulvehaugen (ALP1) in 2019. Ragnhild Gya and Joachim Töpper doing vegetation analysis in a 25x35cm metal frame. The small, white ([Tomst](https://tomst.com/web/en/systems/tms/tms-4/)) loggers track temperature and soil moisture, and the small weather station (wooden pole to the right) tracks additional weather data. The fence keeps sheep and other animals away from the plots, but the vegetation is semi-natural after decades or centuries of grazing. The clear, hexagonal Open-Top Chambers experimentally heat up the vegetation. Photo by E. Lieungh*
 
