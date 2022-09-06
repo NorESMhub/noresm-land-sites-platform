@@ -28,6 +28,8 @@
         { "value":  "GREGORIAN", "label": "Gregorian" }
       ]
     },
+    "readonly": true,
+    "default": "NO_LEAP",
     "placeholder": "No Leap"
   },
   {
@@ -37,6 +39,7 @@
     "description": {
       "summary": "Starting year to loop data over. Example: If the input data spans 1900-2010, set = 2000 to tell the model to use the input data from 2000 onwards."
     },
+    "default": 1901,
     "placeholder": 1901
   },
   {
@@ -46,6 +49,7 @@
     "description": {
       "summary": "Year align"
     },
+    "default": 1901,
     "placeholder": 1901
   },
   {
@@ -55,7 +59,8 @@
     "description": {
       "summary": "Ending year to loop data over. For example: If the input data spans 1900-2010, set this to 2005 to tell the model to use the input data up to 2005. If you run a longer simulation than the span between YR_START and YR_END, the input will be looped."
     },
-    "placeholder": 1950
+    "default": 1902,
+    "placeholder": 1902
   },
   {
     "name": "RUN_STARTDATE",
@@ -64,7 +69,8 @@
     "description": {
       "summary": "Run start date (yyyy-mm-dd); normally at the start of the same year as YR_START. Only used for startup or hybrid run types."
     },
-    "placeholder": "2000-01-01"
+    "default": "1901-01-01",
+    "placeholder": "1901-01-01"
   },
   {
     "name": "STOP_N",
@@ -73,7 +79,8 @@
     "description": {
       "summary": "Sets the run length together with STOP_OPTION; Number of STOP_OPTION to simulate. E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days."
     },
-    "placeholder": 5
+    "default": 1,
+    "placeholder": 1
   },
   {
     "name": "STOP_OPTION",
@@ -105,7 +112,8 @@
         { "value": "end", "label": "end" }
       ]
     },
-    "placeholder": "ndays"
+    "default": "nyears",
+    "placeholder": "nyears"
   },
   {
     "name": "STOP_DATE",
@@ -149,6 +157,8 @@
         { "value": "clm5_1_GSWP3v1", "label": "clm5_1_GSWP3v1" }
       ]
     },
+    "readonly": true,
+    "default": "clm5_0_GSWP3v1",
     "placeholder": "clm5_0_GSWP3v1"
   },
   {
