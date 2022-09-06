@@ -45,9 +45,10 @@ LATICE-MIP is a coordinated effort to utilise field measurements at different si
 
 Other relevant papers:
 
-- [Pirk, N., Aalstad, K., Westermann, S., Vatne, A., van Hove, A., Tallaksen, L. M., Cassiani, M., and Katul, G.: Inferring surface energy fluxes using drone data assimilation in large eddy simulations, Atmos. Meas. Tech. Discuss, in review, 2022](https://doi.org/10.5194/amt-2022-219)
+- [Pirk, N., Aalstad, K., Westermann, S., Vatne, A., van Hove, A., Tallaksen, L. M., Cassiani, M., and Katul, G.: Inferring surface energy fluxes using drone data assimilation in large eddy simulations, Atmos. Meas. Tech. Discuss, in review, 2022](https://doi.org/10.5194/amt-2022-219) (Hisåsen and Iskoras data used)
 
-![Finse stationary flux tower](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/bilder/finse_tower_detail_507px.jpg)(Hisåsen and Iskoras data used)
+
+![Finse stationary flux tower](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/bilder/finse_tower_detail_507px.jpg)
 
 *Details from the Finse flux tower. Photo from [Finse EcHO](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/)*
 
