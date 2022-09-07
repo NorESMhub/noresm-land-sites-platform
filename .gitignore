@@ -1,6 +1,7 @@
-notebooks/*
-!notebooks/tutorials/
-!notebooks/input_data_setup/
+notebooks/plot_input_data/*
+!notebooks/plot_input_data/atmospheric_forcing.ipynb
+!notebooks/plot_input_data/surface_data.ipynb
+!notebooks/plot_input_data/dicts/
 
 resources/archives
 resources/cases
