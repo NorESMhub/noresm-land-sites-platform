@@ -11,7 +11,7 @@ We currently support 20 sites that we group according to projects:
 - 8 climate station sites of interest to the [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/) group 
 - and the 12 [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites. 
  
-These locations are established study sites with climatic, and/or ecological data available. Each group of sites have similar data and are easier to compare, whereas sites from different groups might have different kinds of data. Detailed site descriptions and links to data providers are listed below for each group.
+These locations are established study sites with climatic, and/or ecological data available. Each group of sites have similar data and are easier to compare, whereas sites from different groups might have different kinds of data. Detailed site descriptions and links to data providers are listed below for each group. NB! Note that the data from the sources we link to here may be subject to terms specified in the individual data papers and repositories, such as usage statements requiring authorship or acknowledgement. Check these terms before publishing any data (e.g in papers, theses, or public presentations)!
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
