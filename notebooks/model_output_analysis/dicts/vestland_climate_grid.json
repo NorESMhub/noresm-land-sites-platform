@@ -1,0 +1,40 @@
+{
+    "sites": {
+        "ALP1": {
+            "osf_csv_name": "Ulvehaugen"
+        },
+        "ALP2": {
+            "osf_csv_name": "Lavisdalen"
+        },
+        "ALP3": {
+            "osf_csv_name": "Gudmedalen"
+        },
+        "ALP4": {
+            "osf_csv_name": "Skjelingahaugen"
+        },
+        "SUB1": {
+            "osf_csv_name": "Alrust"
+        },
+        "SUB2": {
+            "osf_csv_name": "Hogsete"
+        },
+        "SUB3": {
+            "osf_csv_name": "Rambera"
+        },
+        "SUB4": {
+            "osf_csv_name": "Veskre"
+        },
+        "BOR1": {
+            "osf_csv_name": "Fauske"
+        },
+        "BOR2": {
+            "osf_csv_name": "Vikesland"
+        },
+        "BOR3": {
+            "osf_csv_name": "Arhelleren"
+        },
+        "BOR4": {
+            "osf_csv_name": "Ovstedalen"
+        }
+    }
+}
