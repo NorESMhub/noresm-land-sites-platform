@@ -4,6 +4,8 @@ Do you need more information? Here are some useful links.
 
 While the NorESM-LSP provides an easy interface to run model experiments with the NorESM-CLM-FATES models, interpreting the results and setting up high-quality simulations can be time-consuming and requires specialist knowledge about the models and theoretical knowledge of Earth System science. Here we collect some useful links to tutorials and other resources where you can learn more about the models. If you are new to modelling but want to publish something, it might be a good idea to reach out to someone who is more familiar with the models to find collaborators on your project. The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). Each model has its own documentation and tutorials.
 
+This page collects some training resources we have found and think are relevant, but is by no means an exhaustive list.
+
 ## Tutorials, courses, and papers
 
 ### Courses for students and researchers
@@ -43,3 +45,7 @@ While the NorESM-LSP provides an easy interface to run model experiments with th
 
 - [Technical documentation and user guide](https://noresm-docs.readthedocs.io/en/latest/)
 - [GitHub repository](https://github.com/NorESMhub/NorESM)
+
+************************************
+
+*Do you know of a good course or other resource that belongs on this page? Please let us know by opening an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues).*
