@@ -57,16 +57,18 @@ The model framework consists of the Norwegian Earth System Model (NorESM), the C
 
 #### Earth System Modelling terms
 
+Note that some terms may have slightly different definitions in different models. These definitions are written to be quite general but valid for the NorESM, CLM, and FATES models.
+
 | Term | Definition |
 |------|------------|
 |DGVM, </br>FATES| *D*ynamic *G*lobal *V*egetation *M*odels are computer programs that simulate vegetation. See [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_global_vegetation_model) and these papers for more general DGVM information: [Scheiter, Langan & Higgins, 2013]( https://doi.org/10.1111/nph.12210). The *F*uncionally *A*ssembled *T*errestrial *E*cosystem *S*imulator is a DGVM that works with CLM as a host model. FATES groups individuals into cohorts, has flexible PFT definitions, is deterministic, and lacks hardcoded climate thresholds for PFTs. |
-|LSM,</br>CLM/CTSM| *L*and *S*urface *M*odels are computer programs that use quantitative methods to simulate the exchange of energy, water, and matter (e.g. CO2) at the Earth surface–atmosphere interface. The *C*ommunity *L*and *M*odel is an LSM, and part of the *C*ommunity *T*errestrial *S*ystem *M*odel|
-|ESM,</br>NorESM| |
-|Model coupling, </br>CIME| |
-|Stub,</br>Data model| |
+|LSM,</br>CLM/CTSM| [*L*and *S*urface *M*odels](https://en.wikipedia.org/wiki/Land_surface_models_(climate)) are computer programs that use quantitative methods to simulate the exchange of energy, water, and e.g. CO2 at the interface between the Earth's surface and atmosphere. The [*C*ommunity *L*and *M*odel](https://www.cesm.ucar.edu/models/clm/) is an LSM, and part of the *C*ommunity *T*errestrial *S*ystem *M*odel (which also includes a river runoff model). |
+|ESM,</br>NorESM| *E*arth *S*ystem *M*odels are computer programs that simulate the exchanges of energy and material (water, carbon, etc.) in the Earth System, typically by combining sub-models for each major component of the Earth System: land surface, atmosphere, ocean, and ice. These component models include code representation of differential equations from e.g. physics and biogeochemistry, which are solved numerically as the model runs through a simulation from initial conditions. The [*Nor*wegian *E*arth *S*ystem *M*odel](https://www.noresm.org/) is an ESM that is related to the [Community Earth System Model](https://www.cesm.ucar.edu/models/cesm2/) but has different component models for e.g. ocean and atmosphere.|
+|Model coupling, </br>CIME| Eath System Model components can be *coupled* with infrastructure code such as[*C*ommon *I*nfrastructure for *M*odelling the *E*arth (CIME)](https://esmci.github.io/cime/versions/master/html/index.html). When models are run in coupled mode, information about energy and matter are exchanged between the component models in a dynamic way that allows feedbacks in the system. Models operate with time steps, e.g. 30 mins or 3 hours or 1 year, when values calculated for the relevant processes are exchanged between components that can use that value for calculating changes in the next time step. Running a fully coupled ESM is computationally expensive.|
+|Stub,</br>Data model | Alternatives to running a model fully coupled can be to deactivate components (using component *stubs*) or using a *data* set instead of dynamically calculating the values needed by the active model component. For instance, the NorESM-LSP uses the "land-only mode" of the model framework, where the land model (CLM) is active, the atmosphere component is replaced by data, and the ocean and ice components are deactivated stubs.|
 |PFT = Plant Functional Type| Plant Functional Types are non-phylogenetic groups of plants, defined by a set of parameters. Parameters include e.g. leaf shape, deciduousness, growth form, allometry equation parameters, maximum specific leaf area, and minimum temperature tolerance.|
-|Cohort |A group of individual trees of the same PFT and size.|
-|Patch|Tile with a defined age since some disturbance (fire, logging).|
+|Cohort | A group of individual trees of the same PFT and size.|
+|Patch | Tile with a defined age since some disturbance (fire, logging).|
 |Forcing data| Data that is not impacted by the model but provided as input, generally from observation data sets. Defines the necessary boundary conditions to the model, e.g. temperature and precipitation, throughout its simulation time.|
 
 
