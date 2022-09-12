@@ -22,8 +22,8 @@ Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://loc
 
 ## Step by step guide for using the platform
 
-|Check out our [glossary of technical terms](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms).|
-|---|
+> Check out our [glossary of technical terms](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms).
+
 
 ### 0. Prerequisites (first time setup) 🌱
 
