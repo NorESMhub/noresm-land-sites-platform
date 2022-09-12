@@ -24,25 +24,23 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 
 The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/noresm-land-sites-platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
 
-### Links to external resources and tutorials
+### Documentation of the model framework
 
-The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). Each model has its own documentation and tutorials. Here are some good places to start to get acquainted with the respective models:
+The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). Each model has its own documentation and tutorials. See our [page with links to external tutorials and resources for more links and recommendations](https://noresmhub.github.io/noresm-land-sites-platform/resources). Here are the central documentation pages and repositories for the respective models:
 
 #### FATES
 
-- [technical documentation](https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/)
-- [user guide](https://fates-users-guide.readthedocs.io/en/latest/)
+- [Technical documentation and user guide](https://fates-users-guide.readthedocs.io/en/latest/)
 - [GitHub repository](https://github.com/NGEET/fates)
 
 #### CLM
 
-- [technical documentation and user guide](https://escomp.github.io/ctsm-docs/versions/master/html/)
+- [Technical documentation and user guide](https://escomp.github.io/ctsm-docs/versions/master/html/)
 - [GitHub repository](https://github.com/ESCOMP/CTSM)
-- [The NCAR-NEON collaboration](https://ncar.github.io/NEON-visualization/) (model-data integration project aimed at beginners)
 
 #### NorESM
 
-- [technical documentation and user guide](https://noresm-docs.readthedocs.io/en/latest/)
+- [Technical documentation and user guide](https://noresm-docs.readthedocs.io/en/latest/)
 - [GitHub repository](https://github.com/NorESMhub/NorESM)
 
 ### Glossary of technical terms
@@ -61,8 +59,8 @@ The model framework consists of the Norwegian Earth System Model (NorESM), the C
 
 | Term | Definition |
 |------|------------|
-|DGVM, </br>FATES|  |
-|LSM,</br>CLM/CTSM| |
+|DGVM, </br>FATES| *D*ynamic *G*lobal *V*egetation *M*odels are computer programs that simulate vegetation. See [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_global_vegetation_model) and these papers for more general DGVM information: [Scheiter, Langan & Higgins, 2013]( https://doi.org/10.1111/nph.12210). The *F*uncionally *A*ssembled *T*errestrial *E*cosystem *S*imulator is a DGVM that works with CLM as a host model. FATES groups individuals into cohorts, has flexible PFT definitions, is deterministic, and lacks hardcoded climate thresholds for PFTs. |
+|LSM,</br>CLM/CTSM| *L*and *S*urface *M*odels are computer programs that use quantitative methods to simulate the exchange of energy, water, and matter (e.g. CO2) at the Earth surface–atmosphere interface. The *C*ommunity *L*and *M*odel is an LSM, and part of the *C*ommunity *T*errestrial *S*ystem *M*odel|
 |ESM,</br>NorESM| |
 |Model coupling, </br>CIME| |
 |Stub,</br>Data model| |
