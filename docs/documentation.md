@@ -64,7 +64,7 @@ Note that some terms may have slightly different definitions in different models
 |DGVM, </br>FATES| *D*ynamic *G*lobal *V*egetation *M*odels are computer programs that simulate vegetation. [[Wikipedia]](https://en.wikipedia.org/wiki/Dynamic_global_vegetation_model) [[Scheiter, Langan & Higgins, 2013]]( https://doi.org/10.1111/nph.12210). The *F*uncionally *A*ssembled *T*errestrial *E*cosystem *S*imulator is a DGVM that works with CLM as a host model. FATES groups individuals into cohorts, has flexible PFT definitions, is deterministic, and lacks hardcoded climate thresholds for PFTs. [[Fisher *et al.* 2015]](https://gmd.copernicus.org/articles/8/3593/2015/gmd-8-3593-2015.html) [[Fisher & Koven 2020]](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018MS001453) [[Fisher *et al.* 2018]](https://doi.org/10.1111/gcb.13910)|
 |LSM,</br>CLM/CTSM| [*L*and *S*urface *M*odels](https://en.wikipedia.org/wiki/Land_surface_models_(climate)) are computer programs that use quantitative methods to simulate the exchange of energy, water, and e.g. CO2 at the interface between the Earth's surface and atmosphere. The [*C*ommunity *L*and *M*odel](https://www.cesm.ucar.edu/models/clm/) is an LSM, and part of the *C*ommunity *T*errestrial *S*ystem *M*odel (which also includes a river runoff model). |
 |ESM,</br>NorESM| *E*arth *S*ystem *M*odels are computer programs that simulate the exchanges of energy and material (water, carbon, etc.) in the Earth System, typically by combining sub-models for each major component of the Earth System: land surface, atmosphere, ocean, and ice. These component models include code representation of differential equations from e.g. physics and biogeochemistry, which are solved numerically as the model runs through a simulation from initial conditions. The [*Nor*wegian *E*arth *S*ystem *M*odel](https://www.noresm.org/) is an ESM that is related to the [Community Earth System Model](https://www.cesm.ucar.edu/models/cesm2/) but has different component models for e.g. ocean and atmosphere.|
-|Model coupling, </br>CIME| Eath System Model components can be *coupled* with infrastructure code such as[*C*ommon *I*nfrastructure for *M*odelling the *E*arth (CIME)](https://esmci.github.io/cime/versions/master/html/index.html). When models are run in coupled mode, information about energy and matter are exchanged between the component models in a dynamic way that allows feedbacks in the system. Models operate with time steps, e.g. 30 mins or 3 hours or 1 year, when values calculated for the relevant processes are exchanged between components that can use that value for calculating changes in the next time step. Running a fully coupled ESM is computationally expensive.|
+|Model coupling, </br>CIME| Eath System Model components can be *coupled* with infrastructure code such as [*C*ommon *I*nfrastructure for *M*odelling the *E*arth (CIME)](https://esmci.github.io/cime/versions/master/html/index.html). When models are run in coupled mode, information about energy and matter are exchanged between the component models in a dynamic way that allows feedbacks in the system. Models operate with time steps, e.g. 30 mins or 3 hours or 1 year, when values calculated for the relevant processes are exchanged between components that can use that value for calculating changes in the next time step. Running a fully coupled ESM is computationally expensive.|
 |Stub,</br>Data model | Alternatives to running a model fully coupled can be to deactivate components (using component *stubs*) or using a *data* set instead of dynamically calculating the values needed by the active model component. For instance, the NorESM-LSP uses the "land-only mode" of the model framework, where the land model (CLM) is active, the atmosphere component is replaced by data, and the ocean and ice components are deactivated stubs.|
 |PFT = Plant Functional Type| Plant Functional Types are non-phylogenetic groups of plants, defined by a set of parameters. Parameters include e.g. leaf shape, deciduousness, growth form, allometry equation parameters, maximum specific leaf area, and minimum temperature tolerance.|
 |Cohort | A group of individual trees of the same PFT and size.|
@@ -241,6 +241,8 @@ In addition to a Jupyter server, you can open [Panoply](https://www.giss.nasa.go
 
 ## Customising the NorESM-LSP
 
+This section is mostly for developers of the NorESM-LSP, and documents how the NorESM-LSP code wraps around the code for the specific models. 
+
 ### Adjusting the GUI
 
 #### Model parameters and site configuration
@@ -292,7 +294,7 @@ Sites in `resources/config/sites.json` are described as [GeoJSON points](https:/
 | res       | string          | yes      | The resolution/grid to use with the model.                                                                                                                                                                                                                                        |
 | config    | [Config object] | no       | Config is an object with two keys: `name` and `value`.<br/>The former must point to a parameter in `resources/config/variables_config.json`.<br/>The latter must be a valid value for that parameters.<br/>These are used as default values for the given parameter for the site. |
 
-
+**************************************
 
 ### Running the NorESM-LSP remotely
 
@@ -400,4 +402,4 @@ Be aware that model outputs for long simulations can result in large file sizes;
 
 **************************************
 
-*This is the end of the technical documentation. Are you missing something? Please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues)*
+*This is the end of the technical documentation. Did we forget to describe something, do you see a mistake, or do you have more questions? Please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues)*
