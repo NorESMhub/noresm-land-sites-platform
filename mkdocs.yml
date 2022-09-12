@@ -14,5 +14,5 @@ extra_css:
 extra_javascript:
   - javascripts/map.js
 theme: readthedocs
-extra:
-  generator: false
+
+copyright: Copyright &copy; 2022- The NorESM Land Sites Platform Team
