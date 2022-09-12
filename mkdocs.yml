@@ -7,6 +7,7 @@ nav:
   - Sites: land-sites.md
   - About: about.md
   - Contributing & code of conduct: contributing.md
+  - External tutorials and resources: resources.md
 extra_css:
   - stylesheets/map.css
   - stylesheets/general.css
