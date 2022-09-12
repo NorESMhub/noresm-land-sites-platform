@@ -1,0 +1,50 @@
+{
+    "1": {
+        "long_name": "Broadleaf evergreen tropical tree",
+        "group": "tree"
+    },
+    "2": {
+        "long_name": "Needleleaf evergreen extratropical tree",
+        "group": "tree"
+    },
+    "3": {
+        "long_name": "Needleleaf cold-deciduous extratropical tree",
+        "group": "tree"
+    },
+    "4": {
+        "long_name": "Broadleaf evergreen extratropical tree",
+        "group": "tree"
+    },
+    "5": {
+        "long_name": "Broadleaf hydro-deciduous tropical tree",
+        "group": "tree"
+    },
+    "6": {
+        "long_name": "Broadleaf cold-deciduous extratropical tree",
+        "group": "tree"
+    },
+    "7": {
+        "long_name": "Broadleaf evergreen extratropical shrub",
+        "group": "shrub"
+    },
+    "8": {
+        "long_name": "Broadleaf hydro-deciduous extratropical shrub",
+        "group": "shrub"
+    },
+    "9": {
+        "long_name": "Broadleaf cold-deciduous extratropical shrub",
+        "group": "shrub"
+    },
+    "10": {
+        "long_name": "Arctic C3 grass",
+        "group": "grass"
+    },
+    "11": {
+        "long_name": "Cool C3 grass",
+        "group": "grass"
+    },
+    "12": {
+        "long_name": "C4 grass",
+        "group": "grass"
+    }
+}
