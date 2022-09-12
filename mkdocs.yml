@@ -14,3 +14,4 @@ extra_css:
 extra_javascript:
   - javascripts/map.js
 theme: readthedocs
+copyright: &copy; The <a href="https://noresmhub.github.io/noresm-land-sites-platform/">NorESM Land Sites Platform</a>.
