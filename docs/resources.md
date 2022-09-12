@@ -7,7 +7,7 @@ While the NorESM-LSP provides an easy interface to run model experiments with th
 - Read on your own: [FATES documentation and user guide](https://fates-users-guide.readthedocs.io/en/latest/index.html). See especially the [FAQ](https://fates-users-guide.readthedocs.io/en/latest/user/faq.html) and this [slide deck from a 2019 tutorial](https://docs.google.com/presentation/d/1kztSENcOOw54XpjDCebcOLWciC8kqJegkMJGnuQKisI/edit).
 - Go to a course: CLM/CTSM course at NCAR in Boulder, Colorado (USA). See [this overview of tutorials](https://www.cesm.ucar.edu/events/tutorials/). NCAR is the main development hub for the FATES and CLM models, and the Earth System Model CESM (which is similar to NorESM). 
 - University 10 ETCS course in [Ecological Climatology](https://www.uio.no/studier/emner/matnat/geofag/GEO5915/) at the University of Oslo, Norway. MSC and PhD level course taught by and for geoscience and biology. Some of the course teachers are involved in developing the NorESM-LSP, and from 2022 the course includes a 1-day data lab with the NorESM-LSP.
-- [The NCAR-NEON collaboration](https://ncar.github.io/NEON-visualization/) (model-data integration project aimed at beginners, includes example code for visualization of output)
+- Read on your own: [the NCAR-NEON collaboration](https://ncar.github.io/NEON-visualization/) model-data integration project aimed at beginners and researchers in other fields. Their tutorials are very good for learning about CLM (but does not include FATES yet), and they include example code for visualization of output with Jupyter notebooks.
 
 ## FATES
 
