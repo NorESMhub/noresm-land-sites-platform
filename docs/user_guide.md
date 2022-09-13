@@ -1,8 +1,8 @@
 # User guide
 
-This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/).
+This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [downloading the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). We have also collected some useful links to tutorials and other training resources and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
 
-You will need to open two new windows in the process, so it's a good idea to use two screens or to make this window narrower so you can see both the user guide and another window next to it.
+Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note, also that the site-specific data are provided from external sources and may have terms and conditions of use.
 
 ***********************************************
 
@@ -15,7 +15,7 @@ cd noresm-land-sites-platform
 docker-compose up
 ```
 
-Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) 🎉
+Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) and Panoply on [localhost:5800](http://localhost:5800) 🎉
 
 
 ***********************************************
@@ -49,7 +49,7 @@ If the platform has been updated the next time you want to use it, you might wan
 
 ### 1. Start the container 🧰
 
-In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first-time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing `cd noresm-land-sites-platform`). Then write this command and hit enter to get the container up and running:
+In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first-time setup). **Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing `cd noresm-land-sites-platform`)**. Then write this command and hit enter to get the container up and running:
 
 ```
 docker-compose up
@@ -65,7 +65,7 @@ Now you can open the graphical user interface (=GUI) at [localhost:8080](http://
 
 ![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
-*Figure 1: Screenshot from the GUI with a case created for the ALP1 site. Enhanced for readability.*
+*Figure 1: Screenshot from the GUI with a case created for the ALP1 site. Edited for readability.*
 
 #### 2.1 Choose a [site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) 
 
