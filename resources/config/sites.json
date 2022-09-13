@@ -12,7 +12,8 @@
       },
       "properties": {
         "name": "ALP1",
-        "description": "Ulvehaugen: Alpine vegetation at 1208 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1226 mm.",
+        "long_name": "Ulvehaugen",
+        "description": "Alpine vegetation at 1208 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1226 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP1.tar",
@@ -320,7 +321,8 @@
       },
       "properties": {
         "name": "ALP2",
-        "description": "Låvisdalen: Alpine vegetation at 1097 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1561 mm.",
+        "long_name": "Laavisdalen",
+        "description": "Alpine vegetation at 1097 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1561 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP2.tar",
@@ -628,7 +630,8 @@
       },
       "properties": {
         "name": "ALP3",
-        "description": "Gudmedalen: Alpine vegetation at 1213 m elevation. Mean summer temperature is 6.5 degrees C, and mean annual precipitation is 2130 mm.",
+        "long_name": "Gudmedalen",
+        "description": "Alpine vegetation at 1213 m elevation. Mean summer temperature is 6.5 degrees C, and mean annual precipitation is 2130 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP3.tar",
@@ -936,7 +939,8 @@
       },
       "properties": {
         "name": "ALP4",
-        "description": "Skjellingahaugen: Alpine vegetation at 1088 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 3402 mm.",
+        "long_name": "Skjellingahaugen",
+        "description": "Alpine vegetation at 1088 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 3402 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP4.tar",
@@ -1244,7 +1248,8 @@
       },
       "properties": {
         "name": "SUB1",
-        "description": "Ålrust: Sub-alpine vegetation at 815 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 789 mm.",
+        "long_name": "Aalrust",
+        "description": "Sub-alpine vegetation at 815 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 789 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB1.tar",
@@ -1552,7 +1557,8 @@
       },
       "properties": {
         "name": "SUB2",
-        "description": "Høgsete: Sub-alpine vegetation at 700 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 1356 mm.",
+        "long_name": "Hoegsete",
+        "description": "Sub-alpine vegetation at 700 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 1356 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB2.tar",
@@ -1860,7 +1866,8 @@
       },
       "properties": {
         "name": "SUB3",
-        "description": "Rambæra: Sub-alpine vegetation at 769 m elevation. Mean summer temperature is 8.7 degrees C and mean annual precipitation is 1848 mm.",
+        "long_name": "Rambaera",
+        "description": "Sub-alpine vegetation at 769 m elevation. Mean summer temperature is 8.7 degrees C and mean annual precipitation is 1848 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB3.tar",
@@ -2168,7 +2175,8 @@
       },
       "properties": {
         "name": "SUB4",
-        "description": "Veskre: Sub-alpine vegetation at 797 m elevation. Mean summer temperature is 8.6 degrees C and mean annual precipitation is 3029 mm.",
+        "long_name": "Veskre",
+        "description": "Sub-alpine vegetation at 797 m elevation. Mean summer temperature is 8.6 degrees C and mean annual precipitation is 3029 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_SUB4.tar",
@@ -2476,7 +2484,8 @@
       },
       "properties": {
         "name": "BOR1",
-        "description": "Fauske: North-boreal vegetation at 589 m elevation. Mean summer temperature is 10.3 degrees C and mean annual precipitation is 600 mm.",
+        "long_name": "Fauske",
+        "description": "North-boreal vegetation at 589 m elevation. Mean summer temperature is 10.3 degrees C and mean annual precipitation is 600 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR1.tar",
@@ -2784,7 +2793,8 @@
       },
       "properties": {
         "name": "BOR2",
-        "description": "Vikesland: North-boreal vegetation at 474 m elevation. Mean summer temperature is 10.5 degrees C and mean annual precipitation is 1161 mm.",
+        "long_name": "Vikesland",
+        "description": "North-boreal vegetation at 474 m elevation. Mean summer temperature is 10.5 degrees C and mean annual precipitation is 1161 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR2.tar",
@@ -3092,7 +3102,8 @@
       },
       "properties": {
         "name": "BOR3",
-        "description": "Arhelleren: North-boreal vegetation at 431 m elevation. Mean summer temperature is 10.6 degrees C and mean annual precipitation is 2044 mm.",
+        "long_name": "Arhelleren",
+        "description": "North-boreal vegetation at 431 m elevation. Mean summer temperature is 10.6 degrees C and mean annual precipitation is 2044 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR3",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR3.tar",
@@ -3400,7 +3411,8 @@
       },
       "properties": {
         "name": "BOR4",
-        "description": "Øvstedal: North-boreal vegetation at 346 m elevation. Mean summer temperature is 10.8 degrees C and mean annual precipitation is 2923 mm.",
+        "long_name": "Oevstedal",
+        "description": "North-boreal vegetation at 346 m elevation. Mean summer temperature is 10.8 degrees C and mean annual precipitation is 2923 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR4",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BOR4.tar",
@@ -3708,6 +3720,8 @@
       },
       "properties": {
         "name": "ISK",
+        "long_name": "Iskoras",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ISK",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ISK.tar",
@@ -4015,6 +4029,8 @@
       },
       "properties": {
         "name": "HIS1",
+        "long_name": "Hisaasen_up",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS1",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_HIS1.tar",
@@ -4322,6 +4338,8 @@
       },
       "properties": {
         "name": "HIS2",
+        "long_name": "Hisaasen_low",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS2",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_HIS2.tar",
@@ -4629,6 +4647,8 @@
       },
       "properties": {
         "name": "HUR",
+        "long_name": "Hurdal",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HUR",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_HUR.tar",
@@ -4936,6 +4956,8 @@
       },
       "properties": {
         "name": "FNS",
+        "long_name": "Finse_fluxtower",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_FNS",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_FNS.tar",
@@ -5243,6 +5265,8 @@
       },
       "properties": {
         "name": "BYV",
+        "long_name": "Bayelva",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BYV",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_BYV.tar",
@@ -5550,6 +5574,8 @@
       },
       "properties": {
         "name": "ADV",
+        "long_name": "Adventdalen",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ADV",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ADV.tar",
@@ -5857,6 +5883,8 @@
       },
       "properties": {
         "name": "AAS",
+        "long_name": "Aas",
+        "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_AAS",
         "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_AAS.tar",
