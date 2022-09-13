@@ -155,11 +155,11 @@ Output will be stored at the time intervals you set. The default is monthly.
 
 ### 4. Look at your output 📈
 
-[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), but is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
+[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab ([localhost:8888](http://localhost:8888)) under the `cases/<case_id>/archive/lnd/hist/` folder. The Jupyter server fetches the files locally in your copy of the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
 
-In JupyterLab, nagivate to the `notebooks/` folder and open the `output_visualization.ipynb` notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables.
+In JupyterLab, nagivate to the `notebooks/` folder and open the `combine_nc_files.ipynb` notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the `cases/<case_id>/archive/lnd/hist/` folder. It is generally a good idea to combine these files into one, and the `combine_nc_files.ipynb` notebook will guide you through doing this. When the history files are combined, you can go on to the `notebooks/model_output_analysis` folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for some of the sites. The notebooks can be modified (use File -> Save Notebook As... to save your own version) with your own code and text. 
 
-If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or using Python or R or on your local computer.
+There are  many other ways to analyse the data, and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables. If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or using Python or R or on your local computer.
 
 ### 5. Close the container
 
