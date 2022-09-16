@@ -7,9 +7,12 @@ nav:
   - Sites: land-sites.md
   - About: about.md
   - Contributing & code of conduct: contributing.md
+  - External tutorials and resources: resources.md
 extra_css:
   - stylesheets/map.css
   - stylesheets/general.css
 extra_javascript:
   - javascripts/map.js
 theme: readthedocs
+
+copyright: Copyright &copy; 2022- The NorESM Land Sites Platform Team

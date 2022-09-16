@@ -1,8 +1,8 @@
 # User guide
 
-This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/).
+This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [downloading the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). We have also collected some useful links to tutorials and other training resources and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
 
-You will need to open two new windows in the process, so it's a good idea to use two screens or to make this window narrower so you can see both the user guide and another window next to it.
+Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note, also that the site-specific data are provided from external sources and may have terms and conditions of use.
 
 ***********************************************
 
@@ -15,15 +15,21 @@ cd noresm-land-sites-platform
 docker-compose up
 ```
 
-Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) 🎉
+Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) and Panoply on [localhost:5800](http://localhost:5800) 🎉
 
 
 ***********************************************
 
+## Illustration of software
+
+![User interfaces and simplified software architecture](img/user-interfaces-and-architecture-Page-1.png)
+
+*Illustration of the user interfaces and a simplified software architecture. From your browser, you can access this user guide and our technical documentation, as well as the GUI, JupyterLab and Panoply servers once the containers are up and running (see [0. Prerequisites](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and [1. Starting the containers](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#1-start-the-container) below. Containers provide virtual computing environments where we can run the model and the software can communicate with each other. Repositories (versioned file structures) with the code for the NorESM-LSP and models are stored on GitHub. Input data is downloaded to the containers from external storage, and model output is stored locally in the user's copy of the repository. See the [Software Architecture description in the technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#software-architecture) for more details.*
+
 ## Step by step guide for using the platform
 
-|Check out our [glossary of technical terms](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms).|
-|---|
+> Check out our [glossary of technical terms](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms).
+
 
 ### 0. Prerequisites (first time setup) 🌱
 
@@ -49,7 +55,7 @@ If the platform has been updated the next time you want to use it, you might wan
 
 ### 1. Start the container 🧰
 
-In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first-time setup). Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing `cd noresm-land-sites-platform`). Then write this command and hit enter to get the container up and running:
+In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first-time setup). **Make sure you are inside the folder containing the `docker-compose.yaml` file (type `ls` and hit enter to list the files in the current folder; if you see noresm-land-sites-platform, you need to change directory into that folder by typing `cd noresm-land-sites-platform`)**. Then write this command and hit enter to get the container up and running:
 
 ```
 docker-compose up
@@ -65,7 +71,7 @@ Now you can open the graphical user interface (=GUI) at [localhost:8080](http://
 
 ![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
-*Figure 1: Screenshot from the GUI with a case created for the ALP1 site. Enhanced for readability.*
+*Figure 1: Screenshot from the GUI with a case created for the ALP1 site. Edited for readability.*
 
 #### 2.1 Choose a [site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) 
 
@@ -116,7 +122,11 @@ Note that you generally just need to touch four of the `Run environment` setting
 
 **History files**
 
-By default, **the model records output in one tape** (hist_fincl1), **as one** (hist_mfilt=1) **average** (hist_avgflag_pertape=A), **monthly** (hist_nhtfrq=0) **value, for a subset of variables** (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES")), **in a long-lat grid** (hist_dov2xy=TRUE). Each column in the History files tab corresponds to a history tape, which is a series of files created for the simulation period. If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns to add history tapes. If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
+By default, **the model records output in one tape** (hist_fincl1), **as one** (hist_mfilt=1) **average** (hist_avgflag_pertape=A), **monthly** (hist_nhtfrq=0) **value, for a subset of variables** (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES")), **in a long-lat grid** (hist_dov2xy=TRUE). Each column in the History files tab corresponds to a history tape, which is a series of files created for the simulation period. 
+
+If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns to add history tapes. NB! The list of output variables listed in the CTSM documentation may be outdated (because both FATES and CLM develop fast and the documentation and stable versions may lag behind the one we use). This [list in the FATES code](https://github.com/NGEET/fates/blob/sci.1.55.4_api.22.1.0/main/FatesHistoryInterfaceMod.F90#L4283) lists the possible FATES history variables for the actual FATES version we are using. `use_default='inactive'` means it is not included in the history tape by default, but can be activated by including the var name in the hist_fincl fields in the GUI.
+
+If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
 
 **FATES settings**
 
@@ -155,11 +165,13 @@ Output will be stored at the time intervals you set. The default is monthly.
 
 ### 4. Look at your output 📈
 
-[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab, [localhost:8888](http://localhost:8888), but is stored locally in the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
+[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab ([localhost:8888](http://localhost:8888)) under the `cases/<case_id>/archive/lnd/hist/` folder. The Jupyter server fetches the files locally in your copy of the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
 
-In JupyterLab, nagivate to the `notebooks/` folder and open the `output_visualization.ipynb` notebook. It guides you through some ways of looking at the model output, though there are many other ways to do this and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables.
+In JupyterLab, we have prepared some notebooks (text & code documents) for combining output files, creating some basic plots, and comparing model output to observations for some of the sites. Once you open JupyterLab, you will see some folders. Nagivate to the `notebooks/` folder and open the `combine_nc_files.ipynb` notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the `cases/<case_id>/archive/lnd/hist/` folder. It is generally a good idea to combine these files into one, and the `combine_nc_files.ipynb` notebook will guide you through doing this. When the history files are combined, you can go on to the `notebooks/model_output_analysis` folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for some of the sites. The notebooks can be modified (use File -> Save Notebook As... to save your own version) with your own code and text. 
 
-If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or using Python or R or on your local computer.
+> Run/execute notebook cells with e.g. Ctrl+Enter after clicking it with you cursor. This works both for text and code cells. You can also use the clickable icons at the top of the notebook, like the play button for running a cell or + for insering a new cell.
+
+There are  many other ways to analyse the data, and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables. If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or using Python or R or on your local computer.
 
 ### 5. Close the container
 
