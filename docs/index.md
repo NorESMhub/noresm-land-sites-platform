@@ -12,9 +12,9 @@
 
 The NorESM-LSP simplifies the modelling process and model setup. The software might be used ...
 
-1. In education, such as interdisciplinary workshops or data labs in Ecological Climatology-related university courses, where model experiments will typically be simple and designed to increase understanding of the model framework and Earth System Science. The output of models will typically not be published.
+1. In education, such as interdisciplinary workshops or data labs in Ecological Climatology-related university courses, where model experiments will typically be simple and designed to increase understanding of the model framework and Earth System Science.
 2. By beginner modelers, e.g. post-graduate students or scientists who are new to CLM-FATES modelling, to set up scientific model experiments under the supervision of or in collaboration with more experienced modelers. 
-3. By experienced modelers outside the core model development group at [NCAR](https://ncar.ucar.edu/), who benefit from the containerisation of the model.
+3. By experienced modelers without access to HPC clusters with the models installed, who benefit from the containerisation of the model.
 
 ![Forest work](img/DALL-E-2022-forest-work.png)
 ![Meadow work](img/DALL-E-2022-meadow-work.png)
