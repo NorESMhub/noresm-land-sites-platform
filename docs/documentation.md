@@ -307,17 +307,17 @@ Galaxy is free to use and only requires registering as a user. Note that this to
 
 #### SSH tunneling, with example for NREC
 
-These instructions require the remote machine to allow remote access via SSH. If you want to run the NorESM-LSP on a server without this capability, you will need to talk to your local IT department to find a different solution. We describe all required steps from scratch and not all steps might be necessary for all virtual/remote machines (e.g. Docker may already be installed). The instructions are tailored for and tested on [NREC](https://www.nrec.no/) (remote) and Windows with Ubuntu subsystem (local) and might need adaptations on other systems. On NREC, we use a new instance based on the `GOLD Ubuntu 22.04 LTS` base image. The commands to install programs etc. may differ for other distributions and operating systems.
+These instructions are for installing and using the NoESM-LSP on a remote machine. The remote machine must allow remote access via SSH. If you want to run the NorESM-LSP on a server without SSH capability, you will need to talk to your local IT department to find a different solution. We describe all required steps from scratch and not all steps might be necessary for all virtual/remote machines (e.g. Docker may already be installed). The instructions are tailored for and tested on [NREC](https://www.nrec.no/) (remote) and Windows with Ubuntu subsystem (local) and might need adaptations on other systems. On NREC, we use a new instance based on the `GOLD Ubuntu 22.04 LTS` base image. The commands to install programs etc. may differ for other distributions and operating systems.
 
-**1 Run the platform remotely**
+##### 1. Run the platform remotely
 
-1. Open a terminal that has the ssh command [installed](https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/) and access the remote machine (e.g. users at the University of Oslo can run a Virtual Machine on [NREC](https://www.uio.no/studier/emner/matnat/ifi/IN3230/h20/oblig/running-your-vm-on-nrec.html)): 
+1.1 Open a terminal that has the [ssh command installed](https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/) and access the remote machine (e.g. users at the University of Oslo can run a Virtual Machine on [NREC](https://www.uio.no/studier/emner/matnat/ifi/IN3230/h20/oblig/running-your-vm-on-nrec.html)): 
 ```
 ssh [user]@[ip] # for example:
 ssh ubuntu@158.37.65.132
 ```
 
-2. Install git, clone the [NorESM-LSP repository](https://github.com/NorESMhub/noresm-land-sites-platform): 
+1.2 Use Git to clone the [NorESM-LSP repository](https://github.com/NorESMhub/noresm-land-sites-platform) (install [Git](https://git-scm.com/) first if necessary): 
 ```
 git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input
 ```
@@ -326,13 +326,13 @@ and make sure the following lines of code allow users to access its functionalit
 BACKEND_CORS_ORIGINS=["*"]
 ```
 
-3. Install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/compose-plugin/#install-using-the-repository). Subsequently, add the current user to the Docker user group if you get an error related to access rights (may require restarting the terminal when finished):
+1.3 Install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/compose-plugin/#install-using-the-repository). Subsequently, add the current user to the Docker user group if you get an error related to access rights (may require restarting the terminal when finished):
 ```
 [sudo] usermod -a -G docker $USER
 newgrp docker
 ```
 
-4. Start a new named screen session:
+1.4 Start a new named screen session:
 ```
 screen -S lsp
 ```
@@ -342,23 +342,23 @@ May require sudo/admin rights and the installation of `screen`, e.g. on Debian/U
 [sudo] apt install screen
 ```
 
-5. Change into the project directory via `cd noresm-land-sites-platform` and install the NorESM-LSP via `docker-compose up` or `docker compose up` (depends on the Docker installation; also described in the user guide).
+1.5 Change into the project directory via `cd noresm-land-sites-platform` and install the NorESM-LSP via `docker-compose up` or `docker compose up` (depends on the Docker installation; also described in the user guide).
 
-6. Once everyting is up and running, detach your current screen session by subsequently pressing `CTRL+a` and `CTRL+d`. The session
+1.6 Once everyting is up and running, detach your current screen session by subsequently pressing `CTRL+a` and `CTRL+d`. The session
 should now appear when you type `[sudo] screen -list`.
 
-7. Open a new local terminal and enable ssh port listening to the relevant NorESM-LSP ports:
+1.7 Open a new local terminal and enable ssh port listening to the relevant NorESM-LSP ports:
 ```
 ssh -L 8000:localhost:8000 -N -f [user]@[ip] # API
 ssh -L 8080:localhost:8080 -N -f [user]@[ip] # GUI
 ssh -L 8888:localhost:8888 -N -f [user]@[ip] # JupyterLab
 ssh -L 5800:localhost:5800 -N -f [user]@[ip] # Panoply
 ```
-where `[user]@[ip]` must be the same as in step 1. You will probably need to enter your password each time you open a port.
+where `[user]@[ip]` must be the same as in step 1.1 You will probably need to enter your password each time you open a port.
 
-**Attention!** If one or multiple of these ports are already in use, change the number after the second colon or execute step 9 and retry this step.
+**Attention!** If any of these ports are already in use, change the number after the second colon or execute step 1.9 and retry this step.
 
-8. Open your local browser and access the NorESM-LSP tools of your choice. Enter into the address bar (remember to adapt the port numbers if you changed them in step 7.):
+1.8 Open your local browser and access the NorESM-LSP tools of your choice. Enter into the address bar (remember to adapt the port numbers if you changed them in step 1.7):
 ```
 localhost:8000/api/v1/docs # API dashboard
 localhost:8080             # GUI
@@ -367,16 +367,16 @@ localhost:5800             # Panoply
 ```
 You can now build/run model experiments as usual. Once the models are running, you can close the browser and shut off your computer. If you restart your machine, re-execute step 7 to be able to access the programs again.
 
-9. To stop the port listening described above manually:
+1.9 To stop the port listening described above manually:
 ```
 fuser -k 8080/tcp
 fuser -k 8000/tcp
 fuser -k 8888/tcp
 fuser -k 5800/tcp
 ```
-where the port numbers must correspond to the numbers you specified in step 7.
+where the port numbers must correspond to the numbers you specified in step 1.7.
 
-10. Once you are ready to shut off the NorESM-LSP, reattach the screen session via:
+1.10 Once you are ready to shut off the NorESM-LSP, reattach the screen session via:
 ```
 screen -r lsp
 ```
@@ -402,4 +402,4 @@ Be aware that model outputs for long simulations can result in large file sizes;
 
 **************************************
 
-*This is the end of the technical documentation. Did we forget to describe something, do you see a mistake, or do you have more questions? Please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues)*
+*This is the end of the technical documentation. Do you see a mistake, did we forget to describe something, or do you have more questions? Please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues)*
