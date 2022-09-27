@@ -29,9 +29,11 @@ Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://loc
 
 > Check out our [glossary of technical terms](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms).
 
+> If you want to use the LSP on a remote computer, see the [SSH tunnel instructions](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#ssh-tunneling-with-example-for-nrec).
+
 ### 0. Prerequisites (first time setup) 🌱
 
-To use the NorESM land sites platform, you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
+To use the NorESM land sites platform (LSP for short), you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
 
 1. [Create a GitHub account](https://github.com/) (optional, but generally recommended to be able to open issues, etc.)
 2. Install Git on your machine. For Windows: https://gitforwindows.org/, other: https://github.com/git-guides/install-git
@@ -42,7 +44,8 @@ To use the NorESM land sites platform, you need to install [Git](https://git-scm
 7. When you are in your chosen working directory, right-click and choose "Git Bash here" (Windows). You can also directly use `cd [path_to_working_directory]` in a terminal with Git installed. Copy and paste the following line into the terminal (note that in some terminals such as Git Bash, you need to click the right mouse button to paste from the clipboard):
 
 ```
-git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input 
+git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=
+
 ```
 
 This will download (= clone) the repository (= folder structure of files with version history) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents.
@@ -82,7 +85,7 @@ If you need a different site, you can [request one via GitHub](https://github.co
 
 #### 2.2 Download site data button (optional)
 
-The input data the models need is already available in the container, but with the `download site data` button you can download it to somewhere else if you wish. We provide a notebook called `input_visualization.ipynb` which you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.
+The input data the models need is already available in the container, but with the `download site data` button you can download it to somewhere else if you wish. We provide a notebook called `plot_input_data.ipynb` which you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.
 
 #### 2.3 Create case
 
@@ -166,9 +169,9 @@ Output will be stored at the time intervals you set. The default is monthly.
 
 ### 4. Look at your output 📈
 
-[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab ([localhost:8888](http://localhost:8888)) under the `cases/<case_id>/archive/lnd/hist/` folder. The Jupyter server fetches the files locally in your copy of the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
+[Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab ([localhost:8888](http://localhost:8888)) under the `resources/cases/<case_id>/archive/lnd/hist/` folder. The Jupyter server fetches the files locally in your copy of the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
 
-In JupyterLab, we have prepared some notebooks (text & code documents) for combining output files, creating some basic plots, and comparing model output to observations for some of the sites. Once you open JupyterLab, you will see some folders. Nagivate to the `notebooks/` folder and open the `combine_nc_files.ipynb` notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the `cases/<case_id>/archive/lnd/hist/` folder. It is generally a good idea to combine these files into one, and the `combine_nc_files.ipynb` notebook will guide you through doing this. When the history files are combined, you can go on to the `notebooks/model_output_analysis` folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for some of the sites. The notebooks can be modified (use File -> Save Notebook As... to save your own version) with your own code and text. 
+In JupyterLab, we have prepared some notebooks (text & code documents) for combining output files, creating some basic plots, and comparing model output to observations for some of the sites. Once you open JupyterLab, you will see some folders. Nagivate to the `notebooks/` folder and open the `combine_nc_files.ipynb` notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the `resources/cases/<case_id>/archive/lnd/hist/` folder. It is generally a good idea to combine these files into one, and the `combine_nc_files.ipynb` notebook will guide you through doing this. When the history files are combined, you can go on to the `notebooks/model_output_analysis` folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for some of the sites. The notebooks can be modified (use File -> Save Notebook As... to save your own version) with your own code and text. 
 
 > Run/execute notebook cells with e.g. Ctrl+Enter after clicking it with you cursor. This works both for text and code cells. You can also use the clickable icons at the top of the notebook, like the play button for running a cell or + for insering a new cell.
 
