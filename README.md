@@ -4,13 +4,13 @@
 
 # NorESM Land Sites Platform (NorESM-LSP) for site-level simulation over land with CLM-FATES
 
-## DOI:
+### DOI:
 
-## [NorESM land sites platform documentation and user guide](https://noresmhub.github.io/noresm-land-sites-platform/)
+### Webpage: [NorESM land sites platform documentation and user guide](https://noresmhub.github.io/noresm-land-sites-platform/)
 
 The LSP aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/ESCOMP/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides streamlined model setup, input data and reproducible workflows for running the model and analyzing model output over sites with meteorological, ecological and hydrological observations in Norway with minimal techincal obstacles. The platform aims to lower the threshold for beginners to use CTSM-FATES, and to promote the usage of site-level observations to test, validate and improve the models.
 
-## Related repositories:
+### Related repositories:
 
 - Graphical User Interface: [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
 - Input data preparation: [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
