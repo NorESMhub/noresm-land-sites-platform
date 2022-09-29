@@ -8,12 +8,11 @@
 
 doi: ***under construction***
 
-## Overview and documentation
-The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations with minimal techincal obstacles.
+The NorESM-LSP (LSP for short) aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). 
 
-The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand.
+The platform aims to lower the technical barriers to vegetation demographic modelling with NorESM-CLM-FATES. In doing so, we aim to help bridge the gaps between observations and modelling, promote the usage of site-level observations to test, validate and improve the models and its land component, and to promote the usage of NorESM-CLM-FATES to new audiences and research settings.
 
-The observation sites currently included in the platform are described in the [Land sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) section. 
+The observation sites currently included in the platform are described in the [Sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) page. 
 
 ## Code development team
 * [Kaveh Karimi](https://github.com/ka7eh)
