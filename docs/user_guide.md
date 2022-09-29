@@ -33,7 +33,7 @@ Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://loc
 
 ### 0. Prerequisites (first time setup) 🌱
 
-To use the NorESM land sites platform (LSP for short), you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
+To use the NorESM land sites platform (LSP for short), you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker. Docker is [free for personal and open-source use](https://www.docker.com/pricing/). If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
 
 1. [Create a GitHub account](https://github.com/) (optional, but generally recommended to be able to open issues, etc.)
 2. Install Git on your machine. For Windows: https://gitforwindows.org/, other: https://github.com/git-guides/install-git
@@ -85,7 +85,7 @@ If you need a different site, you can [request one via GitHub](https://github.co
 
 #### 2.2 Download site data button (optional)
 
-The input data the models need is already available in the container, but with the `download site data` button you can download it to somewhere else if you wish. We provide a notebook called `plot_input_data.ipynb` which you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.
+The input data the models need is already available in the container, but with the `download site data` button you can download it to somewhere else if you wish. We provide notebooks under `/notebooks/plot_input_data/` that you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.
 
 #### 2.3 Create case
 
@@ -157,41 +157,47 @@ Once you click `submit`, the case will appear in a list of cases with the case I
 
 ### 3. Run your simulations 👩‍💻
 
-Once the case is ready, you can start the simulation with `run`. There is a button to `download` the output when the run is finished, and to `edit` the settings and create a new case, or `delete` the case. Depending of how long you asked the model to run for, and your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
+Once the case is ready, you can start the simulation with the `run` button. There are also buttons to `download` the output when the run is finished, to `edit` the settings and create a new case, and to `delete` the case. Depending on how long you asked the model to run for, and on your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
 
-> While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `notebooks/` folder and open the `input_visualization.ipynb` notebook. It will guide you through some of the input data for the model.
+> While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `/notebooks/plot_input_data/` folder and go through the notebooks there. They will plot some of the input data for your site that forces the atmospheric model component and provides land surface and soil information.
 
 Soon your simulations will be finished! 🎉 
 
-If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. 
+If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. Progress messages will be printed in the terminal you started the container from. (If you closed the terminal window already, you can see it in Docker desktop as well when you click the running container stack.)
 
-Output will be stored at the time intervals you set. The default is monthly.
+Output will be stored as monthly averages by default, or at whatever time intervals you set in the history files tab when you created the case.
 
 ### 4. Look at your output 📈
 
 [Model output files](https://noresmhub.github.io/noresm-land-sites-platform/#postprocess) are easily accessed in Jupyter lab ([localhost:8888](http://localhost:8888)) under the `resources/cases/<case_id>/archive/lnd/hist/` folder. The Jupyter server fetches the files locally in your copy of the noresm-land-sites-platform repository under `resources/cases/<case-id>/archive`. 
 
-In JupyterLab, we have prepared some notebooks (text & code documents) for combining output files, creating some basic plots, and comparing model output to observations for some of the sites. Once you open JupyterLab, you will see some folders. Nagivate to the `notebooks/` folder and open the `combine_nc_files.ipynb` notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the `resources/cases/<case_id>/archive/lnd/hist/` folder. It is generally a good idea to combine these files into one, and the `combine_nc_files.ipynb` notebook will guide you through doing this. When the history files are combined, you can go on to the `notebooks/model_output_analysis` folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for some of the sites. The notebooks can be modified (use File -> Save Notebook As... to save your own version) with your own code and text. 
+In JupyterLab, we have prepared some notebooks (text, code & output documents) for combining output files, creating some basic plots, and comparing model output to observations for some of the sites. Once you open JupyterLab, you will see some folders. Nagivate to the `/notebooks/` folder and open the `combine_nc_files.ipynb` notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the `/resources/cases/<case_id>/archive/lnd/hist/` folder. It is generally a good idea to combine these files into one, and the `combine_nc_files.ipynb` notebook will guide you through doing this. 
 
-> Run/execute notebook cells with e.g. Ctrl+Enter after clicking it with you cursor. This works both for text and code cells. You can also use the clickable icons at the top of the notebook, like the play button for running a cell or + for insering a new cell.
+When the history files are combined, you can go on to the `/notebooks/model_output_analysis` folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for the sites where data is available. The notebooks can be modified (use File -> Save Notebook As... to save your own version) with your own code and text. The code cells are read as Python code by default.
 
-There are  many other ways to analyse the data, and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables. If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or using Python or R or on your local computer.
+> Run/execute notebook cells with e.g. Ctrl+Enter after clicking it with you cursor. This works both for text (Markdown) and code (Python) cells. You can also use the clickable icons at the top of the notebook, like the play button for running a cell or + for insering a new cell.
+
+There are  many other ways to analyse the data, and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables. If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or with netCDF-handling packages in e.g. Python or R or on your local computer.
 
 ### 5. Close the container
 
-NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`. Alternatively, open Docker desktop, find the containers tab, and stop them with the stop button.
+NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`. If you closed the terminal window, you can open a new one, go to the repository (`cd noresm-land-sites-platform/`) and type in `docker-compose down`. Alternatively, open Docker desktop, find the containers tab, and shut them down them with the stop button.
 
 ## Troubleshooting
 
 Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the [setup guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) before you bring the containers up again with `docker-compose up`.
 
+Update the software with `git pull` and `docker-compose pull` if there are new developments to the LSP.
+
 ## Uninstalling
 
 Open a terminal in your working directory (or switch to the already-open one if the NorESM-LSP is already running). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`. To install updates instead of deleting everything, you can use first `git pull` and then `docker-compose pull`.
 
-To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. 
+To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. NB! If you delete the whole repository like this, your existing cases and output data will also be deleted.
 
-To delete **all** Docker containers, images, and other files, also  ones in use, you can use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes), and to delete the repository manually from your working directory.
+To delete **all** Docker containers, images, and other files, also  ones in use, you can use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. 
+
+It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.
 
 ## Reproducibility
 To make your simulations reproducible by others, e.g. for a thesis or scientific paper, *note down the version of the NorESM-LSP* and save these three directories that have been created under `resources/` in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform/resources):
@@ -200,7 +206,9 @@ To make your simulations reproducible by others, e.g. for a thesis or scientific
 - the case input data, i.e. ´resources/data/casename´
 - code modifications in overwrites, i.e. ´resources/overwrites´
 
-You could also simply save the whole 'resources' folder (whith some redundant files).
+You could also simply save the whole 'resources' folder (and get some redundant files).
+
+To recreate an old simulation, the LSP might need to be reinstalled. On [GitHub](https://github.com/NorESMhub/noresm-land-sites-platform), find the correct version tag/release tag and clone or download the code from that version. Once the correct version of the repository is in place, copy and pase in the three folders listed above. Make sure the folder structure is the same. Then, bring up the containers again with `docker-compose up` and *voilà*! Old case folders can of course be copied into new versions of the LSP as well, but if there are changes to e.g. python libraries, model code or other software we depend on, there might be errors or slight differences in the output if the case is re-run. This is why version control is so important, and why containerisation aids reproducibility! 
 
 ## When and how to cite the NorESM-LSP
 If you end up publishing your model experiments, e.g. in a thesis or scientific paper, we would like you to properly cite the NorESM-LSP software. See the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/) section for more information. 
@@ -214,4 +222,3 @@ If you end up publishing your model experiments, e.g. in a thesis or scientific 
 [![NorESM](img/NORESM-logo.png "the Norwegian Earth System Model")](https://www.noresm.org/)
 [![EMERALD](img/Emerald_darktext_whiteBG_small.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
 [![LATICE](img/UiO_LATICE_logo_black_small.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
-
