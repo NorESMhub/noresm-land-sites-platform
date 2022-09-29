@@ -48,7 +48,7 @@ The NorESM-LSP has evolved over several years from the needs and visions of a la
 ## How to cite
 If you publish something based on simulations through the LSP, please cite the software in your publication. For now, cite the NorESM Land Sites Platform as: **NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]**. Look for our upcoming technical description paper and DOIs for the repositories, which will provide better citation options. Remember to cite the models (NorESM, CLM and FATES) appropriately as well if you publish model experiments.
 
-If you requested new sites and an LSP developer helped you, please consider adding that person to the Acknowledgements section of your publication, or even invite them to co-author you paper if the contribution is substantial. See for instance the [ICMJE authorship guidelines (Vancouver convention)](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) to help you decide which kind of acknowledgement is appropriate.
+If you requested new sites and an LSP developer helped you, please consider adding that person to the Acknowledgements section of your publication or invite them to co-author you publication if the contribution is substantial. See for instance the [ICMJE authorship guidelines (Vancouver convention)](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) to help you decide which kind of acknowledgement is appropriate.
 
 ## Contact
 
