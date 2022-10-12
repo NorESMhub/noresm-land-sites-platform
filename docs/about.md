@@ -8,12 +8,11 @@
 
 doi: ***under construction***
 
-## Overview and documentation
-The platform aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides **optimized model setup, input data and reproducible workflows for running the model and analyzing model output over sites** with meteorological, ecological and hydrological observations with minimal techincal obstacles.
+The NorESM-LSP (LSP for short) aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). 
 
-The platform aims to bridge the gaps between observations and modelling, and **promote the usage of site-level observations to test, validate and improve NorESM** and its land component on the one hand, and **promote the usage of NorESM and its land model component by non-modellers** on the other hand.
+The platform aims to lower the technical barriers to vegetation demographic modelling with NorESM-CLM-FATES. In doing so, we aim to help bridge the gaps between observations and modelling, promote the usage of site-level observations to test, validate and improve the models and its land component, and to promote the usage of NorESM-CLM-FATES to new audiences and research settings.
 
-The observation sites currently included in the platform are described in the [Land sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) section. 
+The observation sites currently included in the platform are described in the [Sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) page. 
 
 ## Code development team
 * [Kaveh Karimi](https://github.com/ka7eh)
@@ -43,14 +42,14 @@ The observation sites currently included in the platform are described in the [L
 * [INES](https://www.ines.noresm.org/)
 * [EOSC-Nordic](https://www.eosc-nordic.eu/)
 
-## How to cite
-For now, cite the NorESM Land Sites Platform as: NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]
-
-Look for our upcoming technical description paper, which will provide a DOI and better citation practice.
-
 ## Acknowledgements
 The NorESM-LSP has evolved over several years from the needs and visions of a large group of connected through the EMERALD and LATICE projects. Funding has come from the projects listed above. Thanks are due to everyone who participated along the way in discussions, feedback, and testing of early versions.
 
+## How to cite
+If you publish something based on simulations through the LSP, please cite the software in your publication. For now, cite the NorESM Land Sites Platform as: **NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]**. Look for our upcoming technical description paper and DOIs for the repositories, which will provide better citation options. Remember to cite the models (NorESM, CLM and FATES) appropriately as well if you publish model experiments.
+
+If you requested new sites and an LSP developer helped you, please consider adding that person to the Acknowledgements section of your publication or invite them to co-author you publication if the contribution is substantial. See for instance the [ICMJE authorship guidelines (Vancouver convention)](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) to help you decide which kind of acknowledgement is appropriate.
+
 ## Contact
 
-For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/) on GitHub or get in touch with one of the code developers directly. 
+For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/) on GitHub or get in touch with one of the code developers directly.
