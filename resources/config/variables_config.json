@@ -158,8 +158,8 @@
       ]
     },
     "readonly": true,
-    "default": "clm5_0_GSWP3v1",
-    "placeholder": "clm5_0_GSWP3v1"
+    "default": "clm5_1_GSWP3v1",
+    "placeholder": "clm5_1_GSWP3v1"
   },
   {
     "name": "co2_ppmv",

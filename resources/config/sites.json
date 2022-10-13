@@ -14,22 +14,9 @@
         "name": "ALP1",
         "long_name": "Ulvehaugen",
         "description": "Alpine vegetation at 1208 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1226 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-        "res": "1x1_ALP1",
-        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/inputdata_version1.0.0_ALP1.tar",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "url": "https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/v1.0.0/default/ALP1.zip",
         "config": [
-          {
-            "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "inputdata/atm/datm7/GSWP3v1"
-          },
-          {
-            "name": "fsurdat",
-            "value": "inputdata/lnd/clm2/surfdata_map/ALP1/surfdata_ALP1_simyr2000.nc"
-          },
-          {
-            "name": "fates_paramfile",
-            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
-          },
           {
             "name": "pft_index_count",
             "value": 12
