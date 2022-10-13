@@ -14,7 +14,7 @@ The platform aims to lower the technical barriers to vegetation demographic mode
 
 The observation sites currently included in the platform are described in the [Sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) page. 
 
-## Code development team
+## Development team
 * [Kaveh Karimi](https://github.com/ka7eh)
 * [Lasse Torben Keetz](https://github.com/lasseke)
 * [Eva Lieungh](https://github.com/evalieungh)
@@ -28,8 +28,6 @@ The observation sites currently included in the platform are described in the [S
 * [Peter Horvath](https://github.com/peterhor)
 * [Kjetil Aas](https://github.com/kjetilaas)
 * [Devaraju Narayanappa](https://github.com/devarajun)
-
-## Data contributors
 * [Sonya Geange](https://github.com/srg101)
 * [Inge Althuizen](https://github.com/ingealthuizen)
 
@@ -43,7 +41,8 @@ The observation sites currently included in the platform are described in the [S
 * [EOSC-Nordic](https://www.eosc-nordic.eu/)
 
 ## Acknowledgements
-The NorESM-LSP has evolved over several years from the needs and visions of a large group of connected through the EMERALD and LATICE projects. Funding has come from the projects listed above. Thanks are due to everyone who participated along the way in discussions, feedback, and testing of early versions.
+The NorESM-LSP has evolved over several years from the needs and visions of a large group of researchers and students connected through the EMERALD and LATICE projects. Funding has come from the projects listed above. Thanks are due to everyone who participated along the way in discussions, feedback, and testing of early versions.
+The NorESM-LSP software wraps around the NorESM-CLM-FATES model framework. The Norwegian Earth System Model is developed by a [consortium](https://www.noresm.org/consortium/), and is closely related to the Community Earth System Model (CESM). The CESM and Community Land Model are supported primarily by the U.S. National Science Foundation. The FATES model is supported primarily by the U.S. Department of Energy’s Next Generation Ecosystem Experiment - Tropics (NGEE-T) project.
 
 ## How to cite
 If you publish something based on simulations through the LSP, please cite the software in your publication. For now, cite the NorESM Land Sites Platform as: **NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]**. Look for our upcoming technical description paper and DOIs for the repositories, which will provide better citation options. Remember to cite the models (NorESM, CLM and FATES) appropriately as well if you publish model experiments.
