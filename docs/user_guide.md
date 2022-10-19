@@ -183,6 +183,25 @@ There are  many other ways to analyse the data, and much more model output avail
 
 NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`. If you closed the terminal window, you can open a new one, go to the repository (`cd noresm-land-sites-platform/`) and type in `docker-compose down`. Alternatively, open Docker desktop, find the containers tab, and shut them down them with the stop button.
 
+## Advanced customisation
+
+If you need customisation of data, model code, or case setup beyond what is possible through the graphical user interface and JupyterLab, you may access the containers or API directly. You can also [use the platform remotely, e.g. via SSH tunnelling](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#running-the-noresm-lsp-remotely). 
+
+
+If you have (or create) an `.env` file in the project root with `HOST_USER` set in it, use this:
+
+```
+docker-compose exec -u <host_user_value> api bash
+```
+
+Otherwise, use this:
+
+```
+docker-compose exec api bash
+```
+
+This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/ctsm, and cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.
+
 ## Troubleshooting
 
 Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the [setup guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) before you bring the containers up again with `docker-compose up`.
