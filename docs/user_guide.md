@@ -161,7 +161,7 @@ Once the case is ready, you can start the simulation with the `run` button. Ther
 
 > While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `/notebooks/plot_input_data/` folder and go through the notebooks there. They will plot some of the input data for your site that forces the atmospheric model component and provides land surface and soil information.
 
-Soon your simulations will be finished! 🎉 
+Soon your simulations will be finished! 🎉 (Hint: if your case seems to be running forever, try to refresh the webpage! Sometimes it gets stuck.)
 
 If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. Progress messages will be printed in the terminal you started the container from. (If you closed the terminal window already, you can see it in Docker desktop as well when you click the running container stack.)
 
