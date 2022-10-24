@@ -106,7 +106,7 @@ To create a custom site, you need
 - the site coordinates, and 
 - to subset global files or to modify existing ones. 
 
-The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires supercomputer access. There are tutorials for the land model and NorESM that can guide you through this: [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) and [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
+The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. There are tutorials for the land model and NorESM that can guide you through this: [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) and [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
 
 Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to check if it has the same structure.
 
