@@ -37,7 +37,7 @@ After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Pres
 > Doing this makes all the new files and folders created by the app to belong to your local user. Otherwise, all new objects will be owned by the `root` user.
 
 
-## Code development team
+## Development team
 * [Kaveh Karimi](https://github.com/ka7eh)
 * [Hui Tang](https://github.com/huitang-earth)
 * [Lasse Torben Keetz](https://github.com/lasseke)
@@ -51,8 +51,6 @@ After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Pres
 * [Kjetil Aas](https://github.com/kjetilaas)
 * [Sunniva Indrehus](https://github.com/sunnivin)
 * [Devaraju Narayanappa](https://github.com/devarajun)
-
-## Data contributors
 * [Sonya Geange](https://github.com/srg101)
 * [Inge Althuizen](https://github.com/ingealthuizen)
 
