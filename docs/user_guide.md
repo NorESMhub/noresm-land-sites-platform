@@ -2,7 +2,7 @@
 
 This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [downloading the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). If you want to learn more about the FATES, CLM, and NorESM models, we have collected some useful links to tutorials and other training resources and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
 
-Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note also that the site-specific data provided from external sources may have terms and conditions of use. 
+Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note also that the site-specific data downloaded from external sources may have terms and conditions of use, including co-authorship on publications! 
 
 ***********************************************
 
@@ -71,7 +71,9 @@ Now you can access the user interface by going to this address in a new browser 
 
 ### 2. Inside GUI: Set simulation settings ⚙️
 
-In the graphical user interface (= GUI) at [localhost:8080](http://localhost:8080) you can easily set up and run model experiments. This interface has access to the Docker containers you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). If you are doing a quick test with [default platform settings](https://noresmhub.github.io/noresm-land-sites-platform/#settings-file), just pick a site and click `create case` and then `run` (a default test case should take ~5-10 mins). The GUI should look like this once you have chosen a site and have submitted and started to run a case:
+In the graphical user interface (= GUI) at [localhost:8080](http://localhost:8080) you can easily set up and run model experiments. This interface has access to the Docker containers you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). 
+
+In the GUI, you will see a list and map of integrated sites, as well as a list of your cases (model experiments) once you create some. You can also [run a simulation for a new site if you can create the necessary input data](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/). If you are doing a quick test with default settings, just pick a site and click `create case`, `submit` and then `run` (a default test case of 1 year should take ~10-20 mins). The GUI should look like this once you have chosen a site and have submitted and started to run a case:
 
 ![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
@@ -79,19 +81,19 @@ In the graphical user interface (= GUI) at [localhost:8080](http://localhost:808
 
 #### 2.1 Choose a [site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) 
 
-...by clicking either a button or a point on the map! 
+...by clicking either a button or a point on the map! Or add a new site with your own data.
 
-If you need a different site, you can [request one via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A). This requires the developers to do some manual work, so you should have a clear reason to request a new site.
+You can also [request new sites to be integrated via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A), so everyone can use it. This requires the developers to do some manual work, so you should have a clear reason to request a new site. You can also add sites yourself and create a Pull Request to add your developments for everyone to use.
 
 #### 2.2 Download site data button (optional)
 
-The input data the models need is already available in the container, but with the `download site data` button you can download it to somewhere else if you wish. We provide notebooks under `/notebooks/plot_input_data/` that you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.
+For the integrated sites, the input data the models need is already available in the container. With the `download site data` button you can download it to somewhere else if you wish. We provide notebooks under `/notebooks/plot_input_data/` that you can open in Jupyterlab on [localhost:8888](localhost:8888) to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.
 
 #### 2.3 Create case
 
-With the `create case` button, you can look at and edit some model settings and parameters as you create a new case. To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly through the GUI and API. 
+With the `create case` button, you can look at and edit some model settings and parameters as you create a new case. To run a simulation, you need to set up a [case](https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE "An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.") which tells the model how to run. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this [CIME user guide](https://esmci.github.io/cime/versions/master/html/users_guide/index.html), but note that the NorESM modelling platform uses these commands and scripts more indirectly through the GUI and API. When you add a new site, the data upload and `create case` popup is combined.
 
-In the GUI, once you have chosen a site, you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as described below. Note that there are five tabs with different types of case and model settings, grouped into Case, Run Environment, CLM namelist, History fields, and FATES settings. This is not an exhaustive list of possible changes (by far), but give you easy access to some options in the different tabs. Under CLM Namelist settings, there is an Advanced box were experienced users can customise the [CLM namelist](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-namelist.html) with code, e.g. `./xmlchange [parameter]=[newvalue]`. All the boxes have default values for a quick but not especially realistic simulation.
+Once you have chosen a site, you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as described below. Note that there are five tabs with different types of case and model settings, grouped into Case, Run Environment, CLM namelist, History fields, and FATES settings. This is not an exhaustive list of possible changes (by far), but give you easy access to some options in the different tabs. Under CLM Namelist settings, there is an Advanced box were experienced users can customise the [CLM namelist](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-namelist.html) with code, e.g. `[parameter]=[newvalue]`. All the boxes have default values for a quick but not especially realistic simulation.
 
 Note that you generally just need to touch four of the `Run environment` settings: STOP_N and STOP_OPTION to set the simulation length, and DATM_YR_START and DATM_YR_END to specify which years to use data from. If you change the starting year (DATM_YR_START), it's often best to change RUN_STARTDATE to the start of the same year. 
 
@@ -200,7 +202,7 @@ Otherwise, use this:
 docker-compose exec api bash
 ```
 
-This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/ctsm, and cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.
+This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/ctsm. Cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.
 
 ## Troubleshooting
 
@@ -229,8 +231,17 @@ You could also simply save the whole 'resources' folder (and get some redundant 
 
 To recreate an old simulation, the LSP might need to be reinstalled. On [GitHub](https://github.com/NorESMhub/noresm-land-sites-platform), find the correct version tag/release tag and clone or download the code from that version. Once the correct version of the repository is in place, copy and pase in the three folders listed above. Make sure the folder structure is the same. Then, bring up the containers again with `docker-compose up` and *voilà*! Old case folders can of course be copied into new versions of the LSP as well, but if there are changes to e.g. python libraries, model code or other software we depend on, there might be errors or slight differences in the output if the case is re-run. This is why version control is so important, and why containerisation aids reproducibility! 
 
-## When and how to cite the NorESM-LSP
-If you end up publishing your model experiments, e.g. in a thesis or scientific paper, we would like you to properly cite the NorESM-LSP software. See the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/) section for more information. 
+## When and how to cite the NorESM-LSP, models, and data
+If you end up publishing your model experiments, e.g. in a thesis or scientific paper, you need to consider citations, acknowledgements, and authorship invitations carefully.
+
+To cite the NorESM-LSP software, see the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/). 
+
+When you publish model experiments, you also need to properly cite and acknowledge the model framework: See the licences of [NorESM](https://github.com/NorESMhub/NorESM/blob/master/LICENSE.txt), [CLM](https://github.com/ESCOMP/CTSM/blob/master/LICENSE), [FATES](https://github.com/NGEET/fates/blob/master/LICENSE.txt). In the Acknowledgements section, it is common practice to add funding information of the models that you use (e.g. the U.S. National Science Foundation for CLM, NGEE-Tropics for FATES). The main publications for each model should also be cited in the main text.
+
+If you use observational data, e.g. from the Vestland Climate Grid sites or another integrated site, make sure to look at the licences, rights and conditions attached to those data! 
+    
+Following international standards for research ethics, authorship invitations should be given based on substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data, among other things. 
+
 
 ***************************************************
 
