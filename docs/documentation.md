@@ -85,7 +85,7 @@ Platform versions follow standard numbering, and releases below 1 should be cons
 
 #### Model versions
 
-The platform is primarily designed to run the land model (CLM) with the Norwegian Earth System Model. The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is integrated into the platform via a dedicated `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites). You can see the component model versions in the `Externals.cfg` file on that branch.
+The platform is primarily designed to run the land model (CLM) with the Norwegian Earth System Model. The versions of FATES and CLM therefore have to be in line with stable NorESM versions. You can see the component model versions in the `Externals.cfg` file under `/resources/overwrites/` in the [noresm-land-sites-platform repository](https://github.com/NorESMhub/noresm-land-sites-platform/tree/main/resources/overwrites).
 
 
 *****************************
