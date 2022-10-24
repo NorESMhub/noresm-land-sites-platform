@@ -5,7 +5,7 @@ NorESM-LSP simulations are at the site level, also called single-point or single
 You have two options:
 
 1. Choose an integrated site where we have preprocessed all the necessary data, or
-2. Create a custom site by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a supercomputer you can follow existing tutorials, e.g.  the [land model single-point tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) or the [NorESM single-point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/).
+2. Create a custom site by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow existing tutorials, e.g.  the [land model single-point tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) or the [NorESM single-point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/).
 
 ## 1. Integrated sites
 
@@ -64,7 +64,7 @@ Other relevant papers:
 
 ### [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites
 
-The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
+The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites host many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
 
 Central data papers and sources:
 
@@ -72,7 +72,7 @@ Central data papers and sources:
 - [Vestland Climate Grid on OSF](https://osf.io/npfa9/)
 - [FunCaB on Zenodo](https://zenodo.org/record/6520022)
 - Coming soon: [INCLINE](https://www.uib.no/en/rg/EECRG/114810/incline)
-
+- Coming soon: [SeedClim](https://betweenthefjords.w.uib.no/our-research/seedclim/)
 
 | Site name | Name             | Lon (X) | Lat (Y) | Elevation (Z) | Data years | Data types | Description      |
 | --------- | ---------------  | ------- | ------- | ------------- | ---------- | ---------- | ---------------- |   
@@ -108,6 +108,6 @@ To create a custom site, you need
 
 The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. There are tutorials for the land model and NorESM that can guide you through this: [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) and [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
 
-Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to check if it has the same structure.
+Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to double-check if it has the same structure.
 
 To run simulations at a custom site, upload the zipped input data file under the `Create case for custom site` button in the user interface (localhost:8080). There you get the same popup as the integrated sites, with options to change e.g. CO2 concentration or Plant Functional Types to include.
