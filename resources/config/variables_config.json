@@ -24,8 +24,14 @@
     "type": "char",
     "validation": {
       "choices": [
-        { "value":  "NO_LEAP", "label": "No Leap" },
-        { "value":  "GREGORIAN", "label": "Gregorian" }
+        {
+          "value": "NO_LEAP",
+          "label": "No Leap"
+        },
+        {
+          "value": "GREGORIAN",
+          "label": "Gregorian"
+        }
       ]
     },
     "readonly": true,
@@ -91,25 +97,82 @@
     },
     "validation": {
       "choices": [
-        { "value": "none", "label": "None" },
-        { "value": "never", "label": "Never" },
-        { "value": "nsteps", "label": "nsteps" },
-        { "value": "nstep", "label": "nstep" },
-        { "value": "nseconds", "label": "nseconds" },
-        { "value": "nsecond", "label": "nsecond" },
-        { "value": "nminutes", "label": "nminutes" },
-        { "value": "nminute", "label": "nminute" },
-        { "value": "nhours", "label": "nhours" },
-        { "value": "nhour", "label": "nhour" },
-        { "value": "ndays", "label": "ndays" },
-        { "value": "nday", "label": "nday" },
-        { "value": "nmonths", "label": "nmonths" },
-        { "value": "nmonth", "label": "nmonth" },
-        { "value": "nyears", "label": "nyears" },
-        { "value": "nyear", "label": "nyear" },
-        { "value": "date", "label": "date" },
-        { "value": "ifdays0", "label": "ifdays0" },
-        { "value": "end", "label": "end" }
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "never",
+          "label": "Never"
+        },
+        {
+          "value": "nsteps",
+          "label": "nsteps"
+        },
+        {
+          "value": "nstep",
+          "label": "nstep"
+        },
+        {
+          "value": "nseconds",
+          "label": "nseconds"
+        },
+        {
+          "value": "nsecond",
+          "label": "nsecond"
+        },
+        {
+          "value": "nminutes",
+          "label": "nminutes"
+        },
+        {
+          "value": "nminute",
+          "label": "nminute"
+        },
+        {
+          "value": "nhours",
+          "label": "nhours"
+        },
+        {
+          "value": "nhour",
+          "label": "nhour"
+        },
+        {
+          "value": "ndays",
+          "label": "ndays"
+        },
+        {
+          "value": "nday",
+          "label": "nday"
+        },
+        {
+          "value": "nmonths",
+          "label": "nmonths"
+        },
+        {
+          "value": "nmonth",
+          "label": "nmonth"
+        },
+        {
+          "value": "nyears",
+          "label": "nyears"
+        },
+        {
+          "value": "nyear",
+          "label": "nyear"
+        },
+        {
+          "value": "date",
+          "label": "date"
+        },
+        {
+          "value": "ifdays0",
+          "label": "ifdays0"
+        },
+        {
+          "value": "end",
+          "label": "end"
+        }
       ]
     },
     "default": "nyears",
@@ -133,8 +196,14 @@
     },
     "validation": {
       "choices": [
-        { "value": "startup", "label": "Startup" },
-        { "value": "restart", "label": "Restart" }
+        {
+          "value": "startup",
+          "label": "Startup"
+        },
+        {
+          "value": "restart",
+          "label": "Restart"
+        }
       ]
     },
     "placeholder": "Startup"
@@ -148,18 +217,39 @@
     },
     "validation": {
       "choices": [
-        { "value": "clm5_0_cam6.0", "label": "clm5_0_cam6.0" },
-        { "value": "clm5_0_GSWP3v1", "label": "clm5_0_GSWP3v1" },
-        { "value": "clm5_0_CRUv7", "label": "clm5_0_CRUv7" },
-        { "value": "clm4_5_CRUv7", "label": "clm4_5_CRUv7" },
-        { "value": "clm4_5_GSWP3v1", "label": "clm4_5_GSWP3v1" },
-        { "value": "clm4_5_cam6.0", "label": "clm4_5_cam6.0" },
-        { "value": "clm5_1_GSWP3v1", "label": "clm5_1_GSWP3v1" }
+        {
+          "value": "clm5_0_cam6.0",
+          "label": "clm5_0_cam6.0"
+        },
+        {
+          "value": "clm5_0_GSWP3v1",
+          "label": "clm5_0_GSWP3v1"
+        },
+        {
+          "value": "clm5_0_CRUv7",
+          "label": "clm5_0_CRUv7"
+        },
+        {
+          "value": "clm4_5_CRUv7",
+          "label": "clm4_5_CRUv7"
+        },
+        {
+          "value": "clm4_5_GSWP3v1",
+          "label": "clm4_5_GSWP3v1"
+        },
+        {
+          "value": "clm4_5_cam6.0",
+          "label": "clm4_5_cam6.0"
+        },
+        {
+          "value": "clm5_1_GSWP3v1",
+          "label": "clm5_1_GSWP3v1"
+        }
       ]
     },
     "readonly": true,
-    "default": "clm5_0_GSWP3v1",
-    "placeholder": "clm5_0_GSWP3v1"
+    "default": "clm5_1_GSWP3v1",
+    "placeholder": "clm5_1_GSWP3v1"
   },
   {
     "name": "co2_ppmv",
@@ -254,8 +344,14 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
-        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
+        {
+          "value": "GPP_SCPF",
+          "label": "GPP_SCPF"
+        },
+        {
+          "value": "PFTcrownarea",
+          "label": "PFTcrownarea"
+        }
       ]
     }
   },
@@ -272,8 +368,14 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
-        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
+        {
+          "value": "GPP_SCPF",
+          "label": "GPP_SCPF"
+        },
+        {
+          "value": "PFTcrownarea",
+          "label": "PFTcrownarea"
+        }
       ]
     }
   },
@@ -290,8 +392,14 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
-        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
+        {
+          "value": "GPP_SCPF",
+          "label": "GPP_SCPF"
+        },
+        {
+          "value": "PFTcrownarea",
+          "label": "PFTcrownarea"
+        }
       ]
     }
   },
@@ -308,8 +416,14 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
-        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
+        {
+          "value": "GPP_SCPF",
+          "label": "GPP_SCPF"
+        },
+        {
+          "value": "PFTcrownarea",
+          "label": "PFTcrownarea"
+        }
       ]
     }
   },
@@ -326,8 +440,14 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
-        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
+        {
+          "value": "GPP_SCPF",
+          "label": "GPP_SCPF"
+        },
+        {
+          "value": "PFTcrownarea",
+          "label": "PFTcrownarea"
+        }
       ]
     }
   },
@@ -344,8 +464,14 @@
     "allow_custom": true,
     "validation": {
       "choices": [
-        { "value": "GPP_SCPF", "label": "GPP_SCPF" },
-        { "value": "PFTcrownarea", "label": "PFTcrownarea" }
+        {
+          "value": "GPP_SCPF",
+          "label": "GPP_SCPF"
+        },
+        {
+          "value": "PFTcrownarea",
+          "label": "PFTcrownarea"
+        }
       ]
     }
   },
@@ -357,7 +483,14 @@
       "summary": "Transform clm original output to long lat grid (output originally made for a string of gridcells).",
       "details": "Some PFT information only available in this 1D string by setting this to false"
     },
-    "default": [false, false, false, false, false, false],
+    "default": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
     "allow_multiple": true
   },
   {
@@ -370,13 +503,32 @@
     },
     "validation": {
       "choices": [
-        { "value": "A", "label": "Average over history period" },
-        { "value": "I", "label": "Instantaneous" },
-        { "value": "X", "label": "Maximum over history period" },
-        { "value": "M", "label": "Minimum over history period" }
+        {
+          "value": "A",
+          "label": "Average over history period"
+        },
+        {
+          "value": "I",
+          "label": "Instantaneous"
+        },
+        {
+          "value": "X",
+          "label": "Maximum over history period"
+        },
+        {
+          "value": "M",
+          "label": "Minimum over history period"
+        }
       ]
     },
-    "default": ["A", "A", "A", "A", "A", "A"],
+    "default": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
     "allow_multiple": true
   },
   {
@@ -387,7 +539,14 @@
       "summary": "Per tape series history write frequency.",
       "details": "positive means in time steps<br>0=monthly<br>negative means hours<br>(i.e. 5 means every 24 time-steps and -24 means every day)"
     },
-    "default": [0, 0, 0, 0, 0, 0],
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "allow_multiple": true
   },
   {
@@ -397,7 +556,14 @@
     "description": {
       "summary": "Per tape series maximum number of time samples."
     },
-    "default": [1, 0, 0, 0, 0, 0],
+    "default": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "allow_multiple": true
   },
   {
@@ -407,7 +573,8 @@
     "description": {
       "summary": "Number of FATES PFT dimensions in the fates_paramfile."
     },
-    "readonly": true
+    "readonly": true,
+    "default": 12
   },
   {
     "name": "included_pft_indices",
@@ -416,7 +583,21 @@
     "description": {
       "summary": "List of PFT indices to include in the simulation."
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ]
   },
   {
     "name": "fates_c2b",
@@ -427,7 +608,21 @@
       "details": "For instance, it is used to calculate plant leaf biomass blmax = (p1*min(d,dbh_maxh)**p2)/c2b where p1 is the slope, d is plant diameter, dbh_maxh is stem diameter at breast height at plant max height, and p2 is the exponent.",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#allometric-relationships"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
   },
   {
     "name": "fates_grperc",
@@ -438,7 +633,21 @@
       "details": "a fixed fraction of the carbon remaining after maintenance respiration has occurred.",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-respiration"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11,
+      0.11
+    ]
   },
   {
     "name": "fates_leaf_long",
@@ -447,7 +656,44 @@
     "description": {
       "summary": "Leaf longevity (ie turnover timescale), in years"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      1.5,
+      4,
+      1,
+      1.5,
+      1,
+      1,
+      1.5,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "name": "fates_leaf_stor_priority",
+    "category": "fates_param",
+    "type": "float",
+    "description": {
+      "summary": ""
+    },
+    "allow_multiple": true,
+    "default": [
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8,
+      0.8
+    ]
   },
   {
     "name": "fates_leaf_slatop",
@@ -457,7 +703,21 @@
       "summary": "Specific Leaf Area (SLA) at top of canopy, projected area basis, in m^2/gC",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#control-of-leaf-area-index"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      0.012,
+      0.01,
+      0.024,
+      0.012,
+      0.03,
+      0.03,
+      0.012,
+      0.03,
+      0.03,
+      0.03,
+      0.03,
+      0.03
+    ]
   },
   {
     "name": "fates_leaf_vcmax25top",
@@ -467,7 +727,21 @@
       "summary": "Maximum carboxylation rate of Rub. at 25C, canopy top, in umol CO2/m^2/s",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#photosynthesis"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      50,
+      65,
+      39,
+      62,
+      41,
+      58,
+      62,
+      54,
+      54,
+      78,
+      78,
+      78
+    ]
   },
   {
     "name": "fates_leaf_xl",
@@ -478,7 +752,21 @@
       "details": "Direct radiation is extinguished through the canopy according to a coefficient calculated from the incoming solar angle and the leaf angle distribution parameter.",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#radiation-transfer"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      0.1,
+      0.01,
+      0.01,
+      0.1,
+      0.01,
+      0.25,
+      0.01,
+      0.25,
+      0.25,
+      -0.3,
+      -0.3,
+      -0.3
+    ]
   },
   {
     "name": "fates_mort_bmort",
@@ -489,7 +777,21 @@
       "details": "Together with other sources of mortality (fire, hydraulic failure, etc.), background mortality is a ‘rest’ category that ensures the overall mortality rates are reasonable.",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-mortality"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014,
+      0.014
+    ]
   },
   {
     "name": "fates_mort_freezetol",
@@ -499,7 +801,21 @@
       "summary": "Minimum temperature tolerance, in degrees C",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-mortality"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      2.5,
+      -55,
+      -80,
+      -30,
+      2.5,
+      -30,
+      -60,
+      -10,
+      -80,
+      -80,
+      -20,
+      2.5
+    ]
   },
   {
     "name": "fates_mort_hf_sm_threshold",
@@ -509,7 +825,21 @@
       "summary": "Soil moisture (btran units) at which drought mortality begins for non-hydraulic model",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#plant-mortality"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06,
+      1e-06
+    ]
   },
   {
     "name": "fates_phen_evergreen",
@@ -519,7 +849,21 @@
       "summary": "Binary flag for evergreen leaf habit (0 or 1).",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#phenology"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
   },
   {
     "name": "fates_phen_season_decid",
@@ -530,7 +874,46 @@
       "details": "Whether (1) or not (0) the PFT drops its leaves in autumn when it gets colder, and regains them in spring based on temperature thresholds. PFTs can also be drought-deciduous, set by the fates_phen_stress_decid parametr..",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html?#phenology"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "fates_phen_stress_decid",
+    "category": "fates_param",
+    "type": "float",
+    "description": {
+      "summary": "",
+      "details": "",
+      "url": ""
+    },
+    "allow_multiple": true,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1
+    ]
   },
   {
     "name": "fates_root_long",
@@ -541,7 +924,21 @@
       "details": "Roots that die, become litter that can decompose in the soil.",
       "url": "https://fates-users-guide.readthedocs.io/projects/tech-doc/en/stable/fates_tech_note.html#litter-inputs"
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      1,
+      2,
+      1,
+      1.5,
+      1,
+      1,
+      1.5,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   },
   {
     "name": "fates_woody",
@@ -550,6 +947,20 @@
     "description": {
       "summary": "Binary woody lifeform flag (0 or 1). Tree and shrub PFTs have woody tissues, while grass PFT lack wood."
     },
-    "allow_multiple": true
+    "allow_multiple": true,
+    "default": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ]
   }
 ]
