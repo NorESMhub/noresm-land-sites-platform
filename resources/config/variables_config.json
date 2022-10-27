@@ -1,7 +1,7 @@
 [
   {
     "name": "DOUT_S_SAVE_INTERIM_RESTART_FILES",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "logical",
     "readonly": true,
     "default": true,
@@ -9,7 +9,7 @@
   },
   {
     "name": "DIN_LOC_ROOT_CLMFORC",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "char",
     "description": {
       "summary": "CLM-specific directory in the data archive file for CLM type input forcing data. Must be a relative path."
@@ -20,7 +20,7 @@
   },
   {
     "name": "CALENDAR",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "char",
     "validation": {
       "choices": [
@@ -40,7 +40,7 @@
   },
   {
     "name": "DATM_YR_START",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "integer",
     "description": {
       "summary": "Starting year to loop data over. Example: If the input data spans 1900-2010, set = 2000 to tell the model to use the input data from 2000 onwards."
@@ -50,7 +50,7 @@
   },
   {
     "name": "DATM_YR_ALIGN",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "integer",
     "description": {
       "summary": "Year align"
@@ -60,7 +60,7 @@
   },
   {
     "name": "DATM_YR_END",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "integer",
     "description": {
       "summary": "Ending year to loop data over. For example: If the input data spans 1900-2010, set this to 2005 to tell the model to use the input data up to 2005. If you run a longer simulation than the span between YR_START and YR_END, the input will be looped."
@@ -70,7 +70,7 @@
   },
   {
     "name": "RUN_STARTDATE",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "date",
     "description": {
       "summary": "Run start date (yyyy-mm-dd); normally at the start of the same year as YR_START. Only used for startup or hybrid run types."
@@ -80,7 +80,7 @@
   },
   {
     "name": "STOP_N",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "integer",
     "description": {
       "summary": "Sets the run length together with STOP_OPTION; Number of STOP_OPTION to simulate. E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days."
@@ -90,7 +90,7 @@
   },
   {
     "name": "STOP_OPTION",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "char",
     "description": {
       "summary": "Sets the run length together with STOP_N; Time span of simulation (years, months, days, seconds, or model timesteps). E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days."
@@ -180,7 +180,7 @@
   },
   {
     "name": "STOP_DATE",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "integer",
     "description": {
       "summary": "Alternative date yyyymmdd date option; sets the run length with STOP_OPTION and STOP_N. Negative value implies that this alternative is not used."
@@ -189,7 +189,7 @@
   },
   {
     "name": "RUN_TYPE",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "char",
     "description": {
       "summary": "Startup or Restart. Startup: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model may not produce realistic output. No spin-up files used. Use this mode for quick testing, or for making your own spin-up. Restart: continues running an existing case after it has been stopped.” (Without restart files, the RUN_TYPE should not include “branch” etc., but should be replaced with options to manipulate spin-up behavior (simplified C soil pool initialization, etc.)"
@@ -210,7 +210,7 @@
   },
   {
     "name": "LND_TUNING_MODE",
-    "category": "ctsm_xml",
+    "category": "xml_var",
     "type": "char",
     "description": {
       "summary": "Tuning parameters and initial conditions for a CLM model version and meteorological forcing combination."

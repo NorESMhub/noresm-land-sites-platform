@@ -15,7 +15,7 @@
         "long_name": "Ulvehaugen",
         "description": "Alpine vegetation at 1208 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1226 mm.",
         "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/ALP1.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP1.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -311,7 +311,7 @@
         "long_name": "Laavisdalen",
         "description": "Alpine vegetation at 1097 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1561 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/ALP2.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP2.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -608,7 +608,7 @@
         "description": "Alpine vegetation at 1213 m elevation. Mean summer temperature is 6.5 degrees C, and mean annual precipitation is 2130 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP3",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/ALP3.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP3.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -905,7 +905,7 @@
         "description": "Alpine vegetation at 1088 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 3402 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP4",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/ALP4.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP4.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -1202,7 +1202,7 @@
         "description": "Sub-alpine vegetation at 815 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 789 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB1",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/SUB1.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB1.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -1499,7 +1499,7 @@
         "description": "Sub-alpine vegetation at 700 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 1356 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB2",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/SUB2.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB2.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -1796,7 +1796,7 @@
         "description": "Sub-alpine vegetation at 769 m elevation. Mean summer temperature is 8.7 degrees C and mean annual precipitation is 1848 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB3",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/SUB3.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB3.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -2093,7 +2093,7 @@
         "description": "Sub-alpine vegetation at 797 m elevation. Mean summer temperature is 8.6 degrees C and mean annual precipitation is 3029 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB4",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/SUB4.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB4.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -2390,7 +2390,7 @@
         "description": "North-boreal vegetation at 589 m elevation. Mean summer temperature is 10.3 degrees C and mean annual precipitation is 600 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/BOR1.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR1.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -2687,7 +2687,7 @@
         "description": "North-boreal vegetation at 474 m elevation. Mean summer temperature is 10.5 degrees C and mean annual precipitation is 1161 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR2",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/BOR2.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR2.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -2984,7 +2984,7 @@
         "description": "North-boreal vegetation at 431 m elevation. Mean summer temperature is 10.6 degrees C and mean annual precipitation is 2044 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR3",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/BOR3.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR3.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -3281,7 +3281,7 @@
         "description": "North-boreal vegetation at 346 m elevation. Mean summer temperature is 10.8 degrees C and mean annual precipitation is 2923 mm.",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR4",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/BOR4.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR4.zip",
         "config": [
           {
             "name": "DIN_LOC_ROOT_CLMFORC",
@@ -3590,7 +3590,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ISK",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/ISK.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ISK.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -3887,7 +3887,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS1",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/HIS1.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/HIS1.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -4184,7 +4184,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS2",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/HIS2.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/HIS2.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -4481,7 +4481,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HUR",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/HUR.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/HUR.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -4778,7 +4778,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_FNS",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/FNS.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/FNS.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -5075,7 +5075,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BYV",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/BYV.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BYV.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -5372,7 +5372,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ADV",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/ADV.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ADV.zip",
         "config": [
           {
             "name": "pft_index_count",
@@ -5669,7 +5669,7 @@
         "description": "",
         "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_AAS",
-        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/AAs.zip",
+        "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/AAs.zip",
         "config": [
           {
             "name": "pft_index_count",

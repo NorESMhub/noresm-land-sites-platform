@@ -2,14 +2,14 @@
 
 set -e
 
-if [[ ! -d /ctsm-api/resources/ctsm ]]; then
+if [[ ! -d /ctsm-api/resources/model ]]; then
     cd /ctsm-api/resources/
 
-    git clone https://github.com/NorESMhub/NorESM ctsm
+    git clone https://github.com/NorESMhub/NorESM model
 
-    cd ctsm
+    cd model
 
-    git checkout 14d3a809b2ebb6b466df8c003eed6b08638c032e
+    git checkout a5e48a22879b4b324b12776a3cb0f087a21819d9
 
     cp ../overwrites/Externals.cfg .
 
