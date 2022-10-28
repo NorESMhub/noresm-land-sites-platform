@@ -7,6 +7,7 @@ resources/archives
 resources/cases
 resources/ctsm
 resources/data
+resources/model
 resources/cases.sqlite
 
 .env
