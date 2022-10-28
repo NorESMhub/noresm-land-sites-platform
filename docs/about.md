@@ -30,6 +30,15 @@ The observation sites currently included in the platform are described in the [S
 * [Devaraju Narayanappa](https://github.com/devarajun)
 * [Sonya Geange](https://github.com/srg101)
 * [Inge Althuizen](https://github.com/ingealthuizen)
+* Anders Bryn
+* Hanna Lee
+* Frans-Jan Parmentier
+* Norbert Pirk
+* Vigdis Vandvik
+* Ane Vollsnes
+* Olav Skarpaas
+* Frode Stordal
+* Lena M. Tallaksen
 
 ## Supporting projects
 * [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
@@ -42,17 +51,17 @@ The observation sites currently included in the platform are described in the [S
 
 ## Acknowledgements
 The NorESM-LSP has evolved over several years from the needs and visions of a large group of researchers and students connected through the EMERALD and LATICE projects. Funding has come from the projects listed above. Thanks are due to everyone who participated along the way in discussions, feedback, and testing of early versions.
-The NorESM-LSP software wraps around the NorESM-CLM-FATES model framework. The Norwegian Earth System Model is developed by a [consortium](https://www.noresm.org/consortium/), and is closely related to the Community Earth System Model (CESM). The CESM and Community Land Model are supported primarily by the U.S. National Science Foundation. The FATES model is supported primarily by the U.S. Department of Energy’s Next Generation Ecosystem Experiment - Tropics (NGEE-T) project.
+The NorESM-LSP software wraps around the NorESM-CLM-FATES model framework. The Norwegian Earth System Model is developed by a [consortium](https://www.noresm.org/consortium/), and is closely related to the Community Earth System Model (CESM). The CESM and Community Land Model (CLM) are supported primarily by the U.S. National Science Foundation. The FATES model is supported primarily by the U.S. Department of Energy’s Next Generation Ecosystem Experiment - Tropics (NGEE-T) project.
 
 ## How to cite
 If you publish something based on simulations through the LSP, please cite the software in your publication. For now, cite the NorESM Land Sites Platform as: **NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]**. Look for our upcoming technical description paper and DOIs for the repositories, which will provide better citation options. 
 
-Remember this software wraps around the model framework. When you publish model experiments, you also need to properly cite and acknowledge the models: See the licences of [NorESM](https://github.com/NorESMhub/NorESM/blob/master/LICENSE.txt), [CLM](https://github.com/ESCOMP/CTSM/blob/master/LICENSE), [FATES](https://github.com/NGEET/fates/blob/master/LICENSE.txt). In the Acknowledgements section, it is common practice to add funding information of the models that you use (e.g. the U.S. National Science Foundation for CLM, NGEE-Tropics for FATES). The main publications for each model should also be cited in the main text.
+NB! The NorESM-LSP software wraps around the model framework. When you publish model experiments, you also need to properly cite and acknowledge the models: See the licences of [NorESM](https://github.com/NorESMhub/NorESM/blob/master/LICENSE.txt), [CLM](https://github.com/ESCOMP/CTSM/blob/master/LICENSE), [FATES](https://github.com/NGEET/fates/blob/master/LICENSE.txt). In the Acknowledgements section, it is common practice to add funding information of the models that you use (e.g. the U.S. National Science Foundation for CLM, NGEE-Tropics for FATES). The main publications for each model should also be cited in the main text.
 
-If you use observational data, e.g. from the Vestland Climate Grid sites or another integrated site, make sure to look at the licences, rights and conditions attached to those data as well! Following international standards for research ethics, authorship invitations should be given based on 'substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data', among other things. See for instance the [ICMJE authorship guidelines (Vancouver convention)](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) to help you decide which kind of acknowledgement is appropriate. 
+NB! If you use observational data, e.g. from the Vestland Climate Grid sites or another integrated site, make sure to look at the licences, rights and conditions attached to those data as well! Following international standards for research ethics, authorship invitations should be given based on 'substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data', among other things. See for instance the [ICMJE authorship guidelines (Vancouver convention)](https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html) to help you decide which kind of acknowledgement is appropriate. 
 
 If an LSP developer helped you substantially, please consider adding that person to the Acknowledgements section of your publication or invite them to co-author you publication if the contribution is substantial. 
 
 ## Contact
 
-For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/) on GitHub or get in touch with one of the code developers directly.
+For questions about the platform, please [open an issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues/) on GitHub or get in touch with one of the developers directly.
