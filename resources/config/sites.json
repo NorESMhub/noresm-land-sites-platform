@@ -310,7 +310,7 @@
         "name": "ALP2",
         "long_name": "Laavisdalen",
         "description": "Alpine vegetation at 1097 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 1561 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP2.zip",
         "config": [
           {
@@ -606,7 +606,7 @@
         "name": "ALP3",
         "long_name": "Gudmedalen",
         "description": "Alpine vegetation at 1213 m elevation. Mean summer temperature is 6.5 degrees C, and mean annual precipitation is 2130 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP3",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP3.zip",
         "config": [
@@ -903,7 +903,7 @@
         "name": "ALP4",
         "long_name": "Skjellingahaugen",
         "description": "Alpine vegetation at 1088 m elevation. Mean summer temperature is 7 degrees C, and mean annual precipitation is 3402 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ALP4",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ALP4.zip",
         "config": [
@@ -1200,7 +1200,7 @@
         "name": "SUB1",
         "long_name": "Aalrust",
         "description": "Sub-alpine vegetation at 815 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 789 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB1",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB1.zip",
         "config": [
@@ -1497,7 +1497,7 @@
         "name": "SUB2",
         "long_name": "Hoegsete",
         "description": "Sub-alpine vegetation at 700 m elevation. Mean summer temperature is 9 degrees C and mean annual precipitation is 1356 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB2",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB2.zip",
         "config": [
@@ -1794,7 +1794,7 @@
         "name": "SUB3",
         "long_name": "Rambaera",
         "description": "Sub-alpine vegetation at 769 m elevation. Mean summer temperature is 8.7 degrees C and mean annual precipitation is 1848 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB3",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB3.zip",
         "config": [
@@ -2091,7 +2091,7 @@
         "name": "SUB4",
         "long_name": "Veskre",
         "description": "Sub-alpine vegetation at 797 m elevation. Mean summer temperature is 8.6 degrees C and mean annual precipitation is 3029 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_SUB4",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/SUB4.zip",
         "config": [
@@ -2388,7 +2388,7 @@
         "name": "BOR1",
         "long_name": "Fauske",
         "description": "North-boreal vegetation at 589 m elevation. Mean summer temperature is 10.3 degrees C and mean annual precipitation is 600 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR1",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR1.zip",
         "config": [
@@ -2685,7 +2685,7 @@
         "name": "BOR2",
         "long_name": "Vikesland",
         "description": "North-boreal vegetation at 474 m elevation. Mean summer temperature is 10.5 degrees C and mean annual precipitation is 1161 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR2",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR2.zip",
         "config": [
@@ -2982,7 +2982,7 @@
         "name": "BOR3",
         "long_name": "Arhelleren",
         "description": "North-boreal vegetation at 431 m elevation. Mean summer temperature is 10.6 degrees C and mean annual precipitation is 2044 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR3",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR3.zip",
         "config": [
@@ -3279,22 +3279,10 @@
         "name": "BOR4",
         "long_name": "Oevstedal",
         "description": "North-boreal vegetation at 346 m elevation. Mean summer temperature is 10.8 degrees C and mean annual precipitation is 2923 mm.",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BOR4",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BOR4.zip",
         "config": [
-          {
-            "name": "DIN_LOC_ROOT_CLMFORC",
-            "value": "inputdata/atm/datm7/GSWP3v1"
-          },
-          {
-            "name": "fsurdat",
-            "value": "inputdata/lnd/clm2/surfdata_map/BOR4/surfdata_BOR4_simyr2000.nc"
-          },
-          {
-            "name": "fates_paramfile",
-            "value": "inputdata/lnd/clm2/paramdata/fates_params_api.22.1.0_12pft_c220307.nc"
-          },
           {
             "name": "pft_index_count",
             "value": 12
@@ -3588,7 +3576,7 @@
         "name": "ISK",
         "long_name": "Iskoras",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ISK",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ISK.zip",
         "config": [
@@ -3885,7 +3873,7 @@
         "name": "HIS1",
         "long_name": "Hisaasen_up",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS1",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/HIS1.zip",
         "config": [
@@ -4182,7 +4170,7 @@
         "name": "HIS2",
         "long_name": "Hisaasen_low",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HIS2",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/HIS2.zip",
         "config": [
@@ -4479,7 +4467,7 @@
         "name": "HUR",
         "long_name": "Hurdal",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_HUR",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/HUR.zip",
         "config": [
@@ -4776,7 +4764,7 @@
         "name": "FNS",
         "long_name": "Finse_fluxtower",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_FNS",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/FNS.zip",
         "config": [
@@ -5073,7 +5061,7 @@
         "name": "BYV",
         "long_name": "Bayelva",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_BYV",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/BYV.zip",
         "config": [
@@ -5370,7 +5358,7 @@
         "name": "ADV",
         "long_name": "Adventdalen",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_ADV",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/ADV.zip",
         "config": [
@@ -5667,7 +5655,7 @@
         "name": "AAS",
         "long_name": "Aas",
         "description": "",
-        "compset": "2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
+        "compset": "2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV",
         "res": "1x1_AAS",
         "data_url": "https://raw.githubusercontent.com/NorESMhub/noresm-lsp-data/main/sites/AAs.zip",
         "config": [
