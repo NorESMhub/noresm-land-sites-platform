@@ -4,8 +4,8 @@ NorESM-LSP simulations are at the site level, also called single-point or single
 
 You have two options:
 
-1. Choose an integrated site where we have preprocessed all the necessary data, or
-2. Create a custom site by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow existing tutorials, e.g.  the [land model single-point tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) or the [NorESM single-point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/).
+1. Choose an [integrated site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#integrated-sites) where we have prepared all the necessary data, or
+2. [Create a custom site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#custom-sites) by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow [the instructions in this markdown file](https://github.com/NorESMhub/ctsm-api/tree/main/data/readme.md).
 
 ## 1. Integrated sites
 
@@ -106,7 +106,7 @@ To create a custom site, you need
 - the site coordinates, and 
 - to subset global files or to modify existing ones. 
 
-The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. There are tutorials for the land model and NorESM that can guide you through this: [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) and [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
+The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. Follow the instructions in [this markdown file](https://github.com/NorESMhub/ctsm-api/tree/main/data/readme.md) (written for the NorESM-LSP using [Saga](https://documentation.sigma2.no/hpc_machines/saga.html]), or look at other tutorials, e.g. the [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) or the [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
 
 Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to double-check if it has the same structure.
 
