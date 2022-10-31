@@ -14,6 +14,7 @@
 
 - Graphical User Interface: [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
 - Application Programming Interface: [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
+- Input data for integrated sites: [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
 - (Input data preparation for legacy branch: [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input))
 
 ### Quick first-time installation steps (see the [webpage for the full user guide and documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/)):
