@@ -6,15 +6,16 @@ The NorESM land sites platform is developed by a group of students, postdocs, an
 
 We use GitHub for developing code. If you are new to working with Git and GitHub, you might like [this](https://kbroman.org/github_tutorial/ "a minimalist intro") or [this](https://docs.github.com/en/get-started/quickstart/hello-world "GitHub's own tutorial") tutorial. 
 
-#### Quick links to central [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
+#### Quick links to [GitHub repositories](https://en.wikipedia.org/wiki/Git "a place to store code with version control")
 
 - [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform)
 - [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
-- [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
+- [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
 - [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
 - [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
+- ([NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) for legacy mathod of creating input data for integrated sites)
 
-The current version of the platform is kept in the `main` branch of the noresm-land-sites-platform repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch. Further development happens on individual forks and the `develop` branch, and are merged into main with a pull request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything). Make sure you update the documentation as well (if relevant).
+The current version of the platform is kept in the `main` branch of the noresm-land-sites-platform repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch, and a version with different (manual) way of creating input data is stored in the `legacy` branch/tag. Further development happens on individual forks and a `develop` branch that can be merged into main with a Pull Request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything). Make sure you update the documentation as well (if relevant).
 
 If you have questions or comments about the platform, please open an issue [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) in the repository.
 
@@ -24,8 +25,7 @@ This documentation page is built using GitHub pages and [MkDocs](https://www.mkd
 
 ### How to contribute new sites
 
-New sites can be integrated (added permanently) to the LSP by copying and modifying some existing code and creating and uploading new input data for the site.
-See [this example for the ALP1 site](https://github.com/NorESMhub/noresm-land-sites-platform/blob/develop/resources/config/sites.json?short_path=c514862#L4) for how to code in the new site so it appears in the GUI. The input data, created in the same way as for [adding a custom site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/), needs to be uploaded as a single .zip file to the [shared online storage](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). Note that you need huge amounts of storage space (the global data repository is >10 TByte!) to subset the data, so this can *not* be done on a normal pc. If you want to contribute a new site, but struggle to make the changes yourself, please ask for help and we will do our best.
+New sites can be integrated (added permanently) to the LSP by creating and uploading the necessary input data. See instructions in [NorESMhub/ctsm-api/data](https://github.com/NorESMhub/ctsm-api/tree/main/data). Note that you need huge amounts of storage space (the global data repository is >10 TByte!) to subset the data, so this can *not* be done on a normal pc. If you want to contribute a new site, but struggle to make the changes yourself, please ask a developer and we will do our best to help you.
 
 --------------------------
 
