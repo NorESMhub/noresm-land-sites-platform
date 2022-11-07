@@ -59,9 +59,6 @@ Other relevant papers:
 
 *Details from the Finse flux tower. Photo from [Finse EcHO](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/)*
 
------------------------------------------------------------------------
-
-
 ### [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites
 
 The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites host many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
@@ -106,8 +103,16 @@ To create a custom site, you need
 - the site coordinates, and 
 - to subset global files or to modify existing ones. 
 
-The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. Follow the instructions in [this markdown file](https://github.com/NorESMhub/ctsm-api/tree/main/data/readme.md) (written for the NorESM-LSP using [Saga](https://documentation.sigma2.no/hpc_machines/saga.html]), or look at other tutorials, e.g. the [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) or the [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
+The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. Follow the instructions in [this NorESMhub/ctsm-api/data/README.md](https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md) (written for the NorESM-LSP using [Saga](https://documentation.sigma2.no/hpc_machines/saga.html]), or look at other tutorials, e.g. the [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) or the [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
 
 Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to double-check if it has the same structure.
 
 To run simulations at a custom site, upload the zipped input data file under the `Create case for custom site` button in the user interface (localhost:8080). There you get the same popup as the integrated sites, with options to change e.g. CO2 concentration or Plant Functional Types to include.
+
+## 3. Adding sites permanently
+
+To make a site integrated and visible to everyone, you need to
+
+1. create zipped data for the new site(s) (see 2. cutsom sites above)
+2. make a pull request to upload the zipped input file to [NorESMhub/noresm-lsp-data/sites](https://github.com/NorESMhub/noresm-lsp-data/tree/main/sites) (or another stable storage url where it can be downloaded from). 
+3. Then, add the site(s) to your fork/branch of [noresm-land-sites-platform/resources/config/sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) following the same template as the other sites, and make a new pull request.
