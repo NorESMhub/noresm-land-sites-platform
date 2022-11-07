@@ -18,9 +18,10 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 
 - [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform)
 - [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
+- [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
 - [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
 - [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
-- ([NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) for legacy version of creating input data for integrated sites)
+- ([NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) for legacy mathod of creating input data for integrated sites)
 
 The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/noresm-land-sites-platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
 
