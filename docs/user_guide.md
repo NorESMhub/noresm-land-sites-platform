@@ -1,8 +1,8 @@
 # User guide
 
-This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [downloading the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). If you want to learn more about the FATES, CLM, and NorESM models, we have collected some useful links to tutorials and other training resources and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
+This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [downloading the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). If you want to learn more about the FATES, CLM, and NorESM models, we have collected some useful links to tutorials and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
 
-Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note also that the site-specific data downloaded from external sources may have terms and conditions of use, including co-authorship on publications! 
+> NB! Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note also that the site-specific data downloaded from external sources may have terms and conditions of use, so make sure to read and follow those terms if you plan to publish your model experiment! 
 
 ***********************************************
 
@@ -15,7 +15,7 @@ cd noresm-land-sites-platform
 docker-compose up
 ```
 
-Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) and Panoply on [localhost:5800](http://localhost:5800) 🎉
+Open the GUI: [localhost:8080](http://localhost:8080) and push buttons, and access jypyter notebooks on [localhost:8888](http://localhost:8888) and Panoply on [localhost:5800](http://localhost:5800) 🎉
 
 ***********************************************
 
@@ -33,7 +33,7 @@ Wait until the terminal messages stop. Open the GUI: [localhost:8080](http://loc
 
 ### 0. Prerequisites (first time setup) 🌱
 
-To use the NorESM land sites platform (LSP for short), you need to install [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") (and make a user account) and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker. Docker is [free for personal and open-source use](https://www.docker.com/pricing/). If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
+To use the NorESM land sites platform, you need [Git](https://git-scm.com/downloads "click the pc screen button if you are on Windows") and [Docker desktop](https://www.docker.com/products/docker-desktop) before you can clone the [repository](https://github.com/NorESMhub/noresm-land-sites-platform "repository for the NorESM Land Sites platform") (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker.  If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the `code` button and `download zip`. Step by step (with steps in brackets only sometimes necessary, depending on your computer):
 
 1. [Create a GitHub account](https://github.com/) (optional, but generally recommended to be able to open issues, etc.)
 2. Install Git on your machine. For Windows: https://gitforwindows.org/, other: https://github.com/git-guides/install-git
@@ -63,17 +63,15 @@ cd noresm-land-sites-platform
 docker-compose up
 ```
 
-> If you get an error, make sure you are inside the folder containing the `docker-compose.yaml` file. Type `ls` and hit enter to list the files in the current folder. You can change directories by typing `cd foldername` to get inside foldername, and `cd ..` to move up to the parent folder. Tip! Press Tab to autocomplete a folder or file name after typing the first letter(s).
+> If you get an error, make sure you are inside the folder containing the `docker-compose.yaml` file. Type `ls` and hit enter to list the files in the current folder. You can *c*hange *d*irectories by typing `cd foldername` to get inside foldername, and `cd ..` to move up to the parent folder. Tip! Press Tab to autocomplete a folder or file name after typing the first letter(s).
 
-The first time you execute this command, a lot of files will be downloaded first. This might take half an hour or so depending on your internet connection. After this initial download, it will be much faster (<1min). When the container is up and running, the bottom messages in your terminal will include ´Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)´ (NB! Do not close the container by pressing `Ctrl+C`, only close it once you are finished with your simulations and analyses). You can also see installed and running container in the Docker desktop app under Containers/Apps.
-
-Now you can access the user interface by going to this address in a new browser tab: [localhost:8080](http://localhost:8080). 
+The first time you execute this command, a lot of files will be downloaded. This might take half an hour or so depending on your internet connection. After this initial download, it will be much faster (<1min). Once the terminal messages stop, you can access the user interface by going to this address in a new browser tab: [localhost:8080](http://localhost:8080). 
 
 ### 2. Inside GUI: Set simulation settings ⚙️
 
 In the graphical user interface (= GUI) at [localhost:8080](http://localhost:8080) you can easily set up and run model experiments. This interface has access to the Docker containers you started in step 1, and communicates with the models via the [API](https://noresmhub.github.io/noresm-land-sites-platform/#api). 
 
-In the GUI, you will see a list and map of integrated sites, as well as a list of your cases (model experiments) once you create some. You can also [run a simulation for a new site if you can create the necessary input data](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/). If you are doing a quick test with default settings, just pick a site and click `create case`, `submit` and then `run` (a default test case of 1 year should take ~10-20 mins). The GUI should look like this once you have chosen a site and have submitted and started to run a case:
+In the GUI, you will see a list and map of integrated sites, as well as a list of your cases (model experiments) once you create some. You can also [run a simulation for a new site with your own input data](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/). If you are doing a quick test with default settings, just pick a site and click `create case`, `submit` and then `run`. A default test case of 1 year should take ~10-20 mins. The GUI should look like this once you have chosen a site and have submitted and started to run a case:
 
 ![GUI screenshot](img/LTK-ALP1-screenshot.png)
 
@@ -82,8 +80,6 @@ In the GUI, you will see a list and map of integrated sites, as well as a list o
 #### 2.1 Choose a [site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) 
 
 ...by clicking either a button or a point on the map! Or add a new site with your own data.
-
-You can also [request new sites to be integrated via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A), so everyone can use it. This requires the developers to do some manual work, so you should have a clear reason to request a new site. You can also add sites yourself and create a Pull Request to add your developments for everyone to use.
 
 #### 2.2 Download site data button (optional)
 
