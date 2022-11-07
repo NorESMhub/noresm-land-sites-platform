@@ -5,7 +5,7 @@ NorESM-LSP simulations are at the site level, also called single-point or single
 You have two options:
 
 1. Choose an [integrated site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#integrated-sites) where we have prepared all the necessary data, or
-2. [Create a custom site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#custom-sites) by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow [the instructions in ctsm-api/data/readme.md]([https://github.com/NorESMhub/ctsm-api/tree/main/data/readme.md](https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md)).
+2. [Create a custom site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#custom-sites) by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow [the instructions in ctsm-api/data/readme.md](https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md).
 
 ## 1. Integrated sites
 
