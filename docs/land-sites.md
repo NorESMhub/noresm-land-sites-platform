@@ -118,3 +118,5 @@ To make a site integrated and visible to everyone, you need to
 1. create zipped data for the new site(s) (see 2. Custom sites above)
 2. make a pull request to upload the zipped input file to [NorESMhub/noresm-lsp-data/sites](https://github.com/NorESMhub/noresm-lsp-data/tree/main/sites) (or another stable storage url where it can be downloaded from). 
 3. Then, add the site(s) to your fork/branch of [noresm-land-sites-platform/resources/config/sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) following the same template as the other sites, and make a new pull request.
+
+You can also [request new sites to be integrated via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A). This requires the developers to do the work for you, so you should have a clear reason to request a new site.
