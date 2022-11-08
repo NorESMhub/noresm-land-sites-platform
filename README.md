@@ -4,7 +4,7 @@
 
 # [NorESM Land Sites Platform (NorESM-LSP) for site-level simulation over land with CLM-FATES](https://noresmhub.github.io/noresm-land-sites-platform/)
 
-### DOI:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7304386.svg)](https://doi.org/10.5281/zenodo.7304386)
 
 ### Webpage: [NorESM land sites platform documentation and user guide](https://noresmhub.github.io/noresm-land-sites-platform/)
 
