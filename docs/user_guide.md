@@ -77,7 +77,7 @@ In the GUI, you will see a list and map of integrated sites, as well as a list o
 
 #### 2.1 Choose a [site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/) 
 
-...by clicking either a button or a point on the map! Or add a new site with your own data.
+...by clicking either a button or a point on the map! Or [add a new site with your own data](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/).
 
 #### 2.2 Download site data button (optional)
 
@@ -110,8 +110,8 @@ Note that you generally just need to touch four of the `Run environment` setting
 |STOP_N | Integer. Sets the run length together with STOP_OPTION. It's the number of STOP_OPTION to simulate. E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days.|
 | STOP_OPTION | Dropdown. This sets the run length together with STOP_N, and represents the unit of time (years, months, days, seconds, or model timesteps). E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days.|
 | STOP_DATE | Integer. Alternative yyyymmdd date option that sets the run length with STOP_OPTION and STOP_N. Negative value implies that this alternative is not used.|
-| RUN_TYPE | Dropdown. Startup or Restart. *Startup*: a 'cold' start from bare ground, where the vegetation and climate is not in equilibrium and the model may  produce unrealistic output unless it is run for a very long time (hundreds or thousands of years). Startup mode does not allow using spin-up files (='restart' files of an existing simulation where the vegetation and other conditions have reached a steady state). Use this mode for quick testing, or for making your own spin-up. *Restart*: continues running an existing case after it has been stopped.|
-|LND_TUNING_MODE| Dropdown. Land tuning mode. Tuning parameters and initial conditions for a CLM model version and meteorological forcing combination.|
+| RUN_TYPE | Read-only. *Startup*: a 'cold' start from bare ground, where the vegetation and climate is not in equilibrium and the model may  produce unrealistic output unless it is run for a very long time (hundreds or thousands of years). Startup mode does not allow using spin-up files (='restart' files of an existing simulation where the vegetation and other conditions have reached a steady state). Use this mode for quick testing, or for making your own spin-up. *Restart* (only available for the `legacy` LSP version): continues running an existing case after it has been stopped.|
+|LND_TUNING_MODE| Read-only. Land tuning mode. Tuning parameters and initial conditions for a CLM model version and meteorological forcing combination.|
 
 ||CLM namelist simulation settings|
 |-|-------------------------------|
@@ -124,9 +124,9 @@ Note that you generally just need to touch four of the `Run environment` setting
 
 By default, **the model records output in one tape** (hist_fincl1), **as one** (hist_mfilt=1) **average** (hist_avgflag_pertape=A), **monthly** (hist_nhtfrq=0) **value, for a subset of variables** (Active=T in [this list](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES")), **in a long-lat grid** (hist_dov2xy=TRUE). Each column in the History files tab corresponds to a history tape, which is a series of files created for the simulation period. 
 
-If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns to add history tapes. NB! The list of output variables listed in the CTSM documentation may be outdated (because both FATES and CLM develop fast and the documentation and stable versions may lag behind the one we use). This [list in the FATES code](https://github.com/NGEET/fates/blob/sci.1.55.4_api.22.1.0/main/FatesHistoryInterfaceMod.F90#L4283) lists the possible FATES history variables for the actual FATES version we are using. `use_default='inactive'` means it is not included in the history tape by default, but can be activated by including the var name in the hist_fincl fields in the GUI.
+If you want output to be recorded for [additional variables](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html "Full list of possible CTSM History Fields with FATES") or at different time steps, you can modify the first column or fill in additional columns to add history tapes. NB! The list of output variables listed in the CTSM documentation may be outdated (because both FATES and CLM develop fast and the documentation and stable versions may lag behind the one we use). The most updated overview of FATES output variables is the [FatesHistoryInterfaceMod.F90](https://github.com/NGEET/fates/blob/master/main/FatesHistoryInterfaceMod.F90) file (Warning: code & jargon-heavy text). `use_default='inactive'` means it is not included in the history tape by default. It can be activated by including the variable name in the hist_fincl fields in the GUI. 
 
-If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with with e.g. different output variables recorded at its maximum value per day and in a long string instead of in the default lat-lon grid (some vegetation demographic output is only accessible in that format).
+If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with  e.g. different output variables, recorded at e.g. its maximum value per day. Remember to change hist_mfilt to store the output. Note that some FATES vegetation demographic output is only accessible in a long string format instead of in the default lat-lon grid.  
 
 **FATES settings**
 
