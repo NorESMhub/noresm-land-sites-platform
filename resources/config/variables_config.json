@@ -192,7 +192,7 @@
     "category": "xml_var",
     "type": "char",
     "description": {
-      "summary": "Startup or Restart. Startup: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model may not produce realistic output. No spin-up files used. Use this mode for quick testing, or for making your own spin-up. Restart: continues running an existing case after it has been stopped.” (Without restart files, the RUN_TYPE should not include “branch” etc., but should be replaced with options to manipulate spin-up behavior (simplified C soil pool initialization, etc.)"
+      "summary": "Startup by default: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model may not produce realistic output. No spin-up files used. Restart is available in the 'legacy' branch/tag: continues running an existing case after it has been stopped.”
     },
     "validation": {
       "choices": [
@@ -206,6 +206,8 @@
         }
       ]
     },
+    "readonly": true,
+    "default": "startup",
     "placeholder": "Startup"
   },
   {
