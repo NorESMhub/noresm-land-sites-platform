@@ -196,7 +196,7 @@ Otherwise, use this:
 docker-compose exec api bash
 ```
 
-This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/ctsm. Cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.
+This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/model. Cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.
 
 ## Troubleshooting
 
