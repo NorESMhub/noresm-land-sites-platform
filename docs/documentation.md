@@ -89,7 +89,7 @@ Platform versions follow standard numbering, and releases below 1 should be cons
 The platform is primarily designed to run the land model (CLM) with the Norwegian Earth System Model. The versions of FATES and CLM therefore have to be in line with stable NorESM versions. You can see the component model versions in the `Externals.cfg` file under `/resources/overwrites/` in the [noresm-land-sites-platform repository](https://github.com/NorESMhub/noresm-land-sites-platform/tree/main/resources/overwrites).
 
 ##### Changing the model version
-To change the model versions, either to update the NorESM-LSP or on your own fork, there are two files to consider. The first is the NorESM version in the Dockerfile (`noresm-land-sites-platform/docker/api/.env`), and the second (more important) is a file to overwrite the model component versions located in `NorESM-land-sites-platform/resources/overwrites/Externals.cfg`.
+To change the model versions, either to update the NorESM-LSP or on your own fork, there are two files to consider. The first is the NorESM version in the Dockerfile (`noresm-land-sites-platform/docker/api/.env`), and the second (more important) is a file to overwrite the model component versions located in `NorESM-land-sites-platform/resources/overwrites/Externals.cfg`. The FATES version is defined in `NorESM-land-sites-platform/resources/model/components/clm/Externals_CLM.cfg`.
 
 *****************************
 
