@@ -48,11 +48,9 @@ git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config c
 
 ```
 
-This will download (= clone) the repository (= folder structure of files with version history) to your working directory. You can now see the folder and files in your file explorer. Most of the files can be opened in a text editor like Notepad if you want to look at their contents.
+This will download (= clone) the repository (= folder structure of files with version history) to your working directory. You can now see the folder and files in your file explorer.
 
 Once Git, Docker Desktop and the repository are in place, you don't have to do this again. 
-
-If the platform has been updated the next time you want to use it, you might want to download the updates by typing `git pull` followed by `docker-compose pull` into Git Bash (or another terminal) from your local clone of the repository. This downloads the most recent updates to the code and containers.
 
 ### 1. Start the container 🧰
 
@@ -206,10 +204,12 @@ Please help us by reporting errors and questions on our [issues page](https://gi
 
 Update the software with `git pull` and `docker-compose pull` if there are new developments to the LSP.
 
-## Uninstalling
+## Updating and uninstalling
 
-Open a terminal in your working directory (or switch to the already-open one if the NorESM-LSP is already running). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`. To install updates instead of deleting everything, you can use first `git pull` and then `docker-compose pull`.
-
+To install updates, download the new version of the code and container images by typing `git pull` followed by `docker-compose pull` into a terminal from your local clone of the repository. 
+    
+To uninstall, open a terminal in your working directory and enter your local clone of the repository (remember `ls`= list files, `cd`=change directory). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`, or with `docker-compose down` if you see `.../noresm-land-sites-platform$`. 
+    
 To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. NB! If you delete the whole repository like this, your existing cases and output data will also be deleted.
 
 To delete **all** Docker containers, images, and other files, also  ones in use, you can use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. 
@@ -217,6 +217,7 @@ To delete **all** Docker containers, images, and other files, also  ones in use,
 It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.
 
 ## Reproducibility
+    
 To make your simulations reproducible by others, e.g. for a thesis or scientific paper, *note down the version of the NorESM-LSP* and save these three directories that have been created under `resources/` in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform/resources):
 
 - the case folder, i.e. ´resources/cases/casename´
@@ -228,6 +229,7 @@ You could also simply save the whole 'resources' folder (and get some redundant 
 To recreate an old simulation, the LSP might need to be reinstalled. On [GitHub](https://github.com/NorESMhub/noresm-land-sites-platform), find the correct version tag/release tag and clone or download the code from that version. Once the correct version of the repository is in place, copy and pase in the three folders listed above. Make sure the folder structure is the same. Then, bring up the containers again with `docker-compose up` and *voilà*! Old case folders can of course be copied into new versions of the LSP as well, but if there are changes to e.g. python libraries, model code or other software we depend on, there might be errors or slight differences in the output if the case is re-run. This is why version control is so important, and why containerisation aids reproducibility! 
 
 ## When and how to cite the NorESM-LSP, models, and data
+    
 If you end up publishing your model experiments, e.g. in a thesis or scientific paper, you need to consider citations, acknowledgements, and authorship invitations carefully.
 
 To cite the NorESM-LSP software, see the [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) and [About](https://noresmhub.github.io/noresm-land-sites-platform/about/). 
