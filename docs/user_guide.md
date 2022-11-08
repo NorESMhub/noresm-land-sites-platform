@@ -153,13 +153,13 @@ Once you click `submit`, the case will appear in a list of cases with the case I
 
 ### 3. Run your simulations 👩‍💻
 
-Once the case is ready, you can start the simulation with the `run` button. There are also buttons to `download` the output when the run is finished, to `edit` the settings and create a new case, and to `delete` the case. Depending on how long you asked the model to run for, and on your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
+Once the case is ready, you can start the simulation with the `run` button. There are also buttons to `download` the output when the run is finished, to `copy` the case settings as a template to create a new case, and to `delete` the case. Depending on how long you asked the model to run for, and on your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our [alternatives for remote simulations](https://noresmhub.github.io/noresm-land-sites-platform/).
 
 > While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at [localhost:8888](http://localhost:8888). Navigate to the `/notebooks/plot_input_data/` folder and go through the notebooks there. They will plot some of the input data for your site that forces the atmospheric model component and provides land surface and soil information.
 
 Soon your simulations will be finished! 🎉 (Hint: if your case seems to be running forever, try to refresh the webpage! Sometimes it gets stuck.)
 
-If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. Progress messages will be printed in the terminal you started the container from. (If you closed the terminal window already, you can see it in Docker desktop as well when you click the running container stack.)
+If you got an error message somewhere along the way, please head over to our GitHub and write an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. Progress messages will be printed in the terminal you started the container from. (If you closed the terminal window already, you can see it in Docker desktop by clicking the running container stack.)
 
 Output will be stored as monthly averages by default, or at whatever time intervals you set in the history files tab when you created the case.
 
@@ -202,8 +202,6 @@ This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/ctsm
 
 Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the [setup guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) before you bring the containers up again with `docker-compose up`.
 
-Update the software with `git pull` and `docker-compose pull` if there are new developments to the LSP.
-
 ## Updating and uninstalling
 
 To install updates, download the new version of the code and container images by typing `git pull` followed by `docker-compose pull` into a terminal from your local clone of the repository. 
@@ -212,9 +210,9 @@ To uninstall, open a terminal in your working directory and enter your local clo
     
 To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. NB! If you delete the whole repository like this, your existing cases and output data will also be deleted.
 
-To delete **all** Docker containers, images, and other files, also  ones in use, you can use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. 
-
-It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.
+To delete **all** Docker containers, images, and other files, also ones in use, use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.
+    
+Docker desktop can be uninstalled like any other program, e.g. via you pc's settings. 
 
 ## Reproducibility
     
@@ -226,7 +224,7 @@ To make your simulations reproducible by others, e.g. for a thesis or scientific
 
 You could also simply save the whole 'resources' folder (and get some redundant files).
 
-To recreate an old simulation, the LSP might need to be reinstalled. On [GitHub](https://github.com/NorESMhub/noresm-land-sites-platform), find the correct version tag/release tag and clone or download the code from that version. Once the correct version of the repository is in place, copy and pase in the three folders listed above. Make sure the folder structure is the same. Then, bring up the containers again with `docker-compose up` and *voilà*! Old case folders can of course be copied into new versions of the LSP as well, but if there are changes to e.g. python libraries, model code or other software we depend on, there might be errors or slight differences in the output if the case is re-run. This is why version control is so important, and why containerisation aids reproducibility! 
+To recreate an old simulation, the LSP might need to be reinstalled. Old case folders can of course be copied into new versions of the LSP, but if there are changes to e.g. python libraries, model code or other software we depend on, there might be errors or slight differences in the output if the case is re-run. To install a specific version, go to [GitHub](https://github.com/NorESMhub/noresm-land-sites-platform), find the correct version tag/release tag, and clone or download the code from that version. Once the correct version of the repository is in place, copy and pase in the three folders listed above. Make sure the folder structure is the same. Then, bring up the containers again with `docker-compose up` and *voilà*! 
 
 ## When and how to cite the NorESM-LSP, models, and data
     
@@ -238,7 +236,7 @@ When you publish model experiments, you also need to properly cite and acknowled
 
 If you use observational data, e.g. from the Vestland Climate Grid sites or another integrated site, make sure to look at the licences, rights and conditions attached to those data! 
     
-Following international standards for research ethics, authorship invitations should be given based on substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data, among other things. 
+Following international standards for research ethics, authorship invitations should be given based on "substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data", among other things. 
 
 
 ***************************************************
