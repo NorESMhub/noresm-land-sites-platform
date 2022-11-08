@@ -80,7 +80,7 @@ Platform versions follow standard numbering, and releases below 1 should be cons
 #### List of versions (newest on top):
 
 - [release 1]()
-- [legacy]() - for simulations with input data generated with [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repo
+- [legacy branch](https://github.com/NorESMhub/noresm-land-sites-platform/tree/legacy) - for simulations with input data generated with [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repo. Use with `legacy` tags of [ctsm-api](https://github.com/NorESMhub/ctsm-api/releases/tag/legacy) and [noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui/releases/tag/legacy)
 - [archive tag](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/archive)
 - [tag 0.1.0-dev](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/v0.1.0)
 
