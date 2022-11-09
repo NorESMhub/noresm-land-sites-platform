@@ -62,6 +62,7 @@ docker-compose up
 ```
 
 > If you get an error, make sure you are inside the folder containing the `docker-compose.yaml` file. Type `ls` and hit enter to list the files in the current folder. You can *c*hange *d*irectories by typing `cd foldername` to get inside foldername, and `cd ..` to move up to the parent folder. Tip! Press Tab to autocomplete a folder or file name after typing the first letter(s).
+> If your browser tab ([localhost:8080](http://localhost:8080)) displays an error, it might be because the container is still being set up. Give it some time and refresh the page.
 
 The first time you execute this command, a lot of files will be downloaded. This might take half an hour or so depending on your internet connection. After this initial download, it will be much faster (<1min). Once the terminal messages stop, you can access the user interface by going to this address in a new browser tab: [localhost:8080](http://localhost:8080). 
 
