@@ -44,7 +44,7 @@ To use the NorESM land sites platform, you need [Git](https://git-scm.com/downlo
 7. When you are in your chosen working directory, right-click and choose "Git Bash here" (Windows). You can also directly use `cd [path_to_working_directory]` in a terminal with Git installed. Copy and paste the following line into the terminal (note that in some terminals such as Git Bash, you need to click the right mouse button to paste from the clipboard):
 
 ```
-git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=
+git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input
 
 ```
 
