@@ -1,0 +1,30 @@
+{
+    "creators": [
+        {
+            "orcid": "0000-0001-7782-6909",
+            "name": "Karimi-Asli, Kaveh"
+        },
+        {
+            "orcid": "0000-0002-8040-4122",
+            "name": "Keetz, Lasse T."
+        },
+        {
+            "orcid": "0000-0002-8040-4122",
+            "name": "Keetz, Lasse T."
+        },
+        {
+            "orcid": "0000-0003-4009-944X",
+            "name": "Lieungh, Eva"
+        },
+        {
+            "orcid": "0000-0001-7937-5056",
+            "name": "Yilmaz, Yeliz"
+        },
+        {
+            "orcid": "0000-0002-8745-3859",
+            "name": "Tang, Hui"
+        }
+    ],
+
+    "license": "MIT"
+}
