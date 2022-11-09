@@ -18,15 +18,16 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 
 - [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform)
 - [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
-- [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
+- [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
 - [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
 - [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
+- ([NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) for legacy mathod of creating input data for integrated sites)
 
 The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/noresm-land-sites-platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
 
 ### Documentation of the model framework
 
-The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). Each model has its own documentation and tutorials. See our [page with links to external tutorials and resources for more links and recommendations](https://noresmhub.github.io/noresm-land-sites-platform/resources). Here are the central documentation pages and repositories for the respective models:
+The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). Each model has its own documentation and tutorials. See our [page with links to external tutorials and resources for some recommendations on where to start](https://noresmhub.github.io/noresm-land-sites-platform/resources). Here are the central documentation pages and repositories for the respective models:
 
 #### FATES
 
@@ -74,18 +75,21 @@ Note that some terms may have slightly different definitions in different models
 
 ### Versions
 
-Platform versions follow standard numbering, and releases below 1 should be considered unstable and preliminary. 
+[Platform versions](https://github.com/NorESMhub/noresm-land-sites-platform/releases) follow standard numbering, and releases below 1 should be considered unstable and preliminary. 
 
 #### List of versions (newest on top):
 
 - [release 1]()
-- [archive tag](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/archive)
-- [tag 0.1.0-dev](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/v0.1.0)
+- [v0.2.0](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/v0.2.0) (before user-mods) - for simulations with input data generated with [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repo. Use with `legacy` tags of [ctsm-api](https://github.com/NorESMhub/ctsm-api/releases/tag/legacy) and [noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui/releases/tag/legacy)
+- [tag 0.1.0](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/v0.1.0) (first draft with older model versions)
+- [archive tag](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/archive) (pre GUI and API)
 
 #### Model versions
 
-The platform is primarily designed to run the land model (CLM) with the Norwegian Earth System Model. The versions of FATES and CLM therefore have to be in line with stable NorESM versions. NorESM is integrated into the platform via a dedicated `noresm_landsites` branch in the [NorESMhub/NorESM repository](https://github.com/NorESMhub/NorESM/tree/noresm_landsites).
+The platform is primarily designed to run the land model (CLM) with the Norwegian Earth System Model. The versions of FATES and CLM therefore have to be in line with stable NorESM versions. You can see the component model versions in the `Externals.cfg` file under `/resources/overwrites/` in the [noresm-land-sites-platform repository](https://github.com/NorESMhub/noresm-land-sites-platform/tree/main/resources/overwrites).
 
+##### Changing the model version
+To change the model versions, either to update the NorESM-LSP or on your own fork, there are two files to consider. The first is the NorESM version in the docker environment file (`noresm-land-sites-platform/docker/api/.env`), and the second (more important) is a file to overwrite the model component versions located in `NorESM-land-sites-platform/resources/overwrites/Externals.cfg`. The FATES version is defined in `NorESM-land-sites-platform/resources/model/components/clm/Externals_CLM.cfg`. To change the FATES version, you need to either run `./checkout_externals` manually or alternatively point to a version of CTSM in Externals.cfg that uses the desired version of FATES.
 
 *****************************
 
@@ -122,11 +126,18 @@ The reason for using a container is that the NorESM model code is not an app but
 
 ## Input data preparation
 
-Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and sometimes spin-up to get realistic simulations with stable vegetation. 
+Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and often spin-up to get realistic simulations with stable vegetation. 
 
-Input data is created using the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. To add new sites to the LSP or to make new input data, visit the [input repository](https://github.com/NorESMhub/noresm-lsp-input) and read the instructions there. In future releases, we may transition to using NCAR's newly developed [tool for subsetting big input data sets](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data) which unfortunately doesn't work with the current version of NorESM (July 2022).
+Input data is created using NCAR's `subset_data` [script to subset atmospheric forcing from large global data files](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data). This is the simplest way, but has some limilations, specifically that restart runs are not supported. Read more [here](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/running-single-points/running-pts_mode-configurations.html), and see our Sites page for info on adding your own sites. Subsetting the data requires access to large, global files, and needs to be done on a supercomputer.
 
 The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). The .tar files are compressed and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format but in the specific case folder.
+
+- **Legacy version**: An alternative, more manual way of creating input data is documented in the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository. This method is similar to the subset_data method, i.e. there is a config file with the names of the datasets you want to subset, but instead of calling python scripts using xarray functionalities to subset the nearest neighbor of the grid cell values for domain/atm. forcing, this method relies on additional dependencies (perl etc.) and mapping/grid files, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. To use the legacy version, use the `legacy` branch of the noresm-land-sites-platform repository and make an .env file in the project folder where you add these two lines: 
+
+```
+API_VERSION=legacy
+PLATFORM_VERSION=legacy
+```
 
 ### Component sets (compsets)
 
@@ -304,6 +315,7 @@ Containerisation of software like the NorESM-LSP and models (NorESM, CLM, FATES)
 Galaxy is free to use and only requires registering as a user. Note that this tool is to be considered a pilot version, and does not include all the functionalities of the NorESM-LSP. It does, on the other hand, include metadata to make it FAIR (Findable, Accessible, Interoperable, Reusable), and has Research Objects on [ROHub](https://reliance.rohub.org/).
 
 - [Tutorial with the CLM-FATES Galaxy tool](https://training.galaxyproject.org/training-material/topics/climate/tutorials/fates/tutorial.html)
+- [Direct link to the CTSM/FATES-EMERALD tool on Galaxy.eu](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/climate/ctsm_fates/ctsm_fates/2.0.1.1)
 
 #### SSH tunneling, with example for NREC
 

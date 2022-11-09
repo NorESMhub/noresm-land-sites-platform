@@ -2,19 +2,36 @@
 [![EMERALD](docs/img/Emerald_darktext_whiteBG_small.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
 [![LATICE](docs/img/UiO_LATICE_logo_black_small.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
-# NorESM Land Sites Platform (NorESM-LSP) for site-level simulation over land with CLM-FATES
+# [NorESM Land Sites Platform (NorESM-LSP) for site-level simulation over land with CLM-FATES](https://noresmhub.github.io/noresm-land-sites-platform/)
 
-### DOI:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7304386.svg)](https://doi.org/10.5281/zenodo.7304386)
 
 ### Webpage: [NorESM land sites platform documentation and user guide](https://noresmhub.github.io/noresm-land-sites-platform/)
 
-The LSP aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/ESCOMP/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). It provides streamlined model setup, input data and reproducible workflows for running the model and analyzing model output over sites with meteorological, ecological and hydrological observations in Norway with minimal techincal obstacles. The platform aims to lower the threshold for beginners to use CTSM-FATES, and to promote the usage of site-level observations to test, validate and improve the models.
+### [About the NorESM-LSP Development Team and supporting projects](https://noresmhub.github.io/noresm-land-sites-platform/about/)
 
 ### Related repositories:
 
 - Graphical User Interface: [NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui)
-- Input data preparation: [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input)
 - Application Programming Interface: [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
+- Input data for integrated sites: [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
+- (Input data preparation for legacy branch: [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input))
+
+### Repository structure
+
+| Name           | Description   |
+| -------------  | ------------- |
+| .github/       | contains issue templates and other functionalities for this reporitory |
+| docker/        | contains Dockerfiles for Jupyter and Panoply servers, and other files for containers |
+| docs/          | contains markdown files and images used for documentation and to build the [webpage](https://noresmhub.github.io/noresm-land-sites-platform/) |
+| notebooks/     | contains jupyter notebooks for use in the Jupyter server (localhost:8888) |
+| .gitignore     | specifies files that [Git should ignore](https://git-scm.com/docs/gitignore), i.e. that should not get pushed to this repository when developers make local changes. E.g. stops case data and files from flooding the repository when someone updates the documentation |
+| CITATION.cff   | used to create the [Citation button](https://citation-file-format.github.io/) in the Repository information to the right |
+| LICENSE        | this repository's license, which is also used to create the License button in the Repository information to the right |
+| README.md      | this file, in markdown syntax |
+| docker-compose.yaml | a YAML file that helps the [docker-compose](https://docs.docker.com/compose/compose-file/) command by defining services, networks, and volumes for a Docker application |
+| mkdocs.yml | configuration file for the [webpage](https://noresmhub.github.io/noresm-land-sites-platform/), listing the names of separate pages and which files within `docs/` it builds on
+| run_linux.sh | a shell script that sets some user information necessary on Linux machines |
 
 ### Quick first-time installation steps (see the [webpage for the full user guide and documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/)):
 
@@ -38,32 +55,3 @@ After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Pres
 > ```echo "HOST_USER=$(whoami)\nHOST_UID=$(id -u)\nHOST_GID=$(id -g)" > .env```
 >
 > Doing this makes all the new files and folders created by the app to belong to your local user. Otherwise, all new objects will be owned by the `root` user.
-
-
-## Code development team
-* [Kaveh Karimi](https://github.com/ka7eh)
-* [Hui Tang](https://github.com/huitang-earth)
-* [Lasse Torben Keetz](https://github.com/lasseke)
-* [Stefanie Falk](https://github.com/ziu1986)
-* [Emiliano Gelati](https://github.com/emiliano-gelati)
-* [Elin Aas](https://github.com/ecaas)
-* [Anne Fouilloux](https://github.com/annefou)
-* [Yeliz Yilmaz](https://github.com/yelizy)
-* [Eva Lieungh](https://github.com/evalieungh)
-* [Peter Horvath](https://github.com/peterhor)
-* [Kjetil Aas](https://github.com/kjetilaas)
-* [Sunniva Indrehus](https://github.com/sunnivin)
-* [Devaraju Narayanappa](https://github.com/devarajun)
-
-## Data contributors
-* [Sonya Geange](https://github.com/srg101)
-* [Inge Althuizen](https://github.com/ingealthuizen)
-
-## Supporting projects
-* [EMERALD](https://www.mn.uio.no/geo/english/research/projects/emerald/)
-* [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/)
-* [SeedClim](https://www.uib.no/en/rg/EECRG/55395/seedclim)
-* [LandPress](https://www.uib.no/en/rg/EECRG/95156/landpress)
-* [THREE-D](https://www.uib.no/en/rg/EECRG/126712/three-d)
-* [INES](https://www.ines.noresm.org/)
-* [EOSC-Nordic](https://www.eosc-nordic.eu/)

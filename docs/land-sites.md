@@ -1,17 +1,23 @@
 # NorESM land sites
 
-NorESM-LSP simulations are at the site level, also called single-point or single-(grid-)cell simulations.
+NorESM-LSP simulations are at the site level, also called single-point or single-(grid)cell simulations.
 
-To run simulations, it's necessary to subset large data files that are inconvenient to download on a laptop. We therefore offer a set of integrated sites, but open up for requests to include new ones. If you need a new site, e.g. for a thesis or proposed manuscript, we are happy to help you set it up. Go to the Issues page on GitHub and open a new issue with a site description. More experienced coders may look at the input creation repository and add new sites themselves.
+This page describes
 
-Note that the default data for the sites are subset by matching site coordinates with a gridcell in the data set. The coordinates could be in the center or periphery of that gridcell. The default data are also quite coarse in resolution, which means that when the landscape around the site is not flat and uniform, the data values may be unrepresentative for the site. The value will instead represent the average of the whole gridcell, which may include deep valleys and tall peaks and everything in between. Keep this in mind when interpreting the results of your simulations. 
+1. The [integrated sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#integrated-sites) where we have prepared all the necessary data.
+2. [How to create a custom site](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#custom-sites) by uploading a zipped data file with input data and site coordinates, created with the [`subset_data` script](https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py) developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow [the instructions in ctsm-api/data/readme.md](https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md).
+3. How to [add new sites permanently](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#adding-sites-permanently) to the LSP so everyone can use them
 
-We currently support 20 sites that we group according to projects: 
+## 1. Integrated sites
 
-- 8 climate station sites of interest to the [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/) group 
-- and the 12 [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites. 
- 
-These locations are established study sites with climatic, and/or ecological data available. Each group of sites have similar data and are easier to compare, whereas sites from different groups might have different kinds of data. Detailed site descriptions and links to data providers are listed below for each group. NB! Note that the data from the sources we link to here may be subject to terms specified in the individual data papers and repositories, such as usage statements requiring authorship or acknowledgement. Check these terms before publishing any data (e.g in papers, theses, or public presentations)!
+To run simulations, it's necessary to subset large, global data files that are inconvenient or impossible to download on a laptop. We therefore offer a set of integrated sites so it's easy to get started with modelling. Creating your own site can be challenging for beginners and requires supercomputer access (or terrabytes of available storage). It is also possible to download the input data for an existing site and modify it in e.g. JupyterLab or R, but do this at your own risk. 
+
+Note that the default data for the sites are subset by matching site coordinates with a gridcell in the data set. The coordinates could be located in the center or periphery of that gridcell. The default data are also quite coarse in resolution, which means that when the landscape around the site is not flat and uniform, the data values may be unrepresentative for the site. The value will instead represent the average of the whole gridcell, which may include deep valleys and tall peaks and everything in between. Keep this in mind when interpreting the results of your simulations. 
+
+We currently have 20 integrated sites, divided into LATICE-MIP sites and Vestland Climate Grid sites. These locations are established study sites with climatic, and/or ecological data available. Each group of sites have similar data and are easier to compare, whereas sites from different groups might have different kinds of data. Detailed site descriptions and links to data providers are listed below for each group. NB! Note that the data from the sources we link to here may be subject to terms specified in the individual data papers and repositories, such as usage statements requiring authorship or acknowledgement. Check these terms before publishing any data (e.g in papers, theses, or public presentations)! 
+
+- [8 climate station sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#latice-mip-sites) of interest to the [LATICE](https://www.mn.uio.no/geo/english/research/groups/latice/) group 
+- and the [12 Vestland climate grid sites](https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#vestland-climate-grid-sites). 
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -22,12 +28,11 @@ These locations are established study sites with climatic, and/or ecological dat
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
    
-
 You can use the [site GEOJSON file](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) to conveniently create custom maps. [Here](https://github.com/evalieungh/map_scripts) is an example to plot site locations with a background map in R.
 
 -----------------------------------------------------------------------
 
-## LATICE-MIP sites
+### LATICE-MIP sites
 
 LATICE-MIP is a coordinated effort to utilise field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient between 60° and 78° N in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. in prep), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO<sub>2</sub>, and H<sub>2</sub>O fluxes between the land and the atmosphere. Site-specific information and links to data sources are provided in the table below.
 
@@ -52,12 +57,9 @@ Other relevant papers:
 
 *Details from the Finse flux tower. Photo from [Finse EcHO](https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/)*
 
------------------------------------------------------------------------
+### [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites
 
-
-## [Vestland climate grid](https://betweenthefjords.w.uib.no/vestland-climate-grid/) sites
-
-The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites have been, and still are, host to many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
+The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites host many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.
 
 Central data papers and sources:
 
@@ -65,7 +67,7 @@ Central data papers and sources:
 - [Vestland Climate Grid on OSF](https://osf.io/npfa9/)
 - [FunCaB on Zenodo](https://zenodo.org/record/6520022)
 - Coming soon: [INCLINE](https://www.uib.no/en/rg/EECRG/114810/incline)
-
+- Coming soon: [SeedClim](https://betweenthefjords.w.uib.no/our-research/seedclim/)
 
 | Site name | Name             | Lon (X) | Lat (Y) | Elevation (Z) | Data years | Data types | Description      |
 | --------- | ---------------  | ------- | ------- | ------------- | ---------- | ---------- | ---------------- |   
@@ -92,3 +94,29 @@ Central data papers and sources:
 
 *Figure 2: Field work at Ulvehaugen (ALP1) in 2019. Ragnhild Gya and Joachim Töpper doing vegetation analysis in a 25x35cm metal frame. The small, white ([Tomst](https://tomst.com/web/en/systems/tms/tms-4/)) loggers track temperature and soil moisture, and the small weather station (wooden pole to the right) tracks additional weather data. The fence keeps sheep and other animals away from the plots, but the vegetation is semi-natural after decades or centuries of grazing. The clear, hexagonal Open-Top Chambers experimentally heat up the vegetation. Photo by E. Lieungh*
 
+-----------------------------------------------------------------
+
+## 2. Custom sites
+
+To create a custom site, you need 
+
+- the site coordinates, and 
+- to subset global files or to modify existing ones. 
+
+The easy way of subsetting data, using the NCAR-developed `subset_data` script and `user_mods` directory, requires huge storage space for the global files, e.g. on a supercomputer. Follow the instructions in [this NorESMhub/ctsm-api/data/README.md](https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md) (written for the NorESM-LSP using [Saga](https://documentation.sigma2.no/hpc_machines/saga.html]), or look at other tutorials, e.g. the [CTSM 2022 Tutorial](https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb) (tailored for the Cheyenne supercomputer) or the [NorESM single point tutorial](https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/)(tailored for Fram supercomputer). 
+
+Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to double-check if it has the same structure.
+
+To run simulations at a custom site, upload the zipped input data file under the `Create case for custom site` button in the user interface (localhost:8080). There you get the same popup as the integrated sites, with options to change e.g. CO2 concentration or Plant Functional Types to include.
+
+-------------------------------------------------------------------
+
+## 3. Adding sites permanently
+
+To make a site integrated and visible to everyone, you need to
+
+1. create zipped data for the new site(s) (see 2. Custom sites above)
+2. make a pull request to upload the zipped input file to [NorESMhub/noresm-lsp-data/sites](https://github.com/NorESMhub/noresm-lsp-data/tree/main/sites) (or another stable storage url where it can be downloaded from). 
+3. Then, add the site(s) to your fork/branch of [noresm-land-sites-platform/resources/config/sites.json](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json) following the same template as the other sites, and make a new pull request.
+
+You can also [request new sites to be integrated via GitHub](https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&labels=enhancement&template=new-site.md&title=New+site+request%3A). This requires the developers to do the work for you, so you should have a clear reason to request a new site.
