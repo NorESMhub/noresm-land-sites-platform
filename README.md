@@ -26,6 +26,9 @@ Then run the following from the project root:
 
 `docker-compose up`
 
+> If you are on Linux, run `./run_linux.sh` or `bash run_linux.sh` instead.
+> This script takes care of the permissions of the mounted volumes. 
+
 After you see a message containing `Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)` in `api` docker logs, you can access the API at `http://localhost:8000/api/v1/docs` and the UI at `http://localhost:8080`. You can access the Jupyter server at `http://localhost:8888/lab` and Panoply through `http://localhost:5800`.
 
 > ### Note if you are on Linux, 
