@@ -192,7 +192,7 @@
     "category": "xml_var",
     "type": "char",
     "description": {
-      "summary": "Startup by default: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model may not produce realistic output. No spin-up files used. Restart is available in the 'legacy' branch/tag: continues running an existing case after it has been stopped.”
+      "summary": "Startup by default: a 'cold' start from bare ground. The vegetation and climate is not in equilibrium and the model may not produce realistic output. No spin-up files used. Restart is available in the 'legacy' branch/tag: continues running an existing case after it has been stopped."
     },
     "validation": {
       "choices": [
