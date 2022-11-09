@@ -17,6 +17,8 @@ We use GitHub for developing code. If you are new to working with Git and GitHub
 
 The current version of the platform is kept in the `main` branch of the noresm-land-sites-platform repository. Out first release tag of a functioning version (without GUI and API) is stored in the `archive` branch, and a version with different (manual) way of creating input data is stored in the `legacy` branch/tag. Further development happens on individual forks and a `develop` branch that can be merged into main with a Pull Request when the changes are functioning and tested. If you are developing code, please fork the repository and make your changes there before creating a pull request to the `develop` branch (or to `main` if you are confident the changes are complete and don't break anything). Make sure you update the documentation as well (if relevant).
 
+If you contribute to the code, add yourself to the creators list in the `.zenodo.json` file at the root of [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform). This will [update the metadata sent to Zenodo](https://developers.zenodo.org/?python#add-metadata-to-your-github-repository-release) in the next release of the LSP.
+
 If you have questions or comments about the platform, please open an issue [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) in the repository.
 
 ### How to contribute to the documentation
