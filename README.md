@@ -17,6 +17,22 @@
 - Input data for integrated sites: [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
 - (Input data preparation for legacy branch: [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input))
 
+### Repository structure
+
+| Name           | Description   |
+| -------------  | ------------- |
+| .github/       | contains issue templates and other functionalities for this reporitory |
+| docker/        | contains Dockerfiles for Jupyter and Panoply servers, and other files for containers |
+| docs/          | contains markdown files and images used for documentation and to build the [webpage](https://noresmhub.github.io/noresm-land-sites-platform/) |
+| notebooks/     | contains jupyter notebooks for use in the Jupyter server (localhost:8888) |
+| .gitignore     | specifies files that [Git should ignore](https://git-scm.com/docs/gitignore), i.e. that should not get pushed to this repository when developers make local changes. E.g. stops case data and files from flooding the repository when someone updates the documentation |
+| CITATION.cff   | used to create the [Citation button](https://citation-file-format.github.io/) in the Repository information to the right |
+| LICENSE        | this repository's license, which is also used to create the License button in the Repository information to the right |
+| README.md      | this file, in markdown syntax |
+| docker-compose.yaml | a YAML file that helps the [docker-compose](https://docs.docker.com/compose/compose-file/) command by defining services, networks, and volumes for a Docker application |
+| mkdocs.yml | configuration file for the [webpage](https://noresmhub.github.io/noresm-land-sites-platform/), listing the names of separate pages and which files within `docs/` it builds on
+| run_linux.sh | a shell script that sets some user information necessary on Linux machines |
+
 ### Quick first-time installation steps (see the [webpage for the full user guide and documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/)):
 
 Clone the repo with the following command (especially important for Windows users):
