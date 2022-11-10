@@ -1,0 +1,7 @@
+dask[dataframe]==2022.10.0
+matplotlib==3.6.1
+nc-time-axis==1.4.1
+netCDF4==1.6.1
+pandas==1.5.1
+scipy==1.9.3
+xarray==2022.10.0
