@@ -111,7 +111,7 @@ CTSM and NorESM depend on many external libraries, which can be challenging to i
 
 One solution to this is containerization, which is the process of packaging and distributing software in a way that can be run on various platforms. Containers use Operating System-level virtualization. This allows efficient use of resources while isolating the software from other processes running on the host system. All the requirements for packaged software are included in the container. We used [Docker](https://www.docker.com/) for this purpose. Docker is a widely used and popular containerization tool. 
 
-To create a container where model simulations can be run, we start with a Dockerfile to create an Image and then a Container (see Figure 2 above). The packaged software is called an Image. When a Docker Image is run, it is called a Container, i.e., a running instance of the software. The main Image created for the Platform is [ctsm-api](https://github.com/NorESMhub/ctsm-api/pkgs/container/ctsm-api). It contains all the dependencies for the model, the scripts to initialize and configure the model, and the API code that provides access to the model. The Image can be configured via an environment file (`.env`), which gives control to users to adjust some initial properties of the model and the Platform, e.g., what version of the model to use and what drivers should be enabled.
+To create a container where model simulations can be run, we start with a Dockerfile to create an Image and then a Container (see Figure 2 above). The packaged software is called an Image. When a Docker Image is run, it is called a Container, i.e., a running instance of the software. The main Image created for the Platform is [ctsm-api](https://github.com/NorESMhub/ctsm-api/pkgs/container/ctsm-api). It contains all the dependencies for the model, the scripts to initialize and configure the model, and the API code that provides access to the model.
 
 In order to allow easier maintenance and better use of resources, some dependencies are not included in the Image. For example, the message queuing broker (RabbitMQ) required by the API, which is needed to manage asynchronous communications between the model and the API, is not included. This service can be added by using the official [RabbitMQ Docker Image](https://hub.docker.com/_/rabbitmq). Keeping this service out of the Image lets more savvy users pick a different message broker for their use cases.
 
@@ -128,7 +128,7 @@ The reason for using a container is that the NorESM model code is not an app but
 
 Running the model requires specifying compsets, atmospheric forcing, land surface parameters, and often spin-up to get realistic simulations with stable vegetation. 
 
-Input data is created using NCAR's `subset_data` [script to subset atmospheric forcing from large global data files](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data). This is the simplest way, but has some limilations, specifically that restart runs are not supported. Read more [here](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/running-single-points/running-pts_mode-configurations.html), and see our Sites page for info on adding your own sites. Subsetting the data requires access to large, global files, and needs to be done on a supercomputer.
+Input data is created using NCAR's `subset_data` [script to subset atmospheric forcing from large global data files](https://github.com/ESCOMP/CTSM/blob/master/tools/site_and_regional/subset_data). This is the simplest way, but has some limilations, specifically that restart runs are not supported. Read more [here](https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/running-single-points/running-pts_mode-configurations.html), and see our Sites page for info on adding your own sites. Subsetting the data requires access to large, global files.
 
 The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). The .tar files are compressed and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format but in the specific case folder.
 
@@ -145,10 +145,10 @@ Short for component sets, compsets specify which component models are used as we
 
 The compset is specified by combining components in this order: atm, lnd, ice, ocn, river, glc, and wave. Each component model version may be "active," "data," "dead," or "stub". Stub components are used instead of active to save computation time and input requirements when that component is not needed for the model configuration. For instance, the active land component forced with atmospheric data does not need ice, ocn, or glc components to be active and can replace them with stubs. The compset long name defines it in the code with the following notation: `TIME_ATM[%phys]\_LND[%phys]\_ICE[%phys]\_OCN[%phys]\_ROF[%phys]\_GLC[%phys]\_WAV[%phys]`. Currently, we only support the following compset using FATES:
 
->2000_DATM%1PTGSWP3_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV
+>2000_DATM%GSWP3v1_CLM51%FATES_SICE_SOCN_MOSART_SGLC_SWAV
 - TIME: Initialization Time, here for the year 2000 which gives present day conditions (as opposed to pre-industrial or future) of e.g. CO<sub>2</sub> ppm
 - ATM: Atmosphere, here DATM%1PTGSWP3 for data-driven (D) atmosphere (ATM) component driven in a point (PT) by [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) forcing data
-- LND: Land, here CLM50%FATES/BGC/SP for active Community Land Model version 5.0 and one of the following vegetation modes:
+- LND: Land, here CLM51%FATES/BGC/SP for active Community Land Model version 5.1 and one of the following vegetation modes:
     1. Functionally Assembled Terrestrial Ecosystem Simulator vegetation (FATES)
     2. FATES with BioGeoChemistry (BGC)
     3. FATES simplified mode with Satellite Phenology (SP)
@@ -176,7 +176,7 @@ Forcing data for our sites are stored with the rest of the [input data](https://
 - datm7
     - GSWP3v1: monthly atmospheric forcing from the [GSWP3](https://www.isimip.org/gettingstarted/input-data-bias-correction/details/4/) data product. The climatic variables in the above list are stored in these files.
     - NASA_LIS: lightning frequency
-    - topo_forcing: topography height
+    - topo_forcing: topography
 
 If you have your own data, you can replace the default input files with your own. Make sure the format and units are the exact same, otherwise the model will not be able to use them. For more information on using custom input to CLM, see the [CLM documentation](https://www.cesm.ucar.edu/models/cesm1.0/clm/models/lnd/clm/doc/UsersGuide/x9798.html).
 
@@ -242,7 +242,7 @@ Jupyter notebooks combine text and code, and display results directly below the 
 
 The Jupyter server is available as long as the platform containers are up and running. The Jupyter Server Image comes with some commonly used python libraries for data analysis. The list of bundled libraries is available in the [Jupyter Dockerfile](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/docker/jupyter/Dockerfile).
 
-We can also recommend the NCAR-NEON collaboration tutorials, which also use notebooks and may have additional code inspiration for your analysis: [NCAR-NEON CESM lab](https://ncar.github.io/ncar-neon-books/quick_start_docker.html)
+We can also recommend the NCAR-NEON collaboration tutorials, which also use notebooks and may have additional code inspiration for your analysis: [NCAR-NEON CESM lab](https://ncar.github.io/ncar-neon-books/quick_start_docker.html).
 
 ### Panoply
 
