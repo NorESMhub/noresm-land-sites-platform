@@ -1,7 +1,8 @@
 notebooks/plot_input_data/*
 !notebooks/plot_input_data/atmospheric_forcing.ipynb
 !notebooks/plot_input_data/surface_data.ipynb
-!notebooks/plot_input_data/dicts/
+
+notebooks/technical_paper_results/*
 
 resources/archives
 resources/cases
