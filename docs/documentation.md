@@ -27,7 +27,9 @@ The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://gi
 
 ### Documentation of the model framework
 
-The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). Each model has its own documentation and tutorials. See our [page with links to external tutorials and resources for some recommendations on where to start](https://noresmhub.github.io/noresm-land-sites-platform/resources). Here are the central documentation pages and repositories for the respective models:
+The model framework consists of the Norwegian Earth System Model (NorESM), the Community Land Model (CLM), and the Functionally Assembled Terrestrial Ecosystem Simulator (FATES). While the LSP version 1 only runs CLM-FATES, an earth system model (the NorESM) is necessary as software infrastructure. Notably, the coupler ([CIME](https://esmci.github.io/cime/versions/master/html/index.html)) contains a model driver and the infrastructure needed to create and control cases (see [glossary](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms)). An alternative to using NorESM could be [CESM](https://www.cesm.ucar.edu/), which uses the same coupler and CLM as its land component.
+
+Each model has its own documentation and tutorials. See our [page with links to external tutorials and resources for some recommendations on where to start learning more](https://noresmhub.github.io/noresm-land-sites-platform/resources). Here are the central documentation pages and repositories for the respective models:
 
 #### FATES
 
