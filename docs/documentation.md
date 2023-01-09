@@ -208,9 +208,11 @@ For the integrated field sites, surface data have been created from raw data set
 
 ## Running model experiments
 
+The model's original user interface is through a terminal emulator where users enter commands to use the model. The LSP adds a GUI and API to simplify this interface.
+
 ### Graphical User Interface
 
-Users can set up cases, change some model settings, and run simulations via the Web User Interface. Once the platform is correctly up and running, the UI will be available at [localhost:8080](localhost:8080). The web UI is an application that represents some configurable parameters of the model in a user-friendly way. It comes with built-in validations and error handling for the acceptable values of the parameters. Its goal is to streamline the process of editing a case and help users focus on the scientific aspects of their simulations rather than on the technical configuration.
+Users can set up cases, change some model settings, and run simulations via the Web Graphical User Interface. Once the platform is correctly up and running, the UI will be available at [localhost:8080](localhost:8080). The web UI is an application that represents some configurable parameters of the model in a user-friendly way. It comes with built-in validations and error handling for the acceptable values of the parameters. Its goal is to streamline the process of editing a case and help users focus on the scientific aspects of their simulations rather than on the technical configuration. The information entered in the GUI is sent to the API, which then creates and executes scripts that call on the corresponding model functionalities via the model’s original interfaces.
 
 The Web User Interface (UI) code can be found at [https://github.com/NorESMhub/noresm-lsp-ui](https://github.com/NorESMhub/noresm-lsp-ui). The UI is created using [Typescript](https://www.typescriptlang.org/), a superset of JavaScript language, with the [React](https://reactjs.org/) framework.
 
@@ -226,6 +228,8 @@ The Platform API is responsible for:
 - Defining the machine config, i.e., the Docker container, for the model (see `resources/dotcime`).
 - Creating, configuring, and running cases.
 - Serving inputs and outputs of the created cases.
+
+When the containers are up and running, the API can be accessed directly at [http://localhost:8000/api/v1/docs](http://localhost:8000/api/v1/docs). 
 
 The API code can be found at [https://github.com/NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api).
 
