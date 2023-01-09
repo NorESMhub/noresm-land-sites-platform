@@ -229,6 +229,14 @@ The Platform API is responsible for:
 - Creating, configuring, and running cases.
 - Serving inputs and outputs of the created cases.
 
+**Table: Overview of API requests (either GET, POST, or DELETE), which actions are performed and which processes are triggered in the [model code](https://escomp.github.io/CESM/release-cesm2/quickstart.html#)**
+
+| API request   | Actions                                          | Model infrastructure commands and tools |
+| ------------- | -----------------------------------------------  | --------------------------------------- |
+| Create case (POST)  | 1. Create a new case with parameters set in GUI  | ./create_newcase (with flags to configure case) <br />./case.setup (runs the case setup, creates [namelist files](https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-configuration.html?highlight=namelist#user-namelist))|
+| Run case (POST)     | Modifies namelist files according to parameter values set in GUI for the case, and runs the model  | ./xmlchange (to add or modify information in namelist xml files) <br />./case.build ([compiles](https://en.wikipedia.org/wiki/Compiler "convert into a machine-code or lower-level form in which the program can be executed") the model executable) <br />./case.submit (starts the simulation)|
+
+
 When the containers are up and running, the API can be accessed directly at [http://localhost:8000/api/v1/docs](http://localhost:8000/api/v1/docs). 
 
 The API code can be found at [https://github.com/NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api).
