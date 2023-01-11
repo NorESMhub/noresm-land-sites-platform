@@ -1,8 +1,8 @@
 # User guide
 
-This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [downloading the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). If you want to learn more about the FATES, CLM, and NorESM models, we have collected some useful links to tutorials and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
+This is the user guide for running single-site simulations with the [NorESM LandSites Platform](https://noresmhub.github.io/noresm-land-sites-platform/). It guides you through [installing the software](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) and how to [use the Graphical User Interface (GUI)](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings) and the [analysis tools in JupyterLab](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output). More information about the LSP and the model framework is available in our [technical documentation](https://noresmhub.github.io/noresm-land-sites-platform/documentation/). If you want to learn more about the FATES, CLM, and NorESM models, we have collected some useful links to tutorials and documentation in the [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/).
 
-> NB! Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, and set up long spin-up simulations to reach a steady-state. Note also that the site-specific data downloaded from external sources may have terms and conditions of use, so make sure to read and follow those terms if you plan to publish your model experiment! 
+> NB! Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, set up long spin-up simulations to reach a steady-state, and think about model calibration and validation. While the LSP makes it easier to model, you the user are responsible for following good ethical and scientific practices according to your purposes. Note also that we (the LSP development team) are not responsible for the models themselves, and that data downloaded from external sources may have terms and conditions of use. Make sure to read and follow the terms and properly credit the relevant models, software, and data if you plan to publish your model experiment! 
 
 ***********************************************
 
@@ -182,6 +182,16 @@ There are  many other ways to analyse the data, and much more model output avail
 
 NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press `Ctrl+c`. If you closed the terminal window, you can open a new one, go to the repository (`cd noresm-land-sites-platform/`) and type in `docker-compose down`. Alternatively, open Docker desktop, find the containers tab, and shut them down them with the stop button.
 
+***************************************************
+
+## Model performance and best practices
+
+While the LSP makes is easy to perform a simulation, there are many pitfalls to consider when setting up model experiments and interpreting the results. To get realistic results from simulations, three elements must be correct: model structure, model parameterization, and the external forcing data. Getting all three right is difficult even for experienced modellers, but you can get far by being curious and careful in your interpretations. Ask yourself, what can the model actually do (which processes are included in the model structure)? What do the current parameters represent (e.g. for default Plant Functional Types, mortality rates, growth allometry)? Is the forcing data realistic for my site? 
+
+If you want to improve you model experiment, it's vital to consider your purpose. For example, do you want the output to be as similar as possible to an observed data set? If so, you might tune model parameters and adjust your input (forcing) data. The risk is that you "get the right result for the wrong reason", but that might be acceptable depending on your purpose and if you don't extrapolate. Alternatively, one might risk getting completely unrealistic model output even when all parameters and forcing data are correct. The model may lack an important process that produces a result in real life. Model calibration, validation and tuning should therefore be done with great care and according to your purpose of modelling. 
+
+To learn more about the models and land surface modelling, check out our [external resources page](https://noresmhub.github.io/noresm-land-sites-platform/resources/). Understanding what you don't know is the first step!
+
 ## Advanced customisation
 
 If you need customisation of data, model code, or case setup beyond what is possible through the graphical user interface and JupyterLab, you may access the containers or API directly. You can also [use the platform remotely, e.g. via SSH tunnelling](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#running-the-noresm-lsp-remotely). 
@@ -200,22 +210,6 @@ docker-compose exec api bash
 ```
 
 This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/model. Cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.
-
-## Troubleshooting
-
-Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the [setup guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) before you bring the containers up again with `docker-compose up`.
-
-## Updating and uninstalling
-
-To install updates, download the new version of the code and container images by typing `git pull` followed by `docker-compose pull` into a terminal from your local clone of the repository. 
-    
-To uninstall, open a terminal in your working directory and enter your local clone of the repository (remember `ls`= list files, `cd`=change directory). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`, or with `docker-compose down` if you see `.../noresm-land-sites-platform$`. 
-    
-To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. NB! If you delete the whole repository like this, your existing cases and output data will also be deleted.
-
-To delete **all** Docker containers, images, and other files, also ones in use, use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.
-    
-Docker desktop can be uninstalled like any other program, e.g. via you pc's settings. 
 
 ## Reproducibility
     
@@ -241,6 +235,23 @@ If you use observational data, e.g. from the Vestland Climate Grid sites or anot
     
 Following international standards for research ethics, authorship invitations should be given based on "substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data", among other things. 
 
+***************************************************
+
+## Troubleshooting
+
+Please help us by reporting errors and questions on our [issues page](https://github.com/NorESMhub/noresm-land-sites-platform/issues/). Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the [setup guide](https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup) before you bring the containers up again with `docker-compose up`.
+
+## Updating and uninstalling
+
+To install updates, download the new version of the code and container images by typing `git pull` followed by `docker-compose pull` into a terminal from your local clone of the repository. 
+    
+To uninstall, open a terminal in your working directory and enter your local clone of the repository (remember `ls`= list files, `cd`=change directory). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with `Ctrl+c`, or with `docker-compose down` if you see `.../noresm-land-sites-platform$`. 
+    
+To remove the repository, you can type `rm -r noresm-land-sites-platform` in your working directory. If it complains about permissions you may need `sudo` in front, and you can use -rf instead of -r. This might require administrator rights to your computer. NB! If you delete the whole repository like this, your existing cases and output data will also be deleted.
+
+To delete **all** Docker containers, images, and other files, also ones in use, use the command `docker system prune -a`. NB! If you do this, you will need to download all the files again if you want to use the LSP again. It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.
+    
+Docker desktop can be uninstalled like any other program, e.g. via you pc's settings. 
 
 ***************************************************
 

@@ -6,7 +6,7 @@ While the NorESM-LSP provides an easy interface to run model experiments with th
 
 This page collects some training resources we have found and think are relevant, but is by no means an exhaustive list.
 
-## Tutorials, courses, and papers
+## Tutorials, courses, papers, and books
 
 ### Courses for students and researchers
 
@@ -25,6 +25,11 @@ This page collects some training resources we have found and think are relevant,
 - [Kyker-Snowman *et al.* 2022 "Increasing the spatial and temporal impact of ecological research: A roadmap for integrating a novel terrestrial process into an Earth system model"](https://doi.org/10.1111/gcb.15894)
 - [Blyth *et al.* 2021 "Advances in Land Surface Modelling"](https://link.springer.com/article/10.1007/s40641-021-00171-5)
 - [Bonan & Doney 2018 "Climate, ecosystems, and planetary futures: The challenge to predict life in Earth system models"](https://doi.org/10.1126/science.aam8328)
+
+### Books
+
+- Open-access: [Luo and Smith (eds.) 2022 "Land Carbon Cycle Modeling: Matrix Approach, Data Assimilation, & Ecological Forecasting"](https://doi.org/10.1201/9780429155659)
+- [Bonan 2015 "Ecological Climatology: Concepts and Applications"](https://doi.org/10.1017/CBO9781107339200)
 
 ## Model-specific documentation and code
 

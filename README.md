@@ -25,7 +25,9 @@
 | docker/        | contains Dockerfiles for Jupyter and Panoply servers, and other files for containers |
 | docs/          | contains markdown files and images used for documentation and to build the [webpage](https://noresmhub.github.io/noresm-land-sites-platform/) |
 | notebooks/     | contains jupyter notebooks for use in the Jupyter server (localhost:8888) |
+| resources/     | contains configuration files and overwrites for model files. In a locally installed clone, resources/ will also contain the model, cases, and data. |
 | .gitignore     | specifies files that [Git should ignore](https://git-scm.com/docs/gitignore), i.e. that should not get pushed to this repository when developers make local changes. E.g. stops case data and files from flooding the repository when someone updates the documentation |
+| .zenodo.json   | credit/citation instructions for Zenodo uploads. When we create a new release of this repo, it automatically creates a new version of the Zenodo record as well, using this file to set e.g. author information. If you contribute to the repo, add your name! |
 | CITATION.cff   | used to create the [Citation button](https://citation-file-format.github.io/) in the Repository information to the right |
 | LICENSE        | this repository's license, which is also used to create the License button in the Repository information to the right |
 | README.md      | this file, in markdown syntax |
