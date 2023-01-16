@@ -338,6 +338,8 @@ Galaxy is free to use and only requires registering as a user. Note that this to
 
 These instructions are for installing and using the NoESM-LSP on a remote machine. The remote machine must allow remote access via SSH. If you want to run the NorESM-LSP on a server without SSH capability, you will need to talk to your local IT department to find a different solution. We describe all required steps from scratch and not all steps might be necessary for all virtual/remote machines (e.g. Docker may already be installed). The instructions are tailored for and tested on [NREC](https://www.nrec.no/) (remote) and Windows with Ubuntu subsystem (local) and might need adaptations on other systems. On NREC, we use a new instance based on the `GOLD Ubuntu 22.04 LTS` base image. The commands to install programs etc. may differ for other distributions and operating systems.
 
+> For Norwegian/University of Oslo users: if you're wondering how to set up a virtual machine on NREC, check out the [archived instructions here](https://github.com/NorESMhub/noresm-land-sites-platform/tree/archive/.machine/NREC_VM_setup), and the [Norwegian Research and Education Cloud (NREC) documentation](https://docs.nrec.no/). 
+
 ##### 1. Run the platform remotely
 
 1.1 Open a terminal that has the [ssh command installed](https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/) and access the remote machine (e.g. users at the University of Oslo can run a Virtual Machine on [NREC](https://www.uio.no/studier/emner/matnat/ifi/IN3230/h20/oblig/running-your-vm-on-nrec.html)): 
