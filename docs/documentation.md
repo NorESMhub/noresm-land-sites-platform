@@ -21,7 +21,7 @@ Please let us know if you have questions, suggestions, or trouble using the plat
 - [NorESMhub/noresm-lsp-data](https://github.com/NorESMhub/noresm-lsp-data)
 - [NorESMhub/ctsm-api](https://github.com/NorESMhub/ctsm-api)
 - [NorESMhub/NorESM](https://github.com/NorESMhub/NorESM)
-- ([NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) for legacy mathod of creating input data for integrated sites)
+- ([NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) for legacy method of creating input data for integrated sites)
 
 The main code is stored in the [NorESMhub/noresm-land-sites-platform](https://github.com/NorESMhub/noresm-land-sites-platform) repository. The `main` branch stores the latest functioning version. Older versions can be accessed under [Releases](https://github.com/NorESMhub/noresm-land-sites-platform/releases). This documentation page is made with GitHub pages (`gh-pages` branch) and [Mkdocs](https://www.mkdocs.org/). To contribute to the code or documentation, see our [Contributing](https://noresmhub.github.io/noresm-land-sites-platform/contributing/) instructions. There you will also find our [Code of Conduct](https://noresmhub.github.io/noresm-land-sites-platform/contributing/#code-of-conduct).
 
@@ -134,11 +134,11 @@ Input data is created using NCAR's `subset_data` [script to subset atmospheric f
 
 The versioned input data are [in a shared folder on sigma2.no](https://ns2806k.webs.sigma2.no/EMERALD/EMERALD_platform/inputdata_noresm_landsites/). The .tar files are compressed and can be opened as a folder with e.g. 7-zip by right-clicking and choosing 'open archive', and used after extracting (unzipping). The data files are stored in [.nc (NetCDF)](https://www.unidata.ucar.edu/software/netcdf/) format, which can be viewed using [Panoply](https://www.giss.nasa.gov/tools/panoply/), or packages in Python or [R](https://cran.r-project.org/web/packages/ncdf4/index.html). The output data from simulations are stored in the same format but in the specific case folder.
 
-- **Legacy version**: An alternative, more manual way of creating input data is documented in the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository. This method is similar to the subset_data method, i.e. there is a config file with the names of the datasets you want to subset, but instead of calling python scripts using xarray functionalities to subset the nearest neighbor of the grid cell values for domain/atm. forcing, this method relies on additional dependencies (perl etc.) and mapping/grid files, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. To use the legacy version, use the `legacy` branch of the noresm-land-sites-platform repository and make an .env file in the project folder where you add these two lines: 
+- **Legacy version**: An alternative, more manual way of creating input data is documented in the [NorESMhub/noresm-lsp-input](https://github.com/NorESMhub/noresm-lsp-input) repository. This method is similar to the subset_data method, i.e. there is a config file with the names of the datasets you want to subset. The difference is that instead of calling python scripts using xarray functionalities to subset the nearest neighbor of the grid cell values for domain/atm. forcing, this method relies on additional dependencies (perl etc.) and mapping/grid files, and requires access to large amounts of storage to create the necessary input data. This is because the global data files are very large and must be stored somewhere accessible while we subset from them. The scripts in the input repository are therefore run on e.g. Saga or another supercomputer. To use the legacy version, use the [legacy release and tag of the noresm-land-sites-platform repository](https://github.com/NorESMhub/noresm-land-sites-platform/releases/tag/v0.2.0) by making an .env file in the project folder where you add these lines to get the corresponding versions of the LSP and API: 
 
 ```
+PLATFORM_VERSION=v0.2.0
 API_VERSION=legacy
-PLATFORM_VERSION=legacy
 ```
 
 ### Component sets (compsets)
@@ -337,6 +337,8 @@ Galaxy is free to use and only requires registering as a user. Note that this to
 #### SSH tunneling, with example for NREC
 
 These instructions are for installing and using the NoESM-LSP on a remote machine. The remote machine must allow remote access via SSH. If you want to run the NorESM-LSP on a server without SSH capability, you will need to talk to your local IT department to find a different solution. We describe all required steps from scratch and not all steps might be necessary for all virtual/remote machines (e.g. Docker may already be installed). The instructions are tailored for and tested on [NREC](https://www.nrec.no/) (remote) and Windows with Ubuntu subsystem (local) and might need adaptations on other systems. On NREC, we use a new instance based on the `GOLD Ubuntu 22.04 LTS` base image. The commands to install programs etc. may differ for other distributions and operating systems.
+
+> For Norwegian/University of Oslo users: if you're wondering how to set up a virtual machine on NREC, check out the [archived instructions here](https://github.com/NorESMhub/noresm-land-sites-platform/tree/archive/.machine/NREC_VM_setup), and the [Norwegian Research and Education Cloud (NREC) documentation](https://docs.nrec.no/). 
 
 ##### 1. Run the platform remotely
 
