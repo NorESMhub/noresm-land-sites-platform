@@ -123,6 +123,11 @@ In addition to the previously mentioned Images, we have included an Image for Ju
 
 The reason for using a container is that the NorESM model code is not an app but rather a collection of code, and that code needs to be modified in order to run on a new machine. To make the model more like a downloadable app for any machine (e.g. your mac/windows/linux laptop/pc), we put the code in a Docker container that works as a mini-machine within your machine (laptop/pc). A [Dockerfile](https://docs.docker.com/get-started/overview/ "a text document that contains all the commands a user could call on the command line to assemble an image") is used to direct the docker engine in the construction of Docker images. When we release a new version, we have to build a new Docker image using this Dockerfile. Users can then download the image and build a new container to run simulations there.
 
+### Stability and performance
+
+The LSP has been tested on mac, windows and linux machines by different people since May 2022, and is still running smoothly in May 2023. If you find a bug, or something is not working, please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) on GitHub. 
+
+We provide the software with an [MIT licence](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/LICENSE) (free, but without any warranty). Because we rely on external software, there will be potential for dependency issues in the future. This goes for future developments with NorESM, CLM, and FATES, but also for Docker, JupyterLab, and e.g. Python libraries. 
 
 **************************************
 
@@ -429,7 +434,6 @@ For example:
 scp -r ubuntu@158.37.65.123:/home/ubuntu/noresm-land-sites-platform/resources/cases/5994e825658b853b95d61feccffd18ad_bor1-1000y .
 ```
 Be aware that model outputs for long simulations can result in large file sizes; make sure you have enough space available on your disk.
-
 
 **************************************
 
