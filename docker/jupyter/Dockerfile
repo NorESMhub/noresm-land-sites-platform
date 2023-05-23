@@ -7,4 +7,4 @@ RUN pip3 install -U pip setuptools
 COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
-CMD start.sh jupyter lab --LabApp.token=''
+CMD start.sh jupyter lab --LabApp.token='' --allow-root
