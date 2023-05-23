@@ -22,4 +22,5 @@ jobs:
 
       - name: Build and deploy docs
         run: |
+          git config --global --add safe.directory /__w/noresm-land-sites-platform/noresm-land-sites-platform
           mkdocs gh-deploy --force
