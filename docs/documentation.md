@@ -125,15 +125,51 @@ The reason for using a container is that the NorESM model code is not an app but
 
 ### Stability and performance
 
-See the table below for some example statistics on timing and performance on different computers. If you find a bug, or something is not working, please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) on GitHub. We provide the software with an [MIT licence](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/LICENSE) (free, but without any warranty). Because we rely on external software, there will be potential for dependency issues in the future. This goes for future developments with NorESM, CLM, and FATES, but also for Docker, JupyterLab, and e.g. Python libraries. 
+We tested the software ([LSP v1.0.0](https://github.com/NorESMhub/noresm-land-sites-platform/tree/v1.0.0/notebooks)) on machines with different operating systems and hardware specifications. They all ran an identical default 100-year model experiment, which we created with the following API request:
 
-Table: Approximate timing of cases on different computers. *Note that these simulations were run with shared input datasets already in place! The very first time you create a case, the software will download these datasets (~20 GB) and increase the time significantly.
+```
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/sites/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "site_name": "BOR1",
+  "case_name": "TimingTest",
+  "variables": [
+    {"name": "STOP_OPTION", "value": "nyears"},
+    {"name": "STOP_N", "value": 100},
+    {"name": "DATM_YR_START", "value": "2000"},
+    {"name": "DATM_YR_END", "value": "2010"},
+    {"name": "DATM_YR_ALIGN", "value": "2000"},
+    {"name": "LND_TUNING_MODE", "value": "clm5_1_GSWP3v1"}
+  ],
+  "driver": "nuopc"
+}'
+```
 
-| Operating system   | Technical specs              | Create case*   | Run case  |
-| ------------------ | ---------------------------- | ------------   | --------- |
-| Windows | CPU, GPU, etc.     | X min | X min |
-| Mac   | | X min | X min |
-| Linux   | | X min | X min |
+See the table below for some example statistics. We provide the software with an [MIT licence](https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/LICENSE) (free, but without any warranty). Because we rely on external software, there will be potential for dependency issues in the future. This goes for future developments with NorESM, CLM, and FATES, but also for Docker, JupyterLab, and e.g. Python libraries. If you find a bug, or something is not working, please let us know by posting an [issue](https://github.com/NorESMhub/noresm-land-sites-platform/issues) on GitHub.
+
+| Operating system (version)   | Technical specifications              | Docker (version) | Create case   | Run case*  |
+| :------------------ | ---------------------------- | ------------   | --------- | --- |
+| Windows 10 Enterprise (21H2) | 64-bit, Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz (4 cores) <br /> RAM: 16 GB   | Client: 20.10.20 <br /> Server: Docker Desktop 4.13.1 (20.10.20) <br />  | ~1-2 min | ~12h5min |
+| MacOS (Ventura 13.2)   | XXXX  | Client: 20.10.23 <br /> Server: XXX | ~1 min | X min |
+| Linux (Ubuntu 22.04.2 LTS)   | CPU: Intel Core Processor (Haswell, no TSX), 2500 MHz (1 core) <br /> RAM: 4 GB | Client: Docker Engine - Community (24.0.1) <br /> Server: Docker Engine - Community Engine (24.0.1)| ~30 sec | ~7h15min |
+
+*_with shared input datasets in place. Note that the software will download these data (~9.6 GB) the very first time you run a case, which will increase the time accordingly._
+
+Note that the model only uses a single core with the LSP setup, and that running different site locations can take a different amount of time.
+
+#### Disk usage
+
+The following table gives an estimate of the required storage space for the software and the model outputs. The estimates are based on the performance test described above.
+
+| Entity             | Details                               | Size    |
+| :---               |    :----                            |  ---:         |
+| Main repository <br /> `noresm-land-sites-platform/`  | Fully checked out, but without model input/output data.   | ~840 MB       |
+| Images/Containers  | noresm-land-sites-platform-ui <br /> noresm-land-sites-platform-rabbitmq <br /> noresm-land-sites-platform-panoply <br /> noresm-land-sites-platform-api <br /> noresm-land-sites-platform-jupyter <br /> noresm-land-sites-platform-tasks   | ~6.5 GB       |
+|  CLM-FATES input  | Climate forcing and other required inputs.   |  Shared: ~9.6 GB <br /> Per site: ~23 MB|
+|  CLM-FATES case and output | Default 100-year simulation, monthly averaged output values, <br /> default history fields.   | Case folder (wo/ archive): ~300 MB <br /> Model outputs (archive): ~370 MB |
+| | | **Total: ~17.6 GB** |
 
 
 **************************************
