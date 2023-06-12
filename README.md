@@ -6,9 +6,13 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7304386.svg)](https://doi.org/10.5281/zenodo.7304386)
 
+**[Scientific paper: "Climate–ecosystem modelling made easy: The Land Sites Platform"](https://doi.org/10.1111/gcb.16808)**
+
 ### Webpage: [NorESM land sites platform documentation and user guide](https://noresmhub.github.io/noresm-land-sites-platform/)
 
 ### [About the NorESM-LSP Development Team and supporting projects](https://noresmhub.github.io/noresm-land-sites-platform/about/)
+
+The NorESM-LSP software allows anyone to run simple, offline, single-site simulations with the demographic dynamic global vegetation model NorESM-CLM-FATES. Our aim is to improve access to this process-based modelling framework. 
 
 ### Related repositories:
 
