@@ -2,11 +2,12 @@
 [![EMERALD](img/Emerald_darktext_whiteBG_small.png "EMERALD project")](https://www.mn.uio.no/geo/english/research/projects/emerald/)
 [![LATICE](img/UiO_LATICE_logo_black_small.png "Land-ATmosphere Interactions in Cold Environments research group")](https://www.mn.uio.no/geo/english/research/groups/latice/)
 
-# Platform for NorESM site-level simulation over land
+# The NorESM Land Sites Platform
 
-doi: ***under construction***
+- Scientific paper DOI: https://doi.org/10.1111/gcb.16808
+- Code DOI: https://doi.org/10.5281/zenodo.7304386
 
-The NorESM-LSP (LSP for short) aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). 
+The NorESM Land Sites Platform (LSP for short) aims to facilitate site-level simulations over land using [NorESM](https://github.com/NorESMhub/NorESM) and its land component [CTSM](https://github.com/NorESMhub/CTSM) with the developing vegetation demographic module [FATES](https://github.com/NGEET/fates). 
 
 The platform aims to lower the technical barriers to vegetation demographic modelling with NorESM-CLM-FATES. In doing so, we aim to help bridge the gaps between observations and modelling, promote the usage of site-level observations to test, validate and improve the models and its land component, and to promote the usage of NorESM-CLM-FATES to new audiences and research settings.
 
@@ -52,10 +53,13 @@ The NorESM-LSP has evolved over several years from the needs and visions of a la
 The NorESM-LSP software wraps around the NorESM-CLM-FATES model framework. The Norwegian Earth System Model is developed by a [consortium](https://www.noresm.org/consortium/), and is closely related to the Community Earth System Model (CESM). The CESM and Community Land Model (CLM) are supported primarily by the U.S. National Science Foundation. The FATES model is supported primarily by the U.S. Department of Energy’s Next Generation Ecosystem Experiment - Tropics (NGEE-T) project.
 
 ## How to cite
-If you publish something based on simulations through the LSP, please cite the software in your publication. For now, cite the complete NorESM Land Sites Platform as: **NorESM-LSP development team. 2022. The NorESM Land Sites Platform (Version v1) [Computer software]**. The webpage with technical documentation can be cited as: *The NorESM-LSP development team. 2022, [month day]. NorESM Land Sites Platform technical documentation. https://noresmhub.github.io/noresm-land-sites-platform/*. [Each individual repository](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#links-to-noresm-lsp-github-repositories) has Zenodo records with DOIs and citation instructions, in case you need to refer to them separately. 
-Look for our upcoming technical description paper, which will provide a better overall citation for the whole LSP.
+If you publish something based on simulations through the LSP, please cite the software in your publication. You can use this citation for the peer-reviewed paper describing the LSP as Keetz & Lieungh et al. (2023):
 
-NB! The NorESM-LSP software wraps around the model framework. When you publish model experiments, you also need to properly cite and acknowledge the models: See the licences of [NorESM](https://github.com/NorESMhub/NorESM/blob/master/LICENSE.txt), [CLM](https://github.com/ESCOMP/CTSM/blob/master/LICENSE), [FATES](https://github.com/NGEET/fates/blob/master/LICENSE.txt). In the Acknowledgements section, it is common practice to add funding information of the models that you use (e.g. the U.S. National Science Foundation for CLM, NGEE-Tropics for FATES). The main publications for each model should also be cited in the main text.
+-  Keetz, L. T., Lieungh, E., Karimi-Asli, K., Geange, S. R., Gelati, E., Tang, H., Yilmaz, Y. A., Aas, K. S., Althuizen, I. H. J., Bryn, A., Falk, S., Fisher, R., Fouilloux, A., Horvath, P., Indrehus, S., Lee, H., Lombardozzi, D., Parmentier, F.-J., Pirk, N. … Tallaksen, L. M. (2023). Climate–ecosystem modelling made easy: The Land Sites Platform. Global Change Biology, 00, 1– 13. https://doi.org/10.1111/gcb.16808 
+
+The webpage with technical documentation can be cited as: *The NorESM-LSP development team. 2022, [month day]. NorESM Land Sites Platform technical documentation. https://noresmhub.github.io/noresm-land-sites-platform/*. [Each individual repository](https://noresmhub.github.io/noresm-land-sites-platform/documentation/#links-to-noresm-lsp-github-repositories) has Zenodo records with DOIs and citation instructions, in case you need to refer to them separately. 
+
+NB! The NorESM-LSP software wraps around the model framework. When you publish model experiments, you also need to properly cite and acknowledge the models: See the licences of [NorESM](https://github.com/NorESMhub/NorESM/blob/master/LICENSE.txt), [CLM](https://github.com/ESCOMP/CTSM/blob/master/LICENSE), [FATES](https://github.com/NGEET/fates/blob/master/LICENSE.txt). In the Acknowledgements section, it is common practice to add the main funding information of the models that you use (e.g. the U.S. National Science Foundation for CLM, NGEE-Tropics for FATES). The main publications for each model should also be cited in the main text.
 
 NB! If you use observational data, e.g. from the Vestland Climate Grid sites or another integrated site, make sure to look at the licences, rights and conditions attached to those data as well! Following international standards for research ethics, authorship invitations should be given based on 'substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data', among other things. 
 
