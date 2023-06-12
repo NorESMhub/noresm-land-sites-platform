@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sites - NorESM Land Sites Platform technical documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../stylesheets/map.css" rel="stylesheet" />
+        <link href="../stylesheets/general.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sites";
+        var mkdocs_page_input_path = "land-sites.md";
+        var mkdocs_page_url = "/noresm-land-sites-platform/land-sites/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> NorESM Land Sites Platform technical documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user_guide/">User guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documentation/">Technical documentation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Sites</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-integrated-sites">1. Integrated sites</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#latice-mip-sites">LATICE-MIP sites</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vestland-climate-grid-sites">Vestland climate grid sites</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-custom-sites">2. Custom sites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-adding-sites-permanently">3. Adding sites permanently</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contributing/">Contributing & code of conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../resources/">External tutorials and resources</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">NorESM Land Sites Platform technical documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Sites</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="noresm-land-sites">NorESM land sites</h1>
+<p>NorESM-LSP simulations are at the site level, also called single-point or single-(grid)cell simulations.</p>
+<p>This page describes</p>
+<ol>
+<li>The <a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#integrated-sites">integrated sites</a> where we have prepared all the necessary data.</li>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#custom-sites">How to create a custom site</a> by uploading a zipped data file with input data and site coordinates, created with the <a href="https://github.com/ESCOMP/CTSM/blob/master/python/ctsm/subset_data.py"><code>subset_data</code> script</a> developed at NCAR for the land model. If you have access to a place with huge storage space (usually on a supercomputer) you can follow <a href="https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md">the instructions in ctsm-api/data/readme.md</a>.</li>
+<li>How to <a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#adding-sites-permanently">add new sites permanently</a> to the LSP so everyone can use them</li>
+</ol>
+<h2 id="1-integrated-sites">1. Integrated sites</h2>
+<p>To run simulations, it's necessary to subset large, global data files that are inconvenient or impossible to download on a laptop. We therefore offer a set of integrated sites so it's easy to get started with modelling. Creating your own site can be challenging for beginners and requires supercomputer access (or terrabytes of available storage). It is also possible to download the input data for an existing site and modify it in e.g. JupyterLab or R, but do this at your own risk. </p>
+<p>Note that the default data for the sites are subset by matching site coordinates with a gridcell in the data set. The coordinates could be located in the center or periphery of that gridcell. The default data are also quite coarse in resolution, which means that when the landscape around the site is not flat and uniform, the data values may be unrepresentative for the site. The value will instead represent the average of the whole gridcell, which may include deep valleys and tall peaks and everything in between. Keep this in mind when interpreting the results of your simulations. </p>
+<p>We currently have 20 integrated sites, divided into LATICE-MIP sites and Vestland Climate Grid sites. These locations are established study sites with climatic, and/or ecological data available. Each group of sites have similar data and are easier to compare, whereas sites from different groups might have different kinds of data. Detailed site descriptions and links to data providers are listed below for each group. NB! Note that the data from the sources we link to here may be subject to terms specified in the individual data papers and repositories, such as usage statements requiring authorship or acknowledgement. Check these terms before publishing any data (e.g in papers, theses, or public presentations)! </p>
+<ul>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#latice-mip-sites">8 climate station sites</a> of interest to the <a href="https://www.mn.uio.no/geo/english/research/groups/latice/">LATICE</a> group </li>
+<li>and the <a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/#vestland-climate-grid-sites">12 Vestland climate grid sites</a>. </li>
+</ul>
+<p><link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></p>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+<p>You can use the <a href="https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json">site GEOJSON file</a> to conveniently create custom maps. <a href="https://github.com/evalieungh/map_scripts">Here</a> is an example to plot site locations with a background map in R.</p>
+<hr />
+<h3 id="latice-mip-sites">LATICE-MIP sites</h3>
+<p>LATICE-MIP is a coordinated effort to utilise field measurements at different sites for land surface modelling activities in Norway. Currently, eight sites provide flux tower and surface data representing the latitudinal gradient between 60° and 78° N in Norway including Svalbard. The most prominent site is the Finse Eco-Hydrological Observatory (EcHO; http://mn.uio.no/latice/infrastructure/ [accessed 2022-06-21]) (Pirk et al. in prep), located at 1200 m above sea level. Lakes and rivers, alpine heathland, open fens, and snowbeds dominate the land surface around the observatory (Bryn and Horvath 2020). Finse has a long research history in alpine biology, glaciology, and geology, and high quality and -resolution data for solving and tracking surface energy balance, CO<sub>2</sub>, and H<sub>2</sub>O fluxes between the land and the atmosphere. Site-specific information and links to data sources are provided in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Site name</th>
+<th>Station name</th>
+<th>Lon (X)</th>
+<th>Lat (Y)</th>
+<th>Elevation, m (Z)</th>
+<th>Data</th>
+<th>Data years</th>
+<th>Data types</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FNS</td>
+<td>Finse_fluxtower</td>
+<td>7.527008533</td>
+<td>60.59383774</td>
+<td>1210</td>
+<td></td>
+<td>Feb 2018 - present</td>
+<td>Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 10 m air temperature, air pressure, 4.4 m wind speed and direction, snow depths (surveys and single point), H2O, CO2, soil temperature, soil vol. water, soil conductivity, drone images</td>
+<td>Above current climatic tree- and forest lines. Alpine ridges, wetlands, lakes, heather and snowbed vegetation. mn.uio.no/latice/infrastructure</td>
+</tr>
+<tr>
+<td>HIS1</td>
+<td>Hisaasen_up</td>
+<td>12.25481033</td>
+<td>61.10516357</td>
+<td>681</td>
+<td></td>
+<td>June 2019 - present</td>
+<td>Long wave in (LWin), Long wave out (LWout), Short wave in (SWin), Short wave out (SWout), turbulent heat fluxes, 2 m air temperature, air pressure, 2.8 m wind speed and direction, rain</td>
+<td></td>
+</tr>
+<tr>
+<td>HIS2</td>
+<td>hisaasen_low</td>
+<td>12.25089836</td>
+<td>61.1115036</td>
+<td>642</td>
+<td></td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>ISK</td>
+<td>Iskoras_EC</td>
+<td>25.29547425</td>
+<td>69.3408715</td>
+<td>357</td>
+<td>Some data in supporting information: <a href="https://doi.org/10.1029/2018JF004945">doi.org/10.1029/2018JF004945</a></td>
+<td></td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>AAS</td>
+<td>Aas</td>
+<td>10.781667</td>
+<td>59.660278</td>
+<td>93.2</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Precipitation, temperature, wind, air pressure, snow depth, EC measurements</td>
+</tr>
+<tr>
+<td>HUR</td>
+<td>Hurdal</td>
+<td>11.078142</td>
+<td>60.372387</td>
+<td>270</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BYV</td>
+<td>Bayelva</td>
+<td>11.83334</td>
+<td>78.92094</td>
+<td>56</td>
+<td><a href="https://doi.org/10.5194/essd-10-355-2018">https://doi.org/10.5194/essd-10-355-2018</a>, see also <a href="https://doi.org/10.1029/2020GL092256">doi.org/10.1029/2020GL092256</a></td>
+<td>1998–2017</td>
+<td>permafrost, active layer and meteorological conditions</td>
+<td></td>
+</tr>
+<tr>
+<td>ADV</td>
+<td>Adventdalen</td>
+<td>15.91667</td>
+<td>78.18333</td>
+<td>21</td>
+<td>https://fluxnet.org/doi/FLUXNET2015/SJ-Adv</td>
+<td>2011-2014</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Other relevant papers:</p>
+<ul>
+<li><a href="https://doi.org/10.5194/amt-2022-219">Pirk, N., Aalstad, K., Westermann, S., Vatne, A., van Hove, A., Tallaksen, L. M., Cassiani, M., and Katul, G.: Inferring surface energy fluxes using drone data assimilation in large eddy simulations, Atmos. Meas. Tech. Discuss, in review, 2022</a> (Hisåsen and Iskoras data used)</li>
+</ul>
+<p><img alt="Finse stationary flux tower" src="https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/bilder/finse_tower_detail_507px.jpg" /></p>
+<p><em>Details from the Finse flux tower. Photo from <a href="https://www.mn.uio.no/geo/english/research/groups/latice/infrastructure/">Finse EcHO</a></em></p>
+<h3 id="vestland-climate-grid-sites"><a href="https://betweenthefjords.w.uib.no/vestland-climate-grid/">Vestland climate grid</a> sites</h3>
+<p>The Vestland climate grid is a set of calcareous grassland sites across gradients of precipitation and temperature. The sites host many ecological reseach projects that study vegetation dynamics, plant interactions, functional traits and climate responses. Each site also has loggers for temperature and other climatic variables.</p>
+<p>Central data papers and sources:</p>
+<ul>
+<li><a href="https://doi.org/10.1038/s41597-022-01559-0">Vandvik <em>et al.</em> 2022</a></li>
+<li><a href="https://osf.io/npfa9/">Vestland Climate Grid on OSF</a></li>
+<li><a href="https://zenodo.org/record/6520022">FunCaB on Zenodo</a></li>
+<li>Coming soon: <a href="https://www.uib.no/en/rg/EECRG/114810/incline">INCLINE</a></li>
+<li>Coming soon: <a href="https://betweenthefjords.w.uib.no/our-research/seedclim/">SeedClim</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Site name</th>
+<th>Name</th>
+<th>Lon (X)</th>
+<th>Lat (Y)</th>
+<th>Elevation (Z)</th>
+<th>Data years</th>
+<th>Data types</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALP1</td>
+<td>Ulvehaugen</td>
+<td>8.12343</td>
+<td>61.0243</td>
+<td>1208</td>
+<td>2008-2022</td>
+<td>Vegetation surveys, vegetation demography, experimental treatments, weather data: [to be added]</td>
+<td>Above current climatic forest line. Semi-natural grassland, heather, ridges and snowbeds</td>
+</tr>
+<tr>
+<td>ALP2</td>
+<td>Laavisdalen</td>
+<td>7.27596</td>
+<td>60.8231</td>
+<td>1097</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>ALP3</td>
+<td>Gudmedalen</td>
+<td>7.17561</td>
+<td>60.8328</td>
+<td>1213</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>ALP4</td>
+<td>Skjellingahaugen</td>
+<td>6.41504</td>
+<td>60.9335</td>
+<td>1088</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB1</td>
+<td>Aalrust</td>
+<td>8.70466</td>
+<td>60.8203</td>
+<td>815</td>
+<td></td>
+<td></td>
+<td>Just below current climatic forest line.</td>
+</tr>
+<tr>
+<td>SUB2</td>
+<td>Hoegsete</td>
+<td>7.17666</td>
+<td>60.8760</td>
+<td>700</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB3</td>
+<td>Rambaera</td>
+<td>6.63028</td>
+<td>61.0866</td>
+<td>769</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB4</td>
+<td>Veskre</td>
+<td>6.51468</td>
+<td>60.5445</td>
+<td>797</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>BOR1</td>
+<td>Fauske</td>
+<td>9.07876</td>
+<td>61.0355</td>
+<td>589</td>
+<td></td>
+<td></td>
+<td>Well below current climatic forest line.</td>
+</tr>
+<tr>
+<td>BOR2</td>
+<td>Vikesland</td>
+<td>7.16982</td>
+<td>60.8803</td>
+<td>474</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>BOR3</td>
+<td>Arhelleren</td>
+<td>6.33738</td>
+<td>60.6652</td>
+<td>431</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+<tr>
+<td>BOR4</td>
+<td>Oevstedal</td>
+<td>5.96487</td>
+<td>60.6901</td>
+<td>346</td>
+<td>"</td>
+<td>"</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Vestland climate grid" src="https://betweenthefjords.w.uib.no/files/2020/08/grid.png" /></p>
+<p><em>Figure 1: Illustration of the Vestland Climate Grid, from the SeedClim project: turf squares (top soil, roots and whole plants) were cut out and physically transplanted to other sites, as indicated by the arrows in the top left corner. The vegetation in these turfs was carefully monitored over several years in their new locations, to see how and how quickly the plants adapted to a new environment. Figure by V. Vandvik et al., betweenthefjords.w.uib.no</em></p>
+<p><img alt="Field work at Ulvehaugen = ALP1 site" src="../img/ulvehaugen-incline-2019-el.jpg" /></p>
+<p><em>Figure 2: Field work at Ulvehaugen (ALP1) in 2019. Ragnhild Gya and Joachim Töpper doing vegetation analysis in a 25x35cm metal frame. The small, white (<a href="https://tomst.com/web/en/systems/tms/tms-4/">Tomst</a>) loggers track temperature and soil moisture, and the small weather station (wooden pole to the right) tracks additional weather data. The fence keeps sheep and other animals away from the plots, but the vegetation is semi-natural after decades or centuries of grazing. The clear, hexagonal Open-Top Chambers experimentally heat up the vegetation. Photo by E. Lieungh</em></p>
+<hr />
+<h2 id="2-custom-sites">2. Custom sites</h2>
+<p>To create a custom site, you need </p>
+<ul>
+<li>the site coordinates, and </li>
+<li>to subset global files or to modify existing ones. </li>
+</ul>
+<p>The easy way of subsetting data, using the NCAR-developed <code>subset_data</code> script and <code>user_mods</code> directory, requires huge storage space for the global files, e.g. on a supercomputer. Follow the instructions in <a href="https://github.com/NorESMhub/ctsm-api/blob/main/data/README.md">this NorESMhub/ctsm-api/data/README.md</a> (written for the NorESM-LSP using <a href="https://documentation.sigma2.no/hpc_machines/saga.html]">Saga</a>, or look at other tutorials, e.g. the <a href="https://github.com/NCAR/CTSM-Tutorial-2022/blob/main/notebooks/Day2a_GenericSinglePoint.ipynb">CTSM 2022 Tutorial</a> (tailored for the Cheyenne supercomputer) or the <a href="https://metos-uio.github.io/CTSM-Norway-Documentation/quick-start-single-point/">NorESM single point tutorial</a>(tailored for Fram supercomputer). </p>
+<p>Before you start to run simulations, compare your zipped file to the input data for one of the integrated sites to double-check if it has the same structure.</p>
+<p>To run simulations at a custom site, upload the zipped input data file under the <code>Create case for custom site</code> button in the user interface (localhost:8080). There you get the same popup as the integrated sites, with options to change e.g. CO2 concentration or Plant Functional Types to include.</p>
+<hr />
+<h2 id="3-adding-sites-permanently">3. Adding sites permanently</h2>
+<p>To make a site integrated and visible to everyone, you need to</p>
+<ol>
+<li>create zipped data for the new site(s) (see 2. Custom sites above)</li>
+<li>make a pull request to upload the zipped input file to <a href="https://github.com/NorESMhub/noresm-lsp-data/tree/main/sites">NorESMhub/noresm-lsp-data/sites</a> (or another stable storage url where it can be downloaded from). </li>
+<li>Then, add the site(s) to your fork/branch of <a href="https://github.com/NorESMhub/noresm-land-sites-platform/blob/main/resources/config/sites.json">noresm-land-sites-platform/resources/config/sites.json</a> following the same template as the other sites, and make a new pull request.</li>
+</ol>
+<p>You can also <a href="https://github.com/NorESMhub/noresm-land-sites-platform/issues/new?assignees=&amp;labels=enhancement&amp;template=new-site.md&amp;title=New+site+request%3A">request new sites to be integrated via GitHub</a>. This requires the developers to do the work for you, so you should have a clear reason to request a new site.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../documentation/" class="btn btn-neutral float-left" title="Technical documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2022- The NorESM Land Sites Platform Team</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../documentation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../javascripts/map.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

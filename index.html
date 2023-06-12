@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" /><link rel="canonical" href="https://noresmhub.github.io/noresm-land-sites-platform/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>NorESM Land Sites Platform technical documentation</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="stylesheets/map.css" rel="stylesheet" />
+        <link href="stylesheets/general.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/noresm-land-sites-platform/";
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> NorESM Land Sites Platform technical documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="user_guide/">User guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="documentation/">Technical documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="land-sites/">Sites</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="contributing/">Contributing & code of conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="resources/">External tutorials and resources</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">NorESM Land Sites Platform technical documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="https://www.noresm.org/"><img alt="NorESM" src="img/NORESM-logo.png" title="the Norwegian Earth System Model" /></a>
+<a href="https://www.mn.uio.no/geo/english/research/projects/emerald/"><img alt="EMERALD" src="img/Emerald_darktext_whiteBG_small.png" title="EMERALD project" /></a>
+<a href="https://www.mn.uio.no/geo/english/research/groups/latice/"><img alt="LATICE" src="img/UiO_LATICE_logo_black_small.png" title="Land-ATmosphere Interactions in Cold Environments research group" /></a></p>
+<h1 id="welcome-to-the-noresm-land-sites-platform">Welcome to the NorESM Land Sites Platform</h1>
+<ul>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide">User guide</a></li>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/documentation">Technical documentation</a></li>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites">Sites</a></li>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/about">About us</a></li>
+<li><a href="https://noresmhub.github.io/noresm-land-sites-platform/contributing">Contributing and Code of Conduct</a></li>
+</ul>
+<p>The NorESM-LSP software allows anyone to run simple, offline, single-site simulations with the demographic dynamic global vegetation model <a href="https://github.com/NorESMhub/NorESM">NorESM</a>-<a href="https://github.com/ESCOMP/CTSM">CLM</a>-<a href="https://github.com/NGEET/fates">FATES</a>. Our aim is to improve access to this process-based modelling framework. The software is free and open, and might be used ...</p>
+<ol>
+<li>In education, such as interdisciplinary workshops or data labs in Ecological Climatology-related university courses, where model experiments will typically be simple and designed to increase understanding of the model framework and Earth System Science.</li>
+<li>By beginner modelers, e.g. post-graduate students or scientists who are new to CLM-FATES modelling, to set up scientific model experiments under the supervision of or in collaboration with more experienced modelers. </li>
+<li>By experienced modelers without access to HPC clusters with the models installed, who benefit from the containerisation of the model.</li>
+</ol>
+<p><img alt="Forest work" src="img/DALL-E-2022-forest-work.png" />
+<img alt="Meadow work" src="img/DALL-E-2022-meadow-work.png" /></p>
+<p><em>Model experiments with CLM-FATES simulate potential vegetation. What ecosystem would appear where you are right now, in the absence of human land use?</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="user_guide/" class="btn btn-neutral float-right" title="User guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2022- The NorESM Land Sites Platform Team</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="user_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="javascripts/map.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.3
+Build Date UTC : 2023-06-12 11:17:21.959714+00:00
+-->

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>User guide - NorESM Land Sites Platform technical documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../stylesheets/map.css" rel="stylesheet" />
+        <link href="../stylesheets/general.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "User guide";
+        var mkdocs_page_input_path = "user_guide.md";
+        var mkdocs_page_url = "/noresm-land-sites-platform/user_guide/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> NorESM Land Sites Platform technical documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">User guide</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tldr-quick-start">TL;DR quick start 🏃‍♀️🏃‍♂️</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#an-overview-of-the-lsp-software">An overview of the LSP software</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-by-step-guide-for-using-the-platform">Step by step guide for using the platform</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#0-prerequisites-first-time-setup">0. Prerequisites (first time setup) 🌱</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-start-the-container">1. Start the container 🧰</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-inside-gui-set-simulation-settings">2. Inside GUI: Set simulation settings ⚙️</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#21-choose-a-site">2.1 Choose a site</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#22-download-site-data-button-optional">2.2 Download site data button (optional)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#23-create-case">2.3 Create case</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#start-building-your-case-with-the-submit-button">Start building your case with the ´SUBMIT´ button</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-run-your-simulations">3. Run your simulations 👩‍💻</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-look-at-your-output">4. Look at your output 📈</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-close-the-container">5. Close the container</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#model-performance-and-best-practices">Model performance and best practices</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-customisation">Advanced customisation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reproducibility">Reproducibility</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#when-and-how-to-cite-the-noresm-lsp-models-and-data">When and how to cite the NorESM-LSP, models, and data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating-and-uninstalling">Updating and uninstalling</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../documentation/">Technical documentation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../land-sites/">Sites</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contributing/">Contributing & code of conduct</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../resources/">External tutorials and resources</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">NorESM Land Sites Platform technical documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>User guide</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="user-guide">User guide</h1>
+<p>This is the user guide for running single-site simulations with the <a href="https://noresmhub.github.io/noresm-land-sites-platform/">NorESM LandSites Platform</a>. It guides you through <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup">installing the software</a> and how to <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#2-inside-gui-set-simulation-settings">use the Graphical User Interface (GUI)</a> and the <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#4-look-at-your-output">analysis tools in JupyterLab</a>. More information about the LSP and the model framework is available in our <a href="https://noresmhub.github.io/noresm-land-sites-platform/documentation/">technical documentation</a>. If you want to learn more about the FATES, CLM, and NorESM models, we have collected some useful links to tutorials and documentation in the <a href="https://noresmhub.github.io/noresm-land-sites-platform/resources/">external resources page</a>.</p>
+<blockquote>
+<p>NB! Note that the default values and input data we provide are sufficient for educational uses, but should not be considered high-quality model experiments. If your goal is to set up high-quality model experiments, you might want to modify or provide your own input data, set up long spin-up simulations to reach a steady-state, and think about model calibration and validation. While the LSP makes it easier to model, you the user are responsible for following good ethical and scientific practices according to your purposes. Note also that we (the LSP development team) are not responsible for the models themselves, and that data downloaded from external sources may have terms and conditions of use. Make sure to read and follow the terms and properly credit the relevant models, software, and data if you plan to publish your model experiment! </p>
+</blockquote>
+<hr />
+<h2 id="tldr-quick-start">TL;DR quick start 🏃‍♀️🏃‍♂️</h2>
+<p>If you have already completed <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup">first-time setup</a> and know what you are doing, here is the extremely quick user guide. In a terminal where you have the repository: </p>
+<pre><code>cd noresm-land-sites-platform
+docker-compose up
+</code></pre>
+<p>Open the GUI: <a href="http://localhost:8080">localhost:8080</a> and push buttons, and access jypyter notebooks on <a href="http://localhost:8888">localhost:8888</a> and Panoply on <a href="http://localhost:5800">localhost:5800</a> 🎉</p>
+<hr />
+<h2 id="an-overview-of-the-lsp-software">An overview of the LSP software</h2>
+<p><img alt="User interfaces and simplified software architecture" src="../img/user-interfaces-and-architecture-Page-1.jpg" /></p>
+<p><em>Illustration of the user interfaces and a simplified software architecture. From your browser, you can access this user guide and our technical documentation, as well as the GUI, JupyterLab and Panoply servers once the containers are up and running (see <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup">0. Prerequisites</a> and <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#1-start-the-container">1. Starting the containers</a> below). Containers provide virtual computing environments where we can run the model and the software can communicate with each other. Repositories (versioned file structures) with the code for the NorESM-LSP and models are stored on GitHub. Input data is downloaded to the containers from external storage, and model output is stored locally in the user's copy of the repository. See the <a href="https://noresmhub.github.io/noresm-land-sites-platform/documentation/#software-architecture">Software Architecture description in the technical documentation</a> for more details.</em></p>
+<h2 id="step-by-step-guide-for-using-the-platform">Step by step guide for using the platform</h2>
+<blockquote>
+<p>Check out our <a href="https://noresmhub.github.io/noresm-land-sites-platform/documentation/#glossary-of-technical-terms">glossary of technical terms</a>.</p>
+<p>If you want to use the LSP on a remote computer, see the <a href="https://noresmhub.github.io/noresm-land-sites-platform/documentation/#ssh-tunneling-with-example-for-nrec">SSH tunnel instructions</a>.</p>
+</blockquote>
+<h3 id="0-prerequisites-first-time-setup">0. Prerequisites (first time setup) 🌱</h3>
+<p>To use the NorESM land sites platform, you need <a href="https://git-scm.com/downloads" title="click the pc screen button if you are on Windows">Git</a>, <a href="https://www.docker.com/products/docker-desktop">Docker desktop</a>, and about 15-20GB of available disk space before you can clone the <a href="https://github.com/NorESMhub/noresm-land-sites-platform" title="repository for the NorESM Land Sites platform">repository</a> (= download the code) and start working in the containers. You may need administrator rights to your computer to install Git and Docker. If you don't want to use Git, you can try to download and unpack the repository manually instead by clicking the <code>code</code> button and <code>download zip</code>. Note that <a href="https://github.com/NorESMhub/noresm-land-sites-platform/issues/162">some Mac computers may be difficult to run on</a>, but otherwise any operating system that can run Docker should work. Step by step (with steps in brackets only sometimes necessary, depending on your computer):</p>
+<ol>
+<li><a href="https://github.com/">Create a GitHub account</a> (optional, but generally recommended to be able to open issues, etc.)</li>
+<li>Install Git on your machine. For Windows: https://gitforwindows.org/, other: https://github.com/git-guides/install-git</li>
+<li>Install <a href="https://docs.docker.com/get-docker">Docker desktop</a>, might require restart</li>
+<li>(Install Docker Compose; should already be included in the Docker installation described above for Mac and Windows: <a href="https://docs.docker.com/compose/install">install docker-compose</a> )</li>
+<li>(Remarks for Windows: You may have to install WSL2 (the 'two' is important here) manually if prompted. Follow the steps described <a href="https://www.omgubuntu.co.uk/how-to-install-wsl2-on-windows-10">here</a>. To open the Windows Command Prompt terminal as an administrator, type <code>cmd</code> into the Windows search bar located next to the Start Symbol (lower-left corner of the screen), right-click on 'Command Prompt', and select 'Run as administrator'. Also, note that some steps in the guide are executed in the 'Command Prompt' and some are executed in the 'Windows PowerShell'; to open the latter, type 'PowerShell' into the search bar and open as administrator. If Docker complains about you not belonging to the correct 'user group' after successful installation, follow the steps described <a href="https://stackoverflow.com/questions/61530874/docker-how-do-i-add-myself-to-the-docker-users-group-on-windows-10-home">here</a>)</li>
+<li>Open the file explorer and find a suitable folder to serve as working directory. This is where you will store the repository and installation files needed by the platform, as well as your output files (which may take up quite a bit of space!). Your working directory should be easy to find, stable, and have plenty of free space available. For instance <code>C:/Users/yourusername</code> (OneDrive, USB sticks, or your overly-cluttered desktop are not recommended 👀).</li>
+<li>When you are in your chosen working directory, right-click and choose "Git Bash here" (Windows). You can also directly use <code>cd [path_to_working_directory]</code> in a terminal with Git installed. Copy and paste the following line into the terminal (note that in some terminals such as Git Bash, you need to click the right mouse button to paste from the clipboard):</li>
+</ol>
+<pre><code>git clone https://github.com/NorESMhub/noresm-land-sites-platform.git --config core.autocrlf=input
+
+</code></pre>
+<p>This will download (= clone) the repository (= folder structure of files with version history) to your working directory. You can now see the folder and files in your file explorer.</p>
+<p>Once Git, Docker Desktop and the repository are in place, you don't have to do this again. </p>
+<h3 id="1-start-the-container">1. Start the container 🧰</h3>
+<p>In the working directory where you have cloned the repository, open a terminal (e.g. by right-clicking and choosing "Git Bash here"; or use the one you already have open if you just did the first-time setup). Then write these commands (hit enter after each line) to get the container up and running:</p>
+<pre><code>cd noresm-land-sites-platform
+docker-compose up
+</code></pre>
+<blockquote>
+<p>If you get an error, make sure you are inside the folder containing the <code>docker-compose.yaml</code> file. Type <code>ls</code> and hit enter to list the files in the current folder. You can <em>c</em>hange <em>d</em>irectories by typing <code>cd foldername</code> to get inside foldername, and <code>cd ..</code> to move up to the parent folder. Tip! Press Tab to autocomplete a folder or file name after typing the first letter(s).
+If your browser tab (<a href="http://localhost:8080">localhost:8080</a>) displays an error, it might be because the container is still being set up. Give it some time and refresh the page.</p>
+</blockquote>
+<p>The first time you execute this command, a lot of files will be downloaded. This might take half an hour or so depending on your internet connection. After this initial download, it will be much faster (&lt;1min). Once the terminal messages stop, you can access the user interface by going to this address in a new browser tab: <a href="http://localhost:8080">localhost:8080</a>. </p>
+<h3 id="2-inside-gui-set-simulation-settings">2. Inside GUI: Set simulation settings ⚙️</h3>
+<p>In the graphical user interface (= GUI) at <a href="http://localhost:8080">localhost:8080</a> you can easily set up and run model experiments. This interface has access to the Docker containers you started in step 1, and communicates with the models via the <a href="https://noresmhub.github.io/noresm-land-sites-platform/#api">API</a>. </p>
+<p>In the GUI, you will see a list and map of integrated sites, as well as a list of your cases (model experiments) once you create some. You can also <a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/">run a simulation for a new site with your own input data</a>. If you are doing a quick test with default settings, just pick a site and click <code>create case</code>, <code>submit</code> and then <code>run</code>. A default test case of 1 year should take ~10-20 mins. <strong>Attention. The first time you run a case, the model will download some global datasets of approx. 10GB total into <code>data/shared</code>. Expect your first simulation to take significantly longer!</strong></p>
+<p>The GUI should look like this once you have chosen a site and have submitted and started to run a case:</p>
+<p><img alt="GUI screenshot" src="../img/LTK-ALP1-screenshot.png" /></p>
+<p><em>Figure 1: Screenshot from the GUI with a case created for the ALP1 site. Edited for readability.</em></p>
+<h4 id="21-choose-a-site">2.1 Choose a <a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/">site</a></h4>
+<p>...by clicking either a button or a point on the map! Or <a href="https://noresmhub.github.io/noresm-land-sites-platform/land-sites/">add a new site with your own data</a>.</p>
+<h4 id="22-download-site-data-button-optional">2.2 Download site data button (optional)</h4>
+<p>For the integrated sites, the input data the models need is already available in the container. With the <code>download site data</code> button you can download it to somewhere else if you wish. We provide notebooks under <code>notebooks/plot_input_data/</code> that you can open in Jupyterlab on <a href="localhost:8888">localhost:8888</a> to familiarize yourself with some of the data that goes into a simulation, or as inspiration for making your own plots if you provided your own, improved input data. This is a good thing to do while your case is running.</p>
+<h4 id="23-create-case">2.3 Create case</h4>
+<p>With the <code>create case</code> button, you can look at and edit some model settings and parameters as you create a new case. To run a simulation, you need to set up a <a href="https://esmci.github.io/cime/versions/master/html/glossary/index.html#term-case-CASE" title="An instance of a model simulation. A case is defined by a component set, a model grid, a machine, a compiler, and any other additional customizations.">case</a> which tells the model how to run. For more detailed information on what goes on in CLM and its coupler (which connects CLM to other model components), see this <a href="https://esmci.github.io/cime/versions/master/html/users_guide/index.html">CIME user guide</a>, but note that the NorESM modelling platform uses these commands and scripts more indirectly through the GUI and API. When you add a new site, the data upload and <code>create case</code> popup is combined.</p>
+<p>Once you have chosen a site, you get options to download site data (optional) and to create a new case. When you create a new case, you can change some model parameters as described below. Note that there are five tabs with different types of case and model settings, grouped into Case, Run Environment, CLM namelist, History fields, and FATES settings. This is not an exhaustive list of possible changes (by far), but give you easy access to some options in the different tabs. Under CLM Namelist settings, there is an Advanced box were experienced users can customise the <a href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-namelist.html">CLM namelist</a> by providing <code>[parameter]=[value]</code> input. All the boxes have default values for a quick but not especially realistic simulation.</p>
+<p>Note that you generally just need to touch four of the <code>Run environment</code> settings: STOP_N and STOP_OPTION to set the simulation length, and DATM_YR_START and DATM_YR_END to specify which years to use data from. If you change the starting year (DATM_YR_START), it's often best to change RUN_STARTDATE to the start of the same year. </p>
+<p><img alt="Screenshot of the Runenvironment settings" src="../img/create-case-screenshot.JPG" /></p>
+<p><em>Screenshot of the pop-up triggered with the Create Case button. Notice the different tabs that give you access to different settings: case, run environment controlling simulation time, CLM namelist settings, history files controlling output files, and FATES parameters.</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Case settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Case name</td>
+<td>Free text. Specify a name for your case. This will be combined with a unique ID number generated randomly. Good case names say something about e.g. site, settings, or simulation period. For example: ALP1-10yr-default, ADV-1000yr-400ppm, FNS-200yr-notreepft</td>
+</tr>
+<tr>
+<td>Driver name</td>
+<td>Dropdown. <a href="https://earthsystemmodeling.org/nuopc/">'nuopc'</a> by default since 2021</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Run environment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calendar</td>
+<td>Read-only. Calendar can be No-leap or Gregorian. Some climate input data (like our default GSWP3 data set) omits leap years. Gregorian is the 'normal' calendar including leap years.</td>
+</tr>
+<tr>
+<td>DATM_YR_START</td>
+<td>Integer (year). Starting year to loop data over. Example: If the input data spans 1900-2014, set = 2000 to tell the model to use the input data from 2000 onwards.</td>
+</tr>
+<tr>
+<td>DATM_YR_ALIGN</td>
+<td>Integer (year). Used to align the simulation year with the forcing data set. It specifies the simulation year corresponding to DATM_YR_START. For example, setting DATM_YR_ALIGN=DATM_YR_START means that the forcing calendar will be the same as the model calendar: the forcing for a given model year would be the forcing of the same year. This is appropriate when the model calendar is set up to span the same year range as the forcing data. By setting it to the same year as RUN_STARTDATE (below), the forcing in the first year of the run will be the forcing of year DATM_YR_START.</td>
+</tr>
+<tr>
+<td>DATM_YR_END</td>
+<td>Integer (year). Ending year to loop data over. For example: If the input data spans 1900-2010, you may set this to 2005 to tell the model to use the input data up to 2005. If you run a longer simulation than the span between YR_START and YR_END, the input will be looped.</td>
+</tr>
+<tr>
+<td>RUN_STARTDATE</td>
+<td>Run start date (yyyy-mm-dd); normally at the start of the same year as YR_START. Only used for startup or hybrid run types.</td>
+</tr>
+<tr>
+<td>STOP_N</td>
+<td>Integer. Sets the run length together with STOP_OPTION. It's the number of STOP_OPTION to simulate. E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days.</td>
+</tr>
+<tr>
+<td>STOP_OPTION</td>
+<td>Dropdown. This sets the run length together with STOP_N, and represents the unit of time (years, months, days, seconds, or model timesteps). E.g. STOP_N=5 and STOP_OPTION=ndays sets a simulation period of 5 days.</td>
+</tr>
+<tr>
+<td>STOP_DATE</td>
+<td>Integer. Alternative yyyymmdd date option that sets the run length with STOP_OPTION and STOP_N. Negative value implies that this alternative is not used.</td>
+</tr>
+<tr>
+<td>RUN_TYPE</td>
+<td>Read-only. <em>Startup</em>: a 'cold' start from bare ground, where the vegetation and climate is not in equilibrium and the model may  produce unrealistic output unless it is run for a very long time (hundreds or thousands of years). Startup mode does not allow using spin-up files (='restart' files of an existing simulation where the vegetation and other conditions have reached a steady state). Use this mode for quick testing, or for making your own spin-up. <em>Restart</em> (only available for the <code>legacy</code> LSP version): continues running an existing case after it has been stopped.</td>
+</tr>
+<tr>
+<td>LND_TUNING_MODE</td>
+<td>Read-only. Land tuning mode. Tuning parameters and initial conditions for a CLM model version and meteorological forcing combination.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CLM namelist simulation settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>co2_ppmv</td>
+<td>Atmospheric CO2 concentration to use when co2_type is constant.</td>
+</tr>
+<tr>
+<td>fates_spitfire_mode</td>
+<td>If or how to use advanced fire behaviour with the SPITFIRE module. 0 : Simulations of fire are off, 1 : use a global constant lightning rate found in fates_params, 2 : use an external lightning dataset, 3 : use an external confirmed ignitions dataset (not available through standard CSEM dataset collection), 4 : use external lightning and population datasets to simulate both natural and anthropogenic ignitions. Read more <a href="https://fates-users-guide.readthedocs.io/en/latest/user/SPITFIRE-Namelist-Options.html">in the FATES documentation</a></td>
+</tr>
+<tr>
+<td>use_bedrock</td>
+<td>True/false. When true (default), a data set overwrites the CLM default soil depth. If present on surface dataset, use depth to bedrock information to specify spatially variable soil thickness. If not present, use bottom of soil column (nlevsoi). Read more in <a href="https://journals.ametsoc.org/view/journals/clim/29/9/jcli-d-15-0307.1.xml">Brunke et al.2016</a></td>
+</tr>
+<tr>
+<td>Advanced</td>
+<td>Box for coding in additional CLM namelist changes. <a href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/customizing-the-clm-configuration.html#">See the CLM user guide</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>History files</strong></p>
+<p>By default, <strong>the model records output in one tape</strong> (hist_fincl1), <strong>as one</strong> (hist_mfilt=1) <strong>average</strong> (hist_avgflag_pertape=A), <strong>monthly</strong> (hist_nhtfrq=0) <strong>value, for a subset of variables</strong> (Active=T in <a href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html" title="Full list of possible CTSM History Fields with FATES">this list</a>). Each column in the History files tab corresponds to a history tape, which is a series of files created for the simulation period. </p>
+<p>If you want output to be recorded for <a href="https://escomp.github.io/ctsm-docs/versions/master/html/users_guide/setting-up-and-running-a-case/master_list_fates.html" title="Full list of possible CTSM History Fields with FATES">additional variables</a> or at different time steps, you can modify the first column or fill in additional columns to add history tapes. NB! The list of output variables listed in the CTSM documentation may be outdated (because both FATES and CLM develop fast and the documentation and stable versions may lag behind the one we use). The LSP version 1 uses this list of FATES output variables <a href="https://github.com/NGEET/fates/blob/sci.1.58.1_api.24.1.0/main/FatesHistoryInterfaceMod.F90#L4343">FatesHistoryInterfaceMod.F90</a> (Warning: code &amp; jargon-heavy text). <code>use_default='inactive'</code> means it is not included in the history tape by default. It can be activated by including the variable name in the hist_fincl fields in the GUI. </p>
+<p>If you want to run the model without saving any output, set hist_mfilt=0 in the first column. By modifying additional columns, you add tapes (series of files) with  e.g. different output variables, recorded at e.g. its maximum value per day. Remember to change hist_mfilt to store the output. Note that some FATES vegetation demographic output is only accessible in a long string format instead of in the default lat-lon grid.  </p>
+<p><strong>FATES settings</strong></p>
+<p>You can remove or modify Plant Functional Types (PFTs) by checking/unchecking PFTs and typing in custom values for a subset of parameters. The full list of parameters is in the <a href="https://github.com/NGEET/fates/blob/master/parameter_files/fates_params_default.cdl">FATES model code</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Index no.</th>
+<th>Plant Functional Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>broadleaf_evergreen_tropical_tree</td>
+</tr>
+<tr>
+<td>2</td>
+<td>needleleaf_evergreen_extratrop_tree</td>
+</tr>
+<tr>
+<td>3</td>
+<td>needleleaf_colddecid_extratrop_tree</td>
+</tr>
+<tr>
+<td>4</td>
+<td>broadleaf_evergreen_extratrop_tree</td>
+</tr>
+<tr>
+<td>5</td>
+<td>broadleaf_hydrodecid_tropical_tree</td>
+</tr>
+<tr>
+<td>6</td>
+<td>broadleaf_colddecid_extratrop_tree</td>
+</tr>
+<tr>
+<td>7</td>
+<td>broadleaf_evergreen_extratrop_shrub</td>
+</tr>
+<tr>
+<td>8</td>
+<td>broadleaf_hydrodecid_extratrop_shrub</td>
+</tr>
+<tr>
+<td>9</td>
+<td>broadleaf_colddecid_extratrop_shrub</td>
+</tr>
+<tr>
+<td>10</td>
+<td>arctic_c3_grass</td>
+</tr>
+<tr>
+<td>11</td>
+<td>cool_c3_grass</td>
+</tr>
+<tr>
+<td>12</td>
+<td>c4_grass</td>
+</tr>
+</tbody>
+</table>
+<h4 id="start-building-your-case-with-the-submit-button">Start building your case with the ´SUBMIT´ button</h4>
+<p>Once you click <code>submit</code>, the case will appear in a list of cases with the case ID, status, creation date, grid information, component set, a link to view the settings you specified, and some buttons with more options. Pay attention to the status, which will transition from pending to ready when the case has been built.</p>
+<h3 id="3-run-your-simulations">3. Run your simulations 👩‍💻</h3>
+<p>Once the case is ready, you can start the simulation with the <code>run</code> button. There are also buttons to <code>download</code> the output when the run is finished, to <code>copy</code> the case settings as a template to create a new case, and to <code>delete</code> the case. Depending on how long you asked the model to run for, and on your hardware, the simulation can take some time ⏳. On a regular laptop, one year of simulation of a single site (= gridcell) might take ~5-20 minutes. It may help to not run other heavy programs simultaneously (like GIS, Photoshop or 1000 browser tabs 👀). The Docker container you started in step 1 is performing the simulation using your local computer. If you are running more or longer simulations than your computer can handle, you may want to look at our <a href="https://noresmhub.github.io/noresm-land-sites-platform/">alternatives for remote simulations</a>.</p>
+<blockquote>
+<p>While you wait for the simulation to finish, you may like to inspect the input data more closely to understand what data drives the model. Open a new browser tab and go to the Docker container at <a href="http://localhost:8888">localhost:8888</a>. Navigate to the <code>notebooks/plot_input_data/</code> folder and go through the notebooks there. They will plot some of the input data for your site that forces the atmospheric model component and provides land surface and soil information.</p>
+</blockquote>
+<p>Soon your simulations will be finished! 🎉 (Hint: if your case seems to be running forever, try to refresh the webpage! Sometimes it gets stuck.)</p>
+<p>If you got an error message somewhere along the way, please head over to our GitHub and write an <a href="https://github.com/NorESMhub/noresm-land-sites-platform/issues">issue</a> describing what happened, what machine you are on (mac/windows/HPC etc.), and copy in the error message and any other relevant information. Progress messages will be printed in the terminal you started the container from. (If you closed the terminal window already, you can see it in Docker desktop by clicking the running container stack.)</p>
+<p>Output will be stored as monthly averages by default, or at whatever time intervals you set in the history files tab when you created the case.</p>
+<h3 id="4-look-at-your-output">4. Look at your output 📈</h3>
+<p><a href="https://noresmhub.github.io/noresm-land-sites-platform/#postprocess">Model output files</a> are easily accessed in Jupyter lab (<a href="http://localhost:8888">localhost:8888</a>) under the <code>resources/cases/&lt;case_id&gt;/archive/lnd/hist/</code> folder. The Jupyter server fetches the files locally in your copy of the noresm-land-sites-platform repository under <code>resources/cases/&lt;case-id&gt;/archive</code>. </p>
+<p>In JupyterLab, we have prepared some notebooks (text, code &amp; output documents) for combining output files, creating some basic plots, and comparing model output to observations for some of the sites. Once you open JupyterLab, you will see some folders. Nagivate to the <code>notebooks/</code> folder and open the <code>combine_nc_files.ipynb</code> notebook. If your simulation recorded one history tape (see explanation above) with monthly average values for a one-year simulation, you should find 12 .nc files in the <code>resources/cases/&lt;case_id&gt;/archive/lnd/hist/</code> folder. It is generally a good idea to combine these files into one, and the <code>combine_nc_files.ipynb</code> notebook will guide you through doing this. </p>
+<p>When the history files are combined, you can go on to the <code>notebooks/model_output_analysis</code> folder to see additional notebooks. They will guide you through some ways of looking at the model output and comparing it to published data for the sites where data is available. The notebooks can be modified (use File -&gt; Save Notebook As... to save your own version) with your own code and text. The code cells are read as Python code by default.</p>
+<blockquote>
+<p>Run/execute notebook cells with e.g. Ctrl+Enter after clicking it with you cursor. This works both for text (Markdown) and code (Python) cells. You can also use the clickable icons at the top of the notebook, like the play button for running a cell or + for insering a new cell.</p>
+</blockquote>
+<p>There are  many other ways to analyse the data, and much more model output available! Output can alternatively be opened in Panoply, which is included for at http://localhost:5800/ when containers are running. Panoply is a useful tool to explore the data and get an overview of the available output variables. If you prefer to work with the output outside the NorESM-LSP, output data can also be downloaded to another location with the Download Data button in the GUI. The output NetCDF files can be opened in Panoply locally, or with netCDF-handling packages in e.g. Python or R or on your local computer.</p>
+<h3 id="5-close-the-container">5. Close the container</h3>
+<p>NB! The container will continue to run unless you stop it. When you are finished with simulations and output processing and downloading things you might need offline, go back to your terminal and press <code>Ctrl+c</code>. If you closed the terminal window, you can open a new one, go to the repository (<code>cd noresm-land-sites-platform/</code>) and type in <code>docker-compose down</code>. Alternatively, open Docker desktop, find the containers tab, and shut them down them with the stop button.</p>
+<hr />
+<h2 id="model-performance-and-best-practices">Model performance and best practices</h2>
+<p>While the LSP makes is easy to perform a simulation, there are many pitfalls to consider when setting up model experiments and interpreting the results. To get realistic results from simulations, three elements must be correct: model structure, model parameterization, and the external forcing data. Getting all three right is difficult even for experienced modellers, but you can get far by being curious and careful in your interpretations. Ask yourself, what can the model actually do (which processes are included in the model structure)? What do the current parameters represent (e.g. for default Plant Functional Types, mortality rates, growth allometry)? Is the forcing data realistic for my site? </p>
+<p>If you want to improve you model experiment, it's vital to consider your purpose. For example, do you want the output to be as similar as possible to an observed data set? If so, you might tune model parameters and adjust your input (forcing) data. The risk is that you "get the right result for the wrong reason", but that might be acceptable depending on your purpose and if you don't extrapolate. Alternatively, one might risk getting completely unrealistic model output even when all parameters and forcing data are correct. The model may lack an important process that produces a result in real life. Model calibration, validation and tuning should therefore be done with great care and according to your purpose of modelling. </p>
+<p>To learn more about the models and land surface modelling, check out our <a href="https://noresmhub.github.io/noresm-land-sites-platform/resources/">external resources page</a>. Understanding what you don't know is the first step!</p>
+<h2 id="advanced-customisation">Advanced customisation</h2>
+<p>If you need customisation of data, model code, or case setup beyond what is possible through the graphical user interface and JupyterLab, you may access the containers or API directly. You can also <a href="https://noresmhub.github.io/noresm-land-sites-platform/documentation/#running-the-noresm-lsp-remotely">use the platform remotely, e.g. via SSH tunnelling</a>. </p>
+<p>If you have (or create) an <code>.env</code> file in the project root with <code>HOST_USER</code> set in it, use this:</p>
+<pre><code>docker-compose exec -u &lt;host_user_value&gt; api bash
+</code></pre>
+<p>Otherwise, use this:</p>
+<pre><code>docker-compose exec api bash
+</code></pre>
+<p>This will open a terminal in /ctsm-api. The model is in /ctsm-api/resources/model. Cases created with the api go in /ctsm-api/resources/cases, and their data in /ctsm-api/resources/data/<case-id>. The build, run, and archive folders are put inside the case folder. Shared data goes in /ctsm-api/resources/data/shared.</p>
+<h2 id="reproducibility">Reproducibility</h2>
+<p>To make your simulations reproducible by others, e.g. for a thesis or scientific paper, <em>note down the version of the NorESM-LSP</em> and save these three directories that have been created under <code>resources/</code> in your working directory (e.g. C:/Users/yourusername/noresm-land-sites-platform/resources):</p>
+<ul>
+<li>the case folder, i.e. ´resources/cases/casename´</li>
+<li>the case input data, i.e. ´resources/data/casename´</li>
+<li>code modifications in overwrites, i.e. ´resources/overwrites´</li>
+</ul>
+<p>You could also simply save the whole 'resources' folder (and get some redundant files).</p>
+<p>To recreate an old simulation, the LSP might need to be reinstalled. Old case folders can of course be copied into new versions of the LSP, but if there are changes to e.g. python libraries, model code or other software we depend on, there might be errors or slight differences in the output if the case is re-run. To install a specific version, go to <a href="https://github.com/NorESMhub/noresm-land-sites-platform">GitHub</a>, find the correct version tag/release tag, and clone or download the code from that version. Once the correct version of the repository is in place, copy and pase in the three folders listed above. Make sure the folder structure is the same. Then, bring up the containers again with <code>docker-compose up</code> and <em>voilà</em>! </p>
+<h2 id="when-and-how-to-cite-the-noresm-lsp-models-and-data">When and how to cite the NorESM-LSP, models, and data</h2>
+<p>If you end up publishing your model experiments, e.g. in a thesis or scientific paper, you need to consider citations, acknowledgements, and authorship invitations carefully.</p>
+<p>To cite the NorESM-LSP software, see the <a href="https://noresmhub.github.io/noresm-land-sites-platform/contributing/">Contributing</a> and <a href="https://noresmhub.github.io/noresm-land-sites-platform/about/">About</a>. </p>
+<p>When you publish model experiments, you also need to properly cite and acknowledge the model framework: See the licences of <a href="https://github.com/NorESMhub/NorESM/blob/master/LICENSE.txt">NorESM</a>, <a href="https://github.com/ESCOMP/CTSM/blob/master/LICENSE">CLM</a>, <a href="https://github.com/NGEET/fates/blob/master/LICENSE.txt">FATES</a>. In the Acknowledgements section, it is common practice to add funding information of the models that you use (e.g. the U.S. National Science Foundation for CLM, NGEE-Tropics for FATES). The main publications for each model should also be cited in the main text.</p>
+<p>If you use observational data, e.g. from the Vestland Climate Grid sites or another integrated site, make sure to look at the licences, rights and conditions attached to those data! </p>
+<p>Following international standards for research ethics, authorship invitations should be given based on "substantial contributions to conception and design, acquisition of data, or analysis and interpretation of data", among other things. </p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Please help us by reporting errors and questions on our <a href="https://github.com/NorESMhub/noresm-land-sites-platform/issues/">issues page</a>. Things you can try yourself include "switching it off and on again" by stopping, deleting, and reinstalling everything carefully. See instructions to uninstall below, and carefully follow steps 6 and 7 from the <a href="https://noresmhub.github.io/noresm-land-sites-platform/user_guide/#0-prerequisites-first-time-setup">setup guide</a> before you bring the containers up again with <code>docker-compose up</code>.</p>
+<h2 id="updating-and-uninstalling">Updating and uninstalling</h2>
+<p>To install updates, download the new version of the code and container images by typing <code>git pull</code> followed by <code>docker-compose pull</code> into a terminal from your local clone of the repository. </p>
+<p>To uninstall, open a terminal in your working directory and enter your local clone of the repository (remember <code>ls</code>= list files, <code>cd</code>=change directory). Right-clicking in your working directory file explorer should give you options to open Git Bash or another terminal. If the container (or another process) is running in your terminal, you can stop it with <code>Ctrl+c</code>, or with <code>docker-compose down</code> if you see <code>.../noresm-land-sites-platform$</code>. </p>
+<p>To remove the repository, you can type <code>rm -r noresm-land-sites-platform</code> in your working directory. If it complains about permissions you may need <code>sudo</code> in front, and you can use -rf instead of -r. This might require administrator rights to your computer. NB! If you delete the whole repository like this, your existing cases and output data will also be deleted.</p>
+<p>To delete <strong>all</strong> Docker containers, images, and other files, also ones in use, use the command <code>docker system prune -a</code>. NB! If you do this, you will need to download all the files again if you want to use the LSP again. It is also possible to delete everything manually in Docker desktop (check containers, images, and volumes tabs), and to delete the repository manually from your working directory.</p>
+<p>Docker desktop can be uninstalled like any other program, e.g. via you pc's settings. </p>
+<hr />
+<p><strong><em>Please help us by reporting errors and questions on our <a href="https://github.com/NorESMhub/noresm-land-sites-platform/issues/new">issues page</a>.</em></strong></p>
+<hr />
+<p><a href="https://www.noresm.org/"><img alt="NorESM" src="../img/NORESM-logo.png" title="the Norwegian Earth System Model" /></a>
+<a href="https://www.mn.uio.no/geo/english/research/projects/emerald/"><img alt="EMERALD" src="../img/Emerald_darktext_whiteBG_small.png" title="EMERALD project" /></a>
+<a href="https://www.mn.uio.no/geo/english/research/groups/latice/"><img alt="LATICE" src="../img/UiO_LATICE_logo_black_small.png" title="Land-ATmosphere Interactions in Cold Environments research group" /></a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../documentation/" class="btn btn-neutral float-right" title="Technical documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2022- The NorESM Land Sites Platform Team</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../documentation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../javascripts/map.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
